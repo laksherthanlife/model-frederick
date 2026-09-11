@@ -1,0 +1,562 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/native_training_run_02/native_exchange_fit.json",
+    "sha256": "e6d14896ab52c267b22f7de74b1e704f9a8194d5fe5c9786c7cf5ec650cc9274"
+  },
+  "payload": {
+    "extrapolation": "unsupported",
+    "input": {
+      "name": "growth_rate_per_h",
+      "role": "imposed_condition_not_scored",
+      "unit": "1/h"
+    },
+    "interpretation": "Condition-specific empirical interpolation, not molecular mechanism discovery",
+    "knots": {
+      "Acetate": [
+        {
+          "growth_rate_per_h": 0.025,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 2,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.05,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 3,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.1,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 4,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.2,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 6,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.25,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 7,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.3,
+          "observation_status": "quantified",
+          "reported_value": 0.41,
+          "source_line": 9,
+          "value": 0.41
+        },
+        {
+          "growth_rate_per_h": 0.4,
+          "observation_status": "quantified",
+          "reported_value": 0.6,
+          "source_line": 11,
+          "value": 0.6
+        }
+      ],
+      "BiomassYield_g_per_g": [
+        {
+          "growth_rate_per_h": 0.025,
+          "observation_status": "quantified",
+          "reported_value": 0.45,
+          "source_line": 2,
+          "value": 0.45
+        },
+        {
+          "growth_rate_per_h": 0.05,
+          "observation_status": "quantified",
+          "reported_value": 0.47,
+          "source_line": 3,
+          "value": 0.47
+        },
+        {
+          "growth_rate_per_h": 0.1,
+          "observation_status": "quantified",
+          "reported_value": 0.48,
+          "source_line": 4,
+          "value": 0.48
+        },
+        {
+          "growth_rate_per_h": 0.2,
+          "observation_status": "quantified",
+          "reported_value": 0.48,
+          "source_line": 6,
+          "value": 0.48
+        },
+        {
+          "growth_rate_per_h": 0.25,
+          "observation_status": "quantified",
+          "reported_value": 0.48,
+          "source_line": 7,
+          "value": 0.48
+        },
+        {
+          "growth_rate_per_h": 0.3,
+          "observation_status": "quantified",
+          "reported_value": 0.37,
+          "source_line": 9,
+          "value": 0.37
+        },
+        {
+          "growth_rate_per_h": 0.4,
+          "observation_status": "quantified",
+          "reported_value": 0.2,
+          "source_line": 11,
+          "value": 0.2
+        }
+      ],
+      "CO2production": [
+        {
+          "growth_rate_per_h": 0.025,
+          "observation_status": "quantified",
+          "reported_value": 0.8,
+          "source_line": 2,
+          "value": 0.8
+        },
+        {
+          "growth_rate_per_h": 0.05,
+          "observation_status": "quantified",
+          "reported_value": 1.4,
+          "source_line": 3,
+          "value": 1.4
+        },
+        {
+          "growth_rate_per_h": 0.1,
+          "observation_status": "quantified",
+          "reported_value": 2.7,
+          "source_line": 4,
+          "value": 2.7
+        },
+        {
+          "growth_rate_per_h": 0.2,
+          "observation_status": "quantified",
+          "reported_value": 5.7,
+          "source_line": 6,
+          "value": 5.7
+        },
+        {
+          "growth_rate_per_h": 0.25,
+          "observation_status": "quantified",
+          "reported_value": 7.5,
+          "source_line": 7,
+          "value": 7.5
+        },
+        {
+          "growth_rate_per_h": 0.3,
+          "observation_status": "quantified",
+          "reported_value": 8.8,
+          "source_line": 9,
+          "value": 8.8
+        },
+        {
+          "growth_rate_per_h": 0.4,
+          "observation_status": "quantified",
+          "reported_value": 18.9,
+          "source_line": 11,
+          "value": 18.9
+        }
+      ],
+      "CarbonRecovery_pct": [
+        {
+          "growth_rate_per_h": 0.025,
+          "observation_status": "quantified",
+          "reported_value": 98.9,
+          "source_line": 2,
+          "value": 98.9
+        },
+        {
+          "growth_rate_per_h": 0.05,
+          "observation_status": "quantified",
+          "reported_value": 95.0,
+          "source_line": 3,
+          "value": 95.0
+        },
+        {
+          "growth_rate_per_h": 0.1,
+          "observation_status": "quantified",
+          "reported_value": 96.0,
+          "source_line": 4,
+          "value": 96.0
+        },
+        {
+          "growth_rate_per_h": 0.2,
+          "observation_status": "quantified",
+          "reported_value": 100.9,
+          "source_line": 6,
+          "value": 100.9
+        },
+        {
+          "growth_rate_per_h": 0.25,
+          "observation_status": "quantified",
+          "reported_value": 102.6,
+          "source_line": 7,
+          "value": 102.6
+        },
+        {
+          "growth_rate_per_h": 0.3,
+          "observation_status": "quantified",
+          "reported_value": 99.1,
+          "source_line": 9,
+          "value": 99.1
+        },
+        {
+          "growth_rate_per_h": 0.4,
+          "observation_status": "quantified",
+          "reported_value": 97.9,
+          "source_line": 11,
+          "value": 97.9
+        }
+      ],
+      "Ethanol": [
+        {
+          "growth_rate_per_h": 0.025,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 2,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.05,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 3,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.1,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 4,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.2,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 6,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.25,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 7,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.3,
+          "observation_status": "quantified",
+          "reported_value": 2.3,
+          "source_line": 9,
+          "value": 2.3
+        },
+        {
+          "growth_rate_per_h": 0.4,
+          "observation_status": "quantified",
+          "reported_value": 13.9,
+          "source_line": 11,
+          "value": 13.9
+        }
+      ],
+      "GlucoseUptake": [
+        {
+          "growth_rate_per_h": 0.025,
+          "observation_status": "quantified",
+          "reported_value": 0.3,
+          "source_line": 2,
+          "value": 0.3
+        },
+        {
+          "growth_rate_per_h": 0.05,
+          "observation_status": "quantified",
+          "reported_value": 0.6,
+          "source_line": 3,
+          "value": 0.6
+        },
+        {
+          "growth_rate_per_h": 0.1,
+          "observation_status": "quantified",
+          "reported_value": 1.1,
+          "source_line": 4,
+          "value": 1.1
+        },
+        {
+          "growth_rate_per_h": 0.2,
+          "observation_status": "quantified",
+          "reported_value": 2.3,
+          "source_line": 6,
+          "value": 2.3
+        },
+        {
+          "growth_rate_per_h": 0.25,
+          "observation_status": "quantified",
+          "reported_value": 2.8,
+          "source_line": 7,
+          "value": 2.8
+        },
+        {
+          "growth_rate_per_h": 0.3,
+          "observation_status": "quantified",
+          "reported_value": 4.5,
+          "source_line": 9,
+          "value": 4.5
+        },
+        {
+          "growth_rate_per_h": 0.4,
+          "observation_status": "quantified",
+          "reported_value": 11.1,
+          "source_line": 11,
+          "value": 11.1
+        }
+      ],
+      "Glycerol": [
+        {
+          "growth_rate_per_h": 0.025,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 2,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.05,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 3,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.1,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 4,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.2,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 6,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.25,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 7,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.3,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 9,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.4,
+          "observation_status": "quantified",
+          "reported_value": 0.15,
+          "source_line": 11,
+          "value": 0.15
+        }
+      ],
+      "O2uptake": [
+        {
+          "growth_rate_per_h": 0.025,
+          "observation_status": "quantified",
+          "reported_value": 0.8,
+          "source_line": 2,
+          "value": 0.8
+        },
+        {
+          "growth_rate_per_h": 0.05,
+          "observation_status": "quantified",
+          "reported_value": 1.3,
+          "source_line": 3,
+          "value": 1.3
+        },
+        {
+          "growth_rate_per_h": 0.1,
+          "observation_status": "quantified",
+          "reported_value": 2.5,
+          "source_line": 4,
+          "value": 2.5
+        },
+        {
+          "growth_rate_per_h": 0.2,
+          "observation_status": "quantified",
+          "reported_value": 5.3,
+          "source_line": 6,
+          "value": 5.3
+        },
+        {
+          "growth_rate_per_h": 0.25,
+          "observation_status": "quantified",
+          "reported_value": 7.0,
+          "source_line": 7,
+          "value": 7.0
+        },
+        {
+          "growth_rate_per_h": 0.3,
+          "observation_status": "quantified",
+          "reported_value": 6.1,
+          "source_line": 9,
+          "value": 6.1
+        },
+        {
+          "growth_rate_per_h": 0.4,
+          "observation_status": "quantified",
+          "reported_value": 3.7,
+          "source_line": 11,
+          "value": 3.7
+        }
+      ],
+      "Pyruvate": [
+        {
+          "growth_rate_per_h": 0.025,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 2,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.05,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 3,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.1,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 4,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.2,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 6,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.25,
+          "observation_status": "below_detection_limit",
+          "reported_value": 0.0,
+          "source_line": 7,
+          "value": null
+        },
+        {
+          "growth_rate_per_h": 0.3,
+          "observation_status": "quantified",
+          "reported_value": 0.01,
+          "source_line": 9,
+          "value": 0.01
+        },
+        {
+          "growth_rate_per_h": 0.4,
+          "observation_status": "quantified",
+          "reported_value": 0.05,
+          "source_line": 11,
+          "value": 0.05
+        }
+      ]
+    },
+    "method": "piecewise_linear",
+    "model_kind": "empirical_growth_dependent_exchange_law",
+    "predeclared_split": {
+      "holdout": [
+        0.15,
+        0.28,
+        0.35
+      ],
+      "scope": "predeclared within-study condition holdout, not independent-laboratory validation",
+      "train": [
+        0.025,
+        0.05,
+        0.1,
+        0.2,
+        0.25,
+        0.3,
+        0.4
+      ],
+      "unit": "1/h"
+    },
+    "schema_version": 1,
+    "source": {
+      "authors": [
+        "Pim van Hoek",
+        "Johannes P. van Dijken",
+        "Jack T. Pronk"
+      ],
+      "biomass_carbon": {
+        "mass_fraction": 0.48,
+        "status": "source_assumption_for_carbon_recovery"
+      },
+      "censoring": {
+        "detection_limit": null,
+        "footnote": "Table 1 footnote c: 0, below detection limit",
+        "numeric_detection_limit_reported": false
+      },
+      "conditions": {
+        "cultivation": "aerobic glucose-limited chemostat",
+        "medium": "defined mineral medium",
+        "organism": "Saccharomyces cerevisiae",
+        "ph": 5.0,
+        "strain": "DS28911",
+        "temperature_c": 30.0
+      },
+      "doi": "10.1128/AEM.64.11.4226-4233.1998",
+      "exchange_convention": "Positive uptake or production magnitudes, not signed GEM fluxes",
+      "growth_basis": "Specific growth rate equals dilution rate at chemostat steady state",
+      "issue": 11,
+      "journal": "Applied and Environmental Microbiology",
+      "pages": "4226-4233",
+      "pmcid": "PMC106631",
+      "pmid": "9797269",
+      "table": "Table 1",
+      "table_page": 4227,
+      "table_relative_path": "data/physiology/chemostatData_VanHoek1998.tsv",
+      "table_sha256": "4c01b3465ea1410c86709568da44a32b1de652c21a88de623bbf566838506117",
+      "title": "Effect of Specific Growth Rate on Fermentative Capacity of Baker's Yeast",
+      "uncertainty": "Table 1 does not report row-level SD or SEM",
+      "verification": "Native TSV rows checked against the published Table 1, page 4227",
+      "verified_primary_url": "https://repository.tudelft.nl/file/File_0981d011-0515-40cd-bc5f-b5004cd9ca42",
+      "volume": 64,
+      "year": 1998
+    },
+    "training_growth_rates_per_h": [
+      0.025,
+      0.05,
+      0.1,
+      0.2,
+      0.25,
+      0.3,
+      0.4
+    ],
+    "training_rows_sha256": "b12e1c9b11e93144a9364b8c6705d5d2671347ba34058341e24e30df319c141c",
+    "units": {
+      "Acetate": "mmol/gDW/h",
+      "BiomassYield_g_per_g": "gDW/g_glucose",
+      "CO2production": "mmol/gDW/h",
+      "CarbonRecovery_pct": "%",
+      "Ethanol": "mmol/gDW/h",
+      "GlucoseUptake": "mmol/gDW/h",
+      "Glycerol": "mmol/gDW/h",
+      "O2uptake": "mmol/gDW/h",
+      "Pyruvate": "mmol/gDW/h"
+    }
+  },
+  "schema_version": 1
+}

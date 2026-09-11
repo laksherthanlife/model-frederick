@@ -1,0 +1,153 @@
+{
+  "schema_version": "native-biochemical-source-metadata/1.0",
+  "source_id": "boer2010",
+  "metadata_only": true,
+  "quantitative_target_observations_present": false,
+  "title": "Growth-limiting intracellular metabolites in yeast growing under diverse nutrient limitations",
+  "doi": "10.1091/mbc.e09-07-0597",
+  "pmid": "19889834",
+  "pmcid": "PMC2801714",
+  "selection_reason": "Hackett 2016 explicitly reuses these prior-culture metabolomics observations. This is an ancestor to audit, not an independent Hackett validation dataset.",
+  "primary_article": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2801714/fullTextXML",
+    "http_status": 200,
+    "bytes": 183239,
+    "sha256": "66cb4b12bab16006da3c6048c235a62873aa7d1037f75aa13f3c24f42e22fda9",
+    "permissions_text": "Copyright 2010 by The American Society for Cell Biology",
+    "license_status": "Europe PMC marks the article open access and serves its supplements. No explicit reusable-data license was verified in the inspected XML permissions; do not substitute an assumed CC license.",
+    "methods_locators": ["MATERIALS AND METHODS / Strains and Cultivation", "MATERIALS AND METHODS / LC-MS/MS Analysis", "MATERIALS AND METHODS / Normalization and Clustering"]
+  },
+  "public_archive": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2801714/supplementaryFiles",
+    "http_status": 200,
+    "media_type": "application/zip",
+    "observed_bytes": 1239812,
+    "observed_sha256": "2a731025c992319a396597fd2df84c17d7ea6c626a95fb5d03396f4bbedb791f",
+    "checksum_note": "Archive packaging may change; the individually decompressed member digests below are the stable source bindings to verify.",
+    "local_raw_archive": null,
+    "learner_allowed": false,
+    "reason": "Contains all conditions, references, published transformations and source outcomes. Retrieved into memory for schema/identity verification only."
+  },
+  "culture_metadata": {
+    "organism": "Saccharomyces cerevisiae",
+    "strain_by_nutrient_context": [
+      {"contexts": ["GLU", "NH4", "PO4"], "strain_id": "DBY11069", "genotype": "MATa; prototrophic FY derivative"},
+      {"contexts": ["LEU"], "strain_id": "DBY11167", "genotype": "MATa leu2Delta1; FY derivative"},
+      {"contexts": ["URA"], "strain_id": "DBY7284", "genotype": "MATa ura3-52; FY derivative"}
+    ],
+    "nominal_design": "Five limiting nutrients crossed with five dilution settings; nominal rates approximately 0.05, 0.11, 0.16, 0.22 and 0.30 per hour.",
+    "culture_pH": 5.0,
+    "culture_temperature_C": null,
+    "temperature_status": "Not verified in the inspected source methods; no default yeast growth temperature assumed.",
+    "vessel": "500 mL Sixfors chemostats, 300 mL working volume",
+    "aeration": "400 rpm; source reports five standard liters/minute humidified air",
+    "medium": "Defined mineral medium adapted from Brauer et al. 2008; complete medium recipe cited as Supplemental Table S4. Do not equate media solely from a nutrient-limit label.",
+    "biological_replicate_unit": "A complete chemostat culture and all its sampled extracts; four technical samples per experimental condition are not four independent biological cultures.",
+    "reference_dependencies": "Each experimental sample was paired to two phosphorus-limited reference samples. Published processing matches analysis date and filter/pellet extraction method. Preserve those shared references in any dependency graph.",
+    "compartment": "Whole-cell extract, normalized using total cellular volume; not compartment-resolved cytosol.",
+    "relationship_to_hackett": "Prior culture set. Nominal limitation/growth matching is not simultaneous E/substrate/reaction-rate matching."
+  },
+  "verified_files": [
+    {
+      "member": "E09-07-0597_Data_Set_2.txt",
+      "bytes": 159952,
+      "sha256": "9104f7fa0a24d3bd34f58f542ec9151009ff3e1d1ab6e0723b0b25cbbd478e6c",
+      "format": "Tab-separated text",
+      "schema": {
+        "header_line_1based": 1,
+        "data_rows": 136,
+        "columns": 113,
+        "metabolite_columns": 106,
+        "metadata_headers_exact": ["", "Month", "Which", "Gr", "Nutr", "Exp/Ref", "Method"],
+        "metadata_domains": {"Month": ["10", "12", "6", "8"], "Which": ["a", "b", "c", "d"], "Nutr": ["GLU", "LEU", "NH4", "PO4", "R", "R2", "R3", "URA"], "Exp/Ref": ["exp", "ref"], "Method": ["filter", "pellet"]},
+        "unnamed_identifier_unique_count": 136,
+        "metabolite_headers_exact": ["Ribose-P", "OMP", "1,3-diphopshateglycerate", "3-hydroxy-3-methylglutaryl-CoA", "3-phosphoglycerate", "6-phospho-D-gluconate", "acetyl-CoA", "aconitate", "adenosine", "ADP", "a-ketoglutarate", "alanine", "AMP", "arginine", "asparagine", "aspartate", "ATP", "choline", "citrate", "citrate/isocitrate", "citrulline", "CTP", "cyclic-AMP", "cystathionine", "cytidine", "cytosine", "dATP", "dCTP", "deoxyadenosine", "deoxyguanosine", "D-erythrose-4-phosphate", "D-gluconate", "D-glucono-delta-lactone-6-phosphate", "D-glyceraldehdye-3-phosphate", "dihydroorotate", "dihydroxy-acetone-phosphate", "D-sedoheptulose-7-phosphate", "dTTP", "FAD", "FMN", "fructose-1,6-bisphosphate", "fumarate", "glutamate", "glutamine", "glutathione", "glutathione disulfide", "glycerate", "glycine", "GMP", "GTP", "guanine", "guanosine", "hexose-phosphate", "histidine", "histidinol", "hypoxanthine", "inosine", "isocitrate", "leucine/isoleucine", "lysine", "malate", "methionine", "N-acetyl-glucosamine-1-phosphate", "N-acetyl-glutamine", "NAD+", "NADH", "NADP+", "N-carbamoyl-L-aspartate", "nicotinate", "ornithine", "orotate", "pantothenate", "phenylalanine", "phenylpyruvate", "proline", "pyridoxine", "pyruvate", "quinolinate", "riboflavin", "S-adenosyl-L-methionine", "serine", "succinate", "thiamine", "threonine", "trans, trans-farnesyl diphosphate", "trehalose/sucrose", "trehalose-6-phosphate", "tryptophan", "tyrosine", "UDP-D-glucose", "UDP-N-acetyl-glucosamine", "uridine", "UTP", "valine", "xanthine", "Arginino-succinate", "Carbamyl phosphate", "CDP", "dGDP", "Dimethylglycine", "Homoserine", "Hydroxyphenylpyruvate", "Lactate", "N-acetyl-glutamate", "Prephenic acid", "PRPP"],
+        "row_widths_verified": [113],
+        "source_cell_locator": "Archive member SHA256 + one-based text line + exact column header + first-column sample identifier; technical fields retained as source values."
+      },
+      "measurement_type": "LC-MS/MS normalized ion-count measurements, not molar concentration and not enzyme activity",
+      "instrument": "Positive/negative ionization triple-quadrupole MRM LC-MS/MS",
+      "unit": "Ion counts normalized by total cell volume extracted and extraction-solvent volume; detector-scale response",
+      "preprocessing_lineage": "Raw ion counts -> cell/extract-volume normalization -> source lower-quantitation-floor handling. The paper describes replacing absent/low normalized signal by a fixed floor; this is not an uncensored raw peak-intensity table.",
+      "absolute_concentration_gate": "Requires analyte-specific calibrated standards/reference measurements and an explicit adapter. Do not treat normalized ion counts or the aggregate metabolite names as cytosolic mM.",
+      "feature_policy": "All 106 available measurement columns are listed, including unresolved aggregates and original misspellings. This list does not identify the paper-selected regulators or regulatory directions. Covariate eligibility must be predeclared using identity/assay semantics, not fitted performance.",
+      "learner_allowed": false
+    },
+    {
+      "member": "E09-07-0597_Data_Set_1.txt",
+      "bytes": 35709,
+      "sha256": "be06bda773cbefdc75ad9c826fc3ee24779c7b2817dc587d03036c6157b136e0",
+      "format": "Tab-separated publication matrix",
+      "schema": {
+        "lines": 108,
+        "columns": 28,
+        "header": ["Metabolite", "KEGG", "GWEIGHT", "GLU 0.058", "GLU 0.108", "GLU 0.161", "GLU 0.238", "GLU 0.311", "NH4 0.055", "NH4 0.105", "NH4 0.173", "NH4 0.21", "NH4 0.29", "PO4 0.056", "PO4 0.113", "PO4 0.16", "PO4 0.223", "PO4 0.3", "LEU 0.058", "LEU 0.11", "LEU 0.16", "LEU 0.22", "LEU 0.286", "URA 0.056", "URA 0.11", "URA 0.15", "URA 0.22", "URA 0.31"],
+        "row_widths_verified": [28]
+      },
+      "measurement_type": "Published processed relative-metabolomics matrix, not raw instrument data",
+      "normalization_warning": "Publication heat-map processing uses phosphorus-reference ratios, log2 transformation and mean-centering over conditions. Do not use a published globally normalized matrix as fold-independent training data without an exact table-specific derivation audit.",
+      "learner_allowed": false
+    },
+    {
+      "member": "E09-07-0597_TableS1.xls",
+      "bytes": 40448,
+      "sha256": "1093b047bc10db54c6046304f86a72ce6b031ac6af90875bb07331264eaa51e1",
+      "format": "Excel BIFF .xls",
+      "sheets": [
+        {"name": "Compounds_included", "rows": 106, "columns": 6, "headers": ["Compound", "Ionization Mode", "Parent Mass (m/z)", "Product Mass (m/z)", "Collision Energy (eV)", "Retention Time (minutes)"]},
+        {"name": "Compounds_excluded", "rows": 84, "columns": 7, "headers": ["Compound", "Exclusion Rationale", "Ionization Mode", "Parent Mass (m/z)", "Product Mass (m/z)", "Collision Energy (eV)", "Retention Time (minutes)"]}
+      ],
+      "measurement_type": "Assay analyte identity, acquisition settings and source exclusion rationale",
+      "learner_allowed": false,
+      "reason": "Only reviewed identity/assay-metadata projections may later be allowlisted; no raw workbook handoff."
+    },
+    {
+      "member": "E09-07-0597_TableS2.xls",
+      "bytes": 172544,
+      "sha256": "c4216ae0abb3fd96823df62a10351b16843920eb9932bddde3e025860091e6a8",
+      "checksum_status": "verified_from_decompressed_public_archive_member",
+      "format": "Excel BIFF .xls",
+      "measurement_type": "Extraction-method comparison workbook; mixes replicate signals and statistical comparison columns",
+      "raw_sheet_schema": {"name": "Raw_data", "rows": 126, "columns": 13, "headers_B1_to_M1": ["8p-1", "8p-2", "8p-3", "8f-1", "8f-2", "8f-3", "4p-1", "4p-2", "4p-3", "4f-1", "4f-2", "4f-3"]},
+      "verified_sheet_names": ["Raw_data", "Filters 80% vs 404020", "Pellets 80% vs 404020", "MeOH pellets vs filters", "404020 pellets vs filters"],
+      "derived_columns_seen": ["p-value", "q-value", "significant", "Ratio (80%/40:40:20)", "Log2Ratio (80%/40:40:20)"],
+      "learner_allowed": false
+    },
+    {
+      "member": "E09-07-0597_TableS3.xls",
+      "bytes": 41472,
+      "sha256": "5c09bf67e60079879b5c9812fbdf963cfbe6c64659b66c9ea1c372b28439992c",
+      "format": "Excel BIFF .xls",
+      "sheets": [{"name": "Sheet1", "rows": 49, "columns": 13}, {"name": "Sheet2", "rows": 0, "columns": 0}, {"name": "Sheet3", "rows": 0, "columns": 0}],
+      "schema": {
+        "layout": "Repeated nutrient-block headers; not a flat single-header table",
+        "first_block_title_cell": "Sheet1!A2 = Glucose limitation",
+        "first_block_header_cells": {"A3": "Dilution rate (h-1)", "C3": "klett", "E3": "cell count (*E7)", "G3": "cell volume (fl)", "I3": "extracellular glucose concentration (mM)"},
+        "first_block_summary_row": "Row 4 alternates average/stdev in columns A:J",
+        "unit_note": "The worksheet labels cell volume in fL, while the paper's normalization example uses pL. Preserve declared source units and apply an explicit volume conversion, not a guessed numerical scale.",
+        "source_cell_locator": "Member SHA256 + exact worksheet + A1 cell address + nutrient block"
+      },
+      "measurement_type": "Condition summaries of culture/cell-volume and extracellular measurements, including reported standard deviations",
+      "learner_allowed": false
+    },
+    {
+      "member": "E09-07-0597_1.pdf",
+      "bytes": 366676,
+      "sha256": "f7d42c5e34b7726a30bfef5e931c07e85c8b90f316488e6ae0938f3d7187c6c4",
+      "format": "PDF supplementary material",
+      "measurement_tables_exported": false,
+      "learner_allowed": false
+    }
+  ],
+  "additional_access_probe": {
+    "url": "https://growthrate.princeton.edu/metabolome/",
+    "status": "TLS_certificate_hostname_mismatch",
+    "blocker": "TLS certificate was not valid for growthrate.princeton.edu. Certificate verification was not disabled. The official Europe PMC supplemental archive provides an accessible public alternative."
+  },
+  "export_decision": {
+    "approved_train_or_development_projection": false,
+    "reason": "Current protocol is for measured Cdc19 intracellular flux, not standalone metabolomics. No eligible measured target, cross-culture joint map, independent support or approved split exists.",
+    "reserved_labels_exported": false,
+    "no_replacement_without_new_protocol": true
+  }
+}

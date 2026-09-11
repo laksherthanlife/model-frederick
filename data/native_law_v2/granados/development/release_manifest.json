@@ -1,0 +1,111 @@
+{
+  "document_type": "approved_development_phase_b_data_allowlist_not_biological_authorization",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "protocol_sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+  "operational_phase": "training_and_conditioning_export_complete",
+  "release_request": {
+    "path": "data/native_law_v2/granados/development/phase_b/release_request.json",
+    "sha256": "b812da162bd1962484c505bdb32d9c0d4b191e51051f1e2d64a42eab5b6ca349",
+    "bytes": 1682
+  },
+  "custody_decision": {
+    "path": "data/native_law_v2/granados/development/phase_b/custody_decision.json",
+    "sha256": "87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533",
+    "bytes": 3861,
+    "role": "operational_approval"
+  },
+  "source_asset_id": "1b38366b-7473-4ddf-9cf9-26e625533686",
+  "source_sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+  "learner_allowlist": [
+    {
+      "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/training_projection.json",
+      "sha256": "fc8000c7720e554756c90e0da79f2d0ae4a7928d5923f0efa1a2ed5823d37c9e",
+      "bytes": 7093970,
+      "role": "training_projection"
+    },
+    {
+      "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_inputs.json",
+      "sha256": "41ee2a8ce6b09cb664859873fd59fd005e31e6eaa054c3703098c91e3f790613",
+      "bytes": 4764543,
+      "role": "development_inputs"
+    }
+  ],
+  "source_binding_artifacts": [
+    {
+      "path": "data/native_law_v2/granados/development/phase_b/training_values_binding.json",
+      "sha256": "14ccf5f89e86099d8c9b8dabcdfd2090661c99049bef678630eace2d98c11906",
+      "bytes": 1540,
+      "role": "source_binding_audit"
+    },
+    {
+      "path": "data/native_law_v2/granados/development/phase_b/development_inputs_binding.json",
+      "sha256": "bc9196787637739f59fc91c70ae4760663dae2b6b86552ae445393bbd815dea7",
+      "bytes": 1493,
+      "role": "source_binding_audit"
+    }
+  ],
+  "frozen_executor_artifacts": [
+    {
+      "path": "data/native_law_v2/granados/development/phase_b/frozen_executor/native_population_development.py",
+      "sha256": "7755844db3d777fdec1c9f7fb8b4fc4168597e735182353b1c6efc5a13f3c787",
+      "bytes": 71949,
+      "role": "execution_code"
+    },
+    {
+      "path": "data/native_law_v2/granados/development/phase_b/executor_environment.json",
+      "sha256": "a650be44dced11e101115663d665a6d39254f8fd1adccd8c63b0a0752a4e4ff4",
+      "bytes": 2290,
+      "role": "execution_code"
+    }
+  ],
+  "exporter_code_artifacts": [
+    {
+      "path": "scripts/export_granados_training.py",
+      "sha256": "6447608e622c6bdd47e16f4f930f91f9297077aaccfbc5a0745b359b1bbd7159",
+      "bytes": 104189,
+      "role": "execution_code"
+    }
+  ],
+  "protocol_snapshot": {
+    "path": "data/native_law_v2/granados/development/contracts/development_protocol.json",
+    "sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+    "bytes": 47873,
+    "role": "protocol_snapshot"
+  },
+  "approved_prefix_cells_by_group": {
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep1": 50,
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2": 136,
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3": 202,
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4": 195,
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5": 156
+  },
+  "all_planned_coordinates_and_targets_available_custodian_checked": true,
+  "coverage_details": "All approved source rows, nulls and invalid entries remain in projections. Prefix exclusions and response attrition were retained in private/source_coverage.json; development response counts/values are not a learner input at this phase.",
+  "development_response_projection": null,
+  "development_prediction_freeze_received": false,
+  "development_responses_released": false,
+  "further_release_requires": "Exact complete DevelopmentPredictionFreeze, matching code/data/approval digests, all six canonical classes and 288 predictions including failures; independent source/test review before any separate response release.",
+  "exposed_biological_group_ids": [
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep1",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"
+  ],
+  "unexported_scope": "Rep6, all known rep6 aliases, all other source groups/fields/windows and normalized-only rep2. Unexported portions of rep1-rep5 are not independent holdouts; unknown cross-file aliases must inherit development exposure if later identified.",
+  "original_strong_artifact_sha256_unchanged": {
+    "data/native_law_v2/protocol.json": "e901d3985b5577d6f846229e1178062414e3220a7307b6d8ee40b0d01e9dffde",
+    "data/native_law_v2/granados_manifest.json": "b2024dfb7f19a0c63bc1b0e16a06cd70eed040f3af729d3ab1676cd4746288cc",
+    "data/native_law_v2/granados/acquisition.json": "fde8751905a9f6e9c4145dd95ce7bddeb7ff3e313feadaca9a68b26e003a588e",
+    "data/native_law_v2/granados/access_audit.json": "121a32dee02bd673e5df019a067cd30cabe471cf20a42c118e2a12bc41b31b94",
+    "data/native_law_v2/granados/eligibility_audit.json": "560ed9f29b6d65bc6b76d05cb99a28701105276c5eb49a723d32a4cc500bf0a1"
+  },
+  "strong_claim_authorized": false,
+  "final_test_defined": false,
+  "limitations": [
+    "This is a retrospective conditional mapping on the published, selected/processed cohort. The exact original export/filter/inpainting history is unresolved and may have used future observations. Neither the availability of earlier-frame features nor the original cohort is certified causally prefix-only. This limitation is not repaired by prohibiting new leakage in our own preprocessing.",
+    "All released groups have the same documented downshift. This experiment cannot identify a glucose dose-response or distinguish its biological effect from elapsed stimulus-relative time and unknown acquisition/batch history. Do not infer missing absolute clocks.",
+    "Normalized rep2 and other incompletely mapped cross-file entries are nonexported, not certified independent of these development groups. Retain unresolved alias/preparation/batch relations. If a later crosswalk identifies an alias of a released experiment, mark its biological component exposed to development rather than relabelling it unseen.",
+    "No external registry/HMAC infrastructure is provisioned by this document. Preserve the existing strong verifier and all its controls. A separate accountable custodian may approve this limited, non-authorizing development release using source replay, exact allowlists and retained operational records. Do not fabricate production keys/signatures or claim encryption, OS isolation, immutable external chronology or adversarial security."
+  ]
+}

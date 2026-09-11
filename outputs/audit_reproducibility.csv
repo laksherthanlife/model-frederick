@@ -1,0 +1,483 @@
+check,expected,actual,status,detail
+asset resolver: atp_sensor_plates(),a path or None (override: YSTWIN_ATP_SENSOR),data/atp_sensor (in-repo),PASS,
+asset resolver: biosensor_plates(),a path or None (override: YSTWIN_PLATES),absent,PASS,not on this machine; set YSTWIN_PLATES to supply it
+asset resolver: data_dir(),a path or None (override: none),data (in-repo),PASS,
+asset resolver: ec_yeast_gem(),a path or None (override: YSTWIN_EC_YEAST_GEM),data/gem/ecYeastGEM_batch.xml.gz (in-repo),PASS,
+asset resolver: crosstalk_workbook(),a path or None (override: YSTWIN_CROSSTALK_WORKBOOK),absent,PASS,not on this machine; set YSTWIN_CROSSTALK_WORKBOOK to supply it
+asset resolver: gen5_xpt_dir(),a path or None (override: YSTWIN_GEN5_XPT),absent,PASS,not on this machine; set YSTWIN_GEN5_XPT to supply it
+asset resolver: igem_results(),a path or None (override: YSTWIN_IGEM_RESULTS),absent,PASS,not on this machine; set YSTWIN_IGEM_RESULTS to supply it
+asset resolver: outputs_dir(),a path or None (override: none),outputs (in-repo),PASS,
+asset resolver: qpcr_dir(),a path or None (override: YSTWIN_QPCR),data/qpcr_repaired (in-repo),PASS,
+asset resolver: qpcr_raw_dir(),a path or None (override: YSTWIN_QPCR_RAW),absent,PASS,not on this machine; set YSTWIN_QPCR_RAW to supply it
+asset resolver: thermo_dir(),a path or None (override: YSTWIN_THERMO),data/thermo (in-repo),PASS,
+asset resolver: yeast_gem(),a path or None (override: YSTWIN_YEAST_GEM),data/gem/yeast-GEM.xml.gz (in-repo),PASS,
+override documented: YSTWIN_ATP_SENSOR,named in docs/REPRODUCING.md,named,PASS,
+override documented: YSTWIN_PLATES,named in docs/REPRODUCING.md,named,PASS,
+override documented: YSTWIN_CROSSTALK_WORKBOOK,named in docs/REPRODUCING.md,named,PASS,
+override documented: YSTWIN_EC_YEAST_GEM,named in docs/REPRODUCING.md,named,PASS,
+override documented: YSTWIN_GEN5_XPT,named in docs/REPRODUCING.md,named,PASS,
+override documented: YSTWIN_IGEM_RESULTS,named in docs/REPRODUCING.md,named,PASS,
+override documented: YSTWIN_QPCR,named in docs/REPRODUCING.md,named,PASS,
+override documented: YSTWIN_QPCR_RAW,named in docs/REPRODUCING.md,named,PASS,
+override documented: YSTWIN_THERMO,named in docs/REPRODUCING.md,named,PASS,
+override documented: YSTWIN_YEAST_GEM,named in docs/REPRODUCING.md,named,PASS,
+interpreter satisfies requires-python,>=3.11,3.14.2,PASS,
+pin matches installed: numpy [runtime],2.4.1,2.4.1,PASS,
+pin matches installed: scipy [runtime],1.17.0,1.17.0,PASS,
+pin matches installed: pandas [runtime],2.3.3,2.3.3,PASS,
+pin matches installed: openpyxl [runtime],3.1.2,3.1.2,PASS,
+pin matches installed: cobra [runtime],0.32.1,0.32.1,PASS,
+pin matches installed: pytest [dev],9.0.2,9.0.2,PASS,
+pin matches installed: matplotlib [dev],3.10.8,3.10.8,PASS,
+pin matches installed: ruff [dev],0.15.22,0.15.22,PASS,
+pin matches installed: pytfa [thermo],0.9.1,0.9.1,PASS,
+pin matches installed: equilibrator-api [thermo],0.7.0,0.7.0,PASS,
+cobra solver,an interface containing 'glpk',optlang.glpk_interface,PASS,"available: glpk, glpk_exact, scipy"
+writer map: analyse_atp_sensor.py,['atp_sensor_*.png'],['atp_sensor_*.png'],PASS,
+writer map: parked/run_d1.py,['d1_capacity_sweep_ec.csv'],['d1_capacity_sweep_ec.csv'],PASS,
+writer map: plate_readings.py,"['autofluorescence_sensitivity.csv', 'late_window_sensitivity.csv', 'sensor_characterisation.csv']","['autofluorescence_sensitivity.csv', 'late_window_sensitivity.csv', 'sensor_characterisation.csv']",PASS,
+writer map: register_prediction.py,['registered_prediction_D*.csv'],['registered_prediction_D*.csv'],PASS,
+writer map: run_calibration.py,['panel_calibration.csv'],['panel_calibration.csv'],PASS,
+writer map: run_d2.py,['d2_*__*.csv'],['d2_*.csv'],PASS,
+writer map: run_g4.py,"['g4_anchor_fold_change.csv', 'g4_reporter_response.csv', 'g4_rt_minus_qc.csv', 'g4_verdicts.csv']","['g4_anchor_fold_change.csv', 'g4_reporter_response.csv', 'g4_rt_minus_qc.csv', 'g4_verdicts.csv']",PASS,
+writer map: run_gates.py,"['d2_g1passed_*.csv', 'g1_*.csv']","['d2_g1passed_*.csv', 'g1_*.csv']",PASS,
+writer map: run_power.py,['power_analysis.csv'],['power_analysis.csv'],PASS,
+writer map: run_scenarios.py,['scenario_predictions.csv'],['scenario_predictions.csv'],PASS,
+writer map: run_sensor_characterisation.py,"['autofluorescence_sensitivity.csv', 'late_window_sensitivity.csv', 'sensor_characterisation.csv']","['autofluorescence_sensitivity.csv', 'late_window_sensitivity.csv', 'sensor_characterisation.csv']",PASS,
+writer map: run_training.py,"['stress_model_build.npz', 'stress_model_three_sensor.npz', 'stress_model_wide.npz', 'training_recovery.csv', 'training_transfer_build.csv', 'training_transfer_three_sensor.csv', 'training_transfer_wide.csv']","['stress_model_build.npz', 'stress_model_three_sensor.npz', 'stress_model_wide.npz', 'training_recovery.csv', 'training_transfer_build.csv', 'training_transfer_three_sensor.csv', 'training_transfer_wide.csv']",PASS,
+writer map: run_transfer.py,"['module_recovery.csv', 'transfer_by_stressor.csv']","['module_recovery.csv', 'transfer_by_stressor.csv']",PASS,
+output tracked: outputs/afl_circuit.csv,tracked,tracked,PASS,
+output tracked: outputs/audit_claims.csv,tracked,tracked,PASS,
+output tracked: outputs/audit_determinism.csv,tracked,tracked,PASS,
+output tracked: outputs/audit_output_tables.csv,tracked or ignored,UNTRACKED,FAIL,produced but never committed; nobody else can see it
+output tracked: outputs/audit_reproducibility.csv,tracked,tracked,PASS,
+output tracked: outputs/autofluorescence_measured.csv,tracked,tracked,PASS,
+output tracked: outputs/autofluorescence_sensitivity.csv,tracked,tracked,PASS,
+output tracked: outputs/batch_sufficiency.csv,tracked,tracked,PASS,
+output tracked: outputs/carotenoid_fit.csv,tracked or ignored,UNTRACKED,FAIL,produced but never committed; nobody else can see it
+output tracked: outputs/carotenoid_heldout.csv,tracked or ignored,UNTRACKED,FAIL,produced but never committed; nobody else can see it
+output tracked: outputs/carotenoid_parsimony.csv,tracked or ignored,UNTRACKED,FAIL,produced but never committed; nobody else can see it
+output tracked: outputs/carotenoid_strain_capacity.csv,tracked or ignored,UNTRACKED,FAIL,produced but never committed; nobody else can see it
+output tracked: outputs/condition_sweep.csv,tracked,tracked,PASS,
+output tracked: outputs/cross_family_optimism.csv,tracked,tracked,PASS,
+output tracked: outputs/cross_family_transfer.csv,tracked,tracked,PASS,
+output tracked: outputs/d1_capacity_sweep_ec.csv,tracked,tracked,PASS,
+output tracked: outputs/d2_20260701_ER_preliminary_(RAW)__mCitrine.csv,tracked,tracked,PASS,
+output tracked: outputs/d2_20260709_ER_stress_1st_(RAW)__mCitrine.csv,tracked,tracked,PASS,
+output tracked: outputs/d2_g1passed_20260701_ER_preliminary_(RAW).csv,tracked,tracked,PASS,
+output tracked: outputs/d2_g1passed_20260709_ER_stress_1st_(RAW).csv,tracked,tracked,PASS,
+output tracked: outputs/d2_g1passed_20260722_ERandOxidativeStress_NewProtocol_ANALYSED.csv,tracked,tracked,PASS,
+output tracked: outputs/d2_g1passed_20260728_ERandOxidativeStress_NewProtocol_Replicate2.csv,tracked,tracked,PASS,
+output tracked: outputs/d2_g1passed_20260803_ERandoxidativestress_Replicate3.csv,tracked,tracked,PASS,
+output tracked: outputs/env_to_product.csv,tracked,tracked,PASS,
+output tracked: outputs/env_to_product_multi.csv,tracked,tracked,PASS,
+output tracked: outputs/environment_channel.csv,tracked,tracked,PASS,
+output tracked: outputs/environment_law_scores.csv,tracked,tracked,PASS,
+output tracked: outputs/error_budget.csv,tracked,tracked,PASS,
+output tracked: outputs/estimator_accuracy.csv,tracked,tracked,PASS,
+output tracked: outputs/external_channel_response.csv,tracked,tracked,PASS,
+output tracked: outputs/external_channel_response_independent.csv,tracked,tracked,PASS,
+output tracked: outputs/external_conditions.csv,tracked,tracked,PASS,
+output tracked: outputs/external_conditions_independent.csv,tracked,tracked,PASS,
+output tracked: outputs/external_module_map.csv,tracked,tracked,PASS,
+output tracked: outputs/external_module_map_independent.csv,tracked,tracked,PASS,
+output tracked: outputs/external_module_response.csv,tracked,tracked,PASS,
+output tracked: outputs/external_module_response_independent.csv,tracked,tracked,PASS,
+output tracked: outputs/external_nulls.csv,tracked,tracked,PASS,
+output tracked: outputs/external_nulls_independent.csv,tracked,tracked,PASS,
+output tracked: outputs/external_redundancy.csv,tracked,tracked,PASS,
+output tracked: outputs/external_redundancy_independent.csv,tracked,tracked,PASS,
+output tracked: outputs/external_transfer_pairs.csv,tracked,tracked,PASS,
+output tracked: outputs/external_transfer_pairs_independent.csv,tracked,tracked,PASS,
+output tracked: outputs/fedbatch_design.csv,tracked,tracked,PASS,
+output tracked: outputs/fig01_dose_response_correction.png,tracked,tracked,PASS,
+output tracked: outputs/fig01_dose_response_correction.svg,tracked,tracked,PASS,
+output tracked: outputs/fig02_heldout_skill_vs_saturation.png,tracked,tracked,PASS,
+output tracked: outputs/fig02_heldout_skill_vs_saturation.svg,tracked,tracked,PASS,
+output tracked: outputs/fig03_transfer_honesty.png,tracked,tracked,PASS,
+output tracked: outputs/fig03_transfer_honesty.svg,tracked,tracked,PASS,
+output tracked: outputs/fig04_interval_robustness.png,tracked,tracked,PASS,
+output tracked: outputs/fig04_interval_robustness.svg,tracked,tracked,PASS,
+output tracked: outputs/figures_manifest.csv,tracked,tracked,PASS,
+output tracked: outputs/flux_experiment_design.csv,tracked,tracked,PASS,
+output tracked: outputs/flux_null_baseline.csv,tracked,tracked,PASS,
+output tracked: outputs/fold_multiplicity.csv,tracked,tracked,PASS,
+output tracked: outputs/g1_20260701_ER_preliminary_(RAW).csv,tracked,tracked,PASS,
+output tracked: outputs/g1_20260709_ER_stress_1st_(RAW).csv,tracked,tracked,PASS,
+output tracked: outputs/g1_20260722_ERandOxidativeStress_NewProtocol_ANALYSED.csv,tracked,tracked,PASS,
+output tracked: outputs/g1_20260728_ERandOxidativeStress_NewProtocol_Replicate2.csv,tracked,tracked,PASS,
+output tracked: outputs/g1_20260803_ERandoxidativestress_Replicate3.csv,tracked,tracked,PASS,
+output tracked: outputs/g4_anchor_fold_change.csv,tracked,tracked,PASS,
+output tracked: outputs/g4_reporter_response.csv,tracked,tracked,PASS,
+output tracked: outputs/g4_rt_minus_qc.csv,tracked,tracked,PASS,
+output tracked: outputs/g4_verdicts.csv,tracked,tracked,PASS,
+output tracked: outputs/gain_linearity.csv,tracked,tracked,PASS,
+output tracked: outputs/gem_environment_formulation.csv,tracked or ignored,UNTRACKED,FAIL,produced but never committed; nobody else can see it
+output tracked: outputs/gem_environment_predictions.csv,tracked,tracked,PASS,
+output tracked: outputs/gem_environment_scores.csv,tracked,tracked,PASS,
+output tracked: outputs/gem_version_diff.csv,tracked,tracked,PASS,
+output tracked: outputs/glycogen_calibration.csv,tracked,tracked,PASS,
+output tracked: outputs/heldout_interpolation_by_dose.csv,tracked,tracked,PASS,
+output tracked: outputs/heldout_scores.csv,tracked,tracked,PASS,
+output tracked: outputs/late_window_sensitivity.csv,tracked,tracked,PASS,
+output tracked: outputs/maintenance_scale.csv,tracked,tracked,PASS,
+output tracked: outputs/module_recovery.csv,tracked,tracked,PASS,
+output tracked: outputs/nis_innovations.csv,tracked,tracked,PASS,
+output tracked: outputs/nis_summary.csv,tracked,tracked,PASS,
+output tracked: outputs/panel_calibration.csv,tracked,tracked,PASS,
+output tracked: outputs/parameter_provenance.csv,tracked,tracked,PASS,
+output tracked: outputs/phb_environment_score.csv,tracked,tracked,PASS,
+output tracked: outputs/power_analysis.csv,tracked,tracked,PASS,
+output tracked: outputs/product_environment_coverage.csv,tracked,tracked,PASS,
+output tracked: outputs/product_environment_sweep.csv,tracked,tracked,PASS,
+output tracked: outputs/product_prediction.csv,tracked,tracked,PASS,
+output tracked: outputs/product_scoreboard.csv,tracked,tracked,PASS,
+output tracked: outputs/proteomics_gain.csv,tracked,tracked,PASS,
+output tracked: outputs/provenance.json,tracked,tracked,PASS,
+output tracked: outputs/registered_prediction_D018.csv,tracked,tracked,PASS,
+output tracked: outputs/regulation_counterfactual.csv,tracked,tracked,PASS,
+output tracked: outputs/regulation_depth_sweep.csv,tracked,tracked,PASS,
+output tracked: outputs/regulation_module_reach.csv,tracked,tracked,PASS,
+output tracked: outputs/regulation_product_range.csv,tracked,tracked,PASS,
+output tracked: outputs/regulation_task_priority.csv,tracked,tracked,PASS,
+output tracked: outputs/scenario_predictions.csv,tracked,tracked,PASS,
+output tracked: outputs/sensor_characterisation.csv,tracked,tracked,PASS,
+output tracked: outputs/sensor_crosstalk.csv,tracked,tracked,PASS,
+output tracked: outputs/split_manifest.csv,tracked,tracked,PASS,
+output tracked: outputs/split_manifest_summary.csv,tracked,tracked,PASS,
+output tracked: outputs/stress_diversion.csv,tracked,tracked,PASS,
+output tracked: outputs/stress_model_build.npz,tracked or ignored,ignored,PASS,
+output tracked: outputs/stress_model_three_sensor.npz,tracked or ignored,ignored,PASS,
+output tracked: outputs/stress_model_wide.npz,tracked or ignored,ignored,PASS,
+output tracked: outputs/stress_module_ledger.csv,tracked,tracked,PASS,
+output tracked: outputs/target_scoreboard.csv,tracked,tracked,PASS,
+output tracked: outputs/thiolase_threshold.csv,tracked,tracked,PASS,
+output tracked: outputs/training_recovery.csv,tracked,tracked,PASS,
+output tracked: outputs/training_transfer_build.csv,tracked,tracked,PASS,
+output tracked: outputs/training_transfer_three_sensor.csv,tracked,tracked,PASS,
+output tracked: outputs/training_transfer_wide.csv,tracked,tracked,PASS,
+output tracked: outputs/transfer_by_stressor.csv,tracked,tracked,PASS,
+table parses: outputs/afl_circuit.csv,>= 1 data row,196 rows,PASS,
+table parses: outputs/audit_claims.csv,>= 1 data row,293 rows,PASS,
+table parses: outputs/audit_determinism.csv,>= 1 data row,72 rows,PASS,
+table parses: outputs/audit_output_tables.csv,>= 1 data row,15 rows,PASS,
+table parses: outputs/audit_reproducibility.csv,>= 1 data row,482 rows,PASS,
+table parses: outputs/autofluorescence_measured.csv,>= 1 data row,30 rows,PASS,
+table parses: outputs/autofluorescence_sensitivity.csv,>= 1 data row,120 rows,PASS,
+table parses: outputs/batch_sufficiency.csv,>= 1 data row,4 rows,PASS,
+table parses: outputs/carotenoid_fit.csv,>= 1 data row,11 rows,PASS,
+table parses: outputs/carotenoid_heldout.csv,>= 1 data row,6 rows,PASS,
+table parses: outputs/carotenoid_parsimony.csv,>= 1 data row,6 rows,PASS,
+table parses: outputs/carotenoid_strain_capacity.csv,>= 1 data row,3 rows,PASS,
+table parses: outputs/condition_sweep.csv,>= 1 data row,24 rows,PASS,
+table parses: outputs/cross_family_optimism.csv,>= 1 data row,1 rows,PASS,
+table parses: outputs/cross_family_transfer.csv,>= 1 data row,7 rows,PASS,
+table parses: outputs/d1_capacity_sweep_ec.csv,>= 1 data row,6 rows,PASS,
+table parses: outputs/d2_20260701_ER_preliminary_(RAW)__mCitrine.csv,>= 1 data row,77 rows,PASS,
+table parses: outputs/d2_20260709_ER_stress_1st_(RAW)__mCitrine.csv,>= 1 data row,41 rows,PASS,
+table parses: outputs/d2_g1passed_20260701_ER_preliminary_(RAW).csv,>= 1 data row,53 rows,PASS,
+table parses: outputs/d2_g1passed_20260709_ER_stress_1st_(RAW).csv,>= 1 data row,8 rows,PASS,
+table parses: outputs/d2_g1passed_20260722_ERandOxidativeStress_NewProtocol_ANALYSED.csv,>= 1 data row,67 rows,PASS,
+table parses: outputs/d2_g1passed_20260728_ERandOxidativeStress_NewProtocol_Replicate2.csv,>= 1 data row,64 rows,PASS,
+table parses: outputs/d2_g1passed_20260803_ERandoxidativestress_Replicate3.csv,>= 1 data row,52 rows,PASS,
+table parses: outputs/env_to_product.csv,>= 1 data row,17 rows,PASS,
+table parses: outputs/env_to_product_multi.csv,>= 1 data row,50 rows,PASS,
+table parses: outputs/environment_channel.csv,>= 1 data row,7 rows,PASS,
+table parses: outputs/environment_law_scores.csv,>= 1 data row,5 rows,PASS,
+table parses: outputs/error_budget.csv,>= 1 data row,6 rows,PASS,
+table parses: outputs/estimator_accuracy.csv,>= 1 data row,30 rows,PASS,
+table parses: outputs/external_channel_response.csv,>= 1 data row,17 rows,PASS,
+table parses: outputs/external_channel_response_independent.csv,>= 1 data row,17 rows,PASS,
+table parses: outputs/external_conditions.csv,>= 1 data row,155 rows,PASS,
+table parses: outputs/external_conditions_independent.csv,>= 1 data row,155 rows,PASS,
+table parses: outputs/external_module_map.csv,>= 1 data row,24 rows,PASS,
+table parses: outputs/external_module_map_independent.csv,>= 1 data row,24 rows,PASS,
+table parses: outputs/external_module_response.csv,>= 1 data row,17 rows,PASS,
+table parses: outputs/external_module_response_independent.csv,>= 1 data row,17 rows,PASS,
+table parses: outputs/external_nulls.csv,>= 1 data row,6 rows,PASS,
+table parses: outputs/external_nulls_independent.csv,>= 1 data row,6 rows,PASS,
+table parses: outputs/external_redundancy.csv,>= 1 data row,8 rows,PASS,
+table parses: outputs/external_redundancy_independent.csv,>= 1 data row,8 rows,PASS,
+table parses: outputs/external_transfer_pairs.csv,>= 1 data row,18 rows,PASS,
+table parses: outputs/external_transfer_pairs_independent.csv,>= 1 data row,14 rows,PASS,
+table parses: outputs/fedbatch_design.csv,>= 1 data row,4 rows,PASS,
+table parses: outputs/figures_manifest.csv,>= 1 data row,4 rows,PASS,
+table parses: outputs/flux_experiment_design.csv,>= 1 data row,6 rows,PASS,
+table parses: outputs/flux_null_baseline.csv,>= 1 data row,5 rows,PASS,
+table parses: outputs/fold_multiplicity.csv,>= 1 data row,24 rows,PASS,
+table parses: outputs/g1_20260701_ER_preliminary_(RAW).csv,>= 1 data row,90 rows,PASS,
+table parses: outputs/g1_20260709_ER_stress_1st_(RAW).csv,>= 1 data row,42 rows,PASS,
+table parses: outputs/g1_20260722_ERandOxidativeStress_NewProtocol_ANALYSED.csv,>= 1 data row,84 rows,PASS,
+table parses: outputs/g1_20260728_ERandOxidativeStress_NewProtocol_Replicate2.csv,>= 1 data row,84 rows,PASS,
+table parses: outputs/g1_20260803_ERandoxidativestress_Replicate3.csv,>= 1 data row,86 rows,PASS,
+table parses: outputs/g4_anchor_fold_change.csv,>= 1 data row,36 rows,PASS,
+table parses: outputs/g4_reporter_response.csv,>= 1 data row,84 rows,PASS,
+table parses: outputs/g4_rt_minus_qc.csv,>= 1 data row,144 rows,PASS,
+table parses: outputs/g4_verdicts.csv,>= 1 data row,4 rows,PASS,
+table parses: outputs/gain_linearity.csv,>= 1 data row,243 rows,PASS,
+table parses: outputs/gem_environment_formulation.csv,>= 1 data row,7 rows,PASS,
+table parses: outputs/gem_environment_predictions.csv,>= 1 data row,16 rows,PASS,
+table parses: outputs/gem_environment_scores.csv,>= 1 data row,5 rows,PASS,
+table parses: outputs/gem_version_diff.csv,>= 1 data row,19 rows,PASS,
+table parses: outputs/glycogen_calibration.csv,>= 1 data row,3 rows,PASS,
+table parses: outputs/heldout_interpolation_by_dose.csv,>= 1 data row,6 rows,PASS,
+table parses: outputs/heldout_scores.csv,>= 1 data row,12 rows,PASS,
+table parses: outputs/late_window_sensitivity.csv,>= 1 data row,144 rows,PASS,
+table parses: outputs/maintenance_scale.csv,>= 1 data row,3 rows,PASS,
+table parses: outputs/module_recovery.csv,>= 1 data row,24 rows,PASS,
+table parses: outputs/nis_innovations.csv,>= 1 data row,15900 rows,PASS,
+table parses: outputs/nis_summary.csv,>= 1 data row,636 rows,PASS,
+table parses: outputs/panel_calibration.csv,>= 1 data row,4 rows,PASS,
+table parses: outputs/parameter_provenance.csv,>= 1 data row,15 rows,PASS,
+table parses: outputs/phb_environment_score.csv,>= 1 data row,11 rows,PASS,
+table parses: outputs/power_analysis.csv,>= 1 data row,28 rows,PASS,
+table parses: outputs/product_environment_coverage.csv,>= 1 data row,4 rows,PASS,
+table parses: outputs/product_environment_sweep.csv,>= 1 data row,216 rows,PASS,
+table parses: outputs/product_prediction.csv,>= 1 data row,6 rows,PASS,
+table parses: outputs/product_scoreboard.csv,>= 1 data row,4 rows,PASS,
+table parses: outputs/proteomics_gain.csv,>= 1 data row,6 rows,PASS,
+table parses: outputs/registered_prediction_D018.csv,>= 1 data row,3 rows,PASS,
+table parses: outputs/regulation_counterfactual.csv,>= 1 data row,8 rows,PASS,
+table parses: outputs/regulation_depth_sweep.csv,>= 1 data row,8 rows,PASS,
+table parses: outputs/regulation_module_reach.csv,>= 1 data row,24 rows,PASS,
+table parses: outputs/regulation_product_range.csv,>= 1 data row,28 rows,PASS,
+table parses: outputs/regulation_task_priority.csv,>= 1 data row,2 rows,PASS,
+table parses: outputs/scenario_predictions.csv,>= 1 data row,56 rows,PASS,
+table parses: outputs/sensor_characterisation.csv,>= 1 data row,335 rows,PASS,
+table parses: outputs/sensor_crosstalk.csv,>= 1 data row,28 rows,PASS,
+table parses: outputs/split_manifest.csv,>= 1 data row,2616 rows,PASS,
+table parses: outputs/split_manifest_summary.csv,>= 1 data row,51 rows,PASS,
+table parses: outputs/stress_diversion.csv,>= 1 data row,60 rows,PASS,
+table parses: outputs/stress_module_ledger.csv,>= 1 data row,48 rows,PASS,
+table parses: outputs/target_scoreboard.csv,>= 1 data row,5 rows,PASS,
+table parses: outputs/thiolase_threshold.csv,>= 1 data row,6 rows,PASS,
+table parses: outputs/training_recovery.csv,>= 1 data row,24 rows,PASS,
+table parses: outputs/training_transfer_build.csv,>= 1 data row,25 rows,PASS,
+table parses: outputs/training_transfer_three_sensor.csv,>= 1 data row,25 rows,PASS,
+table parses: outputs/training_transfer_wide.csv,>= 1 data row,25 rows,PASS,
+table parses: outputs/transfer_by_stressor.csv,>= 1 data row,12 rows,PASS,
+output not older than its code: outputs/afl_circuit.csv,at least as new as scripts/score_afl_circuit.py and the 7 ystwin modules it reaches,74.3 h stale,SKIP,"74.3 h stale and NOT REBUILDABLE HERE: scripts/score_afl_circuit.py needs ['gen5_xpt_dir'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/audit_claims.csv,at least as new as scripts/audit_claims.py and the 0 ystwin modules it reaches,current,PASS,
+output not older than its code: outputs/audit_determinism.csv,at least as new as scripts/audit_determinism.py and the 24 ystwin modules it reaches and the 1 outputs/ table(s) it reads,current,PASS,
+output not older than its code: outputs/audit_output_tables.csv,at least as new as scripts/audit_output_tables.py and the 2 ystwin modules it reaches,0.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/audit_output_tables.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/audit_reproducibility.csv,at least as new as scripts/audit_reproducibility.py and the 3 ystwin modules it reaches and the 1 outputs/ table(s) it reads,current,PASS,
+output not older than its code: outputs/autofluorescence_measured.csv,at least as new as scripts/measure_autofluorescence.py and the 5 ystwin modules it reaches,74.3 h stale,SKIP,"74.3 h stale and NOT REBUILDABLE HERE: scripts/measure_autofluorescence.py needs ['gen5_xpt_dir'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/autofluorescence_sensitivity.csv,at least as new as scripts/plate_readings.py and the 7 ystwin modules it reaches and the 1 outputs/ table(s) it reads,59.0 h stale,SKIP,"59.0 h stale and NOT REBUILDABLE HERE: scripts/plate_readings.py needs ['biosensor_plates', 'gen5_xpt_dir', 'igem_results'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/autofluorescence_sensitivity.csv,at least as new as scripts/run_sensor_characterisation.py and the 11 ystwin modules it reaches,59.0 h stale,SKIP,"59.0 h stale and NOT REBUILDABLE HERE: scripts/run_sensor_characterisation.py needs ['biosensor_plates'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/batch_sufficiency.csv,at least as new as scripts/batch_sufficiency.py and the 8 ystwin modules it reaches,22.7 h stale,FAIL,src/ystwin/pathway/spec.py changed after this table was written; re-run scripts/batch_sufficiency.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/carotenoid_fit.csv,at least as new as scripts/fit_carotenoid_kinetics.py and the 3 ystwin modules it reaches,0.8 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/fit_carotenoid_kinetics.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/carotenoid_heldout.csv,at least as new as scripts/fit_carotenoid_kinetics.py and the 3 ystwin modules it reaches,0.8 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/fit_carotenoid_kinetics.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/carotenoid_parsimony.csv,at least as new as scripts/fit_carotenoid_kinetics.py and the 3 ystwin modules it reaches,0.8 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/fit_carotenoid_kinetics.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/carotenoid_strain_capacity.csv,at least as new as scripts/fit_carotenoid_kinetics.py and the 3 ystwin modules it reaches,0.8 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/fit_carotenoid_kinetics.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/condition_sweep.csv,at least as new as scripts/sweep_conditions.py and the 27 ystwin modules it reaches,47.8 h stale,FAIL,src/ystwin/predict.py changed after this table was written; re-run scripts/sweep_conditions.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/cross_family_optimism.csv,at least as new as scripts/run_cross_family.py and the 17 ystwin modules it reaches,74.2 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_cross_family.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/cross_family_transfer.csv,at least as new as scripts/run_cross_family.py and the 17 ystwin modules it reaches,74.2 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_cross_family.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/d1_capacity_sweep_ec.csv,at least as new as scripts/parked/run_d1.py and the 6 ystwin modules it reaches,74.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/parked/run_d1.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/d2_20260701_ER_preliminary_(RAW)__mCitrine.csv,at least as new as scripts/run_d2.py and the 9 ystwin modules it reaches,74.3 h stale,SKIP,"74.3 h stale and NOT REBUILDABLE HERE: scripts/run_d2.py needs ['igem_results'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/d2_20260709_ER_stress_1st_(RAW)__mCitrine.csv,at least as new as scripts/run_d2.py and the 9 ystwin modules it reaches,74.3 h stale,SKIP,"74.3 h stale and NOT REBUILDABLE HERE: scripts/run_d2.py needs ['igem_results'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/d2_g1passed_20260701_ER_preliminary_(RAW).csv,at least as new as scripts/run_gates.py and the 10 ystwin modules it reaches,74.4 h stale,SKIP,"74.4 h stale and NOT REBUILDABLE HERE: scripts/run_gates.py needs ['biosensor_plates', 'igem_results'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/d2_g1passed_20260709_ER_stress_1st_(RAW).csv,at least as new as scripts/run_gates.py and the 10 ystwin modules it reaches,74.4 h stale,SKIP,"74.4 h stale and NOT REBUILDABLE HERE: scripts/run_gates.py needs ['biosensor_plates', 'igem_results'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/d2_g1passed_20260722_ERandOxidativeStress_NewProtocol_ANALYSED.csv,at least as new as scripts/run_gates.py and the 10 ystwin modules it reaches,74.4 h stale,SKIP,"74.4 h stale and NOT REBUILDABLE HERE: scripts/run_gates.py needs ['biosensor_plates', 'igem_results'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/d2_g1passed_20260728_ERandOxidativeStress_NewProtocol_Replicate2.csv,at least as new as scripts/run_gates.py and the 10 ystwin modules it reaches,74.4 h stale,SKIP,"74.4 h stale and NOT REBUILDABLE HERE: scripts/run_gates.py needs ['biosensor_plates', 'igem_results'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/d2_g1passed_20260803_ERandoxidativestress_Replicate3.csv,at least as new as scripts/run_gates.py and the 10 ystwin modules it reaches,74.4 h stale,SKIP,"74.4 h stale and NOT REBUILDABLE HERE: scripts/run_gates.py needs ['biosensor_plates', 'igem_results'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/env_to_product.csv,at least as new as scripts/env_to_product.py and the 28 ystwin modules it reaches,12.3 h stale,FAIL,src/ystwin/predict.py changed after this table was written; re-run scripts/env_to_product.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/env_to_product_multi.csv,at least as new as scripts/env_to_product_multi.py and the 2 ystwin modules it reaches,21.2 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/env_to_product_multi.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/environment_channel.csv,at least as new as scripts/environment_channel.py and the 3 ystwin modules it reaches,0.5 h stale,FAIL,src/ystwin/pathway/environment_flux.py changed after this table was written; re-run scripts/environment_channel.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/environment_law_scores.csv,at least as new as scripts/environment_channel.py and the 3 ystwin modules it reaches,current,PASS,
+output not older than its code: outputs/error_budget.csv,at least as new as scripts/error_budget.py and the 3 ystwin modules it reaches,1.8 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/error_budget.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/estimator_accuracy.csv,at least as new as scripts/estimator_accuracy.py and the 5 ystwin modules it reaches,74.3 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/estimator_accuracy.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/external_channel_response.csv,at least as new as scripts/run_external_validation.py and the 15 ystwin modules it reaches,74.1 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_external_validation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/external_channel_response_independent.csv,at least as new as scripts/run_external_validation.py and the 15 ystwin modules it reaches,74.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_external_validation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/external_conditions.csv,at least as new as scripts/run_external_validation.py and the 15 ystwin modules it reaches,74.1 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_external_validation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/external_conditions_independent.csv,at least as new as scripts/run_external_validation.py and the 15 ystwin modules it reaches,74.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_external_validation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/external_module_map.csv,at least as new as scripts/run_external_validation.py and the 15 ystwin modules it reaches,74.1 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_external_validation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/external_module_map_independent.csv,at least as new as scripts/run_external_validation.py and the 15 ystwin modules it reaches,74.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_external_validation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/external_module_response.csv,at least as new as scripts/run_external_validation.py and the 15 ystwin modules it reaches,74.1 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_external_validation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/external_module_response_independent.csv,at least as new as scripts/run_external_validation.py and the 15 ystwin modules it reaches,74.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_external_validation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/external_nulls.csv,at least as new as scripts/run_external_validation.py and the 15 ystwin modules it reaches,74.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_external_validation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/external_nulls_independent.csv,at least as new as scripts/run_external_validation.py and the 15 ystwin modules it reaches,74.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_external_validation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/external_redundancy.csv,at least as new as scripts/run_external_validation.py and the 15 ystwin modules it reaches,74.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_external_validation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/external_redundancy_independent.csv,at least as new as scripts/run_external_validation.py and the 15 ystwin modules it reaches,74.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_external_validation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/external_transfer_pairs.csv,at least as new as scripts/run_external_validation.py and the 15 ystwin modules it reaches,74.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_external_validation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/external_transfer_pairs_independent.csv,at least as new as scripts/run_external_validation.py and the 15 ystwin modules it reaches,74.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_external_validation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/fedbatch_design.csv,at least as new as scripts/design_fedbatch_run.py and the 3 ystwin modules it reaches,12.2 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/design_fedbatch_run.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/fig01_dose_response_correction.png,at least as new as scripts/make_figures.py and the 18 ystwin modules it reaches,59.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/make_figures.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/fig01_dose_response_correction.svg,at least as new as scripts/make_figures.py and the 18 ystwin modules it reaches,59.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/make_figures.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/fig02_heldout_skill_vs_saturation.png,at least as new as scripts/make_figures.py and the 18 ystwin modules it reaches,59.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/make_figures.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/fig02_heldout_skill_vs_saturation.svg,at least as new as scripts/make_figures.py and the 18 ystwin modules it reaches,59.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/make_figures.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/fig03_transfer_honesty.png,at least as new as scripts/make_figures.py and the 18 ystwin modules it reaches,74.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/make_figures.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/fig03_transfer_honesty.svg,at least as new as scripts/make_figures.py and the 18 ystwin modules it reaches,74.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/make_figures.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/fig04_interval_robustness.png,at least as new as scripts/make_figures.py and the 18 ystwin modules it reaches,59.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/make_figures.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/fig04_interval_robustness.svg,at least as new as scripts/make_figures.py and the 18 ystwin modules it reaches,59.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/make_figures.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/figures_manifest.csv,at least as new as scripts/make_figures.py and the 18 ystwin modules it reaches,74.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/make_figures.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/flux_experiment_design.csv,at least as new as scripts/design_flux_experiment.py and the 7 ystwin modules it reaches,59.0 h stale,FAIL,src/ystwin/pathway/spec.py changed after this table was written; re-run scripts/design_flux_experiment.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/flux_null_baseline.csv,at least as new as scripts/flux_null_baseline.py and the 2 ystwin modules it reaches,75.9 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/flux_null_baseline.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/fold_multiplicity.csv,at least as new as scripts/fold_multiplicity.py and the 8 ystwin modules it reaches and the 1 outputs/ table(s) it reads,12.4 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/fold_multiplicity.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/g1_20260701_ER_preliminary_(RAW).csv,at least as new as scripts/run_gates.py and the 10 ystwin modules it reaches,74.4 h stale,SKIP,"74.4 h stale and NOT REBUILDABLE HERE: scripts/run_gates.py needs ['biosensor_plates', 'igem_results'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/g1_20260709_ER_stress_1st_(RAW).csv,at least as new as scripts/run_gates.py and the 10 ystwin modules it reaches,74.4 h stale,SKIP,"74.4 h stale and NOT REBUILDABLE HERE: scripts/run_gates.py needs ['biosensor_plates', 'igem_results'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/g1_20260722_ERandOxidativeStress_NewProtocol_ANALYSED.csv,at least as new as scripts/run_gates.py and the 10 ystwin modules it reaches,74.4 h stale,SKIP,"74.4 h stale and NOT REBUILDABLE HERE: scripts/run_gates.py needs ['biosensor_plates', 'igem_results'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/g1_20260728_ERandOxidativeStress_NewProtocol_Replicate2.csv,at least as new as scripts/run_gates.py and the 10 ystwin modules it reaches,74.4 h stale,SKIP,"74.4 h stale and NOT REBUILDABLE HERE: scripts/run_gates.py needs ['biosensor_plates', 'igem_results'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/g1_20260803_ERandoxidativestress_Replicate3.csv,at least as new as scripts/run_gates.py and the 10 ystwin modules it reaches,74.4 h stale,SKIP,"74.4 h stale and NOT REBUILDABLE HERE: scripts/run_gates.py needs ['biosensor_plates', 'igem_results'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/g4_anchor_fold_change.csv,at least as new as scripts/run_g4.py and the 9 ystwin modules it reaches,75.9 h stale,SKIP,"75.9 h stale and NOT REBUILDABLE HERE: scripts/run_g4.py needs ['biosensor_plates', 'qpcr_raw_dir'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/g4_reporter_response.csv,at least as new as scripts/run_g4.py and the 9 ystwin modules it reaches,75.9 h stale,SKIP,"75.9 h stale and NOT REBUILDABLE HERE: scripts/run_g4.py needs ['biosensor_plates', 'qpcr_raw_dir'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/g4_rt_minus_qc.csv,at least as new as scripts/run_g4.py and the 9 ystwin modules it reaches,75.9 h stale,SKIP,"75.9 h stale and NOT REBUILDABLE HERE: scripts/run_g4.py needs ['biosensor_plates', 'qpcr_raw_dir'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/g4_verdicts.csv,at least as new as scripts/run_g4.py and the 9 ystwin modules it reaches,75.9 h stale,SKIP,"75.9 h stale and NOT REBUILDABLE HERE: scripts/run_g4.py needs ['biosensor_plates', 'qpcr_raw_dir'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/gain_linearity.csv,at least as new as scripts/score_gain_linearity.py and the 6 ystwin modules it reaches,74.3 h stale,SKIP,"74.3 h stale and NOT REBUILDABLE HERE: scripts/score_gain_linearity.py needs ['gen5_xpt_dir'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/gem_environment_formulation.csv,at least as new as scripts/gem_environment_predictions.py and the 5 ystwin modules it reaches,0.6 h stale,FAIL,src/ystwin/pathway/spec.py changed after this table was written; re-run scripts/gem_environment_predictions.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/gem_environment_predictions.csv,at least as new as scripts/gem_environment_predictions.py and the 5 ystwin modules it reaches,current,PASS,
+output not older than its code: outputs/gem_environment_scores.csv,at least as new as scripts/gem_environment_predictions.py and the 5 ystwin modules it reaches,0.6 h stale,FAIL,src/ystwin/pathway/spec.py changed after this table was written; re-run scripts/gem_environment_predictions.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/gem_version_diff.csv,at least as new as scripts/gem_version_diff.py and the 2 ystwin modules it reaches,35.7 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/gem_version_diff.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/glycogen_calibration.csv,at least as new as scripts/calibrate_glycogen.py and the 4 ystwin modules it reaches,64.3 h stale,FAIL,src/ystwin/pathway/spec.py changed after this table was written; re-run scripts/calibrate_glycogen.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/heldout_interpolation_by_dose.csv,at least as new as scripts/run_heldout_score.py and the 11 ystwin modules it reaches,59.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_heldout_score.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/heldout_scores.csv,at least as new as scripts/run_heldout_score.py and the 11 ystwin modules it reaches,59.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_heldout_score.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/late_window_sensitivity.csv,at least as new as scripts/plate_readings.py and the 7 ystwin modules it reaches and the 1 outputs/ table(s) it reads,59.0 h stale,SKIP,"59.0 h stale and NOT REBUILDABLE HERE: scripts/plate_readings.py needs ['biosensor_plates', 'gen5_xpt_dir', 'igem_results'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/late_window_sensitivity.csv,at least as new as scripts/run_sensor_characterisation.py and the 11 ystwin modules it reaches,59.0 h stale,SKIP,"59.0 h stale and NOT REBUILDABLE HERE: scripts/run_sensor_characterisation.py needs ['biosensor_plates'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/maintenance_scale.csv,at least as new as scripts/maintenance_scale.py and the 7 ystwin modules it reaches,43.4 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/maintenance_scale.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/module_recovery.csv,at least as new as scripts/run_transfer.py and the 17 ystwin modules it reaches,74.2 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_transfer.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/nis_innovations.csv,at least as new as scripts/run_calibration_nis.py and the 11 ystwin modules it reaches,59.0 h stale,SKIP,"59.0 h stale and NOT REBUILDABLE HERE: scripts/run_calibration_nis.py needs ['biosensor_plates'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/nis_summary.csv,at least as new as scripts/run_calibration_nis.py and the 11 ystwin modules it reaches,59.0 h stale,SKIP,"59.0 h stale and NOT REBUILDABLE HERE: scripts/run_calibration_nis.py needs ['biosensor_plates'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/panel_calibration.csv,at least as new as scripts/run_calibration.py and the 5 ystwin modules it reaches and the 1 outputs/ table(s) it reads,59.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_calibration.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/parameter_provenance.csv,at least as new as scripts/parameter_provenance.py and the 16 ystwin modules it reaches,47.7 h stale,FAIL,src/ystwin/pathway/spec.py changed after this table was written; re-run scripts/parameter_provenance.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/phb_environment_score.csv,at least as new as scripts/score_phb_environment.py and the 2 ystwin modules it reaches,current,PASS,
+output not older than its code: outputs/power_analysis.csv,at least as new as scripts/run_power.py and the 12 ystwin modules it reaches,74.3 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_power.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/product_environment_coverage.csv,at least as new as scripts/product_environment_sweep.py and the 28 ystwin modules it reaches,42.2 h stale,FAIL,src/ystwin/predict.py changed after this table was written; re-run scripts/product_environment_sweep.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/product_environment_sweep.csv,at least as new as scripts/product_environment_sweep.py and the 28 ystwin modules it reaches,42.2 h stale,FAIL,src/ystwin/predict.py changed after this table was written; re-run scripts/product_environment_sweep.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/product_prediction.csv,at least as new as scripts/predict_product.py and the 28 ystwin modules it reaches,12.0 h stale,FAIL,src/ystwin/predict.py changed after this table was written; re-run scripts/predict_product.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/product_scoreboard.csv,at least as new as scripts/score_all_products.py and the 5 ystwin modules it reaches and the 1 outputs/ table(s) it reads,12.0 h stale,FAIL,src/ystwin/pathway/spec.py changed after this table was written; re-run scripts/score_all_products.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/proteomics_gain.csv,at least as new as scripts/simulate_proteomics_gain.py and the 3 ystwin modules it reaches,current,PASS,
+output not older than its code: outputs/provenance.json,at least as new as scripts/audit_reproducibility.py and the 3 ystwin modules it reaches and the 1 outputs/ table(s) it reads,59.0 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/audit_reproducibility.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/registered_prediction_D018.csv,at least as new as scripts/register_prediction.py and the 27 ystwin modules it reaches,74.3 h stale,FAIL,src/ystwin/predict.py changed after this table was written; re-run scripts/register_prediction.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/regulation_counterfactual.csv,at least as new as scripts/run_regulation.py and the 8 ystwin modules it reaches,74.1 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_regulation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/regulation_depth_sweep.csv,at least as new as scripts/run_regulation.py and the 8 ystwin modules it reaches,74.1 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_regulation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/regulation_module_reach.csv,at least as new as scripts/run_regulation.py and the 8 ystwin modules it reaches,74.1 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_regulation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/regulation_product_range.csv,at least as new as scripts/run_regulation.py and the 8 ystwin modules it reaches,74.1 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_regulation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/regulation_task_priority.csv,at least as new as scripts/run_regulation.py and the 8 ystwin modules it reaches,74.1 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_regulation.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/scenario_predictions.csv,at least as new as scripts/run_scenarios.py and the 15 ystwin modules it reaches,74.1 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_scenarios.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/sensor_characterisation.csv,at least as new as scripts/plate_readings.py and the 6 ystwin modules it reaches,59.0 h stale,SKIP,"59.0 h stale and NOT REBUILDABLE HERE: scripts/plate_readings.py needs ['biosensor_plates', 'gen5_xpt_dir', 'igem_results'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/sensor_characterisation.csv,at least as new as scripts/run_sensor_characterisation.py and the 11 ystwin modules it reaches,59.0 h stale,SKIP,"59.0 h stale and NOT REBUILDABLE HERE: scripts/run_sensor_characterisation.py needs ['biosensor_plates'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/sensor_crosstalk.csv,at least as new as scripts/score_sensor_crosstalk.py and the 2 ystwin modules it reaches,75.9 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/score_sensor_crosstalk.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/split_manifest.csv,at least as new as scripts/make_splits.py and the 16 ystwin modules it reaches,74.3 h stale,SKIP,"74.3 h stale and NOT REBUILDABLE HERE: scripts/make_splits.py needs ['biosensor_plates'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/split_manifest_summary.csv,at least as new as scripts/make_splits.py and the 17 ystwin modules it reaches and the 1 outputs/ table(s) it reads,74.3 h stale,SKIP,"74.3 h stale and NOT REBUILDABLE HERE: scripts/make_splits.py needs ['biosensor_plates'], which resolve to nothing on this machine. src/ystwin/paths.py changed after the table was written, so it may describe behaviour the code no longer has -- but re-running here would replace it with a table built from partial inputs, which the script itself refuses to do. Supply the data, or treat the table as the record of the machine that had it"
+output not older than its code: outputs/stress_diversion.csv,at least as new as scripts/stress_diversion_scan.py and the 4 ystwin modules it reaches,22.8 h stale,FAIL,src/ystwin/pathway/spec.py changed after this table was written; re-run scripts/stress_diversion_scan.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/stress_model_build.npz,at least as new as scripts/run_training.py and the 18 ystwin modules it reaches and the 1 outputs/ table(s) it reads,74.2 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_training.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/stress_model_three_sensor.npz,at least as new as scripts/run_training.py and the 18 ystwin modules it reaches and the 1 outputs/ table(s) it reads,74.2 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_training.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/stress_model_wide.npz,at least as new as scripts/run_training.py and the 18 ystwin modules it reaches and the 1 outputs/ table(s) it reads,74.2 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_training.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/stress_module_ledger.csv,at least as new as scripts/env_to_product_multi.py and the 2 ystwin modules it reaches,21.2 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/env_to_product_multi.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/target_scoreboard.csv,at least as new as scripts/score_targets.py and the 3 ystwin modules it reaches,74.4 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/score_targets.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/thiolase_threshold.csv,at least as new as scripts/thiolase_threshold.py and the 4 ystwin modules it reaches,12.1 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/thiolase_threshold.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/training_recovery.csv,at least as new as scripts/run_training.py and the 18 ystwin modules it reaches and the 1 outputs/ table(s) it reads,74.2 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_training.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/training_transfer_build.csv,at least as new as scripts/run_training.py and the 18 ystwin modules it reaches and the 1 outputs/ table(s) it reads,74.2 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_training.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/training_transfer_three_sensor.csv,at least as new as scripts/run_training.py and the 18 ystwin modules it reaches and the 1 outputs/ table(s) it reads,74.2 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_training.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/training_transfer_wide.csv,at least as new as scripts/run_training.py and the 18 ystwin modules it reaches and the 1 outputs/ table(s) it reads,74.2 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_training.py or the table describes behaviour the code no longer has
+output not older than its code: outputs/transfer_by_stressor.csv,at least as new as scripts/run_transfer.py and the 17 ystwin modules it reaches,74.2 h stale,FAIL,src/ystwin/paths.py changed after this table was written; re-run scripts/run_transfer.py or the table describes behaviour the code no longer has
+provenance matches code: outputs/afl_circuit.csv,1cc13db7cf82b28f,30d7e4c9e5782516,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/audit_claims.csv,ea281d91ad8a307f,8dbd9d625c865edb,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/audit_determinism.csv,75439b8ce5823260,66c3b24933a74d44,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance stamped: outputs/audit_output_tables.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance matches code: outputs/audit_reproducibility.csv,8a71555603fcdae5,facf0cc6f733017e,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/autofluorescence_measured.csv,605a3d6c62fb4f50,b5e08a69ee4b8734,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/autofluorescence_sensitivity.csv,4bdbf5232ff0bfbe,14ff1d521efd5353,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance stamped: outputs/batch_sufficiency.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance stamped: outputs/carotenoid_fit.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance stamped: outputs/carotenoid_heldout.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance stamped: outputs/carotenoid_parsimony.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance stamped: outputs/carotenoid_strain_capacity.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance matches code: outputs/condition_sweep.csv,fc21f0d6db55afa4,8876289a0b57a486,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/cross_family_optimism.csv,7cc0a9ec1e964e6e,c1bc38554c55c319,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/cross_family_transfer.csv,7cc0a9ec1e964e6e,c1bc38554c55c319,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/d1_capacity_sweep_ec.csv,b4af203e37aa25f9,84a205cbfb7db87f,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/d2_20260701_ER_preliminary_(RAW)__mCitrine.csv,43005c0d1ec2944d,a753d2b25b2c9416,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/d2_20260709_ER_stress_1st_(RAW)__mCitrine.csv,43005c0d1ec2944d,a753d2b25b2c9416,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/d2_g1passed_20260701_ER_preliminary_(RAW).csv,78266a7f7523428e,2d2e6da5c04eabaa,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/d2_g1passed_20260709_ER_stress_1st_(RAW).csv,78266a7f7523428e,2d2e6da5c04eabaa,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/d2_g1passed_20260722_ERandOxidativeStress_NewProtocol_ANALYSED.csv,78266a7f7523428e,2d2e6da5c04eabaa,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/d2_g1passed_20260728_ERandOxidativeStress_NewProtocol_Replicate2.csv,78266a7f7523428e,2d2e6da5c04eabaa,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/d2_g1passed_20260803_ERandoxidativestress_Replicate3.csv,78266a7f7523428e,2d2e6da5c04eabaa,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance stamped: outputs/env_to_product.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance stamped: outputs/env_to_product_multi.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance stamped: outputs/environment_channel.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance stamped: outputs/environment_law_scores.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance stamped: outputs/error_budget.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance matches code: outputs/estimator_accuracy.csv,bd234b3515699924,30a4327dc824785a,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/external_channel_response.csv,f863ae26aaa79774,5c2eecc0ad8aa253,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/external_channel_response_independent.csv,f863ae26aaa79774,5c2eecc0ad8aa253,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/external_conditions.csv,f863ae26aaa79774,5c2eecc0ad8aa253,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/external_conditions_independent.csv,f863ae26aaa79774,5c2eecc0ad8aa253,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/external_module_map.csv,f863ae26aaa79774,5c2eecc0ad8aa253,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/external_module_map_independent.csv,f863ae26aaa79774,5c2eecc0ad8aa253,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/external_module_response.csv,f863ae26aaa79774,5c2eecc0ad8aa253,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/external_module_response_independent.csv,f863ae26aaa79774,5c2eecc0ad8aa253,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/external_nulls.csv,f863ae26aaa79774,5c2eecc0ad8aa253,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/external_nulls_independent.csv,f863ae26aaa79774,5c2eecc0ad8aa253,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/external_redundancy.csv,f863ae26aaa79774,5c2eecc0ad8aa253,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/external_redundancy_independent.csv,f863ae26aaa79774,5c2eecc0ad8aa253,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/external_transfer_pairs.csv,f863ae26aaa79774,5c2eecc0ad8aa253,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/external_transfer_pairs_independent.csv,f863ae26aaa79774,5c2eecc0ad8aa253,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance stamped: outputs/fedbatch_design.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance matches code: outputs/fig01_dose_response_correction.png,983dfb745a5f5d04,dee477122b24044b,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/fig01_dose_response_correction.svg,983dfb745a5f5d04,dee477122b24044b,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/fig02_heldout_skill_vs_saturation.png,983dfb745a5f5d04,dee477122b24044b,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/fig02_heldout_skill_vs_saturation.svg,983dfb745a5f5d04,dee477122b24044b,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/fig03_transfer_honesty.png,983dfb745a5f5d04,dee477122b24044b,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/fig03_transfer_honesty.svg,983dfb745a5f5d04,dee477122b24044b,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/fig04_interval_robustness.png,983dfb745a5f5d04,dee477122b24044b,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/fig04_interval_robustness.svg,983dfb745a5f5d04,dee477122b24044b,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/figures_manifest.csv,983dfb745a5f5d04,dee477122b24044b,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/flux_experiment_design.csv,522340b141cc7d0d,241e279d9afc0c2c,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/flux_null_baseline.csv,142315568be7045b,04e35b6601171560,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/fold_multiplicity.csv,63cc53eedd17498e,701164c1907da983,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/g1_20260701_ER_preliminary_(RAW).csv,78266a7f7523428e,2d2e6da5c04eabaa,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/g1_20260709_ER_stress_1st_(RAW).csv,78266a7f7523428e,2d2e6da5c04eabaa,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/g1_20260722_ERandOxidativeStress_NewProtocol_ANALYSED.csv,78266a7f7523428e,2d2e6da5c04eabaa,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/g1_20260728_ERandOxidativeStress_NewProtocol_Replicate2.csv,78266a7f7523428e,2d2e6da5c04eabaa,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/g1_20260803_ERandoxidativestress_Replicate3.csv,78266a7f7523428e,2d2e6da5c04eabaa,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/g4_anchor_fold_change.csv,e15c9435826d971b,7034a72039f9dc81,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/g4_reporter_response.csv,e15c9435826d971b,7034a72039f9dc81,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/g4_rt_minus_qc.csv,e15c9435826d971b,7034a72039f9dc81,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/g4_verdicts.csv,e15c9435826d971b,7034a72039f9dc81,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/gain_linearity.csv,983795eb3c694233,8cb3b174b431f608,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance stamped: outputs/gem_environment_formulation.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance stamped: outputs/gem_environment_predictions.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance stamped: outputs/gem_environment_scores.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance stamped: outputs/gem_version_diff.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance stamped: outputs/glycogen_calibration.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance matches code: outputs/heldout_interpolation_by_dose.csv,f2a08f978e5414e7,d012a9b3f05218bb,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/heldout_scores.csv,f2a08f978e5414e7,d012a9b3f05218bb,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/late_window_sensitivity.csv,4bdbf5232ff0bfbe,14ff1d521efd5353,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance stamped: outputs/maintenance_scale.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance matches code: outputs/module_recovery.csv,c9095bd420dfe114,a30c9f0adb8e7021,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/nis_innovations.csv,eadd2b66341aa70d,31a0725cc0b02bb5,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/nis_summary.csv,eadd2b66341aa70d,31a0725cc0b02bb5,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/panel_calibration.csv,d7ef153edf7e8f94,e0d929fb643ba0a1,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance stamped: outputs/parameter_provenance.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance matches code: outputs/phb_environment_score.csv,24f9ea946d404d9c,5a925b9a21459d47,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/power_analysis.csv,ef632de3fe4702e2,17ab31cb7c6eaa25,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance stamped: outputs/product_environment_coverage.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance stamped: outputs/product_environment_sweep.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance matches code: outputs/product_prediction.csv,2e569891c1a65595,d5f25616046ce290,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/product_scoreboard.csv,79b433f3335b5eac,da834b28ebee5465,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance stamped: outputs/proteomics_gain.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance matches code: outputs/registered_prediction_D018.csv,229fb5207e63a478,9529b2e6dd47c56c,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/regulation_counterfactual.csv,fa09eee8c837d055,b1821a717c3e6870,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/regulation_depth_sweep.csv,fa09eee8c837d055,b1821a717c3e6870,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/regulation_module_reach.csv,fa09eee8c837d055,b1821a717c3e6870,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/regulation_product_range.csv,fa09eee8c837d055,b1821a717c3e6870,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/regulation_task_priority.csv,fa09eee8c837d055,b1821a717c3e6870,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/scenario_predictions.csv,98117b93aa25fe44,4939229e3bbdf515,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/sensor_characterisation.csv,f1402a33f1a5fee4,8bd9f296edd21183,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/sensor_crosstalk.csv,0e0df4476e7174b9,81d950320cc48792,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/split_manifest.csv,d03a547d79a3277f,ba57f333b63d7e8a,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/split_manifest_summary.csv,5080795f456e4c82,203792684ba1ba73,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance stamped: outputs/stress_diversion.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance matches code: outputs/stress_model_build.npz,69bd793b1f59fa70,d548fc234a224666,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/stress_model_three_sensor.npz,69bd793b1f59fa70,d548fc234a224666,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/stress_model_wide.npz,69bd793b1f59fa70,d548fc234a224666,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance stamped: outputs/stress_module_ledger.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance stamped: outputs/target_scoreboard.csv,a digest,unstamped,PASS,new table; re-stamp to bring it under the check
+provenance matches code: outputs/thiolase_threshold.csv,597f9472dfca4f7d,bc37376573179bbc,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/training_recovery.csv,69bd793b1f59fa70,d548fc234a224666,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/training_transfer_build.csv,69bd793b1f59fa70,d548fc234a224666,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/training_transfer_three_sensor.csv,69bd793b1f59fa70,d548fc234a224666,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/training_transfer_wide.csv,69bd793b1f59fa70,d548fc234a224666,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+provenance matches code: outputs/transfer_by_stressor.csv,c9095bd420dfe114,a30c9f0adb8e7021,FAIL,"the code that writes this table has changed since the table was last built. Re-run the script, then --restamp. An mtime check cannot see this after a clone"
+suite passes with no real data,"0 failed, 0 errors",not run,SKIP,costs a full suite run twice; pass --offline-suite

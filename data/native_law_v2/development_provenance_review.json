@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "document_type": "independent_non_authorizing_development_source_review",
+  "review_id": "granados-sfp1-development-provenance-01",
+  "review_revision": "current_phase_b_scalar_replay",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "review_state": "current_source_release_verified_executor_admission_separate",
+  "limited_projection_verdict": "PASS",
+  "source_release_verdict": "PASS",
+  "verdict_scope": "The current phase-B training and development-prefix/timing projections pass exact approved source-scalar, pointer, schema, inventory and transformation replay. This is not a verdict on model performance, prospective validation, or biological-law readiness. Current executor-refresh admission is assessed separately below.",
+  "blocked_source_fields": [],
+  "source_data_incompatibility_found": false,
+  "strong_biological_claim_authorized": false,
+  "prospective_validation_claim_authorized": false,
+  "development_response_release_authorized_by_this_review": false,
+  "external_HMAC_absence_is_a_blocker": false,
+  "scope_and_access": {
+    "only_file_modified": "data/native_law_v2/development_provenance_review.json",
+    "approved_training": "fig1 rep1, rep2, rep3: GFP/max5, GFP/median and general/times in one-based prefix frames 28-47 and response frames 50-73, plus general/origin.",
+    "approved_development_inputs": "fig1 rep4 and rep5: GFP/max5 and GFP/median only in prefix frames 28-47; general/times in prefix frames 28-47 and response frames 50-73; general/origin.",
+    "development_response_intensity_values_decoded": 0,
+    "unapproved_group_response_values_decoded": 0,
+    "private_source_coverage_opened": false,
+    "model_predictions_scores_or_fit_outputs_opened": false,
+    "learning_fitting_or_parameter_selection_performed": false,
+    "response_or_prefix_numeric_values_reproduced_in_report": false,
+    "source_reader": "The already pinned local source container was integrity-hashed. A separate lexical reader traversed only approved groups/fields, decoded only approved scalar windows, and skipped all other values without numeric conversion. The mixed source was not fully JSON-deserialized.",
+    "projection_reader": "Exact file hashes were checked first. Projection and record keys, group IDs, split, window, row/frame indices and source pointers were validated before decoding measurement scalars. Unexpected fields or out-of-scope intensity windows were rejected before their values could be decoded.",
+    "no_repeated_primary_research": true,
+    "primary_HTTP_requests_in_this_phase_B_recheck": 0,
+    "packages_installed_or_authentication_changes": false,
+    "prior_processing_limit": "This remains retrospective development conditional on the published processed cohort. Earlier source retrieval, original filtering/inpainting and published method selection do not constitute a new blind or certified prefix-only prospective dataset."
+  },
+  "preserved_originals": [
+    {
+      "path": "data/native_law_v2/protocol.json",
+      "sha256": "e901d3985b5577d6f846229e1178062414e3220a7307b6d8ee40b0d01e9dffde",
+      "git_blob_sha1": "e4e1c854e0962451f27b754e5eded2af225d9fc0",
+      "unchanged": true
+    },
+    {
+      "path": "data/native_law_v2/provenance_review.json",
+      "sha256": "d596c2a541ead99a2050449fe799e8b3386f71559418879ea9cf45006a9ed8d7",
+      "git_blob_sha1": "aacc1a8e3db703f26f55dd9610ab23a5c1a144f9",
+      "unchanged": true,
+      "original_strong_candidate_disposition": "FAIL remains unchanged for both protocol-01 candidates."
+    }
+  ],
+  "protocol_and_primary_source": {
+    "development_protocol": {
+      "path": "data/native_law_v2/development_protocol.json",
+      "sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+      "coordinates": "20-108 source, partition, context and operators; 164-183 release/semantic contract; 209-286 request, custody and Projection schemas"
+    },
+    "design_resolution": {
+      "path": "data/native_law_v2/protocol_design_resolution.json",
+      "sha256": "6a68537ed4bb56a37e5481892e7d551a98324f51ab34f1485286ec22416fd729",
+      "coordinates": "39-78 independence, context, cohort and processing; 94-98 operational versus strong authority; 112-135 development-only scope"
+    },
+    "source": {
+      "asset_id": "1b38366b-7473-4ddf-9cf9-26e625533686",
+      "source_name": "fig1_sfp1_replicates.json",
+      "primary_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/1b38366b-7473-4ddf-9cf9-26e625533686/content",
+      "local_custodian_only_path": "data/native_law_v2/granados/sealed/raw_mixed/fig1_sfp1_replicates.json",
+      "sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+      "bytes": 4178902,
+      "result": "PASS",
+      "binding": "Current local bytes match the primary-source digest established in the earlier independent review. This recheck replays approved values locally, not copied audit assertions."
+    },
+    "previous_primary_evidence_retained": [
+      {"source": "Granados data README", "sha256": "fbce9f1ec3abbff57ee3c2e1af29cdecfc8122cfe393287954a11776d8724ebf", "coordinates": "15-20,29-47,51-83,151-160", "facts": "Cells/time axes, missingness, max5/median, separate-day fig1 replicates and same-experiment figure-2 aliases."},
+      {"source": "https://swainlab.bio.ed.ac.uk/papers/pnas18sup.pdf", "sha256": "995a826e1fa33ecc0f98696e835c9a5a5321b6e86ec389f67c982d42cf20f1bb", "coordinates": "SI 1.1-1.2.4, pp.3-4; 3.1, p.6", "facts": "SC medium, reported glucose percentages, 30 C culture/imaging, image projection and normalization context."},
+      {"source": "swainlab/mi-by-decoding at 8adaa770aad4e93f410b64aff1120f7ff1e93a6a", "path": "matlab/DataProcessingFunctions/normMeanOffset.m", "sha256": "2e525010b785fa67b2182161ff628c91d34e01d8439ef1f412f6a7c34d5ea22e", "coordinates": "7-10", "facts": "Source-informed o-21:o-2 frame window and mean frame sample SD; not proof of a causally prefix-only historical exporter."},
+      {"source": "swainlab/mi-by-decoding at 8adaa770aad4e93f410b64aff1120f7ff1e93a6a", "path": "matlab/DataProcessingFunctions/filterCellsByNucLoc.m", "sha256": "88fc7d3a823fa34f726d4f232c26c0e418e708c3f7d70e17385e587dd2aedd94", "coordinates": "29-35,56-64", "facts": "Whole-trace inpainting and transition-inclusive filtering in the example preserve the historical processing uncertainty."}
+    ]
+  },
+  "current_phase_b_release_binding": {
+    "status": "PASS",
+    "manifest": {
+      "path": "data/native_law_v2/granados/development/release_manifest.json",
+      "sha256": "3b8c67c79191bf4dec0a1e7e0514b1a145359c30061868bbfdd136f0ee1cd3dd",
+      "bytes": 6904,
+      "coordinates": "6-32 request, source decision and exact data allowlist; 75-95 cohorts and withheld scope; 103-109 non-authorizing limitations"
+    },
+    "source_custody_decision": {
+      "path": "data/native_law_v2/granados/development/phase_b/custody_decision.json",
+      "sha256": "87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533",
+      "bytes": 3861,
+      "coordinates": "2-23 type, request, source, permitted IDs and phased conditions; 31 strong_claim_authorized=false",
+      "decision": "approve_development_exports",
+      "schema_validation": "PASS"
+    },
+    "source_release_request": {
+      "path": "data/native_law_v2/granados/development/phase_b/release_request.json",
+      "sha256": "b812da162bd1962484c505bdb32d9c0d4b191e51051f1e2d64a42eab5b6ca349",
+      "bytes": 1682,
+      "schema_validation": "PASS"
+    },
+    "approval_event": {
+      "path": "data/native_law_v2/granados/development/phase_b/approval_event.json",
+      "sha256": "e05bc5f7f0a13263de03eebc3797a3c30764f33ea01301326b2645ef762de0bd",
+      "coordinates": "3-9",
+      "event_id": "phase-b-approved",
+      "binding_result": "PASS",
+      "supersedes_blocker_sha256": "2f7c75f47310be7c41241fb96712d95a96cc90e41310049761f390a74bc4c1a6"
+    },
+    "root_ownership": "Resolved by the parent's explicit grant of the existing protocol-declared development_exports root. The protocol, source, frames and cohorts were not changed. Metadata remains separately under development/.",
+    "authority_scope": "Accountable development-only operational permission, not external cryptographic attestation or biological authorization. The source decision is distinct from admission of refreshed executor code."
+  },
+  "projection_replay": {
+    "status": "PASS",
+    "approved_scalar_comparisons": 81444,
+    "source_cell_records_verified": 24332,
+    "source_time_records_verified": 8448,
+    "regular_nonsymlink_files_and_ancestors": "PASS",
+    "exact_protocol_root": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/",
+    "extra_fields_groups_or_intensity_windows": 0,
+    "development_response_intensities_in_approved_payloads": 0,
+    "method": "Each record was scope-checked before measurement decoding. Every scalar/null was compared exactly to the independently selected original source row/frame/field. No numerical tolerance, interpolation, imputation or source-derived replacement was used for equality. Unique complete row/frame sets and exact one-based-to-zero-based pointer conversion were checked, then the actual Projection schema was validated.",
+    "pointer_rule": "/repN/GFP/{max5,median}/{original_zero_based_row}/{frame_1based-1} and /repN/general/times/{original_zero_based_row}/{frame_1based-1}",
+    "projections": [
+      {
+        "phase": "training_values",
+        "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/training_projection.json",
+        "sha256": "fc8000c7720e554756c90e0da79f2d0ae4a7928d5923f0efa1a2ed5823d37c9e",
+        "bytes": 7093970,
+        "groups": ["rep1", "rep2", "rep3"],
+        "source_cell_records": 17292,
+        "source_time_records": 0,
+        "scalar_comparisons": 51876,
+        "preserved_null_counts": {"max5": 10, "median": 10, "relative_time_min": 0},
+        "schema": "PASS",
+        "scalar_and_pointer_equality": "PASS",
+        "complete_unique_inventory": "PASS",
+        "ordered_payload_sha256": "e11a3d11a2cfbb91759fab4ea2e59c9010e96fbdc43d64b1d210eb971c449a55",
+        "binding_record": {"path": "data/native_law_v2/granados/development/phase_b/training_values_binding.json", "sha256": "14ccf5f89e86099d8c9b8dabcdfd2090661c99049bef678630eace2d98c11906", "bytes": 1540}
+      },
+      {
+        "phase": "development_inputs",
+        "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_inputs.json",
+        "sha256": "41ee2a8ce6b09cb664859873fd59fd005e31e6eaa054c3703098c91e3f790613",
+        "bytes": 4764543,
+        "groups": ["rep4", "rep5"],
+        "source_cell_records": 7040,
+        "source_time_records": 8448,
+        "scalar_comparisons": 29568,
+        "preserved_null_counts": {"max5": 1, "median": 1, "relative_time_min": 0},
+        "schema": "PASS",
+        "scalar_and_pointer_equality": "PASS",
+        "complete_unique_inventory": "PASS",
+        "ordered_payload_sha256": "cb00716b7e1dc0f73c48a432259eb3a60079924acf4487adf9719b1b2d9f9e96",
+        "binding_record": {"path": "data/native_law_v2/granados/development/phase_b/development_inputs_binding.json", "sha256": "bc9196787637739f59fc91c70ae4760663dae2b6b86552ae445393bbd815dea7", "bytes": 1493}
+      }
+    ],
+    "binding_record_replay": "Both source-binding artifact bytes/digests were checked. Their source/approval/phase identities, ordered payload digests, comparison counts and null counts equal the independently recomputed results, rather than being accepted as True flags.",
+    "payload_digest_convention": "SHA256 of UTF-8 json.dumps({group_ids,source_cells,source_times}, sort_keys=True, separators=(',', ':'), allow_nan=False) followed by one newline, matching the recorded producer convention in scripts/export_granados_training.py:1409-1413,1503-1507."
+  },
+  "transformation_replay": {
+    "status": "PASS for the approved information set",
+    "frame_count": 97,
+    "origin_1based": 49,
+    "prefix_columns_1based": [28, 47],
+    "response_columns_1based": [50, 73],
+    "individual_observable": "max5/median for the same original row and frame. It is a dimensionless image-derived proxy, not phosphorylation, an absolute nuclear fraction, protein abundance, enzyme activity or flux.",
+    "prefix_cohort": "Require all 20 prefix entries to have finite nonnegative max5, finite strictly positive median and finite strictly negative measured relative time. The minimum is two rows. No response-frame intensity or future completeness condition enters cohort selection.",
+    "prefix_summaries": "mu is the mean of 20 across-cell frame means of individual ratios; s is the mean of 20 across-cell sample SDs with denominator n-1, not pooled cell-time SD. The target is not divided by s.",
+    "time_coordinate": "At each response frame, average finite positive general/times over the fixed prefix cohort, without consulting response max5/median validity. Actual timestamps are retained; no nominal time grid or subtraction of origin-as-minutes is used.",
+    "training_targets": "Mean valid individual ratios at each registered frame over the observed subset of the fixed prefix cohort. Per-frame valid/missing/invalid counts and sample SD retain attrition; absence at one frame does not delete the entire row. This is not a ratio of mean intensities or an imputed full-culture mean.",
+    "comparison": "Prefix cohort indices, mu/s digests, measured response-coordinate digests and all three training aggregate/attrition trace digests recomputed from actual exported records match the earlier independent primary-source replay exactly.",
+    "development_responses": "Not read or computed. Only prefix/timing transformations were evaluated for rep4/rep5; the manifest's private coverage assertions are not promoted to independent response evidence.",
+    "trace_digest_convention": "UTF-8 canonical Python JSON with sort_keys=True, separators=(',', ':'), allow_nan=False and no trailing newline. Prefix summaries hash {mu,s}; timings hash the frame-to-time map. Arithmetic uses statistics.fmean and sample statistics.stdev.",
+    "groups": [
+      {"group": "rep1", "source_rows": 55, "prefix_cells": 50, "excluded_prefix_cells": 5, "prefix_cohort_sha256": "19154f0b7f0e137d24287256b211c3e7139ac494d0aae13d6419dc583843f104", "prefix_summary_sha256": "e823cfb4a23493b780518ca30d106a4c055d93de10579cdeb42fdd9bc03d954b", "response_time_coordinates_sha256": "0917238702d93fe2baef26c0f0a36ae885a14e036e9d5424a9da61b780a7ced7", "training_frame_trace_sha256": "855fedac646f828781ea71de8c0fdfeef9bf74ee28f22d945f1d29e8d1f9da17", "training_quantifiable_frames": 24, "training_valid_cell_count_range": [48, 50], "result": "PASS"},
+      {"group": "rep2", "source_rows": 136, "prefix_cells": 136, "excluded_prefix_cells": 0, "prefix_cohort_sha256": "87ef3e03a99fdd08632d1e74dda2c6287b549293c6d781c0693789f1095ae25c", "prefix_summary_sha256": "1cff0eb6bc892003a7840bdd919ccc584bf61fd80aafe5feea7a757679308979", "response_time_coordinates_sha256": "7cf7391a9532489cae2b09387f057b12557a2dffabd19dcefcc02f42ef6ee760", "training_frame_trace_sha256": "0a524b27f50e3b0303f949554f1618817a4c5beba080b4db62461e782d657dd5", "training_quantifiable_frames": 24, "result": "PASS"},
+      {"group": "rep3", "source_rows": 202, "prefix_cells": 202, "excluded_prefix_cells": 0, "prefix_cohort_sha256": "3659a2db7fa238dbae323ffe838bb14a5456536cf6753ff5060adf9ea076409d", "prefix_summary_sha256": "fdb10f2341a90d10677c2ed0f5e42c777db301c110b82a9317f39aa0ff6d585d", "response_time_coordinates_sha256": "71b01eef32d7b676022b789f3cc3a111c1cc9ebd0a8fb97dec420a13769f7017", "training_frame_trace_sha256": "f87bbc9b8612dafea39601c736a67a666a2b0fac8d51fb41cfeeb2abd1547638", "training_quantifiable_frames": 24, "result": "PASS"},
+      {"group": "rep4", "source_rows": 195, "prefix_cells": 195, "excluded_prefix_cells": 0, "prefix_cohort_sha256": "0c44827b4261f6783bd3bcda4bea9b44be06053ffb3343bc42afeb2efffb9186", "prefix_summary_sha256": "0c8083e761dc965a47dc929890d21a7167e47b2d18cf4dd23a391312807cbcde", "response_time_coordinates_sha256": "c0ba2b5e15b58bb55ca7b0b674904746c207e410c1fa44a07e4acfa1a3b2c205", "usable_response_times": 24, "development_response_coverage": "NOT_INSPECTED", "result": "PASS for prefix/timing only"},
+      {"group": "rep5", "source_rows": 157, "prefix_cells": 156, "excluded_prefix_cells": 1, "prefix_cohort_sha256": "2eac4113ff860cab6bb973fa06d04ac3728fb28a253312ced36bdcff4755b785", "prefix_summary_sha256": "6aa9829c5641ba1032aa6c0b21c3486d48ff381f2ae9ac392570282024c87c63", "response_time_coordinates_sha256": "528d47e3cb0b538b9f6a98406f23a44d538b09d8e1df363feaeadf0f484a1afe", "usable_response_times": 24, "development_response_coverage": "NOT_INSPECTED", "result": "PASS for prefix/timing only"}
+    ]
+  },
+  "current_executor_admission": {
+    "state": "ADMITTED_FOR_EXACT_REFRESH_REUSING_PHASE_B_DATA",
+    "admission_binding_verdict": "PASS",
+    "request_and_configuration_binding": "PASS",
+    "source_release_assessed_separately": true,
+    "scope": "Only current request/configuration/code-snapshot/source-reference binding is reviewed. No executor, fitting routine or test suite was run; no model predictions, scores or fit outputs were opened. Current code files were byte-hashed, not executed, in this refresh check.",
+    "refresh_request": {"path": "outputs/native_population_development/executor_refresh_01/executor_refresh_request.json", "sha256": "0b9539cfc3c53dd88186541613c1e6cdb338ecb79d9406db592bdbb215236d91"},
+    "new_release_request": {"path": "outputs/native_population_development/executor_refresh_01/release_request.json", "sha256": "3bc3f5d0441288a13c67bc3a17380002ed09916340f78102a5d39fb16c782caf", "bytes": 1727, "schema": "PASS"},
+    "configuration": {"path": "outputs/native_population_development/executor_refresh_01/execution_configuration.json", "sha256": "7e1aa35c8f6c248fc921f2348d362b8fc76e23bd8cfff070b19d21b2d9195cdb", "bytes": 3729},
+    "code_bindings": [
+      {"live_path": "src/ystwin/analysis/native_population_development.py", "snapshot_path": "outputs/native_population_development/executor_refresh_01/code/native_population_development.py", "sha256": "654dd5729d204c5963f5e51576a4830b61f736296c877ffc419efa77d009e2a0", "bytes": 92464, "live_and_snapshot_match": true},
+      {"live_path": "scripts/run_native_population_development.py", "snapshot_path": "outputs/native_population_development/executor_refresh_01/code/run_native_population_development.py", "sha256": "f96a36702867262718997acaae7131d4b616725a563e27f795dc65ee8bd6f03c", "bytes": 4212, "live_and_snapshot_match": true},
+      {"live_path": "tests/test_native_population_development.py", "snapshot_path": "outputs/native_population_development/executor_refresh_01/code/test_native_population_development.py", "sha256": "6f8d067c99f501a2311143ace0d316233df85703e6943bdc19a17559dc7e66bc", "bytes": 31449, "live_and_snapshot_match": true}
+    ],
+    "exporter_binding": {"path": "scripts/export_granados_training.py", "sha256": "6447608e622c6bdd47e16f4f930f91f9297077aaccfbc5a0745b359b1bbd7159", "bytes": 104189, "matches_request": true},
+    "checked_relations": [
+      "New request and configuration actual bytes match the refresh request's references.",
+      "New request/configuration and copied protocol bind the unchanged development-protocol hash.",
+      "Refresh phase-B manifest and previous source approval bind the current 3b8c67... manifest and 87536d... source custody decision.",
+      "reuse_existing_projections is exactly the two current phase-B allowlist entries and their verified bytes; no data re-export or scientific recipe change is requested.",
+      "Live code and all three versioned code snapshots match the requested digests and sizes.",
+      "Configuration records the same registered seeds, eight starts, 2000-evaluation bound and 60-minute reference; no learned parameters or performance values were consulted."
+    ],
+    "issued_refresh_admission": {
+      "path": "data/native_law_v2/granados/development/executor_refresh_01/executor_refresh_admission.json",
+      "sha256": "b967279da5186529d784e66b99a066e785f487558d0858a50cf91b950d979763",
+      "bytes": 2456,
+      "coordinates": "2-32 protocol/request/approval/configuration/issuer binding; 33-50 exact data reuse and limits",
+      "document_type": "population_development_executor_refresh_admission_v1",
+      "binding_result": "PASS"
+    },
+    "issued_refresh_custody_decision": {
+      "path": "data/native_law_v2/granados/development/executor_refresh_01/custody_decision.json",
+      "sha256": "04ac928add5528beabd2a9f77a2055643dc120d3b76bff7315ffdc3f062f786e",
+      "bytes": 4271,
+      "coordinates": "2-23 request, permitted groups and exact refresh/reuse conditions; 31 non-authorizing scope",
+      "schema_and_request_binding": "PASS"
+    },
+    "issued_refresh_event": {
+      "path": "data/native_law_v2/granados/development/executor_refresh_01/refresh_event.json",
+      "sha256": "f31e611bdf13618b1ceafd992b845774dc6e0231506cf894b9300e05c3abb482",
+      "bytes": 2727,
+      "coordinates": "3-12 chronology and request/configuration/source-release bindings; 13-45 old/new code artifacts; 47-52 limits",
+      "event_id": "granados-executor-refresh-01",
+      "binding_result": "PASS"
+    },
+    "issued_admission_checks": [
+      "The actual admission contains exactly the required operational admission fields from the refresh request, with matching document type, version and protocol digest.",
+      "The new custody decision validates against the actual protocol DevelopmentCustodyDecision schema and binds request 3bc3f5..., the five exact source groups and the same custodian/event identity as the admission.",
+      "The admission binds the unchanged phase-B manifest, original data approval 87536d..., configuration 7e1aa3... and both exact source-verified projection digests. The new code decision is not substituted for the original projection data-approval hash.",
+      "Sixteen referenced artifacts, including the current live code, code snapshots, original executor records and the two data projections, passed actual byte-size and SHA256 checks.",
+      "The event's refresh request, release request, configuration, original manifest/data approval and old/new code references match the actual records. Its before-first-fit statement remains a local operational claim, not independently proved external chronology.",
+      "The issued record explicitly disallows scientific-recipe change, data re-export, development response release and strong biological authorization. No model correctness/performance or POP-fix test results were independently evaluated by this source reviewer."
+    ],
+    "interpretation": "The current operational executor refresh is issued and its binding passes. It admits exactly the recorded code/configuration for reuse of the already source-verified phase-B data. It does not authorize data regeneration, post-stimulus development response access, a biological grade or a prospective validation claim. The superseded executor snapshot remains historical, not the current admission."
+  },
+  "superseded_operational_history": {
+    "prior_review_sha256": "07e0fc2f82aaea987d200df509e7b7feefcf5a80639837044e5ccbc5bcc77f67",
+    "prior_limited_release_verdict": "FAIL at the pre-release operational snapshot",
+    "old_blocker": {"path": "data/native_law_v2/granados/development/operational_blocker.json", "sha256": "2f7c75f47310be7c41241fb96712d95a96cc90e41310049761f390a74bc4c1a6"},
+    "superseded": true,
+    "superseding_event": "data/native_law_v2/granados/development/phase_b/approval_event.json#phase-b-approved",
+    "resolution": "The parent granted the declared projection root; the phase-B request and source custody decision were issued; actual source-bound projections now exist and have been replayed. Neither missing-root ownership nor missing phase-B request is retained as a current source-release blocker. No source/frame/cohort/target criterion was loosened.",
+    "strong_protocol_01_failure": "Not superseded or relaxed. The new PASS is limited to this retrospective development source release."
+  },
+  "retained_constraints_and_limitations": [
+    "Only rep1-rep3 training prefix/response values and rep4-rep5 prefix/timing are verified and in scope. Development post-stimulus intensities remain withheld; private/source_coverage.json was not opened.",
+    "Rep6 and its known raw figure-2 Sfp1/glucose and normalized-rep1 aliases remain excluded, as do all other source groups, normalized-only rep2, background/marker/two-colour fields and unapproved windows.",
+    "The unexported remainder of a released biological experiment is not a fresh independent holdout. Unknown aliases stay unknown and inherit development exposure if later identified.",
+    "Original published selection, filtering and inpainting may have used later observations. The estimand is the processed published cohort's observed-subcohort mean, not an unselected culture or certified prospective forecast.",
+    "Glucose concentrations remain percent_as_reported; no unsupported w/v or molar conversion. Timing is measured switch-relative minutes. No [0,1] phosphorylation interpretation is imposed on the ratio.",
+    "All groups share one reported downshift. No causal glucose dependence, dose-response, biochemical mechanism, active-enzyme quantity, metabolic flux or universal law is identified.",
+    "Within-frame dispersion and cell counts are descriptive, not calibrated biological confidence intervals or extra biological replicates. Attrition and unmeasured covariance/processing biases remain explicit.",
+    "Every future source/window/model failure must remain in the record; no post-error replacement of groups, cohorts or frames. Complete future development comparison still requires the sealed six-family prediction lattice and then separately authorized response access.",
+    "No strong biological ready label, final test, external cryptographic attestation or authorization of protocol-01 is issued by this review."
+  ],
+  "verification_execution_record": {
+    "successful_replay": "Independent selective-reader replay in tool process 16d020: both actual Projection schemas passed; 81444 exact approved scalar comparisons passed; unique pointer inventories, null counts, payload bindings and all permitted transformation digests passed.",
+    "successful_current_admission_check": "Actual issued refresh records checked in tool process cb391b: required admission fields, typed custody decision, exact request/configuration/event/source bindings and sixteen referenced artifact byte/digest checks passed. This is separate from source replay and is not a model-performance evaluation.",
+    "verifier_only_issue_resolved": "The first replay attempt stopped on a whitespace-boundary check while reading a metadata ArtifactRef. The verifier was corrected to compare the atom end to its captured span without consuming following whitespace; a whitespace regression check then passed. No source, projection, executor or protocol file was changed, and no criterion was relaxed.",
+    "commands": ["Read/grep/find of the current release, approval, binding and refresh metadata only", "Read-only Python selective JSON traversal, exact scalar/pointer replay, statistics and Draft 2020-12 validation", "Read-only request/config/code-snapshot byte and SHA256 checks", "Strict JSON/jq validation and preservation hashes for the final report"],
+    "files_modified": ["data/native_law_v2/development_provenance_review.json"],
+    "source_executor_protocol_or_model_files_modified": [],
+    "response_values_forwarded": false,
+    "learning_or_model_scoring_performed": false
+  }
+}

@@ -1,0 +1,6 @@
+law,fitted_environment_parameters,leave_one_carbon_source_out_fold_error,corr_with_log_content,scoring_supply_mmol_c_per_gdcw_h,corr_with_log_mu
+mu only,0,1.7237,-0.5547,20.0,1.0
+log GEM max,0,1.4683,0.6853,20.0,-0.819
+GEM carbon contrast,0,2.1942,0.3656,20.0,0.0715
+z empirical,1,1.3439,0.5801,20.0,-0.1228
+mu + GEM,0,1.7534,,20.0,

@@ -1,0 +1,920 @@
+{
+  "schema_version": 1,
+  "transcription_id": "ke2013",
+  "availability": "transcribed_here",
+  "availability_meaning": "the equations are upstream and byte-checksummed; the executable file is this repository's. Never promote to local_verified, which means a checksummed file the upstream authors published",
+  "source": "Ke R, Ingram PJ, Haynes K 2013, 'An integrative model of ion regulation in yeast', PLoS Comput Biol 9(1): e1002879, doi:10.1371/journal.pcbi.1002879, PMC3547829, CC-BY-4.0",
+  "license": "CC-BY-4.0; attribution retained, equations and parameter values are Ke's",
+  "transcribed_by": "this repository, src/ystwin/mech/ph_ke2013.py",
+  "method": "Tables S1-S5 read from the pinned PDFs. Text extraction alone was not sufficient and was not trusted: Eqns 2.1, 2.34 and 2.36 return empty from pdftotext, and Eqn 4.2 returns with its superscript transposed, which reverses the sign of the turgor response. Every equation used here was re-read from the page rendered at 190-400 dpi",
+  "artifacts": {
+    "article_xml": {
+      "path": "data/native_reference_models/ke2013/PMC3547829.xml",
+      "sha256": "9d9004232e30e6f12e8db8b8140aa9ac55c59069ded74f1db7a9ebf213967bb2"
+    },
+    "table_s1_odes": {
+      "path": "data/native_reference_models/ke2013/pcbi.1002879.s009.pdf",
+      "sha256": "d3d77b430d6985816fb7fd2c779b8dbb9ca1c987f541eef0716b7309bbefc9b4"
+    },
+    "table_s2_transporters": {
+      "path": "data/native_reference_models/ke2013/pcbi.1002879.s010.pdf",
+      "sha256": "53c0423bc25fe35b703529b4da8d446864e9d1f4f8e98a6d1a724729a47264ad"
+    },
+    "table_s3_signalling": {
+      "path": "data/native_reference_models/ke2013/pcbi.1002879.s011.pdf",
+      "sha256": "f6de58f7b3f1f1fb700ca19027adfc94e12433d9ce312426e41f6411da235ad4"
+    },
+    "table_s4_physiology": {
+      "path": "data/native_reference_models/ke2013/pcbi.1002879.s012.pdf",
+      "sha256": "cb01b6953f12f1e74ab7e140aef0dc69a20aebf80adf0ac3afeff9b5ed778af6"
+    },
+    "table_s5_initial": {
+      "path": "data/native_reference_models/ke2013/pcbi.1002879.s013.pdf",
+      "sha256": "edc0da0939d90e90f622d852cd4053f83a2a15b56f73f6173805ee6a981f464c"
+    },
+    "table_s6_sensitivity": {
+      "path": "data/native_reference_models/ke2013/pcbi.1002879.s014.pdf",
+      "sha256": "d638c12eb3ad983988ba2690fa0c9bbe90a58534d8a79cc4c88cbd2d2250e8ce"
+    },
+    "text_s1_derivations": {
+      "path": "data/native_reference_models/ke2013/pcbi.1002879.s015.pdf",
+      "sha256": "b0b69fd25483b508e66ffcfdcb04decf8cddeacdeee651c15b5a19b5eab661aa"
+    }
+  },
+  "ode_totals": {
+    "executable": 7,
+    "recorded": 1,
+    "untranscribed": 15
+  },
+  "equations": [
+    {
+      "label": "dH/dt",
+      "where": "Table S1; Text S1 Eqn 2.40",
+      "printed": "d[H+]/dt = -J_Pma1 + (3/2)*J_Nha1,Na + (3/2)*J_Nha1,K + J_H_uptake + J_H_production",
+      "status": "executable",
+      "ode_count": 1,
+      "note": "on the AMOUNT of H+ (attomoles), not the concentration -- Text S1 2.5 is explicit. The 3/2 is Nha1p's 3 H+ per 2 K+/Na+. No buffering term exists in the source"
+    },
+    {
+      "label": "dNa/dt",
+      "where": "Table S1; Text S1 Eqn 2.40",
+      "printed": "d[Na+]/dt = -J_Ena1,Na - J_Nha1,Na + J_Trk,Na + J_NSC1,Na + J_diff,Na",
+      "status": "executable",
+      "ode_count": 1,
+      "note": ""
+    },
+    {
+      "label": "dK/dt",
+      "where": "Table S1; Text S1 Eqn 2.40",
+      "printed": "d[K+]/dt = -J_Ena1,K - J_Nha1,K + J_Trk1,K + J_NSC1,K - J_Tok1 + J_diff,K",
+      "status": "executable",
+      "ode_count": 1,
+      "note": ""
+    },
+    {
+      "label": "dVolume_cyt/dt",
+      "where": "Table S1; Text S1 Eqn 4.1",
+      "printed": "d Volume_cyt/dt = -G_EK * Lp * D_Pressure",
+      "status": "recorded",
+      "ode_count": 1,
+      "note": "transcribed as turgor_pressure() and pressure_difference(), but NOT integrated in the reproduction run: at Table S5's own initial volume D_Pressure is -1.51e6 J/m^3 rather than 0, so the printed module does not rest where the paper starts it"
+    },
+    {
+      "label": "dPbs2/dt, dPbs2PP/dt",
+      "where": "Table S1; Text S1 Eqn 3.1",
+      "printed": "d[Pbs2]/dt = -K_pho^Pbs2*[Pbs2]/(1+(Ptur/alphaHog1)^8) + K_depho^Pbs2*[Pbs2PP] - [Pbs2]*Vratio  (and the mirror image for [Pbs2PP])",
+      "status": "untranscribed",
+      "ode_count": 2,
+      "note": "needs Ptur from the volume module, which does not rest at Table S5, and Vratio, which is d(Volume)/dt / Volume. Adopted by Ke from Zi 2010 [50]"
+    },
+    {
+      "label": "dHog1c/dt, dHog1PPc/dt, dHog1n/dt, dHog1PPn/dt",
+      "where": "Table S1; Text S1 Eqn 3.1",
+      "printed": "d[Hog1c]/dt = -K_pho^Hog1*[Pbs2PP]*[Hog1c] + K_depho^Hog1PPc*[Hog1PPc] - K_imp^Hog1c*[Hog1c] + K_exp^Hog1n*[Hog1n]*Vnuc/Vcyt - [Hog1c]*Vratio  (and the three companions)",
+      "status": "untranscribed",
+      "ode_count": 4,
+      "note": "Vcyt and Vnuc appear in all four equations and in NO table: not in S2, S3, S4 or S5. They live in the upstream Zi 2010 model [50], which this repository has not pinned. Guessing a nuclear volume fraction would be inventing a parameter"
+    },
+    {
+      "label": "dGlyint/dt, dYt/dt",
+      "where": "Table S1; Text S1 Eqn 3.1",
+      "printed": "d[Glyint]/dt = Ks0^Glyc + Ks1^Glyc*(totalHog1PP)^4/(betaHog1^4+(totalHog1PP)^4) + Ks2^Glyc*[Yt] - (Kexp0^Glyc + Kexp1^Glyc*(Ptur)^12/((gammaHog1)^12+(Ptur)^12)) *[Glyint] - [Glyint]*Vratio",
+      "status": "untranscribed",
+      "ode_count": 2,
+      "note": "downstream of the Hog1p states and of Ptur; totalHog1PP also carries the printed conversion (([Hog1PPc]*Vcyt+[Hog1PPn]*Vnuc)*602)/6780, which needs the same two absent volumes"
+    },
+    {
+      "label": "dz1..dz4/dt",
+      "where": "Table S1; Text S1 Eqn 3.1",
+      "printed": "d[z1]/dt = 4*([Hog1PPn]-[z1])/tau ;  d[z_i]/dt = 4*([z_{i-1}]-[z_i])/tau",
+      "status": "untranscribed",
+      "ode_count": 4,
+      "note": "tau appears in four equations and in no parameter table. Table S3's Hog1 block lists every rate constant Zi 2010 [50] supplies EXCEPT this delay"
+    },
+    {
+      "label": "dCa/dt",
+      "where": "Table S1; Text S1 Eqn 3.3",
+      "printed": "d[Ca2+]/dt = CCa - dCa*[Ca2+] + kCa,cyt*[Na+]cyt^h/( [Na+]cyt^h + KmCa,cyt^h ) + kCa,ext*[Na+]ext^h/( [Na+]ext^h + KmCa,ext^h ) + kCa,pH*(pH_ext - 6.5) - 3*kCN,a*[Ca2+]^3*[CNoff] + 3*kCN,da*[CN] - [Ca2+]*Vratio",
+      "status": "executable",
+      "ode_count": 1,
+      "note": "the Hill exponents differ between the two saturating terms: h_Na_cyt = 12 for the cytosolic one, h_Na_ext = 2 for the external one, both asterisked as fitted"
+    },
+    {
+      "label": "dCNoff/dt, dCN/dt",
+      "where": "Table S1; Text S1 Eqn 3.4",
+      "printed": "d[CNoff]/dt = -kCN,a*[Ca2+]^3*[CNoff] + kCN,da*[CN] + kCN_Ppz,da*[Ppz]*[CN] - [CNoff]*Vratio ;  d[CN]/dt = the negative of the first three terms - [CN]*Vratio",
+      "status": "executable",
+      "ode_count": 2,
+      "note": "Table S5's Init_CNon = 0 is NOT the steady state of this pair at Table S5's own Ca2+ and the Ppz that Eqn 2.21 gives; the block relaxes away from it"
+    },
+    {
+      "label": "dCrz1/dt",
+      "where": "Table S1; Text S1 Eqn 3.4",
+      "printed": "d[Crz1]/dt = CCrz1 - dCrz1*[Crz1] + kCrz1*[CN] - [Crz1]*Vratio",
+      "status": "executable",
+      "ode_count": 1,
+      "note": ""
+    },
+    {
+      "label": "dNrg1/dt",
+      "where": "Table S1; Text S1 Eqn 3.5",
+      "printed": "d[Nrg1]/dt = CNrg1*KmNrg1,pH/(KmNrg1,pH + k_pHext) - dNrg1*[Nrg1] - [Nrg1]*Vratio, with k_pHext = max(pH_Ext - 6, 0)",
+      "status": "untranscribed",
+      "ode_count": 1,
+      "note": "KmNrg1,pH is in the equation and in no table. Table S3's Nrg1p block lists CNrg1, dNrg1 and kNrg1,pH (5.25e-8 mM/s) -- a rate constant, in rate-constant units, which cannot stand in for a Michaelis constant in a dimensionless ratio"
+    },
+    {
+      "label": "dENA1mRNA/dt, dEna1/dt",
+      "where": "Table S1; Text S1 Eqn 3.6",
+      "printed": "d[ENA1mRNA]/dt = CENA1,Nrg1*KmENA1,Nrg1^h/(KmENA1,Nrg1^h + [Nrg1]^h) + kENA1,Crz1*[Crz1] + kENA1,Hog1*[z2] - dENA1mRNA*[ENA1mRNA] ; d[Ena1]/dt = ktEna1*[ENA1mRNA] - dEna1*[Ena1] - [Ena1]*Vratio",
+      "status": "untranscribed",
+      "ode_count": 2,
+      "note": "downstream of Nrg1p and of the Hog1p chain variable z2, both untranscribable. Table S3 also prints KmENA1,Nrg1 as '1.143.0*1e-4', which is not a number. The reproduction run therefore holds Ena1(t)/Ena1_0 at 1"
+    }
+  ],
+  "reading_choices": [
+    {
+      "equation": "Eqn 2.38, H+ uptake",
+      "printed": "J_H_uptake = kH_uptake * (R*T*ln([H+]ext/[H+]int) - Em*F)",
+      "problem": "the bracket is J/mol but Table S2 gives kH_uptake in 1e-18 mol/(s*V); the printed product is larger than every other flux by the factor F = 96485",
+      "used": "J_H_uptake = kH_uptake * (R*T/F*ln([H+]ext/[H+]int) - Em)",
+      "authority": "the paper's own unit column for kH_uptake",
+      "cost": "at the printed-law equilibrium J_H_uptake and J_Pma1 are both about 6.07e3 amol/s, with J_H_production = 5. The equilibrium has pH_i = 4.31, 2.83 units below the published 7.14; it is not a physiological prediction"
+    },
+    {
+      "equation": "Tok1p gating rates, Text S1 2.2.4 (unnumbered, after Eqn 2.18)",
+      "printed": "k'_Tok1,1 = kTok1,1*exp(-lTok1,ext*Em/(R*T)), and the three companions",
+      "problem": "Em is in volts and R*T is in J/mol, so the exponent is ~1e-5 and the gating is voltage-independent -- contradicting the same page's 'the rates of these transitions are governed by membrane potential'",
+      "used": "the same expressions with F*Em/(R*T), matching Eqn 2.19's own GHK exponent",
+      "authority": "Eqn 2.19 three paragraphs later, and the Loukin & Saimi [38] model Ke says it is modifying",
+      "cost": "27 mV. As printed: Em = -138.5 mV, pH_i = 7.252. As used: -110.9 mV, 7.267. Both are computed and both are reported"
+    },
+    {
+      "equation": "Eqn 2.8, K+ flux through Ena1p",
+      "printed": "J_Ena1,K = P_Ena1,K*(Ena1(t)/Ena1_0)*kEna1*([Na+]cyt*[ATP] - [Na+]ext*[ADP]*[Pi]*exp((G0_ATP-F*Em)/(R*T)))",
+      "problem": "the second line expands a K+ flux with the Na+ gradient",
+      "used": "the same with [K+], as J0_Ena1,K is defined one paragraph earlier",
+      "authority": "Eqn 2.8's own first line, J_Ena1,K = P_Ena1,K*(Ena1(t)/Ena1_0)*J0_Ena1,K",
+      "cost": "not separately quantified; a K+ flux driven by the Na+ gradient is a typesetting slip rather than an alternative model"
+    }
+  ],
+  "state_variables": [
+    {
+      "name": "h_amol",
+      "units": "amol",
+      "compartment": "cell_water",
+      "role": "H+ amount; pH_i = -log10(h_amol/V * 1e-3)"
+    },
+    {
+      "name": "na_amol",
+      "units": "amol",
+      "compartment": "cell_water",
+      "role": "Na+ amount"
+    },
+    {
+      "name": "k_amol",
+      "units": "amol",
+      "compartment": "cell_water",
+      "role": "K+ amount"
+    },
+    {
+      "name": "volume_um3",
+      "units": "um^3",
+      "compartment": "cell_water",
+      "role": "the osmotically changeable compartment"
+    },
+    {
+      "name": "ca_mM",
+      "units": "mM",
+      "compartment": "cell_water",
+      "role": "cytosolic Ca2+, a CONCENTRATION in the source"
+    },
+    {
+      "name": "cn_off_mM",
+      "units": "mM",
+      "compartment": "regulatory",
+      "role": "inactive calcineurin"
+    },
+    {
+      "name": "cn_mM",
+      "units": "mM",
+      "compartment": "regulatory",
+      "role": "activated calcineurin"
+    },
+    {
+      "name": "crz1_mM",
+      "units": "mM",
+      "compartment": "regulatory",
+      "role": "Crz1p"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "R",
+      "value": 8.31447,
+      "units": "J/(mol*K)",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'R, Gas constant, 8.31447' (no reference column)"
+    },
+    {
+      "name": "T",
+      "value": 310.0,
+      "units": "K",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'T, Absolute temperature, 310 K' (no reference column)"
+    },
+    {
+      "name": "F",
+      "value": 96485.0,
+      "units": "C/mol",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'F, Faraday constant, 96485 C/mol' (no reference column)"
+    },
+    {
+      "name": "G0_ATP",
+      "value": -36030.0,
+      "units": "J/mol",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'G0_ATP, Gibbs energy for ATP hydrolysis, -36.03*1e+3 J' -- the printed unit is J, not J/mol; it is used against R*T in every flux law, so J/mol is the only dimensionally possible reading"
+    },
+    {
+      "name": "Cm",
+      "value": 0.01,
+      "units": "F/m^2",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'Cm, Membrane capacitance, 1e-2 farad/m2' [2]"
+    },
+    {
+      "name": "Smem",
+      "value": 50.2655,
+      "units": "um^2",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'Smem, Cell surface area, 50.2655 um2'"
+    },
+    {
+      "name": "VolumeCell",
+      "value": 33.51,
+      "units": "um^3",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'VolumeCell, Cell volume, 33.510 um3'"
+    },
+    {
+      "name": "PK",
+      "value": 1e-06,
+      "units": "um/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'PK, Membrane permeability to potassium ion, 1e-6 um/s' [67,68]"
+    },
+    {
+      "name": "PNa",
+      "value": 3.8e-08,
+      "units": "um/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'PNa, Membrane permeability to sodium ion, 3.8*1e-8 um/s' [67,68]"
+    },
+    {
+      "name": "ATP",
+      "value": 2.6,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row '[ATP], ATP concentration, 2.6' [70,71]. The table prints the unit as 'mM-1' for this row and for ADP and Pi; mM is the only reading that makes the flux laws close"
+    },
+    {
+      "name": "ADP",
+      "value": 1.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row '[ADP], ADP concentration, 1.0' [70,71]; printed unit 'mM-1'"
+    },
+    {
+      "name": "Pi",
+      "value": 3.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row '[Pi], Phosphate concentration, 3.0' [70,71]; printed unit 'mM-1'"
+    },
+    {
+      "name": "Lp",
+      "value": 1190000.0,
+      "units": "m^4/(J*s)",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'Lp, Hydraulic membrane permeability, 1.19*1e+6 m4/(J*s)' [51]"
+    },
+    {
+      "name": "GEK",
+      "value": 7.85e-11,
+      "units": "m^2",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'GEK, Geometrical factor, 7.85*1e-11 m2' [51]"
+    },
+    {
+      "name": "Osmocyt0",
+      "value": 600.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'Osmocyt0, Total concentration of initial intracellular osmolytes, 600 mM' [51]"
+    },
+    {
+      "name": "Osmoext0",
+      "value": 250.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'Osmoext0, Total concentration of initial extracellular osmolytes, 250 mM' [51]"
+    },
+    {
+      "name": "Turgor0",
+      "value": 875000.0,
+      "units": "J/m^3",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'Turgor0, Initial turgor pressure, 0.875*1e+6 J/m3' [51]"
+    },
+    {
+      "name": "rvol",
+      "value": 0.63,
+      "units": "dimensionless",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'rvol, Volumetric elastic modulus, 0.63' [51]"
+    },
+    {
+      "name": "Anion",
+      "value": 300.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S4 (basic physiological parameters, pinned s012.pdf), row 'Anion, Intracellular negative charges that balances H+, K+ and Na+, 300 mM'. THE ONLY ROW IN TABLE S4 WITH AN EMPTY REFERENCE COLUMN. No measurement of it appears anywhere in the article or in the seven supplements, and Eqn 2.1 makes the membrane potential the difference between the cation total and this number"
+    },
+    {
+      "name": "kEna1",
+      "value": 0.000198,
+      "units": "amol/(s*mM^2)",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'kEna1*, 1.98*1e-4, 1e-18 mol/(s*mM2), Estimated from [27]'. ASTERISKED in the source: 'the values of these parameters were adjusted during the model integration step such that simulation results are consistent with experimental data', i.e. fitted by Ke, not measured"
+    },
+    {
+      "name": "KmEna1,Na",
+      "value": 200.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmEna1,Na, 200, mM, Taken from [58]'"
+    },
+    {
+      "name": "KmEna1,K",
+      "value": 300.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmEna1,K, 300, mM, Estimated from [58]'"
+    },
+    {
+      "name": "kNha1",
+      "value": 109200.0,
+      "units": "amol/(s*mM^5)",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'kNha1*, 1.092*1e+5, 1e-18 mol/(s*mM5), Estimated from [12]'. ASTERISKED in the source: 'the values of these parameters were adjusted during the model integration step such that simulation results are consistent with experimental data', i.e. fitted by Ke, not measured"
+    },
+    {
+      "name": "KmNha1,Na",
+      "value": 12.7,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmNha1,Na, 12.7, mM, Taken from [36]'"
+    },
+    {
+      "name": "KmNha1_high,K",
+      "value": 12.4,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmNha1_high,K, 12.4, mM, Taken from [36]'"
+    },
+    {
+      "name": "KmNha1_low,K",
+      "value": 1240.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmNha1_low,K, 1240' -- units and reference columns both EMPTY"
+    },
+    {
+      "name": "KmNha1,Hog1",
+      "value": 0.0001,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmNha1,Hog1, 1e-4, mM' -- reference column EMPTY"
+    },
+    {
+      "name": "Ps,Tok1",
+      "value": 4.6642,
+      "units": "amol*m^3/(s*um^3)",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'Ps,Tok1*, 4.6642, 1e-18 m/s, Estimated from [59]'. ASTERISKED in the source: 'the values of these parameters were adjusted during the model integration step such that simulation results are consistent with experimental data', i.e. fitted by Ke, not measured The printed unit m/s is a permeability per area, but Eqn 2.19 divided by F must give amol/s and the paper calls it 'the TOTAL permeability of Tok1p at the plasma membrane', i.e. area already included; read as 1e-18 m^3/s"
+    },
+    {
+      "name": "alphaTok1",
+      "value": 231.6,
+      "units": "dimensionless",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'aTok1, 231.6, Taken from [38]'"
+    },
+    {
+      "name": "betaTok1",
+      "value": 8122.7,
+      "units": "dimensionless",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'bTok1, 8122.7, Taken from [38]'"
+    },
+    {
+      "name": "lTok1,ext",
+      "value": 0.0,
+      "units": "dimensionless",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'lTok1,ext, 0.0, Taken from [38]'"
+    },
+    {
+      "name": "lTok1,int",
+      "value": 0.76875,
+      "units": "dimensionless",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'lTok1,int, 0.76875, Taken from [38]'"
+    },
+    {
+      "name": "kTok1,1",
+      "value": 34000000.0,
+      "units": "1/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'kTok1,1, 3.4*1e+7, s-1, Taken from [38]'"
+    },
+    {
+      "name": "kTok1,2",
+      "value": 34000000.0,
+      "units": "1/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'kTok1,2, 3.4*1e+7, s-1, Taken from [38]'"
+    },
+    {
+      "name": "kTok1,OR",
+      "value": 10000.0,
+      "units": "1/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'kTok1,OR, 1e+4, s-1, Taken from [38]'"
+    },
+    {
+      "name": "kTok1,RO",
+      "value": 10000.0,
+      "units": "1/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'kTok1,RO, 1e+4, s-1, Taken from [38]'"
+    },
+    {
+      "name": "KmTok1,Hog1",
+      "value": 2e-05,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmTok1,Hog1, 2*1e-5' -- units and reference columns both EMPTY"
+    },
+    {
+      "name": "kTrk",
+      "value": 54.0,
+      "units": "amol/(s*V^2)",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'kTrk*, 54.0, 1e-18 mol/(s*V2), Estimated from [6,55]'. ASTERISKED in the source: 'the values of these parameters were adjusted during the model integration step such that simulation results are consistent with experimental data', i.e. fitted by Ke, not measured"
+    },
+    {
+      "name": "KmTrk_high,K",
+      "value": 0.01,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmTrk_high,K, 0.01, mM, Taken from [39]'"
+    },
+    {
+      "name": "KmTrk_high,Na",
+      "value": 100.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmTrk_high,Na, 100.0, mM' -- reference column EMPTY"
+    },
+    {
+      "name": "KmTrk_medium,K",
+      "value": 0.4,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmTrk_medium,K, 0.4, mM, Taken from [39]'"
+    },
+    {
+      "name": "KmTrk_medium,Na",
+      "value": 40.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmTrk_medium,Na, 40.0, mM' -- reference column EMPTY"
+    },
+    {
+      "name": "KmTrk,Ppz",
+      "value": 1e-05,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmTrk,Ppz, 1e-5, mM, Estimated from [9,55]'"
+    },
+    {
+      "name": "KmTrk,Cn",
+      "value": 0.0005,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmTrk,Cn, 5*1e-4, mM, Estimated from [9,55]'"
+    },
+    {
+      "name": "Ppz0",
+      "value": 6.607e-05,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'Ppz0, 6.607*1e-5, mM, [60]' -- the reference column carries the citation with no Taken/Estimated verb"
+    },
+    {
+      "name": "KmPpz",
+      "value": 7.94e-05,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmPpz, 7.94*1e-5, mM' -- reference column EMPTY"
+    },
+    {
+      "name": "kNSC1",
+      "value": 0.0006,
+      "units": "amol/(s*mM)",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'kNHS1*, 6*1e-4, 1e-18 mol/(s*mM)' -- printed 'kNHS1', used as kNSC1 in Eqns 2.31-2.32; reference column EMPTY. ASTERISKED in the source: 'the values of these parameters were adjusted during the model integration step such that simulation results are consistent with experimental data', i.e. fitted by Ke, not measured"
+    },
+    {
+      "name": "KmNSC1,K",
+      "value": 60.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmNSC1,K, 60.0, mM, Taken from [61]'"
+    },
+    {
+      "name": "KmNSC1,Na",
+      "value": 100.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KmNSC1,Na, 100.0, mM' -- reference column EMPTY"
+    },
+    {
+      "name": "KH_prod",
+      "value": 5.0,
+      "units": "amol/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'KH_prod, 5, 1e-18 mol/s' -- reference column EMPTY"
+    },
+    {
+      "name": "kH_uptake",
+      "value": 10.0,
+      "units": "amol/(s*V)",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'kH_uptake, 10.0, 1e-18 mol/(s*V)' -- reference column EMPTY. The printed unit is what forces reading choice 1"
+    },
+    {
+      "name": "kPma1",
+      "value": 48000.0,
+      "units": "amol/(s*mM^2)",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S2 (transporter module, pinned s010.pdf), row 'kPma1*, 4.8*1e+4, 1e-18 mol/(s*mM2), Estimated from [45]'. ASTERISKED in the source: 'the values of these parameters were adjusted during the model integration step such that simulation results are consistent with experimental data', i.e. fitted by Ke, not measured"
+    },
+    {
+      "name": "CCa",
+      "value": 2.5e-06,
+      "units": "mM/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S3 (transcriptional module, pinned s011.pdf), row 'CCa, 2.5*1e-6, mM s-1' -- reference column EMPTY"
+    },
+    {
+      "name": "dCa",
+      "value": 0.05,
+      "units": "1/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S3 (transcriptional module, pinned s011.pdf), row 'dCa, 0.05, s-1, Estimated from [25]'"
+    },
+    {
+      "name": "h_Na_cyt",
+      "value": 12.0,
+      "units": "dimensionless",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S3 (transcriptional module, pinned s011.pdf), row 'h_Na_cyt*, 12, Estimated from [25,27]'. ASTERISKED in the source: 'the values of these parameters were adjusted during the model integration step such that simulation results are consistent with experimental data', i.e. fitted by Ke, not measured"
+    },
+    {
+      "name": "h_Na_ext",
+      "value": 2.0,
+      "units": "dimensionless",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S3 (transcriptional module, pinned s011.pdf), row 'h_Na_ext*, 2, Estimated from [25,27]'. ASTERISKED in the source: 'the values of these parameters were adjusted during the model integration step such that simulation results are consistent with experimental data', i.e. fitted by Ke, not measured"
+    },
+    {
+      "name": "kCa,cyt",
+      "value": 8e-06,
+      "units": "mM/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S3 (transcriptional module, pinned s011.pdf), row 'kCa,cyt*, 8.0*1e-6, mM s-1, Estimated from [25,27]'. ASTERISKED in the source: 'the values of these parameters were adjusted during the model integration step such that simulation results are consistent with experimental data', i.e. fitted by Ke, not measured"
+    },
+    {
+      "name": "kCa,ext",
+      "value": 2.4e-05,
+      "units": "mM/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S3 (transcriptional module, pinned s011.pdf), row 'kCa,ext*, 2.4*1e-5, mM s-1, Estimated from [25,27]'. ASTERISKED in the source: 'the values of these parameters were adjusted during the model integration step such that simulation results are consistent with experimental data', i.e. fitted by Ke, not measured"
+    },
+    {
+      "name": "KmCa_cyt",
+      "value": 180.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S3 (transcriptional module, pinned s011.pdf), row 'KmCa_cyt, 180.0, mM, Estimated from [25,27]'"
+    },
+    {
+      "name": "KmCa_ext",
+      "value": 500.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S3 (transcriptional module, pinned s011.pdf), row 'KmCa_ext, 500.0, mM, Estimated from [25,27]'"
+    },
+    {
+      "name": "kCa,pH",
+      "value": 1.5e-05,
+      "units": "mM/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S3 (transcriptional module, pinned s011.pdf), row 'kCa,pH*, 1.5*1e-5, mM s-1' -- reference column EMPTY. ASTERISKED in the source: 'the values of these parameters were adjusted during the model integration step such that simulation results are consistent with experimental data', i.e. fitted by Ke, not measured"
+    },
+    {
+      "name": "kCN,a",
+      "value": 1000000000.0,
+      "units": "1/(mM^3*s)",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S3 (transcriptional module, pinned s011.pdf), row 'kCN,a, 1.0e+9, mM-3 s-1, Estimated from [62]'"
+    },
+    {
+      "name": "kCN,da",
+      "value": 0.0005,
+      "units": "1/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S3 (transcriptional module, pinned s011.pdf), row 'kCN,da, 5.0*1e-4, s-1, Estimated from [62]'"
+    },
+    {
+      "name": "kCN_Ppz,da",
+      "value": 200.0,
+      "units": "1/(mM*s)",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S3 (transcriptional module, pinned s011.pdf), row 'kCN_Ppz,da*, 200.0, mM-1 s-1, Estimated from [63]'. ASTERISKED in the source: 'the values of these parameters were adjusted during the model integration step such that simulation results are consistent with experimental data', i.e. fitted by Ke, not measured"
+    },
+    {
+      "name": "CCrz1",
+      "value": 7.866e-07,
+      "units": "mM/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S3 (transcriptional module, pinned s011.pdf), row 'CCrz1, 7.866*1e-7, mM s-1' -- reference column EMPTY"
+    },
+    {
+      "name": "dCrz1",
+      "value": 0.0041,
+      "units": "1/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S3 (transcriptional module, pinned s011.pdf), row 'dCrz1, 4.1*1e-3, s-1' -- reference column EMPTY"
+    },
+    {
+      "name": "kCrz1",
+      "value": 0.1,
+      "units": "1/s",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S3 (transcriptional module, pinned s011.pdf), row 'kCrz1*, 0.1, s-1' -- reference column EMPTY. ASTERISKED in the source: 'the values of these parameters were adjusted during the model integration step such that simulation results are consistent with experimental data', i.e. fitted by Ke, not measured"
+    },
+    {
+      "name": "Init_H",
+      "value": 0.0001,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S5 (initial concentrations, pinned s013.pdf), row 'Init_H, Initial intracellular H+ concentration, 1e-4 (pH7), mM'"
+    },
+    {
+      "name": "Init_K",
+      "value": 200.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S5 (initial concentrations, pinned s013.pdf), row 'Init_K, Initial intracellular K+ concentration, 200, mM'"
+    },
+    {
+      "name": "Init_Na",
+      "value": 100.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S5 (initial concentrations, pinned s013.pdf), row 'Init_Na, Initial intracellular Na+ concentration, 100, mM'"
+    },
+    {
+      "name": "Init_CytVolume",
+      "value": 20.1062,
+      "units": "um^3",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S5 (initial concentrations, pinned s013.pdf), row 'Init_CytVolume, Initial volume for the osmotically changeable compartment, 20.1062, um3'"
+    },
+    {
+      "name": "Init_Hog1PPc",
+      "value": 4.443e-06,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S5 (initial concentrations, pinned s013.pdf), row 'Init_Hog1PPc, Initial phosphorylated cytosolic Hog1p concentration, 4.443*1e-6, mM'"
+    },
+    {
+      "name": "Init_Glycerol",
+      "value": 576.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S5 (initial concentrations, pinned s013.pdf), row 'Init_Glycerol, Initial intracellular glycerol concentration, 576, mM'"
+    },
+    {
+      "name": "Init_Ca",
+      "value": 5e-05,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S5 (initial concentrations, pinned s013.pdf), row 'Init_Ca, Initial Ca2+ concentration, 5*1e-5, mM'"
+    },
+    {
+      "name": "Init_CNoff",
+      "value": 0.0011628,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S5 (initial concentrations, pinned s013.pdf), row 'Init_CNoff, Initial inactive calcineurin concentration, 1.1628*1e-3, mM'"
+    },
+    {
+      "name": "Init_CNon",
+      "value": 0.0,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S5 (initial concentrations, pinned s013.pdf), row 'Init_CNon, Initial active calcineurin concentration, 0, mM'"
+    },
+    {
+      "name": "Init_Crz1",
+      "value": 0.0001916,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S5 (initial concentrations, pinned s013.pdf), row 'Init_Crz1, Initial Crz1p concentration, 1.916*1e-4, mM'"
+    },
+    {
+      "name": "Init_Ena1",
+      "value": 0.00011364,
+      "units": "mM",
+      "tag": "ASSERTED",
+      "provenance_verbatim": "Ke 2013 Table S5 (initial concentrations, pinned s013.pdf), row 'Init_Ena1, Initial Ena1p protein concentration, 1.1364*1e-4, mM'"
+    }
+  ],
+  "absent_from_source": [
+    {
+      "name": "cytosolic_buffer_capacity",
+      "units": "mM per pH unit",
+      "tag": "REFUSED",
+      "reason": "Ke 2013 does not contain the quantity in any form. The string 'buffer' appears ZERO times in the article XML and in all seven supplementary PDFs, and Eqn 2.40 is written on FREE protons -- dH+/dt = -J_Pma1 + 3/2 J_Nha1,Na + 3/2 J_Nha1,K + J_H_uptake + J_H_production -- with no buffering term at all. An omitted quantity is not a small quantity. Its absence limits physiological validity, but does not explain the reproduction discrepancy with a source that also omits buffering",
+      "missing": "a cytosolic buffering capacity titrated in this strain and medium, e.g. by the pHluorin nigericin-clamp route this repository already uses for pH_c"
+    },
+    {
+      "name": "anion_export_capacity",
+      "units": "amol/s",
+      "tag": "REFUSED",
+      "reason": "Table S4's Anion is a CONSTANT with an empty reference column. There is no anion transport equation anywhere in Text S1, so the source cannot supply a capacity even in principle; charge balance is closed by assumption",
+      "missing": "the same transport assay `mech/ph.py`'s vmax_anion_export refuses for; the two refusals are the same missing measurement seen from two models"
+    }
+  ],
+  "published_targets": {
+    "unstressed_ph_i": 7.14,
+    "alkaline_ph_i": 7.25,
+    "unstressed_em_mV": -94.0,
+    "kcl_em_mV": 20.0,
+    "unstressed_na_mM": 100.0,
+    "unstressed_k_mM": 200.0
+  },
+  "reproduction": {
+    "readings": {
+      "unit_consistent": {
+        "ph_i": 7.267267469140993,
+        "em_mV": -110.94427786353869,
+        "na_mM": 90.29021052322794,
+        "k_mM": 209.68098892536636,
+        "ph_i_alkaline_200min": 7.341920435210015,
+        "ph_i_shift": 0.07465296606902161,
+        "em_mV_alkaline_200min": -108.40064941825817
+      },
+      "as_printed_tok1": {
+        "ph_i": 7.25179124810951,
+        "em_mV": -138.48696911596952,
+        "na_mM": 108.33548535440511,
+        "k_mM": 191.62857561211044,
+        "ph_i_alkaline_200min": 7.321421133657026,
+        "ph_i_shift": 0.06962988554751615,
+        "em_mV_alkaline_200min": -137.09780457359722
+      }
+    },
+    "acidic_counterexample": {
+      "external_ph": 5.5,
+      "intracellular_ph": 4.68357014287946,
+      "kind": "reduced-model equilibrium, not a physiological prediction",
+      "biological_validation": false
+    },
+    "published_vs_here": {
+      "unstressed_ph_i": [
+        7.14,
+        7.267267469140993
+      ],
+      "unstressed_em_mV": [
+        -94.0,
+        -110.94427786353869
+      ],
+      "unstressed_na_mM": [
+        100.0,
+        90.29021052322794
+      ],
+      "unstressed_k_mM": [
+        200.0,
+        209.68098892536636
+      ],
+      "alkaline_ph_i": [
+        7.25,
+        7.341920435210015
+      ],
+      "alkaline_ph_i_shift": [
+        0.11000000000000032,
+        0.07465296606902161
+      ]
+    },
+    "sensitivity": {
+      "nha1_low_rate_zero": {
+        "ph_i": 7.267747659106302,
+        "em_mV": -110.6829896152247
+      },
+      "nha1_low_rate_10x": {
+        "ph_i": 7.263826427261791,
+        "em_mV": -112.72850031650869
+      },
+      "nha1_split_ph_span": 0.003921231844510764
+    },
+    "both_forms_as_printed": {
+      "has_fixed_point": true,
+      "ph_i": 4.312757813299143,
+      "em_mV": -140.82893719184432,
+      "J_H_uptake_amol_per_s": 6068.597673687491,
+      "J_Pma1_amol_per_s": 6073.7405087121215,
+      "ph_i_below_published": 2.8272421867008566
+    },
+    "volume_module": {
+      "d_pressure_at_table_s5_J_per_m3": -1511751.7582,
+      "turgor_at_table_s5_J_per_m3": 875000.0,
+      "note": "Eqn 4.1 would move the volume at Table S5's own initial state; the printed module does not rest where the paper starts it"
+    },
+    "calcineurin_module": {
+      "converged": true,
+      "ppz_mM": 3.931260421864767e-05,
+      "ca_mM": 4.440471065262369e-05,
+      "cn_mM": 1.2048458483864507e-05,
+      "crz1_mM": 0.00048571849960645137,
+      "table_s5_ca_mM": 5e-05,
+      "table_s5_cn_mM": 0.0,
+      "table_s5_crz1_mM": 0.0001916,
+      "crz1_fold_vs_table_s5": 2.5350652380294956
+    },
+    "acidic_limit": {
+      "status": "refused",
+      "limit_ph_ext": null,
+      "reason": "A physiological acidic limit is not identified by these reduced ion equations. The former cutoff was a root-finder convergence boundary, not proof of root nonexistence. Buffering, coupled regulation and a validated viability criterion remain missing; changing numerical search resolution cannot supply them."
+    },
+    "numerical_contract": {
+      "balance_units": "amol/s",
+      "absolute_tolerance": 1e-08,
+      "relative_tolerance": 1e-10,
+      "relative_scale": "sum of absolute ion-balance flux terms",
+      "source_parameters_refitted": false,
+      "biological_validation": false,
+      "failure_semantics": "nonconvergence is unresolved, not proof of root nonexistence"
+    }
+  },
+  "parameter_evidence_fragment": {
+    "models": {
+      "ke2013_transcription": {
+        "source_id": "ke2013",
+        "programmes": [
+          "ph"
+        ],
+        "availability": "transcribed_here",
+        "equation_asset": "data/native_reference_models/ke2013/pcbi.1002879.s009.pdf",
+        "executable_asset": "src/ystwin/mech/ph_ke2013.py",
+        "gap": "A hand transcription made in this repository, not an upstream artifact. Seven of Table S1's twenty-three ODEs run and one more (the volume equation) is transcribed but not integrated; fifteen refuse, each because a scalar in the equation is in no table (Vcyt, Vnuc and tau for the Hog1p module; KmNrg1,pH for Nrg1p, and so the ENA1 chain downstream of it). Three printed forms fail dimensional analysis and both readings of each are computed. It reproduces the direction and 68% of the magnitude of Ke's alkaline pH_i shift and sits 0.127 pH units and 17 mV off the printed unstressed levels; nothing was fitted to close that. The two scalars this programme needs are still absent: Ke has no buffering term at all and closes charge balance with an unmeasured 300 mM anion"
+      }
+    }
+  }
+}

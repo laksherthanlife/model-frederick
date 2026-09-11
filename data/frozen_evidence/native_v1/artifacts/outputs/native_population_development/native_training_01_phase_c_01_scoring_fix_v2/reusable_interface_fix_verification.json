@@ -1,0 +1,666 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring_fix_v2/reusable_interface_fix_verification.json",
+    "sha256": "34f98090270d78f309d1d4bddc1f28d2f5cf780e5f1f844133512bc8a49398a0"
+  },
+  "payload": {
+    "adapter_version": "native_population_phase_c_scoring_v2",
+    "authority_pins": {
+      "artifacts": [
+        {
+          "bytes": 47873,
+          "path": "data/native_law_v2/development_protocol.json",
+          "role": "protocol_snapshot",
+          "sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6"
+        },
+        {
+          "bytes": 4271,
+          "path": "data/native_law_v2/granados/development/executor_refresh_01/custody_decision.json",
+          "role": "operational_approval",
+          "sha256": "04ac928add5528beabd2a9f77a2055643dc120d3b76bff7315ffdc3f062f786e"
+        },
+        {
+          "bytes": 2456,
+          "path": "data/native_law_v2/granados/development/executor_refresh_01/executor_refresh_admission.json",
+          "role": "operational_event_log",
+          "sha256": "b967279da5186529d784e66b99a066e785f487558d0858a50cf91b950d979763"
+        },
+        {
+          "bytes": 3861,
+          "path": "data/native_law_v2/granados/development/phase_b/custody_decision.json",
+          "role": "operational_approval",
+          "sha256": "87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533"
+        },
+        {
+          "bytes": 23467,
+          "path": "data/native_law_v2/granados/development/phase_c_01/coverage_audit.json",
+          "role": "source_binding_audit",
+          "sha256": "270c845038ef39ae3261a38593083540f1b25fa85ad0612fa93ed5fd2d874f13"
+        },
+        {
+          "bytes": 4148,
+          "path": "data/native_law_v2/granados/development/phase_c_01/custody_decision.json",
+          "role": "operational_approval",
+          "sha256": "ccdf78fa1d986758a9f760747d755b02fd2d52c11098e14c3043ee7d8a47806e"
+        },
+        {
+          "bytes": 2689,
+          "path": "data/native_law_v2/granados/development/phase_c_01/freeze_verification.json",
+          "role": "source_binding_audit",
+          "sha256": "ad3768db1a5eab8b61ffbc631cefdc0be9676f26d49d24dd01adcee226ebd897"
+        },
+        {
+          "bytes": 1159,
+          "path": "data/native_law_v2/granados/development/phase_c_01/release_event.json",
+          "role": "operational_event_log",
+          "sha256": "838953156f44a5e3b06d018b53a9dbfbaca3365408bbab42ba3d2c4b8d230760"
+        },
+        {
+          "bytes": 8574,
+          "path": "data/native_law_v2/granados/development/phase_c_01/release_manifest.json",
+          "role": "operational_event_log",
+          "sha256": "0e2d18b1d239f33fd21165219c512b52546635b733ec47d67c85f726a919ec82"
+        },
+        {
+          "bytes": 42204,
+          "path": "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py",
+          "role": "execution_code",
+          "sha256": "68c31da88770e4718bc5668791edd38de6a054fa821aaa074a2ef48d6c676d8a"
+        },
+        {
+          "bytes": 2348,
+          "path": "data/native_law_v2/granados/development/phase_c_01/release_request.json",
+          "role": "operational_event_log",
+          "sha256": "fe3b56ac5999b0382a8457f398a1f0d270016ff2bd15c2378d4d91bb719ed78a"
+        },
+        {
+          "bytes": 1843,
+          "path": "data/native_law_v2/granados/development/phase_c_01/source_binding_audit.json",
+          "role": "source_binding_audit",
+          "sha256": "349f20acb2bc9762129686b59df090f67b6a1872e766b03c67eefded6b27a728"
+        },
+        {
+          "bytes": 5105,
+          "path": "data/native_law_v2/granados/development/phase_c_01/source_replay_verification.json",
+          "role": "source_binding_audit",
+          "sha256": "359f9834bd22905ccc27d7662f86d7a3b196abba6da6567656bdc9b991aef319"
+        },
+        {
+          "bytes": 6904,
+          "path": "data/native_law_v2/granados/development/release_manifest.json",
+          "role": "operational_event_log",
+          "sha256": "3b8c67c79191bf4dec0a1e7e0514b1a145359c30061868bbfdd136f0ee1cd3dd"
+        },
+        {
+          "bytes": 4764543,
+          "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_inputs.json",
+          "role": "development_inputs",
+          "sha256": "41ee2a8ce6b09cb664859873fd59fd005e31e6eaa054c3703098c91e3f790613"
+        },
+        {
+          "bytes": 3520217,
+          "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_responses.json",
+          "role": "development_responses",
+          "sha256": "9090f1e8ced8094f4ed445f5285bf5f85a7c457b07c34c28e9fa0cb0e0ea6178"
+        },
+        {
+          "bytes": 92464,
+          "path": "outputs/native_population_development/executor_refresh_01/code/native_population_development.py",
+          "role": "execution_code",
+          "sha256": "654dd5729d204c5963f5e51576a4830b61f736296c877ffc419efa77d009e2a0"
+        },
+        {
+          "bytes": 4212,
+          "path": "outputs/native_population_development/executor_refresh_01/code/run_native_population_development.py",
+          "role": "execution_code",
+          "sha256": "f96a36702867262718997acaae7131d4b616725a563e27f795dc65ee8bd6f03c"
+        },
+        {
+          "bytes": 31449,
+          "path": "outputs/native_population_development/executor_refresh_01/code/test_native_population_development.py",
+          "role": "execution_code",
+          "sha256": "6f8d067c99f501a2311143ace0d316233df85703e6943bdc19a17559dc7e66bc"
+        },
+        {
+          "bytes": 3729,
+          "path": "outputs/native_population_development/executor_refresh_01/execution_configuration.json",
+          "role": "execution_code",
+          "sha256": "7e1aa35c8f6c248fc921f2348d362b8fc76e23bd8cfff070b19d21b2d9195cdb"
+        },
+        {
+          "bytes": 20091,
+          "path": "outputs/native_population_development/native_training_01/attempt_log.json",
+          "role": "attempt_log",
+          "sha256": "4740203cf2ecd2ffe1626c5a288ac6b5949f086d189e302f4be8cc3f8c51e4f3"
+        },
+        {
+          "bytes": 825,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_0.json",
+          "role": "model_checkpoint",
+          "sha256": "83a0d50899211128e391309221da804e1ce90a8c4b4ad1c594cfb9acc7255187"
+        },
+        {
+          "bytes": 838,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_1.json",
+          "role": "model_checkpoint",
+          "sha256": "e3f2d2cd695a7fe666807f07fc7de37f9c4443779411f853aa35d42b898330e7"
+        },
+        {
+          "bytes": 840,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_2.json",
+          "role": "model_checkpoint",
+          "sha256": "4b12aa14942a01f59d425a2127ef50ad73ccbee16a1e9e6f4065ddd590905e8c"
+        },
+        {
+          "bytes": 837,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_3.json",
+          "role": "model_checkpoint",
+          "sha256": "99a913c9c4d7866733c13fdbe37aced4ff3147bd133be752a446da67589cbfa4"
+        },
+        {
+          "bytes": 837,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_4.json",
+          "role": "model_checkpoint",
+          "sha256": "3cb9579fdbb7f48593085968cf64a1fe626098297d0e5d6b6b674a5512fd613e"
+        },
+        {
+          "bytes": 839,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_5.json",
+          "role": "model_checkpoint",
+          "sha256": "614ffdfcc94611418043469e7cb6f691a92ca50d7de38cfd9ca44034c63be0fe"
+        },
+        {
+          "bytes": 841,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_6.json",
+          "role": "model_checkpoint",
+          "sha256": "be8f836bade5ad8399d41fddbd98a9e8dedf8eab6928d4b50d06d77d51d92d14"
+        },
+        {
+          "bytes": 837,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_7.json",
+          "role": "model_checkpoint",
+          "sha256": "9e5d5d79f424cb153b531015d15daa47fa6d433ff1acf0b3c04bfe52bb6ac072"
+        },
+        {
+          "bytes": 833,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_0.json",
+          "role": "model_checkpoint",
+          "sha256": "4ba191f5804b7f88b5074a130ed64ee2c263de8975e801ea39e602ff97a22f1a"
+        },
+        {
+          "bytes": 862,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_1.json",
+          "role": "model_checkpoint",
+          "sha256": "0a2c704be1638a7a8f6e3acafd3901918b56b2c02235308f32379255dd7c56aa"
+        },
+        {
+          "bytes": 860,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_2.json",
+          "role": "model_checkpoint",
+          "sha256": "abe2e8c406c07852f7bb5a54e7c36b296b03459f8ba8687da321faaa3a0df70e"
+        },
+        {
+          "bytes": 860,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_3.json",
+          "role": "model_checkpoint",
+          "sha256": "4ef22345100b697cb4cc75ab5d6ca08e48346eff7e3edb6e01955b6e31c734dd"
+        },
+        {
+          "bytes": 862,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_4.json",
+          "role": "model_checkpoint",
+          "sha256": "4ad5afac6e85df384c63bf19af2529a9b0bb5dd349d8ae043e5b15220f27ae01"
+        },
+        {
+          "bytes": 861,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_5.json",
+          "role": "model_checkpoint",
+          "sha256": "8b5f83ff69ac6a522d7c4c6352848d8b134fa28bde9fd25d4aeae8001f17f1b9"
+        },
+        {
+          "bytes": 859,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_6.json",
+          "role": "model_checkpoint",
+          "sha256": "27cc0e5edf5522cc2a7ea23bfe630f6088acbf279544d47bb3fc1bcc581a92bc"
+        },
+        {
+          "bytes": 860,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_7.json",
+          "role": "model_checkpoint",
+          "sha256": "d45089e58fd95ae20395e6642ae609abf3a58ce47018a3b73c0363ccbf56b7c1"
+        },
+        {
+          "bytes": 747,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_0.json",
+          "role": "model_checkpoint",
+          "sha256": "e76da924f126edd5562a0508a156ca2da02266a10ddea689c9100182cbcdd4f0"
+        },
+        {
+          "bytes": 761,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_1.json",
+          "role": "model_checkpoint",
+          "sha256": "7ca3c499eb9ac44a0ed74c832eee548b360a2eabee685bc81bb8ed1737d4d41e"
+        },
+        {
+          "bytes": 762,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_2.json",
+          "role": "model_checkpoint",
+          "sha256": "2cc16a4ac90133aa342477f03f8bc8b0947cd0b1870fe2b3e23cd84ceea6c12a"
+        },
+        {
+          "bytes": 760,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_3.json",
+          "role": "model_checkpoint",
+          "sha256": "ba3b1dcbb1ee9061840922598878fbf38f458fc887320e1494523e670879a476"
+        },
+        {
+          "bytes": 760,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_4.json",
+          "role": "model_checkpoint",
+          "sha256": "8848b2bd62a5bac7e996f4ba966d60e6e85be9e2556c04e7a5462fce411d4004"
+        },
+        {
+          "bytes": 760,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_5.json",
+          "role": "model_checkpoint",
+          "sha256": "0cd7a120310c28cd33e1946c722d004fb9a4db685037e5b5c320525f05c9b7f0"
+        },
+        {
+          "bytes": 759,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_6.json",
+          "role": "model_checkpoint",
+          "sha256": "da68eec904b992a8b3c5fdb042401b210eec8ee9130c1da1e332c466acb4fe7a"
+        },
+        {
+          "bytes": 758,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_7.json",
+          "role": "model_checkpoint",
+          "sha256": "493dfc79831b1f27aa792a29cc450af4cce0702c1a60c5e4b811d4fc4c5caa83"
+        },
+        {
+          "bytes": 672,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_persistence_start_0.json",
+          "role": "model_checkpoint",
+          "sha256": "5075ce2a2fe293b55c44f741bcee3395c36b32631b400951d9207260ed318061"
+        },
+        {
+          "bytes": 744,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_0.json",
+          "role": "model_checkpoint",
+          "sha256": "bb956a842d13fed35eeee9d324a84526f242e589127eec24f683b7c94a1445ff"
+        },
+        {
+          "bytes": 747,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_1.json",
+          "role": "model_checkpoint",
+          "sha256": "9e16035279c73f4e21102f772ae9b2a24ab5e9597e19d5da0cadada62543c461"
+        },
+        {
+          "bytes": 747,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_2.json",
+          "role": "model_checkpoint",
+          "sha256": "758493855ec178dc2ad2ea19068ad269fb264fdd7d13794db2901d0641167a03"
+        },
+        {
+          "bytes": 746,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_3.json",
+          "role": "model_checkpoint",
+          "sha256": "062cbacb060a96c122ed3890bd64744636d2bd148eed24f9a11eb995d8f903b0"
+        },
+        {
+          "bytes": 746,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_4.json",
+          "role": "model_checkpoint",
+          "sha256": "ed13f8ae885db5e412fbf8fd5d1caa69b8137995e8f98df7bbdb019f59bc4cbe"
+        },
+        {
+          "bytes": 746,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_5.json",
+          "role": "model_checkpoint",
+          "sha256": "1b29356b8c0049e733558fc326e82e4134373c23cf84588bc9489296cf5276be"
+        },
+        {
+          "bytes": 748,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_6.json",
+          "role": "model_checkpoint",
+          "sha256": "68585c740bc015d6572a21e6d9d6c018232b2c765b9d457a923d9862813be7c0"
+        },
+        {
+          "bytes": 745,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_7.json",
+          "role": "model_checkpoint",
+          "sha256": "4fefe509ca43c444c001e21396b4fc7fe136ca41dfb18686633a73800733388b"
+        },
+        {
+          "bytes": 925,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_0.json",
+          "role": "model_checkpoint",
+          "sha256": "391f76e3ff5931f21461f81a5357e77687ee1aaea0c4c2ad6db7a71f7e4484e6"
+        },
+        {
+          "bytes": 939,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_1.json",
+          "role": "model_checkpoint",
+          "sha256": "fbf7914f4cd34bd69350ef5c7f0428af2ce58102b292b45515687fca424530f5"
+        },
+        {
+          "bytes": 939,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_2.json",
+          "role": "model_checkpoint",
+          "sha256": "01b80fb81fac6f1d5f4dbecdf73da785ad8f8ca2900d6efb155bde56ca71359a"
+        },
+        {
+          "bytes": 939,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_3.json",
+          "role": "model_checkpoint",
+          "sha256": "abf642b8c684cd5070443541c8442ea3f8822462041d7cab320aa28b558ad055"
+        },
+        {
+          "bytes": 940,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_4.json",
+          "role": "model_checkpoint",
+          "sha256": "b047e553bbaeb38bb7f37ac223278a8e4d11a88a3f78b92b03936ca80f25dcc9"
+        },
+        {
+          "bytes": 939,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_5.json",
+          "role": "model_checkpoint",
+          "sha256": "e725bef6d7f8aaf54d648d4efd850f96c453aa8d162be2023a68a7ef861cc9f1"
+        },
+        {
+          "bytes": 941,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_6.json",
+          "role": "model_checkpoint",
+          "sha256": "fe1e5b4f3bf230fe702e26814c7eabb7d8cd430e0de6f3da74accfe978eb9342"
+        },
+        {
+          "bytes": 940,
+          "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_7.json",
+          "role": "model_checkpoint",
+          "sha256": "dd5a2ee0e5acc75df4306c0675eb29a515be9915a2c3bc79596f7eebf121d0fc"
+        },
+        {
+          "bytes": 70295,
+          "path": "outputs/native_population_development/native_training_01/conditioning_checkpoint.json",
+          "role": "model_checkpoint",
+          "sha256": "2814d3827aa8b6d3f5cd4974c92a30809c30ae4ae330d98a5262a7f650908ca3"
+        },
+        {
+          "bytes": 124917,
+          "path": "outputs/native_population_development/native_training_01/development_prediction_freeze.json",
+          "role": "development_predictions",
+          "sha256": "e03f6b9407b29e7e76da7a0be566ce9036c5cf27ac65bfaa9a4d3d7e009b5753"
+        },
+        {
+          "bytes": 175204,
+          "path": "outputs/native_population_development/native_training_01/nonnegative_map_audit.json",
+          "role": "model_checkpoint",
+          "sha256": "bc941931bb27d4daf0b9db2eaf3fdaf76b68a5f8f9c2c0da9a2b03b58c71de34"
+        },
+        {
+          "bytes": 12863,
+          "path": "outputs/native_population_development/native_training_01/training_run_summary.json",
+          "role": "operational_event_log",
+          "sha256": "fe80ac3406d3058c7489a98d5f3ec6aa3d980d76388c280da5b9d21dc2b489cd"
+        },
+        {
+          "bytes": 104189,
+          "path": "scripts/export_granados_training.py",
+          "role": "execution_code",
+          "sha256": "6447608e622c6bdd47e16f4f930f91f9297077aaccfbc5a0745b359b1bbd7159"
+        },
+        {
+          "bytes": 4212,
+          "path": "scripts/run_native_population_development.py",
+          "role": "execution_code",
+          "sha256": "f96a36702867262718997acaae7131d4b616725a563e27f795dc65ee8bd6f03c"
+        },
+        {
+          "bytes": 92464,
+          "path": "src/ystwin/analysis/native_population_development.py",
+          "role": "execution_code",
+          "sha256": "654dd5729d204c5963f5e51576a4830b61f736296c877ffc419efa77d009e2a0"
+        },
+        {
+          "bytes": 31449,
+          "path": "tests/test_native_population_development.py",
+          "role": "execution_code",
+          "sha256": "6f8d067c99f501a2311143ace0d316233df85703e6943bdc19a17559dc7e66bc"
+        }
+      ],
+      "authority_root": ".",
+      "manifest": {
+        "bytes": 8574,
+        "path": "data/native_law_v2/granados/development/phase_c_01/release_manifest.json",
+        "role": "operational_event_log",
+        "sha256": "0e2d18b1d239f33fd21165219c512b52546635b733ec47d67c85f726a919ec82"
+      }
+    },
+    "document_type": "phase_c_reusable_interface_fix_verification_v2",
+    "fix": "Immutable pins captured during actual admission; authoritative manifest/receipt bytes and typed phase lineage are revalidated on reuse; cached metadata is not authority.",
+    "fixed_adapter_snapshots": [
+      {
+        "bytes": 41860,
+        "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring_fix_v2/adapter_code/native_population_scoring.py",
+        "role": "execution_code",
+        "sha256": "4df68fd55dd336a0827db877b8244fea18554bee931ba09d966567a693cff70b"
+      },
+      {
+        "bytes": 2606,
+        "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring_fix_v2/adapter_code/score_native_population_development.py",
+        "role": "execution_code",
+        "sha256": "d1d61287d846cc3bd3d651ec5516d6239bf05c1fe169a4e4b008ba860d52d813"
+      },
+      {
+        "bytes": 14041,
+        "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring_fix_v2/adapter_code/test_native_population_scoring.py",
+        "role": "execution_code",
+        "sha256": "34543c834f9aeb15bfeab4bb6593a1c782cf21abc1eb5ea06e7a78ab8a0e7273"
+      }
+    ],
+    "historical_reports_overwritten": false,
+    "issue": "SCORING001",
+    "new_fit_performed": false,
+    "new_predictions_generated": false,
+    "new_selection_performed": false,
+    "original_adapter_snapshots": [
+      {
+        "bytes": 33054,
+        "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring/adapter_code/native_population_scoring.py",
+        "role": "execution_code",
+        "sha256": "3540a9451c8bc96b3a322934364bb8dd82669734e9b54b8b9becd2e842aa0f80"
+      },
+      {
+        "bytes": 2293,
+        "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring/adapter_code/score_native_population_development.py",
+        "role": "execution_code",
+        "sha256": "6e4999cbf7c7153a91609a07f6da00d6757d92a1300ca7e505d1da3d018869c2"
+      },
+      {
+        "bytes": 8389,
+        "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring/adapter_code/test_native_population_scoring.py",
+        "role": "execution_code",
+        "sha256": "f31f7605a2e2e650264b9ad6fad44003c7613b9fe6f91f13a4dd35d79bd3e65b"
+      }
+    ],
+    "original_adapter_version": "native_population_phase_c_scoring_v1",
+    "original_adapter_was_bug_free": false,
+    "original_bug": "Mutable cached metadata allowed unauthorized response copies and caller-recomputed hashes to replace the admitted projection.",
+    "prediction_freeze": {
+      "bytes": 124917,
+      "path": "outputs/native_population_development/native_training_01/development_prediction_freeze.json",
+      "role": "development_predictions",
+      "sha256": "e03f6b9407b29e7e76da7a0be566ce9036c5cf27ac65bfaa9a4d3d7e009b5753"
+    },
+    "published_fresh_score_once_bypass_demonstrated": false,
+    "published_metrics_exactly_unchanged": true,
+    "published_model_metrics": {
+      "first_order_response": {
+        "complete": true,
+        "groups": {
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4": {
+            "complete": true,
+            "mae": 0.08959735949544877,
+            "mean_mse": 0.01314971192020615,
+            "rmse": 0.11467219331732585
+          },
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5": {
+            "complete": true,
+            "mae": 0.07867816054300843,
+            "mean_mse": 0.007937198203268868,
+            "rmse": 0.08909095466582939
+          }
+        },
+        "mae": 0.0841377600192286,
+        "mean_mse": 0.01054345506173751,
+        "rmse": 0.10268132771705628,
+        "scaled_mae": 0.399943183603044,
+        "scaled_rmse": 0.48808878551510887
+      },
+      "prefix_affine_time": {
+        "complete": true,
+        "groups": {
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4": {
+            "complete": true,
+            "mae": 0.11978770535609627,
+            "mean_mse": 0.018372289869146363,
+            "rmse": 0.13554442028038766
+          },
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5": {
+            "complete": true,
+            "mae": 0.07790442210839423,
+            "mean_mse": 0.00930421798906156,
+            "rmse": 0.09645837438533557
+          }
+        },
+        "mae": 0.09884606373224525,
+        "mean_mse": 0.013838253929103962,
+        "rmse": 0.11763610810080365,
+        "scaled_mae": 0.4698581161023164,
+        "scaled_rmse": 0.5591753282920188
+      },
+      "prefix_offset": {
+        "complete": true,
+        "groups": {
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4": {
+            "complete": true,
+            "mae": 0.1096976120641922,
+            "mean_mse": 0.017458252122337797,
+            "rmse": 0.13212967918805296
+          },
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5": {
+            "complete": true,
+            "mae": 0.086132020426557,
+            "mean_mse": 0.009476006879657,
+            "rmse": 0.09734478352565688
+          }
+        },
+        "mae": 0.0979148162453746,
+        "mean_mse": 0.013467129500997398,
+        "rmse": 0.11604796207171153,
+        "scaled_mae": 0.4654314938041204,
+        "scaled_rmse": 0.551626182952798
+      },
+      "prefix_persistence": {
+        "complete": true,
+        "groups": {
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4": {
+            "complete": true,
+            "mae": 0.26788353540817145,
+            "mean_mse": 0.0843371232609998,
+            "rmse": 0.29040854543384187
+          },
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5": {
+            "complete": true,
+            "mae": 0.15956611413367014,
+            "mean_mse": 0.033459642913473545,
+            "rmse": 0.18291977179483235
+          }
+        },
+        "mae": 0.2137248247709208,
+        "mean_mse": 0.058898383087236675,
+        "rmse": 0.2426898907808825,
+        "scaled_mae": 1.0159265805786835,
+        "scaled_rmse": 1.153610073824153
+      },
+      "training_constant": {
+        "complete": true,
+        "groups": {
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4": {
+            "complete": true,
+            "mae": 0.1019351684630534,
+            "mean_mse": 0.016099069493462192,
+            "rmse": 0.1268821086420863
+          },
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5": {
+            "complete": true,
+            "mae": 0.08748806963347626,
+            "mean_mse": 0.01198306341456927,
+            "rmse": 0.10946717962279502
+          }
+        },
+        "mae": 0.09471161904826483,
+        "mean_mse": 0.014041066454015731,
+        "rmse": 0.1184950060298565,
+        "scaled_mae": 0.4502053113572898,
+        "scaled_rmse": 0.5632580418329659
+      },
+      "transient_response": {
+        "complete": true,
+        "groups": {
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4": {
+            "complete": true,
+            "mae": 0.08565737569596388,
+            "mean_mse": 0.008929884888012727,
+            "rmse": 0.09449806817079769
+          },
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5": {
+            "complete": true,
+            "mae": 0.05138145221466084,
+            "mean_mse": 0.004617592400514519,
+            "rmse": 0.06795286896455895
+          }
+        },
+        "mae": 0.06851941395531236,
+        "mean_mse": 0.006773738644263623,
+        "rmse": 0.08230272561867938,
+        "scaled_mae": 0.32570242599327176,
+        "scaled_rmse": 0.39122047099447166
+      }
+    },
+    "published_report": {
+      "bytes": 128937,
+      "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring/development_report.json",
+      "role": "development_report",
+      "sha256": "a98fd9b755c0e8a21c43c05a07b96f76b7c780e25c3686901fedbb6924db72ef"
+    },
+    "published_selected_development_model": "transient_response",
+    "published_summary": {
+      "bytes": 7647,
+      "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring/scoring_summary.json",
+      "role": "development_report",
+      "sha256": "3b2093a057f5a6819c93138fc22c7b973a4235410f99b916e74acfaa434dd7ca"
+    },
+    "recorded_at_utc": "2026-09-07T15:19:40.327684+00:00",
+    "response_projection": {
+      "bytes": 3520217,
+      "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_responses.json",
+      "role": "development_responses",
+      "sha256": "9090f1e8ced8094f4ed445f5285bf5f85a7c457b07c34c28e9fa0cb0e0ea6178"
+    },
+    "scientific_scope": "retrospective_source_cohort_development",
+    "strong_claim_authorized": false,
+    "verified_families": [
+      "prefix_persistence",
+      "training_constant",
+      "prefix_offset",
+      "prefix_affine_time",
+      "first_order_response",
+      "transient_response"
+    ],
+    "verified_frame_rows": 288,
+    "verified_group_rows": 12
+  },
+  "schema_version": 1
+}

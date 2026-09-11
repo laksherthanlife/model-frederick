@@ -1,0 +1,7 @@
+model,n_independent_strains,n_condition_predictions,n_channels,n_successful_predictions,n_failed_predictions,product_rmse_log,product_failed_predictions,lycopene_rmse_log,lycopene_failed_predictions,joint_rmse_log,n_intervals_available,product_covered_conditions,product_empirical_coverage,lycopene_covered_conditions,lycopene_empirical_coverage,joint_covered_conditions,joint_empirical_coverage,joint_covered_strains,joint_empirical_strain_coverage,nominal_channel_coverage,nominal_strain_joint_coverage,rmse_skill_vs_constant_rate,rmse_skill_vs_constant_content
+nested,3,6,2,6,0,0.3729263620027312,0,0.7151215872387604,0,0.5702950797663768,6,3,0.5,4,0.6666666666666666,4,0.6666666666666666,1,0.3333333333333333,0.95,0.95,0.3669281718260893,0.45162431050072394
+constant_content,3,6,2,6,0,0.4561095311970915,0,1.3982294060325455,0,1.0399714843068908,0,0,,0,,0,,0,,,,-0.15444911270952044,0.0
+constant_rate,3,6,2,6,0,0.4506127993651206,0,1.1916232019510402,0,0.9008378739761446,0,0,,0,,0,,0,,,,0.0,0.13378598589505997
+entry_partition,3,6,2,6,0,0.5112286715698175,0,0.8462189278075128,0,0.6990855557135826,0,0,,0,,0,,0,,,,0.22396074153949785,0.3277839188259073
+saturating_branch,3,6,2,6,0,0.3729263620027312,0,0.7151215872387604,0,0.5702950797663768,0,0,,0,,0,,0,,,,0.3669281718260893,0.45162431050072394
+fixed_crte_comparison,3,6,2,6,0,0.16666559133291675,0,0.37661779264837764,0,0.2912201753602308,0,0,,0,,0,,0,,,,0.6767229889271478,0.7199729225707374

@@ -1,0 +1,31 @@
+# Metabolites this repository INSTALLS into a host GEM, and what they are.
+#
+# WHY THIS FILE EXISTS. `data/thermo/aliases.tsv` is a vendored ModelSEED table: it maps
+# ModelSEED compound ids onto ids from PUBLISHED models (AlgaGEM, BiGG, AraCyc, KEGG). A
+# metabolite id that this repository invents when it installs a heterologous pathway --
+# `phytoene_c`, from `src/ystwin/fba/carotenoid.py` -- is in no alias table anywhere and
+# never will be, so `ThermodynamicData.load().dgf()` returned None for all three C40
+# carotenoids. That was read as a coverage gap and written into
+# `data/pathways/beta_carotene.toml` as "the vendored tables carry no formation energy for
+# a C40 carotenoid". It was a NAMING gap: the tables carry all three.
+# `docs/research/CAROTENOID_ENERGIES.md` is the corrected record.
+#
+# This file closes it as declared data. Each row states which species a repository-local
+# metabolite id IS, by ModelSEED and KEGG identifier, with the source that establishes it.
+# It is read by `src/ystwin/bridge/thermodynamic.py`.
+#
+# IT IS AUTHORED HERE, NOT DOWNLOADED, and `thermodynamic.py` therefore resolves it against
+# the repository rather than through YSTWIN_THERMO -- a machine pointing that variable at
+# its own copy of the ModelSEED download must still get these declarations.
+#
+# `formula` is checked against the ModelSEED entry on load, the same `_same_skeleton` check
+# that already stops an alias resolving ribose-5-phosphate onto a chlorinated herbicide. A
+# row whose formula disagrees with the database is refused rather than used.
+#
+# DECLARING AN ID IS NOT ENDORSING THE NUMBER BEHIND IT. See refuted_energies.tsv: all
+# three rows below are also declared there, so the gate reports them as `cannot_say` for a
+# stated reason rather than reporting a verdict off an extrapolated energy.
+metabolite_id	modelseed_id	kegg_id	name	formula	installed_by	source
+phytoene_c	cpd03205	C05413	phytoene	C40H64	src/ystwin/fba/carotenoid.py	ModelSEED cpd03205 (data/thermo/compounds.tsv, InChIKey YVLPJIGOMTXXLP-KEKOKYSKSA-N) cross-references KEGG C05413; the KEGG->SEED row is already in data/thermo/aliases.tsv. Chemistry from PMID 17496128 (Verwaal 2007).
+lycopene_c	cpd03217	C05432	lycopene	C40H56	src/ystwin/fba/carotenoid.py	ModelSEED cpd03217 (data/thermo/compounds.tsv, InChIKey OAIJSZIZWZSQBC-GYZMGTAESA-N) cross-references KEGG C05432; the KEGG->SEED row is already in data/thermo/aliases.tsv. Chemistry from PMID 17496128 (Verwaal 2007).
+betacarotene_c	cpd01420	C02094	beta-carotene	C40H56	src/ystwin/fba/carotenoid.py	ModelSEED cpd01420 (data/thermo/compounds.tsv, InChIKey OENHQHLEOONYIE-JLTXGRSLSA-N) cross-references KEGG C02094; the KEGG->SEED row is already in data/thermo/aliases.tsv. Chemistry from PMID 17496128 (Verwaal 2007).

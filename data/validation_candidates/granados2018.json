@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "status": "metadata_verified_measurement_arrays_not_opened",
+  "purpose": "Candidate external native signaling data for a separately registered test of biological response learning; not a completed validation or a source of metabolic flux labels.",
+  "source": {
+    "title": "Distributed and dynamic intracellular organization of extracellular information in yeast",
+    "authors": "Granados, Pietsch, Cepeda-Humerez, Farquhar, Tkacik and Swain",
+    "year": 2018,
+    "paper_doi": "10.1073/pnas.1716659115",
+    "item_id": "82d65e34-a1a2-4a8d-9bc7-b72d14b80111",
+    "item_url": "https://datashare.ed.ac.uk/server/api/core/items/82d65e34-a1a2-4a8d-9bc7-b72d14b80111",
+    "bundle_url": "https://datashare.ed.ac.uk/server/api/core/bundles/29a5d553-9aa0-4898-9b2c-d5a010c52628/bitstreams",
+    "license": "Creative Commons Attribution 4.0 International Public License",
+    "license_evidence": "Item metadata dc.rights, fetched from the repository API"
+  },
+  "readme": {
+    "url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/c779e1c9-0b73-4824-8dae-e5f7fc39f212/content",
+    "bytes": 9932,
+    "sha256": "fbce9f1ec3abbff57ee3c2e1af29cdecfc8122cfe393287954a11776d8724ebf",
+    "verified_scope": "Repository item/bundle/bitstream metadata and the README only; no numerical measurement-array files downloaded or read"
+  },
+  "measurement_contract": {
+    "organism": "Saccharomyces cerevisiae",
+    "platform": "ALCATRAS microfluidics and DISCO brightfield-constrained segmentation",
+    "single_color_factors": ["Msn2", "Msn4", "Dot6", "Tod6", "Sfp1", "Maf1", "Mig1", "Mig2", "Hog1", "Yap1"],
+    "array_rows": "cells",
+    "array_columns": "measurement time points",
+    "missing_values": "JSON null means the cell was absent at that time, not a measured zero",
+    "median": "Median fluorescence over the segmented cell area",
+    "max5": "Mean intensity of the five brightest pixels in the segmented cell area",
+    "nucLoc": "max5/median fluorescence ratio; a nuclear-localization proxy, not a directly measured phospho-Hog1 fraction",
+    "nucLocNorm": "Published normalization described in supplementary text; exact transformation must be audited before quantitative comparison",
+    "origin": "Determined media-switching time point",
+    "times": "Relative to origin; README plotting examples label minutes",
+    "imBackground": "Median pixel intensity outside segmented areas",
+    "time_resolution": "Not established from metadata; measurement arrays remain unopened",
+    "strain_background": "Not established from the inspected metadata"
+  },
+  "documented_conditions": {
+    "initial_glucose_percent": 2.0,
+    "stress_type_panel": {
+      "carbon": {"final_glucose_percent": 0.1},
+      "osmotic": {"added_nacl_molar": 0.4},
+      "oxidative": {"hydrogen_peroxide_millimolar": 0.5}
+    },
+    "dose_panel_examples_only": {
+      "gluc_0_8": {"final_glucose_percent": 0.8},
+      "nacl_0_1M": {"added_nacl_molar": 0.1},
+      "oxid_0_22mM": {"hydrogen_peroxide_millimolar": 0.22}
+    },
+    "complete_dose_inventory": "Not claimed; only metadata/README examples were inspected"
+  },
+  "assets": [
+    {
+      "name": "fig1_sfp1_replicates.json",
+      "bitstream_id": "1b38366b-7473-4ddf-9cf9-26e625533686",
+      "bytes": 4178902,
+      "content_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/1b38366b-7473-4ddf-9cf9-26e625533686/content",
+      "description": "Sfp1 carbon-stress experiments; README explicitly identifies six biological replicates on different days"
+    },
+    {
+      "name": "fig2_stress_type_expts.json",
+      "bitstream_id": "32cf23e6-ff7c-4b41-8304-f60afca3f4a6",
+      "bytes": 27014075,
+      "content_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/32cf23e6-ff7c-4b41-8304-f60afca3f4a6/content",
+      "description": "Strain -> stress type -> channel -> measurement; first biological replicate with multiple image-derived measures"
+    },
+    {
+      "name": "fig2_stress_type_replicates.json",
+      "bitstream_id": "721ef5f2-b858-4257-8cc8-5eea9a8599bb",
+      "bytes": 14360462,
+      "content_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/721ef5f2-b858-4257-8cc8-5eea9a8599bb/content",
+      "description": "Strain -> stress type -> biological replicate -> channel -> measurement; normalized localization for two biological replicates"
+    },
+    {
+      "name": "fig3_stress_level_expts.json",
+      "bitstream_id": "5b7ea616-fdd5-4978-951e-8cfc3f722eb1",
+      "bytes": 51227456,
+      "content_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/5b7ea616-fdd5-4978-951e-8cfc3f722eb1/content",
+      "description": "Stress type -> factor -> magnitude -> channel -> measurement; not all specialists assayed under every stress type"
+    },
+    {
+      "name": "figS1_nuclear_marker_expts.json",
+      "bitstream_id": "0dcc11fc-dcd1-4983-930e-26265b48a0e9",
+      "bytes": 4062841,
+      "content_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/0dcc11fc-dcd1-4983-930e-26265b48a0e9/content",
+      "description": "Nuclear-marker comparison with additional segmented nucleus/cytosol measurements"
+    },
+    {
+      "name": "figS7_rich_to_rich_expts.json",
+      "bitstream_id": "f0ff4386-a4a5-40a4-b501-42b3e222e698",
+      "bytes": 7280122,
+      "content_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/f0ff4386-a4a5-40a4-b501-42b3e222e698/content",
+      "description": "Rich-to-rich media switching; candidate biological/instrumental negative-control condition"
+    },
+    {
+      "name": "figS19_two_colour_expts.json",
+      "bitstream_id": "5546d389-8424-40f3-8620-6be68ca9b16d",
+      "bytes": 8900018,
+      "content_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/5546d389-8424-40f3-8620-6be68ca9b16d/content",
+      "description": "Co-measured pairs with GFP and mCherry under carbon/osmotic stress; candidate joint-response evidence rather than artificially combined single-color cells"
+    }
+  ],
+  "leakage_and_interpretation_gates": [
+    "The README explicitly states fig2_stress_type_expts is the first replicate also present in fig2_stress_type_replicates. They cannot be treated as independent train/test files.",
+    "Split by complete biological experiment/replicate and declared condition, not random cells or time points from the same movie.",
+    "Audit nucLocNorm and background/peak processing using the supplement before deciding what normalization can be estimated from training versus fixed assay definitions.",
+    "Do not substitute nuclear localization for Hog1PP_measured or label unpaired factor strains as simultaneous multivariate observations.",
+    "Register model, observation transform, baselines, negative controls and whole-experiment heldouts before opening any measurement arrays for a final test.",
+    "Verify inherited model/data lineage before declaring this an independent validation source; metadata availability or later publication date alone does not certify every dependency.",
+    "This dataset does not provide measured glycerol flux, enzyme-specific catalytic capacity, dry biomass or an absolute native HOG-to-GEM volume conversion."
+  ],
+  "catalogue_discrepancies": [
+    "README description headings call the nuclear-marker and rich-to-rich assets figS2 and figS8, whereas the repository API exposes figS1 and figS7; the IDs/URLs above follow actual bitstream metadata.",
+    "Data-file SHA256 values are intentionally absent until acquisition; only README bytes were opened and hashed in this metadata-only review."
+  ]
+}

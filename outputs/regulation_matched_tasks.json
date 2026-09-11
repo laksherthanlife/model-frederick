@@ -1,0 +1,182 @@
+{
+  "condition_id": "van-hoek-1998-table1-D0.40",
+  "organism": "Saccharomyces cerevisiae",
+  "measured_strain": "DS28911",
+  "strain_transfer": "Explicit S288C-model to DS28911 feasibility comparison; not a strain-specific validation",
+  "uptake_mode": "fixed",
+  "tasks": [
+    "biomass",
+    "ethanol",
+    "CO2"
+  ],
+  "models": {
+    "plain": {
+      "model_id": "yeastGEM_v9__46__0__46__2",
+      "condition_id": "van-hoek-1998-table1-D0.40",
+      "source": "van Hoek, van Dijken & Pronk 1998, PMID 9797269, Table 1 at D = 0.40 /h; S. cerevisiae DS28911, aerobic glucose-limited chemostat",
+      "tasks": [
+        "biomass",
+        "ethanol",
+        "CO2"
+      ],
+      "order": [],
+      "uptake_mode": "fixed",
+      "protein_budget": "native; not calibrated",
+      "biological_validation": false,
+      "uptake_constraints": [
+        {
+          "exchange": "r_1714",
+          "magnitude": 11.1,
+          "unit": "mmol/gDW/h",
+          "mode": "fixed",
+          "source": "van Hoek, van Dijken & Pronk 1998, PMID 9797269, Table 1 at D = 0.40 /h; S. cerevisiae DS28911, aerobic glucose-limited chemostat",
+          "coefficients": [
+            [
+              "r_1714",
+              -1.0
+            ]
+          ],
+          "bounds": [
+            [
+              "r_1714",
+              -11.1,
+              1000.0
+            ]
+          ],
+          "bound_null_means": "unbounded endpoint, not a zero bound or an unsolved flux"
+        },
+        {
+          "exchange": "r_1992",
+          "magnitude": 3.7,
+          "unit": "mmol/gDW/h",
+          "mode": "fixed",
+          "source": "van Hoek, van Dijken & Pronk 1998, PMID 9797269, Table 1 at D = 0.40 /h; S. cerevisiae DS28911, aerobic glucose-limited chemostat",
+          "coefficients": [
+            [
+              "r_1992",
+              -1.0
+            ]
+          ],
+          "bounds": [
+            [
+              "r_1992",
+              -3.7,
+              1000.0
+            ]
+          ],
+          "bound_null_means": "unbounded endpoint, not a zero bound or an unsolved flux"
+        }
+      ],
+      "baseline_growth": 0.34598444081219826,
+      "baseline_status": "optimal",
+      "status": "infeasible",
+      "constrained_growth": null,
+      "refusal": "task 'biomass' (r_2111) was measured at 0.4 but the model's maximum is 0.346. Efficiency above 1 is not a priority, it is a contradiction between the model and the measurement."
+    },
+    "ec": {
+      "model_id": "yeastGEM_v9__46__0__46__2",
+      "condition_id": "van-hoek-1998-table1-D0.40",
+      "source": "van Hoek, van Dijken & Pronk 1998, PMID 9797269, Table 1 at D = 0.40 /h; S. cerevisiae DS28911, aerobic glucose-limited chemostat",
+      "tasks": [
+        "biomass",
+        "ethanol",
+        "CO2"
+      ],
+      "order": [],
+      "uptake_mode": "fixed",
+      "protein_budget": "native; not calibrated",
+      "biological_validation": false,
+      "uptake_constraints": [
+        {
+          "exchange": "r_1714",
+          "magnitude": 11.1,
+          "unit": "mmol/gDW/h",
+          "mode": "fixed",
+          "source": "van Hoek, van Dijken & Pronk 1998, PMID 9797269, Table 1 at D = 0.40 /h; S. cerevisiae DS28911, aerobic glucose-limited chemostat",
+          "coefficients": [
+            [
+              "r_1714",
+              -1.0
+            ]
+          ],
+          "bounds": [
+            [
+              "r_1714",
+              -11.1,
+              1000.0
+            ]
+          ],
+          "bound_null_means": "unbounded endpoint, not a zero bound or an unsolved flux"
+        },
+        {
+          "exchange": "r_1992",
+          "magnitude": 3.7,
+          "unit": "mmol/gDW/h",
+          "mode": "fixed",
+          "source": "van Hoek, van Dijken & Pronk 1998, PMID 9797269, Table 1 at D = 0.40 /h; S. cerevisiae DS28911, aerobic glucose-limited chemostat",
+          "coefficients": [
+            [
+              "r_1992",
+              -1.0
+            ]
+          ],
+          "bounds": [
+            [
+              "r_1992",
+              -3.7,
+              1000.0
+            ]
+          ],
+          "bound_null_means": "unbounded endpoint, not a zero bound or an unsolved flux"
+        }
+      ],
+      "baseline_growth": 0.34598464079502594,
+      "baseline_status": "optimal",
+      "status": "infeasible",
+      "constrained_growth": null,
+      "refusal": "task 'biomass' (r_2111) was measured at 0.4 but the model's maximum is 0.346. Efficiency above 1 is not a priority, it is a contradiction between the model and the measurement."
+    }
+  },
+  "protein_budget_calibration": "none; never automatically tuned",
+  "biological_validation": false,
+  "identities": [
+    {
+      "model_id": "yeastGEM_v9__46__0__46__2",
+      "organism": "Saccharomyces cerevisiae",
+      "strain": "S288C",
+      "network": "yeast-GEM 9.0.2",
+      "source": {
+        "kind": "simulated",
+        "reference": "data/gem/MANIFEST.md and the loaded SBML model id/taxonomy",
+        "method": "model provenance, not a measured strain-specific validation"
+      },
+      "taxonomy_id": "559292"
+    },
+    {
+      "model_id": "yeastGEM_v9__46__0__46__2",
+      "organism": "Saccharomyces cerevisiae",
+      "strain": "S288C",
+      "network": "yeast-GEM 9.0.2",
+      "source": {
+        "kind": "simulated",
+        "reference": "data/gem/MANIFEST.md and the loaded SBML model id/taxonomy",
+        "method": "model provenance, not a measured strain-specific validation"
+      },
+      "taxonomy_id": "559292"
+    }
+  ],
+  "status": "completed",
+  "interpretation": "matched condition/base network; a refused full task set remains refused, with biomass retained",
+  "model_paths": {
+    "plain": "data/gem/yeast-GEM.xml.gz",
+    "ec": "data/gem/ecYeastGEM_yeast902.xml.gz"
+  },
+  "model_sha256": {
+    "plain": "7037e0c0553f93f80d8430040dc957b618d5e34197298ee0e6d776446e5f9574",
+    "ec": "29dd52e61327cd784725b57458e990994c3009e678cd95dfeb6e5fb44998b3e7"
+  },
+  "solvers": {
+    "plain": "glpk tol=1e-07 cobra=0.32.1",
+    "ec": "glpk tol=1e-07 cobra=0.32.1"
+  }
+}

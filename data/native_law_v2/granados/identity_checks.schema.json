@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Custodial exact-identity replay metadata; no response payloads",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "runtime", "response_values_or_statistics_released", "native_models_fitted_or_scored", "response_projections_written", "cases"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "runtime": {"type": "string", "pattern": "^GNU Octave [0-9.]+$"},
+    "response_values_or_statistics_released": {"const": false},
+    "native_models_fitted_or_scored": {"const": false},
+    "response_projections_written": {"const": false},
+    "cases": {
+      "type": "array", "minItems": 48, "maxItems": 48,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["source_group_id", "target_group_id", "variant_id", "known_duplicate_control", "replay_completed", "same_central_window_shape", "exact_double_equality", "exact_source_decimal_token_equality"],
+        "properties": {
+          "source_group_id": {"type": "string", "pattern": "^1b38366b-7473-4ddf-9cf9-26e625533686:/rep[1-6]$"},
+          "target_group_id": {"enum": ["721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/gluc/rep1", "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/gluc/rep2"]},
+          "variant_id": {"$ref": "#/$defs/variant"},
+          "known_duplicate_control": {"type": "boolean"},
+          "replay_completed": {"type": "boolean"},
+          "same_central_window_shape": {"type": "boolean"},
+          "exact_double_equality": {"type": "boolean"},
+          "exact_source_decimal_token_equality": {"type": "boolean"}
+        }
+      }
+    },
+    "plan_path": {"const": "data/native_law_v2/granados/identity_check_plan.json"},
+    "plan_sha256": {"$ref": "#/$defs/hash"},
+    "source_code_acquisition_sha256": {"$ref": "#/$defs/hash"},
+    "runner_sha256": {"$ref": "#/$defs/hash"},
+    "raw_source_sha256": {
+      "type": "object", "additionalProperties": false,
+      "required": ["1b38366b-7473-4ddf-9cf9-26e625533686", "721ef5f2-b858-4257-8cc8-5eea9a8599bb"],
+      "properties": {
+        "1b38366b-7473-4ddf-9cf9-26e625533686": {"$ref": "#/$defs/hash"},
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "rep2_exact_alias_established": {"type": "boolean"},
+    "known_duplicate_control_reproduced_by": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/variant"}},
+    "conclusion": {"enum": ["exact_rep2_reuse_found_keep_inseparable", "identity_unresolved_nonmatch_does_not_establish_independence"]},
+    "original_candidate_remains_ineligible": {"const": true}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "variant": {"enum": ["deposited_nucLoc_source_normalizer_only", "recomputed_ratio_source_normalizer_only", "deposited_nucLoc_worked_example", "recomputed_ratio_worked_example"]}
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "data/hog2013/native_training_protocol.json",
+    "sha256": "ca904f13599ba049aff5ddc855b7537f1151520c0e95b225a192963684ddb69f"
+  },
+  "payload": {
+    "calibration_selection": {
+      "expected_rows": 82,
+      "genotype": "wild_type",
+      "initial_conditions": "Published WT preset; any subsequent conditioning on native initial measurements must be recorded before freezing",
+      "nacl_molar": [
+        0.0,
+        0.4
+      ],
+      "observable_ids": [
+        "Hog1PP_measured",
+        "Gpd1_measured",
+        "glycerol_measured",
+        "glycerol_e"
+      ],
+      "roles": "Create a new explicit fit selection without rewriting original source row roles",
+      "strain_id": 202,
+      "supplement_id": "s002"
+    },
+    "candidate_parameter_groups": {
+      "activation_balance": [
+        "kv16f_1"
+      ],
+      "glycerol_diffusion": [
+        "kv13a_1"
+      ],
+      "glycerol_synthesis": [
+        "kv6_1",
+        "kv6b_4"
+      ]
+    },
+    "evaluation_order": [
+      "Complete native-only fitting, diagnostics, model selection and code review",
+      "Freeze training input hashes, configuration, prediction code and learned parameter payload in a write-once checkpoint",
+      "Only then introduce an unseen chemical task and its experimental input conditions to the generic evaluator",
+      "Seal predictions and their input/checkpoint hashes before outcome labels are supplied",
+      "Open outcome labels for scoring without refitting or excluding failed predictions"
+    ],
+    "fitting_rules": {
+      "downstream_product_information": "Forbidden during training and model selection",
+      "hplc_observation_gains": "Fixed at one; no fitted concentration gain may hide synthesis or transport error",
+      "identifiability": "Report local sensitivity, search-bound proximity and effective degrees of freedom; collapse unsupported parameter directions rather than claim separate biological rates",
+      "loss_scales": "Derived only from native training measurements and recorded per observable",
+      "parameterization": "One positive multiplier per declared parameter group; members of a group share the multiplier",
+      "protein_observation_gains": "Positive scales estimated only from native training Westerns, separately for each declared protein observable",
+      "search_fold_bounds": [
+        0.2,
+        5.0
+      ]
+    },
+    "fixed_parameters": {
+      "active_glycerol_uptake": "kv13b_1",
+      "fast_deactivation": "kv16r_1",
+      "remaining_parameters": "Published native-model priors unless a native-only identifiability study explicitly adds a supported parameter group before the checkpoint freeze"
+    },
+    "native_control_selection": {
+      "expected_rows": 28,
+      "experiment_id": "s002:HPLC:No Stress2",
+      "nacl_molar": 0.0,
+      "supplement_id": "s002",
+      "use": "Included as an additional native calibration protocol, not an independent holdout. Native-only development showed the joint shocked/control fit supports synthesis and diffusion estimation; the source OD driver and different culture initial conditions remain disclosed."
+    },
+    "native_exchange_fit": {
+      "censoring": "Source zeros denote below-detection observations, not exact biological zeros; intervals with censored support remain unquantified",
+      "inference_use": "Quantified glucose and oxygen exchange curves provide native input-capacity scenarios; other readouts are retained as native diagnostics, not silently imposed as exact physiological bounds",
+      "input": "data/physiology/chemostatData_VanHoek1998.tsv",
+      "method": "Piecewise-linear native exchange curves; no extrapolation and no invented detection limits",
+      "native_validation_growth_rates_per_h": [
+        0.15,
+        0.28,
+        0.35
+      ],
+      "train_growth_rates_per_h": [
+        0.025,
+        0.05,
+        0.1,
+        0.2,
+        0.25,
+        0.3,
+        0.4
+      ]
+    },
+    "native_obligation_summary": {
+      "dose_support_molar": [
+        0.0,
+        0.4
+      ],
+      "summary": "Temporal minimum and maximum of the fitted source carbon-commitment fraction within the native observation window; this span is not a statistical confidence interval",
+      "time_grid_step_s": 60,
+      "uncertainty_policy": "Preserve both native scenarios in generic inference; do not choose a favorable scenario using downstream measurements",
+      "window_end_s": 14400,
+      "window_start_s": 3600
+    },
+    "native_obligations": {
+      "absolute_flux_conversion": "Requires justified volume/dry-mass data; no undocumented default",
+      "basis": "Exact source reaction/compartment balances; distinguish de novo synthesis, inward transport, outward transport and net pool accumulation",
+      "fractional_alternative": "A native carbon-commitment fraction may be transferred only after verifying a common source flux basis and linking it to actual utilized carbon, not merely its uptake bound",
+      "negative_or_infeasible_fluxes": "No clipping, free-carbon remobilization or silent physiological bound relaxation",
+      "scope": "Native obligations do not determine an unseen engineered pathway's realized allocation without additional evidence",
+      "water_volume": "Use the source measurement-volume transform once and its analytic chain rule; do not reinterpret water-driven concentration changes as synthesis"
+    },
+    "parameter_selection": {
+      "evidence_scope": "Native-only preliminary fitting before any downstream task preparation",
+      "selected_groups": [
+        "activation_balance",
+        "glycerol_synthesis",
+        "glycerol_diffusion"
+      ],
+      "uptake_decision": "An additional uptake multiplier approached the lower search boundary and weakened sensitivity conditioning; retain the published uptake prior"
+    },
+    "prediction_contract": {
+      "assessment": "Report support, infeasibility, interval width and input-domain mismatch; a broad interval containing a label is not evidence of accurate titre prediction",
+      "compartment_roles": "Intracellular and extracellular compartment IDs are explicitly enumerated from the frozen host model, not inferred from an identifier spelling",
+      "executable_code": "Every evaluator and adapter dependency must match a code identity committed before task introduction; readout quantity and unit cannot change after freezing",
+      "mass_basis": "Base-host mass plus newly retained product; the envelope does not assign an unmeasured native glycerol-retention mass",
+      "missing_kinetics_or_allocation": "Return an identified feasible envelope or explicit lack of a point prediction, not an invented allocation fraction",
+      "prediction_kind": "feasible_envelope",
+      "prediction_scope": "Product-agnostic balanced-growth intracellular-content feasibility under learned native input and glycerol-commitment constraints, not realized titre allocation",
+      "quantity": "balanced_growth_intracellular_content",
+      "scope": "A newly isolated training procedure is not a claim that the historical repository or its developers never encountered downstream products",
+      "task_identity": "No product-name switches or product-specific fitted constants; chemical stoichiometry and independently justified molecular constraints are explicit evaluation inputs",
+      "unit": "mg/gDW",
+      "uptake_limits": "Use stoichiometry-weighted molecular net uptake constraints; preserve original hard exchange bounds. The native source model already has glucose-only carbon supply, so no medium opening is needed or authorized."
+    },
+    "protocol_id": "native_carbon_commitment_v1",
+    "purpose": "Estimate native yeast glycerol synthesis and transport obligations without downstream product identities, pathways, measurements or fitted product constants.",
+    "schema_version": 1,
+    "training_inputs": [
+      {
+        "path": "data/hog2013/model_wt.xml",
+        "role": "published_native_reaction_structure"
+      },
+      {
+        "path": "data/hog2013/observations.xls",
+        "role": "native_training_and_native_control_measurements"
+      },
+      {
+        "path": "data/hog2013/methods.pdf",
+        "role": "measurement_units_and_source_assumptions"
+      },
+      {
+        "path": "data/hog2013/sources.json",
+        "role": "source_identity_and_checksums"
+      },
+      {
+        "path": "data/physiology/chemostatData_VanHoek1998.tsv",
+        "role": "native_growth_exchange_training_and_condition_validation"
+      },
+      {
+        "path": "data/gem/ecYeastGEM_batch.xml.gz",
+        "role": "native_host_prior_frozen_for_generic_inference"
+      }
+    ]
+  },
+  "schema_version": 1
+}

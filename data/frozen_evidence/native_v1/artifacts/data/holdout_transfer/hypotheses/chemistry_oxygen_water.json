@@ -1,0 +1,106 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "data/holdout_transfer/hypotheses/chemistry_oxygen_water.json",
+    "sha256": "184d91f35bf2fc86fe5f54d7979179e00adad3b514325aee900863b291f14034"
+  },
+  "payload": {
+    "schema_version": 1,
+    "source": {
+      "authority": "User-authorized UNVERIFIED overall redox/composite hypothesis, not an observed single-enzyme mechanism",
+      "reference": "assumption_status=unverified_user_authorized_hypothesis; user_authorized_hypothesis=true; manifest.json#variants/2. C40H64 + 2 O2 -> C40H56 + 4 H2O is an OVERALL redox hypothesis/composite, NOT an observed fungal single-enzyme mechanism. Relaxed intermediate-accumulation capacity upper bound; strict chemistry remains blocked. No outcome-based selection.",
+      "scope": "evaluation_task",
+      "source_id": "holdout-transfer:user-authorized-redox-hypothesis:oxygen-water:v1"
+    },
+    "task": {
+      "enzymes": [],
+      "metabolites": [
+        {
+          "charge": 0,
+          "compartment": "c",
+          "formula": "C40H64",
+          "id": "task_intermediate_c"
+        },
+        {
+          "charge": 0,
+          "compartment": "c",
+          "formula": "C40H56",
+          "id": "task_output_c"
+        }
+      ],
+      "output_metabolite_id": "task_output_c",
+      "protein_pool_metabolite_id": null,
+      "reactions": [
+        {
+          "enzyme_id": null,
+          "id": "task_extension",
+          "kcat_per_s": null,
+          "source": "Independently curated precursor reaction: IUBMB EC 2.5.1.29; native BTS1/Q12051 reaction; Phaffia CrtE construct in DOI:10.1021/acssynbio.5c00256 Methods 2.1.1 and DOI:10.3389/fbioe.2020.578793 Table 1. In this user-authorized hypothesis, cytosolic aggregation and missing heterologous enzyme constraints are common upper-bound relaxations; no gene-copy scaling is supplied.",
+          "stoichiometry": [
+            [
+              "s_0190[c]",
+              -1
+            ],
+            [
+              "s_0943[c]",
+              -1
+            ],
+            [
+              "s_0189[c]",
+              1
+            ],
+            [
+              "s_0633[c]",
+              1
+            ]
+          ]
+        },
+        {
+          "enzyme_id": null,
+          "id": "task_condensation",
+          "kcat_per_s": null,
+          "source": "Independently curated CrtYB phytoene-synthase reaction: IUBMB EC 2.5.1.32 and reviewed fungal Q7Z859/RHEA:34475 with experimental provenance PMID:10589832; construct documented in the unchanged strict evidence. This hypothesis omits the same CrtYB downstream cyclase consumption as a declared relaxation in all variants; it is not a terminal-producer reconstruction.",
+          "stoichiometry": [
+            [
+              "s_0189[c]",
+              -2
+            ],
+            [
+              "task_intermediate_c",
+              1
+            ],
+            [
+              "s_0633[c]",
+              2
+            ]
+          ]
+        },
+        {
+          "enzyme_id": null,
+          "id": "task_desaturation",
+          "kcat_per_s": null,
+          "source": "UNVERIFIED USER-AUTHORIZED OVERALL REDOX/COMPOSITE HYPOTHESIS: C40H64 + 2 O2 -> C40H56 + 4 H2O using native cytosolic pools. This is NOT an observed single-enzyme fungal CrtI mechanism or evidence of direct four-electron oxygen reduction by CrtI. Catalyst composition, intermediate processing, localization, thermodynamics and the absence of additional net energetic costs are unverified assumptions. No mechanistic decomposition or new detoxification shortcut is supplied. See manifest.json#variants/2; capacity or installation success cannot validate this composite.",
+          "stoichiometry": [
+            [
+              "task_intermediate_c",
+              -1
+            ],
+            [
+              "s_1275[c]",
+              -2
+            ],
+            [
+              "task_output_c",
+              1
+            ],
+            [
+              "s_0803[c]",
+              4
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "schema_version": 1
+}

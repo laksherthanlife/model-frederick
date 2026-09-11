@@ -1,0 +1,51 @@
+{
+  "document_type": "population_development_executor_refresh_admission_v1",
+  "schema_version": 1,
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "protocol_sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+  "phase_b_manifest": {
+    "bytes": 6904,
+    "path": "data/native_law_v2/granados/development/release_manifest.json",
+    "role": "operational_event_log",
+    "sha256": "3b8c67c79191bf4dec0a1e7e0514b1a145359c30061868bbfdd136f0ee1cd3dd"
+  },
+  "previous_approval_sha256": "87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533",
+  "request": {
+    "bytes": 1727,
+    "path": "outputs/native_population_development/executor_refresh_01/release_request.json",
+    "role": "operational_event_log",
+    "sha256": "3bc3f5d0441288a13c67bc3a17380002ed09916340f78102a5d39fb16c782caf"
+  },
+  "approval": {
+    "path": "data/native_law_v2/granados/development/executor_refresh_01/custody_decision.json",
+    "sha256": "04ac928add5528beabd2a9f77a2055643dc120d3b76bff7315ffdc3f062f786e",
+    "bytes": 4271,
+    "role": "operational_approval"
+  },
+  "configuration": {
+    "bytes": 3729,
+    "path": "outputs/native_population_development/executor_refresh_01/execution_configuration.json",
+    "role": "execution_code",
+    "sha256": "7e1aa35c8f6c248fc921f2348d362b8fc76e23bd8cfff070b19d21b2d9195cdb"
+  },
+  "custodian_identity": "Granados observation/data custodian subagent in this Devin session, distinct from the model fitting/selection agent; no external attestation claimed.",
+  "operational_event_reference": "data/native_law_v2/granados/development/executor_refresh_01/refresh_event.json#granados-executor-refresh-01",
+  "reuse_existing_projections": [
+    {
+      "bytes": 7093970,
+      "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/training_projection.json",
+      "role": "training_projection",
+      "sha256": "fc8000c7720e554756c90e0da79f2d0ae4a7928d5923f0efa1a2ed5823d37c9e"
+    },
+    {
+      "bytes": 4764543,
+      "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_inputs.json",
+      "role": "development_inputs",
+      "sha256": "41ee2a8ce6b09cb664859873fd59fd005e31e6eaa054c3703098c91e3f790613"
+    }
+  ],
+  "scientific_recipe_changed": false,
+  "data_reexport_permitted": false,
+  "development_responses_released": false,
+  "strong_claim_authorized": false
+}

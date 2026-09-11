@@ -1,0 +1,431 @@
+{
+  "schema_version": 1,
+  "source": {
+    "authority": "Independent biochemical literature, primary Methods/construct tables, IUBMB Enzyme Nomenclature, evidence-qualified UniProtKB, ChEBI, and native SBML annotations",
+    "source_id": "independent_chemistry_curation_01",
+    "reference": "Elizondo and Saa 2025 Methods 2.1.1; Lopez et al. 2020 Table 1; reviewed Phaffia CrtYB Q7Z859; IUBMB EC 2.5.1.29 and 2.5.1.32; Schaub et al. 2012 used only as a non-transferable bacterial redox caution",
+    "scope": "evaluation_task"
+  },
+  "status": "blocked_no_installable_task",
+  "chemistry_artifact": {
+    "path": "data/holdout_transfer/chemistry.json",
+    "written": false,
+    "ready_artifact_sha256": null,
+    "reason": "Withheld rather than emit a guessed electron-acceptor reaction or an invalid/partial ChemicalTask. The evidence below is not an installable task."
+  },
+  "blocking_issues": [
+    {
+      "id": "terminal_acceptor_product_unresolved",
+      "missing_fact": "For the expressed Phaffia rhodozyma CrtI, identify an independently supported terminal electron acceptor, its reduction product, and an accessible host compartment.",
+      "evidence": "The actual donor is fungal, not Pantoea. No primary-evidence-backed terminal acceptor/product pair was established for that fungal enzyme in this curation. Inspected Phaffia CrtI UniProt entries are unreviewed and their NAD(+) annotation is automated ARBA evidence, not a measured reaction. The identified primary fungal CrtI paper was inaccessible at the publisher. The bacterial Schaub study is not transferable proof and, even for that enzyme, does not establish released water or peroxide stoichiometry.",
+      "consequence": "No task_desaturation stoichiometry is supplied. Do not substitute NAD(+), oxygen-to-water, oxygen-to-peroxide, superoxide release, freely exchanging FAD/FADH2, or mitochondrial quinone reduction merely to close the equations.",
+      "source_ids": ["elizondo_2025_methods", "fungal_crti_primary_metadata", "uniprot_fungal_crti_unreviewed", "schaub_2012", "native_host"]
+    },
+    {
+      "id": "localization_and_intermediate_scope_require_review",
+      "missing_fact": "Exact engineered CrtI sequence/accession and compartment compatibility, plus an explicit interpretation of a lycopene intermediate-capacity task in strains that retain downstream CrtYB cyclase activity.",
+      "evidence": "The now-available condition records identify Phaffia CrtE/CrtYB/CrtI. This was independently verified against Methods 2.1.1 and the original construction Table 1. Reviewed Phaffia CrtYB Q7Z859 has both phytoene synthase and lycopene beta-cyclase activities.",
+      "consequence": "Do not relabel CrtYB as a standalone CrtB, assert a terminal lycopene-only construct, infer enzyme abundance from gene copies, or assume mitochondrial Q6 access. A possible upper bound on an intermediate is not a realized-content prediction."
+    }
+  ],
+  "dataset_construct_compatibility": {
+    "condition_records_path": "data/holdout_transfer/condition_records.json",
+    "condition_source_id": "holdout-transfer:elizondo2025:six-chemostats:condition-records:v1",
+    "local_construct_locations": ["condition_records.json:21-35", "condition_records.json:75-90", "condition_records.json:131-146", "source_index.json:112-142"],
+    "independent_verification": ["PMC12455641 Methods sec2.1.1, first paragraph only", "PMC7556307 Table T1, construction columns only"],
+    "host_background": "S. cerevisiae CEN.PK2-1c",
+    "donor_as_reported": "Phaffia rhodozyma",
+    "donor_synonym_in_uniprot": "Xanthophyllomyces dendrorhous",
+    "genes": ["CrtE", "CrtYB", "CrtI"],
+    "standalone_CrtB_present": false,
+    "constructs": [
+      {"dataset_strain": "b-car2", "construction_strain": "beta-Car2.1", "parent": "CEN.PK2-1c", "integrated_gene_copies": {"CrtE": 1, "CrtYB": 1, "CrtI": 1}},
+      {"dataset_strain": "b-car3", "construction_strain": "beta-Car3", "parent": "beta-Car2.1", "integrated_gene_copies": {"CrtE": 2, "CrtYB": 2, "CrtI": 2}},
+      {"dataset_strain": "b-car4", "construction_strain": "beta-Car4.b", "parent": "beta-Car3", "integrated_gene_copies": {"CrtE": 3, "CrtYB": 3, "CrtI": 2}}
+    ],
+    "gene_copy_use": "Construction identity only; no copy-to-expression, kcat, flux, or allocation scaling.",
+    "heterologous_extension_justified": true,
+    "extension_note": "These constructs justify a distinct heterologous CrtE reaction in principle despite the native BTS1 reaction. Missing heterologous enzyme constraints still restrict interpretation to an upper bound.",
+    "cyclase_note": "CrtYB also converts all-trans-lycopene through gamma-carotene to all-trans-beta-carotene, according to reviewed Q7Z859 catalytic annotations with experimental provenance PMID:10589832. A lycopene demand is therefore an intermediate-capacity question, not a terminal-product strain reconstruction. No arbitrary cyclase flux floor or invented partition constant is authorized.",
+    "exact_engineered_CrtI_accession": null,
+    "localization_evidence": "No compartment-targeting sequence or experimentally demonstrated host electron-transfer coupling was established from the inspected construct descriptions.",
+    "outcome_values_read": false
+  },
+  "native_host": {
+    "path": "data/gem/ecYeastGEM_batch.xml.gz",
+    "sha256": "63d0f76e88586fcee25e9e67f9dae558e7b308172c837d44a0d055510b287ef3",
+    "inspection": "Read-only gzip/XML parsing and cobra.io.read_sbml_model; only metabolite identities, compartment annotations, and GGPP-neighbor stoichiometry inspected. No optimization or model serialization.",
+    "identifier_mapping": "COBRApy decodes the SBML __91__ and __93__ bracket escapes; the usable host IDs below were obtained from the loaded model, not guessed from names.",
+    "charge_limitation": "The inspected SBML species omit fbc:charge. COBRApy imports their charge as 0. This is not evidence that phosphorylated metabolites or the proton are chemically neutral. Native formulas retain the protonation states; independent formal charges are checked separately for the supported precursor reactions.",
+    "compartment": {"id": "c", "name": "cytoplasm"},
+    "metabolites": [
+      {
+        "id": "s_0189[c]",
+        "sbml_id": "s_0189__91__c__93__",
+        "decompressed_xml_line": 1746,
+        "annotation": {"metanetx.chemical": "MNXM139"},
+        "identity": "geranylgeranyl diphosphate pool",
+        "formula": "C20H33O7P2",
+        "compartment": "c",
+        "sbml_charge": null,
+        "cobra_charge": 0,
+        "independent_formal_charge": -3,
+        "identity_note": "MNXM139 is now deprecated and the inspected MetaNetX page redirects to the stereochemically generic MNXM1102545, CHEBI:57533. All-trans precursor compatibility is supported additionally by the native Q12051/BTS1 reaction annotation, not by the pool name alone. No host annotation was changed."
+      },
+      {
+        "id": "s_0190[c]",
+        "sbml_id": "s_0190__91__c__93__",
+        "decompressed_xml_line": 1759,
+        "annotation": {"metanetx.chemical": "MNXM34"},
+        "identity": "(2E,6E)-farnesyl diphosphate",
+        "formula": "C15H25O7P2",
+        "compartment": "c",
+        "sbml_charge": null,
+        "cobra_charge": 0,
+        "independent_formal_charge": -3,
+        "identity_note": "Structured MetaNetX mapping resolves to MNXM1363833 and CHEBI:175763, with an InChI specifying the trans double bonds."
+      },
+      {
+        "id": "s_0943[c]",
+        "sbml_id": "s_0943__91__c__93__",
+        "decompressed_xml_line": 9599,
+        "annotation": {"metanetx.chemical": "MNXM83"},
+        "identity": "isopentenyl diphosphate",
+        "formula": "C5H9O7P2",
+        "compartment": "c",
+        "sbml_charge": null,
+        "cobra_charge": 0,
+        "independent_formal_charge": -3,
+        "identity_note": "MNXM83 maps to CHEBI:128769. The distinct native dimethylallyl/prenyl pool has the same formula but MNXM132, and was not substituted."
+      },
+      {
+        "id": "s_0633[c]",
+        "sbml_id": "s_0633__91__c__93__",
+        "decompressed_xml_line": 6284,
+        "annotation": {"metanetx.chemical": "MNXM11"},
+        "identity": "diphosphate(3-)",
+        "formula": "HO7P2",
+        "compartment": "c",
+        "sbml_charge": null,
+        "cobra_charge": 0,
+        "independent_formal_charge": -3,
+        "identity_note": "Confirmed against CHEBI:33019. Do not replace this with P2O7(4-) or H2P2O7(2-); doing so would change the required proton coefficients."
+      },
+      {
+        "id": "s_0794[c]",
+        "decompressed_xml_line": 7818,
+        "annotation": {"metanetx.chemical": "MNXM1"},
+        "identity": "proton",
+        "formula": "H",
+        "compartment": "c",
+        "sbml_charge": null,
+        "cobra_charge": 0,
+        "role": "Inspected but not needed by either supported precursor reaction."
+      },
+      {
+        "id": "s_0803[c]",
+        "decompressed_xml_line": 7935,
+        "annotation": {"metanetx.chemical": "MNXM2"},
+        "identity": "water",
+        "formula": "H2O",
+        "compartment": "c",
+        "sbml_charge": null,
+        "cobra_charge": 0,
+        "role": "Not selected as a desaturase product."
+      },
+      {
+        "id": "s_1275[c]",
+        "decompressed_xml_line": 13044,
+        "annotation": {"metanetx.chemical": "MNXM4"},
+        "identity": "dioxygen",
+        "formula": "O2",
+        "compartment": "c",
+        "sbml_charge": null,
+        "cobra_charge": 0,
+        "role": "Demonstrated acceptor for the purified reference CRTI, but an installable equation also requires an identified reduction product. Distinguished from native superoxide by MNXM annotation, not formula alone."
+      },
+      {
+        "id": "s_0837[c]",
+        "decompressed_xml_line": 8286,
+        "annotation": {"metanetx.chemical": "MNXM22"},
+        "identity": "hydrogen peroxide",
+        "formula": "H2O2",
+        "compartment": "c",
+        "sbml_charge": null,
+        "cobra_charge": 0,
+        "role": "Not selected as a desaturase product."
+      },
+      {
+        "id": "s_0687[c]",
+        "decompressed_xml_line": 6843,
+        "annotation": {"metanetx.chemical": "MNXM33"},
+        "identity": "FAD",
+        "formula": "C27H30N9O15P2",
+        "compartment": "c",
+        "sbml_charge": null,
+        "cobra_charge": 0,
+        "role": "Reference CRTI requires catalytic FAD. Free FAD consumption was not used as a surrogate terminal electron acceptor."
+      },
+      {
+        "id": "s_1537[m]",
+        "decompressed_xml_line": 15371,
+        "annotation": {"metanetx.chemical": "MNXM1783"},
+        "identity": "ubiquinone-6",
+        "formula": "C39H58O4",
+        "compartment": "m",
+        "sbml_charge": null,
+        "cobra_charge": 0,
+        "role": "Native oxidized quinone identified by annotation/formula; no cytosolic counterpart with this formula was found. Not selected for the task."
+      },
+      {
+        "id": "s_1535[m]",
+        "decompressed_xml_line": 15358,
+        "annotation": {"metanetx.chemical": "MNXM5319"},
+        "identity": "ubiquinol-6",
+        "formula": "C39H60O4",
+        "compartment": "m",
+        "sbml_charge": null,
+        "cobra_charge": 0,
+        "role": "Native reduced quinone identified by annotation/formula; no cytosolic counterpart with this formula was found. Not selected for the task."
+      }
+    ],
+    "existing_precursor_synthesis": {
+      "reaction_id": "r_0373No1",
+      "decompressed_xml_line": 72377,
+      "stoichiometry": [["s_0190[c]", -1], ["s_0943[c]", -1], ["prot_Q12051[c]", -0.000084175], ["s_0189[c]", 1], ["s_0633[c]", 1]],
+      "mass_balance_check": {},
+      "protein_identity": "UniProtKB Q12051, BTS1, whose reviewed catalytic annotation includes RHEA:17653 / EC 2.5.1.29 and the all-trans GGPP product.",
+      "curation_decision": "Host already supplies cytosolic GGPP through a native enzyme-constrained reaction. The independently verified Phaffia CrtE constructs justify a separate heterologous extension in principle, not as a capacity convenience. Without heterologous enzyme constraints it would provide only an upper-bound bypass of native BTS1 enzyme limits. The displayed protein coefficient is existing native stoichiometry, not a newly supplied kinetic parameter."
+    },
+    "preexisting_balance_caveat": {
+      "reaction_id": "r_0461",
+      "decompressed_xml_line": 26593,
+      "mass_balance_check": {"H": 3},
+      "note": "A second native GGPP-neighbor reaction has this pre-existing formula imbalance. It was not changed. No full-host balance or thermodynamic validation is claimed."
+    }
+  },
+  "prospective_new_metabolites": [
+    {
+      "id": "task_intermediate_c",
+      "identity": "15-cis-phytoene",
+      "formula": "C40H64",
+      "charge": 0,
+      "compartment": "c",
+      "chebi": "CHEBI:27787",
+      "inchi_key": "YVLPJIGOMTXXLP-BHLJUDRVSA-N",
+      "source_id": "chebi_identity_records"
+    },
+    {
+      "id": "task_output_c",
+      "identity": "all-trans-lycopene",
+      "formula": "C40H56",
+      "charge": 0,
+      "compartment": "c",
+      "chebi": "CHEBI:15948",
+      "inchi_key": "OAIJSZIZWZSQBC-GYZMGTAESA-N",
+      "source_id": "chebi_identity_records"
+    }
+  ],
+  "supported_precursor_reaction_definitions_not_installed": [
+    {
+      "id": "task_extension",
+      "stoichiometry": [["s_0190[c]", -1], ["s_0943[c]", -1], ["s_0189[c]", 1], ["s_0633[c]", 1]],
+      "source": "IUBMB EC 2.5.1.29 reaction class; native r_0373No1 and reviewed Q12051 catalytic annotation; heterologous CrtE expression established independently by PMC12455641 Methods 2.1.1 and PMC7556307 Table 1",
+      "enzyme_id": null,
+      "kcat_per_s": null,
+      "inclusion_status": "The actual Phaffia CrtE constructs support a distinct heterologous extension in principle. No fungal enzyme capacity or gene-dose scaling is supplied.",
+      "native_mass_charge_imbalance": {},
+      "independent_formal_charge_imbalance": 0,
+      "reactant_atom_totals": {"C": 20, "H": 34, "O": 14, "P": 4},
+      "product_atom_totals": {"C": 20, "H": 34, "O": 14, "P": 4}
+    },
+    {
+      "id": "task_condensation",
+      "stoichiometry": [["s_0189[c]", -2], ["task_intermediate_c", 1], ["s_0633[c]", 2]],
+      "source": "IUBMB EC 2.5.1.32; reviewed Phaffia CrtYB Q7Z859 / RHEA:34475 with experimental provenance PMID:10589832; actual CrtYB construct confirmed in Methods 2.1.1 and original Table 1",
+      "enzyme_id": null,
+      "kcat_per_s": null,
+      "inclusion_status": "Supported as the phytoene-synthase activity of the bifunctional fungal CrtYB, not a standalone bacterial CrtB. Its downstream cyclase activity remains relevant to interpretation of the lycopene intermediate.",
+      "native_mass_charge_imbalance": {},
+      "independent_formal_charge_imbalance": 0,
+      "reactant_atom_totals": {"C": 40, "H": 66, "O": 14, "P": 4},
+      "product_atom_totals": {"C": 40, "H": 66, "O": 14, "P": 4},
+      "proton_note": "Two host GGPP molecules supply H66; C40H64 plus two host HO7P2 molecules also supplies H66. No H+ is added. Independent formal charges are -6 on each side."
+    }
+  ],
+  "desaturation_evidence": {
+    "prospective_reaction_id": "task_desaturation",
+    "actual_donor": "Phaffia rhodozyma (Xanthophyllomyces dendrorhous)",
+    "reference_ec_for_four_desaturations": "1.3.99.31",
+    "necessary_chemical_change_to_requested_output": "C40H64 to C40H56 entails removal of eight hydrogen atoms. This arithmetic does not identify the electron acceptor or establish exclusive product specificity of the actual fungal enzyme.",
+    "reference_registry_equation": "15-cis-phytoene + 4 acceptor = all-trans-lycopene + 4 reduced acceptor",
+    "equation_limitation": "The registry leaves the acceptor generic. A/AH2 is not a chemically specified metabolite pair and cannot be installed under the frozen interface's formula/charge rules.",
+    "fungal_primary_reference_status": "Verdoes, Misawa and van Ooyen (1999), PMID:10397832, was identified by metadata only. A bounded publisher full-text availability request returned HTTP 403. No fungal terminal-acceptor/product stoichiometry was thereby verified.",
+    "unreviewed_fungal_annotation_status": "O13506 and other inspected Phaffia CrtI entries carry an automated NAD(+) cofactor annotation (ECO:0000256, ARBA00001911), without a measured catalytic equation. Automated alternative naming also refers to a five-step enzyme. Neither annotation was elevated to experimental evidence or used to select a redox reaction.",
+    "comparison_primary_source": "schaub_2012",
+    "comparison_scope": "Pantoea bacterial enzyme only; not evidence that the expressed fungal CrtI uses the same redox chemistry.",
+    "comparison_source_sections": ["s2b: Role of FAD and Nature of the Terminal Electron Acceptor", "s3a: CRTI-redox Reaction", "s4e: Desaturation Reactions in the Presence of Alternative Electron Acceptors", "s4b: CRTI Cloning, Expression and Purification"],
+    "comparison_evidence_statements": [
+      "The purified bacterial reference CRTI requires FAD and is inactive in desaturation under nitrogen without an alternative acceptor; the authors identify oxygen as a terminal electron acceptor.",
+      "The authors report no effect of added superoxide dismutase or catalase on oxygen-consumption kinetics. They hypothesize that possible superoxide might not be released and could react with liposomal components. This does not identify a released water, peroxide, or superoxide stoichiometry.",
+      "Anaerobic liposome assays support alternative quinones, including coenzyme Q10 and duroquinone; these experiments do not specifically establish Q6 as an in vivo acceptor in the fungal yeast construct.",
+      "The discussion raises, rather than resolves, possible coupling of bacterial CRTI to a respiratory chain.",
+      "The authors conclude that reduced FAD is not exchanged with external oxidized FAD on the catalytic-cycle timescale. A net free-FAD reduction reaction is therefore not an evidence-backed substitute even for that bacterial enzyme."
+    ],
+    "actual_catalytic_cofactor_established": null,
+    "selected_terminal_acceptor": null,
+    "selected_reduction_product": null,
+    "stoichiometry": null,
+    "no_alternative_energy_routes_added": true
+  },
+  "cofactor_and_constraint_policy": {
+    "enzymes_if_task_is_later_unblocked": [],
+    "protein_pool_metabolite_id": null,
+    "heterologous_kcat_supplied": false,
+    "heterologous_abundance_supplied": false,
+    "scope_if_unblocked": "upper_bound_only; feasible capacity, not realized allocation or product performance",
+    "notes": [
+      "No independently transferable in vivo abundances or construct-specific kinetic constraints were established. No kcat, expression level, enzyme allocation fraction, or fitted product constant was invented.",
+      "The bacterial P21683 cofactor annotation cites ATP as required but not apparently hydrolyzed, and divalent metals; this was not transferred as a measured cofactor requirement of fungal CrtYB. No net ATP hydrolysis or construct-specific capacity was invented.",
+      "Catalytic FAD was established only for the bacterial comparator, not for the actual fungal construct by the inspected evidence. No free FAD or automatically annotated NAD(+) was used as an unverified electron sink.",
+      "Any eventual task must retain upstream host carbon, ATP and reducing-equivalent demands and the actual terminal electron-acceptor costs. No free-carbon feed, naked flux floor, artificial acceptor source, transport shortcut, or added detoxification shortcut is authorized.",
+      "All prospective new IDs are opaque; biological identities are documentary evidence, not identifiers used to trigger special model behavior."
+    ]
+  },
+  "thermodynamic_and_localization_limits": [
+    "Forward-only reactions would be a pathway-direction assumption; no reaction Gibbs energies or metabolite activities were established.",
+    "An eventual cytosolic task would aggregate membrane-associated substrates into the host cytoplasmic pool. This requires compatibility with the actual targeting/localization construct, not merely an enzyme name.",
+    "Do not connect a cytosolic desaturase directly to the mitochondrial Q6 pool without independent localization or electron-transfer evidence.",
+    "Mass/charge balance does not establish thermodynamic feasibility, sufficient enzyme activity, membrane binding, realized allocation, or secretion."
+  ],
+  "sources": [
+    {
+      "source_id": "elizondo_2025_methods",
+      "citation": "Elizondo BR and Saa PA (2025), ACS Synthetic Biology 14(9), DOI:10.1021/acssynbio.5c00256. Construct evidence only.",
+      "pmcid": "PMC12455641",
+      "urls": ["https://doi.org/10.1021/acssynbio.5c00256", "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12455641/fullTextXML"],
+      "accessed_parts": "Methods headings and the first paragraph of Methods sec2.1.1 (Strains and Cell Cultivations). No abstract, Results, figures, biochemical rate fitting, model structure/parameters, or outcome tables were opened.",
+      "evidence_role": "Explicitly maps beta-car2, beta-car3, beta-car4 to beta-Car2.1, beta-Car3, beta-Car4.b; explicitly identifies Phaffia CrtE/CrtYB/CrtI and expression cassettes."
+    },
+    {
+      "source_id": "lopez_2020_construct_table",
+      "citation": "Lopez et al. (2020), Frontiers in Bioengineering and Biotechnology, DOI:10.3389/fbioe.2020.578793. Original construction Table 1.",
+      "pmcid": "PMC7556307",
+      "urls": ["https://doi.org/10.3389/fbioe.2020.578793", "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7556307/fullTextXML"],
+      "accessed_parts": "Table T1 only: Strain, Parental strain, Genotype, Integration site. No production Results, abstract, or measured product values.",
+      "evidence_role": "Independent confirmation of the explicit parental chains and gene-bearing integrations, including absence of an extra CrtI cassette in beta-Car4.b."
+    },
+    {
+      "source_id": "uniprot_fungal_crtyb",
+      "citation": "Reviewed UniProtKB Q7Z859, bifunctional lycopene cyclase/phytoene synthase of Phaffia rhodozyma.",
+      "urls": ["https://rest.uniprot.org/uniprotkb/Q7Z859.json", "https://www.uniprot.org/uniprotkb/Q7Z859/entry"],
+      "accessed_parts": "Reviewed catalytic-activity annotations and their evidence codes via the REST search endpoint.",
+      "structured_evidence": "EC 2.5.1.32 / RHEA:34475 for phytoene synthesis; EC 5.5.1.19 / RHEA:32219 and RHEA:32239 for the two cyclizations. Each is attributed to experimental evidence ECO:0000269, PMID:10589832.",
+      "primary_reference_trace": "Verdoes JC, Krubasik KP, Sandmann G, van Ooyen AJ. Isolation and functional characterisation of a novel type of carotenoid biosynthetic gene from Xanthophyllomyces dendrorhous (1999). DOI:10.1007/s004380051105; PMID:10589832. Metadata verified; primary full text not inspected."
+    },
+    {
+      "source_id": "fungal_crti_primary_metadata",
+      "citation": "Verdoes JC, Misawa N, van Ooyen AJ. Cloning and characterization of the astaxanthin biosynthetic gene encoding phytoene desaturase of Xanthophyllomyces dendrorhous. Biotechnology and Bioengineering (1999).",
+      "pmid": "10397832",
+      "doi": "10.1002/(SICI)1097-0290(19990620)63:6<750::AID-BIT13>3.0.CO;2-7",
+      "urls": ["https://pubmed.ncbi.nlm.nih.gov/10397832/", "https://onlinelibrary.wiley.com/doi/full/10.1002/(SICI)1097-0290(19990620)63:6%3C750::AID-BIT13%3E3.0.CO;2-7"],
+      "accessed_parts": "Europe PMC title/author/DOI metadata and Crossref full-text link metadata only; publisher HEAD availability request returned 403. No abstract or primary body read.",
+      "evidence_role": "Identified primary follow-up source, not a verified terminal-acceptor reaction."
+    },
+    {
+      "source_id": "uniprot_fungal_crti_unreviewed",
+      "citation": "Unreviewed UniProtKB Phaffia CrtI entries O13506, A0A0C4MWL4, and A0A0P0KMF9.",
+      "urls": ["https://rest.uniprot.org/uniprotkb/O13506.json", "https://rest.uniprot.org/uniprotkb/A0A0C4MWL4.json", "https://rest.uniprot.org/uniprotkb/A0A0P0KMF9.json"],
+      "accessed_parts": "Entry review status, protein identity, catalytic-activity and cofactor fields via REST search; no kinetics or measured outcomes.",
+      "evidence_role": "The NAD(+) cofactor claim has automatic evidence ECO:0000256 / ARBA00001911. This is insufficient to choose a measured terminal acceptor or net reduction product. No accession was asserted to be the engineered construct's exact sequence."
+    },
+    {
+      "source_id": "schaub_2012",
+      "citation": "Schaub P, Yu Q, Gemmecker S, Poussin-Courmontagne P, Mailliot J, McEwen AG, Ghisla S, Al-Babili S, Cavarelli J, Beyer P. On the Structure and Function of the Phytoene Desaturase CRTI from Pantoea ananatis, a Membrane-Peripheral and FAD-Dependent Oxidase/Isomerase. PLoS ONE 7:e39550 (2012).",
+      "doi": "10.1371/journal.pone.0039550",
+      "pmid": "22745782",
+      "pmcid": "PMC3382138",
+      "urls": ["https://doi.org/10.1371/journal.pone.0039550", "https://pmc.ncbi.nlm.nih.gov/articles/PMC3382138/", "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3382138/fullTextXML"],
+      "accessed_parts": "Title/section headings and primary enzymology sections s2b, s3a, s4e, s4b only; no production-dataset outcomes or abstracts.",
+      "evidence_role": "Primary experimental support and limits for bacterial reference CRTI redox chemistry; explicitly not proof of redox chemistry of the identified fungal Phaffia construct."
+    },
+    {
+      "source_id": "iubmb_2_5_1_29",
+      "citation": "IUBMB Enzyme Nomenclature, EC 2.5.1.29, geranylgeranyl diphosphate synthase.",
+      "urls": ["https://iubmb.qmul.ac.uk/enzyme/EC2/5/1/29.html"],
+      "accessed_parts": "Accepted reaction and comments."
+    },
+    {
+      "source_id": "iubmb_2_5_1_32",
+      "citation": "IUBMB Enzyme Nomenclature, EC 2.5.1.32, 15-cis-phytoene synthase.",
+      "urls": ["https://iubmb.qmul.ac.uk/enzyme/EC2/5/1/32.html"],
+      "accessed_parts": "Overall reaction, component reactions, cofactor comment, and primary-reference metadata.",
+      "primary_reference_trace": "Sandmann G, Misawa N. New functional assignment of the carotenogenic genes crtB and crtE with constructs of these genes from Erwinia species (1992). PMID:1555761; DOI:10.1016/0378-1097(92)90656-9. Metadata verified; primary full text not inspected."
+    },
+    {
+      "source_id": "iubmb_1_3_99_31",
+      "citation": "IUBMB Enzyme Nomenclature, EC 1.3.99.31, phytoene desaturase (lycopene-forming).",
+      "urls": ["https://iubmb.qmul.ac.uk/enzyme/EC1/3/99/31.html"],
+      "accessed_parts": "Generic-acceptor overall equation, four component desaturations, FAD requirement, and primary-reference metadata.",
+      "primary_reference_trace": "Fraser PD et al. Expression in Escherichia coli, purification, and reactivation of the recombinant Erwinia uredovora phytoene desaturase (1992). PMID:1400305; DOI:10.1016/S0021-9258(19)88639-8. Metadata verified; primary full text not inspected."
+    },
+    {
+      "source_id": "uniprot_p21685",
+      "citation": "Reviewed UniProtKB P21685, phytoene desaturase (lycopene-forming), entry labelled Pantoea ananas / Erwinia uredovora.",
+      "urls": ["https://www.uniprot.org/uniprotkb/P21685/entry", "https://rest.uniprot.org/uniprotkb/P21685.json"],
+      "accessed_parts": "Reviewed catalytic-activity and cofactor fields via the UniProt REST search endpoint.",
+      "structured_evidence": "RHEA:15585; EC 1.3.99.31; generic A/AH2 acceptor; FAD; ECO:0000269 linked to PMID:1400305. These bacterial taxonomic labels and accession are not identified with the Phaffia yeast construct."
+    },
+    {
+      "source_id": "uniprot_precursor_enzymes",
+      "citation": "Reviewed UniProtKB Q12051 (S. cerevisiae BTS1), P21684 (reference CrtE), and P21683 (reference CrtB).",
+      "urls": ["https://rest.uniprot.org/uniprotkb/Q12051.json", "https://rest.uniprot.org/uniprotkb/P21684.json", "https://rest.uniprot.org/uniprotkb/P21683.json"],
+      "accessed_parts": "Reviewed catalytic-activity and cofactor fields via the UniProt REST search endpoint.",
+      "primary_reference_trace": [
+        "Q12051 links experimental GGPP synthase activity to Jiang Y, Proteau P, Poulter D, Ferro-Novick S. BTS1 encodes a geranylgeranyl diphosphate synthase in Saccharomyces cerevisiae (1995). PMID:7665600; DOI:10.1074/jbc.270.37.21793. Metadata verified; primary full text not inspected.",
+        "P21683 links experimentally supported synthase activity and cofactor observations to Neudert U, Martinez-Ferez IM, Fraser PD, Sandmann G. Expression of an active phytoene synthase from Erwinia uredovora and biochemical properties of the enzyme (1998). PMID:9593819; DOI:10.1016/S0005-2760(98)00017-4. Metadata verified; primary full text not inspected."
+      ]
+    },
+    {
+      "source_id": "metanetx_identity_records",
+      "citation": "MetaNetX molecular-entity JSON-LD records linked by the native SBML's identifiers.org annotations.",
+      "urls": ["https://www.metanetx.org/chem_info/MNXM139", "https://www.metanetx.org/chem_info/MNXM34", "https://www.metanetx.org/chem_info/MNXM83", "https://www.metanetx.org/chem_info/MNXM11"],
+      "accessed_parts": "Structured molecular formula, InChI, SMILES, identifier cross-references, and GGPP deprecation notice; no model predictions."
+    },
+    {
+      "source_id": "chebi_identity_records",
+      "citation": "ChEBI CHEBI:27787, CHEBI:15948, and CHEBI:33019, served through the EBI OLS ontology API.",
+      "urls": ["https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A27787", "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A15948", "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A33019"],
+      "accessed_parts": "Structured identifiers, formula, charge, and isomer-defining InChI/InChIKey."
+    }
+  ],
+  "validation": {
+    "frozen_interface_read": "src/ystwin/fba/chemical_task.py:108-214",
+    "prospective_precursor_reactions_checked": ["task_extension", "task_condensation"],
+    "check_method": "Constructed disconnected in-memory cobra.Reaction objects using copies of actual native metabolites; Reaction.check_mass_balance returned {} for both. Independently summed canonical formal charges and atom totals.",
+    "forward_only_lower_bounds_checked": true,
+    "install_chemical_task_called": false,
+    "reason_installation_not_attempted": "No evidence-backed complete desaturation equation exists in this curation; the requested output therefore has no approved producer.",
+    "optimized": false,
+    "phenotypes_predicted": false,
+    "target_outcome_values_recorded": false,
+    "legacy_product_kinetics_or_prediction_files_read": false,
+    "training_checkpoint_opened_or_modified": false,
+    "model_files_written": false,
+    "packages_installed": false,
+    "http_timeout_seconds": 25,
+    "access_issues": [
+      "The attempted Rhea EC 2.5.1.32 TSV request returned HTTP 403. No access-control workaround was attempted; reviewed UniProt catalytic annotations and IUBMB supplied traceable precursor reaction evidence instead.",
+      "The publisher HEAD request for the primary fungal CrtI paper PMID:10397832 returned HTTP 403. No primary body or abstract was read and no access-control workaround was attempted."
+    ],
+    "dataset_construct_verification": "Independently checked the condition curator's Phaffia CrtE/CrtYB/CrtI assignment using target Methods 2.1.1 and original construction Table 1 only.",
+    "target_results_or_abstracts_read": false
+  },
+  "parent_actions": [
+    "Do not join or score a complete chemistry task from this evidence file. There is no ready chemistry.json.",
+    "Use the verified fungal CrtE/CrtYB/CrtI construct, not bacterial CrtE/CrtB/CrtI. Confirm the exact engineered CrtI accession/sequence and any localization information not given by the inspected construct descriptions.",
+    "Resolve the fungal terminal electron acceptor, reduction product, and accessible compartment from independent reaction/enzymology evidence. The identified primary fungal CrtI paper is an access-limited follow-up, not an already verified source. If chemistry remains ambiguous, retain blocked status rather than choosing a capacity-favorable route.",
+    "Account explicitly for the CrtYB cyclase and the intermediate nature of the lycopene endpoint. Do not infer gene-copy-to-activity scaling or force a downstream flux floor.",
+    "Only then create a complete schema-version-1 ChemicalTask using opaque IDs, empty enzymes unless independent compatible constraints are supplied, and explicit mass/charge-balanced physical costs. Re-run non-optimizing installation validation."
+  ]
+}

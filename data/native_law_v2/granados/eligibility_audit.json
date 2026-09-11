@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "candidate_id": "granados2018_sfp1_carbon_localization",
+  "protocol_path": "data/native_law_v2/protocol.json",
+  "protocol_sha256": "e901d3985b5577d6f846229e1178062414e3220a7307b6d8ee40b0d01e9dffde",
+  "result": "ineligible_under_current_protocol",
+  "selection_used_measurement_values": false,
+  "raw_matched_main_group_ids": [
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep1",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep6",
+    "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/sfp1/gluc",
+    "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/sfp1/gluc_0_1",
+    "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/sfp1/gluc_0_2",
+    "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/sfp1/gluc_0_4",
+    "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/sfp1/gluc_0_8"
+  ],
+  "raw_main_group_count_before_alias_merge": 11,
+  "raw_main_distinct_experiment_upper_bound": 10,
+  "required_train_plus_development_plus_final_minimum": 11,
+  "main_count_gate_satisfied_even_at_upper_bound": false,
+  "matched_marker_group_ids": [
+    "0dcc11fc-dcd1-4983-930e-26265b48a0e9:/sfp1"
+  ],
+  "matched_marker_group_upper_bound": 1,
+  "required_independent_support_groups": 6,
+  "support_count_gate_satisfied_even_at_upper_bound": false,
+  "matched_sham_group_ids": [
+    "f0ff4386-a4a5-40a4-b501-42b3e222e698:/sfp1"
+  ],
+  "matched_sham_group_upper_bound": 1,
+  "required_independent_sham_groups": 2,
+  "sham_requirement_locator": "protocol.json controls.negative_biology (preregistered-01): at least two independent sham groups",
+  "sham_count_gate_satisfied_even_at_upper_bound": false,
+  "matched_two_colour_group_count": 0,
+  "two_colour_basis": "Actual pairs are Dot6/Msn2, Hog1/Msn2, Mig1/Msn2 and Yap1/Msn2; no Sfp1 pair is deposited.",
+  "normalized_groups_not_raw_compatible": [
+    "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/gluc/rep1",
+    "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/gluc/rep2"
+  ],
+  "normalization_exclusion": "SI section 3.1 uses each experiment's own pre-stress 20-frame population mean and SD. Published nucLocNorm is not raw nucLoc and cannot be inverted from the deposited normalized-only replicate file. That file also lacks actual times. No raw-compatible additional Sfp1/carbon replicate is established from it.",
+  "other_unresolved_gates": [
+    "Distinct cultures/days for the six fig1 replicates are documented, but complete shared-movie/day/culture dependence components across all files are not identifiable from exported fields.",
+    "No exported absolute acquisition clocks establish the protocol's required real crossed input/clock strata.",
+    "No per-observation standard-uncertainty or independent calibration-uncertainty arrays are present in these JSON schemas.",
+    "Marker localization uses an independent nuclear segmentation channel but GFP intensities are not an independent absolute detector/activity calibration; only one Sfp1 marker experiment is available and its added Nhp6A tag changes the strain context.",
+    "External registration, role-separated authority, and a complete ancestral-exposure audit have not been established by this local metadata work."
+  ],
+  "decision": "Do not form a train/development/final partition, fit, select, calibrate, or export response-bearing projections under this protocol. All source groups remain reserved. Do not replace Sfp1 with another factor or relax criteria without a new independently registered protocol before response access."
+}

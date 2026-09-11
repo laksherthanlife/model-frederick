@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2" level="2" version="1">
+  <model name="Everything">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">                                                                                                                                                                                                          
+				<p>A model of the cAMP pathway which attempts to include absolutely everything.</p>                                                                                                                                                              
+			</body>
+    </notes>
+    <listOfCompartments>
+      <compartment id="compartment" name="compartment" size="1"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="Rgs2" name="Rgs2" compartment="compartment" initialConcentration="1e-005" boundaryCondition="true"/>
+      <species id="Cyr1" name="Cyr1" compartment="compartment" initialConcentration="1e-005" boundaryCondition="true"/>
+      <species id="Pde2" name="Pde2" compartment="compartment" initialConcentration="0.00016" boundaryCondition="true"/>
+      <species id="Ira" name="Ira" compartment="compartment" initialConcentration="1.1e-005" boundaryCondition="true"/>
+      <species id="Mih1" name="Mih1" compartment="compartment" initialConcentration="1e-005" boundaryCondition="true"/>
+      <species id="PPA" name="PPA" compartment="compartment" initialConcentration="0.000224" boundaryCondition="true"/>
+      <species id="Sdc25" name="Sdc25" compartment="compartment" initialConcentration="1e-005" boundaryCondition="true"/>
+      <species id="Gpr1" name="Gpr1" compartment="compartment" initialConcentration="9.99999999999999e-006"/>
+      <species id="Glucout" name="Glucout" compartment="compartment" initialConcentration="8.44618033564067e-032"/>
+      <species id="Gpr1Glucout" name="Gpr1Glucout" compartment="compartment" initialConcentration="-2.39301410052969e-033"/>
+      <species id="Gpa2i" name="Gpa2i" compartment="compartment" initialConcentration="0.0001126"/>
+      <species id="Gpa2a" name="Gpa2a" compartment="compartment" initialConcentration="-4.99721839585425e-033"/>
+      <species id="Krh" name="Krh" compartment="compartment" initialConcentration="0.0001"/>
+      <species id="Gpa2aKrh" name="Gpa2aKrh" compartment="compartment" initialConcentration="-1.54688941759641e-032"/>
+      <species id="Ras2i" name="Ras2i" compartment="compartment" initialConcentration="0.000437206156106628"/>
+      <species id="Ras2a" name="Ras2a" compartment="compartment" initialConcentration="4.53938438933718e-005"/>
+      <species id="Cdc25" name="Cdc25" compartment="compartment" initialConcentration="1.2215083012251e-005"/>
+      <species id="Cdc25P" name="Cdc25P" compartment="compartment" initialConcentration="5.78491698774897e-006"/>
+      <species id="cAMP" name="cAMP" compartment="compartment" initialConcentration="0.000825917614307686"/>
+      <species id="Pde1" name="Pde1" compartment="compartment" initialConcentration="3.34314121580972e-005"/>
+      <species id="PKAi" name="PKAi" compartment="compartment" initialConcentration="7.65148419569979e-005"/>
+      <species id="C" name="C" compartment="compartment" initialConcentration="2.04703160860042e-005"/>
+      <species id="Glucin" name="Glucin" compartment="compartment" initialConcentration="4.71036809955077e-032"/>
+      <species id="Pde1P" name="Pde1P" compartment="compartment" initialConcentration="1.06858784190283e-006"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="Gpr1Glucass_k_1" name="Gpr1Glucass_k_1" value="0.00301659503091382"/>
+      <parameter id="Gpr1Glucdiss_k_2" name="Gpr1Glucdiss_k_2" value="0.14284392829434"/>
+      <parameter id="Gpa2act_kA_3" name="Gpa2act_kA_3" value="57682.6153976306"/>
+      <parameter id="Gpa2deact_kA_4" name="Gpa2deact_kA_4" value="12989.4420113722"/>
+      <parameter id="Gpa2deact_k1_4" name="Gpa2deact_k1_4" value="0.899003720389271"/>
+      <parameter id="Gpa2Krhass_k_5" name="Gpa2Krhass_k_5" value="391089.569083089"/>
+      <parameter id="Gpa2Krhdiss_k_6" name="Gpa2Krhdiss_k_6" value="6.12210079340681"/>
+      <parameter id="Ras2act_kcat_7" name="Ras2act_kcat_7" value="0.740604088325018"/>
+      <parameter id="Ras2act_Km_7" name="Ras2act_Km_7" value="0.00138648047637647"/>
+      <parameter id="Ras2act_Kd_7" name="Ras2act_Kd_7" value="0.0440833580413153"/>
+      <parameter id="Ras2act_a_7" name="Ras2act_a_7" value="32.9031890215006"/>
+      <parameter id="Ras2act_b_7" name="Ras2act_b_7" value="63.7501519114594"/>
+      <parameter id="Ras2deact_kA_8" name="Ras2deact_kA_8" value="519.811493442033"/>
+      <parameter id="Ras2deact_k1_8" name="Ras2deact_k1_8" value="0.042059375613429"/>
+      <parameter id="Cdc25phos_kcat_9" name="Cdc25phos_kcat_9" value="0.185477275623681"/>
+      <parameter id="Cdc25phos_Km_9" name="Cdc25phos_Km_9" value="0.00516736255009312"/>
+      <parameter id="Cdc25dephos_kcat_10" name="Cdc25dephos_kcat_10" value="2.51636177378834"/>
+      <parameter id="Cdc25dephos_Km_10" name="Cdc25dephos_Km_10" value="0.0162516819523974"/>
+      <parameter id="cAMPsynth_kcatGpa2_11" name="cAMPsynth_kcatGpa2_11" value="2933.87233320588"/>
+      <parameter id="cAMPsynth_kcatRas2_11" name="cAMPsynth_kcatRas2_11" value="650"/>
+      <parameter id="cAMPsynth_Km_11" name="cAMPsynth_Km_11" value="0.004"/>
+      <parameter id="cAMPhydroPde2_kcat_12" name="cAMPhydroPde2_kcat_12" value="1"/>
+      <parameter id="cAMPhydroPde2_Km_12" name="cAMPhydroPde2_Km_12" value="0.002"/>
+      <parameter id="cAMPhydroPde1p_kcat_13" name="cAMPhydroPde1p_kcat_13" value="25.2539854673553"/>
+      <parameter id="cAMPhydroPde1p_Km_13" name="cAMPhydroPde1p_Km_13" value="6.08741428019625e-007"/>
+      <parameter id="cAMPhydroPde1_kcat_14" name="cAMPhydroPde1_kcat_14" value="1.11283526581817"/>
+      <parameter id="cAMPhydroPde1_Km_14" name="cAMPhydroPde1_Km_14" value="0.845082028313041"/>
+      <parameter id="Pde1phos_kcat_15" name="Pde1phos_kcat_15" value="6.8221366652867"/>
+      <parameter id="Pde1phos_Km_15" name="Pde1phos_Km_15" value="0.00864811688536481"/>
+      <parameter id="Pde1dephos_kcat_16" name="Pde1dephos_kcat_16" value="2.41696125657814"/>
+      <parameter id="Pde1dephos_Km_16" name="Pde1dephos_Km_16" value="0.00107471629124917"/>
+      <parameter id="PKAact_kF_17" name="PKAact_kF_17" value="761676017.429656"/>
+      <parameter id="PKAact_kI_17" name="PKAact_kI_17" value="100"/>
+      <parameter id="PKAdeact_kF_18" name="PKAdeact_kF_18" value="19.9369792588504"/>
+      <parameter id="PKAdeact_kA_18" name="PKAdeact_kA_18" value="22139.0512490006"/>
+      <parameter id="GlucTrans_V_19" name="GlucTrans_V_19" value="0.062"/>
+      <parameter id="GlucTrans_Km_19" name="GlucTrans_Km_19" value="1.7"/>
+      <parameter id="GlucTrans_Ki_19" name="GlucTrans_Ki_19" value="0.91"/>
+      <parameter id="GlucUtil_k_20" name="GlucUtil_k_20" value="0.03"/>
+      <parameter id="percentFreeC" name="percentFreeC" value="0" constant="false"/>
+      <parameter id="percentActiveGpa2" name="percentActiveGpa2" value="0" constant="false"/>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule variable="percentFreeC">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <ci> C </ci>
+              <apply>
+                <plus/>
+                <ci> C </ci>
+                <apply>
+                  <times/>
+                  <cn type="integer"> 2 </cn>
+                  <ci> PKAi </ci>
+                </apply>
+              </apply>
+            </apply>
+            <cn type="integer"> 100 </cn>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="percentActiveGpa2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <ci> Gpa2a </ci>
+                <ci> Gpa2aKrh </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Gpa2a </ci>
+                <ci> Gpa2aKrh </ci>
+                <ci> Gpa2i </ci>
+              </apply>
+            </apply>
+            <cn type="integer"> 100 </cn>
+          </apply>
+        </math>
+      </assignmentRule>
+      <rateRule variable="Rgs2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </rateRule>
+      <rateRule variable="Cyr1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </rateRule>
+      <rateRule variable="Pde2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </rateRule>
+      <rateRule variable="Ira">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </rateRule>
+      <rateRule variable="Mih1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </rateRule>
+      <rateRule variable="PPA">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </rateRule>
+      <rateRule variable="Sdc25">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </rateRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="Gpr1Glucass" name="Gpr1Glucass" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Gpr1"/>
+          <speciesReference species="Glucout"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Gpr1Glucout"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Gpr1Glucass_k_1 </ci>
+              <ci> Gpr1 </ci>
+              <ci> Glucout </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Gpr1Glucdiss" name="Gpr1Glucdiss" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Gpr1Glucout"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Gpr1"/>
+          <speciesReference species="Glucout"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Gpr1Glucdiss_k_2 </ci>
+              <ci> Gpr1Glucout </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Gpa2act" name="Gpa2act" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Gpa2i"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Gpa2a"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Gpr1Glucout"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Gpa2act_kA_3 </ci>
+              <ci> Gpr1Glucout </ci>
+              <ci> Gpa2i </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Gpa2deact" name="Gpa2deact" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Gpa2a"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Gpa2i"/>
+        </listOfProducts>
+		<listOfModifiers>
+          <modifierSpeciesReference species="Rgs2"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> Gpa2deact_kA_4 </ci>
+                  <ci> Rgs2 </ci>
+                </apply>
+                <ci> Gpa2deact_k1_4 </ci>
+              </apply>
+              <ci> Gpa2a </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Gpa2Krhass" name="Gpa2Krhass" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Gpa2a"/>
+          <speciesReference species="Krh"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Gpa2aKrh"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Gpa2Krhass_k_5 </ci>
+              <ci> Gpa2a </ci>
+              <ci> Krh </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Gpa2Krhdiss" name="Gpa2Krhdiss" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Gpa2aKrh"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Gpa2a"/>
+          <speciesReference species="Krh"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Gpa2Krhdiss_k_6 </ci>
+              <ci> Gpa2aKrh </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Ras2act" name="Ras2act" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Ras2i"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Ras2a"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Cdc25"/>
+          <modifierSpeciesReference species="Glucin"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> Ras2act_kcat_7 </ci>
+                    <ci> Cdc25 </ci>
+                    <ci> Ras2i </ci>
+                  </apply>
+                  <ci> Ras2act_Km_7 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> Ras2act_b_7 </ci>
+                      <ci> Glucin </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> Ras2act_Kd_7 </ci>
+                      <ci> Ras2act_a_7 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> Glucin </ci>
+                  <ci> Ras2act_Kd_7 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <divide/>
+                    <ci> Ras2i </ci>
+                    <ci> Ras2act_Km_7 </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> Glucin </ci>
+                      <apply>
+                        <times/>
+                        <ci> Ras2act_Kd_7 </ci>
+                        <ci> Ras2act_a_7 </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Ras2deact" name="Ras2deact" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Ras2a"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Ras2i"/>
+        </listOfProducts>
+		<listOfModifiers>
+          <modifierSpeciesReference species="Ira"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> Ras2deact_kA_8 </ci>
+                  <ci> Ira </ci>
+                </apply>
+                <ci> Ras2deact_k1_8 </ci>
+              </apply>
+              <ci> Ras2a </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Cdc25phos" name="Cdc25phos" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cdc25"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cdc25P"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="C"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> C </ci>
+                <ci> Cdc25 </ci>
+                <ci> Cdc25phos_kcat_9 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Cdc25phos_Km_9 </ci>
+                <ci> Cdc25 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Cdc25dephos" name="Cdc25dephos" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cdc25P"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cdc25"/>
+        </listOfProducts>
+		<listOfModifiers>
+          <modifierSpeciesReference species="Mih1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> Mih1 </ci>
+                <ci> Cdc25P </ci>
+                <ci> Cdc25dephos_kcat_10 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Cdc25dephos_Km_10 </ci>
+                <ci> Cdc25P </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cAMPsynth" name="cAMPsynth" reversible="false">
+        <listOfProducts>
+          <speciesReference species="cAMP"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Gpa2a"/>
+          <modifierSpeciesReference species="Ras2a"/>
+		  <modifierSpeciesReference species="Cyr1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> Cyr1 </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> cAMPsynth_kcatGpa2_11 </ci>
+                    <ci> Gpa2a </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> cAMPsynth_kcatRas2_11 </ci>
+                    <ci> Ras2a </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> cAMPsynth_Km_11 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cAMPhydroPde2" name="cAMPhydroPde2" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cAMP"/>
+        </listOfReactants>
+		<listOfModifiers>
+			<modifierSpeciesReference species="Pde2"/>
+		</listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> Pde2 </ci>
+                <ci> cAMP </ci>
+                <ci> cAMPhydroPde2_kcat_12 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> cAMPhydroPde2_Km_12 </ci>
+                <ci> cAMP </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cAMPhydroPde1p" name="cAMPhydroPde1p" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cAMP"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Pde1P"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> Pde1P </ci>
+                <ci> cAMP </ci>
+                <ci> cAMPhydroPde1p_kcat_13 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> cAMPhydroPde1p_Km_13 </ci>
+                <ci> cAMP </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cAMPhydroPde1" name="cAMPhydroPde1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cAMP"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Pde1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> Pde1 </ci>
+                <ci> cAMP </ci>
+                <ci> cAMPhydroPde1_kcat_14 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> cAMPhydroPde1_Km_14 </ci>
+                <ci> cAMP </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Pde1phos" name="Pde1phos" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Pde1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Pde1P"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="C"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> C </ci>
+                <ci> Pde1 </ci>
+                <ci> Pde1phos_kcat_15 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Pde1phos_Km_15 </ci>
+                <ci> Pde1 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Pde1dephos" name="Pde1dephos" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Pde1P"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Pde1"/>
+        </listOfProducts>
+		<listOfModifiers>
+			<modifierSpeciesReference species = "PPA"/>
+		</listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> PPA </ci>
+                <ci> Pde1P </ci>
+                <ci> Pde1dephos_kcat_16 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Pde1dephos_Km_16 </ci>
+                <ci> Pde1P </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="PKAact" name="PKAact" reversible="false">
+        <listOfReactants>
+          <speciesReference species="PKAi"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="C" stoichiometry="2"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Krh"/>
+          <modifierSpeciesReference species="cAMP"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> PKAi </ci>
+                <apply>
+                  <power/>
+                  <ci> cAMP </ci>
+                  <cn type="integer"> 4 </cn>
+                </apply>
+                <ci> PKAact_kF_17 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> PKAact_kI_17 </ci>
+                  <ci> Krh </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="PKAdeact" name="PKAdeact" reversible="false">
+        <listOfReactants>
+          <speciesReference species="C" stoichiometry="2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="PKAi"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Krh"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> PKAdeact_kF_18 </ci>
+              <apply>
+                <power/>
+                <ci> C </ci>
+                <cn type="integer"> 2 </cn>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> PKAdeact_kA_18 </ci>
+                  <ci> Krh </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="GlucTrans" name="GlucTrans">
+        <listOfReactants>
+          <speciesReference species="Glucout"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Glucin"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> GlucTrans_V_19 </ci>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <divide/>
+                    <ci> Glucout </ci>
+                    <ci> GlucTrans_Km_19 </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> Glucin </ci>
+                    <ci> GlucTrans_Km_19 </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> Glucout </ci>
+                  <ci> GlucTrans_Km_19 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <ci> Glucin </ci>
+                  <ci> GlucTrans_Km_19 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> GlucTrans_Ki_19 </ci>
+                    <ci> Glucout </ci>
+                    <ci> Glucin </ci>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> GlucTrans_Km_19 </ci>
+                    <cn type="integer"> 2 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="GlucUtil" name="GlucUtil" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Glucin"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> GlucUtil_k_20 </ci>
+              <ci> Glucin </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

@@ -1,0 +1,19 @@
+arm,arm_label,induction_fold,n_replicates,power,power_low,power_high,n_simulations,collinearity,well_cv
+"one reporter, dose only","one reporter,
+dose only",1.2,6,0.0125,0.004260067321970977,0.03610000462104887,240,0.9932439880230362,0.052
+"one reporter, dose only","one reporter,
+dose only",1.5,6,0.05416666666666667,0.031925187796296654,0.09045539081825996,240,0.9932439880230362,0.052
+"one reporter, dose only","one reporter,
+dose only",2.0,6,0.4,0.3400658590264169,0.46308492496189485,240,0.9932439880230362,0.052
+"one reporter, + nutrient axis","one reporter,
++ nutrient axis",1.2,6,0.9708333333333333,0.9410304560608658,0.9858012693274998,240,0.5069698225073469,0.052
+"one reporter, + nutrient axis","one reporter,
++ nutrient axis",1.5,6,1.0,0.9842460800584412,1.0,240,0.5069698225073469,0.052
+"one reporter, + nutrient axis","one reporter,
++ nutrient axis",2.0,6,1.0,0.9842460800584412,1.0,240,0.5069698225073469,0.052
+"co-expressed ratio, dose only (YFP/eGFP)","co-expressed ratio,
+dose only (YFP/eGFP)",1.2,6,1.0,0.9842460800584412,1.0,240,0.9932439880230362,0.052
+"co-expressed ratio, dose only (YFP/eGFP)","co-expressed ratio,
+dose only (YFP/eGFP)",1.5,6,1.0,0.9842460800584412,1.0,240,0.9932439880230362,0.052
+"co-expressed ratio, dose only (YFP/eGFP)","co-expressed ratio,
+dose only (YFP/eGFP)",2.0,6,1.0,0.9842460800584412,1.0,240,0.9932439880230362,0.052

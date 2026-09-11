@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "kind": "implementation_start_baseline",
+  "recorded_on": "2026-09-08",
+  "commit": "84561f51502b5b4bf66c052dc88c853038917934",
+  "branch": "main",
+  "working_tree_was_clean": false,
+  "preexisting_changes": [
+    {
+      "path": "scripts/audit_reproducibility.py",
+      "snapshot_git_blob": "e989799621dec18b83374d6b5d982cf97f183ad4"
+    },
+    {
+      "path": "src/ystwin/estimator.py",
+      "snapshot_git_blob": "df37d50aa667c4d7c50d16bfeed96df7c419b7c4"
+    }
+  ],
+  "snapshot_patch_sha256": "5ea64b407cf8b855bbd4aae14f09dea87d1bf8ee694843381aca5c70dc892b38",
+  "snapshot_method": "Detached Git worktree at the starting commit, then apply the preexisting binary diff. Tests and legacy audit mutations are isolated from implementation writes.",
+  "runtime": {
+    "python": "3.14.2",
+    "platform": "macOS arm64",
+    "packages": {
+      "numpy": "2.4.1",
+      "scipy": "1.17.0",
+      "pandas": "2.3.3",
+      "cobra": "0.32.1",
+      "optlang": "1.9.1",
+      "swiglpk": "5.0.13",
+      "sympy": "1.14.0",
+      "pytest": "9.0.2",
+      "pytest-xdist": "3.8.0",
+      "ruff": "0.15.22",
+      "python-libsbml": "5.21.1",
+      "libroadrunner": null,
+      "pytfa": "0.9.1",
+      "equilibrator-api": "0.7.0"
+    }
+  },
+  "verification": [
+    {
+      "command": "python3 -m pytest tests -q -n 4 --junitxml=<temporary-baseline-report>",
+      "status": "completed",
+      "returncode": 1,
+      "passed": 7376,
+      "failed": 10,
+      "skipped": 49,
+      "total": 7435,
+      "elapsed_seconds": 730.43,
+      "failure_cause": "All ten failures require absent untracked public SGD regulation records; the first missing factor is MSN2. Public provisioning is therefore a blocking requirement, not a private-data skip.",
+      "data_scope": "Tracked public inputs and explicitly configured locally available plate, qPCR and thermodynamic inputs. Untracked local results were not copied into the snapshot. Missing assets remain visible as skips or failures."
+    },
+    {
+      "command": "python3 -m ruff check .",
+      "returncode": 1,
+      "findings": 30,
+      "scope": "Entire baseline checkout under the existing lint rules; no new exclusions."
+    },
+    {
+      "command": "python3 scripts/audit_claims.py --quiet",
+      "returncode": 1,
+      "passed": 359,
+      "total": 363,
+      "failed": 4,
+      "numeric_cell_comparisons": 246,
+      "tracked_files_modified": ["outputs/audit_claims.csv"]
+    },
+    {
+      "command": "python3 scripts/audit_reproducibility.py --quiet",
+      "returncode": 1,
+      "reported_passed": 733,
+      "reported_total": 841,
+      "skipped": 2,
+      "failed": 108,
+      "producer_hash_mismatches": 82,
+      "writer_attribution_failures": 26,
+      "interpretation": "Producer-hash changes are an investigation queue, not proof that numerical values are wrong. Counts are the measured snapshot results, not the previously supplied estimate of 85 mismatches.",
+      "tracked_files_modified": ["outputs/audit_reproducibility.csv"]
+    },
+    {
+      "command": "PYTHONPATH=<baseline>/src python3 scripts/replay_portable_evidence.py --root <canonical-baseline> --output <canonical-temporary-report>",
+      "returncode": 0,
+      "verified": true,
+      "code_dependencies": 20,
+      "input_dependencies": 7,
+      "independent_test": false,
+      "biological_validation": false,
+      "new_fitting": false
+    }
+  ],
+  "destructive_actions": [],
+  "publication": "No push or external publication performed."
+}

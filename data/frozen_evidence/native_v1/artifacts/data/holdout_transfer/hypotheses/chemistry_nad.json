@@ -1,0 +1,110 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "data/holdout_transfer/hypotheses/chemistry_nad.json",
+    "sha256": "bb76b6815c6a3a9dfb4313ed90a19ad0d815c9d4d87445d4f8fcf2fab5d11a5b"
+  },
+  "payload": {
+    "schema_version": 1,
+    "source": {
+      "authority": "User-authorized UNVERIFIED redox hypothesis, not established fungal enzymology",
+      "reference": "assumption_status=unverified_user_authorized_hypothesis; user_authorized_hypothesis=true; manifest.json#variants/0. Four cytosolic NAD reductions are a declared hypothesis based only on a weak automated fungal annotation, not a measured reaction. Relaxed intermediate-accumulation capacity upper bound; strict chemistry remains blocked. No outcome-based selection.",
+      "scope": "evaluation_task",
+      "source_id": "holdout-transfer:user-authorized-redox-hypothesis:nad:v1"
+    },
+    "task": {
+      "enzymes": [],
+      "metabolites": [
+        {
+          "charge": 0,
+          "compartment": "c",
+          "formula": "C40H64",
+          "id": "task_intermediate_c"
+        },
+        {
+          "charge": 0,
+          "compartment": "c",
+          "formula": "C40H56",
+          "id": "task_output_c"
+        }
+      ],
+      "output_metabolite_id": "task_output_c",
+      "protein_pool_metabolite_id": null,
+      "reactions": [
+        {
+          "enzyme_id": null,
+          "id": "task_extension",
+          "kcat_per_s": null,
+          "source": "Independently curated precursor reaction: IUBMB EC 2.5.1.29; native BTS1/Q12051 reaction; Phaffia CrtE construct in DOI:10.1021/acssynbio.5c00256 Methods 2.1.1 and DOI:10.3389/fbioe.2020.578793 Table 1. In this user-authorized hypothesis, cytosolic aggregation and missing heterologous enzyme constraints are common upper-bound relaxations; no gene-copy scaling is supplied.",
+          "stoichiometry": [
+            [
+              "s_0190[c]",
+              -1
+            ],
+            [
+              "s_0943[c]",
+              -1
+            ],
+            [
+              "s_0189[c]",
+              1
+            ],
+            [
+              "s_0633[c]",
+              1
+            ]
+          ]
+        },
+        {
+          "enzyme_id": null,
+          "id": "task_condensation",
+          "kcat_per_s": null,
+          "source": "Independently curated CrtYB phytoene-synthase reaction: IUBMB EC 2.5.1.32 and reviewed fungal Q7Z859/RHEA:34475 with experimental provenance PMID:10589832; construct documented in the unchanged strict evidence. This hypothesis omits the same CrtYB downstream cyclase consumption as a declared relaxation in all variants; it is not a terminal-producer reconstruction.",
+          "stoichiometry": [
+            [
+              "s_0189[c]",
+              -2
+            ],
+            [
+              "task_intermediate_c",
+              1
+            ],
+            [
+              "s_0633[c]",
+              2
+            ]
+          ]
+        },
+        {
+          "enzyme_id": null,
+          "id": "task_desaturation",
+          "kcat_per_s": null,
+          "source": "UNVERIFIED USER-AUTHORIZED HYPOTHESIS: phytoene plus four native cytosolic NAD molecules yields the output plus four NADH and four H+, as required by the native formulas. Unreviewed fungal CrtI NAD(+) annotation O13506, ECO:0000256/ARBA00001911, is only a weak automated lead, NOT measured enzymology. Direct fungal enzyme coupling, catalytic cofactors, localization and thermodynamics remain unverified. See manifest.json#variants/0; do not treat installation or a favorable capacity as biological validation.",
+          "stoichiometry": [
+            [
+              "task_intermediate_c",
+              -1
+            ],
+            [
+              "s_1198[c]",
+              -4
+            ],
+            [
+              "task_output_c",
+              1
+            ],
+            [
+              "s_1203[c]",
+              4
+            ],
+            [
+              "s_0794[c]",
+              4
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "schema_version": 1
+}

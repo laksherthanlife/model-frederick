@@ -1,0 +1,181 @@
+{
+  "schema_version": "native-biochemical-catalogue/1.0",
+  "catalogue_state": "metadata_verified_current_flux_candidate_ineligible_no_measurements_exported",
+  "initial_catalogue_was_metadata_first": true,
+  "custodian_scope": ["data/native_law_v2/biochemical_catalogue.json", "data/native_law_v2/biochemical/", "scripts/export_native_biochemical_data.py (new file)"],
+  "decision_summary": {
+    "registered_candidate": "hackett2016_cdc19_flux_response",
+    "status": "ineligible_under_current_protocol_not_a_scored_failure",
+    "primary_reason": "Hackett intracellular reaction fluxes, including the proposed pyruvate-kinase label, come from modified YEASTNET-7 quadratic optimization/FVA rather than independently measured reaction rates. No isotope labeling was used for their determination.",
+    "secondary_reasons": ["Metabolomics came from prior Boer cultures, not the same biological cultures as proteomics/fluxomics", "No raw independent activity-label table and sufficient matched biological support groups were verified", "Batch, shared-reference, follow-up-culture and imputation dependencies remain unresolved", "Exact units/transform provenance for quantitative adapters is incomplete"],
+    "basis": "Primary methods, source inventories, headers and biological/context identities only; no outcome values, model scores or fitted-parameter comparisons used for selection.",
+    "candidate_claim_scope": "Metadata and measurement-lineage assessment only. An exchange-level or assay-specific response study would require a different explicitly approved protocol and appropriate measured labels."
+  },
+  "access_policy": {
+    "learner_measurement_allowlist": [],
+    "approved_training_projections": [],
+    "approved_development_projections": [],
+    "reserved_label_artifacts": [],
+    "quantitative_measurements_exported": false,
+    "mixed_raw_sources_persisted": false,
+    "reserved_outcome_values_disclosed": false,
+    "protocol_path": "data/native_law_v2/protocol.json",
+    "protocol_id_observed": "native-law-v2-preregistered-01",
+    "protocol_status": "Criteria file now available; source eligibility fails. No approved experiment-specific export declaration or externally anchored registry receipt was supplied.",
+    "protocol_locators": {"eligibility_before_values": "protocol.json registration and selection", "whole_component_split": "protocol.json selection.unit and selection.split_rule", "independent_support": "protocol.json support", "FBA_only_ineligibility": "claim_domain.json candidates.hackett2016_cdc19_flux_response.ineligible_if"},
+    "export_gate": "No quantitative export until an eligible measured target, a frozen metadata-only whole-experiment split and independent approval/registration exist. A criteria JSON file or local hash is not an approval receipt.",
+    "raw_source_handling": "Public bytes were retrieved into memory for format, header, schema, identity and digest checks. Never hand mixed RData, full supplemental archives, original figures, fitted reaction forms or full article text to the learner.",
+    "feature_selection_guard": "The metadata lists all 106 available Boer covariates, not the paper-selected regulators or regulatory directions. Any preselected paper-informed dependency must be labeled replication rather than novel discovery. No paper conclusion is supplied as a learned feature-selection result.",
+    "no_silent_target_substitution": true
+  },
+  "metadata_inventory": [
+    {
+      "source_id": "hackett2016",
+      "metadata_path": "data/native_law_v2/biochemical/hackett2016_metadata.json",
+      "schema_status": "Pinned author protein TSV and boundary RData schemas/digests verified; complete typed R serialization consumed without printing numeric measurement payloads.",
+      "available_schema_summary": {"protein_TSV": "1187 gene rows; Gene plus 25 condition columns", "boundary_RData": "chemostatInfo: 25 x 15; mediaSummary: 225 x 8; comp_by_cond: mixed biomass composition/conversion/stoichiometric objects"},
+      "biological_identity_summary": "25 condition-coded chemostat identifiers; 24 share one NMR_date, while the final uracil culture has a follow-up identifier/date. Individual NMR sample IDs are absent from the aggregated boundary table.",
+      "license_status": "Public author repository; GitHub license=null and DESCRIPTION contains a license placeholder. No reusable-data license verified.",
+      "learner_measurements_allowed": false
+    },
+    {
+      "source_id": "boer2010",
+      "metadata_path": "data/native_law_v2/biochemical/boer2010_metadata.json",
+      "schema_status": "Official public supplemental ZIP members, text headers, Excel sheets and source units verified.",
+      "available_schema_summary": {"Data_Set_2": "136 sample rows; 7 identity/context fields plus 106 normalized ion-count variables", "Data_Set_1": "28-column published metabolomics matrix", "TableS1": "Included/excluded compounds and MS acquisition settings", "TableS2": "Raw extraction-method comparisons plus derived statistical sheets", "TableS3": "Repeated culture/nutrient blocks with cell-volume and extracellular concentration units"},
+      "ancestry": "Explicit prior-culture metabolomics ancestor of Hackett 2016, not independent validation of Hackett.",
+      "license_status": "Public Europe PMC OA archive; inspected permissions state ASCB copyright, with no explicit reusable-data license verified.",
+      "learner_measurements_allowed": false
+    },
+    {
+      "source_ids": ["smallbone2013", "vaneunen2012"],
+      "metadata_path": "data/native_law_v2/biochemical/activity_alternatives.json",
+      "schema_status": "Independent primary assay methods and actual accessible PDF supplements/digests verified; no raw replicate-level activity export established.",
+      "candidate_claim_scope": "Smallbone: purified tagged-enzyme initial-rate assay candidate if original records are recovered. Van Eunen: cell-free-extract activity or measured transport candidate, never intrinsic kcat from extract activity. Neither is a matched replacement under the current protocol.",
+      "learner_measurements_allowed": false
+    }
+  ],
+  "verified_primary_source_access": [
+    {
+      "source_id": "hackett2016_article",
+      "doi": "10.1126/science.aaf2786",
+      "pmid": "27789812",
+      "pmcid": "PMC5414049",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5414049/",
+      "http_status": 200,
+      "media_type": "text/html",
+      "observed_bytes": 319880,
+      "observed_sha256": "9abd720ecd60f4e43437ddc4cc024649caa3d9c0488ea502c812a964baf28099",
+      "checksum_scope": "One observed HTML response; dynamic article chrome can change.",
+      "methods_locators": ["#S10", "#S11", "#S22", "#S24", "#S26", "#S27", "#S29", "#S30"],
+      "license": "Publicly readable author manuscript; Europe PMC marks isOpenAccess=N.",
+      "full_article_learner_allowed": false
+    },
+    {
+      "source_id": "hackett2016_author_data",
+      "repository": "shackett/simmer",
+      "commit": "7138a45fb9653ce50d8556676a9fd1cc00bf0395",
+      "files": [
+        {"path": "inst/extdata/flux_input_data/proteinAbundance.tsv", "bytes": 553249, "sha256": "5227daf2a6358f188ec58b2dbfebadeac27c76d7eef03a0a82e0ad86ac9e3a9d"},
+        {"path": "inst/extdata/flux_input_data/boundaryFluxes.Rdata", "bytes": 70639, "sha256": "15e9bd86d5667671f58e911fa77374bf33085b05052f10113cc7c685af8338d1"}
+      ],
+      "acquisition": "gh api; commit, Git blob SHA, file SHA256 and size checked in memory.",
+      "full_raw_learner_allowed": false
+    }
+  ],
+  "measurement_classification": [
+    {
+      "class_id": "experimental_boundary_measurements",
+      "eligible_label_type_in_principle": "Calibrated medium concentration changes and properly derived net exchange measurements",
+      "verified_lineage": "mediaSummary contains aggregated concentration changes and uncertainties; source code multiplies these by actual dilution rate before optimization. Exact molecular scale and biomass/cell-volume conversion still need source binding.",
+      "restrictions": "Not an individual intracellular enzyme rate. The model-ready input additionally removes measured phosphate information and constructs an approximated oxygen constraint; those transformations must not be mislabeled raw measurements.",
+      "current_export_allowed": false
+    },
+    {
+      "class_id": "intracellular_reaction_fluxes",
+      "classification": "model_derived_not_measurement",
+      "eligible_as_measurement": false,
+      "excluded": ["optimized_internal_flux", "FVA_range_or_midpoint", "SIMMER_predicted_flux", "best_fit_reaction_curve", "inferred_kinetic_constant"]
+    },
+    {
+      "class_id": "metabolite_covariates",
+      "classification": "Experimental LC-MS/MS, with source normalization and censoring; calibrated concentration only where a complete standards/reference lineage exists",
+      "restrictions": "Whole-cell, prior-culture measurements; relative ion counts are not cytosolic mM. Shared references and published global transformations cannot be ignored. Do not split aggregate analyte names into unmeasured molecular species.",
+      "current_export_allowed": false
+    },
+    {
+      "class_id": "enzyme_abundance",
+      "classification": "Processed relative protein abundance, with reported KNN imputation",
+      "restrictions": "No absolute active enzyme amount; no imputation flag in verified TSV; exact file transform unresolved. Protein gene IDs or detection do not establish kinetic capacity.",
+      "current_export_allowed": false
+    },
+    {
+      "class_id": "independent_activity_validation",
+      "classification": "An independently acquired assay can validate a scoped activity response only with source-bound raw observations, preparation/group IDs, matching conditions and a frozen observation adapter",
+      "restrictions": "Methods citations and plotted fitted curves are not raw label receipts. Crude-extract activity is not kcat; purified total protein without active fraction does not establish intrinsic turnover. Paper-selected assay hypotheses entail replication.",
+      "current_export_allowed": false
+    }
+  ],
+  "access_blockers": [
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/5414049/bin/NIHMS846973-supplement-supplement_1.pdf",
+      "linked_label": "NIHMS846973-supplement-supplement_1.pdf (3.5MB, pdf)",
+      "status": "HTTP_200_but_HTML_not_PDF",
+      "observed_media_type": "text/html; charset=utf-8",
+      "observed_title": "Preparing to download ...",
+      "observed_bytes": 1816,
+      "response_sha256": "230095f238612fb7d580284bca04dd211399f8538e0516072a6c70b122e28293",
+      "reason": "Normal linked download returned an interstitial, not the PDF. No challenge bypass attempted."
+    },
+    {
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5414049/supplementaryFiles",
+      "status": "HTTP_200_XML_error_not_archive",
+      "observed_bytes": 164,
+      "response_sha256": "0318930b506267b794ade4f45d42bbf607e63f388b811db3c9cb260c40e46bbd",
+      "error_message": "Article with id PMC5414049 is not open access one"
+    },
+    {"url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5414049/fullTextXML", "status": "HTTP_404", "reason": "Full-text XML endpoint does not expose this author manuscript; public PMC HTML was used for methods only."},
+    {"url": "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC5414049", "status": "HTTP_404", "reason": "No OA archive obtained."},
+    {"url": "https://www.science.org/doi/suppl/10.1126/science.aaf2786/suppl_file/aaf2786_hackett_sm.pdf", "status": "HTTP_403", "url_status": "Conventional publisher-path candidate, not a publisher-verified attachment URL", "reason": "Publisher rejected request; no bypass attempted."},
+    {"url": "https://growthrate.princeton.edu/metabolome/", "status": "TLS_certificate_hostname_mismatch", "reason": "Certificate verification retained; official Boer Europe PMC supplemental archive was a successful public alternative."}
+  ],
+  "inherited_model_overlap_audit": {
+    "status": "confirmed_Hackett_GEM_label_lineage_other_exact_fit_data_overlap_unresolved",
+    "confirmed": [
+      {"source": "Hackett 2016 methods #S11 and #S22", "fact": "Internal reaction labels depend on modified YEASTNET 7, boundary constraint fitting and FVA. Avoiding local GEM files alone would not remove this inherited model prior."},
+      {"source": "Hackett 2016 methods #S10/#S29/#S30 and Boer 2010", "fact": "Boer metabolomics is an ancestor reused by Hackett. It is not independent holdout data merely because supplied under another filename."},
+      {"path": "scripts/gecko/build_ecyeastgem.m", "lines": "19-23, 48-64", "fact": "The existing build uses DLKcat prediction, fuzzy kcat matching, isozyme/standard-value selection and growth-directed sensitivity tuning. Those are not independent experimental measurements."},
+      {"path": "data/gem/MANIFEST.md", "lines": "7-15", "fact": "Existing artifact source versions include yeast-GEM 9.0.2, ecYeastGEM based on yeast-GEM 8.3.4, and a GECKO 3.2.5 build on yeast-GEM 9.0.2. No frozen model was edited or used for fitting."}
+    ],
+    "bounded_upstream_checks": [
+      {"query": "gh search code Hackett repo:SysBioChalmers/yeast-GEM", "result": "No indexed code matches; not proof of absent historical or binary-file overlap."},
+      {"query": "gh search code Hackett repo:SysBioChalmers/GECKO", "result": "Search API HTTP 404. Direct gh repo view confirms the public GECKO repository exists; search availability does not resolve its data history."},
+      {"query": "gh search code Hackett repo:SysBioChalmers/ecModels", "result": "Search API HTTP 404; exact overlap remains unresolved."}
+    ],
+    "unresolved": ["Whether original Hackett/Boer observations entered exact frozen YeastGEM/GECKO fitting or validation data", "Whether candidate activity experiments or fitted summaries entered BRENDA/SABIO-RK or DLKcat training/matching", "Historical code/checkpoint/source-template exposure of any eventual reserved biological groups"],
+    "new_learner_policy": "Use no frozen GEM/ecGEM predictions, fitted constants, DLKcat outputs, paper-selected regulator conclusions, gene-copy proxies or culture-product fit priors. Preserve original measurement and shared-calibration ancestry even for a freshly trained learner.",
+    "local_history_review_scope": "Existing model manifest/build code was reviewed for versions and derivation history only. Performance commentary and culture-product observations were not extracted or used as evidence for this candidate.",
+    "independence_certified": false
+  },
+  "inspection_and_validation": {
+    "script": "scripts/export_native_biochemical_data.py",
+    "modes": ["--self-test", "--inspect-hackett"],
+    "quantitative_export_mode": null,
+    "no_installations": true,
+    "no_fitting_or_scoring": true,
+    "http_bounds": "urllib requests used 25-second timeouts; GitHub calls used gh with 28-second per-request subprocess timeouts.",
+    "self_test_scope": "Synthetic-only typed R schema, no numeric/character measurement values in schema output, truncation/trailing-byte/version refusal; not biological validation.",
+    "real_source_checks": "Both pinned author files passed digest/size verification; TSV widths verified; all R serialization bytes consumed.",
+    "metadata_cell_verification": "Re-fetched sources and compared all 25 recorded chemostat identity rows, exact protein headers, all 106 metabolite headers plus seven metadata headers, Boer Raw_data worksheet headers and TableS3 A1-addressed header/unit cells. All passed.",
+    "Boer_member_digest_checks": "All six recorded supplementary-member SHA256/size bindings passed independent re-fetch verification.",
+    "alternative_activity_digest_checks": "All four recorded Smallbone/van Eunen PDF-member SHA256/size bindings passed re-fetch verification without extracting measurement values.",
+    "verification_scope": "Schema and metadata/source-cell checks only. No quantitative measurement projection or scientific validation was performed or authorized."
+  },
+  "next_actions_for_parent": [
+    "Treat the registered Hackett flux candidate as metadata-ineligible; do not fit it using optimized/FVA labels or rebrand them as experiments.",
+    "If changing to boundary exchange or a direct activity target, obtain a new protocol before measurement access and state the narrower claim explicitly.",
+    "For a future eligible source, resolve raw assay/preparation IDs, source units, biological/culture/batch/reference ancestry, imputation and matched conditions, then freeze a whole-experiment declaration before strict train/dev exports.",
+    "Keep support/final labels and every mixed raw source outside the learner allowlist; obtain independent registration/custody/ancestry authority rather than treating these metadata files as receipts.",
+    "Resolve exact fitted-database overlap and licensing before claiming independent validation or redistributing full source data."
+  ]
+}

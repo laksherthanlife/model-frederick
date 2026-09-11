@@ -1,0 +1,33 @@
+{
+  "document_type": "source_scalar_replay_binding_not_biological_validation",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "protocol_sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+  "phase": "development_inputs",
+  "approval_sha256": "87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533",
+  "source_asset_id": "1b38366b-7473-4ddf-9cf9-26e625533686",
+  "source_sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+  "group_ids": [
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"
+  ],
+  "source_binding_audit": {
+    "path": "data/native_law_v2/granados/development/source_binding_audit.json",
+    "sha256": "e58f682b49a2f74ae0fff41e429893454c630b7c6daa55523f97fb02cd556985",
+    "bytes": 3903,
+    "role": "source_binding_audit"
+  },
+  "ordered_payload_sha256": "cb00716b7e1dc0f73c48a432259eb3a60079924acf4487adf9719b1b2d9f9e96",
+  "verification": {
+    "source_cell_records": 7040,
+    "source_time_records": 8448,
+    "source_scalar_checks": 29568,
+    "preserved_null_counts": {
+      "max5": 1,
+      "median": 1,
+      "relative_time_min": 0
+    }
+  },
+  "development_response_intensities_in_payload": false,
+  "scalar_policy": "Direct equality to deposited max5/median/times at the declared pointers, including exact null retention. No response transformations, smoothing, interpolation or row renumbering.",
+  "strong_claim_authorized": false
+}

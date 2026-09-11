@@ -1,0 +1,137 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "data/holdout_transfer/hypotheses/conditions_oxygen_peroxide.json",
+    "sha256": "94673a74c7b50e9ada616829ce97233fc00068a265c96adcc246e1f6f5ad0028"
+  },
+  "payload": {
+    "experiments": [
+      {
+        "added_nacl_molar": 0.0,
+        "chemistry_path": "data/holdout_transfer/hypotheses/chemistry_oxygen_peroxide.json",
+        "chemistry_sha256": "690da85593b4aa00ddf9572650c6a26e7ce396a8c3abeaffce5cb6aee0cc4d9b",
+        "condition": {
+          "carbon_input": "glucose",
+          "experiment_id": "elizondo2025_2D01",
+          "growth_rate_per_h": 0.10098798657810984,
+          "native_context_assumption": "Transfer from frozen native DS28911/W303 glucose/O2 exchange curves and native glycerol commitments to a CEN.PK2-1c-derived strain in supplemented YNB. Cross-strain and medium equivalence is an explicit, unvalidated extrapolation; no product measurements or target-study exchange rates adjust these priors.",
+          "readout_basis": "balanced_growth_intracellular_content"
+        },
+        "experiment_id": "elizondo2025_2D01"
+      },
+      {
+        "added_nacl_molar": 0.0,
+        "chemistry_path": "data/holdout_transfer/hypotheses/chemistry_oxygen_peroxide.json",
+        "chemistry_sha256": "690da85593b4aa00ddf9572650c6a26e7ce396a8c3abeaffce5cb6aee0cc4d9b",
+        "condition": {
+          "carbon_input": "glucose",
+          "experiment_id": "elizondo2025_2D025",
+          "growth_rate_per_h": 0.2543201820522904,
+          "native_context_assumption": "Transfer from frozen native DS28911/W303 glucose/O2 exchange curves and native glycerol commitments to a CEN.PK2-1c-derived strain in supplemented YNB. Cross-strain and medium equivalence is an explicit, unvalidated extrapolation; no product measurements or target-study exchange rates adjust these priors.",
+          "readout_basis": "balanced_growth_intracellular_content"
+        },
+        "experiment_id": "elizondo2025_2D025"
+      },
+      {
+        "added_nacl_molar": 0.0,
+        "chemistry_path": "data/holdout_transfer/hypotheses/chemistry_oxygen_peroxide.json",
+        "chemistry_sha256": "690da85593b4aa00ddf9572650c6a26e7ce396a8c3abeaffce5cb6aee0cc4d9b",
+        "condition": {
+          "carbon_input": "glucose",
+          "experiment_id": "elizondo2025_3D01",
+          "growth_rate_per_h": 0.10098798657810984,
+          "native_context_assumption": "Transfer from frozen native DS28911/W303 glucose/O2 exchange curves and native glycerol commitments to a CEN.PK2-1c-derived strain in supplemented YNB. Cross-strain and medium equivalence is an explicit, unvalidated extrapolation; no product measurements or target-study exchange rates adjust these priors.",
+          "readout_basis": "balanced_growth_intracellular_content"
+        },
+        "experiment_id": "elizondo2025_3D01"
+      },
+      {
+        "added_nacl_molar": 0.0,
+        "chemistry_path": "data/holdout_transfer/hypotheses/chemistry_oxygen_peroxide.json",
+        "chemistry_sha256": "690da85593b4aa00ddf9572650c6a26e7ce396a8c3abeaffce5cb6aee0cc4d9b",
+        "condition": {
+          "carbon_input": "glucose",
+          "experiment_id": "elizondo2025_3D025",
+          "growth_rate_per_h": 0.2543201820522904,
+          "native_context_assumption": "Transfer from frozen native DS28911/W303 glucose/O2 exchange curves and native glycerol commitments to a CEN.PK2-1c-derived strain in supplemented YNB. Cross-strain and medium equivalence is an explicit, unvalidated extrapolation; no product measurements or target-study exchange rates adjust these priors.",
+          "readout_basis": "balanced_growth_intracellular_content"
+        },
+        "experiment_id": "elizondo2025_3D025"
+      },
+      {
+        "added_nacl_molar": 0.0,
+        "chemistry_path": "data/holdout_transfer/hypotheses/chemistry_oxygen_peroxide.json",
+        "chemistry_sha256": "690da85593b4aa00ddf9572650c6a26e7ce396a8c3abeaffce5cb6aee0cc4d9b",
+        "condition": {
+          "carbon_input": "glucose",
+          "experiment_id": "elizondo2025_4D01",
+          "growth_rate_per_h": 0.10098798657810984,
+          "native_context_assumption": "Transfer from frozen native DS28911/W303 glucose/O2 exchange curves and native glycerol commitments to a CEN.PK2-1c-derived strain in supplemented YNB. Cross-strain and medium equivalence is an explicit, unvalidated extrapolation; no product measurements or target-study exchange rates adjust these priors.",
+          "readout_basis": "balanced_growth_intracellular_content"
+        },
+        "experiment_id": "elizondo2025_4D01"
+      },
+      {
+        "added_nacl_molar": 0.0,
+        "chemistry_path": "data/holdout_transfer/hypotheses/chemistry_oxygen_peroxide.json",
+        "chemistry_sha256": "690da85593b4aa00ddf9572650c6a26e7ce396a8c3abeaffce5cb6aee0cc4d9b",
+        "condition": {
+          "carbon_input": "glucose",
+          "experiment_id": "elizondo2025_4D025",
+          "growth_rate_per_h": 0.2543201820522904,
+          "native_context_assumption": "Transfer from frozen native DS28911/W303 glucose/O2 exchange curves and native glycerol commitments to a CEN.PK2-1c-derived strain in supplemented YNB. Cross-strain and medium equivalence is an explicit, unvalidated extrapolation; no product measurements or target-study exchange rates adjust these priors.",
+          "readout_basis": "balanced_growth_intracellular_content"
+        },
+        "experiment_id": "elizondo2025_4D025"
+      }
+    ],
+    "schema_version": 1,
+    "source": {
+      "audit_qualifications": {
+        "added_nacl_interpretation": "Zero denotes no extra NaCl intervention, not zero basal salinity, sodium or osmolality.",
+        "biological_redox_validation": false,
+        "blinding_incident": "Per requester report, the previous curator incidentally encountered outcomes after model freeze; they were not used or forwarded to the model. No outcome values are carried into this bundle.",
+        "clean_verification_retroactively_restores_curator_blindness": false,
+        "condition_packet_path": "data/holdout_transfer/condition_records.json",
+        "condition_packet_sha256": "198c1cbc7dd6e89bacc6ed4763f891bf9bbcb7f0592582da0c533e56fae3cd82",
+        "excluded_row_curation_fields": [
+          "condition_source_ref",
+          "strain_and_construct"
+        ],
+        "frozen_checkpoint_identity_as_supplied": "SHA384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94",
+        "genotype_and_unverified_dataset_aliases_are_model_inputs": false,
+        "hypothesis_manifest_path": "data/holdout_transfer/hypotheses/manifest.json",
+        "hypothesis_manifest_sha256": "df946c96374f7a1c6974564603bbc17ef3835e82b646fded73329a2b49867354",
+        "hypothesis_status": "UNVERIFIED REDOX HYPOTHESIS",
+        "input_resolution_path": "data/holdout_transfer/input_resolution.json",
+        "interpretation": "relaxed_intermediate_capacity_envelope",
+        "no_gene_copy_to_activity_scaling": true,
+        "no_outcome_based_variant_selection": true,
+        "not_a_terminal_producer_or_realized_content_prediction": true,
+        "reaction_identity_qualification": "Reviewed Q7Z859 supports CrtYB conversion of lycopene through gamma-carotene to beta-carotene. This independently supports the intermediate qualification, not the CrtI redox hypothesis or actual downstream allocation; the earlier restricted verification did not establish it.",
+        "registered_hypotheses": [
+          "nad",
+          "oxygen_peroxide",
+          "oxygen_water"
+        ],
+        "shared_condition_projection_sha256": "5614e22b760aa9aeb4eaf49eb6b54cd7bea89245e3e8fd75fc7d6d7f2810331b",
+        "shared_relaxations": [
+          "CrtYB downstream cyclase consumption is omitted identically in all alternatives; no cyclase flux floor or partition constant is supplied.",
+          "Heterologous CrtE/CrtYB/CrtI enzyme capacities are unsupplied; no kcat, abundance, allocation or activity is inferred from gene-copy counts.",
+          "Cytosolic pathway aggregation and access to the declared cofactors remain assumptions, not established localization or electron-transfer coupling.",
+          "The unchanged native DS28911/W303 to CEN.PK2-1c/supplemented-YNB transfer remains an explicit unvalidated cross-strain/medium assumption."
+        ],
+        "strict_chemistry_evidence_path": "data/holdout_transfer/chemistry_evidence.json",
+        "strict_chemistry_evidence_sha256": "bb9ff21723f73bd94d6ec8e602d8ba8ef0c396a2627b35886e796461ac88a518",
+        "strict_chemistry_status": "blocked_no_installable_task",
+        "strict_lane_unblocked": false,
+        "user_authorized_hypothesis": true
+      },
+      "authority": "Primary condition inputs with user-authorized UNVERIFIED REDOX HYPOTHESIS; not verified fungal redox chemistry",
+      "reference": "Elizondo BR and Saa PA (2025), ACS Synthetic Biology 14(9), DOI 10.1021/acssynbio.5c00256, PMC12455641, Methods 2.1.1-2.1.2 and 2.1.4; author repository SysBioengLab/BcarGRASP; constructs verified in Lopez et al. (2020), DOI 10.3389/fbioe.2020.578793, Table 1. Author dilution inputs: DilutionRatesStatistics.xlsx, Statistics!A2:C7. Independent CrtYB qualification: reviewed UniProtKB Q7Z859, RHEA:32219/RHEA:32239, ECO:0000269, PMID:10589832; data/holdout_transfer/chemistry_evidence.json. Registered alternatives: data/holdout_transfer/hypotheses/manifest.json. Audit resolutions: data/holdout_transfer/input_resolution.json.",
+      "scope": "evaluation_task",
+      "source_id": "holdout-transfer:elizondo2025:six-chemostats:hypothesis-conditions:oxygen-peroxide:v1"
+    }
+  },
+  "schema_version": 1
+}

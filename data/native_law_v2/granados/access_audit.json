@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "authority_status": "Local custodial work log only; not an authenticated external registration or authorization receipt.",
+  "before_acquisition": "The manifest reserved all response measurements and left the training allowlist empty before the new measurement bitstreams were acquired or parsed.",
+  "measurement_bitstream_access": {
+    "downloaded": true,
+    "repository_byte_lengths_and_md5_verified": true,
+    "sha256_bound_in_acquisition_json": true,
+    "custodian_json_parsing_for_structure": true,
+    "disclosed_content": [
+      "object keys",
+      "condition and replicate IDs",
+      "array shapes",
+      "origin and time metadata",
+      "whole-file checksums",
+      "equality-only cross-file reuse sets"
+    ],
+    "individual_response_values_printed_or_exported": false,
+    "response_aggregates_amplitudes_or_fits_computed": true,
+    "models_fitted": false,
+    "reserved_outcomes_scored": false,
+    "training_or_development_response_projection_created": false,
+    "final_outcome_release": false,
+    "aggregate_computation_scope": "Baseline means/SDs are evaluated privately only inside the source-defined identity replays requested in the metadata follow-up. No response moments, constants or intermediate projections are released; no models are fitted/scored.",
+    "identity_replay_plan_sha256": "36916731f86126610e0f543db2746513c0eeaed830f2c11a1fd301cd3b9c06fd"
+  },
+  "literature_access": {
+    "sources": [
+      "Repository API metadata",
+      "Repository README",
+      "DOI-indexed primary article Methods",
+      "Primary supplement SI 1.1-1.2.4, Tables 1-3 and 3.1"
+    ],
+    "published_aggregate_marker_calibration_result_seen_by_custodian_in_methods": true,
+    "published_aggregate_result_used_for_selection_fitting_mapping_or_thresholds": false,
+    "published_aggregate_result_in_public_methods_excerpt": false,
+    "note": "The source Methods contains an existing aggregate calibration statement embedded in assay description. It was incidentally encountered during primary-methods verification, not computed from deposited responses. Its numerical result is not relayed in the manifest or final handoff; the public excerpt explicitly marks its omission. The original primary article/supplement remain in sealed/primary_sources. Independent lineage review should retain this declared literature exposure."
+  },
+  "prohibited_material": {
+    "historical_checkpoint_or_dependencies_edited": false,
+    "existing_source_data_config_or_documentation_edited": false,
+    "product_outcomes_opened": false,
+    "old_kinetic_fits_opened": false,
+    "other_agents_model_performance_opened": false
+  },
+  "custody_limit": "sealed/ uses restrictive local permissions and is excluded from training allowlists. This does not prevent another process under the same user or an external public-data download. Independent registry/lineage/custody enforcement remains required.",
+  "decision": "All 179 source groups stay reserved and unallocated. The current Sfp1/carbon protocol is metadata-ineligible; no final partition or response-bearing export is authorized."
+}

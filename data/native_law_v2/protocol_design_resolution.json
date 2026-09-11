@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "document_type": "independent_scientific_design_resolution",
+  "resolution_id": "native-law-design-resolution-01",
+  "status": "development_design_defensible_pending_independent_custodian_approval_no_biological_claim_authorized",
+  "scope": "Resolve scientific design errors before new fitting or response disclosure. This is not an amendment to protocol-01, an outcome analysis, a production authority receipt, or authorization for a strong claim.",
+  "preservation": {
+    "original_protocol_path": "data/native_law_v2/protocol.json",
+    "original_protocol_id": "native-law-v2-preregistered-01",
+    "original_protocol_sha256_from_retained_custody": "e901d3985b5577d6f846229e1178062414e3220a7307b6d8ee40b0d01e9dffde",
+    "original_claim_domain_path": "data/native_law_v2/claim_domain.json",
+    "historical_checkpoint_sha256": "384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94",
+    "disposition": "Keep protocol-01, its claim domain, its security controls, existing custody/history records, the historical checkpoint and scored product artifacts unchanged. Both registered candidates remain ineligible; no final test was performed. New development exposure must be recorded separately and must never be relabelled an unseen final test."
+  },
+  "evidence_reviewed": [
+    {"path": "data/native_law_v2/protocol_review.json", "location": "issues and nonnegotiable_invariants", "kind": "independent design review, not performance"},
+    {"path": "data/native_law_v2/granados/metadata_supplement.json", "location": "questions, conditional_estimand_options and parent_actions", "kind": "methods, timing, identity and processing metadata; no response values"},
+    {"path": "data/native_law_v2/granados_manifest.json", "location": "sources, verified_facts and unknowns", "kind": "source/measurement metadata and custody limits"},
+    {"path": "data/native_law_v2/granados/acquisition.json", "location": "files: asset 1b38366b-7473-4ddf-9cf9-26e625533686", "kind": "source identity and retained byte digest"},
+    {"path": "data/native_law_v2/granados/schema_inventory.json", "location": "fig1 replicate entries", "kind": "keys, array shapes, origin and time metadata only"},
+    {"path": "data/native_law_v2/granados/condition_metadata.json", "location": "baseline, switch and observation", "kind": "assay and input units; glucose percent convention remains as reported"},
+    {"path": "data/native_law_v2/direct_assay_catalogue.json", "location": "shortlist and blocking_summary", "kind": "unapproved metadata-only assay leads, not new candidate outcomes"}
+  ],
+  "resolutions": [
+    {
+      "issue_id": "candidate_compared_against_itself",
+      "accepted_root_cause": "A correct simple family cannot meaningfully be required to outperform itself by a positive margin. Treating renamed or reparameterized versions of the same represented response as distinct mechanisms can force complexity rather than support truth.",
+      "resolution": "Before data-dependent selection, register structural families, their admissible parameter domains, conditioning information, observation/noise maps and known reparameterizations. Collapse exact representational aliases into prespecified equivalence classes. Select one canonical implementation per class before scoring; compare aliases only for numerical/unit conformance. Retain every registered class and result. Never remove a difficult comparator after observing errors.",
+      "distinctions": [
+        "Two parameterizations such as tau and k=1/tau of the same response family are not independent mechanistic alternatives.",
+        "Nested families can share a constant or zero-amplitude member without being globally equivalent. A simple member is allowed to win; ties use prespecified parsimony, not a compulsory advantage for the larger family.",
+        "A fixed published parameter point and a newly estimated point can belong to the same structural family while being different predictive estimators. Their comparison tests calibration/transfer of parameters, not discrimination of two mechanisms.",
+        "If a supplied correct simple family is selected over genuine alternatives and predicts new data, the defensible result may be empirical form selection or replication. It is not automatically discovery of a previously unknown molecular law.",
+        "Mechanisms with the same observable predictions remain observationally equivalent even if their latent rates differ. More optimization cannot identify those rates."
+      ],
+      "application": "The separate development protocol ranks distinct prespecified empirical families without any requirement to beat an identical family or a positive improvement threshold. Protocol-01 is not changed. A future strong protocol must predeclare which tests establish predictive utility, which distinguish structural alternatives, and which merely establish noninferiority to an already adequate reference."
+    },
+    {
+      "issue_id": "measurement_independence_vs_biological_independence",
+      "accepted_root_cause": "Biological replication, technical replication, exact source identity and orthogonal measurement are different relations. The existence of a second measurement channel does not imply a second culture; the use of the same culture does not make every orthogonal measurement scientifically useless.",
+      "resolution": "Represent biological culture/run, preparation, assay allocation, tracked cell/movie, technical observation, measurement channel, raw observation identity, shared calibration and upstream access as separate typed relations. Split whole biological units and their known aliases when claiming across-biological-unit prediction. Keep all paired channels of a reserved unit in that unit's partition. Allow orthogonal measurement support on that same reserved unit only under a registered joint observation/error model; do not add those channels or cells to biological N.",
+      "granados_application": "The marker-tagged Sfp1 experiment contains paired raw GFP localization and mask-derived GFP readouts. The Nhp6A-mCherry mask is orthogonal to locating bright GFP pixels, but both readouts share GFP images, illumination and parts of segmentation. It is one biological experiment with correlated errors, not two experiments or 60 independent biological replicates. The marker experiment remains outside the proposed development release.",
+      "strong_requirement": "Register paired sample identity, the cross-readout calibration, temporal/cellular dependence, measurement covariance and the number of independent biological units. Using measured post-stimulus GFP to predict a paired marker readout tests an observation relationship, not an input-only response forecast."
+    },
+    {
+      "issue_id": "dependency_component_overmerging",
+      "accepted_root_cause": "An identity graph and a nuisance/randomization graph answer different questions. Shared publication or strain does not make all experiments identical; different filenames, wells, cells or time points do not establish independence.",
+      "resolution": "Merge demonstrated same-experiment or same-observation aliases for every split. Separately record actual culture/preparation/day/chip/plate/calibration dependencies and intervention allocation. Choose the validation unit and cluster-aware uncertainty for the intended generalization claim. Randomized assays within one preparation may be conditional assay units but not new biological preparations. Unknown dependence stays unknown; do not manufacture independence or merge every experiment merely because it shares a paper.",
+      "granados_application": "The source explicitly documents six fig1 replicates as different cultures on different days. This supports their use as source-declared replicate groups for limited development. It does not certify all cross-file batch identities or extra biological N. Raw fig1 rep6 and raw fig2 Sfp1/gluc are known aliases; normalized rep1 retains the experiment-level alias despite different exported cohorts. Normalized rep2 is not proven globally distinct, and a failed shape-compatible replay is not an identity-exclusion test.",
+      "reservation_rule": "Use only fig1 rep1 through rep5 in the proposed release and keep rep6 and its known aliases unexported. All other groups remain nonexported. Unknown overlaps, especially normalized rep2, must be quarantined from future independent-validation claims; nonexported does not mean proven independent of development exposure."
+    },
+    {
+      "issue_id": "cross_assay_context_semantics",
+      "accepted_root_cause": "Requiring equality of an in-vivo culture medium and an in-vitro assay buffer compares different physical context fields. Conversely, merely sharing a protein name does not establish biological transportability.",
+      "resolution": "Separate biological source context from assay conditions and observation transformations. Record species, strain/sequence/isoform, tags, growth history, preparation and active/total enzyme denominator separately from buffer, pH, temperature, substrate/cofactor levels, detector, geometry, volume and normalization. Register a source-supported map from the claimed response to each measured readout, its domain and uncertainty. Any unmeasured context bridge remains an assumption or a blocker for the stronger transported claim.",
+      "permissible_grades": [
+        "A within-preparation, specified-buffer relative activity response can be supported without claiming intrinsic kcat or in-vivo flux.",
+        "A paired within-marker-strain observation relation can support localization semantics without proving marker-free strain equivalence or absolute kinase activity.",
+        "Prediction of an in-vivo native response from an in-vitro assay requires the separately justified transport/calibration map; literal equality or a fitted arbitrary gain is not that justification.",
+        "Intrinsic turnover additionally requires appropriate active-enzyme quantification and mechanistic/identifiability evidence. Protein detection, gene copies and extract activity do not supply it."
+      ],
+      "application": "No cross-assay support is claimed or opened in this development experiment. A future strong assessor must evaluate the registered joint measurement/context model, rather than treating every context field as one literal equality predicate."
+    },
+    {
+      "issue_id": "population_response_vs_individual_trajectory_estimand",
+      "accepted_root_cause": "A deterministic population response cannot be judged as if it predicts every cell's stochastic path. The IQR of a few whole-trajectory replicate means can be almost zero even when the response varies meaningfully over time.",
+      "resolution": "Define the target and information set before fitting. For a conditional expected experiment-level trajectory, form source-bound cell-to-experiment aggregates using a fixed cohort/time/missingness rule, and use an equal-biological-group squared loss on those aggregate means; squared loss targets the conditional expectation. Report RMSE and MAE in the observable's native units. Individual-cell distribution claims instead require a stochastic predictive distribution and a proper distributional score, with culture-level aggregation and dependence retained.",
+      "development_estimand": "The mean of valid max5/median ratios among prefix-eligible rows in the published, processed fig1 cohort at prespecified post-stimulus frames. It is an observed-cohort mean, not the full culture mean, not a ratio of mean intensities and not a prediction of each individual cell. Post-stimulus attrition is reported; no missing-at-random assumption or outcome-dependent whole-cell filter is introduced.",
+      "scaling": "Primary development error is in raw dimensionless ratio units and has no IQR pass threshold. An optional secondary scale is the equal-group/equal-frame weighted IQR of training aggregate responses minus their observed prefix means, not the IQR of whole-experiment averages or all cell observations. If it is zero, scaled diagnostics are undefined and raw-unit diagnostics remain; no epsilon chosen after errors or development-outcome scale is allowed.",
+      "uncertainty": "Keep cell counts and within-frame dispersion as descriptive quantities, and report separate biological-group errors. For a fixed available set, Var(mean_i R_i) = sum_{i,l} Cov(R_i,R_l)/n^2; temporal covariance also matters for trajectory uncertainty. Cells share movies, environments and measurement effects, so setting off-diagonal covariance to zero, reporting SD/sqrt(number of cells), or using a cell bootstrap is not automatically a calibrated culture-level error bar. With three training and two development cultures and unresolved processing/batch effects, do not issue biological p-values, calibrated population intervals or an independent validation verdict."
+    },
+    {
+      "issue_id": "prefix_normalization_and_processing",
+      "accepted_root_cause": "The core source normalizer uses earlier frames, not future peaks, but its worked-example pipeline also inpaints whole traces and filters through the first stress frame. An earlier-frame value or retained row can therefore have later-data-dependent provenance.",
+      "resolution": "A declared observed prefix can legitimately condition a post-stimulus prediction under a new information set. Fix its exact frame indices, cohort rule, missingness handling and transformations before response access. Distinguish raw R from baseline-standardized Z=(R-mu(B))/s(B). Do not claim that the deposited normalized file is a newly computed prefix-safe target.",
+      "source_operator": "For one-based origin o, normMeanOffset.m uses o-21 through o-2, inclusive: 20 frames. At o=49 these are columns 28 through 47. Its mu is the mean of per-frame cell means, and its s is the mean of per-frame sample SDs, not pooled cell-time SD. The code itself does not omit NaNs and its worked example inpaints first.",
+      "development_choice": "Keep a raw ratio target. Recompute ratios, prefix cohort and prefix summaries from the approved deposited max5/median fields without new interpolation, inpainting, smoothing, future peak alignment or post-stimulus cell selection. The proposed complete-prefix policy is explicitly a new development operator, not a claim to reproduce the historical exporter. Prefix s is descriptive and is not a divisor of the target.",
+      "irreducible_current_limitation": "The original export/cohort history is unresolved. This permits retrospective development conditional on the supplied processed cohort and as-deposited earlier-frame features, not a certified prospective input-only forecast. If clean real-time availability of the prefix or an unselected native-cell population is required, the actual blocker is the missing upstream processing/cohort provenance or original raw acquisition data; a downstream invariance test cannot repair it."
+    },
+    {
+      "issue_id": "support_contrast_rule_ambiguity",
+      "accepted_root_cause": "Resolvable measured signal, directional agreement and small predictive discrepancy are separate predicates. Requiring prediction minus measurement to exceed the uncertainty would reward disagreement.",
+      "definitions_for_a_future_registered_assessor": {
+        "measured_contrast": "c_obs = y_high - y_low in the registered assay units; s_c^2 = Var(y_high) + Var(y_low) - 2 Cov(y_high,y_low). Include shared baseline/calibration covariance rather than treating technical repeats as independent preparations.",
+        "predicted_contrast": "c_pred is obtained from the frozen response and cross-assay observation map before support outcomes are opened. Its variance includes the registered model, calibration and conditioning-input uncertainty.",
+        "discrepancy": "e = c_pred - c_obs; Var(e) = Var(c_pred) + Var(c_obs) - 2 Cov(c_pred,c_obs). Paired GFP-derived quantities need their shared-error covariance; it must not silently be zero.",
+        "signal_resolution": "Only a predeclared nonzero-effect claim requires a resolved measured contrast in its declared direction. Under an independently justified Gaussian approximation, d*c_obs > z*s_c is such a magnitude condition, where direction d and z are registered before outcomes. This is not a bound on prediction error.",
+        "prediction_agreement": "Separately require the registered effect-sign agreement and a prespecified absolute/relative predictive discrepancy or interval score in the assay units. If a Gaussian error-budget band is used, it constrains |e|, not |c_obs|. Precision must also be bounded so arbitrarily large uncertainty cannot manufacture agreement.",
+        "multiplicity_and_zero_response": "Register a joint or multiplicity-adjusted assessment at the appropriate independent-unit level; requiring every one of many contrasts to fall inside an unadjusted 95% band is not a calibrated family-level test. A prespecified null/constant response need not manufacture a significant nonzero contrast. Set actual tolerances, covariance estimation, number of comparisons and alpha only in the future source-specific protocol before outcomes."
+      },
+      "application": "No new numerical strong-claim threshold is set here. Protocol-01 retains its original rule. Development does not open marker/activity support or make a support-contrast claim."
+    },
+    {
+      "issue_id": "external_authority_not_provisioned",
+      "accepted_root_cause": "Scientific measurement/design requirements are not the same as whether an external protected registry and HMAC service have been provisioned. Conversely, a local protocol file cannot create external authority.",
+      "resolution": "Keep every existing strong-verifier security control. No production key, signature, external timestamp, immutable-log attestation or OS-isolation claim is created by this review. A non-authorizing development release can use an accountable independent custodian decision, exact source/row allowlists, source-to-export replay and retained operational access records, without pretending these are production cryptographic receipts.",
+      "development_boundary": "The new protocol is a proposal for operational permission, not that permission itself. The custodian must independently approve the exact source groups and export scope before values are released. Learners must receive only approved projections. Local digests bind bytes for reproducibility; they do not prove biological truth, historical independence, adversarial security or a biological-law grade.",
+      "strong_boundary": "Development records must never be passed off as EvidenceBundle production receipts or accepted by the original strong grade. A future strong study still requires its separately registered scientifically correct design, source evidence, independent review and whatever external authority its actual verifier contract demands."
+    },
+    {
+      "issue_id": "current_biochemical_candidate_not_measured_flux",
+      "resolution": "Hackett Cdc19-associated intracellular flux labels are QP/FVA/model-derived and remain ineligible as measured rate truth. No fitting to those labels is authorized. The separate direct-assay catalogue supplies research leads only; parameter summaries, fixed-condition activity contrasts and unverified raw-data promises are not new registered response-law datasets.",
+      "next_source_requirements": [
+        "Recover actual detector/progress-curve or initial-rate records and blank/calibration data, with source-bound units, preparation and experimental-unit identifiers.",
+        "Resolve culture/preparation/assay allocation, randomization/order, actual substrate/regulator ranges and genuinely unexposed experiment groups.",
+        "Choose the direct measured target and appropriate native/extract/purified/recombinant context before responses or published numerical parameter cells are opened for selection.",
+        "State source-informed replication rather than blind regulator discovery when the published hypothesis motivated target selection.",
+        "Register any new strong claim and assay-specific uncertainty/context/identifiability model independently; do not relabel a lead as an eligible substitute for protocol-01."
+      ]
+    }
+  ],
+  "development_answer": {
+    "answer": "yes_for_retrospective_published_cohort_development_only_subject_to_custodian_approval",
+    "scientific_reason": "A real image-derived observable, measured timing fields and source-declared separate-day replicate groups exist. These permit controlled development of a conditional aggregate response estimator with explicit processing and sampling limitations. This does not require claiming a new biological law or pretending all source preprocessing is causally prefix-only.",
+    "separate_protocol_path": "data/native_law_v2/development_protocol.json",
+    "planned_training_groups": ["1b38366b-7473-4ddf-9cf9-26e625533686:/rep1", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3"],
+    "planned_development_groups": ["1b38366b-7473-4ddf-9cf9-26e625533686:/rep4", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"],
+    "selection_basis": "Fixed source replicate labels, not response values, shapes ranked for favorable data, fitted curves or performance. Rep6 is kept unexported because its known cross-file alias component would otherwise expose other reserved source entries. Normalized rep2 is not added as an independent replicate.",
+    "current_permission": "pending independent custodian approval; no data export or fit is performed or authorized by this review alone",
+    "no_final_test": "No final groups, alpha, biological acceptance threshold or ready verdict are defined. Development exposure remains development in every future lineage audit. All other groups remain unexported; possible overlap with released groups remains an explicit independence limitation.",
+    "genuine_blockers_if_encountered": [
+      "Custodian cannot bind the selected groups and exact fields to the pinned primary asset or cannot produce a narrow export without releasing other response groups.",
+      "The selected raw field semantics or within-group row/time alignment contradict the registered observable definition.",
+      "The fixed prefix or response frame ranges do not exist, a group has fewer than two prefix-eligible rows, or required source timing is unusable. Do not replace groups/windows after inspecting values.",
+      "All source-bound response aggregates needed for the registered development comparison cannot be produced; retain partial diagnostics without inventing a completed comparison.",
+      "The intended claim is silently upgraded to clean prospective forecasting, full-culture response, causal glucose regulation, independent biological validation or absolute activity while the corresponding processing/context/uncertainty evidence remains missing."
+    ]
+  },
+  "required_parent_actions": [
+    "Review and accept the separate development estimand and explicit limitations, without editing protocol-01 or its domain.",
+    "Have the data custodian independently approve the exact five source-group IDs and the phased field/frame allowlist, then produce source-replayable projections and operational access records.",
+    "Have the executor and tester implement the new typed population-aggregate contract and fixed development recipe; do not silently reuse the original per-cell/MAE or strong-verifier interfaces with changed meaning.",
+    "Run only the approved development experiment after custody approval. Report every model/group outcome and unresolved uncertainty; no biological ready label can follow from it.",
+    "Keep rep6, dose, marker, sham, normalized-only and all other groups unexported. Preserve unknown overlap in future ancestry, rather than certifying those groups independent from nonaccess alone.",
+    "Any future strong claim requires a separately registered correct target, equivalence classes, measurement/context model, independent-unit design, error budget and independent review before new final outcomes."
+  ]
+}

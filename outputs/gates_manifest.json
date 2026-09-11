@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "committed_only": true,
+  "independent_unit": "biological plate; file representations are not independent replicates",
+  "n_sources_processed": 6,
+  "n_sources_refused": 0,
+  "exports": [
+    {
+      "file": "20260804_ER&OxidativeStress_Replicate4.xlsx",
+      "source_set": "newprotocol_superseded",
+      "source_sha256": "0c7514a5e16dc90ee5f33c75111f0ca59c5553fb2f323ddce05043ecb0d29e30",
+      "status": "superseded"
+    },
+    {
+      "file": "20260814_BY4741_0mM_OD600 Data.xlsx",
+      "source_set": "by4741_control",
+      "source_sha256": "af7ce8cc93fbaffaae0ad0e477397d3fa48d0894bf7facc0b6436dbdd1edf9a4",
+      "status": "outside_scope"
+    },
+    {
+      "file": "20260722_ER&OxidativeStress_NewProtocol_ANALYSED.xlsx",
+      "n_cultures": 84,
+      "n_pass": 67,
+      "blank_wells": [
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "unrecorded_wells": [],
+      "n_d2_attempted": 67,
+      "n_d2_scored": 67,
+      "d2_exclusions": [],
+      "status": "processed",
+      "source_set": "newprotocol",
+      "source_sha256": "ff3f45a5c19b4f29166ac6e61aa5bcb05022ec5ba0bae750cbd78208861e8c23"
+    },
+    {
+      "file": "20260728_ER&OxidativeStress_NewProtocol_Replicate2.xlsx",
+      "n_cultures": 84,
+      "n_pass": 64,
+      "blank_wells": [
+        "H4",
+        "H5",
+        "H6"
+      ],
+      "unrecorded_wells": [],
+      "n_d2_attempted": 64,
+      "n_d2_scored": 64,
+      "d2_exclusions": [],
+      "status": "processed",
+      "source_set": "newprotocol",
+      "source_sha256": "571cbb9cc5b9eaf6e293c72eb97856c983211d1c65c68aef6098fffa8670806e"
+    },
+    {
+      "file": "20260803_ER&oxidativestress_Replicate3.xlsx",
+      "n_cultures": 84,
+      "n_pass": 52,
+      "blank_wells": [
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "unrecorded_wells": [],
+      "n_d2_attempted": 52,
+      "n_d2_scored": 52,
+      "d2_exclusions": [],
+      "status": "processed",
+      "source_set": "newprotocol",
+      "source_sha256": "0235dee3ae08e245de3ed8e718622b75aee1ffe6f90be0436111c789b34a9def"
+    },
+    {
+      "file": "20260701_ER_preliminary (RAW).xlsx",
+      "n_cultures": 90,
+      "n_pass": 53,
+      "blank_wells": [
+        "F11",
+        "G11",
+        "H11"
+      ],
+      "unrecorded_wells": [],
+      "n_d2_attempted": 53,
+      "n_d2_scored": 53,
+      "d2_exclusions": [],
+      "status": "processed",
+      "source_set": "july_2026_07",
+      "source_sha256": "9801020d9bbec6769db8ad1019971f8ca001a0328e309b7cff88dacb0c7ebb0f"
+    },
+    {
+      "file": "20260709_ER_stress_1st (RAW).xlsx",
+      "n_cultures": 42,
+      "n_pass": 8,
+      "blank_wells": [
+        "H7",
+        "H8",
+        "H9"
+      ],
+      "unrecorded_wells": [],
+      "n_d2_attempted": 8,
+      "n_d2_scored": 8,
+      "d2_exclusions": [],
+      "status": "processed",
+      "source_set": "july_2026_07",
+      "source_sha256": "6bb50d8dfe4c3255554a8ec9f06f140b02fdb0b35f746cad018f1e9838617709"
+    },
+    {
+      "file": "20260804_ER_Oxidative_Replicate4.xpt",
+      "n_cultures": 84,
+      "n_pass": 55,
+      "blank_wells": [
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "unrecorded_wells": [
+        "H10",
+        "H11",
+        "H12",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9"
+      ],
+      "n_d2_attempted": 55,
+      "n_d2_scored": 55,
+      "d2_exclusions": [],
+      "status": "processed",
+      "source_set": "newprotocol",
+      "source_sha256": "d638d1f915daad2981ae2e9646cb9b7cae7f7a7bffc5398998d6fdb1d1d10329"
+    }
+  ]
+}

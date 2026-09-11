@@ -1,0 +1,13 @@
+held_out,alignment,r2,oracle_r2,n_states,n_train,n_test,n_excluded,selection,baseline,oracle_role
+BPS,0.3930147873960885,0.03522042507634282,0.09378176774436964,3,228,12,0,nested leave-stressor-out on outer training only,outer training channel mean,"in-sample diagnostic, not a held-out prediction"
+DTT,0.25107475486005293,0.026812929666644836,0.05678270484259007,2,216,12,12,nested leave-stressor-out on outer training only,outer training channel mean,"in-sample diagnostic, not a held-out prediction"
+H2O2,0.694254899297972,0.04624934849890794,0.12112471173891892,3,204,12,24,nested leave-stressor-out on outer training only,outer training channel mean,"in-sample diagnostic, not a held-out prediction"
+MG132,0.5363347358849072,-0.04899629413059303,0.03712103134907008,3,228,12,0,nested leave-stressor-out on outer training only,outer training channel mean,"in-sample diagnostic, not a held-out prediction"
+MMS,0.30474655479662643,0.020771492397138158,0.1186569234155277,3,216,12,12,nested leave-stressor-out on outer training only,outer training channel mean,"in-sample diagnostic, not a held-out prediction"
+NaCl,0.1950866852064746,0.015349583896116736,0.15375299746411053,2,216,12,12,nested leave-stressor-out on outer training only,outer training channel mean,"in-sample diagnostic, not a held-out prediction"
+calcium_chloride,0.4199741088720838,0.11143582791364381,0.16515349262051926,2,216,12,12,nested leave-stressor-out on outer training only,outer training channel mean,"in-sample diagnostic, not a held-out prediction"
+congo_red,0.6759147553085808,0.18635219494338573,0.22220906741512314,3,228,12,0,nested leave-stressor-out on outer training only,outer training channel mean,"in-sample diagnostic, not a held-out prediction"
+copper_sulfate,0.5549778375758369,0.06982262760816782,0.09550584439024545,3,216,12,12,nested leave-stressor-out on outer training only,outer training channel mean,"in-sample diagnostic, not a held-out prediction"
+glucose_starvation,0.5649298683031619,0.015578420469685827,0.04683951735572722,3,228,12,0,nested leave-stressor-out on outer training only,outer training channel mean,"in-sample diagnostic, not a held-out prediction"
+heat,0.327507398009737,-0.024226190173642692,0.01230230552356204,3,228,12,0,nested leave-stressor-out on outer training only,outer training channel mean,"in-sample diagnostic, not a held-out prediction"
+rapamycin,0.4624608926466626,0.10213666577038882,0.15408778792245792,2,204,12,24,nested leave-stressor-out on outer training only,outer training channel mean,"in-sample diagnostic, not a held-out prediction"

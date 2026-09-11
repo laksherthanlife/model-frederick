@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "lead_id": "vaneunen2012_native_extract_and_transport_capacity",
+  "status": "real_native_assays_verified_only_methods_and_summary_inventory_opened_no_registration",
+  "primary_source": {
+    "title": "Testing Biochemistry Revisited: How In Vivo Metabolism Can Be Understood from In Vitro Enzyme Kinetics",
+    "authors": "van Eunen K, Kiewiet JA, Westerhoff HV, Bakker BM",
+    "year": 2012,
+    "doi": "10.1371/journal.pcbi.1002483",
+    "pmid": "22570597",
+    "pmcid": "PMC3343101",
+    "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002483",
+    "metadata_container": {
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3343101/fullTextXML",
+      "http_status": 200,
+      "bytes": 145742,
+      "sha256": "ed6223ce32e00d20b55bbc62b240ec21841d5ee71fd43f38a95b867a3fab7dd5",
+      "hash_scope": "Publication XML, not a raw assay file",
+      "stored_full_container_locally": false
+    }
+  },
+  "primary_evidence_locators": [
+    {"locator": "XML sec s2a: Summary of the experimental data used in the glycolytic model", "supports": "Four culture conditions, new assays versus reused earlier samples/data, and substrate-affinity remeasurement"},
+    {"locator": "XML sec s4a: Growth and nitrogen-starvation conditions", "supports": "Native strain, growth histories and culture-parent relation"},
+    {"locator": "XML sec s4b: Glucose-transport assay", "supports": "Direct isotope uptake at controlled external glucose, duration, temperature and source fitting law"},
+    {"locator": "XML sec s4c: Vmax measurements under in vivo-like assay conditions", "supports": "Fresh extracts, actual detector measurements and buffer recipe"},
+    {"locator": "Supporting Text S1 / pcbi.1002483.s017", "supports": "Input-only enzyme-assay recipes and varied-substrate GAPDH affinity experiment"},
+    {"locator": "Model description: paragraph beginning All experimental data were converted", "supports": "Assumed cytosolic-volume normalization, not measured active-enzyme abundance"}
+  ],
+  "direct_measurements_distinguished_from_model_outputs": {
+    "native_extract_route": "Fresh FastPrep cell-free extracts assayed spectrophotometrically using NAD(P)H-linked reactions. GAPDH affinity was remeasured by substrate titration; most other recipes are fixed-input capacity assays.",
+    "native_whole_cell_route": "Zero-trans influx of carbon-14-labelled glucose measured in a 5-second uptake assay over experimentally set glucose concentrations.",
+    "excluded": [
+      "ODE/model-predicted intracellular fluxes or metabolite concentrations",
+      "Model response/flux-control coefficients",
+      "Source optimization of an allosteric model or rate equations treated as measurements"
+    ],
+    "claim_boundary": "Collective extract or native-cell capacity/uptake is a possible empirical observable. Neither route isolates an individual Tdh/Hxk/Hxt isoform's intrinsic turnover. These alternatives require an exact new target decision before raw response access."
+  },
+  "biological_preparation": {
+    "species": "Saccharomyces cerevisiae",
+    "strain": "CEN.PK113-7D",
+    "genotype_as_reported": "MATa, MAL2-8c, SUC2; haploid prototrophic",
+    "growth": "Aerobic glucose-limited chemostat in defined mineral medium; glucose is the growth-limiting nutrient",
+    "feed_glucose_mM": 42,
+    "dilution_rates_per_h": [0.1, 0.35],
+    "history_labels": ["respiratory", "respirofermentative"],
+    "starvation_conditions": "Non-starved versus 4-hour nitrogen-starved cells derived from each corresponding chemostat history; starvation medium lacks ammonium sulfate and contains excess glucose.",
+    "extract_preparation": "Fresh FastPrep cell-free extracts",
+    "enzyme_composition_measured": false,
+    "active_enzyme_amount_measured": false,
+    "per_assay_extract_protein_amount_verified": false,
+    "isoenzyme_assignment": "Not established. GAPDH is an aggregate extract activity; distinct Tdh isoforms cannot be assigned from the coupled reaction alone."
+  },
+  "input_conditions_verified": {
+    "assay_temperature_C": 30,
+    "assay_pH": null,
+    "pH_status": "Exact pH not specified in the inspected main-text assay section or Text S1; retrieve the referenced standardized protocol before use.",
+    "instrument": "Novostar spectrophotometer, BMG Labtech",
+    "standardized_buffer_mM_as_reported": {
+      "potassium": 300,
+      "glutamate": 245,
+      "phosphate": 50,
+      "sodium": 20,
+      "nominal_free_magnesium": 2,
+      "calcium": 0.5
+    },
+    "buffer_qualification": "Source first describes sulphate as 5-10 mM, then gives 2.5-10 mM depending on MgSO4/coenzyme additions. Preserve assay-specific amounts; do not silently reconcile the two descriptions. ATP, ADP, NADP and TPP binding was included in total magnesium additions.",
+    "gapdh_forward_recipe": {
+      "ADP_mM": 10,
+      "NAD_mM": 1,
+      "glyceraldehyde_3_phosphate_mM": 5.8,
+      "coupling_PGK_U_per_mL": 22.5,
+      "qualification": "This is the fixed-input recipe. Text S1 separately says GAPDH affinity for NAD was redetermined by varying substrate concentrations; the actual titration grid is not given."
+    },
+    "pyruvate_kinase_recipe": {
+      "ADP_mM": 10,
+      "NADH_mM": 0.15,
+      "fructose_1_6_bisphosphate_mM": 1,
+      "PEP_mM": 2,
+      "coupling_LDH_U_per_mL": 13.8,
+      "qualification": "Fixed FBP is an assay input, not evidence for an independently varied FBP response."
+    },
+    "glucose_transport": {
+      "assay_duration_s": 5,
+      "tracer": "14C-glucose",
+      "external_glucose_range_mM": [0.25, 225],
+      "temperature_C": 30,
+      "exact_concentration_levels": null,
+      "counter_calibration_and_background": null
+    },
+    "allocation_randomization": "Not reported in the inspected methods",
+    "assay_order_and_clock_crossing": null
+  },
+  "inventory_counts_and_hierarchy": {
+    "reported_culture_condition_count": 4,
+    "growth_history_levels": 2,
+    "starvation_levels": 2,
+    "biological_replicate_count_per_condition": null,
+    "independent_parent_culture_count": null,
+    "enzyme_preparation_count": null,
+    "technical_replicate_count": null,
+    "raw_curve_or_rate_count": null,
+    "independently_randomized_assay_count": null,
+    "source_says": "From each of four cultures cells were harvested for fermentative capacity/metabolites, extract activities and glucose-transport kinetics.",
+    "interpretation": "Four named conditions are not four verified independent biological replicates. Starved cells are derived from their original chemostat cultures; paired history/sample ancestry must be retained. Multiple substrate levels or assay recipes do not increase biological N."
+  },
+  "availability_and_file_hashes": [
+    {
+      "source_id": "pcbi.1002483.s017",
+      "label": "Text S1",
+      "description": "Concentrations of substrates and coupling enzymes in the in vivo-like assays for each individual enzyme",
+      "url": "https://journals.plos.org/ploscompbiol/article/file?type=supplementary&id=10.1371/journal.pcbi.1002483.s017",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 53834,
+      "pages": 1,
+      "sha256": "b4ffb47a34b8375fec380b28842cea428ced68c7cc4f03d3a41d93b7668d0cb4",
+      "body_access": "Input-only methods text parsed; no target response values in this supplement",
+      "schema": "PDF prose recipes, not a raw observation table"
+    },
+    {
+      "source_id": "pcbi.1002483.s004",
+      "label": "Table S4",
+      "description": "Kinetic parameters measured under in vivo-like conditions and implemented in the glycolytic model under the four conditions studied (new measurements)",
+      "url": "https://journals.plos.org/ploscompbiol/article/file?type=supplementary&id=10.1371/journal.pcbi.1002483.s004",
+      "access": "HEAD only; ordinary publisher redirect to its storage object followed; response body not retrieved",
+      "http_status_after_redirect": 200,
+      "content_type": "application/pdf",
+      "provider_content_length": 24849,
+      "provider_md5_hex": "60dd54a9f12440b849e98232327f40b6",
+      "provider_md5_base64": "YN1UqfEkQLhJ6YIyMn9Atg==",
+      "hash_source": "x-goog-hash md5 header; not locally recomputed, not an authority receipt",
+      "provider_object_generation": "1606761536715722",
+      "sha256": null,
+      "body_access": "Not retrieved; not opened",
+      "schema": "Parameter/capacity summary PDF as described by the primary attachment caption; exact column headers not inspected",
+      "not_raw_curve_evidence": true
+    }
+  ],
+  "raw_data_status": {
+    "public_raw_curve_file_verified": false,
+    "raw_file_sha256": null,
+    "raw_record_schema_verified": false,
+    "missing_schema": ["culture and sample-parent identifiers", "extract preparation ID and total protein amount", "reaction/tracer aliquot ID and concentration grid", "time, detector counts/absorbance, raw units and initial-rate extraction rule", "technical replicate, blank, calibration, uncertainty and run-order fields"],
+    "published_tables_not_substitutes": "Tables S1-S3 are parameters/initial conditions; S4-S5 parameter/capacity summaries; S6-S16 include model/prediction/regulation quantities. Their publication does not establish available raw titrations."
+  },
+  "source_modeling_and_normalization_history": {
+    "uptake_fit": "Irreversible Michaelis-Menten without product inhibition, nonlinear regression",
+    "extract_reduction": "Reported Vmax/affinity values reduce detector assays to parameters. Such values can support appropriately scoped parameter checks, not distinguish alternative functional forms without the underlying rates.",
+    "unit_adapter_as_reported": {
+      "model_rate_unit": "mM min^-1",
+      "model_metabolite_unit": "mM",
+      "assumed_cytosolic_volume_uL_per_mg_cell_protein": 3.75,
+      "qualification": "This is an assumed cell-volume conversion for model representation, not an independently measured active-enzyme denominator. Raw source units/calibration must be recovered; do not infer intrinsic kcat."
+    },
+    "model_selection_exposure": "The paper reports condition-specific model/parameter choices and compares to earlier physiological observations. Those observations and source-template parameters cannot automatically be called a new blind test.",
+    "earlier_sample_and_data_sources": [
+      {"doi": "10.1111/j.1742-4658.2009.07235.x", "title": "Time-dependent regulation analysis dissects shifts between metabolic and gene-expression regulation during nitrogen starvation in baker's yeast", "source_reference": 22},
+      {"doi": "10.1049/iet-syb.2009.0025", "title": "Time-dependent regulation of yeast glycolysis upon nitrogen starvation depends on cell history", "source_reference": 23}
+    ],
+    "ancestry_rule": "The source explicitly distinguishes reused flux/metabolite data and earlier optimized-activity assays from new in-vivo-like assays on the same samples. Treat remeasurement as a new channel, not a new biological sample; audit previous paper/parameter exposure before reserving labels."
+  },
+  "orthogonal_support_and_reservation": {
+    "candidate_support_leads": ["Direct tracer uptake as a different physical measurement from extract absorbance", "Previously measured fermentative capacity and metabolites in related samples"],
+    "equivalence_verified": false,
+    "warning": "These channels measure different observables and may share cultures. They are not automatically orthogonal validation of a specific Tdh/Cdc19/Hxk reaction law. A cross-assay model, matched context, ancestry and error covariance would be required.",
+    "currently_reserved_labels": [],
+    "possible_labels_after_inventory_and_registration": "Complete unexposed parent-culture/preparation units with all derived starvation samples and channels; within-preparation randomized assay units only under an explicitly registered conditional claim and actual allocation evidence.",
+    "current_protocol_group_requirements_verified": false
+  },
+  "decision": "Useful direct native physiology/extract-capacity lead with real controlled substrate assays. Raw records, biological ancestry, amount/units, randomization and matched validation remain blocking; published constants and modelled fluxes must not be fitted as raw reaction truth."
+}

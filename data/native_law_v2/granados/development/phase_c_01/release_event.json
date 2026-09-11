@@ -1,0 +1,17 @@
+{
+  "document_type": "phase_c_custody_approval_event_not_external_attestation",
+  "event_id": "granados-phase-c-01",
+  "recorded_at_utc": "2026-09-07T13:53:55.825314+00:00",
+  "phase": "after_complete_prediction_freeze_before_response_extraction",
+  "prediction_freeze_sha256": "e03f6b9407b29e7e76da7a0be566ce9036c5cf27ac65bfaa9a4d3d7e009b5753",
+  "freeze_verification_sha256": "ad3768db1a5eab8b61ffbc631cefdc0be9676f26d49d24dd01adcee226ebd897",
+  "original_phase_b_manifest_sha256": "3b8c67c79191bf4dec0a1e7e0514b1a145359c30061868bbfdd136f0ee1cd3dd",
+  "original_data_approval_sha256": "87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533",
+  "executor_admission_sha256": "b967279da5186529d784e66b99a066e785f487558d0858a50cf91b950d979763",
+  "request_sha256": "fe3b56ac5999b0382a8457f398a1f0d270016ff2bd15c2378d4d91bb719ed78a",
+  "parent_authorized_scope": "Only rep4/rep5 response frames 50-73; preserve all original source rows/nulls and frozen prefix cohorts.",
+  "fitting_scoring_or_family_selection_performed": false,
+  "scientific_recipe_changed": false,
+  "prior_releases_or_events_rewritten": false,
+  "strong_claim_authorized": false
+}

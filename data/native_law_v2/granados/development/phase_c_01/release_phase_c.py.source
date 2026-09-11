@@ -1,0 +1,574 @@
+#!/usr/bin/env python3
+"""Verify the sealed development batch, then custody-release phase C only.
+
+No optimizer, development score, or family-selection function is called.
+"""
+from __future__ import annotations
+
+import argparse
+from collections import Counter
+from datetime import datetime, timezone
+import hashlib
+import json
+import math
+from pathlib import Path
+import runpy
+import sys
+
+sys.dont_write_bytecode = True
+ROOT = Path(__file__).resolve().parents[5]
+OUT = Path(__file__).resolve().parent
+DEV = OUT.parent
+RUN = ROOT / "outputs/native_population_development/native_training_01"
+P = runpy.run_path(str(DEV / "executor_refresh_01/issue_refresh.py"), run_name="phase_c_binding_helpers")
+PROTOCOL_ID = P["PROTOCOL_ID"]
+PINS = {
+    "freeze": "e03f6b9407b29e7e76da7a0be566ce9036c5cf27ac65bfaa9a4d3d7e009b5753",
+    "attempt_log": "4740203cf2ecd2ffe1626c5a288ac6b5949f086d189e302f4be8cc3f8c51e4f3",
+    "conditioning": "2814d3827aa8b6d3f5cd4974c92a30809c30ae4ae330d98a5262a7f650908ca3",
+    "summary": "fe80ac3406d3058c7489a98d5f3ec6aa3d980d76388c280da5b9d21dc2b489cd",
+    "admission": "b967279da5186529d784e66b99a066e785f487558d0858a50cf91b950d979763",
+    "executor_decision": "04ac928add5528beabd2a9f77a2055643dc120d3b76bff7315ffdc3f062f786e",
+}
+require = P["require"]
+strict_json = P["strict_json"]
+checked = P["checked"]
+check_ref = P["check_ref"]
+validate_type = P["validate_type"]
+relative = P["relative"]
+sha = P["sha"]
+
+
+def artifact(path, role):
+    path = P["regular"](path)
+    content = path.read_bytes()
+    return {"path": relative(path), "sha256": sha(content), "bytes": len(content), "role": role}
+
+
+def write_once(path, value, raw=False):
+    path = Path(path)
+    projection_root = ROOT / "data/native_law_v2/granados/development_exports" / PROTOCOL_ID
+    require(path.resolve() == path and (path.is_relative_to(OUT) or path.parent == projection_root), "Phase-C writer scope violation")
+    require(not path.is_symlink() and not any(p.is_symlink() for p in path.parents), "Phase-C output symlink refused")
+    content = value if raw else (json.dumps(value, indent=2, allow_nan=False) + "\n").encode()
+    if path.exists():
+        require(P["regular"](path).read_bytes() == content, "Existing phase-C record differs; history is not overwritten")
+    else:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("xb") as stream:
+            stream.write(content)
+        path.chmod(0o600)
+    return {"path": relative(path), "sha256": sha(content), "bytes": len(content)}
+
+
+def metadata(path, digest):
+    return strict_json(checked(path, digest))
+
+
+def equal_numbers(left, right):
+    if left is None or right is None:
+        return left is None and right is None
+    return not isinstance(left, bool) and not isinstance(right, bool) and math.isfinite(left) and math.isfinite(right) and math.isclose(left, right, abs_tol=1e-10, rel_tol=1e-8)
+
+
+def verify_freeze():
+    protocol = metadata(P["PROTOCOL"], P["PINS"]["protocol"])
+    manifest = metadata(DEV / "release_manifest.json", P["PINS"]["phase_b_manifest"])
+    admission = metadata(DEV / "executor_refresh_01/executor_refresh_admission.json", PINS["admission"])
+    executor_decision = metadata(DEV / "executor_refresh_01/custody_decision.json", PINS["executor_decision"])
+    freeze = metadata(RUN / "development_prediction_freeze.json", PINS["freeze"])
+    attempt_log = metadata(RUN / "attempt_log.json", PINS["attempt_log"])
+    conditioning = metadata(RUN / "conditioning_checkpoint.json", PINS["conditioning"])
+    summary = metadata(RUN / "training_run_summary.json", PINS["summary"])
+    executor = P["fresh_executor"]()
+    gate = executor.check_custody_gate(ROOT, P["PROTOCOL"], DEV / "release_manifest.json", executor_admission_path=DEV / "executor_refresh_01/executor_refresh_admission.json")
+    require(gate["data_ready"] is True and gate["executor_ready"] is True and gate["strong_claim_authorized"] is False, "Current admitted executor/data gate failed")
+    require(admission["approval"]["sha256"] == PINS["executor_decision"], "Executor decision binding differs")
+    validate_type(protocol, executor_decision, "DevelopmentCustodyDecision")
+    validate_type(protocol, freeze, "DevelopmentPredictionFreeze")
+    # This validates recorded within-family choices and replays predictions;
+    # it does not fit or select a family using development outcomes.
+    executor.validate_freeze(protocol, freeze)
+    ids = [m["model_id"] for m in protocol["model_recipe"]["canonical_families"]]
+    specs = executor.group_specs(protocol)
+    require(set(attempt_log["families"]) == set(ids) and set(summary["training_results"]) == set(ids), "Missing or extra canonical family")
+    require(len(freeze["attempts"]) == 41 and len(freeze["predictions"]) == 288, "Sealed attempt/prediction count changed")
+    require(summary["selected_development_model"] is None and summary["development_prediction_rows"] == 288 and summary["strong_claim_authorized"] is False, "A development family was already selected or the summary is inconsistent")
+    require(summary["prediction_freeze"]["sha256"] == PINS["freeze"] and summary["attempt_log"]["sha256"] == PINS["attempt_log"] and summary["conditioning_checkpoint"]["sha256"] == PINS["conditioning"], "Training summary does not bind the supplied sealed artifacts")
+    provenance = freeze["environment"]["provenance"]
+    require(freeze["approval_sha256"] == manifest["custody_decision"]["sha256"], "Frozen original data approval differs from phase B")
+    require(provenance["executor_admission_sha256"] == PINS["admission"] and provenance["executor_approval_artifact"]["sha256"] == PINS["executor_decision"], "Training was not bound to the admitted executor refresh")
+    require(provenance["protocol_artifact"]["sha256"] == P["PINS"]["protocol"], "Frozen protocol changed")
+    configuration = check_ref(admission["configuration"], protocol, "execution_code")
+    request = check_ref(admission["request"], protocol, "operational_event_log")
+    require(configuration["code_artifacts"] == executor.code_artifacts(ROOT) and configuration["environment"] == executor.environment_record(), "Current code/configuration/runtime differ from the admitted freeze")
+    require(freeze["code_artifacts"] == configuration["code_snapshots"], "Frozen code snapshots differ from the admitted implementation")
+    for ref in request["executor_code"] + request["exporter_code"] + freeze["code_artifacts"]:
+        check_ref(ref, protocol, "execution_code", parse=False)
+    for ref in manifest["learner_allowlist"]:
+        check_ref(ref, protocol, parse=False)
+    require(freeze["training_projection_sha256"] == P["PINS"]["training"] and freeze["development_inputs_sha256"] == P["PINS"]["development_inputs"], "Frozen training/conditioning data hashes differ")
+    require(freeze["prefix_summaries"] == conditioning["prefix_summaries"] and freeze["H_train"] == conditioning["H_train"] and freeze["S_train"] == conditioning["S_train"], "Conditioning/cohort/training-only scales changed after freezing")
+    for key, expected in (("attempt_log", PINS["attempt_log"]), ("conditioning_checkpoint", PINS["conditioning"])):
+        ref = freeze["environment"][key]
+        require(ref["sha256"] == expected, "Freeze environment references a different training artifact")
+        check_ref(ref, protocol)
+    check_ref(freeze["environment"]["nonnegative_map_audit"], protocol, "model_checkpoint", parse=False)
+    check_ref(provenance["training_access_intent"], protocol, "operational_event_log")
+    require(attempt_log["environment"] == executor.environment_record(), "Attempt log has different implementation settings")
+    official_keys = ("model_id", "start_index", "seed", "loss_evaluations", "status", "parameters", "training_mean_mse", "reason")
+    verified_checkpoints = set()
+    attempt_counts, prediction_counts = {}, {}
+    for model_id in ids:
+        family = attempt_log["families"][model_id]
+        logged = family["attempts"]
+        official = [a for a in freeze["attempts"] if a["model_id"] == model_id]
+        expected_starts = list(range(8 if executor.PARAMETERS[model_id] else 1))
+        require(sorted(a["start_index"] for a in logged) == expected_starts and len(logged) == len(official), "Attempt log has missing, extra or duplicated starts")
+        log_by_start = {a["start_index"]: a for a in logged}
+        for attempt in official:
+            original = log_by_start[attempt["start_index"]]
+            require(all(attempt[key] == original[key] for key in official_keys), "Sealed attempt differs from complete attempt log")
+            require(attempt["loss_evaluations"] <= protocol["model_recipe"]["budget"]["maximum_loss_evaluations_per_start"], "Frozen optimizer budget exceeded")
+            if attempt["checkpoint"] is not None:
+                ref = attempt["checkpoint"]
+                checkpoint = check_ref(ref, protocol, "model_checkpoint")
+                verified_checkpoints.add(ref["sha256"])
+                require(checkpoint["document_type"] == "population_development_model_checkpoint" and checkpoint["protocol_id"] == PROTOCOL_ID, "Wrong checkpoint type/protocol")
+                require(checkpoint["model_id"] == model_id and checkpoint["start_index"] == attempt["start_index"] and checkpoint["seed"] == attempt["seed"] and checkpoint["parameters"] == attempt["parameters"], "Checkpoint/attempt parameter binding mismatch")
+                require(checkpoint["bounds"] == executor.parameter_bounds(model_id, freeze["H_train"]) and checkpoint["H_train"] == freeze["H_train"] and checkpoint["S_train"] == freeze["S_train"], "Checkpoint bounds/scales changed")
+                require(checkpoint["training_projection_sha256"] == freeze["training_projection_sha256"] and checkpoint["training_mean_mse"] == attempt["training_mean_mse"], "Checkpoint training data/log binding mismatch")
+                require(checkpoint["selected_for_family"] == (attempt["start_index"] == family["selected_start_index"]), "Stored within-family selection flag changed")
+        chosen_ref = freeze["environment"]["selected_checkpoints"][model_id]
+        require(chosen_ref == summary["selected_checkpoints"][model_id], "Frozen selected-checkpoint references differ")
+        if chosen_ref is not None:
+            chosen_checkpoint = check_ref(chosen_ref, protocol, "model_checkpoint")
+            require(chosen_checkpoint["selected_for_family"] is True and chosen_checkpoint["parameters"] == family["parameters"] and chosen_checkpoint["start_index"] == family["selected_start_index"], "Family result differs from its sealed checkpoint")
+        attempt_counts[model_id] = len(official)
+        predictions = [p for p in freeze["predictions"] if p["model_id"] == model_id]
+        require(len(predictions) == 48, "A canonical family lacks its full development prediction grid")
+        prediction_counts[model_id] = dict(Counter(p["status"] for p in predictions))
+    require({r["sha256"] for r in summary["checkpoint_artifacts"]} == verified_checkpoints, "Summary checkpoint inventory differs from all sealed attempts")
+    # Recompute only already-released DEVELOPMENT PREFIX/TIMING inputs. Do
+    # not open raw development response intensities during freeze validation.
+    input_ref = next(r for r in manifest["learner_allowlist"] if r["role"] == "development_inputs")
+    inputs = check_ref(input_ref, protocol, "development_inputs")
+    executor.validate_projection(protocol, inputs, "development_inputs")
+    frozen_prefix = {p["group_id"]: p for p in freeze["prefix_summaries"]}
+    frozen_coordinates = {(r["group_id"], r["frame_1based"]): r["time_min"] for r in conditioning["development_coordinates"]}
+    require(len(frozen_coordinates) == 48, "Frozen coordinate inventory is incomplete")
+    for group in specs[3:]:
+        cells = [r for r in inputs["source_cells"] if r["group_id"] == group["group_id"]]
+        times = [r for r in inputs["source_times"] if r["group_id"] == group["group_id"]]
+        prefix, _ = executor.derive_prefix(group, cells, input_ref["sha256"])
+        stored = frozen_prefix[group["group_id"]]
+        require(prefix["eligible_cell_indices"] == stored["eligible_cell_indices"] and equal_numbers(prefix["mu"], stored["mu"]) and equal_numbers(prefix["s"], stored["s"]), "Frozen development cohort/prefix differs from the admitted prefix data")
+        coordinates = executor.derive_frames(group, None, times, stored)
+        for coordinate in coordinates:
+            key = coordinate["group_id"], coordinate["frame_1based"]
+            require(coordinate["time_min"] == frozen_coordinates[key], "Frozen coordinate differs from admitted measured timing")
+            for prediction in (p for p in freeze["predictions"] if (p["group_id"], p["frame_1based"]) == key):
+                require(prediction["time_min"] == coordinate["time_min"], "A prediction uses a different source-bound coordinate")
+    for path, expected in manifest["original_strong_artifact_sha256_unchanged"].items():
+        checked(ROOT / path, expected)
+    report = {
+        "document_type": "phase_c_sealed_freeze_verification_not_scoring", "protocol_id": PROTOCOL_ID,
+        "protocol_sha256": P["PINS"]["protocol"], "freeze": artifact(RUN / "development_prediction_freeze.json", "development_predictions"),
+        "attempt_log": artifact(RUN / "attempt_log.json", "attempt_log"), "conditioning_checkpoint": artifact(RUN / "conditioning_checkpoint.json", "model_checkpoint"),
+        "training_run_summary": artifact(RUN / "training_run_summary.json", "operational_event_log"),
+        "canonical_families": ids, "attempt_counts": attempt_counts, "attempt_count": len(freeze["attempts"]),
+        "prediction_status_counts": prediction_counts, "prediction_count": len(freeze["predictions"]),
+        "all_frozen_prediction_coordinates_verified": True, "development_prefix_cohorts_verified_without_response_access": True,
+        "all_bound_code_config_protocol_data_and_checkpoint_hashes_verified": True,
+        "training_bound_hit_policy": "Recorded bound hits are retained; no retry, bound expansion, model exclusion or scientific-recipe change is performed.",
+        "model_fitting_performed": False, "family_selection_performed": False, "development_scoring_performed": False,
+        "development_responses_opened": False, "selected_development_model": None,
+        "original_data_approval_sha256": freeze["approval_sha256"]
+    }
+    write_once(OUT / "freeze_verification.json", report)
+    return protocol, manifest, admission, request, configuration, freeze, conditioning, inputs, executor, report
+
+
+class SelectedResponseReader:
+    """Lexically skip unapproved subtrees/frames; decode only phase-C scalars."""
+    def __init__(self, text, row_counts):
+        self.text = text
+        self.row_counts = row_counts
+        self.decoder = json.JSONDecoder(parse_float=self.finite_float, parse_constant=self.invalid_constant)
+
+    @staticmethod
+    def finite_float(token):
+        value = float(token)
+        require(math.isfinite(value), "Nonfinite approved source number")
+        return value
+
+    @staticmethod
+    def invalid_constant(_):
+        raise P["RefreshError"]("Nonfinite approved source constant")
+
+    def ws(self, position):
+        while position < len(self.text) and self.text[position].isspace():
+            position += 1
+        return position
+
+    def skip(self, position):
+        position = self.ws(position)
+        start = self.text[position]
+        if start == '"':
+            _, end = self.decoder.raw_decode(self.text, position)
+            return end
+        if start in "[{":
+            stack = [start]
+            position += 1
+            while stack:
+                require(position < len(self.text), "Truncated source subtree")
+                char = self.text[position]
+                if char == '"':
+                    # String syntax only; no numeric response is decoded here.
+                    _, position = self.decoder.raw_decode(self.text, position)
+                    continue
+                if char in "[{":
+                    stack.append(char)
+                elif char in "]}":
+                    require(stack[-1] == ("[" if char == "]" else "{"), "Unbalanced source subtree")
+                    stack.pop()
+                position += 1
+            return position
+        end = position
+        while end < len(self.text) and self.text[end] not in ",]} \t\r\n":
+            end += 1
+        require(end > position, "Empty source value")
+        return end
+
+    def matrix(self, position, expected_rows):
+        position = self.ws(position)
+        require(self.text[position] == "[", "Approved source field is not a matrix")
+        position = self.ws(position + 1)
+        rows = []
+        while self.text[position] != "]":
+            require(self.text[position] == "[", "Approved source row is not an array")
+            position = self.ws(position + 1)
+            selected, column = [], 0
+            while self.text[position] != "]":
+                if 49 <= column <= 72:
+                    value, position = self.decoder.raw_decode(self.text, position)
+                    require(value is None or (type(value) in (int, float) and math.isfinite(value)), "Approved response scalar is not finite-or-null")
+                    selected.append(value)
+                else:
+                    position = self.skip(position)
+                column += 1
+                position = self.ws(position)
+                if self.text[position] == ",":
+                    position = self.ws(position + 1)
+                else:
+                    require(self.text[position] == "]", "Malformed source row delimiter")
+            require(column == 97 and len(selected) == 24, "Approved source frame inventory differs")
+            rows.append(selected)
+            position = self.ws(position + 1)
+            if self.text[position] == ",":
+                position = self.ws(position + 1)
+            else:
+                require(self.text[position] == "]", "Malformed source matrix delimiter")
+        require(len(rows) == expected_rows, "Approved source row inventory differs")
+        return rows, position + 1
+
+    def object(self, position, specification):
+        position = self.ws(position)
+        require(self.text[position] == "{", "Expected source object")
+        position = self.ws(position + 1)
+        seen, result = set(), {}
+        while self.text[position] != "}":
+            key, position = self.decoder.raw_decode(self.text, position)
+            require(type(key) is str and key not in seen, "Invalid or duplicate source object key")
+            seen.add(key)
+            position = self.ws(position)
+            require(self.text[position] == ":", "Malformed source object delimiter")
+            position = self.ws(position + 1)
+            if key not in specification:
+                position = self.skip(position)
+            elif isinstance(specification[key], dict):
+                result[key], position = self.object(position, specification[key])
+            elif specification[key][0] == "matrix":
+                result[key], position = self.matrix(position, specification[key][1])
+            else:
+                value, position = self.decoder.raw_decode(self.text, position)
+                require(type(value) is int and value == 49, "Source origin differs from the registered frame index")
+                result[key] = value
+            position = self.ws(position)
+            if self.text[position] == ",":
+                position = self.ws(position + 1)
+            else:
+                require(self.text[position] == "}", "Malformed source object terminator")
+        require(set(result) == set(specification), "Missing approved source field")
+        return result, position + 1
+
+    def read(self):
+        specification = {
+            rep: {"GFP": {"max5": ("matrix", count), "median": ("matrix", count)},
+                  "general": {"times": ("matrix", count), "origin": ("origin", None)}}
+            for rep, count in self.row_counts.items()
+        }
+        result, end = self.object(0, specification)
+        require(self.ws(end) == len(self.text), "Trailing source content")
+        return result
+
+
+def source_responses(protocol):
+    specs = protocol["partition"]["development"]
+    rows = {group["source_pointer"][1:]: group["source_rows"] for group in specs}
+    require(rows == {"rep4": 195, "rep5": 157}, "Phase-C group/row contract changed")
+    source = protocol["source"]
+    content = checked(ROOT / source["custodian_only_path"], source["source_sha256"], source["source_bytes"])
+    return SelectedResponseReader(content.decode("utf-8"), rows).read()
+
+
+def response_payload(protocol, selected):
+    records = []
+    for group in protocol["partition"]["development"]:
+        rep = group["source_pointer"][1:]
+        item = selected[rep]
+        for cell in range(group["source_rows"]):
+            for offset, frame in enumerate(range(50, 74)):
+                parent = group["source_pointer"]
+                records.append({
+                    "group_id": group["group_id"], "split": "development", "window": "response",
+                    "cell_index": cell, "frame_1based": frame,
+                    "relative_time_min": item["general"]["times"][cell][offset],
+                    "max5": item["GFP"]["max5"][cell][offset], "median": item["GFP"]["median"][cell][offset],
+                    "time_pointer": f"{parent}/general/times/{cell}/{frame - 1}",
+                    "max5_pointer": f"{parent}/GFP/max5/{cell}/{frame - 1}",
+                    "median_pointer": f"{parent}/GFP/median/{cell}/{frame - 1}",
+                })
+    return {"group_ids": [g["group_id"] for g in protocol["partition"]["development"]], "source_cells": records, "source_times": []}
+
+
+def verify_response_records(protocol, projection, selected, earlier_inputs):
+    validate_type(protocol, projection, "Projection")
+    require(projection["phase"] == "development_responses" and not projection["source_times"], "Wrong phase-C projection kind")
+    index = {(r["group_id"], r["cell_index"], r["frame_1based"]): r for r in projection["source_cells"]}
+    require(len(index) == len(projection["source_cells"]) == 8448, "Duplicate or missing phase-C source cells")
+    old_times = {(r["group_id"], r["cell_index"], r["frame_1based"]): r for r in earlier_inputs["source_times"]}
+    require(set(index) == set(old_times), "Phase-C row/frame keys differ from previously released timing")
+    checks, nulls = 0, {"max5": 0, "median": 0, "relative_time_min": 0}
+    for group in protocol["partition"]["development"]:
+        rep = group["source_pointer"][1:]
+        for cell in range(group["source_rows"]):
+            for offset, frame in enumerate(range(50, 74)):
+                key = group["group_id"], cell, frame
+                record = index[key]
+                require(record["split"] == "development" and record["window"] == "response", "Wrong source split/window")
+                for field, channel, original_field, pointer_field in (("max5", "GFP", "max5", "max5_pointer"), ("median", "GFP", "median", "median_pointer"), ("relative_time_min", "general", "times", "time_pointer")):
+                    expected = selected[rep][channel][original_field][cell][offset]
+                    actual = record[field]
+                    require((actual is None and expected is None) or (type(actual) in (int, float) and type(expected) in (int, float) and actual == expected), "Exported response scalar differs from its pinned source")
+                    require(record[pointer_field] == f"{group['source_pointer']}/{channel}/{original_field}/{cell}/{frame - 1}", "Incorrect phase-C source pointer")
+                    nulls[field] += actual is None
+                    checks += 1
+                require(record["relative_time_min"] == old_times[key]["relative_time_min"] and record["time_pointer"] == old_times[key]["time_pointer"], "Response time changed from pre-response timing input")
+    return {"source_cell_count": len(index), "source_scalar_count": checks, "null_counts": nulls,
+            "all_source_scalars_equal": True, "nulls_preserved": True,
+            "source_rows_and_pointers_verified": True, "group_window_inventory_verified": True,
+            "all_times_equal_previously_released_source_times": True}
+
+
+def response_coverage(protocol, projection, freeze, conditioning):
+    # Diagnostic counts only. No prediction errors, family ranking or new
+    # conditioning/cohort selection is computed from response values.
+    index = {(r["group_id"], r["cell_index"], r["frame_1based"]): r for r in projection["source_cells"]}
+    coordinates = {(r["group_id"], r["frame_1based"]): r["time_min"] for r in conditioning["development_coordinates"]}
+    prefixes = {p["group_id"]: p for p in freeze["prefix_summaries"]}
+    groups = []
+    for group in protocol["partition"]["development"]:
+        cohort = prefixes[group["group_id"]]["eligible_cell_indices"]
+        frames = []
+        for frame in range(50, 74):
+            valid, missing, invalid = [], [], []
+            for cell in cohort:
+                row = index[group["group_id"], cell, frame]
+                absent = [field for field in ("max5", "median", "relative_time_min") if row[field] is None]
+                if absent:
+                    missing.append({"cell_index": cell, "reasons": ["source_null_" + field for field in absent]})
+                    continue
+                reasons = []
+                if row["max5"] < 0:
+                    reasons.append("negative_max5")
+                if row["median"] <= 0:
+                    reasons.append("nonpositive_median")
+                if row["relative_time_min"] <= 0:
+                    reasons.append("nonpositive_response_time")
+                if reasons:
+                    invalid.append({"cell_index": cell, "reasons": reasons})
+                else:
+                    require(math.isfinite(row["max5"] / row["median"]), "An approved ratio cannot be represented finitely")
+                    valid.append(cell)
+            frames.append({"frame_1based": frame, "frozen_time_min": coordinates[group["group_id"], frame],
+                           "prefix_cells": len(cohort), "valid_cells": len(valid), "source_missing_cells": len(missing),
+                           "invalid_cells": len(invalid), "source_missing_details": missing, "invalid_details": invalid,
+                           "mean_is_defined": bool(valid), "within_cell_sd_is_defined": len(valid) >= 2})
+        groups.append({"group_id": group["group_id"], "frozen_prefix_cell_indices": cohort, "frames": frames})
+    return {"document_type": "phase_c_frozen_cohort_response_coverage_not_model_scoring", "protocol_id": PROTOCOL_ID,
+            "prediction_freeze_sha256": PINS["freeze"], "groups": groups, "cohorts_recomputed_from_responses": False,
+            "all_registered_means_and_coordinates_available": all(f["mean_is_defined"] and f["frozen_time_min"] is not None for g in groups for f in g["frames"]),
+            "no_family_selected_or_scored": True, "strong_claim_authorized": False}
+
+
+def release():
+    require(not (OUT / "release_manifest.json").exists(), "Phase C already released; verify the retained release rather than creating another")
+    protocol, manifest, admission, original_request, configuration, freeze, conditioning, inputs, executor, verification = verify_freeze()
+    proof_ref = artifact(OUT / "freeze_verification.json", "source_binding_audit")
+    helper_ref = artifact(Path(__file__), "execution_code")
+    request = dict(original_request)
+    request["exporter_code"] = original_request["exporter_code"] + [helper_ref]
+    request["requester"] = "Parent PHASEC instruction after the sealed native_training_01 batch; encoded by the Granados custodian for response frames 50-73 only, without requesting another fit or data replacement."
+    validate_type(protocol, request, "DevelopmentReleaseRequest")
+    request_ref = write_once(OUT / "release_request.json", request)
+    request_ref["role"] = "operational_event_log"
+    identity = admission["custodian_identity"]
+    event_path = OUT / "release_event.json"
+    event = strict_json(P["regular"](event_path).read_bytes()) if event_path.exists() else {
+        "document_type": "phase_c_custody_approval_event_not_external_attestation", "event_id": "granados-phase-c-01",
+        "recorded_at_utc": datetime.now(timezone.utc).isoformat(), "phase": "after_complete_prediction_freeze_before_response_extraction",
+        "prediction_freeze_sha256": PINS["freeze"], "freeze_verification_sha256": proof_ref["sha256"],
+        "original_phase_b_manifest_sha256": P["PINS"]["phase_b_manifest"],
+        "original_data_approval_sha256": freeze["approval_sha256"], "executor_admission_sha256": PINS["admission"],
+        "request_sha256": request_ref["sha256"], "parent_authorized_scope": "Only rep4/rep5 response frames 50-73; preserve all original source rows/nulls and frozen prefix cohorts.",
+        "fitting_scoring_or_family_selection_performed": False, "scientific_recipe_changed": False,
+        "prior_releases_or_events_rewritten": False, "strong_claim_authorized": False,
+    }
+    require(event["prediction_freeze_sha256"] == PINS["freeze"] and event["request_sha256"] == request_ref["sha256"], "Existing phase-C event has different bindings")
+    write_once(event_path, event)
+    decision = {
+        "document_type": "development_custody_decision_not_external_attestation", "protocol_id": PROTOCOL_ID,
+        "request_sha256": request_ref["sha256"], "decision": "approve_development_exports", "custodian_identity": identity,
+        "operational_event_reference": relative(event_path) + "#granados-phase-c-01",
+        "reviewed_source_asset_id": protocol["source"]["asset_id"], "reviewed_source_sha256": protocol["source"]["source_sha256"],
+        "permitted_group_ids": request["train_ids"] + request["development_ids"],
+        "conditions": [
+            "This is a NEW phase-C response-release decision after verifying sealed freeze e03f6b9407b29e7e76da7a0be566ce9036c5cf27ac65bfaa9a4d3d7e009b5753, all six canonical families, all 41 attempts, all 288 predictions, and their code/configuration/data/checkpoint bindings.",
+            "The only newly released source values are rep4/rep5 GFP/max5, GFP/median and general/times at original frames 50-73. Preserve every source row and null; do not export any other group, field or frame.",
+            "Use the already frozen prefix cell indices and measured coordinates. No inpainting, smoothing, new response-based cohort selection, ratio-of-means target, refitting, bound expansion, family exclusion or scientific-recipe amendment is authorized.",
+            "The transient-response training-bound hit remains recorded. It is not a reason to retry or expand the registered domain.",
+            "Original training data approval, executor refresh approval and this new response-release approval are DISTINCT linked records. Do not overwrite the freeze or old approval hashes to satisfy a same-approval shortcut in a consumer.",
+            "Scoring must verify the explicit phase-C approval lineage, exact response bytes and the unchanged frozen predictions before computing any development diagnostics. The current module's legacy execute_scoring equality check needs a reviewed lineage adapter; this decision does not authorize a manual bypass.",
+            "No stronger biological ready grade, final validation or certified prospective forecast is granted. Rep6, aliases and all other unapproved groups remain unexported.",
+        ],
+        "limitations": manifest["limitations"], "strong_claim_authorized": False,
+    }
+    validate_type(protocol, decision, "DevelopmentCustodyDecision")
+    decision_ref = write_once(OUT / "custody_decision.json", decision)
+    decision_ref["role"] = "operational_approval"
+    # All freeze checks and the new scoped decision exist BEFORE decoding any
+    # raw development-response scalars. Unapproved subtrees/frames are skipped.
+    selected = source_responses(protocol)
+    payload = response_payload(protocol, selected)
+    payload_hash = sha((json.dumps(payload, sort_keys=True, separators=(",", ":"), allow_nan=False) + "\n").encode())
+    source_binding = {
+        "document_type": "phase_c_source_scalar_binding_not_biological_validation", "protocol_id": PROTOCOL_ID,
+        "protocol_sha256": P["PINS"]["protocol"], "source_asset_id": protocol["source"]["asset_id"],
+        "source_sha256": protocol["source"]["source_sha256"], "prediction_freeze_sha256": PINS["freeze"],
+        "response_release_approval_sha256": decision_ref["sha256"], "original_data_approval_sha256": freeze["approval_sha256"],
+        "group_ids": payload["group_ids"], "frames_1based": list(range(50, 74)),
+        "ordered_payload_sha256": payload_hash, "expected_source_cells": 8448, "expected_source_scalars": 25344,
+        "selection_policy": "Only registered source fields in rep4/rep5 and columns 50-73 were numerically decoded. Other groups/fields/columns were lexically skipped, not normalized or evaluated.",
+        "row_policy": "Every original source row is exported; frozen prefix eligibility is used only in downstream aggregation and is not recomputed from responses.",
+        "freeze_verification": proof_ref, "strong_claim_authorized": False,
+    }
+    binding_ref = write_once(OUT / "source_binding_audit.json", source_binding)
+    binding_ref["role"] = "source_binding_audit"
+    projection = {
+        "document_type": "source_bound_development_projection", "protocol_id": PROTOCOL_ID, "phase": "development_responses",
+        "approval_sha256": decision_ref["sha256"], "source_asset_id": protocol["source"]["asset_id"], "source_sha256": protocol["source"]["source_sha256"],
+        **payload, "source_binding_audit": binding_ref,
+    }
+    checks = verify_response_records(protocol, projection, selected, inputs)
+    output_path = ROOT / "data/native_law_v2/granados/development_exports" / PROTOCOL_ID / "development_responses.json"
+    response_ref = write_once(output_path, projection)
+    response_ref["role"] = "development_responses"
+    serialized = check_ref(response_ref, protocol, "development_responses")
+    fresh_source = source_responses(protocol)
+    replay_checks = verify_response_records(protocol, serialized, fresh_source, inputs)
+    require(replay_checks == checks and checks["source_scalar_count"] == 25344, "Serialized phase-C source replay changed")
+    coverage = response_coverage(protocol, serialized, freeze, conditioning)
+    coverage_ref = write_once(OUT / "coverage_audit.json", coverage)
+    coverage_ref["role"] = "source_binding_audit"
+    replay_ref = write_once(OUT / "source_replay_verification.json", {
+        "document_type": "phase_c_serialized_source_replay_not_scoring", "protocol_id": PROTOCOL_ID,
+        "prediction_freeze_sha256": PINS["freeze"], "response_projection": response_ref, "source_binding_audit": binding_ref,
+        "checks": replay_checks, "frozen_prefix_cohorts_used": {p["group_id"]: p["eligible_cell_indices"] for p in freeze["prefix_summaries"] if p["group_id"] in payload["group_ids"]},
+        "development_scores_computed": False, "model_family_selected": False, "strong_claim_authorized": False,
+    })
+    replay_ref["role"] = "source_binding_audit"
+    # Recheck all old metadata/data/code/checkpoint pins after writing only the
+    # new release. Old approvals, old data and frozen predictions never change.
+    for path, ref in list(P["VERIFIED"].items()):
+        checked(ROOT / path, ref["sha256"], ref["bytes"])
+    release_manifest = {
+        "document_type": "approved_development_phase_c_response_release_v1", "protocol_id": PROTOCOL_ID,
+        "protocol_sha256": P["PINS"]["protocol"], "phase": "development_response_export",
+        "release_request": request_ref, "custody_decision": decision_ref, "freeze_verification": proof_ref,
+        "prediction_freeze": artifact(RUN / "development_prediction_freeze.json", "development_predictions"),
+        "attempt_log": artifact(RUN / "attempt_log.json", "attempt_log"), "conditioning_checkpoint": artifact(RUN / "conditioning_checkpoint.json", "model_checkpoint"),
+        "training_run_summary": artifact(RUN / "training_run_summary.json", "operational_event_log"),
+        "phase_b_manifest": artifact(DEV / "release_manifest.json", "operational_event_log"),
+        "original_training_data_approval": manifest["custody_decision"],
+        "executor_refresh_admission": artifact(DEV / "executor_refresh_01/executor_refresh_admission.json", "operational_event_log"),
+        "executor_refresh_approval": admission["approval"], "configuration": admission["configuration"],
+        "frozen_executor_artifacts": freeze["code_artifacts"],
+        "response_projection": response_ref, "response_data_allowlist": [response_ref],
+        "previously_released_development_inputs": next(r for r in manifest["learner_allowlist"] if r["role"] == "development_inputs"),
+        "source_binding_audit": binding_ref, "source_replay_verification": replay_ref, "coverage_audit": coverage_ref,
+        "operational_event_reference": decision["operational_event_reference"],
+        "development_responses_released": True, "previous_data_regenerated": False,
+        "frozen_cohorts_or_coordinates_changed": False, "all_registered_observation_means_and_coordinates_available": coverage["all_registered_means_and_coordinates_available"],
+        "current_module_sha256": P["PINS"]["module"],
+        "legacy_execute_scoring_approval_equality_compatible": decision_ref["sha256"] == freeze["approval_sha256"],
+        "scoring_integration_requirement": "Use an explicitly reviewed phase-C lineage adapter binding original data approval 87536..., executor approval 04ac..., and this NEW response-release decision. Current execute_scoring lines 1086 and 1096 assume one identical approval SHA and cannot directly consume a new decision. Do not rewrite the freeze/projections or manually skip checks; do not refit or change the scientific recipe. Custody has not scored these responses.",
+        "selected_development_model": None, "development_scores_computed": False,
+        "strong_claim_authorized": False, "final_test_defined": False,
+        "limitations": manifest["limitations"],
+    }
+    import jsonschema
+    artifact_fields = ("release_request", "custody_decision", "freeze_verification", "prediction_freeze", "attempt_log", "conditioning_checkpoint", "training_run_summary", "phase_b_manifest", "original_training_data_approval", "executor_refresh_admission", "executor_refresh_approval", "configuration", "response_projection", "previously_released_development_inputs", "source_binding_audit", "source_replay_verification", "coverage_audit")
+    properties = {name: {"$ref": "#/$defs/ArtifactRef"} for name in artifact_fields}
+    properties.update({
+        "document_type": {"const": "approved_development_phase_c_response_release_v1"}, "protocol_id": {"const": PROTOCOL_ID},
+        "protocol_sha256": {"const": P["PINS"]["protocol"]}, "phase": {"const": "development_response_export"},
+        "frozen_executor_artifacts": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/ArtifactRef"}},
+        "response_data_allowlist": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"allOf": [{"$ref": "#/$defs/ArtifactRef"}, {"properties": {"role": {"const": "development_responses"}}}]}},
+        "operational_event_reference": {"type": "string", "minLength": 1},
+        "development_responses_released": {"const": True}, "previous_data_regenerated": {"const": False},
+        "frozen_cohorts_or_coordinates_changed": {"const": False}, "all_registered_observation_means_and_coordinates_available": {"type": "boolean"},
+        "current_module_sha256": {"const": P["PINS"]["module"]}, "legacy_execute_scoring_approval_equality_compatible": {"const": False},
+        "scoring_integration_requirement": {"type": "string", "minLength": 1}, "selected_development_model": {"type": "null"},
+        "development_scores_computed": {"const": False}, "strong_claim_authorized": {"const": False}, "final_test_defined": {"const": False},
+        "limitations": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    })
+    schema = {"$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object", "additionalProperties": False,
+              "required": list(properties), "properties": properties, "$defs": protocol["export_contract"]["schemas"]["$defs"]}
+    jsonschema.Draft202012Validator.check_schema(schema)
+    jsonschema.Draft202012Validator(schema).validate(release_manifest)
+    write_once(OUT / "PhaseCReleaseManifest.schema.json", schema)
+    release_ref = write_once(OUT / "release_manifest.json", release_manifest)
+    print(json.dumps({"phase_c_release_manifest": release_ref, "custody_decision": decision_ref, "development_responses": response_ref,
+                      "source_scalar_verification": checks, "all_registered_observation_means_and_coordinates_available": coverage["all_registered_means_and_coordinates_available"],
+                      "current_scorer_requires_explicit_lineage_adapter": True, "model_fitting_or_scoring_performed": False, "strong_claim_authorized": False}))
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("command", choices=("verify-freeze", "release"))
+    args = parser.parse_args()
+    if args.command == "release":
+        release()
+    else:
+        *_, report = verify_freeze()
+        print(json.dumps({"freeze_verification": artifact(OUT / "freeze_verification.json", "source_binding_audit"), "canonical_family_count": len(report["canonical_families"]), "attempt_count": report["attempt_count"], "prediction_count": report["prediction_count"], "development_responses_opened": False, "fitting_or_scoring_performed": False}))
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as error:
+        if isinstance(error, P["RefreshError"]):
+            sys.exit(str(error))
+        sys.exit("Phase-C custody stopped without response release: " + type(error).__name__)

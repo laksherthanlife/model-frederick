@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "retrieved_at_utc": "2026-09-07T10:35:38.317189+00:00",
+  "response_values_disclosed": false,
+  "files": [
+    {
+      "asset_id": "1b38366b-7473-4ddf-9cf9-26e625533686",
+      "name": "fig1_sfp1_replicates.json",
+      "source_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/1b38366b-7473-4ddf-9cf9-26e625533686/content",
+      "path": "data/native_law_v2/granados/sealed/raw_mixed/fig1_sfp1_replicates.json",
+      "bytes": 4178902,
+      "sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+      "repository_md5": "5059d66947b995a8a93441495f511882",
+      "training_allowed": false
+    },
+    {
+      "asset_id": "32cf23e6-ff7c-4b41-8304-f60afca3f4a6",
+      "name": "fig2_stress_type_expts.json",
+      "source_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/32cf23e6-ff7c-4b41-8304-f60afca3f4a6/content",
+      "path": "data/native_law_v2/granados/sealed/raw_mixed/fig2_stress_type_expts.json",
+      "bytes": 27014075,
+      "sha256": "5d9f9fa10395b6e90729ecfdfcf75d9dbf86172a71871c59c6263c37d2badcd5",
+      "repository_md5": "a435c108a4782a37bca18b07ab9b081a",
+      "training_allowed": false
+    },
+    {
+      "asset_id": "721ef5f2-b858-4257-8cc8-5eea9a8599bb",
+      "name": "fig2_stress_type_replicates.json",
+      "source_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/721ef5f2-b858-4257-8cc8-5eea9a8599bb/content",
+      "path": "data/native_law_v2/granados/sealed/raw_mixed/fig2_stress_type_replicates.json",
+      "bytes": 14360462,
+      "sha256": "56f00e2b39407965837f917d6e7cb43feb39f258ad360334625fcc6600ad7e27",
+      "repository_md5": "f6f94871541f018c38689ddb2a98996f",
+      "training_allowed": false
+    },
+    {
+      "asset_id": "5b7ea616-fdd5-4978-951e-8cfc3f722eb1",
+      "name": "fig3_stress_level_expts.json",
+      "source_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/5b7ea616-fdd5-4978-951e-8cfc3f722eb1/content",
+      "path": "data/native_law_v2/granados/sealed/raw_mixed/fig3_stress_level_expts.json",
+      "bytes": 51227456,
+      "sha256": "0d4b43fc5c78a8dce277872a6ae8f102cff47e9d9e39e62dd118082e598a6e68",
+      "repository_md5": "5fdd8df3894fe064e58a20bddc1e1979",
+      "training_allowed": false
+    },
+    {
+      "asset_id": "0dcc11fc-dcd1-4983-930e-26265b48a0e9",
+      "name": "figS1_nuclear_marker_expts.json",
+      "source_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/0dcc11fc-dcd1-4983-930e-26265b48a0e9/content",
+      "path": "data/native_law_v2/granados/sealed/raw_mixed/figS1_nuclear_marker_expts.json",
+      "bytes": 4062841,
+      "sha256": "3d48d1772244bc74956996411b4eacfa1b89924aeb254dd830356af9969fd619",
+      "repository_md5": "16d5115cede7a0c1c41b852c52a7db76",
+      "training_allowed": false
+    },
+    {
+      "asset_id": "f0ff4386-a4a5-40a4-b501-42b3e222e698",
+      "name": "figS7_rich_to_rich_expts.json",
+      "source_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/f0ff4386-a4a5-40a4-b501-42b3e222e698/content",
+      "path": "data/native_law_v2/granados/sealed/raw_mixed/figS7_rich_to_rich_expts.json",
+      "bytes": 7280122,
+      "sha256": "386683f43d0f93b6deb4f2765ef98ad3b230e9ad96a450703da6187824e362a3",
+      "repository_md5": "2b7bca079f00269b7cc3cab15a0aa1af",
+      "training_allowed": false
+    },
+    {
+      "asset_id": "5546d389-8424-40f3-8620-6be68ca9b16d",
+      "name": "figS19_two_colour_expts.json",
+      "source_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/5546d389-8424-40f3-8620-6be68ca9b16d/content",
+      "path": "data/native_law_v2/granados/sealed/raw_mixed/figS19_two_colour_expts.json",
+      "bytes": 8900018,
+      "sha256": "3da2f7728331fac4b3375292c4e0502d17254f032518fbfbbdc1510a61cca44e",
+      "repository_md5": "af3d0b67d0ae677548729d957608a4c2",
+      "training_allowed": false
+    }
+  ]
+}

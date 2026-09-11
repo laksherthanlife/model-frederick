@@ -1,0 +1,192 @@
+SUPPLEMENT PDF PAGE 1
+www.pnas.org/cgi/doi/10.1073/pnas.
+Supporting Information: Distributed and dynamic
+intracellular organization of extracellular information
+Alejandro A. Granados1,2,⋆, Julian M. J. Pietsch2,4,⋆, Sarah A. Cepeda-Humerez3,
+Iseabail L. Farquhar2,4, Gašper Tkačik3, and Peter S. Swain2,4
+1Department of Bioengineering, Imperial College London, London SW7 2AZ,
+United Kingdom
+2SynthSys–Synthetic and Systems Biology, University of Edinburgh, Edinburgh
+EH9 3BF, United Kingdom
+3Institute of Science and Technology Austria, 3400 Klosterneuburg, Austria
+4School of Biological Sciences, University of Edinburgh, Edinburgh EH9 3BF,
+United Kingdom
+⋆These authors contributed equally to this work.
+Contents
+1 Materials and Methods3
+1.1 Strains and Media. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.2 Microscopy and microﬂuidics . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.2.1 Cell preparation and loading ALCATRAS. . . . . . . . . . . . . . . 3
+1.2.2 Changing the extracellular environment. . . . . . . . . . . . . . . . 3
+1.2.3 Image segmentation and quantiﬁcation of nuclear localization. . . . 4
+1.2.4 Numbers of cells . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+1.3 Plate reader experiments. . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+1.4 Data availability. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2 Estimating ﬁtness penalties5
+3 Estimating the mutual information6
+3.1 Data preparation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+3.2 Estimation of mutual information through decoding. . . . . . . . . . . . . . 6
+3.3 Decoding error and mutual information. . . . . . . . . . . . . . . . . . . . 9
+3.4 Mutual information is robust across experimental repeats. . . . . . . . . . 9
+3.5 Estimating the encoding delay. . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.6 Mutual information for multi-state transitions withq >2 . . . . . . . . . .10
+3.6.1 Behaviour of the ideal specialist. . . . . . . . . . . . . . . . . . . . . 10
+3.6.2 Estimating the probability of predicting each environmental state. . 10
+3.6.3 Distinguishing one level of stress from another. . . . . . . . . . . . . 11
+3.6.4 Condition-speciﬁc information . . . . . . . . . . . . . . . . . . . . . . 11
+3.7 Features of the time-series of localization that encode mutual information. 11
+3.8 Estimating channel capacity and optimal input distributions. . . . . . . . . 12
+3.9 Mutual information for pairs of transcription factors as outputs. . . . . . . 12
+3.9.1 Information redundancy between pairs of transcription factors. . . . 13
+3.9.2 Relative timing of responses as an informative feature. . . . . . . . 13
+3.10 Mutual information for multiple transcription factors as outputs. . . . . . . 14
+1
+1716659115
+
+SUPPLEMENT PDF PAGE 3
+1 Materials and Methods
+1.1 Strains and Media
+Strains containing ﬂuorescently labeled transcription factors that are known to translocate
+(Hog1 1, Yap12, Msn2/4 3, Sfp1 4, Maf1 5, Tod6 and Dot66) were acquired from theS.
+cerevisiaeGFP collection7 and validated by sequencing. Because of the poor growth of the
+GFP collection’s Mig1-GFP strain in our experimental conditions, we generated an equiva-
+lent strain (also validated by sequencing) in BY4741 using PCR-based genomic integration
+of yEGFP-His from pKT0128 (AddGene). Strains indicated as having a nuclear marker
+were derived from the GFP-labeled transcription factor strains by PCR-based genomic in-
+tegration of mCherry-KanR from pBS34 (EUROSCARF) to tag the chromatin-associated
+Nhp6A protein. Media used for propagation and growth was standard synthetic complete
+(SC) medium supplemented with 2% glucose (unless speciﬁed otherwise). For stress media,
+we added sodium chloride or hydrogen peroxide as indicated; carbon stress is SC medium
+supplemented with lower concentrations of glucose (0.1% unless speciﬁed otherwise). Cells
+were grown at 30◦C.
+1.2 Microscopy and microﬂuidics
+1.2.1 Cell preparation and loading ALCATRAS
+Overnight cultures were inoculated such that cells would reach mid-log phase by the fol-
+lowing morning. Cells were diluted in fresh medium to OD600 0.1 and incubated an ad-
+ditional 3–4 hours for loading into microﬂuidics devices at OD 600 0.3–0.4. To expose
+multiple strains to the same environmental conditions and to optimize data acquisition,
+we used a multi-chamber version of ALCATRAS8,9, which allowed ﬁve diﬀerent strains
+to be loaded into distinct chambers but still be exposed to the same extracellular me-
+dia (Fig. S1). Polydimethylsiloxane (PDMS) barriers between strains ensure that there is
+no cross-contamination during loading. The ALCATRAS chambers were pre-ﬁlled with
+growth medium with added 0.05% bovine serum albumin (BSA) to facilitate cell-loading
+and reduce the formation of clumps of cells.
+The microﬂuidic chamber and the syringe pumps containing the extracellular media
+were located inside an incubation chamber (Okolabs) that maintained a constant temper-
+ature of 30◦C. We used a 60× 1.4 NA oil immersion objective (Nikon). The Nikon Perfect
+Focus System (PFS) ensured consistent focus over the experiment. Fluorescence imaging
+was performed with an OptoLED light source (Cairn Research). Images were acquired
+using an Evolve 512 EMCCD (Photometrics), and we correct for a delay of a few seconds
+in image acquisition as the microscope moves between diﬀerent positions.
+1.2.2 Changing the extracellular environment
+Syringe pumps (Aladdin NE-1002X) were used to supply media at 4µL/min to the device,
+and an external mixer (a sterile metal T-junction) allowed switching between diﬀerent
+media. Cells were grown with imaging for 5 hours in rich medium (3 hours for transitions to
+oxidative stress) before setting the pumps to supply stress medium for growth for a further
+5 hours. Sharp switches were achieved by programming the pumps to ﬂush 450µL of stress
+medium through the mixer at 150µL/min. Following the switch, the ﬁrst pump continued
+to withdraw at 0.5µL/min with the second pump supplying stress medium at 4.5µL/min
+to maintain an overall rate of 4µL/min to the device. The ﬁrst pump supplied rich media
+in all experiments. For the stress-type experiments, the second pump supplied medium
+either containing 0.1% glucose (carbon stress), supplemented with 0.4 M sodium chloride
+(osmotic stress), or supplemented with 0.5 mM hydrogen peroxide (oxidative stress). For
+3
+
+SUPPLEMENT PDF PAGE 4
+the stress-level experiments, the second pump supplied medium containing 0.8%, 0.4%,
+0.2% or 0.1% glucose (carbon stress); medium supplemented with either 0.1 M, 0.2 M,
+0.3 M or 0.4 M sodium chloride; or medium supplemented with either 0.22 mM, 0.28 mM,
+0.36 mM or 0.50 mM hydrogen peroxide. The dye Cy5 was added to the syringe containing
+stress medium to monitor its arrival time and the sharpness of the switch.
+1.2.3 Image segmentation and quantiﬁcation of nuclear localization
+During each experiment, we acquired bright-ﬁeld and ﬂuorescence images at ﬁvez-sections
+spaced 0.6 micron apart. The maximum projection of these images (the maximum pixel
+values across allz-sections) was used for quantiﬁcation. The Cy5 channel was acquired
+in a single focal plane. Cells were segmented from bright-ﬁeld images using the DISCO
+algorithm 10,11, which identiﬁes cell centres with a support vector machine (SVM) and cell
+edges with an active-contour-based method applied to the bright-ﬁeldz sections.
+We quantiﬁed the nuclear accumulation of transcription factors by calculating the ratio
+between the average of the ﬁve brightest pixels within the cell and the median ﬂuorescence
+of the whole cell. This widely-adopted measure12–14 is robust to systematic multiplicative
+variations in image intensity between time-points (a small but not insigniﬁcant source of
+experimental error). We validated its use for transcription factors where this measure
+has not been applied before (Dot6, Tod6, Sfp1 and Maf1) and also for Mig1 where it
+has 14 (as a positive control) by adding a nuclear marker (Nhp6A-mCherry) (Fig. S2).
+[Published calibration outcome omitted from the public methods excerpt.]
+Therefore, we performed all
+other experiments without a nuclear marker to reduce the time of image acquisition and
+so increase the number of cells monitored.
+1.2.4 Numbers of cells
+With our multi-strain experimental set-up (Fig. S1), we can monitor on average 150 cells
+per strain (5 strains per assay) at a sampling rate of 2.5 minutes. Biological replicates
+(identical experimental conditions applied to diﬀerent cultures of the same strain) were
+performed on diﬀerent days. Table 1 gives the number of cells for the stress-type exper-
+iments (Fig. 2 & 3A); Table 2 gives the number of cells for the stress-level experiments
+(Fig. 3C); and Table 3 for the transition from rich media to rich media (Fig. S8.)
+Table 1. Number of cells in each of the stress-type experiments
+Replicate 1
+Msn2 Msn4 Dot6 Tod6 Sfp1 Maf1 Mig1 Mig2 Hog1 Yap1
+Oxidative stress 162 183 184 163 171 159 207 219 205 237
+Carbon stress 178 202 198 132 164 219 199 191 190 215
+Osmotic stress 208 209 212 215 213 191 206 186 211 202
+Replicate 2
+Msn2 Msn4 Dot6 Tod6 Sfp1 Maf1 Mig1 Mig2 Hog1 Yap1
+Oxidative stress 166 166 186 172 208 183 217 209 308 131
+Carbon stress 117 211 219 216 155 208 183 223 97 127
+Osmotic stress 226 195 107 142 154 190 210 198 206 124
+1.3 Plate reader experiments
+Fitness penalties were estimated using plate readers (Inﬁnity M200, Tecan Group Ltd.,
+Switzerland) and an established protocol15. Cells were cultured for 16 hours in SC with
+4
+
+SUPPLEMENT PDF PAGE 5
+Table 2. Number of cells in each of the stress-level experiments
+Mig1 Msn2 Dot6 Sfp1 Maf1
+0.8% glucose 181 177 182 161 197
+0.4% glucose 209 177 162 121 233
+0.2% glucose 203 195 204 212 214
+0.1% glucose 204 185 195 178 120
+Hog1 Msn2 Dot6 Sfp1 Maf1
+0.1 M NaCl 183 160 194 159 185
+0.2 M NaCl 196 172 169 107 200
+0.3 M NaCl 184 198 180 185 77
+0.4 M NaCl 210 230 224 199 143
+Yap1 Msn2 Dot6 Sfp1 Maf1
+0.22 mM H 2O2 193 171 218 194 188
+0.28 mM H 2O2 185 109 206 189 181
+0.36 mM H 2O2 149 199 150 249 191
+0.50 mM H 2O2 270 186 186 144 182
+Table 3. Number of cells in each of the rich-to-rich transition experiments
+Msn2 Msn4 Dot6 Tod6 Sfp1 Maf1 Mig1 Mig2 Hog1 Yap1
+163 169 156 184 187 153 163 94 133 85
+2% glucose at 30◦C with ODs maintained below 0.6, diluted to an OD of 0.05 with SC in
+2% glucose and incubated for a further 5 hours, before being spun down, washed in the
+appropriate stress media, spun down again, resuspended in stress conditions in a 96-well
+plate and placed in the plate reader.
+1.4 Data availability
+Data are freely available athttp://dx.doi.org/10.7488/ds/2214
+
+
+SUPPLEMENT PDF PAGE 6
+3 Estimating the mutual information
+3.1 Data preparation
+We normalized the single-cell time-series of nuclear localization using the population’s
+mean (µ) and standard deviation (σ) across the 20 time-points (50 min) before the stress
+was introduced from all cells in a single microﬂuidics experiment. For each time-series,
+we applied az-normalization: for celli: xi(t)→ (xi(t)−µ)/σ. After normalization, the
+steady-state (pre-shock) nuclear localization across the population of cells then has a mean
+of approximately zero and a standard deviation of approximately one.
+This normalization scales the time-series, but conserves cell-to-cell variation. The nor-
+malization was applied for consistency in calculations where classiﬁcation of time-series
+comprised multiple experimental conditions (i.e. for stress-type, Fig. 3A, and stress-level,
+Fig. 3C, classiﬁcations).
+The exact time-point at which the transition takes place (t = 0) is detected using the
+signal from the Cy5 dye. For each experiment, we partition the time-series att = 0 to
+generate two environmental states: the 20 time-points before the transition are labeled
+as rich media data and the 20 time-points after the transition are labeled asstress data.
+For experiments addressing the presence of environmental change (Fig. 2C & D), we train
+and test the classiﬁer using these two environmental states. For environmental transitions
+comprising more than two new environmental states (Figs. 3 & 4), we merged the rich
+media segments of each individual experiment into a single matrix of cells that is then
+randomly sampled.
+

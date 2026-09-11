@@ -1,0 +1,10 @@
+state_id	cultivation	day	strain	oxygen	limitation	mu_per_h	mu_pm_per_h	feed_glucose_g_per_l	n_arrays	geo_accession	arrayexpress_accession	glycogen_content_source	trehalose_status	in_scope_for_solve_pathway	note
+chemostat_D0025_t0	anaerobic glucose-limited chemostat	0	CEN.PK113-7D	anaerobic	glucose	0.025	NA	50	3	GSE22574	NA	figure_only	below_detection	no	t=0 reference for the 2011 retentostats; "independent, triplicate"
+retentostat_d2	anaerobic glucose-limited retentostat	2	CEN.PK113-7D	anaerobic	glucose	NA	NA	50	2	GSE22574	NA	figure_only	below_detection	no	mu at this timepoint appears only in Fig 1a
+retentostat_d9	anaerobic glucose-limited retentostat	9	CEN.PK113-7D	anaerobic	glucose	NA	NA	50	2	GSE22574	NA	figure_only	below_detection	no	mu at this timepoint appears only in Fig 1a
+retentostat_d16	anaerobic glucose-limited retentostat	16	CEN.PK113-7D	anaerobic	glucose	NA	NA	50	2	GSE22574	NA	figure_only	below_detection	no	mu at this timepoint appears only in Fig 1a
+retentostat_d22	anaerobic glucose-limited retentostat	22	CEN.PK113-7D	anaerobic	glucose	0.0006	0.0001	50	2	GSE22574	NA	figure_only	below_detection	no	the only published POINT mu at near-zero growth; its own contents are figure-only
+chemostat_D003	anaerobic glucose-limited chemostat	NA	CEN.PK113-7D	anaerobic	glucose	0.03	NA	25	3	GSE11452	E-MTAB-78	figure_only	not_measured	no	previously published series, combined into Fig 6b and 6c
+chemostat_D005	anaerobic glucose-limited chemostat	NA	CEN.PK113-7D	anaerobic	glucose	0.05	NA	25	2	GSE11452	E-MTAB-78	figure_only	not_measured	no	previously published series, combined into Fig 6b and 6c
+chemostat_D01	anaerobic glucose-limited chemostat	NA	CEN.PK113-7D	anaerobic	glucose	0.1	NA	25	3	GSE11452	E-MTAB-78	figure_only	not_measured	no	previously published series, combined into Fig 6b and 6c
+chemostat_D02	anaerobic glucose-limited chemostat	NA	CEN.PK113-7D	anaerobic	glucose	0.2	NA	25	3	GSE11452	E-MTAB-78	figure_only	not_measured	no	previously published series, combined into Fig 6b and 6c

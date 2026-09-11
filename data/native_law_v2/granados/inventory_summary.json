@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "response_values_or_statistics": false,
+  "assets": [
+    {
+      "asset_id": "1b38366b-7473-4ddf-9cf9-26e625533686",
+      "name": "fig1_sfp1_replicates.json",
+      "group_count": 6,
+      "group_paths": [
+        "/rep1",
+        "/rep2",
+        "/rep3",
+        "/rep4",
+        "/rep5",
+        "/rep6"
+      ],
+      "channel_field_variants": [
+        "{\"GFP\": [\"imBackground\", \"max5\", \"median\", \"nucLoc\"], \"cy5\": [\"imBackground\"], \"general\": [\"origin\", \"times\"]}"
+      ]
+    },
+    {
+      "asset_id": "32cf23e6-ff7c-4b41-8304-f60afca3f4a6",
+      "name": "fig2_stress_type_expts.json",
+      "group_count": 30,
+      "group_paths": [
+        "/dot6/gluc",
+        "/dot6/nacl",
+        "/dot6/oxid",
+        "/hog1/gluc",
+        "/hog1/nacl",
+        "/hog1/oxid",
+        "/maf1/gluc",
+        "/maf1/nacl",
+        "/maf1/oxid",
+        "/mig1/gluc",
+        "/mig1/nacl",
+        "/mig1/oxid",
+        "/mig2/gluc",
+        "/mig2/nacl",
+        "/mig2/oxid",
+        "/msn2/gluc",
+        "/msn2/nacl",
+        "/msn2/oxid",
+        "/msn4/gluc",
+        "/msn4/nacl",
+        "/msn4/oxid",
+        "/sfp1/gluc",
+        "/sfp1/nacl",
+        "/sfp1/oxid",
+        "/tod6/gluc",
+        "/tod6/nacl",
+        "/tod6/oxid",
+        "/yap1/gluc",
+        "/yap1/nacl",
+        "/yap1/oxid"
+      ],
+      "channel_field_variants": [
+        "{\"GFP\": [\"imBackground\", \"max5\", \"median\", \"nucLoc\"], \"cy5\": [\"imBackground\"], \"general\": [\"origin\", \"times\"]}"
+      ]
+    },
+    {
+      "asset_id": "721ef5f2-b858-4257-8cc8-5eea9a8599bb",
+      "name": "fig2_stress_type_replicates.json",
+      "group_count": 60,
+      "group_paths": [
+        "/dot6/gluc/rep1",
+        "/dot6/gluc/rep2",
+        "/dot6/nacl/rep1",
+        "/dot6/nacl/rep2",
+        "/dot6/oxid/rep1",
+        "/dot6/oxid/rep2",
+        "/hog1/gluc/rep1",
+        "/hog1/gluc/rep2",
+        "/hog1/nacl/rep1",
+        "/hog1/nacl/rep2",
+        "/hog1/oxid/rep1",
+        "/hog1/oxid/rep2",
+        "/maf1/gluc/rep1",
+        "/maf1/gluc/rep2",
+        "/maf1/nacl/rep1",
+        "/maf1/nacl/rep2",
+        "/maf1/oxid/rep1",
+        "/maf1/oxid/rep2",
+        "/mig1/gluc/rep1",
+        "/mig1/gluc/rep2",
+        "/mig1/nacl/rep1",
+        "/mig1/nacl/rep2",
+        "/mig1/oxid/rep1",
+        "/mig1/oxid/rep2",
+        "/mig2/gluc/rep1",
+        "/mig2/gluc/rep2",
+        "/mig2/nacl/rep1",
+        "/mig2/nacl/rep2",
+        "/mig2/oxid/rep1",
+        "/mig2/oxid/rep2",
+        "/msn2/gluc/rep1",
+        "/msn2/gluc/rep2",
+        "/msn2/nacl/rep1",
+        "/msn2/nacl/rep2",
+        "/msn2/oxid/rep1",
+        "/msn2/oxid/rep2",
+        "/msn4/gluc/rep1",
+        "/msn4/gluc/rep2",
+        "/msn4/nacl/rep1",
+        "/msn4/nacl/rep2",
+        "/msn4/oxid/rep1",
+        "/msn4/oxid/rep2",
+        "/sfp1/gluc/rep1",
+        "/sfp1/gluc/rep2",
+        "/sfp1/nacl/rep1",
+        "/sfp1/nacl/rep2",
+        "/sfp1/oxid/rep1",
+        "/sfp1/oxid/rep2",
+        "/tod6/gluc/rep1",
+        "/tod6/gluc/rep2",
+        "/tod6/nacl/rep1",
+        "/tod6/nacl/rep2",
+        "/tod6/oxid/rep1",
+        "/tod6/oxid/rep2",
+        "/yap1/gluc/rep1",
+        "/yap1/gluc/rep2",
+        "/yap1/nacl/rep1",
+        "/yap1/nacl/rep2",
+        "/yap1/oxid/rep1",
+        "/yap1/oxid/rep2"
+      ],
+      "channel_field_variants": [
+        "{\"GFP\": [\"nucLocNorm\", \"origin\"]}"
+      ]
+    },
+    {
+      "asset_id": "5b7ea616-fdd5-4978-951e-8cfc3f722eb1",
+      "name": "fig3_stress_level_expts.json",
+      "group_count": 60,
+      "group_paths": [
+        "/gluc/dot6/gluc_0_1",
+        "/gluc/dot6/gluc_0_2",
+        "/gluc/dot6/gluc_0_4",
+        "/gluc/dot6/gluc_0_8",
+        "/gluc/maf1/gluc_0_1",
+        "/gluc/maf1/gluc_0_2",
+        "/gluc/maf1/gluc_0_4",
+        "/gluc/maf1/gluc_0_8",
+        "/gluc/mig1/gluc_0_1",
+        "/gluc/mig1/gluc_0_2",
+        "/gluc/mig1/gluc_0_4",
+        "/gluc/mig1/gluc_0_8",
+        "/gluc/msn2/gluc_0_1",
+        "/gluc/msn2/gluc_0_2",
+        "/gluc/msn2/gluc_0_4",
+        "/gluc/msn2/gluc_0_8",
+        "/gluc/sfp1/gluc_0_1",
+        "/gluc/sfp1/gluc_0_2",
+        "/gluc/sfp1/gluc_0_4",
+        "/gluc/sfp1/gluc_0_8",
+        "/nacl/dot6/nacl_0_1M",
+        "/nacl/dot6/nacl_0_2M",
+        "/nacl/dot6/nacl_0_3M",
+        "/nacl/dot6/nacl_0_4M",
+        "/nacl/hog1/nacl_0_1M",
+        "/nacl/hog1/nacl_0_2M",
+        "/nacl/hog1/nacl_0_3M",
+        "/nacl/hog1/nacl_0_4M",
+        "/nacl/maf1/nacl_0_1M",
+        "/nacl/maf1/nacl_0_2M",
+        "/nacl/maf1/nacl_0_3M",
+        "/nacl/maf1/nacl_0_4M",
+        "/nacl/msn2/nacl_0_1M",
+        "/nacl/msn2/nacl_0_2M",
+        "/nacl/msn2/nacl_0_3M",
+        "/nacl/msn2/nacl_0_4M",
+        "/nacl/sfp1/nacl_0_1M",
+        "/nacl/sfp1/nacl_0_2M",
+        "/nacl/sfp1/nacl_0_3M",
+        "/nacl/sfp1/nacl_0_4M",
+        "/oxid/dot6/oxid_0_22mM",
+        "/oxid/dot6/oxid_0_28mM",
+        "/oxid/dot6/oxid_0_36mM",
+        "/oxid/dot6/oxid_0_50mM",
+        "/oxid/maf1/oxid_0_22mM",
+        "/oxid/maf1/oxid_0_28mM",
+        "/oxid/maf1/oxid_0_36mM",
+        "/oxid/maf1/oxid_0_50mM",
+        "/oxid/msn2/oxid_0_22mM",
+        "/oxid/msn2/oxid_0_28mM",
+        "/oxid/msn2/oxid_0_36mM",
+        "/oxid/msn2/oxid_0_50mM",
+        "/oxid/sfp1/oxid_0_22mM",
+        "/oxid/sfp1/oxid_0_28mM",
+        "/oxid/sfp1/oxid_0_36mM",
+        "/oxid/sfp1/oxid_0_50mM",
+        "/oxid/yap1/oxid_0_22mM",
+        "/oxid/yap1/oxid_0_28mM",
+        "/oxid/yap1/oxid_0_36mM",
+        "/oxid/yap1/oxid_0_50mM"
+      ],
+      "channel_field_variants": [
+        "{\"GFP\": [\"imBackground\", \"max5\", \"median\", \"nucLoc\"], \"cy5\": [\"imBackground\"], \"general\": [\"origin\", \"times\"]}"
+      ]
+    },
+    {
+      "asset_id": "0dcc11fc-dcd1-4983-930e-26265b48a0e9",
+      "name": "figS1_nuclear_marker_expts.json",
+      "group_count": 5,
+      "group_paths": [
+        "/dot6",
+        "/maf1",
+        "/mig1",
+        "/sfp1",
+        "/tod6"
+      ],
+      "channel_field_variants": [
+        "{\"GFP\": [\"cytInnerMedian\", \"imBackground\", \"max5\", \"median\", \"nucCytRatio\", \"nucInnerMedian\", \"nucLoc\", \"origin\", \"times\"]}"
+      ]
+    },
+    {
+      "asset_id": "f0ff4386-a4a5-40a4-b501-42b3e222e698",
+      "name": "figS7_rich_to_rich_expts.json",
+      "group_count": 10,
+      "group_paths": [
+        "/dot6",
+        "/hog1",
+        "/maf1",
+        "/mig1",
+        "/mig2",
+        "/msn2",
+        "/msn4",
+        "/sfp1",
+        "/tod6",
+        "/yap1"
+      ],
+      "channel_field_variants": [
+        "{\"GFP\": [\"imBackground\", \"max5\", \"median\", \"nucLoc\"], \"cy5\": [\"imBackground\"], \"general\": [\"origin\", \"times\"]}"
+      ]
+    },
+    {
+      "asset_id": "5546d389-8424-40f3-8620-6be68ca9b16d",
+      "name": "figS19_two_colour_expts.json",
+      "group_count": 8,
+      "group_paths": [
+        "/dot6_msn2/gluc",
+        "/dot6_msn2/nacl",
+        "/hog1_msn2/gluc",
+        "/hog1_msn2/nacl",
+        "/mig1_msn2/gluc",
+        "/mig1_msn2/nacl",
+        "/yap1_msn2/gluc",
+        "/yap1_msn2/nacl"
+      ],
+      "channel_field_variants": [
+        "{\"GFP\": [\"imBackground\", \"max5\", \"median\", \"nucLoc\"], \"general\": [\"origin\", \"times\"], \"mCherry\": [\"imBackground\", \"max5\", \"median\", \"nucLoc\"]}"
+      ]
+    }
+  ],
+  "paired_channel_shape_checks": [
+    {
+      "group_id": "5546d389-8424-40f3-8620-6be68ca9b16d:/dot6_msn2/gluc",
+      "gfp_mcherry_general_time_shapes_equal": true
+    },
+    {
+      "group_id": "5546d389-8424-40f3-8620-6be68ca9b16d:/dot6_msn2/nacl",
+      "gfp_mcherry_general_time_shapes_equal": true
+    },
+    {
+      "group_id": "5546d389-8424-40f3-8620-6be68ca9b16d:/hog1_msn2/gluc",
+      "gfp_mcherry_general_time_shapes_equal": true
+    },
+    {
+      "group_id": "5546d389-8424-40f3-8620-6be68ca9b16d:/hog1_msn2/nacl",
+      "gfp_mcherry_general_time_shapes_equal": true
+    },
+    {
+      "group_id": "5546d389-8424-40f3-8620-6be68ca9b16d:/mig1_msn2/gluc",
+      "gfp_mcherry_general_time_shapes_equal": true
+    },
+    {
+      "group_id": "5546d389-8424-40f3-8620-6be68ca9b16d:/mig1_msn2/nacl",
+      "gfp_mcherry_general_time_shapes_equal": true
+    },
+    {
+      "group_id": "5546d389-8424-40f3-8620-6be68ca9b16d:/yap1_msn2/gluc",
+      "gfp_mcherry_general_time_shapes_equal": true
+    },
+    {
+      "group_id": "5546d389-8424-40f3-8620-6be68ca9b16d:/yap1_msn2/nacl",
+      "gfp_mcherry_general_time_shapes_equal": true
+    }
+  ]
+}

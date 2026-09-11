@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "document_type": "independent_development_adversarial_review_not_authorization",
+  "status": "review_complete_remaining_prediction_regressions_and_live_handoff_blocker",
+  "ownership": [
+    "tests/test_native_population_adversarial.py",
+    "data/native_law_v2/development_adversarial_review.json"
+  ],
+  "previous_fix_verification": {
+    "finding": "ADV-002",
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m pytest -q -p no:cacheprovider tests/test_native_law_adversarial.py",
+    "passed": 13,
+    "failed": 0,
+    "old_tests_changed": false,
+    "old_review_change": "Fix-verification update only before interruption. That completed work and research were not repeated on resume."
+  },
+  "scope": {
+    "development_protocol": "data/native_law_v2/development_protocol.json",
+    "protocol_id": "granados-sfp1-published-cohort-development-01",
+    "new_development_responses_opened": false,
+    "parent_development_response_release_received": false,
+    "reserved_raw_data_opened": false,
+    "real_training_or_conditioning_projection_values_opened": false,
+    "implementation_protocol_dependency_or_source_data_edits": false,
+    "only_owned_test_and_review_modified_on_resume": true,
+    "strong_claim_authorized": false,
+    "synthetic_fixture_policy": "All numeric probes are engineering fixtures exercising real aggregation, optimization, prediction, serialization, reporting, exporter-payload and runner interfaces. Fixed source IDs in fixtures exercise the registered schema, not primary-data authenticity. No fitting/scoring function is mocked. Read/index guards verify forbidden accesses. One failure-retention fixture explicitly supplies a failed-family attempt log after an actual fit; it does not claim a spontaneous optimizer failure."
+  },
+  "findings": [
+    {
+      "id": "POP-001",
+      "priority": "high",
+      "classification": "protocol_bound_prediction_checkpoint_validation_gap",
+      "status": "remaining_red_two_cases",
+      "implementation": {"path": "src/ystwin/analysis/native_population_development.py", "symbol": "predict_development", "lines": [480, 503]},
+      "contract": {"path": "data/native_law_v2/development_protocol.json", "lines": [133, 153]},
+      "test": "tests/test_native_population_adversarial.py::test_registered_prediction_seam_refuses_out_of_domain_checkpoint_parameters",
+      "test_lines": [197, 218],
+      "observed": "After a valid actual six-family fit, first_order_response.tau=0.25 (registered minimum 2.5) and training_constant.c=77 (registered maximum 70 when H_train=7) each yield 48 successful prediction rows instead of refusal/failure rows.",
+      "root_fix_request": "Validate canonical parameter sets and training-derived domains at the protocol-bound prediction boundary. Preserve explicit failed-family rows or refuse the inconsistent checkpoint. Do not place fixed-minute optimizer bounds in generic evaluate_mean, which supports explicit unit conversion. Keep the independent assertions unchanged.",
+      "qualification": "The subsequent validate_freeze function does check attempt bounds and prediction equality against the selected attempt. The reproduced fault is the public prediction seam, not a demonstrated successful full-custody authorization bypass."
+    },
+    {
+      "id": "POP-003",
+      "priority": "medium",
+      "classification": "valid_fit_canonical_json_roundtrip_failure",
+      "status": "remaining_red_one_case",
+      "implementation": [
+        {"path": "src/ystwin/analysis/native_population_development.py", "symbol": "canonical_bytes", "lines": [77, 78]},
+        {"path": "src/ystwin/analysis/native_population_development.py", "symbol": "predict_development", "lines": [480, 484]}
+      ],
+      "test": "tests/test_native_population_adversarial.py::test_registered_family_predictions_survive_the_modules_own_canonical_json",
+      "test_lines": [498, 508],
+      "observed": "A valid fit predicts successfully, but strict_json(canonical_bytes(fitted)) alphabetizes its object keys and prediction raises 'all six canonical families must remain present'. All six families and all numeric values are unchanged.",
+      "root_fix_request": "Validate the exact family set, still rejecting missing families and extra aliases, and iterate in protocol order. Object-key insertion order is not an invariant of JSON checkpoints."
+    },
+    {
+      "id": "POP-002",
+      "priority": "high",
+      "classification": "preapproval_measurement_read_through_metadata_argument",
+      "status": "fixed_by_executor_and_unchanged_read_guards_retested",
+      "test": "tests/test_native_population_adversarial.py::test_runner_cannot_read_a_mixed_source_as_allowlist_even_if_named_train",
+      "test_lines": [401, 432],
+      "initial_reproduction": "The actual fit CLI attempted to read a synthetic mixed measurement file named fig1_train_mixed.json in the projection namespace through --allowlist before obtaining custody approval. The read guard stopped the attempt. The sealed/raw_mixed variant already refused correctly.",
+      "current_implementation": {"path": "src/ystwin/analysis/native_population_development.py", "symbol": "_artifact_path_policy and scoped_protocol", "lines": [604, 621]},
+      "resolution": "The executor now checks role-aware metadata/projection path separation before opening bytes. Both original namespace cases pass without weakening the read guard. No implementation was edited by this reviewer.",
+      "privacy_qualification": "Only temporary synthetic data was involved. No real reserved response was accessed and no biological authorization was obtained."
+    }
+  ],
+  "live_integration_blocker": {
+    "id": "POP-004",
+    "priority": "high",
+    "classification": "producer_consumer_operational_contract_mismatch_not_source_coverage_failure",
+    "status": "reproduced_live_metadata_only_cli_refusal",
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/run_native_population_development.py status --allowlist data/native_law_v2/granados/development/release_manifest.json",
+    "exit_code": 2,
+    "ready": false,
+    "measurement_arrays_opened": false,
+    "reason": "unsupported custodian allowlist contract",
+    "producer": {"path": "data/native_law_v2/granados/development/release_manifest.json", "lines": [2, 32]},
+    "consumer": {"path": "src/ystwin/analysis/native_population_development.py", "symbol": "admission_contract and _admission", "lines": [835, 876]},
+    "details": "The actual custodian publishes approved_development_phase_b_data_allowlist_not_biological_authorization with release_request/custody_decision/learner_allowlist/frozen_executor_artifacts. The runner expects population_development_projection_allowlist with request/approval/artifacts/configuration/source_replay and other exact fields. Their executor-configuration conventions also differ. The current live handoff is therefore unusable even though this is not a missing-coverage verdict.",
+    "root_fix_request": "Agree on one operational envelope or implement an explicit validated adapter for the actual custodian output, preserving request/approval, blocker-resolution event, scalar-source bindings, exact projection paths/phases, and the byte-frozen executor/configuration. Do not waive the blocker or manufacture authorization flags. Have the parent/custodian issue any necessary corrected operational record; do not change scientific windows or criteria.",
+    "testing_limit": "This is a reproduced CLI integration refusal, separate from the three red pytest cases. The reviewer did not open either real phase-B projection or attempt real fitting to work around it."
+  },
+  "runtime_results": {
+    "owned_tests": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m pytest -q -p no:cacheprovider tests/test_native_population_adversarial.py",
+      "cases": 17,
+      "passed": 14,
+      "failed": 3,
+      "skipped": 0,
+      "exit_code": 1,
+      "remaining_finding_ids": ["POP-001", "POP-003"],
+      "assertions_weakened_or_xfailed": false
+    },
+    "executor_population_regressions": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m pytest -q -p no:cacheprovider tests/test_native_population_development.py",
+      "standalone_snapshot_passed": 32,
+      "latest_combined_run_passed": 33,
+      "failed": 0,
+      "qualification": "An additional executor test landed in parallel; all 33 executor cases passed in the final combined run."
+    },
+    "final_combined_run": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m pytest -q -p no:cacheprovider tests/test_native_population_adversarial.py tests/test_native_population_development.py",
+      "passed": 47,
+      "failed": 3,
+      "runtime_seconds": 15.75,
+      "exit_code": 1
+    },
+    "lint": {"command": "python3 -m ruff check --no-cache tests/test_native_population_adversarial.py", "result": "passed"},
+    "initial_resume_snapshot": {"saved_tests_run_without_changes": true, "passed": 7, "failed": 2, "runtime_seconds": 1.38},
+    "no_original_research_reinitialized": true
+  },
+  "passing_engineering_coverage": [
+    {
+      "test": "test_population_estimand_keeps_prefix_cohort_and_invalid_response_times",
+      "proof": "Mean of individual ratios, mu=4.95 and mean per-frame sample SD sqrt(20/3); prefix cohort unchanged after future intensity loss; measured coordinate includes invalid-response cells' valid times; exact frames 50..73; missing and invalid counts retained; no zero imputation."
+    },
+    {
+      "test": "test_source_field_ancestry_and_exact_frame_windows_are_not_column_masks",
+      "proof": "Rejects intensity pointers masquerading as time/median and source-consistent pointers to unregistered frames 49 or 74. Refusal is not merely a stale-pointer accident."
+    },
+    {
+      "test": "test_real_training_fit_weights_cultures_not_cells_and_ignores_development_conditioning",
+      "proof": "Unequal culture cell counts still yield fitted constant c=10/3 and training MSE=62/9. H_train=7 and S_train=6 use training only. Changing allowed development prefix inputs changes conditional predictions but not fitted parameters, bounds/start selection or normalizers."
+    },
+    {
+      "test": "test_six_actual_families_allow_simple_truth_and_apply_the_registered_link",
+      "proof": "Exactly six canonical families; a simple persistence winner is legitimate; zero S_train does not invent epsilon scaling; the predeclared max(0,raw) map precedes scoring and does not clip to one; missing/extra alias families are rejected."
+    },
+    {
+      "test": "test_custodian_and_population_operators_agree_and_source_failure_is_not_a_schema_error",
+      "proof": "Actual custodian and learner operators agree on synthetic source matrices. Index guards exclude unregistered frames. Correctly shaped data with only one eligible prefix cell produces prefix_cohort_unusable, not a schema/adapter error. No raw-source loading function is called."
+    },
+    {
+      "test": "test_sealed_population_report_uses_frame_mse_not_mae_or_survivor_cell_weights",
+      "proof": "All six selected checkpoints and 288 predictions are serialized before synthetic outcomes are constructed. An outlier frame with one surviving cell retains its full frame weight: persistence MSE=0.23 beats constant MSE=0.24 despite constant MAE=0.1. A missing target leaves all 12 group-by-model evaluations and 24 frames per evaluation, and no winner."
+    },
+    {
+      "test": "test_failed_family_remains_in_the_real_sealed_comparison",
+      "proof": "A recorded failed family keeps all eight attempts and 48 failed prediction slots. Report status is incomplete_model_execution and winner is null; omission of that family is refused."
+    },
+    {
+      "test": "test_real_custodial_projection_adapter_keeps_unreleased_responses_out_of_fitting",
+      "proof": "Actual exporter payload generation/scalar replay and actual learner preparation/fitting accept complete synthetic registered projections. Development intensity index guards permit prefix columns only. Poisoning every unreleased development response intensity leaves the exported conditioning payload, H_train/S_train, all fitted parameters/starts and all predictions unchanged. This is an engineering check, not an operational approval or primary source verification."
+    },
+    {
+      "test": "test_development_success_flags_cannot_authorize_the_original_strong_gate",
+      "proof": "Forged development ready/passed/strong_claim_authorized flags are refused by the actual original strong gate without evidence-file creation."
+    }
+  ],
+  "custody_state_review": {
+    "initial_blocker": {"path": "data/native_law_v2/granados/development/operational_blocker.json", "lines": [4, 6]},
+    "initial_classification": "Administrative export-root mismatch plus absent typed executor/request freeze, not a demonstrated source-coverage failure.",
+    "later_public_metadata": [
+      {"path": "data/native_law_v2/granados/development/phase_b/approval_event.json", "lines": [5, 11]},
+      {"path": "data/native_law_v2/granados/development/release_manifest.json", "lines": [75, 87]},
+      {"path": "data/native_law_v2/granados/development/custody_handoff.json", "lines": [50, 57]}
+    ],
+    "later_state": "The custodian records a phase-B approval event referring to the original blocker and publishes only training and development-conditioning projections. Development responses remain unreleased. The original blocker file was preserved, not edited or bypassed by this reviewer. The live consumer still refuses the handoff as POP-004.",
+    "coverage_qualification": "The custodian reports source prefix/timing/response-availability checks pass. No real intensity array was opened by this reviewer to independently confirm that report.",
+    "full_live_fit_or_development_scoring_performed": false
+  },
+  "scientific_limitations": [
+    "This remains a retrospective conditional mapping on the published selected/processed cohort. Its historical processing or row selection may have used future observations; new prefix-safe code does not repair that ancestry.",
+    "Observed-subcohort means under attrition are not imputed means of an initial whole culture. Within-frame cell SD is descriptive and cells are not independent biological replicates.",
+    "Three train and two development cultures under one reported downshift do not establish causal glucose effects, dose generalization, intrinsic kinetic parameters or a universal biological law.",
+    "Original strong protocols/gates were not modified and remain scientifically blocked. No development metadata, synthetic fixture, successful optimizer or good development score grants a biological ready label.",
+    "No reserved raw data or real development responses were accessed; no external chronology, encryption, OS-level separation or production authority was invented."
+  ],
+  "parent_actions": [
+    "Fix and rerun POP-001 and POP-003 without weakening their independent assertions.",
+    "Preserve POP-002's role-aware path checks and both original read-guard cases.",
+    "Resolve the actual custodian/runner envelope and frozen-executor handoff (POP-004) without weakening custody/source/phase checks or reclassifying it as poor biological coverage.",
+    "Do not release development responses before all six family checkpoints, all attempts and all 288 predictions are bound to the approved execution and independently checked.",
+    "Retain every failure, null frame, source limitation and previous exposure; report development diagnostics only, never original strong-claim readiness."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "document_type": "development_custody_decision_not_external_attestation",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "request_sha256": "3bc3f5d0441288a13c67bc3a17380002ed09916340f78102a5d39fb16c782caf",
+  "decision": "approve_development_exports",
+  "custodian_identity": "Granados observation/data custodian subagent in this Devin session, distinct from the model fitting/selection agent; no external attestation claimed.",
+  "operational_event_reference": "data/native_law_v2/granados/development/executor_refresh_01/refresh_event.json#granados-executor-refresh-01",
+  "reviewed_source_asset_id": "1b38366b-7473-4ddf-9cf9-26e625533686",
+  "reviewed_source_sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+  "permitted_group_ids": [
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep1",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"
+  ],
+  "conditions": [
+    "This new decision admits the exact POP001/POP003/POP004 executor/request/configuration refresh for reuse of the already approved phase-B data. It is after data export and before the first native fit, not a backdated pre-value decision.",
+    "All bound current source, runner, independent-test, snapshot, exporter, configuration and protocol artifacts must retain the freshly verified SHA256 values. The historical executor artifacts and old request/approval remain unchanged records, not asserted equal to the new code.",
+    "Reuse ONLY original training projection fc8000c7720e554756c90e0da79f2d0ae4a7928d5923f0efa1a2ed5823d37c9e and development prefix/timing projection 41ee2a8ce6b09cb664859873fd59fd005e31e6eaa054c3703098c91e3f790613 under original phase-B manifest 3b8c67c79191bf4dec0a1e7e0514b1a145359c30061868bbfdd136f0ee1cd3dd and data approval 87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533. No data regeneration or additional export is authorized.",
+    "Do not change the scientific recipe, groups, raw ratio operator, windows, prefix cohort rule, budget or model-family set. Source-verifier review refresh is separate and is not represented here as completed.",
+    "Development response values remain withheld until all six canonical fits, all attempts and all 288 development predictions are frozen and the matching digests receive a separate custody review. Rep6, aliases and every other unapproved group/field/window remain unexported.",
+    "This is limited retrospective published-processed-cohort development only. No original strong-protocol status, biological ready grade, certified prospective forecast or external authority is granted."
+  ],
+  "limitations": [
+    "This is a retrospective conditional mapping on the published, selected/processed cohort. The exact original export/filter/inpainting history is unresolved and may have used future observations. Neither the availability of earlier-frame features nor the original cohort is certified causally prefix-only. This limitation is not repaired by prohibiting new leakage in our own preprocessing.",
+    "All released groups have the same documented downshift. This experiment cannot identify a glucose dose-response or distinguish its biological effect from elapsed stimulus-relative time and unknown acquisition/batch history. Do not infer missing absolute clocks.",
+    "Normalized rep2 and other incompletely mapped cross-file entries are nonexported, not certified independent of these development groups. Retain unresolved alias/preparation/batch relations. If a later crosswalk identifies an alias of a released experiment, mark its biological component exposed to development rather than relabelling it unseen.",
+    "No external registry/HMAC infrastructure is provisioned by this document. Preserve the existing strong verifier and all its controls. A separate accountable custodian may approve this limited, non-authorizing development release using source replay, exact allowlists and retained operational records. Do not fabricate production keys/signatures or claim encryption, OS isolation, immutable external chronology or adversarial security."
+  ],
+  "strong_claim_authorized": false
+}

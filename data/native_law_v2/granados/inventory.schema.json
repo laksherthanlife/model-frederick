@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Granados metadata-only inventory: response values are not representable",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "inspection", "physical_dose_values_inferred_from_names", "groups"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "inspection": {"type": "string"},
+    "physical_dose_values_inferred_from_names": {"const": false},
+    "groups": {"type": "array", "items": {"$ref": "#/$defs/group"}}
+  },
+  "$defs": {
+    "group": {
+      "type": "object", "additionalProperties": false,
+      "required": ["group_id", "asset_id", "json_pointer", "metadata", "channels", "biological_unit"],
+      "properties": {
+        "group_id": {"type": "string"},
+        "asset_id": {"type": "string", "format": "uuid"},
+        "json_pointer": {"type": "string", "pattern": "^/"},
+        "metadata": {
+          "type": "object", "additionalProperties": false,
+          "required": ["factor_id", "stress_id", "replicate_id", "condition_id"],
+          "properties": {
+            "factor_id": {"enum": ["dot6", "hog1", "maf1", "mig1", "mig2", "msn2", "msn4", "sfp1", "tod6", "yap1", "dot6_msn2", "hog1_msn2", "mig1_msn2", "yap1_msn2"]},
+            "stress_id": {"enum": ["gluc", "nacl", "oxid", "rich_to_rich"]},
+            "replicate_id": {"type": ["string", "null"]},
+            "condition_id": {"type": ["string", "null"]}
+          }
+        },
+        "channels": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "GFP": {"$ref": "#/$defs/channel"},
+            "general": {"$ref": "#/$defs/channel"},
+            "cy5": {"$ref": "#/$defs/channel"},
+            "mCherry": {"$ref": "#/$defs/channel"}
+          }
+        },
+        "biological_unit": {"type": "string"}
+      }
+    },
+    "channel": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fields", "time_metadata"],
+      "properties": {
+        "fields": {
+          "type": "object",
+          "propertyNames": {"enum": ["imBackground", "median", "max5", "nucLoc", "nucLocNorm", "origin", "times", "cytInnerMedian", "nucInnerMedian", "nucCytRatio"]},
+          "additionalProperties": {"$ref": "#/$defs/shape"}
+        },
+        "time_metadata": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "origin": {"$ref": "#/$defs/timeMetadata"},
+            "times": {"$ref": "#/$defs/timeMetadata"}
+          }
+        }
+      }
+    },
+    "shape": {
+      "oneOf": [
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "outer_length"],
+          "properties": {
+            "kind": {"const": "array"},
+            "outer_length": {"type": "integer", "minimum": 0},
+            "row_lengths": {"type": "array", "uniqueItems": true, "items": {"type": "integer", "minimum": 0}},
+            "nested_rows": {"type": "integer", "minimum": 0}
+          }
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "type"],
+          "properties": {"kind": {"const": "scalar"}, "type": {"enum": ["int", "float", "bool", "str"]}}
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind"], "properties": {"kind": {"const": "null"}}
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "keys"],
+          "properties": {"kind": {"const": "object"}, "keys": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}}
+        }
+      ]
+    },
+    "timeMetadata": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shape"],
+      "properties": {
+        "shape": {"$ref": "#/$defs/shape"},
+        "minimum": {"type": "number"}, "maximum": {"type": "number"},
+        "distinct_value_count": {"type": "integer", "minimum": 0},
+        "value": {"type": "number"},
+        "positive_step_minimum": {"type": "number", "exclusiveMinimum": 0},
+        "positive_step_maximum": {"type": "number", "exclusiveMinimum": 0}
+      }
+    }
+  }
+}

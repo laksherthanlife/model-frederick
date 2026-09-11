@@ -1,0 +1,6 @@
+target,loso_skill,typical_fold_error,permutation_rank,permutation_p,entry_gene,validation_scope
+"q  (specific rate, mmol/gDCW/h)",0.7446797787533761,1.221689392106977,1/6,0.16666666666666666,CrtE,exploratory fixed-gene comparison; separate target refit; not nested selection
+yield on glucose (mol/mol),0.5901369993146981,1.4768851139961152,1/6,0.16666666666666666,CrtE,exploratory fixed-gene comparison; separate target refit; not nested selection
+"content (q/mu, mmol/gDCW)",0.4885777992961804,1.6287093615542625,1/6,0.16666666666666666,CrtE,exploratory fixed-gene comparison; separate target refit; not nested selection
+"volumetric rate (q x biomass, mmol/L/h)",0.3234928736582321,2.06353420170559,1/6,0.16666666666666666,CrtE,exploratory fixed-gene comparison; separate target refit; not nested selection
+"titre (content x biomass, mmol/L)",0.20203631212172368,3.0722509957149,1/6,0.16666666666666666,CrtE,exploratory fixed-gene comparison; separate target refit; not nested selection

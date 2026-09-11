@@ -1,0 +1,388 @@
+{
+  "schema_version": 1,
+  "document_type": "non_authorizing_operational_development_protocol",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "status": "declared_before_value_release_pending_independent_custodian_approval",
+  "resolution_path": "data/native_law_v2/protocol_design_resolution.json",
+  "purpose": "Develop an empirical estimator of an experiment-level raw localization-proxy trajectory on specified published, processed Sfp1 cohorts. This is retrospective source-cohort development, not independent biological-law validation or a certified prospective forecast.",
+  "authorization_boundary": {
+    "custodian_approval_required_before_export": true,
+    "this_file_is_an_export_permission": false,
+    "strong_biological_claim_authorization": "not_applicable_never_granted_by_this_protocol",
+    "original_protocol": "data/native_law_v2/protocol.json",
+    "original_claim_domain": "data/native_law_v2/claim_domain.json",
+    "original_protocol_id": "native-law-v2-preregistered-01",
+    "original_protocol_sha256_from_custody": "e901d3985b5577d6f846229e1178062414e3220a7307b6d8ee40b0d01e9dffde",
+    "original_candidates": "Both remain ineligible. Do not amend their criteria, populate their final tests, change their existing custody records, or interpret development output as an old-grade authorization.",
+    "security": "No external registry/HMAC infrastructure is provisioned by this document. Preserve the existing strong verifier and all its controls. A separate accountable custodian may approve this limited, non-authorizing development release using source replay, exact allowlists and retained operational records. Do not fabricate production keys/signatures or claim encryption, OS isolation, immutable external chronology or adversarial security.",
+    "report_limit": "Software completion, a selected simple/complex model or a good development error cannot issue a biological ready label. No final test, alpha spending or scientific pass threshold exists here."
+  },
+  "source": {
+    "dataset_id": "granados2018",
+    "paper_doi": "10.1073/pnas.1716659115",
+    "repository_doi": "10.7488/ds/2214",
+    "asset_id": "1b38366b-7473-4ddf-9cf9-26e625533686",
+    "source_name": "fig1_sfp1_replicates.json",
+    "source_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/1b38366b-7473-4ddf-9cf9-26e625533686/content",
+    "source_sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+    "source_bytes": 4178902,
+    "custodian_only_path": "data/native_law_v2/granados/sealed/raw_mixed/fig1_sfp1_replicates.json",
+    "license": "CC BY 4.0 as verified in repository metadata; retain attribution and source locators in exports/reports",
+    "metadata_basis": [
+      "data/native_law_v2/granados/acquisition.json",
+      "data/native_law_v2/granados/schema_inventory.json",
+      "data/native_law_v2/granados/condition_metadata.json",
+      "data/native_law_v2/granados/metadata_supplement.json"
+    ],
+    "field_allowlist": ["GFP/max5", "GFP/median", "general/times", "general/origin"],
+    "excluded_fields": ["GFP/nucLocNorm", "GFP/nucLoc", "GFP/imBackground", "cy5/imBackground", "mCherry", "nucInnerMedian", "cytInnerMedian", "nucCytRatio"],
+    "field_policy": "Derive the observable directly as max5/median from the two declared deposited intensity measurements. The supplied nucLoc column is not an alternate target or fallback. Do not subtract background without an independently specified adapter. Do not load mixed raw files into the learner or discover additional response paths recursively."
+  },
+  "partition": {
+    "basis": "Source-declared six biological replicates on different days. Choose fixed replicate labels before response access; no ranking by values, shapes, fit success or favorable missingness. Use rep1-rep3 for train and rep4-rep5 for development. Keep rep6 unexported because its known aliases would expose additional source entries.",
+    "train": [
+      {"group_id": "1b38366b-7473-4ddf-9cf9-26e625533686:/rep1", "source_pointer": "/rep1", "source_rows": 55},
+      {"group_id": "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2", "source_pointer": "/rep2", "source_rows": 136},
+      {"group_id": "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3", "source_pointer": "/rep3", "source_rows": 202}
+    ],
+    "development": [
+      {"group_id": "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4", "source_pointer": "/rep4", "source_rows": 195},
+      {"group_id": "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5", "source_pointer": "/rep5", "source_rows": 157}
+    ],
+    "source_frame_count": 97,
+    "source_origin_1based": 49,
+    "final_groups": [],
+    "unit": "The entire biological source experiment, including all its cells, times, channels and true aliases, has one partition assignment. Exported windows do not make the unexported remainder of a released experiment an independent holdout.",
+    "reserved_policy": "Every source group outside the exact five IDs remains unexported, including fig1 rep6, its raw fig2 Sfp1/gluc and normalized-rep1 aliases, all dose/marker/sham/two-colour groups, and normalized-only rep2. The custodian may integrity-read the pinned container but must not evaluate, normalize, summarize or export unapproved response subtrees.",
+    "unknown_overlap": "Normalized rep2 and other incompletely mapped cross-file entries are nonexported, not certified independent of these development groups. Retain unresolved alias/preparation/batch relations. If a later crosswalk identifies an alias of a released experiment, mark its biological component exposed to development rather than relabelling it unseen.",
+    "no_replacement": "If an approved group fails a source or coverage requirement, record that failure. Do not replace it with rep6, another source group, a different cell cohort, an easier time window or a normalized-only file after seeing values."
+  },
+  "context": {
+    "organism": "Saccharomyces cerevisiae",
+    "protein_reporter": "Sfp1 GFP-collection reporter",
+    "strain_scope": "Source-reported BY background; exact collection clone and complete genotype are not established. No marker-free/marker-tagged equivalence is assumed.",
+    "medium": "standard synthetic complete medium as reported",
+    "temperature_celsius": 30.0,
+    "initial_glucose": {"value": 2.0, "unit": "percent_as_reported"},
+    "final_glucose": {"value": 0.1, "unit": "percent_as_reported"},
+    "concentration_qualification": "The source text does not explicitly establish the percent mass/volume convention. Do not convert it to molarity or silently rename it percent w/v.",
+    "time_reference": "Measured switch-relative minutes from the deposited general/times fields. general/origin is a one-based frame index, not minutes, a calendar date or elapsed full-movie time.",
+    "intervention_identifiability": "All released groups have the same documented downshift. This experiment cannot identify a glucose dose-response or distinguish its biological effect from elapsed stimulus-relative time and unknown acquisition/batch history. Do not infer missing absolute clocks."
+  },
+  "estimand": {
+    "quantity": "published_prefix_eligible_observed_cell_mean_of_max5_over_median",
+    "unit": "dimensionless_ratio",
+    "individual_measurement": "R_eij = X_eij/M_eij, where X is the deposited GFP/max5 and M is the deposited GFP/median for the same experiment, source row and frame. This is an image-derived measurement proxy, not a teacher label, phosphorylation fraction, nuclear molecule fraction, enzyme activity or metabolic flux.",
+    "cohort": "Start from all rows retained in the published raw-intensity export. Define C_e using only the fixed prefix rule below. Do not select rows by post-stimulus amplitude, peak, response sign, persistence, fit error or future completeness.",
+    "target": "For each registered response frame j, Y_ej is the arithmetic mean of the valid R_eij over i in C_e at that frame. It is a mean of individual ratios, not the ratio of mean intensities. Missing/invalid observations remain recorded. If fewer than all C_e cells are observed, this is the observed-subcohort mean at that frame, not an imputed mean of the full initial cohort or culture.",
+    "prediction": "Estimate the conditional expectation of Y_ej given the supplied as-deposited prefix summary mu_e, the fixed reported context and the measured frame-time coordinate tau_ej. The six mean-function families below use mu_e and/or tau_ej only. No cell ID, group ID, future response, future valid-cell count, source filename or absolute clock is a fitted feature.",
+    "sampling_qualification": "This is a retrospective conditional mapping on the published, selected/processed cohort. The exact original export/filter/inpainting history is unresolved and may have used future observations. Neither the availability of earlier-frame features nor the original cohort is certified causally prefix-only. This limitation is not repaired by prohibiting new leakage in our own preprocessing.",
+    "not_claimed": ["prospective forecast from untouched raw pre-stimulus acquisitions", "the mean response of all native cells or an unselected culture", "individual stochastic trajectories or a calibrated individual-cell distribution", "causal glucose regulation or dose generalization", "independent biological-law validation", "absolute localization/activity/phosphorylation", "novel mechanism or intrinsic kinetic parameters", "accurate lycopene prediction"]
+  },
+  "prefix": {
+    "frame_rule_1based": "B_e = {o-21, o-20, ..., o-2}, inclusive, where o is the source origin index.",
+    "relative_column_start": -21,
+    "relative_column_end": -2,
+    "frame_count": 20,
+    "expected_absolute_columns_1based": [28, 47],
+    "prefix_valid_cell": "A row is in C_e only if every B_e entry has finite nonnegative max5, finite strictly positive median, and finite strictly negative measured relative time. No amplitude/outlier cutoff is applied. This complete-prefix rule uses no response-frame intensity.",
+    "minimum_prefix_cells": 2,
+    "summary_mean": "mu_e = (1/20) sum_{j in B_e} [(1/|C_e|) sum_{i in C_e} R_eij].",
+    "summary_dispersion": "s_e = (1/20) sum_{j in B_e} sqrt(sum_{i in C_e}(R_eij - mean_i R_eij)^2/(|C_e|-1)). This is the mean of per-frame sample SDs, not a pooled cell-time SD.",
+    "use": "mu_e is an observed conditioning input. s_e and |C_e| are descriptive diagnostics, not mean-model features or independent biological replication counts. A finite zero s_e is allowed because no division by s_e is performed.",
+    "normalization": "Identity target in raw ratio units. No baseline Z score, peak normalization, per-response trace centering, affine observation gain fitted on development outcomes, or normalization by a future mean/range is used.",
+    "processing": "Recompute ratios and these summaries from the approved deposited fields. Do not run the author's whole-trace interpolation/inpainting/filtering pipeline. Do not interpolate missing prefix values, borrow from the first stress frame, smooth across the prefix boundary, or select a different 20-frame window after inspecting data.",
+    "source_qualification": "The frame set and summary operators are source-informed, but the complete-prefix missingness rule is an explicitly new development operator, not a reproduction claim for the historical exporter or deposited nucLocNorm."
+  },
+  "response_coordinates": {
+    "frame_rule_1based": "J_e = {o+1, o+2, ..., o+24}; the source's first stress frame o is excluded.",
+    "relative_column_start": 1,
+    "relative_column_end": 24,
+    "frame_count": 24,
+    "expected_absolute_columns_1based": [50, 73],
+    "nominal_window_note": "Approximately 2.5 through 60 minutes at the source nominal cadence; this is an annotation, not a replacement for measured timestamps.",
+    "coordinate": "tau_ej is the arithmetic mean of the finite strictly positive general/times entries for rows in C_e at frame j, computed without consulting that frame's max5, median or response validity. It is supplied as timing metadata before development response access. If none exist, that coordinate is unavailable; do not invent a nominal timestamp.",
+    "valid_observation": "At an existing registered frame and a row in C_e, require finite nonnegative max5, finite strictly positive median and finite strictly positive measured relative time. No response-amplitude threshold, outlier deletion, cross-frame carry, or model-dependent exclusion is allowed.",
+    "retention": "Keep every source row/frame and its original values or nulls in the approved projection, with explicit exclusion/missingness reasons in derived tables. Do not impute nulls as zero. A cell can be absent at one response frame without deleting its other observations or changing the fixed prefix cohort.",
+    "frame_summary": "Report frame index, tau_ej, Y_ej, |C_e|, number valid, number source-missing, number invalid-ratio/time, and sample SD of valid R_eij when at least two are valid. With one valid cell the mean is defined but the dispersion is null and the under-resolved sampling is flagged. With no valid cell Y_ej is null.",
+    "completion": "The planned model ranking requires all 24 coordinates and target means in all three training and both development groups. If any are unavailable, retain the complete inventory and any descriptive partial results, mark the planned comparison incomplete, and do not announce a winner or silently restrict the window."
+  },
+  "scoring_and_selection": {
+    "primary_training_loss": "For complete groups, L_e = (1/24) sum_{j in J_e} (m_e(tau_ej)-Y_ej)^2. Minimize the arithmetic mean of L_e over the three training groups. All frames within a group and all biological groups have equal weight; cell number does not set a group's weight.",
+    "primary_development_loss": "Compute the same L_e separately for rep4 and rep5 and average the two group losses. Report sqrt(mean_e L_e) as overall RMSE in raw ratio units. Also report every group's RMSE and MAE and all frame residuals.",
+    "reason_for_squared_loss": "The target is a conditional expected aggregate trajectory. Squared loss is proper for a conditional expectation. This is a separate development estimand/recipe, not a modification of protocol-01's MAE criterion or permission to silently change an old selector.",
+    "selection_rule": "Only when source coverage and all six canonical families' predictions are complete, select the lowest development mean MSE after choosing starts on training loss only. Scores within 1e-12*(1+abs(best MSE)) are numerical ties; choose fewer fitted parameters, then lexicographic canonical model_id. Otherwise report the available diagnostics with selected_development_model=null; a failed comparator is not removed to create a winner. Report all families, including simple winners and failed fits. No family is required to outperform itself or achieve a positive improvement margin.",
+    "scaled_secondary_diagnostic": "If complete training aggregates exist, compute S_train as the equal-group/equal-frame weighted IQR of the 72 values Y_ej-mu_e. With this complete balanced design use sorted linear-interpolation quantiles at 0.25 and 0.75. It reflects training response variation across frames, not the IQR of three whole-trajectory averages. If S_train>0, optionally report RMSE/S_train and MAE/S_train; if zero, report these as undefined. Never use development values or a post-error epsilon to choose the scale.",
+    "uncertainty_reporting": "Report cell counts/within-frame dispersion and all biological-group errors. Separate finite-cell sampling, within-movie dependence, measurement/calibration error, day/strain effects, attrition and inherited processing-selection bias. Unmeasured components are explicitly unresolved. No calibrated biological confidence interval, SD/sqrt(cell count) claim, cell-as-biological-replicate bootstrap, null-hypothesis p-value, alpha spending or scientific acceptance threshold is authorized.",
+    "failure_policy": "A model that fails fitting or prediction has null predictions/loss where unavailable and a recorded failure reason. Its rows and attempts are retained. A source/group coverage failure prevents the planned complete comparison; it never invites replacement or favorable subset reporting. A failed model may not silently disappear from the report."
+  },
+  "model_recipe": {
+    "scope": "Simple empirical population-mean curves for one documented condition, not a library of validated molecular mechanisms. The canonical family can be simple or constant without being considered a failure of truth.",
+    "common_output_map": "m_e(t) = max(0, unbounded_mean_e(t)); this fixed nonnegative observation-domain map applies before all training and development scoring. Do not impose a [0,1] phosphorylation bound.",
+    "time_unit": "minute",
+    "reference_time_minutes": 60.0,
+    "amplitude_bound_scale": "After the complete training aggregates are available, H_train = max(1, max_e abs(mu_e), max_ej abs(Y_ej)) over training groups only. This is an optimizer-bound scale in raw ratio units, not an uncertainty estimate or scientific quality threshold.",
+    "canonical_families": [
+      {"model_id": "prefix_persistence", "equivalence_class": "prefix_persistence", "parameters": [], "parameter_count": 0, "unbounded_mean": "mu_e", "aliases": ["observed_prefix_constant"]},
+      {"model_id": "training_constant", "equivalence_class": "training_constant", "parameters": ["c"], "parameter_count": 1, "unbounded_mean": "c", "aliases": ["pooled_training_level"]},
+      {"model_id": "prefix_offset", "equivalence_class": "prefix_offset", "parameters": ["a"], "parameter_count": 1, "unbounded_mean": "mu_e+a", "aliases": ["prefix_plus_shared_offset"]},
+      {"model_id": "prefix_affine_time", "equivalence_class": "prefix_affine_time", "parameters": ["a", "b"], "parameter_count": 2, "unbounded_mean": "mu_e+a+b*(t/60)", "aliases": ["linear_relative_time_response"]},
+      {"model_id": "first_order_response", "equivalence_class": "first_order_response", "parameters": ["A", "tau"], "parameter_count": 2, "unbounded_mean": "mu_e+A*(1-exp(-t/tau))", "aliases": ["single_exponential_response", "first_order_relaxation_with_k_equal_inverse_tau"]},
+      {"model_id": "transient_response", "equivalence_class": "transient_response", "parameters": ["A", "tau_off", "tau_on"], "parameter_count": 3, "unbounded_mean": "mu_e+A*(1-exp(-t/tau_on))*exp(-t/tau_off)", "aliases": ["rise_and_adaptation_response"]}
+    ],
+    "parameter_domains": {
+      "c": {"lower": "0", "upper": "10*H_train", "unit": "dimensionless_ratio"},
+      "a": {"lower": "-10*H_train", "upper": "10*H_train", "unit": "dimensionless_ratio"},
+      "b": {"lower": "-10*H_train", "upper": "10*H_train", "unit": "dimensionless_ratio"},
+      "A": {"lower": "-10*H_train", "upper": "10*H_train", "unit": "dimensionless_ratio"},
+      "tau": {"lower": 2.5, "upper": 480.0, "unit": "minute"},
+      "tau_on": {"lower": 2.5, "upper": 480.0, "unit": "minute"},
+      "tau_off": {"lower": 2.5, "upper": 480.0, "unit": "minute"}
+    },
+    "equivalence_policy": "Run exactly one canonical implementation per listed class for model ranking. Alias names are not extra competitors. Algebraically equivalent implementations may be checked numerically against the canonical implementation without new development selections. Nested zero-amplitude/constant members do not make every larger family a new discovery. The first-order comparator and a selected first-order candidate are the same class, not a demand for self-superiority.",
+    "source_prior_policy": "These are registered mathematical response hypotheses, not claimed published Sfp1 kinetic parameters. Do not import the frozen HOG/GEM checkpoint, paper-fitted response curves, synthetic teacher targets, product outcomes, gene-copy proxies or biochemical model-derived flux labels into any fit or normalization.",
+    "budget": {
+      "canonical_families": 6,
+      "maximum_starts_per_parameterized_family": 8,
+      "maximum_parameterized_fit_attempts": 40,
+      "maximum_loss_evaluations_per_start": 2000,
+      "development_comparison_batches": 1,
+      "seeds": [201801, 201802, 201803, 201804, 201805, 201806, 201807, 201808],
+      "initialization": "Start 0 uses zero a/b/A, training mean level for c, and the geometric midpoint of each time-constant domain. Starts 1-7 use the corresponding seeded local PRNG, parameters in declared order, uniform amplitude/level bounds and log-uniform time-constant bounds. An exact closed-form minimizer may replace the corresponding family's numerical starts and counts as one recorded attempt. Freeze implementation, PRNG/version and optimizer settings before the training-value export; if the executor cannot implement this recipe, request a pre-value operational revision rather than choosing a recipe after performance.",
+      "within_family_selection": "Choose the finite minimum training mean MSE only. Training-loss ties at the same numerical tolerance select the lexicographically smallest parameter vector in declared parameter order, then smallest start index. Development outcomes never select an optimizer start or expand a bound.",
+      "further_work": "This protocol defines one initial development comparison, not a final validation. Subsequent exploratory work requires a separately logged development amendment retaining every existing exposure and result; it cannot reopen reserved groups, rewrite this recipe, reuse development as an unseen final set or authorize protocol-01."
+    }
+  },
+  "operational_checks_before_development_response_release": [
+    "Verify exact source digest, group IDs, source row counts, 97-column shape, origin=49, within-group field/time alignment and every exported scalar/null against its source JSON pointer. Local hashes alone do not substitute for source replay.",
+    "Freeze the prefix cohort, mu_e, s_e, measured response-coordinate times, training-only H_train/S_train, every fitted class checkpoint, full attempt log, code/dependency versions and every development prediction before exporting rep4/rep5 response intensities.",
+    "On copies of released training groups only, overwrite response-frame intensities while retaining the prefix and verify that prefix cohort, mu_e and s_e do not change. This tests the new adapter's boundary, not whether the historical export was future-independent.",
+    "On copies of released training groups only, jointly scale max5 and median by two and verify unchanged ratios and aggregate targets. This is observation-scale invariance, not absolute activity calibration or invariance to additive background.",
+    "Test time-unit conversion on frozen mathematical functions: minutes to seconds with matching time constants/reference time must preserve predictions. Equivalent-class aliases, if implemented for checking, must agree to absolute tolerance 1e-10 and relative tolerance 1e-8 on a metadata-defined time grid, without consulting development outcomes.",
+    "Test source binding and partition refusal with synthetic fixtures: tampered source/projection values, null-to-zero substitution, shuffled source rows, cross-group aliases, omitted failed models, development-response dependencies in training, and unexpected source IDs/windows must be rejected. Software tests do not certify biology."
+  ],
+  "release_workflow": [
+    {"phase": "design_review", "action": "Parent and independent custodian review this exact protocol and its limitations while all responses remain reserved. This file does not record their approval."},
+    {"phase": "operational_approval", "action": "Custodian independently records a DevelopmentCustodyDecision for the exact asset, five IDs and phased windows. Record actual operator identity, source checks, protocol/code digests and operational event references without claiming external cryptographic attestation. A refusal or missing approval permits no export."},
+    {"phase": "training_and_conditioning_export", "action": "Custodian exports prefix and response cells for rep1-rep3, prefix cells for rep4-rep5, and response-frame timing metadata only for rep4-rep5. Preserve all approved source rows, nulls and locators. Do not export rep4/rep5 response intensities, other frames or any other group."},
+    {"phase": "train_and_prediction_freeze", "action": "Only after approval/export may the executor perform the registered training-only fits. The independent tester checks source/partition/estimator invariants and completeness. Record every attempt and seal all six classes' rep4/rep5 frame predictions, including explicit failures, before the development-response export."},
+    {"phase": "development_response_export", "action": "Custodian checks the matching complete DevelopmentPredictionFreeze, then exports only response-window max5/median/times for rep4-rep5. The previously frozen prefix cohorts and coordinates are not recomputed using these outcomes."},
+    {"phase": "development_reporting", "action": "Compute all registered group/frame aggregates and all model diagnostics. Keep every failure and limitation. Report development-only completion/incompleteness, never independent-law readiness. No further source group is released by the result."}
+  ],
+  "export_contract": {
+    "root_policy": "Custodian-only raw source stays outside the learner allowlist. Future projection paths must be new regular nonsymlink files under data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/. Only independently approved exact projection paths enter an executor allowlist; no directory-wide glob is a permission.",
+    "indexing": "cell_index is the zero-based row of the pinned source array. frame_1based is the original one-based source column. For an approved group /repN, scalar source pointers must be exactly /repN/GFP/max5/cell_index/(frame_1based-1), /repN/GFP/median/cell_index/(frame_1based-1), and /repN/general/times/cell_index/(frame_1based-1). Preserve original positions; no row renumbering after filtering.",
+    "finiteness": "All JSON must reject duplicate keys and nonfinite numeric tokens. Source nulls remain null. Unexpected nonfinite source values block the export rather than becoming invented finite observations.",
+    "semantic_validation": [
+      "The request and decision must identify this development protocol, not native-law-v2-preregistered-01 or an old claim grade.",
+      "Approved train IDs are exactly rep1-rep3 and approved development IDs exactly rep4-rep5 from the pinned asset. A typed record is not permission unless the independent custodian actually issued the matching operational decision.",
+      "Every source row is represented once for every allowed frame/field in its phase, with exact scalar source equality and null preservation. Record inventory, source row count and source pointers must be replayed against the pinned asset.",
+      "SourceCell records in a prefix window use only columns 28-47; response records use only columns 50-73. Development inputs contain prefix SourceCells and response SourceTimes, never response max5/median disguised as metadata.",
+      "The full biological group retains one partition even though only fixed windows are exported. Record known aliases and unresolved overlap; no sample-size inflation from cells, frames, source copies or channels.",
+      "Every completed prediction batch contains 6 classes times 2 development groups times 24 frames, including explicit null/failure records where fitting or prediction failed. Do not retain just the winning class.",
+      "Source aggregation, mean-function evaluation, complete-comparison eligibility and ranking must be independently recomputed from source-bound approved projections, not inferred from pass flags or caller-recomputed report hashes."
+    ],
+    "schemas": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "oneOf": [
+        {"$ref": "#/$defs/DevelopmentReleaseRequest"},
+        {"$ref": "#/$defs/DevelopmentCustodyDecision"},
+        {"$ref": "#/$defs/Projection"},
+        {"$ref": "#/$defs/DevelopmentPredictionFreeze"},
+        {"$ref": "#/$defs/DevelopmentReport"},
+        {"$ref": "#/$defs/DevelopmentBlocker"}
+      ],
+      "$defs": {
+        "Digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "GroupId": {"enum": ["1b38366b-7473-4ddf-9cf9-26e625533686:/rep1", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"]},
+        "TrainGroupId": {"enum": ["1b38366b-7473-4ddf-9cf9-26e625533686:/rep1", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3"]},
+        "DevelopmentGroupId": {"enum": ["1b38366b-7473-4ddf-9cf9-26e625533686:/rep4", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"]},
+        "ModelId": {"enum": ["prefix_persistence", "training_constant", "prefix_offset", "prefix_affine_time", "first_order_response", "transient_response"]},
+        "ArtifactRef": {
+          "type": "object", "additionalProperties": false,
+          "required": ["path", "sha256", "bytes", "role"],
+          "properties": {
+            "path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/Digest"}, "bytes": {"type": "integer", "minimum": 1},
+            "role": {"enum": ["protocol_snapshot", "operational_approval", "source_binding_audit", "training_projection", "development_inputs", "development_responses", "execution_code", "model_checkpoint", "attempt_log", "development_predictions", "operational_event_log", "development_report"]}
+          }
+        },
+        "DevelopmentReleaseRequest": {
+          "type": "object", "additionalProperties": false,
+          "required": ["document_type", "protocol_id", "protocol_sha256", "source_asset_id", "source_sha256", "train_ids", "development_ids", "exporter_code", "executor_code", "requested_phases", "requester"],
+          "properties": {
+            "document_type": {"const": "development_release_request"}, "protocol_id": {"const": "granados-sfp1-published-cohort-development-01"},
+            "protocol_sha256": {"$ref": "#/$defs/Digest"}, "source_asset_id": {"const": "1b38366b-7473-4ddf-9cf9-26e625533686"},
+            "source_sha256": {"const": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87"},
+            "train_ids": {"const": ["1b38366b-7473-4ddf-9cf9-26e625533686:/rep1", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3"]},
+            "development_ids": {"const": ["1b38366b-7473-4ddf-9cf9-26e625533686:/rep4", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"]},
+            "exporter_code": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/ArtifactRef"}},
+            "executor_code": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/ArtifactRef"}},
+            "requested_phases": {"const": ["training_and_conditioning_export", "development_response_export"]}, "requester": {"type": "string", "minLength": 1}
+          }
+        },
+        "DevelopmentCustodyDecision": {
+          "type": "object", "additionalProperties": false,
+          "required": ["document_type", "protocol_id", "request_sha256", "decision", "custodian_identity", "operational_event_reference", "reviewed_source_asset_id", "reviewed_source_sha256", "permitted_group_ids", "conditions", "limitations", "strong_claim_authorized"],
+          "properties": {
+            "document_type": {"const": "development_custody_decision_not_external_attestation"}, "protocol_id": {"const": "granados-sfp1-published-cohort-development-01"},
+            "request_sha256": {"$ref": "#/$defs/Digest"}, "decision": {"enum": ["approve_development_exports", "refuse_development_exports"]},
+            "custodian_identity": {"type": "string", "minLength": 1}, "operational_event_reference": {"type": "string", "minLength": 1},
+            "reviewed_source_asset_id": {"const": "1b38366b-7473-4ddf-9cf9-26e625533686"},
+            "reviewed_source_sha256": {"const": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87"},
+            "permitted_group_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/GroupId"}},
+            "conditions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+            "limitations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}, "strong_claim_authorized": {"const": false}
+          },
+          "allOf": [{"if": {"properties": {"decision": {"const": "approve_development_exports"}}}, "then": {"properties": {"permitted_group_ids": {"minItems": 5, "maxItems": 5}}}, "else": {"properties": {"permitted_group_ids": {"maxItems": 0}}}}]
+        },
+        "SourceCell": {
+          "type": "object", "additionalProperties": false,
+          "required": ["group_id", "split", "window", "cell_index", "frame_1based", "relative_time_min", "max5", "median", "time_pointer", "max5_pointer", "median_pointer"],
+          "properties": {
+            "group_id": {"$ref": "#/$defs/GroupId"}, "split": {"enum": ["train", "development"]}, "window": {"enum": ["prefix", "response"]},
+            "cell_index": {"type": "integer", "minimum": 0}, "frame_1based": {"type": "integer", "minimum": 1, "maximum": 97},
+            "relative_time_min": {"type": ["number", "null"]}, "max5": {"type": ["number", "null"]}, "median": {"type": ["number", "null"]},
+            "time_pointer": {"type": "string", "pattern": "^/"}, "max5_pointer": {"type": "string", "pattern": "^/"}, "median_pointer": {"type": "string", "pattern": "^/"}
+          },
+          "allOf": [
+            {"if": {"properties": {"window": {"const": "prefix"}}}, "then": {"properties": {"frame_1based": {"minimum": 28, "maximum": 47}}}, "else": {"properties": {"frame_1based": {"minimum": 50, "maximum": 73}}}},
+            {"if": {"properties": {"split": {"const": "train"}}}, "then": {"properties": {"group_id": {"$ref": "#/$defs/TrainGroupId"}}}, "else": {"properties": {"group_id": {"$ref": "#/$defs/DevelopmentGroupId"}}}}
+          ]
+        },
+        "SourceTime": {
+          "type": "object", "additionalProperties": false,
+          "required": ["group_id", "cell_index", "frame_1based", "relative_time_min", "time_pointer"],
+          "properties": {
+            "group_id": {"$ref": "#/$defs/GroupId"}, "cell_index": {"type": "integer", "minimum": 0},
+            "frame_1based": {"type": "integer", "minimum": 50, "maximum": 73}, "relative_time_min": {"type": ["number", "null"]},
+            "time_pointer": {"type": "string", "pattern": "^/"}
+          }
+        },
+        "Projection": {
+          "type": "object", "additionalProperties": false,
+          "required": ["document_type", "protocol_id", "phase", "approval_sha256", "source_asset_id", "source_sha256", "group_ids", "source_cells", "source_times", "source_binding_audit"],
+          "properties": {
+            "document_type": {"const": "source_bound_development_projection"}, "protocol_id": {"const": "granados-sfp1-published-cohort-development-01"},
+            "phase": {"enum": ["training_values", "development_inputs", "development_responses"]}, "approval_sha256": {"$ref": "#/$defs/Digest"},
+            "source_asset_id": {"const": "1b38366b-7473-4ddf-9cf9-26e625533686"}, "source_sha256": {"const": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87"},
+            "group_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/GroupId"}},
+            "source_cells": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/SourceCell"}},
+            "source_times": {"type": "array", "items": {"$ref": "#/$defs/SourceTime"}}, "source_binding_audit": {"$ref": "#/$defs/ArtifactRef"}
+          },
+          "allOf": [
+            {"if": {"properties": {"phase": {"const": "training_values"}}}, "then": {"properties": {
+              "group_ids": {"const": ["1b38366b-7473-4ddf-9cf9-26e625533686:/rep1", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3"]},
+              "source_cells": {"minItems": 17292, "maxItems": 17292, "items": {"properties": {"split": {"const": "train"}, "group_id": {"$ref": "#/$defs/TrainGroupId"}}}}, "source_times": {"maxItems": 0}
+            }}},
+            {"if": {"properties": {"phase": {"const": "development_inputs"}}}, "then": {"properties": {
+              "group_ids": {"const": ["1b38366b-7473-4ddf-9cf9-26e625533686:/rep4", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"]},
+              "source_cells": {"minItems": 7040, "maxItems": 7040, "items": {"properties": {"split": {"const": "development"}, "window": {"const": "prefix"}, "group_id": {"$ref": "#/$defs/DevelopmentGroupId"}}}},
+              "source_times": {"minItems": 8448, "maxItems": 8448, "items": {"properties": {"group_id": {"$ref": "#/$defs/DevelopmentGroupId"}}}}
+            }}},
+            {"if": {"properties": {"phase": {"const": "development_responses"}}}, "then": {"properties": {
+              "group_ids": {"const": ["1b38366b-7473-4ddf-9cf9-26e625533686:/rep4", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"]},
+              "source_cells": {"minItems": 8448, "maxItems": 8448, "items": {"properties": {"split": {"const": "development"}, "window": {"const": "response"}, "group_id": {"$ref": "#/$defs/DevelopmentGroupId"}}}}, "source_times": {"maxItems": 0}
+            }}}
+          ]
+        },
+        "PrefixSummary": {
+          "type": "object", "additionalProperties": false,
+          "required": ["group_id", "origin_1based", "eligible_cell_indices", "mu", "s", "input_projection_sha256", "operator_id"],
+          "properties": {
+            "group_id": {"$ref": "#/$defs/GroupId"}, "origin_1based": {"const": 49},
+            "eligible_cell_indices": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "integer", "minimum": 0}},
+            "mu": {"type": "number", "minimum": 0}, "s": {"type": "number", "minimum": 0},
+            "input_projection_sha256": {"$ref": "#/$defs/Digest"}, "operator_id": {"const": "complete_prefix_raw_ratio_mean_and_mean_frame_sd_o_minus_21_to_o_minus_2"}
+          }
+        },
+        "Attempt": {
+          "type": "object", "additionalProperties": false,
+          "required": ["model_id", "start_index", "seed", "loss_evaluations", "status", "parameters", "training_mean_mse", "checkpoint", "reason"],
+          "properties": {
+            "model_id": {"$ref": "#/$defs/ModelId"}, "start_index": {"type": "integer", "minimum": 0, "maximum": 7},
+            "seed": {"enum": [201801, 201802, 201803, 201804, 201805, 201806, 201807, 201808]},
+            "loss_evaluations": {"type": "integer", "minimum": 0, "maximum": 2000}, "status": {"enum": ["ok", "failed"]},
+            "parameters": {"type": "object", "additionalProperties": {"type": "number"}},
+            "training_mean_mse": {"type": ["number", "null"], "minimum": 0}, "checkpoint": {"oneOf": [{"$ref": "#/$defs/ArtifactRef"}, {"type": "null"}]},
+            "reason": {"type": ["string", "null"]}
+          },
+          "allOf": [{"if": {"properties": {"status": {"const": "ok"}}}, "then": {"properties": {"training_mean_mse": {"type": "number", "minimum": 0}, "checkpoint": {"$ref": "#/$defs/ArtifactRef"}, "reason": {"type": "null"}}}, "else": {"properties": {"training_mean_mse": {"type": "null"}, "checkpoint": {"type": "null"}, "reason": {"type": "string", "minLength": 1}}}}]
+        },
+        "FramePrediction": {
+          "type": "object", "additionalProperties": false,
+          "required": ["model_id", "group_id", "frame_1based", "time_min", "quantity", "unit", "status", "mean", "reason"],
+          "properties": {
+            "model_id": {"$ref": "#/$defs/ModelId"}, "group_id": {"$ref": "#/$defs/GroupId"}, "frame_1based": {"type": "integer", "minimum": 50, "maximum": 73},
+            "time_min": {"type": ["number", "null"]}, "quantity": {"const": "published_prefix_eligible_observed_cell_mean_of_max5_over_median"}, "unit": {"const": "dimensionless_ratio"},
+            "status": {"enum": ["ok", "failed", "missing_coordinate"]}, "mean": {"type": ["number", "null"], "minimum": 0}, "reason": {"type": ["string", "null"]}
+          },
+          "allOf": [
+            {"properties": {"group_id": {"$ref": "#/$defs/DevelopmentGroupId"}}},
+            {"if": {"properties": {"status": {"const": "ok"}}}, "then": {"properties": {"time_min": {"type": "number", "exclusiveMinimum": 0}, "mean": {"type": "number", "minimum": 0}, "reason": {"type": "null"}}}, "else": {"properties": {"mean": {"type": "null"}, "reason": {"type": "string", "minLength": 1}}}}
+          ]
+        },
+        "DevelopmentPredictionFreeze": {
+          "type": "object", "additionalProperties": false,
+          "required": ["document_type", "protocol_id", "approval_sha256", "training_projection_sha256", "development_inputs_sha256", "code_artifacts", "environment", "prefix_summaries", "H_train", "S_train", "attempts", "predictions", "operational_event_reference", "strong_claim_authorized"],
+          "properties": {
+            "document_type": {"const": "development_prediction_freeze_not_final_validation"}, "protocol_id": {"const": "granados-sfp1-published-cohort-development-01"},
+            "approval_sha256": {"$ref": "#/$defs/Digest"}, "training_projection_sha256": {"$ref": "#/$defs/Digest"}, "development_inputs_sha256": {"$ref": "#/$defs/Digest"},
+            "code_artifacts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/ArtifactRef"}}, "environment": {"type": "object"},
+            "prefix_summaries": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/PrefixSummary"}},
+            "H_train": {"type": "number", "minimum": 1}, "S_train": {"type": "number", "minimum": 0},
+            "attempts": {"type": "array", "minItems": 6, "maxItems": 41, "items": {"$ref": "#/$defs/Attempt"}},
+            "predictions": {"type": "array", "minItems": 288, "maxItems": 288, "items": {"$ref": "#/$defs/FramePrediction"}},
+            "operational_event_reference": {"type": "string", "minLength": 1}, "strong_claim_authorized": {"const": false}
+          }
+        },
+        "FrameEvaluation": {
+          "type": "object", "additionalProperties": false,
+          "required": ["model_id", "group_id", "frame_1based", "time_min", "observed_mean", "predicted_mean", "prefix_cells", "valid_cells", "source_missing_cells", "invalid_cells", "cell_sample_sd", "squared_error", "absolute_error", "status", "reason"],
+          "properties": {
+            "model_id": {"$ref": "#/$defs/ModelId"}, "group_id": {"$ref": "#/$defs/GroupId"}, "frame_1based": {"type": "integer", "minimum": 50, "maximum": 73},
+            "time_min": {"type": ["number", "null"]}, "observed_mean": {"type": ["number", "null"], "minimum": 0}, "predicted_mean": {"type": ["number", "null"], "minimum": 0},
+            "prefix_cells": {"type": "integer", "minimum": 2}, "valid_cells": {"type": "integer", "minimum": 0}, "source_missing_cells": {"type": "integer", "minimum": 0}, "invalid_cells": {"type": "integer", "minimum": 0},
+            "cell_sample_sd": {"type": ["number", "null"], "minimum": 0}, "squared_error": {"type": ["number", "null"], "minimum": 0}, "absolute_error": {"type": ["number", "null"], "minimum": 0},
+            "status": {"enum": ["quantified", "missing_observation", "failed_prediction", "missing_coordinate"]}, "reason": {"type": ["string", "null"]}
+          }
+        },
+        "GroupEvaluation": {
+          "type": "object", "additionalProperties": false,
+          "required": ["model_id", "group_id", "complete", "mean_mse", "rmse", "mae", "frames"],
+          "properties": {
+            "model_id": {"$ref": "#/$defs/ModelId"}, "group_id": {"$ref": "#/$defs/GroupId"}, "complete": {"type": "boolean"},
+            "mean_mse": {"type": ["number", "null"], "minimum": 0}, "rmse": {"type": ["number", "null"], "minimum": 0}, "mae": {"type": ["number", "null"], "minimum": 0},
+            "frames": {"type": "array", "minItems": 24, "maxItems": 24, "items": {"$ref": "#/$defs/FrameEvaluation"}}
+          }
+        },
+        "DevelopmentReport": {
+          "type": "object", "additionalProperties": false,
+          "required": ["document_type", "protocol_id", "status", "prediction_freeze_sha256", "development_responses_sha256", "group_evaluations", "selected_development_model", "limitations", "strong_claim_authorized", "final_test_defined"],
+          "properties": {
+            "document_type": {"const": "development_diagnostics_not_biological_validation"}, "protocol_id": {"const": "granados-sfp1-published-cohort-development-01"},
+            "status": {"enum": ["complete_development_diagnostics", "incomplete_model_execution", "incomplete_observation_coverage"]},
+            "prediction_freeze_sha256": {"$ref": "#/$defs/Digest"}, "development_responses_sha256": {"$ref": "#/$defs/Digest"},
+            "group_evaluations": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "#/$defs/GroupEvaluation"}},
+            "selected_development_model": {"oneOf": [{"$ref": "#/$defs/ModelId"}, {"type": "null"}]},
+            "limitations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}, "strong_claim_authorized": {"const": false}, "final_test_defined": {"const": false}
+          },
+          "allOf": [{"if": {"properties": {"status": {"const": "complete_development_diagnostics"}}}, "then": {"properties": {"selected_development_model": {"$ref": "#/$defs/ModelId"}}}, "else": {"properties": {"selected_development_model": {"type": "null"}}}}]
+        },
+        "DevelopmentBlocker": {
+          "type": "object", "additionalProperties": false,
+          "required": ["document_type", "protocol_id", "phase", "reason_code", "reason", "affected_group_ids", "available_artifacts", "operational_event_reference", "strong_claim_authorized", "further_exports_permitted"],
+          "properties": {
+            "document_type": {"const": "development_blocker_no_biological_verdict"}, "protocol_id": {"const": "granados-sfp1-published-cohort-development-01"},
+            "phase": {"enum": ["design_review", "operational_approval", "training_and_conditioning_export", "train_and_prediction_freeze", "development_response_export", "development_reporting"]},
+            "reason_code": {"enum": ["custody_not_approved", "source_mismatch", "source_schema_or_alignment", "prefix_cohort_unusable", "timing_or_coverage_unusable", "model_execution_failed", "dependency_or_partition_violation"]},
+            "reason": {"type": "string", "minLength": 1}, "affected_group_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/GroupId"}},
+            "available_artifacts": {"type": "array", "items": {"$ref": "#/$defs/ArtifactRef"}}, "operational_event_reference": {"type": "string", "minLength": 1},
+            "strong_claim_authorized": {"const": false}, "further_exports_permitted": {"const": false}
+          }
+        }
+      }
+    }
+  },
+  "amendment_policy": "Retain this pre-value protocol and every operational decision/result. Any change to source groups, target, conditioning/cohort rules, frame windows, transformations, model families, scoring or budgets needs an explicit separate development amendment with its actual exposure history. No amendment may retroactively alter protocol-01, turn previously exposed observations into final holdouts, or grant a strong biological claim.",
+  "current_state": "No operational approval, source projection, prefix statistic, model fit, prediction, development score, support observation or final evaluation is created by this document. The next action is independent custodial review and narrowly scoped export approval, not learner access to raw files."
+}

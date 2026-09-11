@@ -1,0 +1,73 @@
+check,expected,actual,status,detail
+every seeded entry point is exercised,33 discovered,"33 covered, 0 exempt, 0 neither",PASS,
+no specimen targets a function that no longer exists,none,0,PASS,
+"same seed, same answer: dose_response_permutation",digest(0) == digest(0),identical,PASS,0.15 s for two runs
+seed changes the answer: dose_response_permutation,"same answer for every seed -- the p-value is at its floor and stays there. UPRE1's plate-averaged Spearman is +0.946, and not one of 200 within-plate reshuffles reaches it, so the count of exceedances is zero for every seed and p is 1/201 by arithmetic. That is a property of the data rather than of the draw -- and the specimen is kept on the real table rather than moved to a weaker case that would wobble, because a determinism check should exercise the call the scripts actually make",0/3 differ,PASS,
+"same seed, same answer: recovery_error",digest(0) == digest(0),identical,PASS,0.06 s for two runs
+seed changes the answer: recovery_error,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: fold_recovery",digest(0) == digest(0),identical,PASS,0.07 s for two runs
+seed changes the answer: fold_recovery,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: fold_change",digest(0) == digest(0),identical,PASS,0.03 s for two runs
+seed changes the answer: fold_change,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: activity_uncertainty",digest(0) == digest(0),identical,PASS,0.02 s for two runs
+seed changes the answer: activity_uncertainty,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: compare_to_null",digest(0) == digest(0),identical,PASS,0.00 s for two runs
+seed changes the answer: compare_to_null,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: fit_latent",digest(0) == digest(0),identical,PASS,0.02 s for two runs
+seed changes the answer: fit_latent,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: select_dimension",digest(0) == digest(0),identical,PASS,0.06 s for two runs
+seed changes the answer: select_dimension,"same answer for every seed -- returns an argmin over integer widths; the seed moves the cross-validated scores, and a stable winner under a moving score is the intended behaviour",0/3 differ,PASS,
+"same seed, same answer: detection_power",digest(0) == digest(0),identical,PASS,0.06 s for two runs
+seed changes the answer: detection_power,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: discrimination_power",digest(0) == digest(0),identical,PASS,0.09 s for two runs
+seed changes the answer: discrimination_power,"a different digest for at least one of [1, 2, 3]",2/3 differ,PASS,
+"same seed, same answer: power_curve",digest(0) == digest(0),identical,PASS,0.06 s for two runs
+seed changes the answer: power_curve,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: replicates_needed",digest(0) == digest(0),identical,PASS,0.19 s for two runs
+seed changes the answer: replicates_needed,same answer for every seed -- returns the first replicate count clearing a power threshold; an integer search over a noisy curve is allowed to land on the same answer,0/3 differ,PASS,
+"same seed, same answer: ratio_discrimination_power",digest(0) == digest(0),identical,PASS,0.00 s for two runs
+seed changes the answer: ratio_discrimination_power,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: module_recovery",digest(0) == digest(0),identical,PASS,0.02 s for two runs
+seed changes the answer: module_recovery,"same answer for every seed -- fit_latent recovers its states by SVD, which is deterministic, so the seed reaches only the cross-validated held-out error -- which this function does not use. The docstring states it, and a spread computed across seeds would read as a precise estimate while being no estimate at all.",0/3 differ,PASS,
+"same seed, same answer: basic_bootstrap_upper",digest(0) == digest(0),identical,PASS,0.00 s for two runs
+seed changes the answer: basic_bootstrap_upper,"a different digest for at least one of [1, 2, 3]",1/3 differ,PASS,
+"same seed, same answer: estimate_optimism",digest(0) == digest(0),identical,PASS,0.00 s for two runs
+seed changes the answer: estimate_optimism,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: make_split",digest(0) == digest(0),identical,PASS,0.01 s for two runs
+seed changes the answer: make_split,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: make_split[extrapolation]",digest(0) == digest(0),identical,PASS,0.01 s for two runs
+seed changes the answer: make_split[extrapolation],"same answer for every seed -- the extrapolation split holds out the highest dose, which is a fact about the ladder and not a choice; there is nothing for a seed to vary.",0/3 differ,PASS,
+"same seed, same answer: Split",digest(0) == digest(0),identical,PASS,0.01 s for two runs
+seed changes the answer: Split,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: feasibility",digest(0) == digest(0),identical,PASS,0.01 s for two runs
+seed changes the answer: feasibility,"same answer for every seed -- reports which strata can support a split at all, which is a property of the frame rather than of the draw. The seed is accepted so one call can report and then make the same split.",0/3 differ,PASS,
+"same seed, same answer: baseline_family",digest(0) == digest(0),identical,PASS,0.00 s for two runs
+seed changes the answer: baseline_family,"same answer for every seed -- the baseline family IS the literature topology as stress_panel.py states it, so its loadings are fixed by the panel rather than drawn. Of the seven builders only loading_noise perturbs the loadings themselves; the rest change topology deterministically and the seed reaches only the sampling that follows. build_family is therefore exercised on loading_noise.",0/3 differ,PASS,
+"same seed, same answer: build_family",digest(0) == digest(0),identical,PASS,0.00 s for two runs
+seed changes the answer: build_family,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: family_dataset",digest(0) == digest(0),identical,PASS,0.00 s for two runs
+seed changes the answer: family_dataset,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: attribution_power_table",digest(0) == digest(0),identical,PASS,0.30 s for two runs
+seed changes the answer: attribution_power_table,"a different digest for at least one of [1, 2, 3]",1/3 differ,PASS,
+"same seed, same answer: module_recovery[shuffle]",digest(0) == digest(0),identical,PASS,0.02 s for two runs
+seed changes the answer: module_recovery[shuffle],"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: train_stress_model",digest(0) == digest(0),identical,PASS,0.02 s for two runs
+seed changes the answer: train_stress_model,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: module_transfer",digest(0) == digest(0),identical,PASS,0.02 s for two runs
+seed changes the answer: module_transfer,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: select_width_for_modules",digest(0) == digest(0),identical,PASS,0.02 s for two runs
+seed changes the answer: select_width_for_modules,"same answer for every seed -- returns an argmin over integer widths; the seed moves the cross-validated scores, and a stable winner under a moving score is the intended behaviour",0/3 differ,PASS,
+"same seed, same answer: transfer_test",digest(0) == digest(0),identical,PASS,0.03 s for two runs
+seed changes the answer: transfer_test,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: leave_one_stressor_out",digest(0) == digest(0),identical,PASS,0.07 s for two runs
+seed changes the answer: leave_one_stressor_out,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: select_dimension_by_transfer",digest(0) == digest(0),identical,PASS,0.10 s for two runs
+seed changes the answer: select_dimension_by_transfer,"same answer for every seed -- returns an argmin over integer widths; the seed moves the cross-validated scores, and a stable winner under a moving score is the intended behaviour",0/3 differ,PASS,
+"same seed, same answer: design_transfer",digest(0) == digest(0),identical,PASS,0.07 s for two runs
+seed changes the answer: design_transfer,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: panel_dataset",digest(0) == digest(0),identical,PASS,0.00 s for two runs
+seed changes the answer: panel_dataset,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: PlateConditions",digest(0) == digest(0),identical,PASS,0.10 s for two runs
+seed changes the answer: PlateConditions,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,
+"same seed, same answer: ParticleFilter",digest(0) == digest(0),identical,PASS,0.00 s for two runs
+seed changes the answer: ParticleFilter,"a different digest for at least one of [1, 2, 3]",3/3 differ,PASS,

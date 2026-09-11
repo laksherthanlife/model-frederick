@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "baseline_commit": "84561f51502b5b4bf66c052dc88c853038917934",
+  "policy": "Every listed public input is mandatory. Existing, cached and downloaded bytes must match the pinned SHA-256 and byte count. Public URLs may be mutable; refreshed bytes are rejected without changing any expected hash. Missing tracked inputs and failed downloads fail CI.",
+  "environment": {
+    "YSTWIN_YEAST_GEM": "data/gem/yeast-GEM.xml.gz",
+    "YSTWIN_EC_YEAST_GEM": "data/gem/ecYeastGEM_batch.xml.gz",
+    "YSTWIN_THERMO": "data/thermo"
+  },
+  "sources": {
+    "checkout": {
+      "kind": "checkout",
+      "evidence": "Tracked public data; checkout identity and the existing source manifests are checked without replacing any tracked file."
+    },
+    "modelseed": {
+      "kind": "git",
+      "repository": "ModelSEED/ModelSEEDDatabase",
+      "commit": "194ac8afe48f8a606c0dd07ba3c7af10c02ba2fd",
+      "base_url": "https://raw.githubusercontent.com/ModelSEED/ModelSEEDDatabase/194ac8afe48f8a606c0dd07ba3c7af10c02ba2fd/",
+      "evidence": ".gitignore:47-52 identifies the source. GitHub tree blob IDs and sizes at this commit match git hash-object of the existing local input files; SHA-256 was measured on those identical bytes."
+    },
+    "pytfa": {
+      "kind": "git",
+      "repository": "EPFL-LCSB/pytfa",
+      "commit": "8bd43fdf53a6fac8fa8ffbc50b3b96baf94454c1",
+      "base_url": "https://raw.githubusercontent.com/EPFL-LCSB/pytfa/8bd43fdf53a6fac8fa8ffbc50b3b96baf94454c1/",
+      "evidence": ".gitignore:47-52; pytfa 0.9.1 tag resolved to this commit. Its data/thermo_data.thermodb Git blob and size match the existing local input."
+    },
+    "equilibrator_compounds": {
+      "kind": "zenodo",
+      "record": "4128543",
+      "base_url": "https://zenodo.org/api/records/4128543/files/",
+      "evidence": "equilibrator-cache==0.7.1, equilibrator_cache/zenodo.py::DEFAULT_COMPOUND_CACHE_SETTINGS. The version-specific published Zenodo record, filename, byte count and MD5 match the existing cache; SHA-256 was measured without downloading the 1.34 GB database."
+    },
+    "equilibrator_parameters": {
+      "kind": "zenodo",
+      "record": "19557433",
+      "base_url": "https://zenodo.org/api/records/19557433/files/",
+      "evidence": "component-contribution==0.7.0, component_contribution/__init__.py::DEFAULT_CC_PARAMS_SETTINGS. The version-specific published Zenodo record, filename, byte count and MD5 match the existing cache; SHA-256 was measured on that cache."
+    },
+    "bionumbers": {
+      "kind": "kaggle",
+      "dataset": "haotiannnnn/bionumbers-dataset",
+      "version": 5,
+      "base_url": "https://www.kaggle.com/api/v1/datasets/download/haotiannnnn/bionumbers-dataset/",
+      "evidence": "docs/FINDINGS.md:2490-2493 identifies this dataset; the public API lists BioNumbers_Nov2024.csv in version 5 with 1122041 bytes. An unauthenticated version-pinned download matched the existing local file SHA-256."
+    },
+    "geo": {
+      "kind": "checksum",
+      "evidence": "Original public endpoints from scripts/fetch_external_validation_data.py:35-46. All nine GSE18 matrices and eight published platform annotations are mandatory. Only bytes matching the existing input SHA-256 values and byte counts are accepted.",
+      "urls": {
+        "data/external/gasch2000/GSE18-GPL51_series_matrix.txt.gz": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSEnnn/GSE18/matrix/GSE18-GPL51_series_matrix.txt.gz",
+        "data/external/gasch2000/GSE18-GPL52_series_matrix.txt.gz": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSEnnn/GSE18/matrix/GSE18-GPL52_series_matrix.txt.gz",
+        "data/external/gasch2000/GSE18-GPL53_series_matrix.txt.gz": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSEnnn/GSE18/matrix/GSE18-GPL53_series_matrix.txt.gz",
+        "data/external/gasch2000/GSE18-GPL54_series_matrix.txt.gz": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSEnnn/GSE18/matrix/GSE18-GPL54_series_matrix.txt.gz",
+        "data/external/gasch2000/GSE18-GPL55_series_matrix.txt.gz": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSEnnn/GSE18/matrix/GSE18-GPL55_series_matrix.txt.gz",
+        "data/external/gasch2000/GSE18-GPL56_series_matrix.txt.gz": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSEnnn/GSE18/matrix/GSE18-GPL56_series_matrix.txt.gz",
+        "data/external/gasch2000/GSE18-GPL57_series_matrix.txt.gz": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSEnnn/GSE18/matrix/GSE18-GPL57_series_matrix.txt.gz",
+        "data/external/gasch2000/GSE18-GPL63_series_matrix.txt.gz": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSEnnn/GSE18/matrix/GSE18-GPL63_series_matrix.txt.gz",
+        "data/external/gasch2000/GSE18-GPL64_series_matrix.txt.gz": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSEnnn/GSE18/matrix/GSE18-GPL64_series_matrix.txt.gz",
+        "data/external/gasch2000/GPL51.annot.gz": "https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPLnnn/GPL51/annot/GPL51.annot.gz",
+        "data/external/gasch2000/GPL52.annot.gz": "https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPLnnn/GPL52/annot/GPL52.annot.gz",
+        "data/external/gasch2000/GPL53.annot.gz": "https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPLnnn/GPL53/annot/GPL53.annot.gz",
+        "data/external/gasch2000/GPL54.annot.gz": "https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPLnnn/GPL54/annot/GPL54.annot.gz",
+        "data/external/gasch2000/GPL55.annot.gz": "https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPLnnn/GPL55/annot/GPL55.annot.gz",
+        "data/external/gasch2000/GPL56.annot.gz": "https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPLnnn/GPL56/annot/GPL56.annot.gz",
+        "data/external/gasch2000/GPL57.annot.gz": "https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPLnnn/GPL57/annot/GPL57.annot.gz",
+        "data/external/gasch2000/GPL64.annot.gz": "https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPLnnn/GPL64/annot/GPL64.annot.gz"
+      }
+    },
+    "sgd_gaf": {
+      "kind": "checksum",
+      "evidence": "data/gem/absent_stress_genes.tsv:10 records GAF generation 20260825; src/ystwin/fba/stress_genes.py::SGD_GAF_PATH identifies the input. SGD's public archive listing identifies gene_association.sgd.20260825.gaf.gz with 4035583 bytes. A fresh download matched the existing local SHA-256 exactly. The current 20260901 file has different bytes and is not substituted.",
+      "urls": {
+        "data/external/sgd/gene_association.sgd.gaf.gz": "https://downloads.yeastgenome.org/curation/literature/archive/gene_association.sgd.20260825.gaf.gz"
+      }
+    },
+    "sgd_regulation": {
+      "kind": "checksum",
+      "evidence": "Original public API and all 32 factors from scripts/fetch_external_validation_data.py:47-56. Only responses matching the existing local JSON SHA-256 values and byte counts are accepted; there is no normalization or hash refresh.",
+      "urls": {
+        "data/external/sgd/regulation/MSN2.json": "https://www.yeastgenome.org/backend/locus/MSN2/regulation_details",
+        "data/external/sgd/regulation/MSN4.json": "https://www.yeastgenome.org/backend/locus/MSN4/regulation_details",
+        "data/external/sgd/regulation/HAC1.json": "https://www.yeastgenome.org/backend/locus/HAC1/regulation_details",
+        "data/external/sgd/regulation/YAP1.json": "https://www.yeastgenome.org/backend/locus/YAP1/regulation_details",
+        "data/external/sgd/regulation/SKN7.json": "https://www.yeastgenome.org/backend/locus/SKN7/regulation_details",
+        "data/external/sgd/regulation/HSF1.json": "https://www.yeastgenome.org/backend/locus/HSF1/regulation_details",
+        "data/external/sgd/regulation/SKO1.json": "https://www.yeastgenome.org/backend/locus/SKO1/regulation_details",
+        "data/external/sgd/regulation/HOT1.json": "https://www.yeastgenome.org/backend/locus/HOT1/regulation_details",
+        "data/external/sgd/regulation/RPN4.json": "https://www.yeastgenome.org/backend/locus/RPN4/regulation_details",
+        "data/external/sgd/regulation/AFT1.json": "https://www.yeastgenome.org/backend/locus/AFT1/regulation_details",
+        "data/external/sgd/regulation/AFT2.json": "https://www.yeastgenome.org/backend/locus/AFT2/regulation_details",
+        "data/external/sgd/regulation/RLM1.json": "https://www.yeastgenome.org/backend/locus/RLM1/regulation_details",
+        "data/external/sgd/regulation/RFX1.json": "https://www.yeastgenome.org/backend/locus/RFX1/regulation_details",
+        "data/external/sgd/regulation/CRZ1.json": "https://www.yeastgenome.org/backend/locus/CRZ1/regulation_details",
+        "data/external/sgd/regulation/ADR1.json": "https://www.yeastgenome.org/backend/locus/ADR1/regulation_details",
+        "data/external/sgd/regulation/CAT8.json": "https://www.yeastgenome.org/backend/locus/CAT8/regulation_details",
+        "data/external/sgd/regulation/GLN3.json": "https://www.yeastgenome.org/backend/locus/GLN3/regulation_details",
+        "data/external/sgd/regulation/GAT1.json": "https://www.yeastgenome.org/backend/locus/GAT1/regulation_details",
+        "data/external/sgd/regulation/ROX1.json": "https://www.yeastgenome.org/backend/locus/ROX1/regulation_details",
+        "data/external/sgd/regulation/UPC2.json": "https://www.yeastgenome.org/backend/locus/UPC2/regulation_details",
+        "data/external/sgd/regulation/HAP1.json": "https://www.yeastgenome.org/backend/locus/HAP1/regulation_details",
+        "data/external/sgd/regulation/CUP2.json": "https://www.yeastgenome.org/backend/locus/CUP2/regulation_details",
+        "data/external/sgd/regulation/MAC1.json": "https://www.yeastgenome.org/backend/locus/MAC1/regulation_details",
+        "data/external/sgd/regulation/ZAP1.json": "https://www.yeastgenome.org/backend/locus/ZAP1/regulation_details",
+        "data/external/sgd/regulation/MET4.json": "https://www.yeastgenome.org/backend/locus/MET4/regulation_details",
+        "data/external/sgd/regulation/MET31.json": "https://www.yeastgenome.org/backend/locus/MET31/regulation_details",
+        "data/external/sgd/regulation/MET32.json": "https://www.yeastgenome.org/backend/locus/MET32/regulation_details",
+        "data/external/sgd/regulation/PDR1.json": "https://www.yeastgenome.org/backend/locus/PDR1/regulation_details",
+        "data/external/sgd/regulation/PDR3.json": "https://www.yeastgenome.org/backend/locus/PDR3/regulation_details",
+        "data/external/sgd/regulation/RTG1.json": "https://www.yeastgenome.org/backend/locus/RTG1/regulation_details",
+        "data/external/sgd/regulation/RTG3.json": "https://www.yeastgenome.org/backend/locus/RTG3/regulation_details",
+        "data/external/sgd/regulation/RIM101.json": "https://www.yeastgenome.org/backend/locus/RIM101/regulation_details"
+      }
+    }
+  },
+  "collections": [
+    {
+      "path": "data/hog2013/sources.json",
+      "sha256": "b005bc93e8dd50151f687e672948b0891637a4bacc51981c66349b8906eaafdf",
+      "format": "hog_sources"
+    },
+    {
+      "path": "data/frozen_evidence/native_v1/manifest.json",
+      "sha256": "eff317f689fe096f6b3df35e050f557b51cd7e51cdb192bb95775eef8ef529ec",
+      "format": "portable_native"
+    }
+  ],
+  "files": [
+    {
+      "path": "data/frozen_runtime.json",
+      "source": "checkout",
+      "sha256": "8e340b7d947d0a89b52d448fba9c20c6899eaf2d568e7a04dfc87426d1c90c0b",
+      "evidence": "src/ystwin/analysis/frozen_runtime.py::RUNTIME_REGISTRY_SHA256; historical replay must use the registered frozen Git commit and exact recorded runtime."
+    },
+    {
+      "path": "data/gem/yeast-GEM.xml.gz",
+      "source": "checkout",
+      "sha256": "7037e0c0553f93f80d8430040dc957b618d5e34197298ee0e6d776446e5f9574",
+      "size_bytes": 337643,
+      "uncompressed_sha256": "9fd2c572cace73c2ea835205617313554d1bf89f4ef077f49defbdfa219a4ad7",
+      "evidence": "data/gem/MANIFEST.md:9"
+    },
+    {
+      "path": "data/gem/yeast-GEM-9.1.1.xml.gz",
+      "source": "checkout",
+      "sha256": "d1c00f217c9f654d884d8f9740e050eeb5d2193cb6e3eed71210deb65fb89e14",
+      "size_bytes": 332223,
+      "uncompressed_sha256": "30842b15eefb0ef7e36cbdea86a9efddfacf69a871c8b054165faa9af9f6c8eb",
+      "uncompressed_size_bytes": 11568534,
+      "upstream": {
+        "repository": "SysBioChalmers/yeast-GEM",
+        "tag": "v9.1.1",
+        "commit": "2d594ae1c4a2d550ccef120d96a58c7bbf586255",
+        "tree": "0ba22dfadbd6aab0972d2a2d5131d146384d3269",
+        "model_tree": "bb5bdd1c750038f54fe4c67ec67797f07dc95036",
+        "path": "model/yeast-GEM.xml",
+        "git_blob": "04531c1e56dacaa2874c2a62bb48e67a1e3c2fd3",
+        "url": "https://raw.githubusercontent.com/SysBioChalmers/yeast-GEM/2d594ae1c4a2d550ccef120d96a58c7bbf586255/model/yeast-GEM.xml"
+      },
+      "compression": {
+        "format": "gzip",
+        "compresslevel": 9,
+        "mtime": 0,
+        "filename": ""
+      },
+      "license": {
+        "spdx": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "source_path": "LICENSE.md",
+        "source_url": "https://raw.githubusercontent.com/SysBioChalmers/yeast-GEM/2d594ae1c4a2d550ccef120d96a58c7bbf586255/LICENSE.md",
+        "git_blob": "d7244c0d623e30a760d098e4ed829f4fc37ac262",
+        "sha256": "bb5e0179a1e9bdb55634a4303784cf73c297a1dcee27b92cd546bf398075531c",
+        "size_bytes": 17068,
+        "attribution": "yeast-GEM community, SysBioChalmers; SBML creator Eduard Kerkhoven, Chalmers University of Technology. Zhang, C. et al., Yeast9: a consensus genome-scale metabolic model for S. cerevisiae curated by the community, Molecular Systems Biology (2024), https://doi.org/10.1038/s44320-024-00060-7; yeast-GEM v9.1.1.",
+        "notice": "Distributed under Creative Commons Attribution 4.0 International, including its Section 5 disclaimer of warranties and limitation of liability; see the linked licence text.",
+        "modifications": "SBML bytes and embedded creator/annotation metadata are unchanged. Only deterministic gzip wrapping was added. This is an explicit comparison asset, not an adopted replacement for yeast-GEM v9.0.2 or either enzyme-constrained model."
+      },
+      "evidence": "Verified 2026-09-08 using GitHub GET ref -> commit -> root tree -> model tree -> model/yeast-GEM.xml blob. The blob API and an independent immutable raw-URL acquisition both matched the uncompressed SHA-256, byte count and Git blob identity. Repeated gzip.GzipFile(filename='', compresslevel=9, mtime=0) compression with Python 3.14.2 / zlib 1.2.12 produced the pinned compressed bytes. LICENSE.md was read at the same commit: CC BY 4.0 Sections 2 and 3 permit sharing with attribution.",
+      "provisioning": "Checkout-only verification by scripts/provision_public_inputs.py, with no automatic download. scripts/gem_version_diff.py --verify-candidate is also read-only/offline. Its explicit --fetch-candidate mode may exclusively create this missing comparison asset from the pinned GitHub commit/path/blob after checking both byte identities; it never overwrites an existing file or changes a resolver."
+    },
+    {
+      "path": "data/gem/ecYeastGEM_batch.xml.gz",
+      "source": "checkout",
+      "sha256": "63d0f76e88586fcee25e9e67f9dae558e7b308172c837d44a0d055510b287ef3",
+      "size_bytes": 347688,
+      "uncompressed_sha256": "3a9d97a68e2408ea243114794c027b11d70f253ecf6a758f4bcd5f2de50170b8",
+      "evidence": "data/gem/MANIFEST.md:10; data/frozen_evidence/native_v1/manifest.json"
+    },
+    {
+      "path": "data/gem/ecYeastGEM_yeast902.xml.gz",
+      "source": "checkout",
+      "sha256": "29dd52e61327cd784725b57458e990994c3009e678cd95dfeb6e5fb44998b3e7",
+      "size_bytes": 602076,
+      "uncompressed_sha256": "ec743590f952836126215643757044975510ce95d1c6a164cd4426d03a847f22",
+      "documented_uncompressed_sha256": "0a725a63cf0395a2330eff3134713255ce4704af903e59ad36dcf4b62ca509de",
+      "evidence": "Exact compressed and decompressed bytes at baseline_commit. Git commit 1fc4230b89f152a8ba1968e2dc9decbc2bf0b2aa contains documented_uncompressed_sha256; commit 6779a843d17323cb3feb0623905347989f390623 changed r_1714 bounds from [-1, 1000] to [-1000, 1000] and reserialized the SBML, producing the current hash retained at baseline_commit. COBRA reads 8269 reactions in both and no other reaction-bound changes. The source manifest at baseline_commit retained the earlier hash; the model is not mutated or restamped."
+    },
+    {
+      "path": "data/proteome/paxdb_scerevisiae_integrated.tsv",
+      "source": "checkout",
+      "sha256": "6b3df526c4edd06e1cd7a6d786c8c66c16b67331d81c5a9704066b19697b68cf",
+      "evidence": "data/proteome/SOURCE.md; the tracked derived table is verified, not re-fetched from the mutable latest endpoint."
+    },
+    {
+      "path": "data/thermo/aliases.tsv",
+      "source": "modelseed",
+      "remote_path": "Biochemistry/Aliases/Unique_ModelSEED_Compound_Aliases.txt",
+      "sha256": "fc3464032f78a7ef0c08f702012664507a384f32f6f7bda4448d0369ba3f9430",
+      "size_bytes": 4257480,
+      "git_blob": "4faf40c149a3b41fdbe6de1549e9bfc505123240"
+    },
+    {
+      "path": "data/thermo/compounds.tsv",
+      "source": "modelseed",
+      "remote_path": "Biochemistry/compounds.tsv",
+      "sha256": "ff17c9ce623d6feebb94554df484e29c05ed5aa291cf1f6f01ba6736a782709f",
+      "size_bytes": 12887777,
+      "git_blob": "9e5f077aff85578eab4d57291f1af1f6888d6006"
+    },
+    {
+      "path": "data/thermo/thermo_data.thermodb",
+      "source": "pytfa",
+      "remote_path": "data/thermo_data.thermodb",
+      "sha256": "5cebea39ce102a16c750ee0c613099a1ad274d3293ee83b1203428df2d41eef0",
+      "size_bytes": 2184378,
+      "git_blob": "2c91b3752b8df0c63622f1a804f12226211a17f6"
+    },
+    {
+      "path": "compounds.sqlite",
+      "storage": "equilibrator_cache",
+      "source": "equilibrator_compounds",
+      "remote_path": "compounds.sqlite",
+      "sha256": "12a28e5a639097d39c7fb03bb740b7ddb204a3da8ee6d4bbac413e8b22e5cb28",
+      "size_bytes": 1337335808,
+      "md5": "9b66b85a886926d09755a66a3b452b6b"
+    },
+    {
+      "path": "cc_params.npz",
+      "storage": "equilibrator_cache",
+      "source": "equilibrator_parameters",
+      "remote_path": "cc_params.npz",
+      "sha256": "a54cf696e10191dcc03fc955dd491bc12530fac878411912030118785e63dc0a",
+      "size_bytes": 68596127,
+      "md5": "2d75616a89f5e22161befa708a5afe4f"
+    },
+    {
+      "path": "data/kaggle/BioNumbers_Nov2024.csv",
+      "source": "bionumbers",
+      "remote_path": "BioNumbers_Nov2024.csv",
+      "sha256": "92847d8972d3be4071206fc353f4d3f35ef87242d99e5e545996a8bc08bc3b19",
+      "size_bytes": 1122041
+    },
+    {"path": "data/external/gasch2000/GSE18-GPL51_series_matrix.txt.gz", "source": "geo", "sha256": "1cfb69e7d19426a7c9aa95d7c5c184fb7702e25e830ded825f6ebbade436e268", "size_bytes": 321079},
+    {"path": "data/external/gasch2000/GSE18-GPL52_series_matrix.txt.gz", "source": "geo", "sha256": "cf3ee63503f1c38f50e7d039b39c757179cd44904811cb5170826b44a0c9f63c", "size_bytes": 584014},
+    {"path": "data/external/gasch2000/GSE18-GPL53_series_matrix.txt.gz", "source": "geo", "sha256": "a5c0e0767e20e7e5ecafd14d56f24adc79977ec6c99cb0d8c19c4ca310b2139e", "size_bytes": 385014},
+    {"path": "data/external/gasch2000/GSE18-GPL54_series_matrix.txt.gz", "source": "geo", "sha256": "cbf89abff3a234a0cad85cb84c9b169f141112b3501ce912fc67c46c506390a7", "size_bytes": 664713},
+    {"path": "data/external/gasch2000/GSE18-GPL55_series_matrix.txt.gz", "source": "geo", "sha256": "b549fbc180ef95e54215223bbe52994be4d132c6f48024888da11ee6e131a539", "size_bytes": 55601},
+    {"path": "data/external/gasch2000/GSE18-GPL56_series_matrix.txt.gz", "source": "geo", "sha256": "8cb61caa946b861ef920ec6345148bb2fc0c548401850addf43629c79e4a2e99", "size_bytes": 367553},
+    {"path": "data/external/gasch2000/GSE18-GPL57_series_matrix.txt.gz", "source": "geo", "sha256": "e929e4ec5c032b5f2dc0b09ceb7236649f419b99fbd303d815b50c898e8a54e4", "size_bytes": 29887},
+    {"path": "data/external/gasch2000/GSE18-GPL63_series_matrix.txt.gz", "source": "geo", "sha256": "28a2d3a4e513de96a5fa42143d7483a2a6bdd4938a3e894ebbf90d3963d4f05a", "size_bytes": 39339},
+    {"path": "data/external/gasch2000/GSE18-GPL64_series_matrix.txt.gz", "source": "geo", "sha256": "9ecae6fa67e1d1e854a78c16d5ee987b1286a45bc5ec7cf5a9bc256f7c85d156", "size_bytes": 307438},
+    {"path": "data/external/gasch2000/GPL51.annot.gz", "source": "geo", "sha256": "3fdee987914fc019cd989b2689479eff1ece3e7e6e87379f9c4050e912c84112", "size_bytes": 987950},
+    {"path": "data/external/gasch2000/GPL52.annot.gz", "source": "geo", "sha256": "6026b2d5a1a8f62c2250adf84dc04eb1f574d9c43901a8b7d1f743248c977b81", "size_bytes": 937847},
+    {"path": "data/external/gasch2000/GPL53.annot.gz", "source": "geo", "sha256": "5323171ef8567f37846fda3c66007e697ea5ba1b0fd6b94d473f8eda8debd2df", "size_bytes": 894905},
+    {"path": "data/external/gasch2000/GPL54.annot.gz", "source": "geo", "sha256": "e53d505df8c0563bbd4c20ef6453e44c936061a6484836a347b80745dc515032", "size_bytes": 985712},
+    {"path": "data/external/gasch2000/GPL55.annot.gz", "source": "geo", "sha256": "5362a572a53a4f58a7c6c219d2ca16973b46d9571eebe2642bc5413982357fbf", "size_bytes": 836859},
+    {"path": "data/external/gasch2000/GPL56.annot.gz", "source": "geo", "sha256": "c824b6c0cf0ca6f870195793a2c87a69a04b83a2cb42a2fe65d98d228806d90d", "size_bytes": 852694},
+    {"path": "data/external/gasch2000/GPL57.annot.gz", "source": "geo", "sha256": "e8fabe11c7a0e9753a52305dc9d9c51ed2478294f2d0a0ecee510d283f4812a6", "size_bytes": 730918},
+    {"path": "data/external/gasch2000/GPL64.annot.gz", "source": "geo", "sha256": "c0f3760213b6014be6e2993dbcba10053a4f6dc5f8bab9aa76c5118f5d14ebbe", "size_bytes": 897131},
+    {"path": "data/external/sgd/gene_association.sgd.gaf.gz", "source": "sgd_gaf", "sha256": "92d83150d80d76a0bf45c2914607b966a0923b6ad3fcb44f7012636ef7bf51f6", "size_bytes": 4035583},
+    {"path": "data/external/sgd/regulation/MSN2.json", "source": "sgd_regulation", "sha256": "44a5981375c80e9608df41fb7a09c4592fe2f82a0240b9d1f425e2593a410880", "size_bytes": 1054012},
+    {"path": "data/external/sgd/regulation/MSN4.json", "source": "sgd_regulation", "sha256": "2c8aee241c4aa6a4b45d52fbed5eccdaa261102321206a463b021c620afe83a5", "size_bytes": 392476},
+    {"path": "data/external/sgd/regulation/HAC1.json", "source": "sgd_regulation", "sha256": "fa659c857c487b39bd04cc8e9bef7c0bb4615f3bf0706cbb074452ae6d1210bb", "size_bytes": 59380},
+    {"path": "data/external/sgd/regulation/YAP1.json", "source": "sgd_regulation", "sha256": "a82150482f05abc0315c1747969bc64f54d0ceab06dbc51daeece9d6feaa3fc3", "size_bytes": 1163271},
+    {"path": "data/external/sgd/regulation/SKN7.json", "source": "sgd_regulation", "sha256": "ef5fe24130de3568a0baec0a50491deefd2325317b9fc1d50697eead84762023", "size_bytes": 344325},
+    {"path": "data/external/sgd/regulation/HSF1.json", "source": "sgd_regulation", "sha256": "9f5e8445aa839256c183109a7db291545d09d03e28d9449eb383308abf16a423", "size_bytes": 781674},
+    {"path": "data/external/sgd/regulation/SKO1.json", "source": "sgd_regulation", "sha256": "ea053f907e1a35daf0a5da693176124759d5a35e6df2851958fefa84893fb5c2", "size_bytes": 89998},
+    {"path": "data/external/sgd/regulation/HOT1.json", "source": "sgd_regulation", "sha256": "3c3269a7058628dd56f416d9151111b10e858e11b10a5f51d805aae750b40dff", "size_bytes": 19169},
+    {"path": "data/external/sgd/regulation/RPN4.json", "source": "sgd_regulation", "sha256": "ca42cf624695326197907797abb812f8e40abb807358b0f40275dbc152ffc895", "size_bytes": 222332},
+    {"path": "data/external/sgd/regulation/AFT1.json", "source": "sgd_regulation", "sha256": "c0186e22ecc4b91145155c0a8507102d97fad4def4540cf2b651c296e75fc187", "size_bytes": 245177},
+    {"path": "data/external/sgd/regulation/AFT2.json", "source": "sgd_regulation", "sha256": "12b7b86c3688471d735bb540018272ebe445e0fea5729c3b85a8769f1ca26f87", "size_bytes": 147058},
+    {"path": "data/external/sgd/regulation/RLM1.json", "source": "sgd_regulation", "sha256": "0f92bbd217eff5179bd09444c192b9c711aacc97b44f03c564f57e20ba87108e", "size_bytes": 73729},
+    {"path": "data/external/sgd/regulation/RFX1.json", "source": "sgd_regulation", "sha256": "60a83a5c264672cb5828c2c382fe5c1a4aee17daf208ec4d6a5db2b4a8240eb4", "size_bytes": 1223505},
+    {"path": "data/external/sgd/regulation/CRZ1.json", "source": "sgd_regulation", "sha256": "b62b877bb3a5a12290f87f3b5781d1c54f95a18096cd75c4681f26a7a970cfb8", "size_bytes": 39959},
+    {"path": "data/external/sgd/regulation/ADR1.json", "source": "sgd_regulation", "sha256": "7343c2823325aa8e49364adffce02ff055adc82f4e3e64c48bde786fcaf92391", "size_bytes": 47311},
+    {"path": "data/external/sgd/regulation/CAT8.json", "source": "sgd_regulation", "sha256": "61e9ff77bad4d226dfdc5c9d6a1a0a5f4b7e698b47dcbb9d1a8f2828b22ebcf1", "size_bytes": 57028},
+    {"path": "data/external/sgd/regulation/GLN3.json", "source": "sgd_regulation", "sha256": "3f2691718af2b20085c6bbe4fbfd3ae8052f941a9744ec7f32ea4bc04e990e7b", "size_bytes": 289421},
+    {"path": "data/external/sgd/regulation/GAT1.json", "source": "sgd_regulation", "sha256": "7753c92c75317383379cfb98c2052e46bcabeb8be0125fcd3faf8e34a5fb2eeb", "size_bytes": 90163},
+    {"path": "data/external/sgd/regulation/ROX1.json", "source": "sgd_regulation", "sha256": "d7436eab585cdc9f075412f2bc7565eb23bdfe052e18927664e35347a014ec0a", "size_bytes": 178218},
+    {"path": "data/external/sgd/regulation/UPC2.json", "source": "sgd_regulation", "sha256": "d81f85a7ead23f781e18783f030d172ea260feb68cf32f6d5781a1703db5b070", "size_bytes": 40359},
+    {"path": "data/external/sgd/regulation/HAP1.json", "source": "sgd_regulation", "sha256": "ba088431fcbbe8faf8d9c8079f1df3d6deddde8f11d7ae773529cb4ecb2f9340", "size_bytes": 175143},
+    {"path": "data/external/sgd/regulation/CUP2.json", "source": "sgd_regulation", "sha256": "a82d2a03772f80449513a079c620e2047c228d6bfc032d321ef74c72f1e69d97", "size_bytes": 68306},
+    {"path": "data/external/sgd/regulation/MAC1.json", "source": "sgd_regulation", "sha256": "631d38b6a75d0d46c5a9d0815d1bb577c7b78fd12a2171b4daf0fee1bb7e03be", "size_bytes": 112430},
+    {"path": "data/external/sgd/regulation/ZAP1.json", "source": "sgd_regulation", "sha256": "cb340dd6e53c80df6cf3b19583892e46d3abb4809289d92fefdf7f5579797ea0", "size_bytes": 458564},
+    {"path": "data/external/sgd/regulation/MET4.json", "source": "sgd_regulation", "sha256": "1a286f26800c83e0739213114fa34069a7904f29360465a6393bff85c069a863", "size_bytes": 616329},
+    {"path": "data/external/sgd/regulation/MET31.json", "source": "sgd_regulation", "sha256": "99181149310806015cb186d79acaae59a95a51b119f3da42db02e3adecca817e", "size_bytes": 46270},
+    {"path": "data/external/sgd/regulation/MET32.json", "source": "sgd_regulation", "sha256": "ff4d1ba3f1c7a9c6fe22b1bdf7509f352fd3cd3ba724b483af6635529a7d8521", "size_bytes": 757391},
+    {"path": "data/external/sgd/regulation/PDR1.json", "source": "sgd_regulation", "sha256": "81a57df18bc3d31f843490100ac97a77e08d57471cb9004f0070636c42ac5c82", "size_bytes": 305941},
+    {"path": "data/external/sgd/regulation/PDR3.json", "source": "sgd_regulation", "sha256": "1254ff462d732c1e755f2467ba46b255392ccbb127922c7100c70f5b42f84fad", "size_bytes": 40368},
+    {"path": "data/external/sgd/regulation/RTG1.json", "source": "sgd_regulation", "sha256": "3d47ddc95c5185807fa260574d95fd39966d4854ae192bdd596a95b11dca53c0", "size_bytes": 13858},
+    {"path": "data/external/sgd/regulation/RTG3.json", "source": "sgd_regulation", "sha256": "7a0b6868a7e6f8f208dbd57a7c6dc0a06908cd74d5f2b7e2695dfdde610aa62f", "size_bytes": 139382},
+    {"path": "data/external/sgd/regulation/RIM101.json", "source": "sgd_regulation", "sha256": "3d2bfb03cafe2f0ab3c2ba57088992e6b0cfe6769fe9464ba9169fb4e4f7ec82", "size_bytes": 126455}
+  ],
+  "optional_private_inputs": [
+    {
+      "id": "synergy_originals",
+      "environment": "YSTWIN_IGEM_RESULTS",
+      "reason": "Original wet-lab workbooks are private; their committed data/plates measurements remain mandatory.",
+      "fixtures": ["real_er_prelim", "real_er_stress"],
+      "test_classes": [],
+      "fixture_selectors": {}
+    },
+    {
+      "id": "atp_sensor_originals",
+      "environment": "YSTWIN_ATP_SENSOR",
+      "reason": "Original ATP-sensor wet-lab workbooks are not public downloads.",
+      "fixtures": ["atp_sensor_icl", "atp_sensor_acs_icl"],
+      "test_classes": [],
+      "fixture_selectors": {}
+    },
+    {
+      "id": "gen5_originals",
+      "environment": "YSTWIN_GEN5_XPT",
+      "reason": "Original instrument binaries are private; synthetic parser tests and committed measurement checks remain mandatory.",
+      "fixtures": [],
+      "test_classes": [
+        "tests/test_gen5_xpt.py::TestAgainstCommittedPlates",
+        "tests/test_gen5_xpt.py::TestBlankSubtractedExports",
+        "tests/test_gen5_xpt.py::TestTheWholeCorpus",
+        "tests/test_xpt_export.py::TestTheCommittedTextIsTheInstrumentFile",
+        "tests/test_afl_circuit.py::TestItReproducesFromTheInstrumentFiles",
+        "tests/test_afl_circuit.py::TestTheTwoMidJulyPlatesStayUnplaced"
+      ],
+      "fixture_selectors": {"tests/test_gain_linearity.py": ["xpt_dir"]}
+    }
+  ]
+}

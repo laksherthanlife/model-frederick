@@ -1,0 +1,886 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/biology_readiness_01/readiness.json",
+    "sha256": "66d23ad3e6acde015d81fb59fc5f74758690d6696f1b5274e68c52c2cd19c442"
+  },
+  "payload": {
+    "all_frozen_files_unchanged": true,
+    "assessment": "current_frozen_model_biological_learning_readiness",
+    "calibration_adopted": false,
+    "checkpoint_sha256": "384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94",
+    "claims": [
+      {
+        "assessment": {
+          "assessment_kind": "verified_release_gate",
+          "authorized": true,
+          "checkpoint_sha256": "384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94",
+          "claim": "conditional_parameter_estimation",
+          "metadata_consistent": true,
+          "predicates": [
+            {
+              "evidence": {
+                "evidence": [
+                  {
+                    "location": {
+                      "json_pointer": "/training_manifest"
+                    },
+                    "path": "outputs/native_training_run_02/checkpoint.json",
+                    "sha256": "384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94"
+                  }
+                ],
+                "value": true,
+                "verification": "frozen_payload_equality"
+              },
+              "predicate": "checkpoint_integrity",
+              "state": "pass"
+            },
+            {
+              "evidence": {
+                "evidence": [
+                  {
+                    "location": {
+                      "cells": [
+                        {
+                          "source_cell": "C26",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Hog1PP_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C27",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Hog1PP_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C28",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Hog1PP_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C29",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Hog1PP_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C30",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Hog1PP_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C31",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Hog1PP_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C32",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Hog1PP_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C33",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Hog1PP_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C34",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Hog1PP_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C35",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Hog1PP_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C36",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Hog1PP_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C37",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Hog1PP_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C38",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Hog1PP_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C19",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Gpd1_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C20",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Gpd1_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C21",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Gpd1_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C22",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Gpd1_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C23",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Gpd1_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C24",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Gpd1_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C25",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Gpd1_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C26",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Gpd1_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C27",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Gpd1_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C28",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Gpd1_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C29",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Gpd1_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C30",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Gpd1_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "C31",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "Gpd1_ALL",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J3",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J4",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J5",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J6",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J7",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J8",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J9",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J10",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J11",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J12",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J13",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J14",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J15",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J16",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N3",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N4",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N5",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N6",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N7",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N8",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N9",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N10",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N11",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N12",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N13",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N14",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N15",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N16",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_i",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J3",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J4",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J5",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J6",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J7",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J8",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J9",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J10",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J11",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J12",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J13",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J14",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J15",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "J16",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N3",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N4",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N5",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N6",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N7",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N8",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N9",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N10",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N11",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N12",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N13",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N14",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N15",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        },
+                        {
+                          "source_cell": "N16",
+                          "source_doi": "10.1371/journal.pcbi.1003084",
+                          "source_sheet": "glycerol_e",
+                          "supplement_id": "s002"
+                        }
+                      ]
+                    },
+                    "path": "data/hog2013/observations.xls",
+                    "sha256": "87854ff96bf22943f1347abdf5636e261ddfcdec041ea78fe498d62d924a967e"
+                  },
+                  {
+                    "location": {
+                      "lines": [
+                        13,
+                        84
+                      ]
+                    },
+                    "path": "data/hog2013/native_training_protocol.json",
+                    "sha256": "ca904f13599ba049aff5ddc855b7537f1151520c0e95b225a192963684ddb69f"
+                  }
+                ],
+                "value": true,
+                "verification": "source_bound_values"
+              },
+              "predicate": "native_cells_bound",
+              "state": "pass"
+            },
+            {
+              "evidence": {
+                "evidence": [
+                  {
+                    "location": {
+                      "json_pointer": "/diagnostics"
+                    },
+                    "path": "outputs/native_training_run_02/native_hog_fit.json",
+                    "sha256": "59b8d21c772adcd90a9f0d1ea34aa7c6fa2acbd0727e35f42ce1610df028cf4b"
+                  },
+                  {
+                    "location": {
+                      "json_pointer": "/training_manifest"
+                    },
+                    "path": "outputs/native_training_run_02/checkpoint.json",
+                    "sha256": "384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94"
+                  },
+                  {
+                    "location": {
+                      "lines": [
+                        13,
+                        84
+                      ]
+                    },
+                    "path": "data/hog2013/native_training_protocol.json",
+                    "sha256": "ca904f13599ba049aff5ddc855b7537f1151520c0e95b225a192963684ddb69f"
+                  }
+                ],
+                "value": true,
+                "verification": "frozen_payload_equality"
+              },
+              "predicate": "native_fit_bound",
+              "state": "pass"
+            },
+            {
+              "evidence": {
+                "evidence": [
+                  {
+                    "location": {
+                      "lines": [
+                        295,
+                        502
+                      ],
+                      "symbol": "KineticModel.__init__"
+                    },
+                    "path": "src/ystwin/mech/kinetic_sbml.py",
+                    "sha256": "158fbdd3c04fc83918500936a4aac6c4d79fad125249657749c2eec4cd238fcc"
+                  },
+                  {
+                    "location": {
+                      "lines": [
+                        290,
+                        493
+                      ],
+                      "symbol": "fit_native_hog_parameters"
+                    },
+                    "path": "src/ystwin/analysis/hog_learning.py",
+                    "sha256": "1e93c017c3c13c686553fd6596b6a839cbd77257f41b94ab6241f3414edf26f0"
+                  }
+                ],
+                "value": true,
+                "verification": "source_structure"
+              },
+              "predicate": "supplied_hog_structure",
+              "state": "pass"
+            }
+          ],
+          "scope": "Three grouped kinetic multipliers and two observation gains, conditional on supplied structure, source priors, initial states and observation processing",
+          "status": "supported_with_scope",
+          "supported": true,
+          "verification_root": "."
+        },
+        "authorized": true,
+        "claim": "conditional_parameter_estimation"
+      },
+      {
+        "authorized": false,
+        "claim": "independent_mechanistic_evidence",
+        "reason": "unsupported claim independent_mechanistic_evidence: no implemented authoritative evidence assessor"
+      }
+    ],
+    "constraint_mode": "printed_rounding",
+    "limitations": [
+      "Native observations and priors have historical exposure; consistency is necessary for transfer but not independent validation",
+      "Rounding ranges are representation bounds, not measurement confidence intervals; censored readouts remain unquantified",
+      "No fit, model-selection change, solver-policy relaxation, product outcome or new measurement array enters this gate",
+      "Strong biological claims remain blocked until dedicated authoritative assessors and genuinely independent evidence exist"
+    ],
+    "n_native_conditions": 10,
+    "n_native_consistent": 6,
+    "native_conditions": [
+      {
+        "censored_unquantified_readouts": [
+          "Ethanol",
+          "Glycerol",
+          "Acetate",
+          "Pyruvate"
+        ],
+        "condition_id": "vanHoek1998:D=0.025",
+        "consistent": true,
+        "constraint_mode": "printed_rounding",
+        "growth_rate_per_h": 0.025,
+        "physical_audit": {
+          "max_abs_mass_balance": 2.500000000000001e-08,
+          "max_constraint_violation": 2.500000000000001e-08,
+          "max_reaction_bound_violation": 1.978852972405497e-18,
+          "max_variable_bound_violation": 1.978852972405497e-18,
+          "n_constraints": 4188,
+          "n_mass_balance_rows": 4180,
+          "n_reactions": 8144,
+          "n_variables": 16288,
+          "physical_acceptance_tolerance": 1e-07,
+          "row_units": "Original unscaled native SBML rows; chemical rows in mmol/gDW/h, pseudo-resource rows in their native resource units"
+        },
+        "quantified_constraints": 4,
+        "reason": null,
+        "scope": "native observation consistency at imposed growth, not an independent growth forecast",
+        "status": "optimal",
+        "uncertainty_scope": "printed rounding, not a confidence interval"
+      },
+      {
+        "censored_unquantified_readouts": [
+          "Ethanol",
+          "Glycerol",
+          "Acetate",
+          "Pyruvate"
+        ],
+        "condition_id": "vanHoek1998:D=0.05",
+        "consistent": true,
+        "constraint_mode": "printed_rounding",
+        "growth_rate_per_h": 0.05,
+        "physical_audit": {
+          "max_abs_mass_balance": 5.000000000000002e-08,
+          "max_constraint_violation": 5.000000000000002e-08,
+          "max_reaction_bound_violation": 2.4472162164837457e-16,
+          "max_variable_bound_violation": 2.4472162164837457e-16,
+          "n_constraints": 4188,
+          "n_mass_balance_rows": 4180,
+          "n_reactions": 8144,
+          "n_variables": 16288,
+          "physical_acceptance_tolerance": 1e-07,
+          "row_units": "Original unscaled native SBML rows; chemical rows in mmol/gDW/h, pseudo-resource rows in their native resource units"
+        },
+        "quantified_constraints": 4,
+        "reason": null,
+        "scope": "native observation consistency at imposed growth, not an independent growth forecast",
+        "status": "optimal",
+        "uncertainty_scope": "printed rounding, not a confidence interval"
+      },
+      {
+        "censored_unquantified_readouts": [
+          "Ethanol",
+          "Glycerol",
+          "Acetate",
+          "Pyruvate"
+        ],
+        "condition_id": "vanHoek1998:D=0.1",
+        "consistent": true,
+        "constraint_mode": "printed_rounding",
+        "growth_rate_per_h": 0.1,
+        "physical_audit": {
+          "max_abs_mass_balance": 9.880984919163893e-15,
+          "max_constraint_violation": 9.880984919163893e-15,
+          "max_reaction_bound_violation": 2.6276551428759284e-15,
+          "max_variable_bound_violation": 2.6276551428759284e-15,
+          "n_constraints": 4188,
+          "n_mass_balance_rows": 4180,
+          "n_reactions": 8144,
+          "n_variables": 16288,
+          "physical_acceptance_tolerance": 1e-07,
+          "row_units": "Original unscaled native SBML rows; chemical rows in mmol/gDW/h, pseudo-resource rows in their native resource units"
+        },
+        "quantified_constraints": 4,
+        "reason": null,
+        "scope": "native observation consistency at imposed growth, not an independent growth forecast",
+        "status": "optimal",
+        "uncertainty_scope": "printed rounding, not a confidence interval"
+      },
+      {
+        "censored_unquantified_readouts": [
+          "Ethanol",
+          "Glycerol",
+          "Acetate",
+          "Pyruvate"
+        ],
+        "condition_id": "vanHoek1998:D=0.15",
+        "consistent": true,
+        "constraint_mode": "printed_rounding",
+        "growth_rate_per_h": 0.15,
+        "physical_audit": {
+          "max_abs_mass_balance": 2.886579864025407e-15,
+          "max_constraint_violation": 2.5055200433766518e-15,
+          "max_reaction_bound_violation": 7.338043753977601e-16,
+          "max_variable_bound_violation": 7.338043753977601e-16,
+          "n_constraints": 4188,
+          "n_mass_balance_rows": 4180,
+          "n_reactions": 8144,
+          "n_variables": 16288,
+          "physical_acceptance_tolerance": 1e-07,
+          "row_units": "Original unscaled native SBML rows; chemical rows in mmol/gDW/h, pseudo-resource rows in their native resource units"
+        },
+        "quantified_constraints": 4,
+        "reason": null,
+        "scope": "native observation consistency at imposed growth, not an independent growth forecast",
+        "status": "optimal",
+        "uncertainty_scope": "printed rounding, not a confidence interval"
+      },
+      {
+        "censored_unquantified_readouts": [
+          "Ethanol",
+          "Glycerol",
+          "Acetate",
+          "Pyruvate"
+        ],
+        "condition_id": "vanHoek1998:D=0.2",
+        "consistent": true,
+        "constraint_mode": "printed_rounding",
+        "growth_rate_per_h": 0.2,
+        "physical_audit": {
+          "max_abs_mass_balance": 1.9954259169852557e-14,
+          "max_constraint_violation": 2.0220918123655058e-14,
+          "max_reaction_bound_violation": 1.1485362163203885e-15,
+          "max_variable_bound_violation": 1.1485362163203885e-15,
+          "n_constraints": 4188,
+          "n_mass_balance_rows": 4180,
+          "n_reactions": 8144,
+          "n_variables": 16288,
+          "physical_acceptance_tolerance": 1e-07,
+          "row_units": "Original unscaled native SBML rows; chemical rows in mmol/gDW/h, pseudo-resource rows in their native resource units"
+        },
+        "quantified_constraints": 4,
+        "reason": null,
+        "scope": "native observation consistency at imposed growth, not an independent growth forecast",
+        "status": "optimal",
+        "uncertainty_scope": "printed rounding, not a confidence interval"
+      },
+      {
+        "censored_unquantified_readouts": [
+          "Ethanol",
+          "Glycerol",
+          "Acetate",
+          "Pyruvate"
+        ],
+        "condition_id": "vanHoek1998:D=0.25",
+        "consistent": false,
+        "constraint_mode": "printed_rounding",
+        "growth_rate_per_h": 0.25,
+        "physical_audit": null,
+        "quantified_constraints": 4,
+        "reason": "native solve did not establish consistency: infeasible",
+        "scope": "native observation consistency at imposed growth, not an independent growth forecast",
+        "status": "infeasible",
+        "uncertainty_scope": "printed rounding, not a confidence interval"
+      },
+      {
+        "censored_unquantified_readouts": [
+          "Glycerol"
+        ],
+        "condition_id": "vanHoek1998:D=0.28",
+        "consistent": true,
+        "constraint_mode": "printed_rounding",
+        "growth_rate_per_h": 0.28,
+        "physical_audit": {
+          "max_abs_mass_balance": 8.054321098960315e-15,
+          "max_constraint_violation": 2.166778266895468e-14,
+          "max_reaction_bound_violation": 6.4752020503598685e-15,
+          "max_variable_bound_violation": 6.4752020503598685e-15,
+          "n_constraints": 4194,
+          "n_mass_balance_rows": 4180,
+          "n_reactions": 8144,
+          "n_variables": 16288,
+          "physical_acceptance_tolerance": 1e-07,
+          "row_units": "Original unscaled native SBML rows; chemical rows in mmol/gDW/h, pseudo-resource rows in their native resource units"
+        },
+        "quantified_constraints": 7,
+        "reason": null,
+        "scope": "native observation consistency at imposed growth, not an independent growth forecast",
+        "status": "optimal",
+        "uncertainty_scope": "printed rounding, not a confidence interval"
+      },
+      {
+        "censored_unquantified_readouts": [
+          "Glycerol"
+        ],
+        "condition_id": "vanHoek1998:D=0.3",
+        "consistent": false,
+        "constraint_mode": "printed_rounding",
+        "growth_rate_per_h": 0.3,
+        "physical_audit": null,
+        "quantified_constraints": 7,
+        "reason": "native solve did not establish consistency: infeasible",
+        "scope": "native observation consistency at imposed growth, not an independent growth forecast",
+        "status": "infeasible",
+        "uncertainty_scope": "printed rounding, not a confidence interval"
+      },
+      {
+        "censored_unquantified_readouts": [],
+        "condition_id": "vanHoek1998:D=0.35",
+        "consistent": false,
+        "constraint_mode": "printed_rounding",
+        "growth_rate_per_h": 0.35,
+        "physical_audit": null,
+        "quantified_constraints": 8,
+        "reason": "native solve did not establish consistency: infeasible",
+        "scope": "native observation consistency at imposed growth, not an independent growth forecast",
+        "status": "infeasible",
+        "uncertainty_scope": "printed rounding, not a confidence interval"
+      },
+      {
+        "censored_unquantified_readouts": [],
+        "condition_id": "vanHoek1998:D=0.4",
+        "consistent": false,
+        "constraint_mode": "printed_rounding",
+        "growth_rate_per_h": 0.4,
+        "physical_audit": null,
+        "quantified_constraints": 8,
+        "reason": "native solve did not establish consistency: infeasible",
+        "scope": "native observation consistency at imposed growth, not an independent growth forecast",
+        "status": "infeasible",
+        "uncertainty_scope": "printed rounding, not a confidence interval"
+      }
+    ],
+    "ready_for_biological_law_claim": false,
+    "schema_version": 1,
+    "solver": "glpk tol=1e-07 cobra=0.32.1",
+    "source_model": "data/gem/ecYeastGEM_batch.xml.gz"
+  },
+  "schema_version": 1
+}

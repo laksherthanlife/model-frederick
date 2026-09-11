@@ -1,0 +1,39 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_4.json",
+    "sha256": "ed13f8ae885db5e412fbf8fd5d1caa69b8137995e8f98df7bbdb019f59bc4cbe"
+  },
+  "payload": {
+    "H_train": 1.9510223214601747,
+    "S_train": 0.21037428181983453,
+    "bounds": {
+      "c": [
+        0.0,
+        19.510223214601748
+      ]
+    },
+    "document_type": "population_development_model_checkpoint",
+    "initial_parameters": {
+      "c": 4.047049588087292
+    },
+    "model_id": "training_constant",
+    "observation_transform": "identity",
+    "output_map": "max(0, unbounded_mean) before fitting and scoring",
+    "parameter_order": [
+      "c"
+    ],
+    "parameters": {
+      "c": 1.6697934611684917
+    },
+    "protocol_id": "granados-sfp1-published-cohort-development-01",
+    "scientific_scope": "retrospective_source_cohort_development",
+    "seed": 201805,
+    "selected_for_family": false,
+    "start_index": 4,
+    "strong_claim_authorized": false,
+    "training_mean_mse": 0.01944658715139829,
+    "training_projection_sha256": "fc8000c7720e554756c90e0da79f2d0ae4a7928d5923f0efa1a2ed5823d37c9e"
+  },
+  "schema_version": 1
+}

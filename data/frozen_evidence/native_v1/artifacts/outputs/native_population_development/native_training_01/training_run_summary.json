@@ -1,0 +1,377 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/native_population_development/native_training_01/training_run_summary.json",
+    "sha256": "fe80ac3406d3058c7489a98d5f3ec6aa3d980d76388c280da5b9d21dc2b489cd"
+  },
+  "payload": {
+    "attempt_log": {
+      "bytes": 20091,
+      "path": "outputs/native_population_development/native_training_01/attempt_log.json",
+      "role": "attempt_log",
+      "sha256": "4740203cf2ecd2ffe1626c5a288ac6b5949f086d189e302f4be8cc3f8c51e4f3"
+    },
+    "checkpoint_artifacts": [
+      {
+        "bytes": 672,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_persistence_start_0.json",
+        "role": "model_checkpoint",
+        "sha256": "5075ce2a2fe293b55c44f741bcee3395c36b32631b400951d9207260ed318061"
+      },
+      {
+        "bytes": 744,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_0.json",
+        "role": "model_checkpoint",
+        "sha256": "bb956a842d13fed35eeee9d324a84526f242e589127eec24f683b7c94a1445ff"
+      },
+      {
+        "bytes": 747,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_1.json",
+        "role": "model_checkpoint",
+        "sha256": "9e16035279c73f4e21102f772ae9b2a24ab5e9597e19d5da0cadada62543c461"
+      },
+      {
+        "bytes": 747,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_2.json",
+        "role": "model_checkpoint",
+        "sha256": "758493855ec178dc2ad2ea19068ad269fb264fdd7d13794db2901d0641167a03"
+      },
+      {
+        "bytes": 746,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_3.json",
+        "role": "model_checkpoint",
+        "sha256": "062cbacb060a96c122ed3890bd64744636d2bd148eed24f9a11eb995d8f903b0"
+      },
+      {
+        "bytes": 746,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_4.json",
+        "role": "model_checkpoint",
+        "sha256": "ed13f8ae885db5e412fbf8fd5d1caa69b8137995e8f98df7bbdb019f59bc4cbe"
+      },
+      {
+        "bytes": 746,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_5.json",
+        "role": "model_checkpoint",
+        "sha256": "1b29356b8c0049e733558fc326e82e4134373c23cf84588bc9489296cf5276be"
+      },
+      {
+        "bytes": 748,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_6.json",
+        "role": "model_checkpoint",
+        "sha256": "68585c740bc015d6572a21e6d9d6c018232b2c765b9d457a923d9862813be7c0"
+      },
+      {
+        "bytes": 745,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_7.json",
+        "role": "model_checkpoint",
+        "sha256": "4fefe509ca43c444c001e21396b4fc7fe136ca41dfb18686633a73800733388b"
+      },
+      {
+        "bytes": 747,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_0.json",
+        "role": "model_checkpoint",
+        "sha256": "e76da924f126edd5562a0508a156ca2da02266a10ddea689c9100182cbcdd4f0"
+      },
+      {
+        "bytes": 761,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_1.json",
+        "role": "model_checkpoint",
+        "sha256": "7ca3c499eb9ac44a0ed74c832eee548b360a2eabee685bc81bb8ed1737d4d41e"
+      },
+      {
+        "bytes": 762,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_2.json",
+        "role": "model_checkpoint",
+        "sha256": "2cc16a4ac90133aa342477f03f8bc8b0947cd0b1870fe2b3e23cd84ceea6c12a"
+      },
+      {
+        "bytes": 760,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_3.json",
+        "role": "model_checkpoint",
+        "sha256": "ba3b1dcbb1ee9061840922598878fbf38f458fc887320e1494523e670879a476"
+      },
+      {
+        "bytes": 760,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_4.json",
+        "role": "model_checkpoint",
+        "sha256": "8848b2bd62a5bac7e996f4ba966d60e6e85be9e2556c04e7a5462fce411d4004"
+      },
+      {
+        "bytes": 760,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_5.json",
+        "role": "model_checkpoint",
+        "sha256": "0cd7a120310c28cd33e1946c722d004fb9a4db685037e5b5c320525f05c9b7f0"
+      },
+      {
+        "bytes": 759,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_6.json",
+        "role": "model_checkpoint",
+        "sha256": "da68eec904b992a8b3c5fdb042401b210eec8ee9130c1da1e332c466acb4fe7a"
+      },
+      {
+        "bytes": 758,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_7.json",
+        "role": "model_checkpoint",
+        "sha256": "493dfc79831b1f27aa792a29cc450af4cce0702c1a60c5e4b811d4fc4c5caa83"
+      },
+      {
+        "bytes": 833,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_0.json",
+        "role": "model_checkpoint",
+        "sha256": "4ba191f5804b7f88b5074a130ed64ee2c263de8975e801ea39e602ff97a22f1a"
+      },
+      {
+        "bytes": 862,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_1.json",
+        "role": "model_checkpoint",
+        "sha256": "0a2c704be1638a7a8f6e3acafd3901918b56b2c02235308f32379255dd7c56aa"
+      },
+      {
+        "bytes": 860,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_2.json",
+        "role": "model_checkpoint",
+        "sha256": "abe2e8c406c07852f7bb5a54e7c36b296b03459f8ba8687da321faaa3a0df70e"
+      },
+      {
+        "bytes": 860,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_3.json",
+        "role": "model_checkpoint",
+        "sha256": "4ef22345100b697cb4cc75ab5d6ca08e48346eff7e3edb6e01955b6e31c734dd"
+      },
+      {
+        "bytes": 862,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_4.json",
+        "role": "model_checkpoint",
+        "sha256": "4ad5afac6e85df384c63bf19af2529a9b0bb5dd349d8ae043e5b15220f27ae01"
+      },
+      {
+        "bytes": 861,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_5.json",
+        "role": "model_checkpoint",
+        "sha256": "8b5f83ff69ac6a522d7c4c6352848d8b134fa28bde9fd25d4aeae8001f17f1b9"
+      },
+      {
+        "bytes": 859,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_6.json",
+        "role": "model_checkpoint",
+        "sha256": "27cc0e5edf5522cc2a7ea23bfe630f6088acbf279544d47bb3fc1bcc581a92bc"
+      },
+      {
+        "bytes": 860,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_7.json",
+        "role": "model_checkpoint",
+        "sha256": "d45089e58fd95ae20395e6642ae609abf3a58ce47018a3b73c0363ccbf56b7c1"
+      },
+      {
+        "bytes": 825,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_0.json",
+        "role": "model_checkpoint",
+        "sha256": "83a0d50899211128e391309221da804e1ce90a8c4b4ad1c594cfb9acc7255187"
+      },
+      {
+        "bytes": 838,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_1.json",
+        "role": "model_checkpoint",
+        "sha256": "e3f2d2cd695a7fe666807f07fc7de37f9c4443779411f853aa35d42b898330e7"
+      },
+      {
+        "bytes": 840,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_2.json",
+        "role": "model_checkpoint",
+        "sha256": "4b12aa14942a01f59d425a2127ef50ad73ccbee16a1e9e6f4065ddd590905e8c"
+      },
+      {
+        "bytes": 837,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_3.json",
+        "role": "model_checkpoint",
+        "sha256": "99a913c9c4d7866733c13fdbe37aced4ff3147bd133be752a446da67589cbfa4"
+      },
+      {
+        "bytes": 837,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_4.json",
+        "role": "model_checkpoint",
+        "sha256": "3cb9579fdbb7f48593085968cf64a1fe626098297d0e5d6b6b674a5512fd613e"
+      },
+      {
+        "bytes": 839,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_5.json",
+        "role": "model_checkpoint",
+        "sha256": "614ffdfcc94611418043469e7cb6f691a92ca50d7de38cfd9ca44034c63be0fe"
+      },
+      {
+        "bytes": 841,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_6.json",
+        "role": "model_checkpoint",
+        "sha256": "be8f836bade5ad8399d41fddbd98a9e8dedf8eab6928d4b50d06d77d51d92d14"
+      },
+      {
+        "bytes": 837,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_7.json",
+        "role": "model_checkpoint",
+        "sha256": "9e5d5d79f424cb153b531015d15daa47fa6d433ff1acf0b3c04bfe52bb6ac072"
+      },
+      {
+        "bytes": 925,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_0.json",
+        "role": "model_checkpoint",
+        "sha256": "391f76e3ff5931f21461f81a5357e77687ee1aaea0c4c2ad6db7a71f7e4484e6"
+      },
+      {
+        "bytes": 939,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_1.json",
+        "role": "model_checkpoint",
+        "sha256": "fbf7914f4cd34bd69350ef5c7f0428af2ce58102b292b45515687fca424530f5"
+      },
+      {
+        "bytes": 939,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_2.json",
+        "role": "model_checkpoint",
+        "sha256": "01b80fb81fac6f1d5f4dbecdf73da785ad8f8ca2900d6efb155bde56ca71359a"
+      },
+      {
+        "bytes": 939,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_3.json",
+        "role": "model_checkpoint",
+        "sha256": "abf642b8c684cd5070443541c8442ea3f8822462041d7cab320aa28b558ad055"
+      },
+      {
+        "bytes": 940,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_4.json",
+        "role": "model_checkpoint",
+        "sha256": "b047e553bbaeb38bb7f37ac223278a8e4d11a88a3f78b92b03936ca80f25dcc9"
+      },
+      {
+        "bytes": 939,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_5.json",
+        "role": "model_checkpoint",
+        "sha256": "e725bef6d7f8aaf54d648d4efd850f96c453aa8d162be2023a68a7ef861cc9f1"
+      },
+      {
+        "bytes": 941,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_6.json",
+        "role": "model_checkpoint",
+        "sha256": "fe1e5b4f3bf230fe702e26814c7eabb7d8cd430e0de6f3da74accfe978eb9342"
+      },
+      {
+        "bytes": 940,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_7.json",
+        "role": "model_checkpoint",
+        "sha256": "dd5a2ee0e5acc75df4306c0675eb29a515be9915a2c3bc79596f7eebf121d0fc"
+      }
+    ],
+    "conditioning_checkpoint": {
+      "bytes": 70295,
+      "path": "outputs/native_population_development/native_training_01/conditioning_checkpoint.json",
+      "role": "model_checkpoint",
+      "sha256": "2814d3827aa8b6d3f5cd4974c92a30809c30ae4ae330d98a5262a7f650908ca3"
+    },
+    "development_prediction_rows": 288,
+    "nonnegative_map_audit": {
+      "bytes": 175204,
+      "path": "outputs/native_population_development/native_training_01/nonnegative_map_audit.json",
+      "role": "model_checkpoint",
+      "sha256": "bc941931bb27d4daf0b9db2eaf3fdaf76b68a5f8f9c2c0da9a2b03b58c71de34"
+    },
+    "prediction_freeze": {
+      "bytes": 124917,
+      "path": "outputs/native_population_development/native_training_01/development_prediction_freeze.json",
+      "role": "development_predictions",
+      "sha256": "e03f6b9407b29e7e76da7a0be566ce9036c5cf27ac65bfaa9a4d3d7e009b5753"
+    },
+    "scientific_scope": "retrospective_source_cohort_development",
+    "selected_checkpoints": {
+      "first_order_response": {
+        "bytes": 825,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_0.json",
+        "role": "model_checkpoint",
+        "sha256": "83a0d50899211128e391309221da804e1ce90a8c4b4ad1c594cfb9acc7255187"
+      },
+      "prefix_affine_time": {
+        "bytes": 860,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_2.json",
+        "role": "model_checkpoint",
+        "sha256": "abe2e8c406c07852f7bb5a54e7c36b296b03459f8ba8687da321faaa3a0df70e"
+      },
+      "prefix_offset": {
+        "bytes": 759,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_6.json",
+        "role": "model_checkpoint",
+        "sha256": "da68eec904b992a8b3c5fdb042401b210eec8ee9130c1da1e332c466acb4fe7a"
+      },
+      "prefix_persistence": {
+        "bytes": 672,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_persistence_start_0.json",
+        "role": "model_checkpoint",
+        "sha256": "5075ce2a2fe293b55c44f741bcee3395c36b32631b400951d9207260ed318061"
+      },
+      "training_constant": {
+        "bytes": 744,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_0.json",
+        "role": "model_checkpoint",
+        "sha256": "bb956a842d13fed35eeee9d324a84526f242e589127eec24f683b7c94a1445ff"
+      },
+      "transient_response": {
+        "bytes": 939,
+        "path": "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_3.json",
+        "role": "model_checkpoint",
+        "sha256": "abf642b8c684cd5070443541c8442ea3f8822462041d7cab320aa28b558ad055"
+      }
+    },
+    "selected_development_model": null,
+    "status": "training_frozen_development_responses_not_accessed",
+    "strong_claim_authorized": false,
+    "training_results": {
+      "first_order_response": {
+        "parameters": {
+          "A": -0.21771275480748362,
+          "tau": 5.522541901095112
+        },
+        "selected_start_index": 0,
+        "status": "ok",
+        "training_mean_mse": 0.012658802837916832
+      },
+      "prefix_affine_time": {
+        "parameters": {
+          "a": -0.24579796496773854,
+          "b": 0.0915937733219929
+        },
+        "selected_start_index": 2,
+        "status": "ok",
+        "training_mean_mse": 0.014568015862503522
+      },
+      "prefix_offset": {
+        "parameters": {
+          "a": -0.19800709156534987
+        },
+        "selected_start_index": 6,
+        "status": "ok",
+        "training_mean_mse": 0.015271920966504132
+      },
+      "prefix_persistence": {
+        "parameters": {},
+        "selected_start_index": 0,
+        "status": "ok",
+        "training_mean_mse": 0.05447872927667314
+      },
+      "training_constant": {
+        "parameters": {
+          "c": 1.669793461168489
+        },
+        "selected_start_index": 0,
+        "status": "ok",
+        "training_mean_mse": 0.01944658715139829
+      },
+      "transient_response": {
+        "parameters": {
+          "A": -19.510223214601744,
+          "tau_off": 19.632123041181444,
+          "tau_on": 469.5642526310647
+        },
+        "selected_start_index": 3,
+        "status": "ok",
+        "training_mean_mse": 0.005875078454331329
+      }
+    }
+  },
+  "schema_version": 1
+}

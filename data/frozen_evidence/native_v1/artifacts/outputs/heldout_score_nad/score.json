@@ -1,0 +1,149 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/heldout_score_nad/score.json",
+    "sha256": "8e2d3ab40c8135f2358ebf0f5d080864d6a9caa7e89b2790d6f36c19d82461fc"
+  },
+  "payload": {
+    "assessment": "feasible_envelope_consistency_not_point_forecast",
+    "checkpoint_sha256": "384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94",
+    "complete": false,
+    "containment_fraction_total": 0.5,
+    "containment_on_scorable": 1.0,
+    "kind": "interval_prediction_score",
+    "label_manifest": {
+      "inputs": [
+        {
+          "path": "data/holdout_transfer/labels.json",
+          "resolved_path": "data/holdout_transfer/labels.json",
+          "role": "outcome_labels",
+          "sha256": "1a8e6cd6171408594e4f99389aceb9dbedbd73214fa707da36dac06480c8dc2c",
+          "size_bytes": 650,
+          "source": {
+            "audit_qualifications": [
+              "These are measurement-derived intracellular-content estimates, not directly reported mg/gDW assays, point fermentation titres, gross biosynthetic fluxes, or model fits. Lycopene is an intermediate in the CrtE/CrtYB/CrtI beta-carotene pathway.",
+              "All six conditions are retained. Existing author replicate filtering is preserved; no new sample or condition exclusions, label variants, hypothesis selection, parameter fits, or performance comparisons were made.",
+              "An earlier condition curator accidentally saw rate values after model freeze; the incident values were not used or reproduced in condition curation or passed into estimator training/prediction. Independent input verification does not restore that curator's blindness. Fully blinded operator knowledge is not claimed.",
+              "Estimator training and all three predictions remain frozen and product-outcome-blind as authorized/reported. The label curator accessed outcomes only in the authorized scoring-data phase and did not inspect sealed prediction values. Hash equality verifies artifact integrity, not historical operator blindness."
+            ],
+            "authority": "Elizondo and Saa (2025) primary intracellular-carotenoid HPLC experiment and author-released raw measurements and measurement-summary workbooks",
+            "label_estimator": "Author mean extracted-lycopene concentration in mg/L of fermentation broth divided by (author mean OD600 times author measured (gDCW/L)/OD600 conversion factor). One ratio-of-author-means rule for all six; no Monte Carlo or kinetic-model output is used as a label.",
+            "outcome_projection": "All six fixed conditions; intracellular lycopene measured by HPLC, normalized to dry-cell mass. This is an outcome-data projection, not the condition, chemistry, training, or model-prediction asset.",
+            "provenance_path": "data/holdout_transfer/label_provenance.json",
+            "reference": "Elizondo BR and Saa PA (2025), Complex Kinetic Models Predict beta-Carotene Production and Reveal Flux Limitations in Recombinant Saccharomyces cerevisiae Strains, ACS Synthetic Biology 14(9), DOI 10.1021/acssynbio.5c00256, PMC12455641, Methods 2.1.1-2.1.2 and 2.1.4, Supporting Information S4/Eq. S1. SysBioengLab/BcarGRASP@ec6f1290711fba8091e92c77da4a5684ff8cad4d: biomass_and_metabolites_data/MetabolitesMeasurements.xlsx, Lycopene!B2:G4 and Commentary!A2:A3; data_pre-processing/fluxes/output/MetabolitesProductionStatistics.xlsx, Lycopene!A2:F7; data_pre-processing/fluxes/output/BiomassMeasurementsStatistics.xlsx and data_pre-processing/fluxes/output/BiomassConversionsStatistics.xlsx, Statistics!A2:F7. Exact original cells, hashes, source replicate filtering, and normalization inputs are recorded in label_provenance.json.",
+            "scope": "heldout_outcomes",
+            "source_id": "holdout-transfer:elizondo2025:six-chemostats:lycopene-hplc-content-author-means:v1"
+          }
+        }
+      ],
+      "kind": "outcome_labels_manifest",
+      "root": ".",
+      "schema_version": 1,
+      "sha256": "7e4f4e3510dad0fe09e7ac58b0d70080add0cd8b1af8b8469a32151d058108d0"
+    },
+    "max_violation_on_scorable": 0.0,
+    "mean_violation_on_scorable": 0.0,
+    "mean_width_on_scorable": 16.574032086242326,
+    "n_contained": 3,
+    "n_scorable": 3,
+    "n_successful": 3,
+    "n_total": 6,
+    "n_violated": 0,
+    "prediction_kind": "feasible_envelope",
+    "prediction_scope": "Product-agnostic balanced-growth intracellular-content feasibility under learned native input and glycerol-commitment constraints, not realized titre allocation",
+    "predictions_sha256": "e14b024cdeb43681b9ff9f2c0867c17581eae5659975094b30a5895debabafe5",
+    "quantity": "balanced_growth_intracellular_content",
+    "rows": [
+      {
+        "contained": null,
+        "experiment_id": "elizondo2025_2D01",
+        "label_source_path": "data/holdout_transfer/labels.json",
+        "lower": null,
+        "observed": 0.5025304583095278,
+        "reason": "native obligation is infeasible under the existing hard constraints",
+        "status": "failed",
+        "upper": null,
+        "violation": null,
+        "violation_side": null,
+        "width": null
+      },
+      {
+        "contained": true,
+        "experiment_id": "elizondo2025_2D025",
+        "label_source_path": "data/holdout_transfer/labels.json",
+        "lower": 0.0,
+        "observed": 0.17780352115903977,
+        "reason": null,
+        "status": "ok",
+        "upper": 16.574032086242326,
+        "violation": 0.0,
+        "violation_side": null,
+        "width": 16.574032086242326
+      },
+      {
+        "contained": null,
+        "experiment_id": "elizondo2025_3D01",
+        "label_source_path": "data/holdout_transfer/labels.json",
+        "lower": null,
+        "observed": 2.520539465465436,
+        "reason": "native obligation is infeasible under the existing hard constraints",
+        "status": "failed",
+        "upper": null,
+        "violation": null,
+        "violation_side": null,
+        "width": null
+      },
+      {
+        "contained": true,
+        "experiment_id": "elizondo2025_3D025",
+        "label_source_path": "data/holdout_transfer/labels.json",
+        "lower": 0.0,
+        "observed": 0.2670220585098846,
+        "reason": null,
+        "status": "ok",
+        "upper": 16.574032086242326,
+        "violation": 0.0,
+        "violation_side": null,
+        "width": 16.574032086242326
+      },
+      {
+        "contained": null,
+        "experiment_id": "elizondo2025_4D01",
+        "label_source_path": "data/holdout_transfer/labels.json",
+        "lower": null,
+        "observed": 4.042046707602303,
+        "reason": "native obligation is infeasible under the existing hard constraints",
+        "status": "failed",
+        "upper": null,
+        "violation": null,
+        "violation_side": null,
+        "width": null
+      },
+      {
+        "contained": true,
+        "experiment_id": "elizondo2025_4D025",
+        "label_source_path": "data/holdout_transfer/labels.json",
+        "lower": 0.0,
+        "observed": 0.8289784796095312,
+        "reason": null,
+        "status": "ok",
+        "upper": 16.574032086242326,
+        "violation": 0.0,
+        "violation_side": null,
+        "width": 16.574032086242326
+      }
+    ],
+    "schema_version": 1,
+    "scorable_fraction_total": 0.5,
+    "sha256": "7f18b5b2170aa0641f874e6f2a9266bf18fdc17720bdfb961e9e929bac278ed6",
+    "status_counts": {
+      "failed": 3,
+      "infeasible": 0,
+      "ok": 3,
+      "unsupported": 0
+    },
+    "successful_fraction_total": 0.5,
+    "unit": "mg/gDW"
+  },
+  "schema_version": 1
+}

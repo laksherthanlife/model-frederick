@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "protocol_id": "native-law-v2-preregistered-01",
+  "status": "criteria_declared_before_new_fitting_or_measurement_access_not_a_scientific_verdict",
+  "claim_domain_path": "data/native_law_v2/claim_domain.json",
+  "historical_checkpoint_sha256": "384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94",
+  "historical_policy": "Do not edit the historical checkpoint, its dependencies, old gates, or scored product artifacts. Already-scored lycopene is development evidence only and is excluded from every native-law fit, selection, normalization, and final test.",
+  "candidate_ids": ["hackett2016_cdc19_flux_response", "granados2018_sfp1_carbon_localization"],
+  "registration": {
+    "before": ["new_training_measurements_opened", "new_fit_started", "new_development_selection", "final_outcomes_opened"],
+    "required_authority": "Independent registry/custodian with a current externally retained append-only log head; local files, timestamps, booleans, and caller-computed hashes are not evidence of prior registration.",
+    "candidate_eligibility": "Determine from source methods, inventories, experimental identifiers, and ancestral provenance only. No measurement values or model scores may influence eligibility or the final split. An ineligible candidate is not a failed scored test and cannot yield a biological claim.",
+    "amendment_policy": "Any scientific threshold, target, split rule, observable, support assay, model family, or control change creates a new protocol before outcome access. A consumed holdout never becomes independent under a new name or protocol. Administrative receipt paths do not change these criteria."
+  },
+  "selection": {
+    "allowed_data": ["train", "development"],
+    "minimum_train_independent_groups": 3,
+    "minimum_development_independent_groups": 2,
+    "minimum_final_independent_groups": 6,
+    "minimum_support_independent_groups": 6,
+    "unit": "Complete biological experiment and every technical replicate, cell, time point, derived observable, duplicate file entry, and ancestral identity belonging to it form one inseparable dependency component.",
+    "split_rule": "The independent custodian forms connected components of biological replicate, movie, culture, day/batch dependencies, duplicated source records, and upstream exposure. In each metadata-only eligible context, sort components by SHA256(protocol_id + candidate_id + canonical_component_id). Reserve the first max(6, ceil(0.25*N)) components for final, the next max(2, ceil(0.20*N)) for development, and all remaining components for train. If fewer than three remain, do not fit under this protocol. Independent support experiments are reserved separately and never used for selection or normalization.",
+    "candidate_form_learning": "Enumerate at least two distinct functional forms and a dependency ablation before fitting; choose using equal-weight whole-group development MAE only. Ties within 1e-12 select fewer free parameters, then lexicographic model_id. Log every attempt, failed fit, optimizer seed, budget, dependency, and selected model. Fitting multipliers in one supplied law is conditional estimation, not learned functional dependency.",
+    "freeze": ["source and ancestor inventory", "split and duplicate components", "candidate functional library", "complete train/development attempt log", "selected checkpoint", "all comparator checkpoints", "observation adapter", "units", "normalization constants", "uncertainty model", "feature restrictions", "support calibration", "negative controls", "prediction and scoring code"],
+    "final_failure_policy": "One freeze and one outcome release per selected candidate. Failed, partial, crashed-after-access, or nonfinite final evaluations consume the holdout. Preserve all experiments and all variants; never tune on final errors, repeat for a better score, or report only successful variants. Pure verification may reread the identical sealed evaluation but may not generate a new prediction or release."
+  },
+  "multiple_testing": {
+    "maximum_candidates": 2,
+    "maximum_final_evaluations_per_candidate": 1,
+    "familywise_alpha": 0.05,
+    "candidate_alpha": 0.025,
+    "sequential_looks": 1,
+    "policy": "Bonferroni across the two predeclared candidates, even if only one is eligible. Each candidate must beat every required comparator, so the within-candidate test is intersection-union rather than selecting a favorable comparator. No alpha recycling, optional stopping, alternate final variants, or post-outcome candidate replacement.",
+    "comparison_test": "Exact one-sided paired sign test on independent-group loss differences minus the prespecified improvement margin. Zero differences count as nonwins. Report wins, group count, exact binomial tail probability, and the two-sided 95% Wilson interval for the winning-group proportion. Require p <= 0.025 for every comparator."
+  },
+  "scoring": {
+    "observable_transform": "Identity after documented source-to-canonical unit conversion. No log, peak, min-max, per-trace outcome normalization, retrospective offset fitting, or post-final refitting is permitted.",
+    "scale": "IQR of canonical training-group means only, using sorted linear-interpolation quantiles at 0.25 and 0.75. Must be finite and strictly positive. Independent source measurement uncertainty must be reported separately; the IQR is a scoring scale, not an uncertainty estimate.",
+    "loss": "For each independent group, mean absolute prediction error over every registered, quantifiable target observation divided by the frozen training IQR. Give each group equal weight regardless of cells, samples, or time points. Source missingness/censoring is recorded before release and never imputed as zero. No model-specific exclusions.",
+    "max_mean_group_scaled_mae": 0.5,
+    "max_any_group_scaled_mae": 1.0,
+    "minimum_relative_improvement": 0.15,
+    "minimum_absolute_scaled_improvement": 0.05,
+    "improvement_rule": "For every comparator and group, candidate_loss < comparator_loss - max(0.05, 0.15*comparator_loss) is a win. Also require at least 15% improvement in overall equal-group mean loss and at least 0.05 absolute scaled mean improvement against every comparator.",
+    "prediction_intervals": {
+      "nominal_coverage": 0.9,
+      "minimum_equal_group_coverage": 0.8,
+      "minimum_wilson_lower_coverage": 0.5,
+      "maximum_mean_scaled_width": 2.0,
+      "maximum_any_scaled_width": 4.0,
+      "rule": "Freeze a measurement-plus-prediction error model from train/development before release. Supply finite lower/upper bounds and uncertainty components for each prediction. Compute coverage within each group and average groups equally. For a conservative coverage interval, a group succeeds only if at least 80% of its registered observations are covered; report its two-sided 95% Wilson interval. Broad feasible envelopes are not statistical prediction intervals."
+    },
+    "required_models": ["candidate", "training_constant", "affine_inputs", "clock_only", "source_template", "simple_mechanism", "dependency_ablated", "input_reassigned"],
+    "comparator_rules": "Every comparator uses identical train/development partitions, canonical readout, predeclared fitting budgets, and final inputs. Freeze all competitors before outcome access. Clock-only sees absolute acquisition time/order but not stimulus identity; input_reassigned uses a deterministic group derangement of stimulus schedules within matched context. Source_template retains a published functional structure and kinetics with only training-fitted observation gain. Simple_mechanism is a prespecified mass-action/saturating or first-order response competitor. Null predictions are scored once with the candidate, not separately selected after observing errors."
+  },
+  "controls": {
+    "required_replays": ["absolute_clock_shift", "source_template_recovery", "normalization_poison", "measurement_scale_gauge", "unit_conversion", "physical_consistency"],
+    "numeric_atol": 1e-10,
+    "numeric_rtol": 1e-8,
+    "absolute_clock_shift_seconds": 600.0,
+    "measurement_scale_factor": 2.0,
+    "unit_conversion_factor": 1000.0,
+    "normalization_poison_factor": 7.0,
+    "absolute_clock_shift": "A trusted runner shifts absolute acquisition clocks by +600 seconds while preserving actual stimulus-relative timing and all biological inputs; candidate predictions must remain invariant. Additionally require real crossed input/acquisition-clock conditions, at least two clock strata with at least two input strata each and a shared input stratum. If time and input are confounded in the actual experiments, replay invariance alone cannot identify an input-response law.",
+    "source_template_recovery": "A separately labelled engineering replay generated from the frozen source template checks that the template comparator can recover its own predictions. Its labels are never native training/validation evidence. Candidate superiority is judged only on real final observations; the dependency-ablated and source-template comparisons must both pass.",
+    "normalization_poison": "A trusted isolated runner poisons inaccessible reserved outcome bytes by a factor of seven before regenerating predictions and normalization artifacts. Predictions, fitted coefficients, selected form, and normalization must be identical to the unpoisoned pre-access freeze. Observed final outcomes must never define baselines, peaks, gains, offsets, or scales.",
+    "measurement_scale_gauge": "Rescale raw detector intensity and its calibration by two, leaving the native canonical observable unchanged. Predictions and claim conclusions must be invariant. A compensating latent activity/abundance/gain rescaling is explicitly reported as a gauge, not evidence of identified enzyme capacity. Only a calibrated relative/observable response can be authorized here.",
+    "unit_conversion": "Convert raw numerical values and uncertainties to units differing by 1000, apply the inverse declared adapter, and require canonical data and predictions to agree. Unknown units, denominator positivity failures, or absent uncertainty conversion refuse authorization.",
+    "negative_biology": "Reserve independently measured no-input-change/sham experiments in the same context. At least two independent sham groups must have candidate group MAE <= 0.5 frozen scale, and predicted changes from their pre-input baseline must be within their measured error budget. They do not count toward the six perturbed final groups.",
+    "physical_consistency": "Every candidate and comparator prediction is finite and obeys source-backed domain bounds. Flux claims require source-linked stoichiometric carbon/charge consistency and direction/capacity constraints evaluated on all registered contexts with residual <= 1e-8 in declared normalized units; response-proxy claims require valid positive raw denominators, nonnegative localization ratios, valid observation bounds, and causal input ordering. Never impose a [0,1] phosphorylation bound on max5/median localization. Missing physical evidence or failed contexts cannot be hidden by averaging."
+  },
+  "support": {
+    "kind_by_candidate": {
+      "hackett2016_cdc19_flux_response": "independent_native_activity_response",
+      "granados2018_sfp1_carbon_localization": "independent_nuclear_marker_observation"
+    },
+    "rule": "An independently acquired assay or observation channel, not a deterministic reuse of the target signal, must support the learned response in matched species, strain/background, protein/isoform, temperature, medium, stimulus and assay context. Reserve at least six independent biological groups not in train/development/final/sham. Freeze the cross-assay observation adapter before any support outcomes are released. Audit any unavoidable context difference and decline this protocol if equivalence is not established before fitting.",
+    "numeric_rule": "Use source-reported or independently calibrated standard uncertainties and paired assay contrasts. For each independent group, the predicted signed contrast must agree with the measured contrast by more than 1.96 measured standard uncertainties, and |predicted-measured| must be <= 1.96*sqrt(measured_variance + frozen_prediction_variance). Require every finite nonzero predicted contrast to satisfy the error bound, at least six groups, and a one-sided exact sign p <= 0.025 for directional agreement. Report every contrast and uncertainty. Relative activity support never identifies absolute in-vivo kcat or active abundance.",
+    "not_substitutes": ["protein detection alone", "gene copy number", "synthetic teacher labels", "recomputed nucLoc from the same pixels", "an unmatched heterologous extract", "a software test or reporter success", "a citation without opened and source-bound assay observations"]
+  },
+  "provenance_and_authority": {
+    "artifact_interface": "SealedArtifact(path, sha256), EvidenceBundle(registry, dataset, lineage, freeze, observations, predictions, support, controls), Authority(issuer, secret, kinds, domain), ValidationTrust(authorities, registry_heads), assess_native_law(bundle, root=..., trust=...). Final interface details are defined by the typed module, not optional success flags.",
+    "receipt_envelope": ["schema_version", "issuer", "kind", "receipt_id", "payload", "mac"],
+    "authentication": "HMAC-SHA256 over canonical finite JSON excluding mac, with >=32-byte independent authority keys provisioned outside evidence and inaccessible to training/selection code. Receipt issuer capabilities are configured by the verifier operator, never by the bundle. No production keys or real authorization receipts are created by unit tests. HMAC authenticates the accountable custodian, not scientific truth; measurement and statistical predicates must still be computed.",
+    "required_role_separation": "Dataset/support custody, ancestry audit, isolated execution, and append-only registration are separate issuer identities. One issuer cannot authorize every role. The verifier is operated outside the model-selection process. No protection is claimed against a dishonest custodian, compromised verifier, missing public-data access outside the audited lineage, or stolen authority keys.",
+    "trusted_log_head": "An externally retained current registry receipt digest for this protocol/candidate must be supplied through trusted verifier configuration, never evidence. The complete ledger binds protocol/domain bytes, acquisition and duplicate inventory, split, development access, all selection attempts, final checkpoint and predictions, first outcome release, support release, and evaluation completion. Exactly one final release is allowed across all protocol aliases sharing these biological groups. If a current complete log or ancestral access inventory cannot be established, independence is unresolved.",
+    "lineage": "An independent audit binds actual code/checkpoint/prior/normalization/feature/selection dependencies as a closed acyclic graph to the freeze. All ancestral data exposure, including upstream parameter fits and source-template selection, is enumerated by biological dependency component and role. Unknown leaves, unaudited dependencies, incomplete attempt logs, or any final/support group exposure refuse authorization.",
+    "measurement_binding": "Custodian receipts bind exact source artifact digests, publication/repository/laboratory identifiers, locators for every observation, duplicate identities, physical groups, source-to-canonical adapter, reported units and uncertainty, censoring and missingness, and assay context. Candidate metadata inventories and reference-shaped JSON alone never constitute these receipts.",
+    "release_rule": "Only a fully recomputed assessment over authenticated complete artifacts may authorize the named scoped empirical response claim. A serialized report is not a bearer authorization. Missing evidence is returned explicitly; an engineering fixture can exercise a passing code path but never authorize biology."
+  },
+  "availability_at_registration": {
+    "hackett2016": "Publication title and DOI 10.1126/science.aaf2786 supplied as a candidate only. Joint usable flux/metabolite/protein observations, enzyme-specific flux assignment, assay availability, assay context, uncertainty, biological independence and ancestral lineage are unverified here. Do not presume eligibility.",
+    "granados2018": "Existing metadata file data/validation_candidates/granados2018.json and its README summary were read; measurement arrays were not opened. nucLoc is max5/median, not phosphorylation or absolute activity. The first replicate is duplicated across figure-2 files. Six Sfp1 biological replicates are documented, which alone cannot satisfy this protocol's train/development/final/support/sham group requirements. Additional independent groups and matched observation support must be verified or this candidate remains ineligible."
+  }
+}

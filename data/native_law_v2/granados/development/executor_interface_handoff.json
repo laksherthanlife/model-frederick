@@ -1,0 +1,28 @@
+{
+  "document_type": "phase_b_executor_source_verifier_interface_handoff_not_a_new_data_release",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "protocol_sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+  "approved_data_manifest": {
+    "path": "data/native_law_v2/granados/development/release_manifest.json",
+    "sha256": "3b8c67c79191bf4dec0a1e7e0514b1a145359c30061868bbfdd136f0ee1cd3dd"
+  },
+  "data_status": "Actual phase-b projections have been approved, written, validated against the protocol's Projection schema, and directly replayed against the source. No source/coverage blocker remains for this limited release.",
+  "existing_contract_records": [
+    "phase_b/release_request.json: DevelopmentReleaseRequest",
+    "phase_b/custody_decision.json: DevelopmentCustodyDecision",
+    "phase_b/training_values_binding.json: direct source-scalar replay for training",
+    "phase_b/development_inputs_binding.json: direct source-scalar replay for development prefix/times",
+    "phase_b/executor_environment.json: actual pre-value implementation/settings/version freeze"
+  ],
+  "executor_integration_note": "The frozen executor also defines an additional closed operational admission envelope and population_development_projection_source_replay receipt shape. The custodian release_manifest is a data/artifact allowlist, not that differently shaped executor envelope. Do not silently pass it as an executor-specific envelope or infer a source failure from a wrapper-schema mismatch.",
+  "executor_contract_locator": "phase_b/frozen_executor/native_population_development.py:832-908",
+  "actions_for_resumed_executor_source_verifier_tester": [
+    "Independently verify the existing typed source projections and preserve their exact source scalar/null/row/frame semantics and digests; do not regenerate the study or change source groups/windows.",
+    "Use the existing request/decision/projection references and actual frozen implementation/settings when assembling or adapting the executor's operational admission envelope. Preserve all existing release/exposure records; do not backdate a newly encoded wrapper as a pre-release artifact.",
+    "Any added operational wrapper must not alter the frozen scientific model families, optimizer recipe, conditioning/cohort rule, source scalar adapter or original strong-protocol status. Escalate an actual incompatibility rather than bypassing source checks.",
+    "Keep development responses withheld. Return every canonical family/attempt and all 288 development frame predictions in the matching digest-bound freeze before requesting their later release."
+  ],
+  "model_fitting_or_scoring_performed_by_custodian": false,
+  "development_responses_released": false,
+  "strong_claim_authorized": false
+}

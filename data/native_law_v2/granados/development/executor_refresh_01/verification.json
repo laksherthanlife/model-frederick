@@ -1,0 +1,164 @@
+{
+  "document_type": "executor_refresh_custody_verification_not_biological_validation",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "decision": {
+    "path": "data/native_law_v2/granados/development/executor_refresh_01/custody_decision.json",
+    "sha256": "04ac928add5528beabd2a9f77a2055643dc120d3b76bff7315ffdc3f062f786e",
+    "bytes": 4271,
+    "role": "operational_approval"
+  },
+  "admission": {
+    "path": "data/native_law_v2/granados/development/executor_refresh_01/executor_refresh_admission.json",
+    "sha256": "b967279da5186529d784e66b99a066e785f487558d0858a50cf91b950d979763",
+    "bytes": 2456
+  },
+  "refresh_request_sha256": "0b9539cfc3c53dd88186541613c1e6cdb338ecb79d9406db592bdbb215236d91",
+  "verified_artifacts": [
+    {
+      "path": "data/native_law_v2/development_protocol.json",
+      "sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+      "bytes": 47873
+    },
+    {
+      "path": "outputs/native_population_development/executor_refresh_01/executor_refresh_request.json",
+      "sha256": "0b9539cfc3c53dd88186541613c1e6cdb338ecb79d9406db592bdbb215236d91",
+      "bytes": 3418
+    },
+    {
+      "path": "outputs/native_population_development/executor_refresh_01/release_request.json",
+      "sha256": "3bc3f5d0441288a13c67bc3a17380002ed09916340f78102a5d39fb16c782caf",
+      "bytes": 1727
+    },
+    {
+      "path": "outputs/native_population_development/executor_refresh_01/execution_configuration.json",
+      "sha256": "7e1aa35c8f6c248fc921f2348d362b8fc76e23bd8cfff070b19d21b2d9195cdb",
+      "bytes": 3729
+    },
+    {
+      "path": "data/native_law_v2/granados/development/release_manifest.json",
+      "sha256": "3b8c67c79191bf4dec0a1e7e0514b1a145359c30061868bbfdd136f0ee1cd3dd",
+      "bytes": 6904
+    },
+    {
+      "path": "data/native_law_v2/granados/development/phase_b/custody_decision.json",
+      "sha256": "87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533",
+      "bytes": 3861
+    },
+    {
+      "path": "data/native_law_v2/granados/development/phase_b/release_request.json",
+      "sha256": "b812da162bd1962484c505bdb32d9c0d4b191e51051f1e2d64a42eab5b6ca349",
+      "bytes": 1682
+    },
+    {
+      "path": "data/native_law_v2/granados/development/phase_b/frozen_executor/native_population_development.py",
+      "sha256": "7755844db3d777fdec1c9f7fb8b4fc4168597e735182353b1c6efc5a13f3c787",
+      "bytes": 71949
+    },
+    {
+      "path": "data/native_law_v2/granados/development/phase_b/executor_environment.json",
+      "sha256": "a650be44dced11e101115663d665a6d39254f8fd1adccd8c63b0a0752a4e4ff4",
+      "bytes": 2290
+    },
+    {
+      "path": "data/native_law_v2/granados/development/contracts/development_protocol.json",
+      "sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+      "bytes": 47873
+    },
+    {
+      "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/training_projection.json",
+      "sha256": "fc8000c7720e554756c90e0da79f2d0ae4a7928d5923f0efa1a2ed5823d37c9e",
+      "bytes": 7093970
+    },
+    {
+      "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_inputs.json",
+      "sha256": "41ee2a8ce6b09cb664859873fd59fd005e31e6eaa054c3703098c91e3f790613",
+      "bytes": 4764543
+    },
+    {
+      "path": "data/native_law_v2/granados/development/phase_b/training_values_binding.json",
+      "sha256": "14ccf5f89e86099d8c9b8dabcdfd2090661c99049bef678630eace2d98c11906",
+      "bytes": 1540
+    },
+    {
+      "path": "data/native_law_v2/granados/development/phase_b/development_inputs_binding.json",
+      "sha256": "bc9196787637739f59fc91c70ae4760663dae2b6b86552ae445393bbd815dea7",
+      "bytes": 1493
+    },
+    {
+      "path": "data/native_law_v2/protocol.json",
+      "sha256": "e901d3985b5577d6f846229e1178062414e3220a7307b6d8ee40b0d01e9dffde",
+      "bytes": 17010
+    },
+    {
+      "path": "data/native_law_v2/granados_manifest.json",
+      "sha256": "b2024dfb7f19a0c63bc1b0e16a06cd70eed040f3af729d3ab1676cd4746288cc",
+      "bytes": 35090
+    },
+    {
+      "path": "data/native_law_v2/granados/acquisition.json",
+      "sha256": "fde8751905a9f6e9c4145dd95ce7bddeb7ff3e313feadaca9a68b26e003a588e",
+      "bytes": 3860
+    },
+    {
+      "path": "data/native_law_v2/granados/access_audit.json",
+      "sha256": "121a32dee02bd673e5df019a067cd30cabe471cf20a42c118e2a12bc41b31b94",
+      "bytes": 3125
+    },
+    {
+      "path": "data/native_law_v2/granados/eligibility_audit.json",
+      "sha256": "560ed9f29b6d65bc6b76d05cb99a28701105276c5eb49a723d32a4cc500bf0a1",
+      "bytes": 3630
+    },
+    {
+      "path": "data/native_law_v2/granados/sealed/raw_mixed/fig1_sfp1_replicates.json",
+      "sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+      "bytes": 4178902
+    },
+    {
+      "path": "src/ystwin/analysis/native_population_development.py",
+      "sha256": "654dd5729d204c5963f5e51576a4830b61f736296c877ffc419efa77d009e2a0",
+      "bytes": 92464
+    },
+    {
+      "path": "scripts/run_native_population_development.py",
+      "sha256": "f96a36702867262718997acaae7131d4b616725a563e27f795dc65ee8bd6f03c",
+      "bytes": 4212
+    },
+    {
+      "path": "tests/test_native_population_development.py",
+      "sha256": "6f8d067c99f501a2311143ace0d316233df85703e6943bdc19a17559dc7e66bc",
+      "bytes": 31449
+    },
+    {
+      "path": "scripts/export_granados_training.py",
+      "sha256": "6447608e622c6bdd47e16f4f930f91f9297077aaccfbc5a0745b359b1bbd7159",
+      "bytes": 104189
+    },
+    {
+      "path": "outputs/native_population_development/executor_refresh_01/code/native_population_development.py",
+      "sha256": "654dd5729d204c5963f5e51576a4830b61f736296c877ffc419efa77d009e2a0",
+      "bytes": 92464
+    },
+    {
+      "path": "outputs/native_population_development/executor_refresh_01/code/run_native_population_development.py",
+      "sha256": "f96a36702867262718997acaae7131d4b616725a563e27f795dc65ee8bd6f03c",
+      "bytes": 4212
+    },
+    {
+      "path": "outputs/native_population_development/executor_refresh_01/code/test_native_population_development.py",
+      "sha256": "6f8d067c99f501a2311143ace0d316233df85703e6943bdc19a17559dc7e66bc",
+      "bytes": 31449
+    }
+  ],
+  "consumer_function": "native_population_development.check_custody_gate with explicit executor_admission_path",
+  "consumer_contract": "population_development_executor_refresh_admission_v1",
+  "consumer_data_admission_accepted": true,
+  "consumer_executor_admission_accepted": true,
+  "consumer_measurement_arrays_opened": false,
+  "model_fitting_or_scoring_performed": false,
+  "scientific_recipe_changed": false,
+  "data_regenerated_or_reexported": false,
+  "development_responses_released": false,
+  "source_verifier_review_refreshed_here": false,
+  "strong_claim_authorized": false
+}

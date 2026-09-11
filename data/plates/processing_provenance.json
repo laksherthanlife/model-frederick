@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "purpose": "Evidence for corrections to manifest.csv blank_subtracted declarations. No measurement CSV, source identity, well role, or source-set selection was changed.",
+  "state_semantics": "False denotes unblanked instrument readings; True denotes an already blank-subtracted block. Reading signs, sheet-name patterns, well counts, and block order do not establish this state.",
+  "records": [
+    {
+      "export": "20260803_ER&oxidativestress_Replicate3.xlsx",
+      "evidence_scope": "Read-only verification of exactly the authorized workbook and matching XPT, plus their public CSVs. All 25 timepoints and 87 exported wells were compared in each block.",
+      "source_sha256": "0235dee3ae08e245de3ed8e718622b75aee1ffe6f90be0436111c789b34a9def",
+      "source_bytes": 338431,
+      "source_sha256_after": "0235dee3ae08e245de3ed8e718622b75aee1ffe6f90be0436111c789b34a9def",
+      "source_bytes_after": 338431,
+      "reference": {
+        "export": "20260803_ER_Oxidative_Replicate3.xpt",
+        "sha256": "17c4e5f81193cde3837d3b6b2a649a5bd90057beb4f78862a66bcd488bbea7b8",
+        "bytes": 368640,
+        "sha256_after": "17c4e5f81193cde3837d3b6b2a649a5bd90057beb4f78862a66bcd488bbea7b8",
+        "bytes_after": 368640,
+        "format_contract": "The Gen5 reader decodes untransformed well-readings data sets from SUBSETS/1/DATA. Well labels align the 96-well archive with each 87-well CSV; elapsed times agree exactly. Raw-block temperatures agree to the exported one decimal."
+      },
+      "checks": {
+        "workbook_vs_public_values": "Exact float equality for all 8700 well readings, with identical well order and elapsed-time axes; raw-block temperature traces are identical.",
+        "blank_transform": "For each timepoint, subtract the mean of the XPT readings at H1, H2 and H3 from every aligned well. These are the transform's blank wells, not a new assignment of culture/blank roles.",
+        "absorbance_tolerance": 0.000500001,
+        "fluorescence_tolerance": 0.33333333433333334,
+        "tolerance_basis": "OD is stored to four decimals in XPT and exported to three; fluorescence is integer RFU with a three-well mean. Bounds are 0.0005 OD or 1/3 RFU plus 1e-9 floating-point slack.",
+        "existing_regressions": [
+          "tests/test_gen5_xpt.py::TestAgainstCommittedPlates (PROVEN entries for 20260803 only)",
+          "tests/test_gen5_xpt.py::TestBlankSubtractedExports::test_a_subtracted_sheet_is_the_archive_minus_its_blank_wells"
+        ]
+      },
+      "blocks": [
+        {
+          "channel": "OD600[1]",
+          "sheet": "Raw OD",
+          "fluorophore": "OD600",
+          "optics": "600",
+          "data_cells": "C2:CK26; header row 1",
+          "readings_file": "20260803_ERandoxidativestress_Replicate3__OD600_1.csv",
+          "readings_sha256": "191d07703a26135c1aece7fc18ef157636f8af250c4213215fc15c66de99f65d",
+          "blank_subtracted": false,
+          "previous_blank_subtracted": false,
+          "xpt_dataset": "OD600:600",
+          "comparison": "XPT raw readings",
+          "n_readings": 2175,
+          "max_absolute_error": 0.0005000000000000004
+        },
+        {
+          "channel": "OD600[2]",
+          "sheet": "BLANK (OLD)OD",
+          "fluorophore": "OD600",
+          "optics": "",
+          "data_cells": "Well columns under headers at rows 3, 32, 61 and 90; data rows 4:28, 33:57, 62:86 and 91:115",
+          "cell_storage": "Numeric literals; no formulas in this sheet",
+          "readings_file": "20260803_ERandoxidativestress_Replicate3__OD600_2.csv",
+          "readings_sha256": "073244215af1a41aa474580af39ddf64f93c9805c55743ca34506c883e9faba1",
+          "blank_subtracted": true,
+          "previous_blank_subtracted": false,
+          "xpt_dataset": "OD600:600",
+          "comparison": "XPT raw minus per-timepoint mean(H1,H2,H3)",
+          "n_readings": 2175,
+          "max_absolute_error": 0.0005000000000000004,
+          "max_absolute_error_without_transform": 0.09830000000000003
+        },
+        {
+          "channel": "mCitrine[1]",
+          "sheet": "Blank mCitrine",
+          "fluorophore": "mCitrine",
+          "optics": "",
+          "data_cells": "Well columns under headers at rows 3, 32, 61 and 90; data rows 4:28, 33:57, 62:86 and 91:115",
+          "cell_storage": "Numeric literals; no formulas in this sheet",
+          "readings_file": "20260803_ERandoxidativestress_Replicate3__mCitrine_1.csv",
+          "readings_sha256": "89edef586d581e85c2fee376a11a83dfb5ff22c48ba741d5e846f416debd88a5",
+          "blank_subtracted": true,
+          "previous_blank_subtracted": false,
+          "xpt_dataset": "mCitrine:480,530",
+          "comparison": "XPT raw minus per-timepoint mean(H1,H2,H3)",
+          "n_readings": 2175,
+          "max_absolute_error": 0.3333333333334849,
+          "max_absolute_error_without_transform": 408.0
+        },
+        {
+          "channel": "mCitrine[2]",
+          "sheet": "mCitrine",
+          "fluorophore": "mCitrine",
+          "optics": "480,530",
+          "data_cells": "C4:CK28; header row 3",
+          "readings_file": "20260803_ERandoxidativestress_Replicate3__mCitrine_2.csv",
+          "readings_sha256": "83d8ebd179c63dc9071935bd2a2eb82e11a55a19adceb730395b26e195a3e9ab",
+          "blank_subtracted": false,
+          "previous_blank_subtracted": false,
+          "xpt_dataset": "mCitrine:480,530",
+          "comparison": "XPT raw readings",
+          "n_readings": 2175,
+          "max_absolute_error": 0.0
+        }
+      ],
+      "separate_formula_regions": {
+        "interpretation": "The raw-source sheets also contain lower formula-derived regions. Those regions are not the numeric export blocks above and were not used to classify them. Formula presence elsewhere on a sheet does not make its raw kinetic block processed.",
+        "Raw OD": {
+          "formula_cells": "C28:CH52",
+          "example": "C28 = C2-$B$28",
+          "example_cached_value": 0.07700000000000001,
+          "numeric_export_A1_first": 0.076,
+          "separate_average_example": "CM2 = AVERAGE(CJ2:CK2); CJ1 and CK1 label H2 and H3"
+        },
+        "mCitrine": {
+          "formula_cells": "C31:CH55",
+          "example": "C31 = C4-$B$31",
+          "example_cached_value": 207.5,
+          "B31_literal": 431.5,
+          "numeric_export_A1_first": 231.0
+        }
+      }
+    },
+    {
+      "export": "20260804_ER&OxidativeStress_Replicate4.xlsx",
+      "source_sha256": "0c7514a5e16dc90ee5f33c75111f0ca59c5553fb2f323ddce05043ecb0d29e30",
+      "source_bytes": 231158,
+      "evidence_scope": "Public committed CSVs only. Neither August 4 private original was opened or reverified. Original identities are inherited from manifest.csv, not newly measured.",
+      "source_set_unchanged": "newprotocol_superseded",
+      "reference": {
+        "export": "20260804_ER_Oxidative_Replicate4.xpt",
+        "source_sha256": "d638d1f915daad2981ae2e9646cb9b7cae7f7a7bffc5398998d6fdb1d1d10329",
+        "source_bytes": 368640,
+        "source_set_unchanged": "newprotocol"
+      },
+      "comparison": "Committed XPT raw readings minus per-timepoint mean(H1,H2,H3), aligned by well; elapsed times agree exactly. Same export-precision bounds as August 3.",
+      "existing_regression": "tests/test_xpt_export.py::TestTheArchiveAndTheExportAreOnePlate::test_raw_minus_the_mean_of_h1_h3_is_the_subtracted_export",
+      "blocks": [
+        {
+          "channel": "OD600",
+          "blank_subtracted": true,
+          "previous_blank_subtracted": false,
+          "readings_file": "20260804_ERandOxidativeStress_Replicate4__OD600.csv",
+          "readings_sha256": "398e422cdd9681c6c4c5c03d6062bacafae26c0c607e57d2b46fa8ba5085bf0e",
+          "reference_readings_file": "20260804_ER_Oxidative_Replicate4__OD600.csv",
+          "reference_readings_sha256": "250f80f0c290154948d59f731ae37a0c267c4d8706fc389a0400d604a44d5af7",
+          "n_readings": 2175,
+          "max_absolute_error": 0.0005000000000000004
+        },
+        {
+          "channel": "mCitrine",
+          "blank_subtracted": true,
+          "previous_blank_subtracted": false,
+          "readings_file": "20260804_ERandOxidativeStress_Replicate4__mCitrine.csv",
+          "readings_sha256": "449eb11d4d51fe0b1cf9e2fad3f000d732ef19db51c1c8b3535c7215c751a7a0",
+          "reference_readings_file": "20260804_ER_Oxidative_Replicate4__mCitrine.csv",
+          "reference_readings_sha256": "fd1d2e1c372d8802f92f57254dc0ec11e3597470aaa72b64afcf9b1d929cdfc6",
+          "n_readings": 2175,
+          "max_absolute_error": 0.3333333333334849
+        }
+      ]
+    }
+  ]
+}

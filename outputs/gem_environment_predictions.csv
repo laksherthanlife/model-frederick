@@ -1,0 +1,17 @@
+product,precursor_metabolite,precursor_stoichiometry,growth_rate_per_h,formulation,glucose_max_mmol_per_gdcw_h,ethanol_max_mmol_per_gdcw_h,ethanol_over_glucose,favours_ethanol,sign_stable_over_supply_range,ratio_low,ratio_high,points_requested,points_feasible,min_growth_headroom,min_growth_headroom_required,is_a_prediction
+beta_carotene,s_0189,2.0,0.05,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",0.115609,0.143176,1.2384,True,True,1.2362,1.9505,6.0,6.0,0.1095,0.1,True
+beta_carotene,s_0189,2.0,0.1,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",0.065886,0.08544,1.2968,True,True,1.24,1.6469,6.0,5.0,0.0,0.1,False
+beta_carotene,s_0189,2.0,0.15,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",0.011062,0.027705,2.5045,True,True,1.2408,1.5864,6.0,4.0,0.0,0.1,False
+beta_carotene,s_0189,2.0,0.2,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",,,,,,,,,,,,
+gadusol,s_1427,1.0,0.05,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",0.981978,0.895027,0.9115,False,False,0.8499,1.6201,6.0,6.0,0.1095,0.1,False
+gadusol,s_1427,1.0,0.1,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",0.545604,0.587706,1.0772,True,False,0.8849,1.368,6.0,5.0,0.0,0.1,False
+gadusol,s_1427,1.0,0.15,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",0.091604,0.190569,2.0804,True,False,0.9354,1.3178,6.0,4.0,0.0,0.1,False
+gadusol,s_1427,1.0,0.2,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",,,,,,,,,,,,
+glycogen,s_1543,1.0,0.05,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",1.138808,1.044198,0.9169,False,False,0.8504,1.6323,6.0,6.0,0.1095,0.1,False
+glycogen,s_1543,1.0,0.1,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",0.62433,0.678602,1.0869,True,False,0.8889,1.3761,6.0,5.0,0.0,0.1,False
+glycogen,s_1543,1.0,0.15,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",0.105879,0.221915,2.0959,True,False,0.945,1.3246,6.0,4.0,0.0,0.1,False
+glycogen,s_1543,1.0,0.2,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",,,,,,,,,,,,
+phb,s_0373,2.0,0.05,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",1.537439,2.088396,1.3584,True,True,1.3138,2.3472,6.0,6.0,0.1095,0.1,True
+phb,s_0373,2.0,0.1,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",0.874904,1.365332,1.5606,True,True,1.3377,1.9818,6.0,5.0,0.0,0.1,False
+phb,s_0373,2.0,0.15,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",0.146891,0.44272,3.0139,True,True,1.3704,1.9091,6.0,4.0,0.0,0.1,False
+phb,s_0373,2.0,0.2,"matched 11.0 mmol C/gDCW/h, O2 lb -1000, precursor sink",,,,,,,,,,,,

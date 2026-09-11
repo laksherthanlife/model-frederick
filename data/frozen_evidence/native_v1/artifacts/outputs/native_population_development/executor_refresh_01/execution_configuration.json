@@ -1,0 +1,100 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/native_population_development/executor_refresh_01/execution_configuration.json",
+    "sha256": "7e1aa35c8f6c248fc921f2348d362b8fc76e23bd8cfff070b19d21b2d9195cdb"
+  },
+  "payload": {
+    "code_artifacts": [
+      {
+        "bytes": 92464,
+        "path": "src/ystwin/analysis/native_population_development.py",
+        "role": "execution_code",
+        "sha256": "654dd5729d204c5963f5e51576a4830b61f736296c877ffc419efa77d009e2a0"
+      },
+      {
+        "bytes": 4212,
+        "path": "scripts/run_native_population_development.py",
+        "role": "execution_code",
+        "sha256": "f96a36702867262718997acaae7131d4b616725a563e27f795dc65ee8bd6f03c"
+      },
+      {
+        "bytes": 31449,
+        "path": "tests/test_native_population_development.py",
+        "role": "execution_code",
+        "sha256": "6f8d067c99f501a2311143ace0d316233df85703e6943bdc19a17559dc7e66bc"
+      }
+    ],
+    "code_snapshots": [
+      {
+        "bytes": 92464,
+        "path": "outputs/native_population_development/executor_refresh_01/code/native_population_development.py",
+        "role": "execution_code",
+        "sha256": "654dd5729d204c5963f5e51576a4830b61f736296c877ffc419efa77d009e2a0"
+      },
+      {
+        "bytes": 4212,
+        "path": "outputs/native_population_development/executor_refresh_01/code/run_native_population_development.py",
+        "role": "execution_code",
+        "sha256": "f96a36702867262718997acaae7131d4b616725a563e27f795dc65ee8bd6f03c"
+      },
+      {
+        "bytes": 31449,
+        "path": "outputs/native_population_development/executor_refresh_01/code/test_native_population_development.py",
+        "role": "execution_code",
+        "sha256": "6f8d067c99f501a2311143ace0d316233df85703e6943bdc19a17559dc7e66bc"
+      }
+    ],
+    "document_type": "population_development_executor_configuration",
+    "environment": {
+      "limitations": [
+        "scientific_scope=retrospective_source_cohort_development",
+        "The original strong candidates remain ineligible; this protocol never authorizes biological readiness and defines no final test.",
+        "All groups have one reported Sfp1/context/glucose schedule. No dose response, causal glucose effect, universal mechanism or intrinsic kinetic parameter is identified.",
+        "The historical published cohort and processing may depend on future observations; this is not a certified prospective forecast from untouched acquisitions.",
+        "Targets are means of individual raw max5/median ratios among the fixed prefix cohort observed at each frame, not individual trajectories, ratios of mean intensities or phosphorylation fractions.",
+        "Finite-cell sampling, within-movie dependence, measurement/calibration error, day/strain effects, attrition and inherited processing-selection bias are distinct; unmeasured components remain unresolved.",
+        "Cell sample SD is descriptive, not a biological confidence interval or SD/sqrt(cell count) uncertainty estimate.",
+        "Local digests and accountable operational custody are not external registration, encryption, adversarial isolation or a scientific authorization."
+      ],
+      "numpy": "2.4.1",
+      "observation_transform": "identity raw individual max5/median ratios; prefix mean is a conditioning input",
+      "optimizer_settings": {
+        "ftol": 1e-10,
+        "gtol": 1e-10,
+        "jacobian": "analytic; derivative of the nonnegative map is zero at and below zero",
+        "loss": "linear",
+        "loss_evaluation_accounting": "every residual invocation; analytic Jacobian calls are counted separately",
+        "max_nfev": 2000,
+        "method": "trf",
+        "optimizer": "scipy.optimize.least_squares",
+        "output_map": "max(0, unbounded_mean) before fitting and scoring",
+        "prng": "numpy.random.Generator(numpy.random.PCG64(seed))",
+        "reference_time_minutes": 60.0,
+        "seeds": [
+          201801,
+          201802,
+          201803,
+          201804,
+          201805,
+          201806,
+          201807,
+          201808
+        ],
+        "starts": 8,
+        "tie_tolerance": "1e-12 * (1 + abs(best MSE))",
+        "within_family_selection": "finite successful minimum training MSE; numerical ties prefer lexicographic parameters then start index",
+        "x_scale": "jac",
+        "xtol": 1e-10
+      },
+      "python": "3.14.2",
+      "scientific_scope": "retrospective_source_cohort_development",
+      "scipy": "1.17.0"
+    },
+    "protocol_id": "granados-sfp1-published-cohort-development-01",
+    "protocol_sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+    "requested_phase": "after_phase_b_export_before_native_fitting",
+    "strong_claim_authorized": false
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "protocol_id": "native-law-v2-preregistered-01",
+  "authorized_grade_if_all_evidence_passes": "independently_validated_scoped_empirical_native_response",
+  "scientific_status": "not_assessed_no_new_measurements_or_final_outcomes_opened",
+  "candidates": {
+    "hackett2016_cdc19_flux_response": {
+      "name": "Native S. cerevisiae Cdc19-associated pyruvate-kinase flux response to PEP, ADP, fructose-1,6-bisphosphate and Cdc19 abundance",
+      "source_doi": "10.1126/science.aaf2786",
+      "source_status": "availability_and_exact_measurement_semantics_require_independent_verification",
+      "observable": "pyruvate_kinase_flux",
+      "canonical_unit": "mmol/gDW/h",
+      "input_quantities": ["phosphoenolpyruvate", "ADP", "fructose_1_6_bisphosphate", "Cdc19_abundance"],
+      "dependency_to_test": "A fructose-1,6-bisphosphate dependence beyond substrate/product availability, measured abundance, batch/acquisition-clock effects and the frozen supplied rate template. Functional form must be selected from distinct candidates using real train/development observations only.",
+      "required_direct_evidence": ["source-bound native flux observations with audited flux-estimation uncertainty and enzyme/reaction attribution", "jointly measured metabolite and protein inputs in the same biological contexts", "independent Cdc19 activity-response observations at matched regulator and assay conditions"],
+      "normalization": "Keep canonical flux per dry biomass; relative protein may be a covariate only with a frozen training reference. Neither division by relative protein nor a fitted detector gain produces intrinsic turnover.",
+      "physical_lower_bound": 0.0,
+      "physical_upper_bound": null,
+      "support_kind": "independent_native_activity_response",
+      "scope": "Conditional empirical native steady-state flux response within the source-verified strain, medium, growth, temperature, metabolite/protein ranges and flux-identifiability domain. Report the exact final contexts and observed training support; no extrapolation or causal regulator identification follows.",
+      "ineligible_if": ["only teacher/FBA-generated flux labels exist", "flux cannot be attributed to the stated reaction/protein", "matched regulator/activity observations are unavailable", "source measurement or upstream fitting lineage is unresolved", "input variation is confounded with acquisition time/batch", "group, uncertainty or physical-conservation requirements cannot be met"]
+    },
+    "granados2018_sfp1_carbon_localization": {
+      "name": "Native S. cerevisiae Sfp1 nuclear-localization proxy response to a documented glucose downshift",
+      "source_doi": "10.1073/pnas.1716659115",
+      "source_status": "repository_and_README_metadata_only_arrays_not_opened",
+      "observable": "Sfp1_max5_over_median",
+      "canonical_unit": "dimensionless_ratio",
+      "input_quantities": ["initial_glucose_percent", "final_glucose_percent", "stimulus_relative_time_s"],
+      "dependency_to_test": "An input-conditioned Sfp1 localization response beyond absolute experimental clock, training-constant and affine-input fits, and a frozen first-order/source-template response. Real crossed onsets/doses must identify input response separately from elapsed acquisition time.",
+      "required_direct_evidence": ["native Sfp1 max5 and median fluorescence or a source-audited unnormalized nucLoc ratio", "complete biological experiment identities and acquisition/input schedules", "independent matched nuclear-marker observation supporting localization"],
+      "normalization": "Use raw nucLoc=max5/median with source-audited positive denominators and fixed instrument/background adapter. nucLocNorm is prohibited unless its exact transformation is fixed without final-trace statistics and independently audited before fitting. No peak alignment, per-final-trace centering, normalization by final mean/max/min, or treating absent-cell nulls as zero.",
+      "physical_lower_bound": 0.0,
+      "physical_upper_bound": null,
+      "support_kind": "independent_nuclear_marker_observation",
+      "scope": "Conditional empirical response of the Sfp1 max5/median imaging observable in the verified reporter strain, instrument, segmentation, medium, glucose schedules and time domain. This is not an absolute nuclear fraction, transcription rate, Hog1 phosphorylation, metabolic flux, enzyme mechanism or universal stress law.",
+      "ineligible_if": ["rep1 copied across files is counted as independent", "random cells/time points replace whole biological experiment splits", "nuclear-marker support is the same deterministic target signal", "input onset and absolute acquisition time remain confounded", "source normalization or strain is unresolved", "the verified experiment inventory cannot meet all group requirements"]
+    }
+  },
+  "always_excluded_claims": [
+    "universal_cell_law_discovery",
+    "causal_or_intrinsic_enzyme_mechanism_identified",
+    "absolute_enzyme_kcat_or_active_abundance_identified",
+    "absolute_Hog1_phosphorylation_from_localization",
+    "native_HOG_to_GEM_coupling_validated",
+    "accurate_or_blind_lycopene_prediction",
+    "teacher_recovery_is_biological_law_learning",
+    "software_tests_or_reporter_success_authorize_biology"
+  ],
+  "identifiability": {
+    "estimand": "The measured native observable's conditional response functional within the independently validated domain, not individual latent biochemical parameters.",
+    "gauge_policy": "Explicitly enumerate observationally equivalent activity, abundance, observation-gain, and transport-pool scalings. A fitted prior or fixed source parameter does not break a measurement gauge. Report unidentified latent directions even when the observable response is validated.",
+    "causality_policy": "Observational flux covariation cannot establish a causal allosteric mechanism. Even randomized glucose inputs identify the reporter response, not every latent molecular path. A stronger claim needs a separately preregistered intervention/absolute-calibration protocol and new independent outcomes.",
+    "domain_policy": "The authenticated source/custodian and registry jointly fix all eligible context fields and input ranges before fitting. Final experiments outside that domain are retained as failed applicability tests, not silently dropped or used to expand the claim."
+  },
+  "current_missing_evidence": [
+    "externally anchored pre-fit registration and protected current access ledger",
+    "authoritative acquired-data and exact measurement-unit/normalization receipts",
+    "closed independently audited ancestral fit/selection graph",
+    "whole-biological-component split with sufficient disjoint final, support and sham experiments",
+    "frozen selected form, competing models, error budgets and inference artifacts",
+    "one sealed final prediction/outcome evaluation on real observations",
+    "matched independently measured activity or localization-observation support",
+    "source-bound negative-control, gauge, clock, normalization and physical-consistency evidence"
+  ]
+}

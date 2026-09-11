@@ -1,0 +1,49 @@
+carbon_budget_mmol_c,module,effector,flux,cost_percent,clears_22pct_floor,note
+20.0,hypoxia,,,,False,"oxygen rerouting, not diversion -- the GEM already takes it"
+20.0,ph,,,,False,"proton pumping, an ATP tax"
+20.0,osmotic,s_0765,1.49,-72.144,True,"glycerol, HOG output"
+20.0,nadh,s_0765,2.0,-96.837,True,"glycerol, redox balancing"
+20.0,heat,s_1520,0.409,-68.533,True,"trehalose, acute shock transient"
+20.0,redox,s_0754,9.6,,False,GSSG cycling on NADPH
+20.0,ESR,s_0773,0.222,-18.901,False,"glycogen, shared core"
+20.0,carbon,s_0773,0.111,-9.451,False,"glycogen, starvation store"
+20.0,cell_wall,s_0509,0.0493,-5.954,False,chitin
+20.0,nitrogen,s_0773,0.0555,-4.725,False,glycogen
+20.0,oxidative,s_0750,0.0047,-0.817,False,"glutathione, from an 8.8 umol/gDW pool"
+20.0,sulfur,s_0750,0.0155,-2.704,False,glutathione
+20.0,xenobiotic,s_0750,0.0117,-2.038,False,glutathione conjugation
+20.0,dna_damage,s_0586,0.0035,-0.585,False,dNTP pool
+20.0,zinc,s_1153,0.000361,-0.03,False,myo-inositol
+20.0,iron,s_1447,0.000316,-0.191,False,squalene / sterol
+20.0,copper,s_0981,0.0015,-0.121,False,cysteine into metallothionein
+20.0,peroxide,,,,False,catalase removes H2O2 at zero metabolic cost
+20.0,calcium,,,,False,no carbon committed
+20.0,proteasome,,,,False,ATP only
+20.0,retrograde,,,,False,flux redistribution at constant cost
+20.0,UPR,,,,False,"protein and ER lipid, under 1.2%"
+20.0,alkaline_ph,,,,False,"Ena1 ATP, under 0.3%"
+20.0,atp,,,,False,"NGAM-shaped, already measured at 0.17-1.73%"
+60.0,hypoxia,,,,False,"oxygen rerouting, not diversion -- the GEM already takes it"
+60.0,ph,,,,False,"proton pumping, an ATP tax"
+60.0,osmotic,s_0765,1.49,-10.544,False,"glycerol, HOG output"
+60.0,nadh,s_0765,2.0,-14.221,False,"glycerol, redox balancing"
+60.0,heat,s_1520,0.409,-10.407,False,"trehalose, acute shock transient"
+60.0,redox,s_0754,9.6,,False,GSSG cycling on NADPH
+60.0,ESR,s_0773,0.222,-2.832,False,"glycogen, shared core"
+60.0,carbon,s_0773,0.111,-1.408,False,"glycogen, starvation store"
+60.0,cell_wall,s_0509,0.0493,-0.893,False,chitin
+60.0,nitrogen,s_0773,0.0555,-0.701,False,glycogen
+60.0,oxidative,s_0750,0.0047,-0.112,False,"glutathione, from an 8.8 umol/gDW pool"
+60.0,sulfur,s_0750,0.0155,-0.382,False,glutathione
+60.0,xenobiotic,s_0750,0.0117,-0.286,False,glutathione conjugation
+60.0,dna_damage,s_0586,0.0035,-0.077,False,dNTP pool
+60.0,zinc,s_1153,0.000361,-0.004,False,myo-inositol
+60.0,iron,s_1447,0.000316,-0.033,False,squalene / sterol
+60.0,copper,s_0981,0.0015,-0.014,False,cysteine into metallothionein
+60.0,peroxide,,,,False,catalase removes H2O2 at zero metabolic cost
+60.0,calcium,,,,False,no carbon committed
+60.0,proteasome,,,,False,ATP only
+60.0,retrograde,,,,False,flux redistribution at constant cost
+60.0,UPR,,,,False,"protein and ER lipid, under 1.2%"
+60.0,alkaline_ph,,,,False,"Ena1 ATP, under 0.3%"
+60.0,atp,,,,False,"NGAM-shaped, already measured at 0.17-1.73%"

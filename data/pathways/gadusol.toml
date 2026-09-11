@@ -1,0 +1,106 @@
+# Gadusol, a UV-absorbing sunscreen compound, from the pentose-phosphate intermediate
+# sedoheptulose 7-phosphate via the two-gene fish pathway EEVS + MT-Ox.
+#
+# Chemistry from Osborn AR, Almabruk KH, Holzwarth G, Asamizu S, LaDu J, Kean KM, Karplus PA,
+# Tanguay RL, Bakalinsky AT, Mahmud T. 2015, "De novo synthesis of a sunscreen compound in
+# vertebrates", eLife 4:e05919 -- PMID 25965179, PMC4426304, doi 10.7554/eLife.05919. That
+# paper expresses both genes in Saccharomyces cerevisiae and detects gadusol, which is why
+# this host is the right one to declare.
+#
+# WHY THIS FILE EXISTS AND WHAT IT DOES NOT DO. It is the first spec written for a product
+# with NO calibration and no measured states in this repository, deliberately, to find out
+# what `predict_product` does when asked for a product it has never seen. The answer should
+# be a refusal naming what is missing, and the refusal is the deliverable. Nothing here is
+# fitted, because there is nothing to fit it on: this paper reports detection and structure,
+# not a chemostat series, not an expression measurement, and not a specific productivity.
+#
+# ANY NUMBER THIS SPEC EVENTUALLY PRODUCES WILL BE DERIVED, NOT MEASURED, until somebody
+# runs the experiment. Written down here so a reader who finds a gadusol number in an output
+# table can trace it back to this sentence.
+
+[pathway]
+product = "gadusol"
+organism = "Saccharomyces cerevisiae"
+
+# EEVS is the first committed step and this is a CHEMISTRY nomination, like phb.toml's and
+# unlike beta_carotene.toml's -- there is no expression panel to score candidates against.
+# `pathway/limiting_step.py` is the thing that would settle it, and it needs paired
+# expression and flux over at least three steady states, none of which exist for gadusol.
+#
+# NOTE THE OPEN QUESTION THIS LEAVES. For beta-carotene the entry enzyme turned out to be a
+# READOUT of cassette expression rather than the step that binds -- the flux law reads CrtE
+# and the ceiling sits on crtYB. Whether EEVS or MT-Ox binds here is unknown and unknowable
+# from this paper. Declaring EEVS as the entry enzyme is a statement about which reaction
+# comes first, not a claim that it is the one that limits.
+entry_enzyme = "EEVS"
+
+# Sedoheptulose 7-phosphate, yeast-GEM v9.0.2, cytosolic. Verified against the vendored
+# SBML in data/gem/yeast-GEM.xml.gz rather than remembered:
+#   s_1427  "sedoheptulose 7-phosphate"  compartment c  formula C7H13O10P
+# The neighbouring s_1426 is sedoheptulose 1,7-BISphosphate (C7H12O13P2) and is NOT this
+# species; the two differ by one phosphate and are one character apart in the name.
+precursor_metabolite = "s_1427"
+# One S7P per gadusol: EEVS is a cyclase, an intramolecular aldol condensation that loses
+# the phosphate and forms the carbocycle. No second precursor enters the carbon skeleton.
+precursor_stoichiometry = 1.0
+
+source = "PMID 25965179 (Osborn 2015, eLife 4:e05919, doi 10.7554/eLife.05919) for the chemistry and for the S. cerevisiae expression"
+notes = """
+THIS SPEC CANNOT PRODUCE A NUMBER TODAY AND THAT IS THE POINT. `solve_pathway` needs an
+entry flux and, for any saturating step, a capacity and a Km. None exists:
+
+  - No `calibrations.py` entry, because alpha is fitted against measured flux over measured
+    expression and Osborn 2015 measures neither. It reports detection by LC-MS and NMR
+    structure elucidation.
+  - No kcat for EEVS or MT-Ox in this repository. Whether one exists in BRENDA or SABIO-RK
+    for EC 4.2.3.- / the MT-Ox activity has not been established here, and asserting a
+    turnover would be the exact Tier 0 smuggling `pathway/enzyme_capacity.py` was written to
+    refuse.
+  - No growth rate, because there is no chemostat. The steady-state identity this whole
+    layer closes on does not apply to the batch cultures the paper used.
+
+WHAT WOULD MAKE IT ANSWERABLE, in the order that costs least. (1) A turnover number for
+whichever of EEVS and MT-Ox binds, plus that enzyme's abundance as a fraction of protein --
+which is the pair `pathway/enzyme_capacity.py` takes, and the abundance half is one heavy
+peptide. (2) Paired expression and gadusol flux over at least three steady states, which is
+what `pathway/limiting_step.py` needs to say WHICH of the two binds. Neither is a large
+experiment and (2) subsumes the guesswork in (1).
+
+BOTH INTERMEDIATE NODES ARE DECLARED passthrough AND THAT IS AN ASSUMPTION. 2-epi-5-epi-
+valiolone is a real compound and Osborn 2015 detects it as an intermediate, but no
+intracellular pool is quantified, so declaring that it holds none is a claim about magnitude
+that nothing here checks. The same declaration is made and flagged in phb.toml and
+beta_carotene.toml; it is written out rather than left implicit so it is greppable.
+
+FATE. Gadusol is assayed from cell extracts in the yeast experiment, and the paper describes
+it as accumulating intracellularly in fish eggs and roe. `fate = "diluted"` follows. If a
+later assay reads the supernatant instead, this must change to "secreted" and the spec will
+then be refused at SOLVE time for want of an export capacity -- which is the correct
+behaviour and is what `tests/test_secretion_outlet.py` pins.
+
+NOT VENDORED AS DATA. There is no `data/gadusol/` directory and there should not be until a
+measurement exists to put in one. A spec is chemistry; a calibration is data.
+"""
+
+# The chain, in order. sedoheptulose 7-phosphate (precursor, not a node) ->
+# 2-epi-5-epi-valiolone -> gadusol.
+
+[[node]]
+name = "epi_valiolone"
+enzyme = "MT-Ox"              # the enzyme that CONSUMES this node, per the spec's contract
+rate_law = "passthrough"      # see notes: an assumption, and a visible one
+fate = "diluted"
+# 2-epi-5-epi-valiolone, C7H12O6. Computed from the formula rather than looked up, and
+# flagged as computed: 7*12.011 + 12*1.008 + 6*15.999 = 192.17.
+molar_mass_g_per_mol = 192.17
+measurable = false            # detected by Osborn 2015, never quantified as a pool
+
+[[node]]
+name = "gadusol"
+enzyme = ""                   # terminal
+rate_law = "passthrough"
+fate = "diluted"
+# Gadusol, C8H12O6. 8*12.011 + 12*1.008 + 6*15.999 = 204.18 g/mol, computed from the
+# formula. The extra carbon over the valiolone is the O-methyl that MT-Ox installs.
+molar_mass_g_per_mol = 204.18
+measurable = true

@@ -1,0 +1,33 @@
+{
+  "document_type": "development_custody_decision_not_external_attestation",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "request_sha256": "fe3b56ac5999b0382a8457f398a1f0d270016ff2bd15c2378d4d91bb719ed78a",
+  "decision": "approve_development_exports",
+  "custodian_identity": "Granados observation/data custodian subagent in this Devin session, distinct from the model fitting/selection agent; no external attestation claimed.",
+  "operational_event_reference": "data/native_law_v2/granados/development/phase_c_01/release_event.json#granados-phase-c-01",
+  "reviewed_source_asset_id": "1b38366b-7473-4ddf-9cf9-26e625533686",
+  "reviewed_source_sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+  "permitted_group_ids": [
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep1",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"
+  ],
+  "conditions": [
+    "This is a NEW phase-C response-release decision after verifying sealed freeze e03f6b9407b29e7e76da7a0be566ce9036c5cf27ac65bfaa9a4d3d7e009b5753, all six canonical families, all 41 attempts, all 288 predictions, and their code/configuration/data/checkpoint bindings.",
+    "The only newly released source values are rep4/rep5 GFP/max5, GFP/median and general/times at original frames 50-73. Preserve every source row and null; do not export any other group, field or frame.",
+    "Use the already frozen prefix cell indices and measured coordinates. No inpainting, smoothing, new response-based cohort selection, ratio-of-means target, refitting, bound expansion, family exclusion or scientific-recipe amendment is authorized.",
+    "The transient-response training-bound hit remains recorded. It is not a reason to retry or expand the registered domain.",
+    "Original training data approval, executor refresh approval and this new response-release approval are DISTINCT linked records. Do not overwrite the freeze or old approval hashes to satisfy a same-approval shortcut in a consumer.",
+    "Scoring must verify the explicit phase-C approval lineage, exact response bytes and the unchanged frozen predictions before computing any development diagnostics. The current module's legacy execute_scoring equality check needs a reviewed lineage adapter; this decision does not authorize a manual bypass.",
+    "No stronger biological ready grade, final validation or certified prospective forecast is granted. Rep6, aliases and all other unapproved groups remain unexported."
+  ],
+  "limitations": [
+    "This is a retrospective conditional mapping on the published, selected/processed cohort. The exact original export/filter/inpainting history is unresolved and may have used future observations. Neither the availability of earlier-frame features nor the original cohort is certified causally prefix-only. This limitation is not repaired by prohibiting new leakage in our own preprocessing.",
+    "All released groups have the same documented downshift. This experiment cannot identify a glucose dose-response or distinguish its biological effect from elapsed stimulus-relative time and unknown acquisition/batch history. Do not infer missing absolute clocks.",
+    "Normalized rep2 and other incompletely mapped cross-file entries are nonexported, not certified independent of these development groups. Retain unresolved alias/preparation/batch relations. If a later crosswalk identifies an alias of a released experiment, mark its biological component exposed to development rather than relabelling it unseen.",
+    "No external registry/HMAC infrastructure is provisioned by this document. Preserve the existing strong verifier and all its controls. A separate accountable custodian may approve this limited, non-authorizing development release using source replay, exact allowlists and retained operational records. Do not fabricate production keys/signatures or claim encryption, OS isolation, immutable external chronology or adversarial security."
+  ],
+  "strong_claim_authorized": false
+}

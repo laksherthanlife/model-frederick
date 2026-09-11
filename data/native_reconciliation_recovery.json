@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "kind": "exact_historical_source_recovery",
+  "run_id": "native-reconciliation-final",
+  "status": "source_recovered_replay_blocked_by_absolute_root",
+  "scope": "Exact source recovery and original-runtime preflight, not successful numerical reproduction or biological validation. The immutable earlier disposition ledger and all original numerical records remain unchanged.",
+  "authority": {
+    "protocol_path": "outputs/native_reconciliation_20260907_01/final/protocol.json",
+    "protocol_sha256": "3d8695c058af52620e15c46a5ed44c6b681da12c3e25b265fc6898494f494d17",
+    "verification_path": "outputs/native_reconciliation_20260907_01/verification.json",
+    "verification_sha256": "fce43799c95d0931f9c12be7a3d800a6e7a653e1429de3d2134863bc8905bf34",
+    "base_git_ref": "84561f51502b5b4bf66c052dc88c853038917934"
+  },
+  "recovered_sources": [
+    {
+      "logical_path": "scripts/run_native_reconciliation.py",
+      "storage_path": "data/native_reconciliation_final_run.py.source",
+      "git_blob": "e195f7f4592318a80dd1c40cdad380ce5f31d6f0",
+      "sha256": "73a4aafb649bd0e65ea8368b75f0b5f32fc8e651c37efdb4c5b9769e2a550621",
+      "size_bytes": 23814,
+      "acquisition": "Unreachable Git blob, checked against the pre-existing final protocol hash; no source reconstruction or guessed edit.",
+      "original_commit": null
+    },
+    {
+      "logical_path": "tests/test_native_reconciliation.py",
+      "storage_path": "data/native_reconciliation_final_test.py.source",
+      "git_blob": "6d35d4faeb1806e6fee25312654a53ea93232fb5",
+      "sha256": "95c2feb69c4b7a9ecb15497f41d43338d0dd0a2d07325e51d77cdb8296b2e6ee",
+      "size_bytes": 17031,
+      "acquisition": "Unreachable Git blob, checked against the same final protocol; neither the current nor baseline test revision was substituted.",
+      "original_commit": null
+    }
+  ],
+  "recorded_library": {
+    "path": "src/ystwin/fba/native_reconciliation.py",
+    "sha256": "5a817180d0d1ecb09e898f884b7e187d7efdf29fad4f50423b56358296a24f53",
+    "base_git_ref": "84561f51502b5b4bf66c052dc88c853038917934",
+    "verified_against_recorded_hash": true
+  },
+  "checkpoint": {
+    "logical_path": "outputs/native_training_run_02/checkpoint.json",
+    "sha256": "384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94",
+    "source": "Provided local original; exact bytes checked before and after the isolated attempt.",
+    "original_published": false,
+    "code_records_verified": 20,
+    "input_records_verified": 7,
+    "all_records_match_base_git_ref": true,
+    "portable_envelope_is_not_original_bytes": true
+  },
+  "original_runtime": {
+    "python": "3.14.2 (v3.14.2:df793163d58, Dec  5 2025, 12:18:06) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "packages": {
+      "cobra": "0.32.1",
+      "numpy": "2.4.1",
+      "pandas": "2.3.3",
+      "python-libsbml": "5.21.1",
+      "scipy": "1.17.0",
+      "swiglpk": "5.0.13"
+    },
+    "matched_before_execution": true
+  },
+  "isolated_attempt": {
+    "exit_code": 1,
+    "status": "refused_before_numerical_execution",
+    "driver_sha256": "0b9216f4fd00c26cf854e8983dc716e88490907e53b01878d17bf1de0f3ec19b",
+    "exception_type": "ValueError",
+    "message": "training manifest differs from the explicit source/code allowlists",
+    "differing_training_manifest_fields": ["root", "sha256"],
+    "input_records_equal": true,
+    "code_records_equal": true,
+    "recorded_root_is_current_checkout": true,
+    "source_and_inputs_unchanged": true,
+    "repository_originals_unchanged": true,
+    "frozen_validator_unchanged": true,
+    "numerical_comparison": "not_run"
+  },
+  "original_supported_argv": [
+    "{python}", "-B", "scripts/run_native_reconciliation.py",
+    "--output-dir", "<fresh-directory-in-original-runtime>", "--timeout-s", "15"
+  ],
+  "initial_variant": {
+    "required_sha256": "9579fee36be9af4a1e6efd0a8f98c081956e8422a932da2ece27a2ed5382c739",
+    "source_recovered": false,
+    "substituted_for_final": false
+  },
+  "remaining_requirement": "An isolated execution environment preserving the recorded absolute root, or a separately reviewed portability contract. Do not overwrite the live worktree, rewrite the original checkpoint, patch its validator, or call a relocated failed attempt a successful reproduction.",
+  "numerical_reproduction_verified": false,
+  "historical_execution_authenticated": false,
+  "calibration_adopted": false,
+  "biological_validation": false,
+  "outputs_replaced": false
+}

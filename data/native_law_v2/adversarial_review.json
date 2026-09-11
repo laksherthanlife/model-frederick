@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "artifact_type": "independent_adversarial_review_not_claim_authorization",
+  "status": "all_reported_software_regressions_retested_after_fixes_no_biological_validation",
+  "ownership": [
+    "tests/test_native_law_adversarial.py",
+    "data/native_law_v2/adversarial_review.json"
+  ],
+  "access_scope": {
+    "reserved_response_or_product_outcomes_opened": false,
+    "old_product_calibrations_opened": false,
+    "frozen_artifacts_modified": false,
+    "primary_value_falsification_policy": "Only explicit released train/dev projections. Synthetic fixtures are engineering tests, never biological validation.",
+    "native_implementations_or_protocol_modified": false
+  },
+  "lessons_inspected_before_new_interfaces": [
+    {
+      "path": "outputs/biology_learning_review.json",
+      "lines": [33, 94],
+      "lesson": "Conditional fitting, supplied kinetic laws, exact observability gauges and inherited native calibration overlap do not establish independent biological law learning. Release gates must rerun authoritative calculations."
+    },
+    {
+      "path": "data/validation_candidates/granados2018.json",
+      "lines": [25, 37],
+      "lesson": "nucLoc is max5/median fluorescence, not phosphorylation concentration. Null denotes missing cells, not zero. nucLocNorm requires a processing audit."
+    },
+    {
+      "path": "data/validation_candidates/granados2018.json",
+      "lines": [104, 115],
+      "lesson": "The first biological replicate is duplicated across two files. Split whole biological units, not filenames, cells or time points; do not derive normalization from heldout or future responses."
+    },
+    {
+      "path": "data/biochemical_evidence/enzyme_activity_sources.json",
+      "lines": [239, 273],
+      "lesson": "Mixed soluble-extract activity lacks measured target enzyme and active-site denominators and does not identify kcat, Vmax or target-host abundance. Gene copies and molecular weight cannot fill that gap."
+    },
+    {
+      "path": "data/biochemical_evidence/enzyme_activity_sources.json",
+      "lines": [453, 462],
+      "lesson": "Pool trajectories identify net balance, not independently identifiable synthesis and consumption. Total enzyme gives an optimistic capacity bound, not realized flux."
+    },
+    {
+      "path": "data/validation_candidates/yeast_gam_lineage.json",
+      "lines": [64, 69],
+      "lesson": "A later split does not erase upstream model fit/selection exposure. Exact ancestral lineage remains distinct from current training exclusion."
+    },
+    {
+      "path": "src/ystwin/analysis/biology_learning_audit.py",
+      "lines": [107, 118],
+      "lesson": "Caller flags, reference shapes and recomputable hashes are advisory. An explicit-root verifier must recollect evidence and run implemented assessors."
+    }
+  ],
+  "findings": [
+    {
+      "id": "ADV-002",
+      "priority": "high",
+      "classification": "software_provenance_leakage_bug",
+      "status": "fixed_by_rate_executor_and_unchanged_independent_test_retested",
+      "title": "Rate target could previously be relabelled as protein abundance despite shared raw-measurement identity",
+      "initial_implementation": [
+        {"path": "src/ystwin/analysis/native_rate_learning.py", "lines": [393, 415]},
+        {"path": "src/ystwin/analysis/native_rate_learning.py", "lines": [494, 504]}
+      ],
+      "current_implementation": [
+        {"path": "src/ystwin/analysis/native_rate_learning.py", "lines": [339, 352]},
+        {"path": "src/ystwin/analysis/native_rate_learning.py", "lines": [378, 413]},
+        {"path": "src/ystwin/analysis/native_rate_learning.py", "lines": [1064, 1102]}
+      ],
+      "fix_verification": "Reran the complete unchanged tests/test_native_law_adversarial.py: 13 passed in 1.61 seconds. The rate executor now resolves physical aliases and ancestor closures and carries forbidden target identities into prediction. No old test or implementation was edited for this verification.",
+      "test": "tests/test_native_law_adversarial.py::test_rate_target_cannot_be_laundered_as_enzyme_via_a_different_column",
+      "observed": "A valid engineering mass-action panel fits and selects mass action. Copying every target value and its exact (source_id, measurement_id) into E then fits and selects the enzyme-only candidate instead of rejecting target leakage.",
+      "root_cause_fix_request": "Resolve target/feature physical measurement identities and full derivation ancestors before fitting or prediction. Reject overlap even inside one group or behind different variable names. Current provenance tracking only prohibits identities crossing groups; the feature guard only prohibits the literal target column name."
+    },
+    {
+      "id": "ADV-003",
+      "priority": "high",
+      "classification": "software_source_binding_gap_not_an_authentication_break",
+      "status": "fixed_by_verifier_executor_and_regressions_retested",
+      "title": "Source-bound measurement gate previously checked source-file hashes without value equality",
+      "initial_implementation": {"path": "src/ystwin/analysis/native_law_validation.py", "lines": [576, 604]},
+      "current_implementation": [
+        {"path": "src/ystwin/analysis/native_law_validation.py", "lines": [232, 263]},
+        {"path": "src/ystwin/analysis/native_law_validation.py", "lines": [632, 679]},
+        {"path": "src/ystwin/analysis/native_law_validation.py", "lines": [788, 808]}
+      ],
+      "test": "tests/test_native_law_adversarial.py::test_verifier_binds_numeric_observations_to_referenced_source_not_only_hashes",
+      "initial_reproduction": "A passing fixture source table's first raw value was increased by 123 with a consistent numerator. Its source hash and fixture receipts were rebound while the observation projection stayed stale. source_bound_measurements still passed on the old value.",
+      "resolution": "The verifier executor added a JSON-record source decoder with source-to-projection checks for inputs, target values/uncertainties/units and independent support contrasts. Unsupported decoders return missing evidence. The original target mutation assertion now passes, as does the added independent-support source mutation. No verifier code was edited by this reviewer.",
+      "trust_qualification": "All signatures used test-only fixture-domain authorities, and biological authorization remained false. This was an internal source/projection consistency gap, not an HMAC break. Passing JSON-record fixtures does not implement every real raw-data format or establish experimental provenance.",
+      "remaining_scope": "Real source formats require suitable verified decoders and independently authenticated custody/lineage. Neither candidate currently has an approved numerical projection."
+    },
+    {
+      "id": "ADV-001",
+      "priority": "high",
+      "classification": "software_protocol_integration_bug",
+      "status": "fixed_by_executor_and_regression_retested",
+      "title": "Response selection previously minimized MSE rather than registered equal-group MAE",
+      "initial_implementation": {"path": "src/ystwin/analysis/native_response_learning.py", "lines": [445, 458]},
+      "current_implementation": {"path": "src/ystwin/analysis/native_response_learning.py", "lines": [482, 496]},
+      "resolution": "The response executor replaced MSE selection and complexity penalties with group MAE and registered tie-breaking. The original numerical assertion passes unchanged after adapting only the fixture to the new mandatory context_id and removed recipe field.",
+      "contract": {"path": "data/native_law_v2/protocol.json", "lines": [23, 24]},
+      "test": "tests/test_native_law_adversarial.py::test_response_winner_obeys_registered_group_mae_not_outlier_driven_mse",
+      "observed": {"selected_group_mae": 0.26000000000000006, "frozen_constant_group_mae": 0.2},
+      "root_cause_fix_request": "Use the registered equal-group MAE and registered tie-breaking in the native selection interface; bind any executable selection recipe to the immutable protocol. Do not edit the protocol to match a different optimizer objective or weaken this assertion."
+    }
+  ],
+  "test_results": {
+    "owned_adversarial_suite": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m pytest -q -p no:cacheprovider tests/test_native_law_adversarial.py",
+      "cases": 13,
+      "passed": 13,
+      "failed": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "open_failures": [],
+      "assertions_weakened_or_xfailed": false
+    },
+    "executor_regression_suites_actually_run": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m pytest -q -p no:cacheprovider tests/test_native_rate_learning.py tests/test_native_response_learning.py tests/test_native_law_validation.py",
+      "passed": 118,
+      "failed": 0,
+      "exit_code": 0,
+      "scope": "Actual optimization, prediction and authenticated verifier code on synthetic engineering fixtures; not primary biological validation."
+    },
+    "live_repository_data_gate": {
+      "interface": "native_response_learning.check_data_gate(data/native_law_v2/granados_manifest.json, data/native_law_v2/protocol.json)",
+      "ready": false,
+      "measurement_arrays_opened": false,
+      "failure": "verified data gate refused: custodian has not authorized any training/development projection; no measurement access"
+    },
+    "lint": {"command": "python3 -m ruff check --no-cache tests/test_native_law_adversarial.py", "result": "passed"},
+    "fixture_policy": "The verifier tests reuse only test_native_law_validation.Fixture for signed temporary-file construction. No fitting/scoring/verifier function is mocked. All authority domains remain fixture and all apparent final/support outcomes are synthetic. No production authorization receipt or key is created.",
+    "combined_run_before_adv002_fix": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m pytest -q -p no:cacheprovider tests/test_native_law_adversarial.py tests/test_native_rate_learning.py tests/test_native_response_learning.py tests/test_native_law_validation.py",
+      "passed": 130,
+      "failed": 1,
+      "exit_code": 1
+    },
+    "parallel_work_note": "Interfaces changed while executors worked. Required fixture fields were adapted without relaxing invariants. Temporary test/implementation version mismatches were not counted as proven bugs. The full executor suites subsequently passed. At the original handoff ADV-002 remained red; the requested follow-up reran all 13 unchanged independent tests after the rate executor's ancestry fix and all passed. The earlier combined run is retained as pre-fix history, not a current failure verdict."
+  },
+  "attack_coverage": [
+    {
+      "attack": "Author-model or processed-fit outputs mistaken for measurements",
+      "result": "Source metadata declares Hackett model-derived internal flux ineligible. Numeric source/projection contradictions were reproduced as ADV-003, then rejected after the verifier executor added actual source decoding. No approved primary measurement projection exists to exercise a biological import."
+    },
+    {
+      "attack": "Inherited calibration overlap",
+      "result": "The real verifier rejects a signed ancestral graph exposing a reserved biological ID in the executed executor suite. Actual historical Hackett/Boer/GEM/database ancestry remains unresolved, not certified by this engineering test.",
+      "test": "tests/test_native_law_validation.py::test_upstream_fit_exposure_cannot_be_erased_by_later_split"
+    },
+    {
+      "attack": "Phenotype outcome substituted for an input or protein abundance",
+      "result": "ADV-002 was reproduced red with exact target identity relabelled as E. After the rate executor's ancestry fix, the unchanged regression rejects this leak and the full independent suite passes."
+    },
+    {
+      "attack": "Fake kcat from mixed extract or gene copy",
+      "result": "Metadata limitation retained. Rate coefficients are explicitly conditional per-measured-enzyme or relative coefficients, not intrinsic kcat; relative-enzyme gauge tests execute in the rate suite. No real mixed-extract/gene-copy conversion adapter was tested because no such approved quantitative source exists.",
+      "test": "tests/test_native_rate_learning.py::test_relative_enzyme_scaling_retains_only_an_effective_coefficient",
+      "remaining_gap": "Typed quantity labels cannot establish an active-enzyme denominator; source-backed biochemical evidence and source binding are still necessary."
+    },
+    {
+      "attack": "Experiment identity and absolute clock shortcuts",
+      "result": "Real fitted response prefix/clock invariance passes. Executor tests also rename experiment identities, vary physical doses and reject confounded clock metadata. These tests do not create crossed clocks/inputs in the actual biological data.",
+      "test": "tests/test_native_law_adversarial.py::test_response_prediction_prefix_does_not_depend_on_query_suffix_or_clock_origin"
+    },
+    {
+      "attack": "Future-trace or heldout-response normalization",
+      "result": "Prefix predictions are unchanged by a distant future input/query suffix; train-only normalization and poisoned-output replay refusal pass in executed suites. No real reserved bytes were opened or poisoned."
+    },
+    {
+      "attack": "Duplicated biological replicates across files",
+      "result": "Known shared source/biological IDs fail the executed learner/verifier split tests. The Granados metadata separately identifies aliases and incomplete cross-file movie/day lineage; distinct file hashes do not prove independence.",
+      "test": "tests/test_native_law_validation.py::test_whole_biological_dependency_alias_cannot_cross_groups"
+    },
+    {
+      "attack": "Shuffled inputs, source templates or dependency-ablated models still earn credit",
+      "result": "Three owned value-based verifier cases reject candidate credit when the corresponding comparator predictions are equally accurate. The executor rate suite also performs an actual group-block target shuffle and refit.",
+      "test": "tests/test_native_law_adversarial.py::test_verifier_no_dependency_or_shuffle_advantage_cannot_earn_credit"
+    },
+    {
+      "attack": "Winner chosen for its final-test score",
+      "result": "The owned test preserves excellent final scores, changes the authentic development prediction values, rebinds all configuration hashes, and verifies that recomputed development selection rejects the final winner.",
+      "test": "tests/test_native_law_adversarial.py::test_verifier_recomputes_development_winner_despite_excellent_final_scores"
+    },
+    {
+      "attack": "Failed or censored rows removed",
+      "result": "Owned tests first pass with a registered censored row retained, then reject removing it or imputing zero. Executed verifier tests additionally retain all failed final comparison metrics and reject repeated/consumed final outcomes.",
+      "test": "tests/test_native_law_adversarial.py::test_verifier_retains_censored_source_rows_without_imputing_accuracy"
+    },
+    {
+      "attack": "Broad interval coverage called point accuracy",
+      "result": "Owned test has 100 percent interval coverage and width within the registered budget but group MAE 0.8; the actual point-error gate refuses it.",
+      "test": "tests/test_native_law_adversarial.py::test_verifier_full_interval_coverage_cannot_replace_point_accuracy"
+    },
+    {
+      "attack": "Unidentifiable parameter directions silently fixed",
+      "result": "Executed real-optimizer rate tests refuse separate capacity/half-saturation at constant substrate and arbitrary constants for collinear regulators. Relative-enzyme scaling retains only an effective coefficient. No biological absolute-activity identification follows.",
+      "tests": [
+        "tests/test_native_rate_learning.py::test_constant_substrate_refuses_separate_capacity_and_half_saturation",
+        "tests/test_native_rate_learning.py::test_collinear_regulators_do_not_get_arbitrary_distinct_constants"
+      ]
+    },
+    {
+      "attack": "Fabricated evidence status and recomputed reference hashes authorize claims",
+      "result": "Owned test rebinds the registry/current head after changing an observation receipt and recomputing its hash; authentication rejects the stale MAC despite success flags. The separately reproduced source-value binding gap ADV-003 required a decoder fix, not stronger-looking hashes or flags.",
+      "test": "tests/test_native_law_adversarial.py::test_verifier_recomputed_reference_hash_does_not_authenticate_fabricated_evidence"
+    }
+  ],
+  "scientific_limitations": [
+    {
+      "id": "SCI-001",
+      "status": "no_primary_value_falsification_possible",
+      "finding": "Both current candidate catalogues declare ineligibility and empty training/development allowlists. No new-candidate measurement arrays were opened by this reviewer; every numerical probe was an engineering fixture. Prior source/review metadata, including its stated assay and native-lineage qualifications, was inspected as requested.",
+      "references": [
+        {"path": "data/native_law_v2/biochemical_catalogue.json", "lines": [6, 26]},
+        {"path": "data/native_law_v2/granados_manifest.json", "lines": [5, 16]}
+      ]
+    },
+    {
+      "id": "SCI-002",
+      "finding": "Hackett's proposed intracellular pyruvate-kinase labels derive from YEASTNET optimization/FVA, not independently measured reaction rates. Metabolomics was collected in prior cultures; joint culture identity, activity support and exact upstream database overlap are unresolved.",
+      "references": [
+        {"path": "data/native_law_v2/biochemical_catalogue.json", "lines": [8, 12]},
+        {"path": "data/native_law_v2/biochemical_catalogue.json", "lines": [142, 157]}
+      ]
+    },
+    {
+      "id": "SCI-003",
+      "finding": "Granados metadata allows at most ten raw-compatible distinct main Sfp1 experiments versus eleven required train/development/final groups, one marker group versus six support groups, and one sham versus two. Complete aliases, crossed absolute clocks, source uncertainty and matched strain/calibration support are not established.",
+      "references": [{"path": "data/native_law_v2/granados/eligibility_audit.json", "lines": [21, 52]}]
+    },
+    {
+      "id": "SCI-004",
+      "finding": "The latest source audit establishes that nucLocNorm uses each experiment's pre-stress population z-score, not future peaks. It is still forbidden here because whole experiments are reserved and the protocol disallows heldout-response baseline/scale estimation. Do not misstate the normalization method while enforcing the access rule.",
+      "references": [{"path": "data/native_law_v2/granados_manifest.json", "lines": [432, 438]}]
+    },
+    {
+      "id": "SCI-005",
+      "finding": "Mixed-extract activity, gene copy, relative protein and observable response fits do not identify intrinsic kcat, active enzyme abundance or a unique latent molecular mechanism. Passing software tests, hashes and fixture HMACs cannot supply missing measurements or guarantee biological success.",
+      "references": [
+        {"path": "data/biochemical_evidence/enzyme_activity_sources.json", "lines": [239, 273]},
+        {"path": "data/native_law_v2/claim_domain.json", "lines": [40, 54]}
+      ]
+    }
+  ],
+  "parent_actions": [
+    "Preserve the verified ADV-002 physical source/derivation identity fix and its unchanged independent regression.",
+    "Preserve the ADV-003 JSON-record source-binding fix and its target/support regressions. Unsupported real source formats must remain missing evidence rather than hash-only verification.",
+    "Keep all original assertions intact; all 13 independent regressions now pass after executor fixes. This fix verification does not upgrade any biological claim.",
+    "Do not fit either presently ineligible candidate, invent raw observations or lower the registered criteria to obtain a success. New eligible data or a separately preregistered narrower study requires independent custody and provenance.",
+    "This review is a reproducible software/metadata assessment, not permission to claim biological law learning."
+  ]
+}

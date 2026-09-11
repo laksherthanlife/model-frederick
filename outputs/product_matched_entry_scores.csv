@@ -1,0 +1,3 @@
+branch,n_independent_strains,n_condition_predictions,n_failed_predictions,joint_rmse_log
+partition,3,6,0,0.7367494528006837
+saturating,3,6,0,0.5702950797663768

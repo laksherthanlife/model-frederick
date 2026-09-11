@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Granados source-question metadata supplement, not an authorization",
+  "type": "object", "additionalProperties": false,
+  "required": ["$schema", "schema_version", "supplement_id", "status", "original_protocol_sha256", "original_candidate_id", "original_candidate_status", "parent_design_review_path", "response_export_authorized", "model_training_performed", "thresholds_or_protocol_criteria_changed", "new_estimand_selected_or_authorized", "custody_note", "questions", "conditional_estimand_options", "artifact_paths", "parent_actions"],
+  "properties": {
+    "$schema": {"const": "metadata_supplement.schema.json"},
+    "schema_version": {"const": 1},
+    "supplement_id": {"const": "granados2018-source-questions-01"},
+    "status": {"const": "metadata_review_only_original_ineligibility_preserved"},
+    "original_protocol_sha256": {"const": "e901d3985b5577d6f846229e1178062414e3220a7307b6d8ee40b0d01e9dffde"},
+    "original_candidate_id": {"const": "granados2018_sfp1_carbon_localization"},
+    "original_candidate_status": {"const": "ineligible_under_current_protocol"},
+    "parent_design_review_path": {"const": "data/native_law_v2/protocol_review.json"},
+    "response_export_authorized": {"const": false},
+    "model_training_performed": {"const": false},
+    "thresholds_or_protocol_criteria_changed": {"const": false},
+    "new_estimand_selected_or_authorized": {"const": false},
+    "custody_note": {"type": "string"},
+    "questions": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["question_id", "resolution", "facts"],
+        "properties": {
+          "question_id": {"enum": ["prefix_normalization_and_conditional_estimand", "normalized_rep2_identity", "origin_and_clock_semantics", "same_experiment_nuclear_marker_support", "movie_chip_culture_day_clustering"]},
+          "resolution": {"type": "string"},
+          "facts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/fact"}}
+        }
+      }
+    },
+    "conditional_estimand_options": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["option_id", "selected_or_authorized", "definition", "known_inputs", "readout", "requirements_before_use", "limitations", "evidence"],
+        "properties": {
+          "option_id": {"enum": ["raw_poststimulus_population_response_given_prefix", "prefix_standardized_poststimulus_population_response"]},
+          "selected_or_authorized": {"const": false},
+          "definition": {"type": "string"}, "known_inputs": {"type": "string"},
+          "readout": {"type": "string"}, "requirements_before_use": {"type": "string"},
+          "limitations": {"type": "string"}, "evidence": {"$ref": "#/$defs/strings"}
+        }
+      }
+    },
+    "artifact_paths": {"$ref": "#/$defs/strings"},
+    "parent_actions": {"$ref": "#/$defs/strings"}
+  },
+  "$defs": {
+    "strings": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "fact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "statement", "evidence", "qualification"],
+      "properties": {
+        "id": {"type": "string"}, "statement": {"type": "string"},
+        "evidence": {"$ref": "#/$defs/strings"}, "qualification": {"type": "string"}
+      }
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "lead_id": "cereghetti2021_cdc19_activity_contrast",
+  "status": "real_direct_activity_contrast_verified_source_data_cells_unopened_no_registration",
+  "primary_source": {
+    "title": "Reversible amyloids of pyruvate kinase couple cell metabolism and stress granule disassembly",
+    "authors_short": "Cereghetti G, Wilson-Zbinden C, Kissling VM, et al.",
+    "year": 2021,
+    "doi": "10.1038/s41556-021-00760-4",
+    "pmid": "34616026",
+    "pmcid": "PMC7611853",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7611853/",
+    "metadata_containers": [
+      {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7611853/fullTextXML",
+        "http_status": 200,
+        "bytes": 154455,
+        "sha256": "b2251d876f3b712a24d7388f08c7292aedf2484990229ff2b42d15171d597bc0",
+        "hash_scope": "Publication XML, not raw data"
+      },
+      {
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7611853/",
+        "http_status": 200,
+        "bytes": 262749,
+        "sha256": "6e9411593e74cd43523c84a008ef327d5b2f7aeb545eb63ce3a44ddb2ac92d09",
+        "hash_scope": "Publication HTML, inspected for the actual source-data link"
+      }
+    ]
+  },
+  "primary_evidence_locators": [
+    {"locator": "XML sec S14: Protein purification", "supports": "Native yeast sequence expressed as recombinant Strep-tagged protein in E. coli Rosetta; purification and quality checks"},
+    {"locator": "XML sec S20 / paragraph P31: Pyruvate kinase activity assay", "supports": "Actual coupled assay, added enzyme, buffer, substrates and pretreatment"},
+    {"locator": "XML fig F2, Figure 2A caption", "supports": "Two-state wild-type activity contrast, measured slope unit and three reported independent experiments"},
+    {"locator": "XML sec S25: Statistics and Reproducibility", "supports": "Experiments explicitly not randomized; reporting of repetitions and no data exclusion"},
+    {"locator": "XML sec S28: Data Availability", "supports": "Numerical source data for plots, including all independent repeats, promised in Source Data files"},
+    {"locator": "XML supplementary-material SD10 and primary PMC HTML link", "supports": "Figure 2 statistical-source-data XLSX attachment"}
+  ],
+  "assay_authenticity_and_target": {
+    "genuinely_measured": true,
+    "target": "Pyruvate formation by purified wild-type Cdc19, detected through coupled lactate dehydrogenase/NADH oxidation",
+    "native_sequence_species": "Saccharomyces cerevisiae",
+    "preparation_host": "Escherichia coli Rosetta",
+    "native_claim_limit": "Wild-type yeast enzyme sequence is relevant, but this is recombinant, Strep-tagged in-vitro material, not a protein preparation from native yeast cells or an in-vivo enzyme flux.",
+    "measured_readout_unit_as_reported": "Decrease in absorbance at 340 nm per minute",
+    "not_model_or_simulation": "The primary methods describe reaction initiation and detector readings over time; Figure 2A is a measured activity assay, not model output.",
+    "scope": "A limited activity contrast at specified inputs. Not a multidimensional substrate/regulator kinetic law, and not intrinsic kcat."
+  },
+  "preparation_and_inputs": {
+    "construct": "Wild-type Cdc19-Strep; mutant constructs are present elsewhere in the paper but are not interchangeable native wild-type observations",
+    "purification": "Strep-Tactin Superflow Plus affinity purification, fraction checks by SDS-PAGE/Coomassie, pooling and frozen aliquots",
+    "enzyme_concentration_before_pretreatment_mg_per_mL": 0.2,
+    "nominal_enzyme_concentration_in_reaction_ug_per_mL": 2,
+    "enzyme_concentration_measurement_method": null,
+    "active_site_concentration_or_active_fraction": null,
+    "assay_buffer": {
+      "imidazole_mM": 50,
+      "pH": 7,
+      "KCl_mM": 100,
+      "MgCl2_mM": 25,
+      "ADP_mM": 10,
+      "NADH_mM": 0.3,
+      "coupling_LDH_U_per_mL": 10,
+      "PEP_starting_reagent_mM": 2
+    },
+    "detector_wavelength_nm": 340,
+    "reaction_volume": null,
+    "assay_temperature_C": null,
+    "temperature_warning": "42 C is the pretreatment temperature. Do not infer that the activity readout was performed at 42 C or at the yeast growth temperature.",
+    "optical_path_and_extinction_coefficient": null,
+    "controlled_treatment_levels": ["soluble / kept on ice", "heat-treated / aggregated"],
+    "independently_varied_substrate_or_regulator_levels_for_activity": "None established: Figure 2A uses fixed PEP/ADP and does not report an FBP titration.",
+    "other_FBP_experiments": "FBP doses elsewhere address aggregation, binding, re-solubilization or localization, not a matched activity-versus-FBP initial-rate table. They cannot be relabelled as catalytic response measurements."
+  },
+  "source_discrepancy_and_correction": {
+    "methods_pretreatment": {"temperature_C": 42, "duration_min": 60},
+    "figure_2A_pretreatment": {"temperature_C": 42, "duration_min": 30},
+    "resolution": "Unresolved; preserve both descriptions and obtain source-author clarification before fixing the assay domain.",
+    "correction": {
+      "title": "Author Correction: Reversible amyloids of pyruvate kinase couple cell metabolism and stress granule disassembly",
+      "doi": "10.1038/s41556-021-00799-3",
+      "pmid": "34702981",
+      "bibliographic_relation": "Europe PMC core metadata identifies Erratum for PMID 34616026",
+      "content_verified": false,
+      "pdf_url": "https://www.nature.com/articles/s41556-021-00799-3.pdf",
+      "access_probe": "HTTP 200 text/html Client Challenge, not a PDF; no challenge bypass attempted",
+      "warning": "Do not assume that the correction resolves the 30-versus-60-minute discrepancy; correction content has not been read."
+    }
+  },
+  "replication_and_randomization": {
+    "reported_independent_experiments_for_figure_2A": 3,
+    "reported_treatment_levels": 2,
+    "reported_error_summary": "Mean plus/minus SEM",
+    "biological_source_culture_count": null,
+    "independent_enzyme_preparation_count": null,
+    "technical_replicates_per_experiment": null,
+    "actual_source_data_row_count": null,
+    "raw_progress_curve_count": null,
+    "randomized": false,
+    "randomization_evidence": "Statistics and Reproducibility explicitly states that the experiments were not randomized and investigators were not blinded to allocation/outcome assessment.",
+    "other_reporting": "No sample-size predetermination, no outlier tests and no data excluded are stated.",
+    "hierarchy_warning": "Three author-labelled independent experiments are not verified as three independent expression cultures or purifications. Two treatment aliquots can share a preparation and calibration. Shared preparation is a nuisance dependency, not automatically a duplicate reaction, but neither aliquots nor time points add biological N.",
+    "clock_order_crossing": "Not documented"
+  },
+  "source_data_availability": {
+    "article_statement": "Numerical source data giving rise to graphical representations, with all independent repeats, and unprocessed gel/blot images are reported in Source Data files.",
+    "activity_attachment": {
+      "filename": "EMS133472-supplement-Source_Data_Figure_2___Statistical_Source_Data.xlsx",
+      "source_xml_locator": "supplementary-material SD10/media",
+      "actual_article_link": "https://pmc.ncbi.nlm.nih.gov/articles/instance/7611853/bin/EMS133472-supplement-Source_Data_Figure_2___Statistical_Source_Data.xlsx",
+      "format_declared_by_primary_xml": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "head_probe": {"http_status": 200, "content_type": "text/html; charset=utf-8", "content_length": 1817},
+      "head_interpretation": "HTML response, not a verified XLSX download. Attachment existence is source-linked; downloadable workbook contents remain unverified.",
+      "body_retrieved": false,
+      "sha256": null,
+      "worksheet_names": null,
+      "column_headers": null,
+      "raw_progress_curves_verified": false,
+      "expected_observation_level_from_caption_not_verified_schema": "Per-experiment absorbance-change slopes for the two Figure 2A states; workbook also covers other Figure 2 panels. Do not infer a raw time-course matrix from the phrase source data."
+    },
+    "official_europe_pmc_bulk_endpoint": {
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7611853/supplementaryFiles",
+      "head_status": 200,
+      "head_content_type": "application/zip",
+      "head_content_disposition_filename": "PMC7611853_SupplementaryFiles.zip",
+      "head_content_length": 0,
+      "body_retrieved": false,
+      "interpretation": "Documented supplement endpoint advertises a ZIP. A HEAD response with no body does not verify member bytes, integrity or raw observations; retrieval is deferred until the new claim/registration/access boundary is resolved."
+    },
+    "distinct_article_attachment_count": 16,
+    "attachment_count_meaning": "Includes figure source spreadsheets, unprocessed gels/blots, peer review and strain/plasmid tables. It is not an assay or replicate count."
+  },
+  "normalization_and_identifiability": {
+    "activity_processing": "Figure 2A reports an absorbance-versus-time slope. Original time windows, baseline/blank subtraction, path length and calibration uncertainty were not verified.",
+    "no_response_normalization_imported": "No ATP/ADP, normalized image intensity, relative aggregation or growth data are imported as activity labels.",
+    "denominator_limit": "Nominal purified protein mass is known, but active enzyme fraction and the active concentration after heat-induced aggregation are not independently identified. Dividing by total protein or fitting a gain cannot establish intrinsic kcat.",
+    "form_identifiability": "A two-state experiment at fixed substrate concentrations cannot identify substrate/regulator functional dependence. Adding time points from the same detector trace does not create an independently controlled substrate titration."
+  },
+  "orthogonal_support_and_holdout": {
+    "other_physical_channels_reported": ["TEM and amyloid dyes", "LiP-MS and protein measurements", "Intracellular ATP/ADP and PEP measurements"],
+    "limits": "These support structural/state/physiological context, not an independent matched measure of Cdc19 catalytic rate. The ATP/ADP pool ratio is not a flux. Culture/preparation pairing and error dependence are not established here.",
+    "independent_pyruvate_or_ATP_formation_rate_channel_verified": false,
+    "currently_reserved_labels": [],
+    "legitimate_future_reservation": "Unexposed complete source experiment/preparation IDs and all their treatment aliquots; hypothetical well/timepoint splits cannot be labelled biological holdouts. This source's explicit non-randomization and small stated N must remain visible.",
+    "current_protocol_inventory_satisfied": false
+  },
+  "decision": "A genuine, source-linked Cdc19 activity assay suitable as a lead for narrowly scoped replication/support. Not eligible for rate-law functional-form learning; source-data integrity, assay-domain discrepancy, preparation identities, calibration and new registration are unresolved."
+}

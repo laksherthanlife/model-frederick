@@ -1,0 +1,258 @@
+doi,registry,title,journal,year,cited_in
+10.1002/bit.10617,crossref,Optimization‐based framework for inferring and testing hypothesized metabolic objective functions,Biotechnology and Bioengineering,2003,docs/research/HYBRID_METHODS.md:141
+10.1002/bit.24748,crossref,A reliable simulator for dynamic flux balance analysis,Biotechnology and Bioengineering,2012,docs/research/HYBRID_METHODS.md:292
+10.1002/bit.26473,crossref,"A synthetic biology approach to transform
+                    <i>Yarrowia lipolytica</i>
+                    into a competitive biotechnological producer of β‐carotene",Biotechnology and Bioengineering,2017,docs/research/CALIBRATION_DATA.md:376
+10.1002/bit.27714,crossref,A genome‐scale metabolic network model and machine learning predict amino acid concentrations in Chinese Hamster Ovary cell cultures,Biotechnology and Bioengineering,2021,docs/research/HYBRID_METHODS.md:295
+10.1002/bit.27907,crossref,Knowledge transfer across cell lines using hybrid Gaussian process models with entity embedding vectors,Biotechnology and Bioengineering,2021,docs/research/HYBRID_METHODS.md:334
+10.1002/bit.28366,crossref,How reliable are Chinese hamster ovary (CHO) cell genome‐scale metabolic models?,Biotechnology and Bioengineering,2023,docs/research/HYBRID_METHODS.md:337
+10.1002/j.1460-2075.1994.tb06304.x,crossref,YAP1 dependent activation of TRX2 is essential for the response of Saccharomyces cerevisiae to oxidative stress by hydroperoxides,The EMBO Journal,1994,docs/research/UPR_ANCHOR.md:754
+10.1002/jcp.1030410103,crossref,Anaerobic nutrition of Saccharomyces cerevisiae. I. Ergosterol requirement for growth in a defined medium,Journal of Cellular and Comparative Physiology,1953,docs/research/GENERATOR_REALISM.md:301
+10.1002/jcp.1030430303,crossref,Anaerobic nutrition of saccharomyces cerevisiae. II. Unsaturated fatty and requirement for growth in a defined medium,Journal of Cellular and Comparative Physiology,1954,src/ystwin/fba/stress_oxygen.py:215
+10.1002/yea.1807,crossref,Heterologous carotenoid production in <i>Saccharomyces cerevisiae</i> induces the pleiotropic drug resistance stress response,Yeast,2010,docs/research/CALIBRATION_DATA.md:374
+10.1006/jtbi.1993.1099,crossref,An Unexpected Correlation between Cardinal Temperatures of Microbial Growth Highlighted by a New Model,Journal of Theoretical Biology,1993,docs/research/GENERATOR_REALISM.md:254
+10.1006/jtbi.2001.2405,crossref,Regulation of Gene Expression in Flux Balance Models of Metabolism,Journal of Theoretical Biology,2001,docs/research/HYBRID_METHODS.md:98
+10.1007/3-540-59496-5_337,crossref,Noise and the reality gap: The use of simulation in evolutionary robotics,Lecture Notes in Computer Science,1995,docs/research/CIRCULARITY.md:165
+10.1007/978-3-0348-7836-4,crossref,Carotenoids,,2004,docs/PRODUCT_ARCHITECTURE.md:294;docs/research/PRODUCT_OBSERVATION.md:121;src/ystwin/observation.py:228
+10.1007/bf02288062,crossref,On the Rank of the Reduced Correlational Matrix in Multiple-Factor Analysis,Psychometrika,1937,docs/research/IDENTIFIABILITY.md:114
+10.1007/s00249-010-0612-0,crossref,Biophysical properties of Saccharomyces cerevisiae and their relationship with HOG pathway activation,European Biophysics Journal,2010,src/ystwin/mech/cell_wall_talemi2016.py:366
+10.1007/s10295-009-0638-4,crossref,Biotechnological strains of Komagataella (Pichia) pastoris are Komagataella phaffii as determined from multigene sequence analysis,Journal of Industrial Microbiology &amp; Biotechnology,2009,docs/research/GENERALIZATION.md:373;docs/research/GENERALIZATION.md:720
+10.1007/s10295-016-1808-9,crossref,Characterization of an evolved carotenoids hyper-producer of <i>Saccharomyces cerevisiae</i> through bioreactor parameter optimization and Raman spectroscopy,Journal of Industrial Microbiology and Biotechnology,2016,docs/research/CALIBRATION_DATA.md:370
+10.1007/s10529-011-0603-y,crossref,Identification of reference genes suitable for normalization of RT-qPCR expression data in Saccharomyces cerevisiae during alcoholic fermentation,Biotechnology Letters,2011,docs/research/UPR_ANCHOR.md:726
+10.1007/s11222-022-10090-6,crossref,Graphical test for discrete uniformity and its applications in goodness-of-fit evaluation and multiple sample comparison,Statistics and Computing,2022,docs/research/CIRCULARITY.md:176
+10.1016/0006-3002(56)90380-8,crossref,"The flattering of the absorption spectrum of suspensions, as compared to that of solutions",Biochimica et Biophysica Acta,1956,docs/research/PRODUCT_OBSERVATION.md:82;src/ystwin/observation.py:24;src/ystwin/observation.py:291
+10.1016/0024-3795(85)90038-2,crossref,Identifiability of factor analysis: some results and open problems,Linear Algebra and its Applications,1985,docs/research/IDENTIFIABILITY.md:115
+10.1016/j.ab.2006.06.020,crossref,Error propagation in relative real-time reverse transcription polymerase chain reaction quantification models: The balance between accuracy and precision,Analytical Biochemistry,2006,docs/research/G4_STATISTICS.md:117
+10.1016/j.ab.2015.10.012,crossref,A PCR-based approach to assess genomic DNA contamination in RNA: Application to rat RNA samples,Analytical Biochemistry,2016,docs/research/G4_STATISTICS.md:113
+10.1016/j.bbabio.2025.149564,crossref,ATP requirements for growth reveal the bioenergetic impact of mitochondrial symbiosis,Biochimica et Biophysica Acta (BBA) - Bioenergetics,2025,src/ystwin/fba/insulin.py:161
+10.1016/j.bpj.2022.09.021,crossref,Maturation models of fluorescent proteins are necessary for unbiased estimates of promoter activity,Biophysical Journal,2022,docs/research/EXTERNAL_DATA.md:366
+10.1016/j.febslet.2004.03.091,crossref,Regulation of the yeast phospholipid hydroperoxide glutathione peroxidase <i>GPX2</i> by oxidative stress is mediated by Yap1 and Skn7,FEBS Letters,2004,docs/research/UPR_ANCHOR.md:764
+10.1016/j.febslet.2004.05.077,crossref,Distinct regulatory mechanism of yeast <i>GPX2</i> encoding phospholipid hydroperoxide glutathione peroxidase by oxidative stress and a calcineurin/Crz1‐mediated Ca<sup>2+</sup> signaling pathway,FEBS Letters,2004,docs/research/UPR_ANCHOR.md:766
+10.1016/j.ijfoodmicro.2009.01.035,crossref,"Effects of temperature, pH and sugar concentration on the growth parameters of Saccharomyces cerevisiae, S. kudriavzevii and their interspecific hybrid",International Journal of Food Microbiology,2009,docs/research/GENERATOR_REALISM.md:399
+10.1016/j.isci.2026.116820,crossref,Causal AI digital twin for bioprocess bottleneck diagnosis via metabolic flexibility and rigidification maps,iScience,2026,docs/research/HYBRID_METHODS.md:50
+10.1016/j.jbiotec.2021.12.003,crossref,Mathematical model of the multi-amino acid multi-transporter system predicts uptake flux in CHO cells,Journal of Biotechnology,2022,docs/research/HYBRID_METHODS.md:290
+10.1016/j.jbiotec.2025.08.010,crossref,A novel dynamic flux balance analysis for modeling CHO cell fed-batch cultures with pH and temperature shifts,Journal of Biotechnology,2025,docs/research/HYBRID_METHODS.md:99
+10.1016/j.mec.2025.e00267,crossref,Model-guided chemical environment and metabolic network design to couple pathways with cell fitness,Metabolic Engineering Communications,2025,docs/research/CALIBRATION_DATA.md:373
+10.1016/j.molcel.2008.01.021,crossref,Diverse Two-Dimensional Input Functions Control Bacterial Sugar Genes,Molecular Cell,2008,docs/research/GENERALIZATION.md:326;docs/research/GENERALIZATION.md:699
+10.1016/j.ymben.2003.09.002,crossref,The effects of alternate optimal solutions in constraint-based genome-scale metabolic models,Metabolic Engineering,2003,docs/research/HYBRID_METHODS.md:293
+10.1016/j.ymben.2013.11.002,crossref,Improving carotenoids production in yeast via adaptive laboratory evolution,Metabolic Engineering,2014,docs/research/CALIBRATION_DATA.md:369
+10.1016/j.ymben.2019.03.001,crossref,Metabolic engineering of Chinese hamster ovary cells towards reduced biosynthesis and accumulation of novel growth inhibitors in fed-batch cultures,Metabolic Engineering,2019,docs/research/HYBRID_METHODS.md:267
+10.1016/j.ymben.2019.09.005,crossref,Reprogramming AA catabolism in CHO cells with CRISPR/Cas9 genome editing improves cell growth and reduces byproduct secretion,Metabolic Engineering,2019,docs/research/HYBRID_METHODS.md:290
+10.1016/j.ymben.2023.04.009,crossref,Evaluating proteome allocation of Saccharomyces cerevisiae phenotypes with resource balance analysis,Metabolic Engineering,2023,docs/research/HYBRID_METHODS.md:424
+10.1016/j.ymben.2024.02.012,crossref,COSMIC-dFBA: A novel multi-scale hybrid framework for bioprocess modeling,Metabolic Engineering,2024,docs/PRODUCT_ARCHITECTURE.md:157;docs/research/CALIBRATION_DATA.md:362;docs/research/CHEMOSTAT_REFERENCE.md:123;docs/research/HYBRID_METHODS.md:328;docs/research/HYBRID_METHODS.md:4;docs/research/KINETIC_FIT.md:408
+10.1016/j.ymben.2024.07.009,crossref,Multi-omic characterization of antibody-producing CHO cell lines elucidates metabolic reprogramming and nutrient uptake bottlenecks,Metabolic Engineering,2024,docs/research/HYBRID_METHODS.md:105
+10.1016/j.ymben.2025.03.010,crossref,NEXT-FBA: A hybrid stoichiometric/data-driven approach to improve intracellular flux predictions,Metabolic Engineering,2025,docs/research/HYBRID_METHODS.md:312
+10.1016/s0024-3795(96)00363-1,crossref,Generic global indentification in factor analysis,Linear Algebra and its Applications,1997,docs/research/IDENTIFIABILITY.md:116
+10.1016/s0092-8674(00)80369-4,crossref,The Transmembrane Kinase Ire1p Is a Site-Specific Endonuclease That Initiates mRNA Splicing in the Unfolded Protein Response,Cell,1997,docs/research/UPR_ANCHOR.md:593
+10.1016/s0092-8674(00)80835-1,crossref,Functional and Genomic Analyses Reveal an Essential Coordination between the Unfolded Protein Response and ER-Associated Degradation,Cell,2000,docs/research/UPR_ANCHOR.md:662
+10.1016/s0092-8674(00)81360-4,crossref,A Novel Mechanism for Regulating Activity of a Transcription Factor That Controls the Unfolded Protein Response,Cell,1996,docs/research/UPR_ANCHOR.md:584;src/ystwin/citations.py:152;src/ystwin/citations.py:180;tests/test_citations.py:239;tests/test_citations.py:242
+10.1016/s0092-8674(00)81361-6,crossref,tRNA Ligase Is Required for Regulated mRNA Splicing in the Unfolded Protein Response,Cell,1996,docs/research/UPR_ANCHOR.md:588
+10.1016/s0092-8674(01)00505-0,crossref,Block of HAC1 mRNA Translation by Long-Range Base Pairing Is Released by Cytoplasmic Splicing upon Induction of the Unfolded Protein Response,Cell,2001,docs/research/UPR_ANCHOR.md:611
+10.1016/s0167-6377(98)00054-6,crossref,Monte Carlo bounding techniques for determining solution quality in stochastic programs,Operations Research Letters,1999,docs/research/CIRCULARITY.md:155
+10.1016/s0960-9822(06)00373-3,crossref,Translational attenuation mediated by an mRNA intron,Current Biology,1997,docs/research/UPR_ANCHOR.md:605
+10.1021/acssynbio.0c00296,crossref,"FlopR: An Open Source Software Package for Calibration
+and Normalization of Plate Reader and Flow Cytometry Data",ACS Synthetic Biology,2020,docs/research/EXTERNAL_DATA.md:324
+10.1021/acssynbio.0c00554,crossref,Flapjack: Data Management and Analysis for Genetic Circuit Characterization,ACS Synthetic Biology,2020,docs/research/TOOLING.md:365
+10.1021/acssynbio.1c00387,crossref,"Systematic
+                    <i>In Vivo</i>
+                    Characterization of Fluorescent Protein Maturation in Budding Yeast",ACS Synthetic Biology,2022,docs/research/EXTERNAL_DATA.md:340;docs/research/EXTERNAL_DATA.md:39;docs/research/GENERALIZATION.md:205;docs/research/GENERALIZATION.md:714
+10.1021/acssynbio.5c00256,crossref,Complex Kinetic Models Predict β-Carotene Production and Reveal Flux Limitations in Recombinant <i>Saccharomyces cerevisiae</i> Strains,ACS Synthetic Biology,2025,docs/EXTERNAL_PRODUCT_VALIDATION.md:13;docs/research/CALIBRATION_DATA.md:361;docs/research/CALIBRATION_DATA.md:6;docs/research/KINETIC_FIT.md:5;scripts/fit_pathway_flux.py:31;src/ystwin/kinetic/carotenoid.py:212;src/ystwin/pathway/calibrations.py:35;tests/test_pathway_flux.py:39
+10.1021/es801489a,crossref,Toxicant Identification by a Luminescent Bacterial Bioreporter Panel: Application of Pattern Classification Algorithms,Environmental Science &amp; Technology,2008,docs/research/HYBRID_METHODS.md:71
+10.1021/jf00015a013,crossref,"Relative solubility, stability, and absorptivity of lutein and .beta.-carotene in organic solvents",Journal of Agricultural and Food Chemistry,1992,docs/research/PRODUCT_OBSERVATION.md:107
+10.1038/msb.2009.82,crossref,Shifts in growth strategies reflect tradeoffs in cellular economics,Molecular Systems Biology,2009,docs/research/HYBRID_METHODS.md:380
+10.1038/msb.2013.14,crossref,Dissecting specific and global transcriptional regulation of bacterial gene expression,Molecular Systems Biology,2013,docs/research/EXTERNAL_DATA.md:281
+10.1038/msb.2013.59,crossref,Promoters maintain their relative activity levels under different growth conditions,Molecular Systems Biology,2013,docs/research/EXTERNAL_DATA.md:271
+10.1038/msb4100162,crossref,Systematic evaluation of objective functions for predicting intracellular fluxes in Escherichia coli,Molecular Systems Biology,2007,docs/research/HYBRID_METHODS.md:182
+10.1038/nature12477,crossref,Signatures of mutational processes in human cancer,Nature,2013,docs/research/HYBRID_METHODS.md:81
+10.1038/nbt0102-87,crossref,A variant of yellow fluorescent protein with fast and efficient maturation for cell-biological applications,Nature Biotechnology,2002,docs/research/GENERATOR_REALISM.md:348
+10.1038/ncomms1150,crossref,Integrated multilaboratory systems biology reveals differences in protein metabolism between two reference yeast strains,Nature Communications,2010,docs/research/EXTERNAL_DATA.md:451
+10.1038/nmeth.4509,crossref,Systematic characterization of maturation time of fluorescent proteins in living cells,Nature Methods,2017,docs/research/EXTERNAL_DATA.md:358;docs/research/GENERALIZATION.md:472;docs/research/GENERALIZATION.md:711
+10.1038/nmeth1008,crossref,Single-cell quantification of molecules and rates using open-source microscope-based cytometry,Nature Methods,2007,docs/research/EXTERNAL_DATA.md:349
+10.1038/nmeth895,crossref,A comprehensive library of fluorescent transcriptional reporters for Escherichia coli,Nature Methods,2006,docs/research/EXTERNAL_DATA.md:256;docs/research/GENERALIZATION.md:316;docs/research/GENERALIZATION.md:693
+10.1038/nprot.2006.236,crossref,Quantification of mRNA using real-time RT-PCR,Nature Protocols,2006,docs/research/G4_STATISTICS.md:125
+10.1038/s41467-019-13483-w,crossref,The Escherichia coli transcriptome mostly consists of independently regulated modules,Nature Communications,2019,docs/research/HYBRID_METHODS.md:72
+10.1038/s41467-020-15749-0,crossref,Nitrogen limitation reveals large reserves in metabolic and translational capacities of yeast,Nature Communications,2020,docs/research/HYBRID_METHODS.md:415
+10.1038/s41467-022-28467-6,crossref,Whole-cell modeling in yeast predicts compartment-specific proteome constraints that drive metabolic strategies,Nature Communications,2022,docs/research/HYBRID_METHODS.md:365;docs/research/HYBRID_METHODS.md:409
+10.1038/s41467-022-30513-2,crossref,Proteome allocations change linearly with the specific growth rate of Saccharomyces cerevisiae under glucose limitation,Nature Communications,2022,docs/research/EXTERNAL_DATA.md:433;docs/research/EXTERNAL_DATA.md:45
+10.1038/s41467-022-30689-7,crossref,Improving recombinant protein production by yeast through genome-scale modeling using proteome constraints,Nature Communications,2022,docs/research/HYBRID_METHODS.md:430
+10.1038/s41467-022-34133-8,crossref,Termination of the unfolded protein response is guided by ER stress-induced HAC1 mRNA nuclear retention,Nature Communications,2022,docs/research/UPR_ANCHOR.md:642
+10.1038/s41467-023-40380-0,crossref,A neural-mechanistic hybrid approach improving the predictive power of genome-scale metabolic models,Nature Communications,2023,docs/research/HYBRID_METHODS.md:332
+10.1038/s41467-024-54298-8,crossref,Yeast metabolism adaptation for efficient terpenoids synthesis via isopentenol utilization,Nature Communications,2024,docs/research/CALIBRATION_DATA.md:375
+10.1038/s41540-019-0103-6,crossref,An unconventional uptake rate objective function approach enhances applicability of genome-scale models for mammalian cells,npj Systems Biology and Applications,2019,docs/research/HYBRID_METHODS.md:293;docs/research/HYBRID_METHODS.md:63
+10.1038/s41540-026-00700-8,crossref,CellTarget: a convex optimisation approach to discover cellular objectives,npj Systems Biology and Applications,2026,docs/research/HYBRID_METHODS.md:144
+10.1038/s41592-019-0352-8,crossref,FPbase: a community-editable fluorescent protein database,Nature Methods,2019,docs/research/GENERALIZATION.md:211;docs/research/GENERALIZATION.md:725
+10.1038/s41598-023-38383-4,crossref,Reverse transcription-quantitative PCR (RT-qPCR) without the need for prior removal of DNA,Scientific Reports,2023,docs/research/G4_STATISTICS.md:112;docs/research/UPR_ANCHOR.md:740
+10.1038/s41598-026-45956-6,crossref,Sudanese pearl millet (Pennisetum glaucum (L.) R. Br.) germplasm reveals genetic potential for carotenoid improvement and provitamin a biofortification,Scientific Reports,2026,docs/PRODUCT_ARCHITECTURE.md:294;docs/research/PRODUCT_OBSERVATION.md:122;src/ystwin/observation.py:229
+10.1038/s42003-020-01127-5,crossref,Robust estimation of bacterial cell count from optical density,Communications Biology,2020,docs/research/EXTERNAL_DATA.md:292;docs/research/GENERALIZATION.md:351;docs/research/GENERALIZATION.md:706;docs/research/GENERATOR_REALISM.md:243
+10.1038/s43588-021-00069-0,crossref,A probabilistic graphical model foundation for enabling predictive digital twins at scale,Nature Computational Science,2021,docs/CONTRACT.md:12;docs/research/PREDICTION.md:1303
+10.1038/srep30950,crossref,Systems Level Analysis of the Yeast Osmo-Stat,Scientific Reports,2016,src/ystwin/mech/cell_wall_talemi2016.py:233;src/ystwin/mech/cell_wall_talemi2016.py:5;src/ystwin/mech/signalling.py:158
+10.1038/srep38828,crossref,General calibration of microbial growth in microplate readers,Scientific Reports,2016,docs/research/EXTERNAL_DATA.md:317;docs/research/GENERATOR_REALISM.md:167
+10.1046/j.1432-1327.2000.01527.x,crossref,"Can yeast glycolysis be understood in terms of
+                    <i>in vitro</i>
+                    kinetics of the constituent enzymes? Testing biochemistry",European Journal of Biochemistry,2000,src/ystwin/mech/atp_teusink2000.py:203;src/ystwin/mech/atp_teusink2000.py:5;src/ystwin/mech/signalling.py:125
+10.1073/pnas.0506448103,crossref,Generating disulfides enzymatically: Reaction products and electron acceptors of the endoplasmic reticulum thiol oxidase Ero1p,Proceedings of the National Academy of Sciences,2006,src/ystwin/fba/insulin.py:419
+10.1073/pnas.1005139107,crossref,"Probabilistic integrative modeling of genome-scale metabolic and regulatory networks in
+                    <i>Escherichia coli</i>
+                    and
+                    <i>Mycobacterium tuberculosis</i>",Proceedings of the National Academy of Sciences,2010,docs/research/HYBRID_METHODS.md:98
+10.1073/pnas.1308265110,crossref,A chemostat array enables the spatio-temporal analysis of the yeast proteome,Proceedings of the National Academy of Sciences,2013,docs/research/GENERALIZATION.md:400;docs/research/GENERALIZATION.md:731
+10.1073/pnas.152046799,crossref,Assigning numbers to the arrows: Parameterizing a gene regulation network by using accurate expression kinetics,Proceedings of the National Academy of Sciences,2002,docs/research/EXTERNAL_DATA.md:263
+10.1073/pnas.1716659115,crossref,Distributed and dynamic intracellular organization of extracellular information,Proceedings of the National Academy of Sciences,2018,docs/research/EXTERNAL_DATA.md:401
+10.1073/pnas.1912789117,crossref,The frontier of simulation-based inference,Proceedings of the National Academy of Sciences,2020,docs/research/CIRCULARITY.md:177
+10.1073/pnas.2013836118,crossref,Emergence of diauxie as an optimal growth strategy under resource allocation constraints in cellular metabolism,Proceedings of the National Academy of Sciences,2021,docs/research/HYBRID_METHODS.md:377
+10.1073/pnas.2403033121,crossref,Comprehensive stable-isotope tracing of glucose and amino acids identifies metabolic by-products and their sources in CHO cell culture,Proceedings of the National Academy of Sciences,2024,docs/research/HYBRID_METHODS.md:254
+10.1074/jbc.273.3.1802,crossref,Unconventional Splicing of HAC1/ERN4 mRNA Required for the Unfolded Protein Response,Journal of Biological Chemistry,1998,docs/research/UPR_ANCHOR.md:603
+10.1074/jbc.273.35.22480,crossref,The H2O2 Stimulon in Saccharomyces cerevisiae,Journal of Biological Chemistry,1998,docs/research/UPR_ANCHOR.md:760
+10.1074/jbc.274.23.16040,crossref,Yap1 and Skn7 Control Two Specialized Oxidative Stress Response Regulons in Yeast,Journal of Biological Chemistry,1999,docs/research/UPR_ANCHOR.md:758
+10.1074/jbc.m102815200,crossref,Reducing the Environmental Sensitivity of Yellow Fluorescent Protein,Journal of Biological Chemistry,2001,docs/research/GENERATOR_REALISM.md:371
+10.1083/jcb.201007077,crossref,Homeostatic adaptation to endoplasmic reticulum stress depends on Ire1 kinase activity,Journal of Cell Biology,2011,docs/research/UPR_ANCHOR.md:706
+10.1091/mbc.11.12.4241,crossref,Genomic Expression Programs in the Response of Yeast Cells to Environmental Changes,Molecular Biology of the Cell,2000,docs/research/EXTERNAL_DATA.md:383;docs/research/UPR_ANCHOR.md:776
+10.1091/mbc.12.2.323,crossref,Remodeling of Yeast Genome Expression in Response to Environmental Changes,Molecular Biology of the Cell,2001,docs/research/EXTERNAL_DATA.md:393
+10.1091/mbc.8.10.1845,crossref,Endoplasmic Reticulum Stress-induced mRNA Splicing Permits Synthesis of Transcription Factor Hac1p/Ern4p That Activates the Unfolded Protein Response,Molecular Biology of the Cell,1997,docs/research/UPR_ANCHOR.md:597
+10.1091/mbc.e07-08-0779,crossref,"Coordination of Growth Rate, Cell Cycle, Stress Response, and Metabolic Activity in Yeast",Molecular Biology of the Cell,2008,docs/research/UPR_ANCHOR.md:781
+10.1091/mbc.e16-03-0187,crossref,Adaptation to different types of stress converge on mitochondrial metabolism,Molecular Biology of the Cell,2016,docs/research/HYBRID_METHODS.md:87
+10.1091/mbc.e20-02-0117,crossref,Modeling and analysis of the macronutrient signaling network in budding yeast,Molecular Biology of the Cell,2021,src/ystwin/mech/contracts.py:254
+10.1093/bioinformatics/btag230,crossref,dAMN: a genome-scale neural-mechanistic hybrid model to predict bacterial growth dynamics,Bioinformatics,2026,docs/research/HYBRID_METHODS.md:331
+10.1093/clinchem/hvaa125,crossref,The Digital MIQE Guidelines Update: Minimum Information for Publication of Quantitative Digital PCR Experiments for 2020,Clinical Chemistry,2020,docs/research/G4_STATISTICS.md:107
+10.1093/clinchem/hvab052,crossref,Efficiency Correction Is Required for Accurate Quantitative PCR Analysis and Reporting,Clinical Chemistry,2021,docs/research/G4_STATISTICS.md:123
+10.1093/clinchem/hvaf043,crossref,MIQE 2.0: Revision of the Minimum Information for Publication of Quantitative Real-Time PCR Experiments Guidelines,Clinical Chemistry,2025,docs/research/G4_STATISTICS.md:106
+10.1093/femsyr/foaa068,crossref,"Metabolic engineering of
+                    <i>Saccharomyces cerevisiae</i>
+                    for production of β-carotene from hydrophobic substrates",FEMS Yeast Research,2020,docs/research/CALIBRATION_DATA.md:372
+10.1093/nar/gkaf088,crossref,RNA exosome-driven RNA processing instructs the duration of the unfolded protein response,Nucleic Acids Research,2025,docs/research/UPR_ANCHOR.md:647
+10.1093/nar/gkp045,crossref,Amplification efficiency: linking baseline and bias in the analysis of quantitative PCR data,Nucleic Acids Research,2009,docs/research/G4_STATISTICS.md:124
+10.1093/nar/gkr1259,crossref,Correction of RT–qPCR data for genomic DNA-derived signals with ValidPrime,Nucleic Acids Research,2012,docs/research/G4_STATISTICS.md:110;docs/research/UPR_ANCHOR.md:734
+10.1093/nar/gkx1160,crossref,Nuclear mRNA degradation tunes the gain of the unfolded protein response in Saccharomyces cerevisiae,Nucleic Acids Research,2017,docs/research/UPR_ANCHOR.md:694
+10.1093/synbio/ysac010,crossref,Multicolor plate reader fluorescence calibration,Synthetic Biology,2022,docs/research/EXTERNAL_DATA.md:308;docs/research/EXTERNAL_DATA.md:48
+10.1099/00221287-136-3-395,crossref,Physiology of Saccharomyces Cerevisiae in Anaerobic Glucose-Limited Chemostat Culturesx,Journal of General Microbiology,1990,docs/research/GENERATOR_REALISM.md:313
+10.1099/00221287-147-8-2037,crossref,Adr1 and Cat8 synergistically activate the glucose-regulated alcohol dehydrogenase gene ADH2 of the yeast Saccharomyces cerevisiae,Microbiology,2001,src/ystwin/generator/context.py:70
+10.1101/2023.09.13.557646,crossref,COSMIC-dFBA: A novel multi-scale hybrid framework for bioprocess modeling,,2023,tests/test_cosmic_source_evidence.py:25
+10.1109/9.1299,crossref,The interacting multiple model algorithm for systems with Markovian switching coefficients,IEEE Transactions on Automatic Control,1988,docs/research/HYBRID_METHODS.md:223
+10.1109/jproc.2021.3058954,crossref,Toward Causal Representation Learning,Proceedings of the IEEE,2021,docs/research/IDENTIFIABILITY.md:132
+10.1109/lsp.2004.830118,crossref,"Identifiability, Separability, and Uniqueness of Linear ICA Models",IEEE Signal Processing Letters,2004,docs/research/IDENTIFIABILITY.md:142
+10.1109/tevc.2012.2185849,crossref,The Transferability Approach: Crossing the Reality Gap in Evolutionary Robotics,IEEE Transactions on Evolutionary Computation,2013,docs/research/CIRCULARITY.md:170
+10.1109/tpami.2019.2952353,crossref,Assessing Transferability From Simulation to Reality for Reinforcement Learning,IEEE Transactions on Pattern Analysis and Machine Intelligence,2021,docs/research/CIRCULARITY.md:153
+10.1111/1751-7915.13995,crossref,"Enzyme‐constrained models predict the dynamics of
+                    <i>Saccharomyces cerevisiae</i>
+                    growth in continuous, batch and fed‐batch bioreactors",Microbial Biotechnology,2022,docs/research/HYBRID_METHODS.md:330;docs/research/HYBRID_METHODS.md:387
+10.1111/febs.12753,crossref,Glucose de‐repression by yeast <scp>AMP</scp>‐activated protein kinase <scp>SNF</scp>1 is controlled via at least two independent steps,The FEBS Journal,2014,src/ystwin/mech/contracts.py:293
+10.1111/febs.16459,crossref,"pH dependencies of glycolytic enzymes of yeast under
+                    <i>in vivo</i>
+                    ‐like assay conditions",The FEBS Journal,2022,src/ystwin/mech/ph.py:369
+10.1111/j.1365-2443.2005.00921.x,crossref,Yeast unfolded protein response pathway regulates expression of genes for anti‐oxidative stress and for cell surface proteins,Genes to Cells,2005,docs/research/UPR_ANCHOR.md:669
+10.1111/j.1467-9868.2007.00587.x,crossref,"Probabilistic Forecasts, Calibration and Sharpness",Journal of the Royal Statistical Society Series B: Statistical Methodology,2007,docs/research/PREDICTION.md:1270
+10.1111/j.1467-9868.2009.00736.x,crossref,Particle Markov Chain Monte Carlo Methods,Journal of the Royal Statistical Society Series B: Statistical Methodology,2010,docs/research/HYBRID_METHODS.md:225
+10.1111/rssb.12356,crossref,Model Misspecification in Approximate Bayesian Computation: Consequences and Diagnostics,Journal of the Royal Statistical Society Series B: Statistical Methodology,2020,docs/research/CIRCULARITY.md:178;docs/research/CIRCULARITY.md:90
+10.1126/science.1199784,crossref,Proteome Half-Life Dynamics in Living Human Cells,Science,2011,docs/research/GENERALIZATION.md:395;docs/research/GENERALIZATION.md:717
+10.1126/science.1216882,crossref,Multidimensional Optimality of Microbial Metabolism,Science,2012,docs/research/HYBRID_METHODS.md:183
+10.1126/science.aaf2786,crossref,Systems-level analysis of mechanisms regulating yeast metabolic flux,Science,2016,docs/research/EXTERNAL_DATA.md:439;docs/research/EXTERNAL_DATA.md:46
+10.1128/aem.00301-21,crossref,"The Yeast eIF2 Kinase Gcn2 Facilitates H
+                    <sub>2</sub>
+                    O
+                    <sub>2</sub>
+                    -Mediated Feedback Inhibition of Both Protein Synthesis and Endoplasmic Reticulum Oxidative Folding during Recombinant Protein Production",Applied and Environmental Microbiology,2021,docs/research/UPR_ANCHOR.md:652;src/ystwin/citations.py:45
+10.1128/aem.00429-09,crossref,"Quantitative Physiology of
+                    <i>Saccharomyces cerevisiae</i>
+                    at Near-Zero Specific Growth Rates",Applied and Environmental Microbiology,2009,docs/research/EXTERNAL_DATA.md:445
+10.1128/aem.00644-25,crossref,"Potential of a constitutive-UPR and histone deacetylase A-deficient
+            <i>Saccharomyces cerevisiae</i>
+            strain for biomolecule production",Applied and Environmental Microbiology,2025,docs/research/UPR_ANCHOR.md:690
+10.1128/aem.01861-10,crossref,"Temperature Adaptation Markedly Determines Evolution within the Genus
+                    <i>Saccharomyces</i>",Applied and Environmental Microbiology,2011,docs/research/GENERATOR_REALISM.md:259
+10.1128/aem.61.2.610-616.1995,crossref,Convenient Model To Describe the Combined Effects of Temperature and pH on Microbial Growth,Applied and Environmental Microbiology,1995,docs/research/GENERATOR_REALISM.md:390
+10.1128/aem.64.11.4226-4233.1998,crossref,Effect of Specific Growth Rate on Fermentative Capacity of Baker’s Yeast,Applied and Environmental Microbiology,1998,docs/research/CALIBRATION_DATA.md:368;docs/research/CHEMOSTAT_REFERENCE.md:22
+10.1128/aem.64.6.2240-2246.1998,crossref,New Unstable Variants of Green Fluorescent Protein for Studies of Transient Gene Expression in Bacteria,Applied and Environmental Microbiology,1998,docs/research/GENERALIZATION.md:457;docs/research/GENERALIZATION.md:728
+10.1128/mcb.13.2.877-890.1993,crossref,"The Promoter Region of the Yeast
+                    <i>KAR2</i>
+                    (BiP) Gene Contains a Regulatory Domain that Responds to the Presence of Unfolded Proteins in the Endoplasmic Reticulum",Molecular and Cellular Biology,1993,docs/research/UPR_ANCHOR.md:676
+10.1128/msystems.00260-21,crossref,"A Multiphase Multiobjective Dynamic Genome-Scale Model Shows Different Redox Balancing among Yeast Species of the
+            <i>Saccharomyces</i>
+            Genus in Fermentation",mSystems,2021,docs/research/HYBRID_METHODS.md:165
+10.1128/msystems.01615-24,crossref,"An integrated multiphase dynamic genome-scale model explains batch fermentations led by species of the
+                    <i>Saccharomyces</i>
+                    genus",mSystems,2025,docs/research/HYBRID_METHODS.md:167
+10.1145/2591796.2591875,crossref,Fourier PCA and robust tensor decomposition,Proceedings of the forty-sixth annual ACM symposium on Theory of computing,2014,docs/research/IDENTIFIABILITY.md:141
+10.1175/mwr-d-14-00269.1,crossref,Variogram-Based Proper Scoring Rules for Probabilistic Forecasts of Multivariate Quantities*,Monthly Weather Review,2015,docs/CITATION_AUDIT.md:48;docs/research/PREDICTION.md:1263
+10.1186/1471-2105-9-43,crossref,Predicting biological system objectives de novo from internal state measurements,BMC Bioinformatics,2008,docs/research/HYBRID_METHODS.md:142
+10.1186/1471-2199-10-99,crossref,Validation of reference genes for quantitative expression analysis by real-time RT-PCR in Saccharomyces cerevisiae,BMC Molecular Biology,2009,docs/research/UPR_ANCHOR.md:713
+10.1186/1471-2199-11-74,crossref,MIQE précis: Practical implementation of minimum standard guidelines for fluorescence-based quantitative real-time PCR experiments,BMC Molecular Biology,2010,docs/research/G4_STATISTICS.md:105
+10.1186/1472-6750-14-11,crossref,Unmixing of fluorescence spectra to resolve quantitative time-series measurements of gene expression in plate readers,BMC Biotechnology,2014,docs/research/EXTERNAL_DATA.md:374
+10.1186/1475-2859-11-117,crossref,Combined metabolic engineering of precursor and co-factor supply to increase α-santalene production by Saccharomyces cerevisiae,Microbial Cell Factories,2012,docs/research/CALIBRATION_DATA.md:363
+10.1186/1752-0509-3-70,crossref,Deterministic mathematical models of the cAMP pathway in Saccharomyces cerevisiae,BMC Systems Biology,2009,src/ystwin/mech/carbon_williamson2009.py:197;src/ystwin/mech/carbon_williamson2009.py:5;src/ystwin/mech/signalling.py:94
+10.1186/1752-0509-8-50,crossref,Non-stationary 13C metabolic flux analysis of Chinese hamster ovary cells in batch culture using extracellular labeling highlights metabolic reversibility and compartmentation,BMC Systems Biology,2014,docs/research/HYBRID_METHODS.md:291
+10.1186/gb-2002-3-7-research0034,crossref,Accurate normalization of real-time quantitative RT-PCR data by geometric averaging of multiple internal control genes,Genome Biology,2002,docs/research/UPR_ANCHOR.md:721
+10.1186/gb-2007-8-2-r19,crossref,qBase relative quantification framework and software for management and automated analysis of real-time quantitative PCR data,Genome Biology,2007,docs/research/G4_STATISTICS.md:116
+10.1186/s12859-016-0997-6,crossref,Unaccounted uncertainty from qPCR efficiency estimates entails uncontrolled false positive rates,BMC Bioinformatics,2016,docs/research/G4_STATISTICS.md:118
+10.1186/s12864-022-08785-1,crossref,Genes expressed at low levels raise false discovery rates in RNA samples contaminated with genomic DNA,BMC Genomics,2022,docs/research/G4_STATISTICS.md:111
+10.1186/s12934-016-0509-4,crossref,Lycopene overproduction in Saccharomyces cerevisiae through combining pathway engineering with host engineering,Microbial Cell Factories,2016,docs/MEASUREMENTS_NEEDED.md:140
+10.1186/s13059-016-0968-2,crossref,Mapping the landscape of metabolic goals of a cell,Genome Biology,2016,docs/research/HYBRID_METHODS.md:143
+10.1186/s13059-020-02015-1,crossref,MOFA+: a statistical framework for comprehensive integration of multi-modal single-cell data,Genome Biology,2020,docs/research/IDENTIFIABILITY.md:137
+10.1186/s13068-020-01809-6,crossref,Engineering endogenous ABC transporter with improving ATP supply and membrane flexibility enhances the secretion of β-carotene in Saccharomyces cerevisiae,Biotechnology for Biofuels,2020,docs/research/CALIBRATION_DATA.md:371
+10.1186/s40643-025-00936-y,crossref,Sustainable β-carotene production by engineered S. cerevisiae using sucrose and agricultural by-products,Bioresources and Bioprocessing,2025,docs/research/CALIBRATION_DATA.md:364
+10.1198/016214506000001437,crossref,"Strictly Proper Scoring Rules, Prediction, and Estimation",Journal of the American Statistical Association,2007,docs/research/PREDICTION.md:1244
+10.1214/23-ba1404,crossref,Simulation-Based Calibration Checking for Bayesian Computation: The Choice of Test Quantities Shapes Sensitivity,Bayesian Analysis,2025,docs/research/CIRCULARITY.md:175;docs/research/CIRCULARITY.md:84
+10.1242/jcs.230649,crossref,Reliable imaging of ATP in living budding and fission yeast,Journal of Cell Science,2019,docs/SOURCE_AUDIT.md:119;docs/SOURCE_AUDIT.md:476
+10.1287/mnsc.22.10.1087,crossref,Scoring Rules for Continuous Probability Distributions,Management Science,1976,docs/research/PREDICTION.md:1253
+10.1371/journal.pbio.0020235,crossref,IRE1-Independent Gain Control of the Unfolded Protein Response,PLoS Biology,2004,docs/research/UPR_ANCHOR.md:619
+10.1371/journal.pbio.1000415,crossref,BiP Binding to the ER-Stress Sensor Ire1 Tunes the Homeostatic Behavior of the Unfolded Protein Response,PLoS Biology,2010,docs/research/UPR_ANCHOR.md:700
+10.1371/journal.pcbi.1000545,crossref,Invariant Distribution of Promoter Activities in Escherichia coli,PLoS Computational Biology,2009,docs/research/EXTERNAL_DATA.md:244;docs/research/GENERALIZATION.md:321;docs/research/GENERALIZATION.md:696
+10.1371/journal.pcbi.1000545.s021,handle-only,,,None,docs/research/EXTERNAL_DATA.md:37
+10.1371/journal.pcbi.1002879,crossref,An Integrative Model of Ion Regulation in Yeast,PLoS Computational Biology,2013,src/ystwin/mech/ph_ke2013.py:184
+10.1371/journal.pcbi.1003084,crossref,"Quantitative Analysis of Glycerol Accumulation, Glycolysis and Growth under Hyper Osmotic Stress",PLoS Computational Biology,2013,scripts/fetch_hog_reference.py:118;scripts/fetch_hog_reference.py:126;src/ystwin/analysis/hog_data.py:17;src/ystwin/mech/hog.py:44;tests/test_hog_data.py:97
+10.1371/journal.pcbi.1003084.s001,handle-only,,,None,scripts/fetch_hog_reference.py:54
+10.1371/journal.pcbi.1003084.s002,handle-only,,,None,scripts/fetch_hog_reference.py:57
+10.1371/journal.pcbi.1003084.s004,handle-only,,,None,scripts/fetch_hog_reference.py:60
+10.1371/journal.pcbi.1003084.s005,handle-only,,,None,scripts/fetch_hog_reference.py:63
+10.1371/journal.pcbi.1003084.s023,handle-only,,,None,scripts/fetch_hog_reference.py:30
+10.1371/journal.pcbi.1003084.s024,handle-only,,,None,scripts/fetch_hog_reference.py:34
+10.1371/journal.pcbi.1003084.s027,handle-only,,,None,scripts/fetch_hog_reference.py:38
+10.1371/journal.pcbi.1003084.s030,handle-only,,,None,scripts/fetch_hog_reference.py:66
+10.1371/journal.pcbi.1003663,crossref,"Correction: Quantitative Analysis of Glycerol Accumulation, Glycolysis and Growth under Hyper Osmotic Stress",PLoS Computational Biology,2014,scripts/fetch_hog_reference.py:129
+10.1371/journal.pcbi.1003663.s001,handle-only,,,None,scripts/fetch_hog_reference.py:42;tests/test_fetch_hog_reference.py:65
+10.1371/journal.pcbi.1003663.s002,handle-only,,,None,scripts/fetch_hog_reference.py:46;tests/test_fetch_hog_reference.py:66
+10.1371/journal.pcbi.1003663.s003,handle-only,,,None,scripts/fetch_hog_reference.py:50;tests/test_fetch_hog_reference.py:67
+10.1371/journal.pcbi.1004127,crossref,Microbial Forensics: Predicting Phenotypic Characteristics and Environmental Conditions from Large-Scale Gene Expression Profiles,PLOS Computational Biology,2015,docs/research/HYBRID_METHODS.md:70
+10.1371/journal.pcbi.1008618,crossref,Evaluating epidemic forecasts in an interval format,PLOS Computational Biology,2021,docs/CITATION_AUDIT.md:44
+10.1371/journal.pcbi.1008891,crossref,A novel yeast hybrid modeling framework integrating Boolean and enzyme-constrained networks enables exploration of the interplay between signaling and metabolism,PLOS Computational Biology,2021,docs/research/HYBRID_METHODS.md:411
+10.1371/journal.pcbi.1009022,crossref,Inclusion of maintenance energy improves the intracellular flux predictions of CHO,PLOS Computational Biology,2021,docs/research/HYBRID_METHODS.md:270
+10.1371/journal.pcbi.1010138,crossref,Analysing and meta-analysing time-series data of microbial growth and gene expression from plate readers,PLOS Computational Biology,2022,docs/research/EXTERNAL_DATA.md:231
+10.1371/journal.pone.0199432,crossref,Quantification of bacterial fluorescence using independent calibrants,PLOS ONE,2018,docs/research/EXTERNAL_DATA.md:302;docs/research/EXTERNAL_DATA.md:48;docs/research/GENERALIZATION.md:349;docs/research/GENERALIZATION.md:703
+10.1371/journal.pone.0210558,crossref,Machine learning framework for assessment of microbial factory performance,PLOS ONE,2019,docs/research/HYBRID_METHODS.md:333
+10.1371/journal.pone.0276112,crossref,The choice of the objective function in flux balance analysis is crucial for predicting replicative lifespans in yeast,PLOS ONE,2022,docs/research/HYBRID_METHODS.md:178
+10.1371/journal.pone.0280077,crossref,A study of a diauxic growth experiment using an expanded dynamic flux balance framework,PLOS ONE,2023,docs/research/HYBRID_METHODS.md:414
+10.1373/clinchem.2008.112797,crossref,The MIQE Guidelines: Minimum Information for Publication of Quantitative Real-Time PCR Experiments,Clinical Chemistry,2009,docs/research/G4_STATISTICS.md:104
+10.15252/msb.20145172,crossref,Cell cycle population effects in perturbation studies,Molecular Systems Biology,2014,docs/research/HYBRID_METHODS.md:92
+10.15252/msb.20167411,crossref,Improving the phenotype predictions of a yeast genome‐scale metabolic model by incorporating enzymatic constraints,Molecular Systems Biology,2017,docs/research/HYBRID_METHODS.md:373
+10.15252/msb.20178124,crossref,Multi‐Omics Factor Analysis—a framework for unsupervised integration of multi‐omics data sets,Molecular Systems Biology,2018,docs/research/IDENTIFIABILITY.md:136
+10.2144/00292bm11,crossref,Irreversible Heat Inactivation of DNase I without RNA Degradation,BioTechniques,2000,docs/research/UPR_ANCHOR.md:746
+10.2307/2332810,crossref,Design of Experiments in Non-Linear Situations,Biometrika,1959,docs/WHY_INTERPOLATION_WORKS.md:51
+10.2307/2981683,crossref,Present Position and Potential Developments: Some Personal Views: Statistical Theory: The Prequential Approach,Journal of the Royal Statistical Society. Series A (General),1984,docs/research/PREDICTION.md:1281
+10.3389/fbioe.2019.00171,crossref,Build Your Bioprocess on a Solid Strain—β-Carotene Production in Recombinant Saccharomyces cerevisiae,Frontiers in Bioengineering and Biotechnology,2019,docs/research/CALIBRATION_DATA.md:366
+10.3389/fbioe.2020.578793,crossref,Engineering Saccharomyces cerevisiae for the Overproduction of β-Ionone and Its Precursor β-Carotene,Frontiers in Bioengineering and Biotechnology,2020,docs/research/CALIBRATION_DATA.md:367
+10.3389/fmicb.2017.01066,crossref,Melatonin Reduces Oxidative Stress Damage Induced by Hydrogen Peroxide in Saccharomyces cerevisiae,Frontiers in Microbiology,2017,docs/research/UPR_ANCHOR.md:770
+10.3389/fmicb.2021.802169,crossref,Real-Time Monitoring of the Yeast Intracellular State During Bioprocesses With a Toolbox of Biosensors,Frontiers in Microbiology,2022,docs/EXTERNAL_PRODUCT_VALIDATION.md:47;tests/test_external_torello_pianale.py:37;tests/test_external_torello_pianale.py:5
+10.3389/fmicb.2025.1629132,crossref,Impairment in global protein synthesis uncouples UPR gene induction from HAC1 mRNA splicing in Saccharomyces cerevisiae,Frontiers in Microbiology,2025,docs/research/UPR_ANCHOR.md:682
+10.3389/frobt.2022.799893,crossref,Robot Learning From Randomized Simulations: A Review,Frontiers in Robotics and AI,2022,docs/research/CIRCULARITY.md:156
+10.3390/ijms20122860,crossref,Translation Control of HAC1 by Regulation of Splicing in Saccharomyces cerevisiae,International Journal of Molecular Sciences,2019,docs/research/UPR_ANCHOR.md:624
+10.3390/ijms23031669,crossref,Induction of the Unfolded Protein Response at High Temperature in Saccharomyces cerevisiae,International Journal of Molecular Sciences,2022,docs/research/UPR_ANCHOR.md:636
+10.3390/ijms26167796,crossref,When Two-Fold Is Not Enough: Quantifying Uncertainty in Low-Copy qPCR,International Journal of Molecular Sciences,2025,docs/research/G4_STATISTICS.md:119
+10.3390/jof10060433,crossref,"Metabolic Engineering of Saccharomyces cerevisiae for Production of Canthaxanthin, Zeaxanthin, and Astaxanthin",Journal of Fungi,2024,docs/research/CALIBRATION_DATA.md:365
+10.3390/microorganisms9030620,crossref,Does Saccharomyces cerevisiae Require Specific Post-Translational Silencing against Leaky Translation of Hac1up?,Microorganisms,2021,docs/research/UPR_ANCHOR.md:628
+10.34133/csbj.0078,crossref,A Hybrid Modeling Framework for Predictive Digital Twins of CHO Cell Culture,Computational and Structural Biotechnology Journal,2026,docs/research/HYBRID_METHODS.md:329
+10.5281/zenodo.3977408,datacite,FlopR: An open source software package for calibration and normalization of plate reader and flow cytometry data,Zenodo,2020,docs/research/EXTERNAL_DATA.md:326;docs/research/EXTERNAL_DATA.md:47
+10.5281/zenodo.7071949,datacite,PLATERO dataset,Zenodo,2022,docs/research/EXTERNAL_DATA.md:313
+10.7488/ds/1405,datacite,"Inferring time derivatives, including cell growth rates, using Gaussian processes",University of Edinburgh. School of Biological Sciences,2016,docs/research/EXTERNAL_DATA.md:69
+10.7488/ds/1447,datacite,General calibration of microbial growth in microplate readers: Data supporting Figure 4,University of Edinburgh. School of Biological Sciences. Centre for Synthetic and Systems Biology,2016,docs/research/EXTERNAL_DATA.md:320;docs/research/EXTERNAL_DATA.md:66
+10.7488/ds/1980,datacite,General calibration of microbial growth in microplate readers: Data supporting Figures 1-3,University of Edinburgh. School of Biological Sciences. Centre for Synthetic and Systems Biology,2017,docs/research/EXTERNAL_DATA.md:319;docs/research/EXTERNAL_DATA.md:65
+10.7488/ds/2043,datacite,Distributing tasks via multiple input pathways increases cellular survival in stress,University of Edinburgh. School of Biological Sciences,2017,docs/research/EXTERNAL_DATA.md:411
+10.7488/ds/2214,datacite,Distributed and dynamic intracellular organization of extracellular information in yeast,University of Edinburgh. School of Biological Sciences,2018,docs/research/EXTERNAL_DATA.md:402;docs/research/EXTERNAL_DATA.md:43
+10.7488/ds/3263,datacite,Analysing and meta-analysing time-series data of microbial growth and gene expression from plate readers,University of Edinburgh. School of Biological Sciences,2021,docs/research/EXTERNAL_DATA.md:16;docs/research/EXTERNAL_DATA.md:233;docs/research/EXTERNAL_DATA.md:75
+10.7554/elife.18638,crossref,Dynamic control of Hsf1 during heat shock by a chaperone switch and phosphorylation,eLife,2016,tests/test_native_reference_models.py:277
+10.7554/elife.18638.021,crossref,Table 1,,,src/ystwin/mech/state.py:427;tests/test_engine_adapters.py:133
+10.7554/elife.18638.025,crossref,Source code 1. This is a .zip file containing 7 .m files to run the heat shock simulations in MATLAB,,,tests/test_native_reference_models.py:278
+10.7554/elife.20069,crossref,The fail-safe mechanism of post-transcriptional silencing of unspliced HAC1 mRNA,eLife,2016,docs/research/UPR_ANCHOR.md:616
+10.7554/elife.21415,crossref,Distributing tasks via multiple input pathways increases cellular survival in stress,eLife,2017,docs/research/EXTERNAL_DATA.md:411
+10.7554/elife.23971.026,crossref,Supplementary file 1. List of all strains used in this study,,,tests/test_native_reference_models.py:305
+10.7554/elife.31668.014,crossref,Source code 1. Simulation of Hsf1 activity with feedback in tact,,,src/ystwin/mech/heat_zheng2016.py:162
+10.7554/elife.82017,crossref,Modeling single-cell phenotypes links yeast stress acclimation to transcriptional repression and pre-stress cellular states,eLife,2022,docs/research/EXTERNAL_DATA.md:416

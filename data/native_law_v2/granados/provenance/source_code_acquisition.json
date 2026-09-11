@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "executed_upstream_code": false,
+  "measurement_files_downloaded_from_github": false,
+  "files": [
+    {
+      "repository": "swainlab/mi-by-decoding",
+      "upstream_path": "matlab/DataProcessingFunctions/normMeanOffset.m",
+      "api_url": "https://api.github.com/repos/swainlab/mi-by-decoding/git/blobs/ed14a79a2fd7f7a35a9b1d3b69f0674ea2ca1e33",
+      "git_blob_sha": "ed14a79a2fd7f7a35a9b1d3b69f0674ea2ca1e33",
+      "sha256": "2e525010b785fa67b2182161ff628c91d34e01d8439ef1f412f6a7c34d5ea22e",
+      "local_path": "data/native_law_v2/granados/provenance/source_code/normMeanOffset.m"
+    },
+    {
+      "repository": "swainlab/mi-by-decoding",
+      "upstream_path": "matlab/DataProcessingFunctions/filterCellsByNucLoc.m",
+      "api_url": "https://api.github.com/repos/swainlab/mi-by-decoding/git/blobs/7da9364e393bdda1aa8fdc4cd9908cc4a6796435",
+      "git_blob_sha": "7da9364e393bdda1aa8fdc4cd9908cc4a6796435",
+      "sha256": "88fc7d3a823fa34f726d4f232c26c0e418e708c3f7d70e17385e587dd2aedd94",
+      "local_path": "data/native_law_v2/granados/provenance/source_code/filterCellsByNucLoc.m"
+    },
+    {
+      "repository": "swainlab/mi-by-decoding",
+      "upstream_path": "matlab/ExampleScript/example_script.m",
+      "api_url": "https://api.github.com/repos/swainlab/mi-by-decoding/git/blobs/953cf2063ab3044a4fb1a515c0221138ab9bfb0b",
+      "git_blob_sha": "953cf2063ab3044a4fb1a515c0221138ab9bfb0b",
+      "sha256": "629a8c4719ffcfb6ac33a87b3b8ca479e05b4fc4ce7b8c843dee20c3be66ad87",
+      "local_path": "data/native_law_v2/granados/provenance/source_code/example_script.m"
+    },
+    {
+      "repository": "swainlab/mi-by-decoding",
+      "upstream_path": "matlab/DataProcessingFunctions/calculateInfoList.m",
+      "api_url": "https://api.github.com/repos/swainlab/mi-by-decoding/git/blobs/5a002b5298825d36e738914385f3b0df834df63a",
+      "git_blob_sha": "5a002b5298825d36e738914385f3b0df834df63a",
+      "sha256": "551132c042a71f46d27ef085a2d66ab0f7c5140fee494ec2a9da4ee354b960aa",
+      "local_path": "data/native_law_v2/granados/provenance/source_code/calculateInfoList.m"
+    },
+    {
+      "repository": "swainlab/mi-by-decoding",
+      "upstream_path": "matlab/DataProcessingFunctions/visualizeExper.m",
+      "api_url": "https://api.github.com/repos/swainlab/mi-by-decoding/git/blobs/dcc0528b443a1d9800bccf5bd365f89cdcef2a84",
+      "git_blob_sha": "dcc0528b443a1d9800bccf5bd365f89cdcef2a84",
+      "sha256": "fee6c1c72eeb615bc4fe41ffd1306d0fb917a21c0a7794146a5eb651fd7be7ab",
+      "local_path": "data/native_law_v2/granados/provenance/source_code/visualizeExper.m"
+    },
+    {
+      "repository": "swainlab/mi-by-decoding",
+      "upstream_path": "matlab/README.md",
+      "api_url": "https://api.github.com/repos/swainlab/mi-by-decoding/git/blobs/c07703adc20ad45ae5768f438209ccb45d450b2a",
+      "git_blob_sha": "c07703adc20ad45ae5768f438209ccb45d450b2a",
+      "sha256": "2f768a5335d908a64243fe09e8bdfe411d8153623d36735a3789916b4e2a74b3",
+      "local_path": "data/native_law_v2/granados/provenance/source_code/mi_matlab_readme_source.txt"
+    },
+    {
+      "repository": "swainlab/mi-by-decoding",
+      "upstream_path": "R/MIdecoding/man/YeastStressTypeResponse.Rd",
+      "api_url": "https://api.github.com/repos/swainlab/mi-by-decoding/git/blobs/6e2473fea13fcde0bebb989dce400b14f746ef34",
+      "git_blob_sha": "6e2473fea13fcde0bebb989dce400b14f746ef34",
+      "sha256": "d588f83b6f4ae5b878ab0e919a8338f77411acaa488c4ebf3fa9490d4950a4b3",
+      "local_path": "data/native_law_v2/granados/provenance/source_code/YeastStressTypeResponse.Rd"
+    },
+    {
+      "repository": "pswain/GeneralMatlabFunctions",
+      "upstream_path": "formatCellInf.m",
+      "api_url": "https://api.github.com/repos/pswain/GeneralMatlabFunctions/git/blobs/6d2cfa0bc3cc5eacb262e0c72e3a386085dd188e",
+      "git_blob_sha": "6d2cfa0bc3cc5eacb262e0c72e3a386085dd188e",
+      "sha256": "e97970d5610a9e88d949ff646710d97a204c0b0904581a06779c15f8d4da57c7",
+      "local_path": "data/native_law_v2/granados/provenance/source_code/formatCellInf.m"
+    },
+    {
+      "repository": "pswain/GeneralMatlabFunctions",
+      "upstream_path": "exportJSONCellInf.m",
+      "api_url": "https://api.github.com/repos/pswain/GeneralMatlabFunctions/git/blobs/2ebd31988c039a74e9a039b25a84b04863849056",
+      "git_blob_sha": "2ebd31988c039a74e9a039b25a84b04863849056",
+      "sha256": "54fa946ebf4017173b1d682d9d30c9445e021ea46ccd856872f1fae389069b9b",
+      "local_path": "data/native_law_v2/granados/provenance/source_code/exportJSONCellInf.m"
+    },
+    {
+      "repository": "swainlab/mi-by-decoding",
+      "upstream_path": "matlab/external/kakearney-boundedline-pkg-8179f9a/Inpaint_nans/inpaint_nans.m",
+      "api_url": "https://api.github.com/repos/swainlab/mi-by-decoding/git/blobs/2460b512c670354cf221aef327b1bbae1da99757",
+      "git_blob_sha": "2460b512c670354cf221aef327b1bbae1da99757",
+      "sha256": "d2130e93d9602ca17f8cf9e4cd2deb8d54267baab8767fd30efb1e7e5cb28aef",
+      "local_path": "data/native_law_v2/granados/provenance/source_code/inpaint_nans.m"
+    },
+    {
+      "repository": "swainlab/mi-by-decoding",
+      "upstream_path": "matlab/external/jsonlab-1.5.mltbx",
+      "api_url": "https://api.github.com/repos/swainlab/mi-by-decoding/git/blobs/b03c48af1018b45f06a93ff9c0761ca39e536909",
+      "git_blob_sha": "b03c48af1018b45f06a93ff9c0761ca39e536909",
+      "sha256": "a9516d8283888bec43798f92f591d8a2bc6df570d05394cc4eebf8c9db5b8b9c",
+      "local_path": "data/native_law_v2/granados/provenance/source_code/jsonlab-1.5.mltbx"
+    }
+  ],
+  "jsonlab_installed": false,
+  "extracted_static_source": {
+    "archive_git_blob_sha": "b03c48af1018b45f06a93ff9c0761ca39e536909",
+    "member": "fsroot/jsonlab-1.5/savejson.m",
+    "local_path": "data/native_law_v2/granados/provenance/source_code/jsonlab_savejson.m",
+    "sha256": "a14f201f9c72eca34c840b30c4fb00b0c7780b2c94316f5803a64f5f625cc84f"
+  },
+  "newline_normalized_source": {
+    "original_git_blob_sha": "2460b512c670354cf221aef327b1bbae1da99757",
+    "change": "CR line endings to LF only",
+    "local_path": "data/native_law_v2/granados/provenance/source_code_lf/inpaint_nans.m",
+    "sha256": "088b6ab1ada59f149bb95371344d693fc978c4f7811f40890e08fef61182bb9b"
+  }
+}

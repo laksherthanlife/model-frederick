@@ -1,0 +1,4 @@
+state,mu_per_h,measured,solved,fold
+chemostat,0.025,0.238682,0.238682,1.0
+retentostat,0.001,0.505118,0.505118,1.0
+N-starved flask,,0.721597,0.5297579295062625,0.7341465243151821

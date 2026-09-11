@@ -1,0 +1,7 @@
+feed,volume_ml_per_gdw,acetyl_coa_uM,above_threshold,threshold_uM,dg0_kj_per_mol,source
+glucose-limited,1.0,19.9,False,19040.388020766983,38.06660903400848,"Kolbeinsen & Bruheim 2021, supplementary Table S1"
+glucose-limited,2.0,9.95,False,19040.388020766983,38.06660903400848,"Kolbeinsen & Bruheim 2021, supplementary Table S1"
+glucose-limited,2.7,7.37037037037037,False,19040.388020766983,38.06660903400848,"Kolbeinsen & Bruheim 2021, supplementary Table S1"
+ethanol-limited,1.0,849.9999999999999,False,19040.388020766983,38.06660903400848,Kozak & van Rossum 2016
+ethanol-limited,2.0,424.99999999999994,False,19040.388020766983,38.06660903400848,Kozak & van Rossum 2016
+ethanol-limited,2.7,314.8148148148148,False,19040.388020766983,38.06660903400848,Kozak & van Rossum 2016

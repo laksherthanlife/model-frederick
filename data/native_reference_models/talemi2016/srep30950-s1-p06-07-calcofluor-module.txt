@@ -1,0 +1,125 @@
+     Rastgou et al.                                              Systems Biology Analysis of the Yeast Osmo-Stat
+
+
+
+ 1   This table lists all estimated parameters including rate constants and initial conditions
+ 2   for the selected model.
+
+ 3   Modified Model Changes
+
+ 4   In order to reproduce the 4’ Slt2 phosphorylation peak we increased the glycerol
+ 5   production approximately by a factor of 2.
+                                                      !!"#
+ 6              k7 = 935.301→ 1870 (!"∗!"#)
+
+ 7   Calcofluor mediated Slt2 activating module
+
+ 8   No model inside the models ensemble was designed such that can respond to the
+ 9   presence of the calcofluor in the medium. Therefore, we designed a new mathematical
+10   module that is able to activate the Slt2 upon calcofluor exposure. The new mathematical
+11   module is comprised of 5 species, namely Calcofluor, CALSignal, Degrader, Slt2 and
+12   Slt2P (Figure S7a). The three new species Calcofluor, CALSignal and Degrader,
+13   represent the calcofluor white; the signal which activates Slt2; and a component which
+14   degrades the Slt2 activating signal, respectively. The corresponding module was then
+15   plugged in the model main model (Figure S7b). The new mathematical module
+16   parameters were estimated from Slt2 activation dynamics upon 0.11 µM of calcofluor
+17   white, two hours after 0.8 M of sorbitol shock. No parameter from the selected model
+18   was dedicated for parameter estimation for reproducing the corresponding experimental
+19   result. The mathematical formulation of this mathematical module, its parameter values
+20   and the components initial concentrations are explained below:
+21   Rate laws:
+22   𝑣! = 𝑘! ∙ 𝐶𝑎𝑙𝑐𝑜𝑓𝑙𝑢𝑜𝑟 ,
+
+23   𝑣! = 𝑘! ∙ 𝐶𝐴𝐿𝑆𝑖𝑔𝑛𝑎𝑙 ∙ 𝑆𝑙𝑡2 ,
+            !      ∙ !"#!!
+24   𝑣! = !"# _!
+            (!!_! ! !"#!! )
+                              ,
+
+            !!"# _! ∙ !"#$%&'() ∙ !"#$%&"$ !
+25   𝑣! =
+                 (!!!"# ! ! !"#$%&"$ ! )
+                                                  ,
+
+             !!"# _! ∙!"#$%&"$
+26   𝑣! =
+            (!! _! !!"#$%&"$)
+                                  .
+
+27
+28   Initial concentrations:
+                                           0                     𝑡𝑖𝑚𝑒 < 2ℎ𝑜𝑢𝑟𝑠
+29   𝐶𝑎𝑙𝑐𝑜𝑓𝑙𝑢𝑜𝑟 =                          !
+                                               !"#$!!"!"#$                       ,
+                              1 ∗ (1 − 𝑒            !        )        𝑒𝑙𝑠𝑒
+
+30    𝐶𝐴𝐿𝑆𝑖𝑔𝑛𝑎𝑙 |!!! = 0,
+
+      𝐷𝑒𝑔𝑟𝑎𝑑𝑒𝑟 |!!! = 0,
+                                                                      4
+     Rastgou et al.                               Systems Biology Analysis of the Yeast Osmo-Stat
+
+
+ 1    𝑆𝑙𝑡2 |!!! = see Table S6.
+
+ 2   𝑆𝑙𝑡2𝑃 |!!! = see Table S6.
+
+ 3
+
+ 4   Estimated parameters:
+ 5   𝑘! = 0.00133916 s ,
+                        -1
+
+
+
+ 6   𝑘! = 0.00860898 μM · s ,
+                              -1        -1
+
+
+
+ 7   𝑉!"# _! = 5.29577 μM· s ,
+                                   -1
+
+
+
+ 8   𝐾!! = 1384.04 μM,
+
+ 9                       -1
+     𝑉!"# _! = 27583.6 s ,
+
+10   𝑆!!"# = 13.0308 μM,
+
+11   ℎ = 16.4149,
+
+12   𝑉!"# _! = 0.0142624 μM · s ,
+                                   -1        -1
+
+
+
+13                      -1
+     𝐾! _! = 61.527 μM · s .
+                              -1
+
+
+
+14
+
+15   Simulation Instructions
+
+16   All models were implemented and calibrated using COPASI software, which allows for
+17   exporting models in Systems Biology Markup Language (SBML). The selected model
+18   is available as supplementary files both in COPASI and SBML (level2, version 4)
+19   formats. The selected model can be found in the online Supplementary Materials both in
+20   COPASI and SBML formats as well as in the BioModels database28 (access identifier
+21   MODEL1604100004). Different experimental conditions can be simulated using the
+22   model and COPASI software. The 0.8 M sorbitol stress response is the simplest
+23   experiment that can be simulated using the selected model. To this end, after opening
+24   the “.cps” file by COPASI software, extracellular sorbitol concentration should be set to
+25   0.8 M of sorbitol by setting model’s parameter s1 to 800000 (µmol). The parameter s1
+26   can be found under Model>Biochemical>Global Quantiles tabs in the COPASI file.
+
+
+
+
+                                                       5
+

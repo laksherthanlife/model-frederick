@@ -1,0 +1,370 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/native_training_run_02/training_manifest.json",
+    "sha256": "19f7e62901817e0173516c33bd124e22feff4a5ea63ffcff043283e8b8f7a589"
+  },
+  "payload": {
+    "code": [
+      {
+        "path": "pyproject.toml",
+        "resolved_path": "pyproject.toml",
+        "role": "training_code",
+        "sha256": "0bf5440e9a8107c9d5e0e7ad1a596466be43f1f8af958129750fece811c2fc90",
+        "size_bytes": 3732,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "pyproject.toml"
+        }
+      },
+      {
+        "path": "scripts/evaluate_frozen_transfer.py",
+        "resolved_path": "scripts/evaluate_frozen_transfer.py",
+        "role": "training_code",
+        "sha256": "8d675521c2aad763d5e435f93aaa7f77689774e3033dea360cf9da1edee45afa",
+        "size_bytes": 12019,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "scripts/evaluate_frozen_transfer.py"
+        }
+      },
+      {
+        "path": "scripts/run_native_training.py",
+        "resolved_path": "scripts/run_native_training.py",
+        "role": "training_code",
+        "sha256": "dadef6e18704065326d4d90aef37b174dfa609f35fdf483a9b08610d9b99cb6a",
+        "size_bytes": 13127,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "scripts/run_native_training.py"
+        }
+      },
+      {
+        "path": "src/ystwin/__init__.py",
+        "resolved_path": "src/ystwin/__init__.py",
+        "role": "training_code",
+        "sha256": "5132c9448d5629159d9b072da1e2d8b9a382b798338d73852eea882e50023e2e",
+        "size_bytes": 1262,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/__init__.py"
+        }
+      },
+      {
+        "path": "src/ystwin/analysis/__init__.py",
+        "resolved_path": "src/ystwin/analysis/__init__.py",
+        "role": "training_code",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_bytes": 1,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/analysis/__init__.py"
+        }
+      },
+      {
+        "path": "src/ystwin/analysis/blind_transfer.py",
+        "resolved_path": "src/ystwin/analysis/blind_transfer.py",
+        "role": "training_code",
+        "sha256": "51fef91c07d4305186f46e966164c08c4001c0324f1fc33313ece60af69a6b7e",
+        "size_bytes": 12347,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/analysis/blind_transfer.py"
+        }
+      },
+      {
+        "path": "src/ystwin/analysis/hog_data.py",
+        "resolved_path": "src/ystwin/analysis/hog_data.py",
+        "role": "training_code",
+        "sha256": "e7935214db92f1ab515b6c4b23bea0e8bed78701159cd41454452c631c4d766a",
+        "size_bytes": 24349,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/analysis/hog_data.py"
+        }
+      },
+      {
+        "path": "src/ystwin/analysis/hog_learning.py",
+        "resolved_path": "src/ystwin/analysis/hog_learning.py",
+        "role": "training_code",
+        "sha256": "1e93c017c3c13c686553fd6596b6a839cbd77257f41b94ab6241f3414edf26f0",
+        "size_bytes": 29631,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/analysis/hog_learning.py"
+        }
+      },
+      {
+        "path": "src/ystwin/analysis/native_physiology.py",
+        "resolved_path": "src/ystwin/analysis/native_physiology.py",
+        "role": "training_code",
+        "sha256": "996b9a2ad7433de375a53cd9dcf92d70490f4c496c1ed46416381d310296d461",
+        "size_bytes": 16228,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/analysis/native_physiology.py"
+        }
+      },
+      {
+        "path": "src/ystwin/analysis/training_freeze.py",
+        "resolved_path": "src/ystwin/analysis/training_freeze.py",
+        "role": "training_code",
+        "sha256": "0d850d536c73a0925cf9190adaefc82b443dece5d5e9b5b9d801207f99653952",
+        "size_bytes": 30944,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/analysis/training_freeze.py"
+        }
+      },
+      {
+        "path": "src/ystwin/fba/__init__.py",
+        "resolved_path": "src/ystwin/fba/__init__.py",
+        "role": "training_code",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_bytes": 1,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/fba/__init__.py"
+        }
+      },
+      {
+        "path": "src/ystwin/fba/chemical_task.py",
+        "resolved_path": "src/ystwin/fba/chemical_task.py",
+        "role": "training_code",
+        "sha256": "0a3c792022f4d95fa4622adbb396c3975238c7ea93595b0c20f40a543197649c",
+        "size_bytes": 10402,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/fba/chemical_task.py"
+        }
+      },
+      {
+        "path": "src/ystwin/fba/dynamic_rates.py",
+        "resolved_path": "src/ystwin/fba/dynamic_rates.py",
+        "role": "training_code",
+        "sha256": "03e0458cb23cc45d367f95589a5937a256eeea88fe4702cfee1cef0d614485d0",
+        "size_bytes": 32835,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/fba/dynamic_rates.py"
+        }
+      },
+      {
+        "path": "src/ystwin/fba/native_obligations.py",
+        "resolved_path": "src/ystwin/fba/native_obligations.py",
+        "role": "training_code",
+        "sha256": "e636357a4aabac495ca84639f70c9d401e8e910e9a0944cad1fd9ed989f30fd4",
+        "size_bytes": 13312,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/fba/native_obligations.py"
+        }
+      },
+      {
+        "path": "src/ystwin/fba/physiology.py",
+        "resolved_path": "src/ystwin/fba/physiology.py",
+        "role": "training_code",
+        "sha256": "93d9f046aa76cc6cccb569826444b41ceeeaf480dbe68baf88aa1a4d5aa0f61b",
+        "size_bytes": 9973,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/fba/physiology.py"
+        }
+      },
+      {
+        "path": "src/ystwin/fba/solver.py",
+        "resolved_path": "src/ystwin/fba/solver.py",
+        "role": "training_code",
+        "sha256": "d619c671668bd66cad80c0bfec5a3a3f4cac0a61be668abb60f010d2a282780d",
+        "size_bytes": 4691,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/fba/solver.py"
+        }
+      },
+      {
+        "path": "src/ystwin/mech/__init__.py",
+        "resolved_path": "src/ystwin/mech/__init__.py",
+        "role": "training_code",
+        "sha256": "9b867039d39444c50e210e03be8f1b73fc85b49299cc276b526375e6e5a1001e",
+        "size_bytes": 736,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/mech/__init__.py"
+        }
+      },
+      {
+        "path": "src/ystwin/mech/hog.py",
+        "resolved_path": "src/ystwin/mech/hog.py",
+        "role": "training_code",
+        "sha256": "5bb8dbb7f896f015a3f314a7f952afeea0487c88327fd5658b3c1b2c340bc95d",
+        "size_bytes": 15490,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/mech/hog.py"
+        }
+      },
+      {
+        "path": "src/ystwin/mech/kinetic_sbml.py",
+        "resolved_path": "src/ystwin/mech/kinetic_sbml.py",
+        "role": "training_code",
+        "sha256": "158fbdd3c04fc83918500936a4aac6c4d79fad125249657749c2eec4cd238fcc",
+        "size_bytes": 36206,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/mech/kinetic_sbml.py"
+        }
+      },
+      {
+        "path": "src/ystwin/paths.py",
+        "resolved_path": "src/ystwin/paths.py",
+        "role": "training_code",
+        "sha256": "b3f418d157dac09994180b993556cf0462cb3b498fa58f1923d6d0ac34d7569a",
+        "size_bytes": 14643,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_training_code",
+          "source_id": "src/ystwin/paths.py"
+        }
+      }
+    ],
+    "dependency_mode": "explicit",
+    "inputs": [
+      {
+        "path": "data/gem/ecYeastGEM_batch.xml.gz",
+        "resolved_path": "data/gem/ecYeastGEM_batch.xml.gz",
+        "role": "prior",
+        "sha256": "63d0f76e88586fcee25e9e67f9dae558e7b308172c837d44a0d055510b287ef3",
+        "size_bytes": 347688,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_physiology",
+          "source_id": "native_host_prior_frozen_for_generic_inference"
+        }
+      },
+      {
+        "path": "data/hog2013/methods.pdf",
+        "resolved_path": "data/hog2013/methods.pdf",
+        "role": "provenance",
+        "sha256": "59c57d8816f5101dc5a6f2552df81eedecffe69e8d0e9848ffb9af5710c45344",
+        "size_bytes": 257003,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_physiology",
+          "source_id": "measurement_units_and_source_assumptions"
+        }
+      },
+      {
+        "path": "data/hog2013/model_wt.xml",
+        "resolved_path": "data/hog2013/model_wt.xml",
+        "role": "prior",
+        "sha256": "7da99398c53185503022a4dc2ec54b7666280f4d461cf96a7ccc762d56963c19",
+        "size_bytes": 178306,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_physiology",
+          "source_id": "published_native_reaction_structure"
+        }
+      },
+      {
+        "path": "data/hog2013/native_training_protocol.json",
+        "resolved_path": "data/hog2013/native_training_protocol.json",
+        "role": "selection",
+        "sha256": "ca904f13599ba049aff5ddc855b7537f1151520c0e95b225a192963684ddb69f",
+        "size_bytes": 7860,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_physiology",
+          "source_id": "native_selection"
+        }
+      },
+      {
+        "path": "data/hog2013/observations.xls",
+        "resolved_path": "data/hog2013/observations.xls",
+        "role": "fit",
+        "sha256": "87854ff96bf22943f1347abdf5636e261ddfcdec041ea78fe498d62d924a967e",
+        "size_bytes": 198656,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_physiology",
+          "source_id": "native_training_and_native_control_measurements"
+        }
+      },
+      {
+        "path": "data/hog2013/sources.json",
+        "resolved_path": "data/hog2013/sources.json",
+        "role": "provenance",
+        "sha256": "b005bc93e8dd50151f687e672948b0891637a4bacc51981c66349b8906eaafdf",
+        "size_bytes": 18395,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_physiology",
+          "source_id": "source_identity_and_checksums"
+        }
+      },
+      {
+        "path": "data/physiology/chemostatData_VanHoek1998.tsv",
+        "resolved_path": "data/physiology/chemostatData_VanHoek1998.tsv",
+        "role": "fit",
+        "sha256": "4c01b3465ea1410c86709568da44a32b1de652c21a88de623bbf566838506117",
+        "size_bytes": 625,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "native_physiology",
+          "source_id": "native_growth_exchange_training_and_condition_validation"
+        }
+      }
+    ],
+    "kind": "training_input_manifest",
+    "root": ".",
+    "schema_version": 1,
+    "sha256": "f7a137c66c1dfa8899472b34f19e3d19d971d135e57adadde217d03485e2fa77"
+  },
+  "schema_version": 1
+}

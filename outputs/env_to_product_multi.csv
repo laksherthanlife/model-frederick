@@ -1,0 +1,51 @@
+product,precursor_family,calibration_status,carbon_source,oxygen_lower_bound,growth_rate_per_h,precursor_supply_mmol_per_gdcw_h
+beta_carotene,GGPP / isoprenoid,"fitted flux law, 1.222x LOSO",glucose,-1000.0,0.18,0.124702
+beta_carotene,GGPP / isoprenoid,"fitted flux law, 1.222x LOSO",glucose,-10.0,0.18,0.124702
+beta_carotene,GGPP / isoprenoid,"fitted flux law, 1.222x LOSO",glucose,-2.0,0.18,
+beta_carotene,GGPP / isoprenoid,"fitted flux law, 1.222x LOSO",glucose,-1.0,0.18,
+beta_carotene,GGPP / isoprenoid,"fitted flux law, 1.222x LOSO",glucose,-0.5,0.18,
+beta_carotene,GGPP / isoprenoid,"fitted flux law, 1.222x LOSO",ethanol,-1000.0,0.18,0.160246
+beta_carotene,GGPP / isoprenoid,"fitted flux law, 1.222x LOSO",ethanol,-10.0,0.18,0.026
+beta_carotene,GGPP / isoprenoid,"fitted flux law, 1.222x LOSO",ethanol,-2.0,0.18,
+beta_carotene,GGPP / isoprenoid,"fitted flux law, 1.222x LOSO",ethanol,-1.0,0.18,
+beta_carotene,GGPP / isoprenoid,"fitted flux law, 1.222x LOSO",ethanol,-0.5,0.18,
+phb,acetyl-CoA,measured environment response,glucose,-1000.0,0.18,0.103786
+phb,acetyl-CoA,measured environment response,glucose,-10.0,0.18,0.103786
+phb,acetyl-CoA,measured environment response,glucose,-2.0,0.18,
+phb,acetyl-CoA,measured environment response,glucose,-1.0,0.18,
+phb,acetyl-CoA,measured environment response,glucose,-0.5,0.18,
+phb,acetyl-CoA,measured environment response,ethanol,-1000.0,0.18,0.124729
+phb,acetyl-CoA,measured environment response,ethanol,-10.0,0.18,0.012945
+phb,acetyl-CoA,measured environment response,ethanol,-2.0,0.18,
+phb,acetyl-CoA,measured environment response,ethanol,-1.0,0.18,
+phb,acetyl-CoA,measured environment response,ethanol,-0.5,0.18,
+glycogen,UDP-glucose,precursor only,glucose,-1000.0,0.18,0.463565
+glycogen,UDP-glucose,precursor only,glucose,-10.0,0.18,0.463565
+glycogen,UDP-glucose,precursor only,glucose,-2.0,0.18,
+glycogen,UDP-glucose,precursor only,glucose,-1.0,0.18,
+glycogen,UDP-glucose,precursor only,glucose,-0.5,0.18,
+glycogen,UDP-glucose,precursor only,ethanol,-1000.0,0.18,0.521312
+glycogen,UDP-glucose,precursor only,ethanol,-10.0,0.18,0.056837
+glycogen,UDP-glucose,precursor only,ethanol,-2.0,0.18,
+glycogen,UDP-glucose,precursor only,ethanol,-1.0,0.18,
+glycogen,UDP-glucose,precursor only,ethanol,-0.5,0.18,
+gadusol,sedoheptulose-7-P,precursor only,glucose,-1000.0,0.18,1.032658
+gadusol,sedoheptulose-7-P,precursor only,glucose,-10.0,0.18,1.032658
+gadusol,sedoheptulose-7-P,precursor only,glucose,-2.0,0.18,
+gadusol,sedoheptulose-7-P,precursor only,glucose,-1.0,0.18,
+gadusol,sedoheptulose-7-P,precursor only,glucose,-0.5,0.18,
+gadusol,sedoheptulose-7-P,precursor only,ethanol,-1000.0,0.18,1.102266
+gadusol,sedoheptulose-7-P,precursor only,ethanol,-10.0,0.18,0.135777
+gadusol,sedoheptulose-7-P,precursor only,ethanol,-2.0,0.18,
+gadusol,sedoheptulose-7-P,precursor only,ethanol,-1.0,0.18,
+gadusol,sedoheptulose-7-P,precursor only,ethanol,-0.5,0.18,
+squalene,squalene / isoprenoid,precursor only,glucose,-1000.0,0.18,0.165596
+squalene,squalene / isoprenoid,precursor only,glucose,-10.0,0.18,0.165596
+squalene,squalene / isoprenoid,precursor only,glucose,-2.0,0.18,
+squalene,squalene / isoprenoid,precursor only,glucose,-1.0,0.18,
+squalene,squalene / isoprenoid,precursor only,glucose,-0.5,0.18,
+squalene,squalene / isoprenoid,precursor only,ethanol,-1000.0,0.18,0.21283
+squalene,squalene / isoprenoid,precursor only,ethanol,-10.0,0.18,0.035165
+squalene,squalene / isoprenoid,precursor only,ethanol,-2.0,0.18,
+squalene,squalene / isoprenoid,precursor only,ethanol,-1.0,0.18,
+squalene,squalene / isoprenoid,precursor only,ethanol,-0.5,0.18,

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Granados time metadata and paired-field shapes only",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "scope", "origin_source_evidence", "raw_time_checks", "normalized_sfp1_nominal_axes", "marker_same_experiment_structure"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "scope": {"type": "string"}, "origin_source_evidence": {"type": "string"},
+    "raw_time_checks": {
+      "type": "array", "minItems": 119, "maxItems": 119,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["group_id", "time_channel", "origin_stored", "columns", "nearest_zero_mean_time_column_1based", "origin_equals_that_column", "mean_measured_relative_minutes_at_origin"],
+        "properties": {
+          "group_id": {"type": "string"}, "time_channel": {"enum": ["general", "GFP"]},
+          "origin_stored": {"type": "integer", "minimum": 1}, "columns": {"type": "integer", "minimum": 1},
+          "nearest_zero_mean_time_column_1based": {"type": "integer", "minimum": 1},
+          "origin_equals_that_column": {"type": "boolean"},
+          "mean_measured_relative_minutes_at_origin": {"type": "number"}
+        }
+      }
+    },
+    "normalized_sfp1_nominal_axes": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["group_id", "origin_frame_1based", "column_count", "formula_minutes", "first_nominal_minute", "last_nominal_minute", "measured_timestamps_reconstructed", "limitations"],
+        "properties": {
+          "group_id": {"type": "string"}, "origin_frame_1based": {"type": "integer", "minimum": 1},
+          "column_count": {"type": "integer", "minimum": 1}, "formula_minutes": {"type": "string"},
+          "first_nominal_minute": {"type": "number"}, "last_nominal_minute": {"type": "number"},
+          "measured_timestamps_reconstructed": {"const": false}, "limitations": {"type": "string"}
+        }
+      }
+    },
+    "marker_same_experiment_structure": {
+      "type": "object", "additionalProperties": false,
+      "required": ["group_id", "channel", "fields_and_shapes", "all_selected_shapes_equal", "separate_raw_mcherry_intensity_channel_exported", "pairing_basis", "biological_source_group_count"],
+      "properties": {
+        "group_id": {"const": "0dcc11fc-dcd1-4983-930e-26265b48a0e9:/sfp1"},
+        "channel": {"const": "GFP"},
+        "fields_and_shapes": {
+          "type": "object",
+          "propertyNames": {"enum": ["nucLoc", "median", "max5", "nucInnerMedian", "cytInnerMedian", "nucCytRatio", "times"]},
+          "minProperties": 7, "maxProperties": 7,
+          "additionalProperties": {"$ref": "#/$defs/shape"}
+        },
+        "all_selected_shapes_equal": {"type": "boolean"},
+        "separate_raw_mcherry_intensity_channel_exported": {"type": "boolean"},
+        "pairing_basis": {"type": "string"},
+        "biological_source_group_count": {"const": 1}
+      }
+    }
+  },
+  "$defs": {
+    "shape": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "outer_length", "row_lengths", "nested_rows"],
+      "properties": {
+        "kind": {"const": "array"}, "outer_length": {"type": "integer", "minimum": 0},
+        "row_lengths": {"type": "array", "uniqueItems": true, "items": {"type": "integer", "minimum": 0}},
+        "nested_rows": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

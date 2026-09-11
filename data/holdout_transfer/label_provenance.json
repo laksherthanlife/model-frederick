@@ -1,0 +1,437 @@
+{
+  "schema_version": 1,
+  "scope": "heldout_outcomes",
+  "status": "complete_six_conditions_measurement_derived_content",
+  "source_id": "holdout-transfer:elizondo2025:six-chemostats:lycopene-hplc-content-author-means:v1",
+  "labels_path": "data/holdout_transfer/labels.json",
+  "labels_sha256": "1a8e6cd6171408594e4f99389aceb9dbedbd73214fa707da36dac06480c8dc2c",
+  "source_retrieval_date_utc": "2026-09-07",
+  "selection": {
+    "dataset_id": "elizondo2025_six_glucose_limited_aerobic_chemostats",
+    "fixed_experiment_ids": ["elizondo2025_2D01", "elizondo2025_2D025", "elizondo2025_3D01", "elizondo2025_3D025", "elizondo2025_4D01", "elizondo2025_4D025"],
+    "all_six_retained": true,
+    "excluded_experiment_ids": [],
+    "selection_basis": "The previously fixed six-condition packet, not outcome magnitudes or predictions. No alternative dataset, condition subset, or favorable hypothesis was selected.",
+    "source_hierarchy_decision": "Use original HPLC-derived lycopene concentrations and author measurement-summary means with measured biomass normalization. The source_index.json rate workbook is verified as a measurement-derived dilution drain but is not the numerical label source: its rate means are Monte Carlo uncertainty-propagation statistics. Direct mass normalization avoids representing those simulated summary statistics as directly measured content.",
+    "estimator_rule": "The same ratio of author-reported means is applied to every fixed condition. Existing author replicate filtering is retained without new exclusions. This is a measurement-derived estimate, not a directly published mg/gDW observation or a mean of independently paired replicate ratios."
+  },
+  "freeze_and_blinding": {
+    "authorization": "Scoring-data phase explicitly authorized after native-model freeze and sealing/validation of all three hypothesis predictions.",
+    "hash_algorithm": "sha256",
+    "checkpoint_digest_notation": "The request concatenated SHA with a digest beginning 384175. The verified file digest is the 64-hex-character SHA256 shown below, not a SHA384 digest.",
+    "pre_outcome_hash_verification": [
+      {"path": "outputs/native_training_run_02/checkpoint.json", "expected_sha256": "384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94", "actual_sha256": "384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94", "match": true},
+      {"path": "outputs/heldout_transfer_nad/predictions.json", "expected_sha256": "e14b024cdeb43681b9ff9f2c0867c17581eae5659975094b30a5895debabafe5", "actual_sha256": "e14b024cdeb43681b9ff9f2c0867c17581eae5659975094b30a5895debabafe5", "match": true},
+      {"path": "outputs/heldout_transfer_oxygen_peroxide/predictions.json", "expected_sha256": "c63078f25008b304f3979079da5f565ecb80e0b9f615100a7d6e2e0fc6a2fbdd", "actual_sha256": "c63078f25008b304f3979079da5f565ecb80e0b9f615100a7d6e2e0fc6a2fbdd", "match": true},
+      {"path": "outputs/heldout_transfer_oxygen_water/predictions.json", "expected_sha256": "aae9284d276cd8ecf0f7b728f300adf7232e060c23b415ab350f4f01221418e0", "actual_sha256": "aae9284d276cd8ecf0f7b728f300adf7232e060c23b415ab350f4f01221418e0", "match": true}
+    ],
+    "order_evidence": "The initial shasum command completed before the first primary-article or author-outcome retrieval in this session. Expected digests were supplied by the requester before label access. No prediction JSON or checkpoint content was displayed or parsed; only byte hashing was performed.",
+    "receipt_qualification": "Requester reports receipts recovered after validating sealed artifacts, with model/code/predictions unchanged. This curation did not inspect recovered receipts or the partial/invalid prediction_details.json files and makes no independent claim about their contents.",
+    "earlier_condition_curator_exposure": {
+      "reported_incident": "An earlier condition curator accidentally saw product-rate values after model freeze. Incident values were not used or reproduced in condition curation or supplied to estimator training/prediction. This is the disclosed history in source_index.json and input_resolution.json, not a claim that hash checks reconstruct past knowledge.",
+      "incident_values_read_from_legacy_note_in_this_session": false,
+      "independent_input_verification_restores_that_curators_blindness": false,
+      "fully_blinded_operator_knowledge_claimed": false
+    },
+    "estimator_training_and_predictions_remain_frozen_product_outcome_blind": true,
+    "training_blindness_evidence_limit": "The historical product-outcome-blind training/sealing status is supplied by the requester and prior audit; this session verifies integrity and its own non-access/non-modification, not retrospective operator blindness.",
+    "this_label_curator_outcome_blind": false,
+    "this_label_curator_prediction_values_blind": true,
+    "legacy_fitted_product_parameters_or_old_model_predictions_read": false,
+    "auxiliary_prediction_details_read_or_used": false
+  },
+  "local_input_evidence": [
+    {"path": "data/holdout_transfer/source_index.json", "sha256": "6ad84e0aacea5b861d982b930f8f0b1eb6a5278c2899e36c416ad76d3826220b", "use": "Fixed IDs, primary-source pointers, later-scorer schema, and disclosed blinding incident; not accepted alone as experimental-value authority."},
+    {"path": "data/holdout_transfer/condition_records.json", "sha256": "198c1cbc7dd6e89bacc6ed4763f891bf9bbcb7f0592582da0c533e56fae3cd82", "use": "Fixed six IDs/order and growth inputs; no changes."},
+    {"path": "data/holdout_transfer/input_resolution.json", "sha256": "96a6ddf90297d5ce7508d1efbb905591480a6e2422de78a4fa52f5c5bbda7195", "use": "Unchanged-input and intermediate/hypothesis/blinding qualifications; no changes."}
+  ],
+  "primary_experimental_evidence": {
+    "citation": "Elizondo BR and Saa PA (2025), Complex Kinetic Models Predict beta-Carotene Production and Reveal Flux Limitations in Recombinant Saccharomyces cerevisiae Strains, ACS Synthetic Biology 14(9), DOI 10.1021/acssynbio.5c00256, PMID 40891387, PMCID PMC12455641.",
+    "article_coordinate": "Methods 2.1.1, 2.1.2, 2.1.4; JATS sec2.1.1, sec2.1.2, sec2.1.4; experimental Table 2/tbl2; Data Availability Statement/_adda93_.",
+    "cultivation": "Glucose-limited aerobic continuous cultures of the three recombinant strains at nominal dilution rates 0.1 and 0.25 per hour. Methods 2.1.2 reports sampling after five residence times in technical triplicates.",
+    "assay": "Cell pellets from 15 mL broth were extracted with hexane and bead disruption, extracts evaporated and resuspended in acetone, and lycopene separated/measured by HPLC. This is an extracted intracellular pool, not extracellular secretion or a modeled pathway-flux observation.",
+    "dry_weight_basis": "Methods 2.1.2 estimates dry-cell weight from OD600 using strain-specific measured conversion factors, rounded in the article to 0.53, 0.54, and 0.50 (gDCW/L)/OD600. Labels use the unrounded author-workbook means, not those rounded display values.",
+    "broth_concentration_unit_evidence": "MetabolitesMeasurements.xlsx Commentary!A2 explicitly says lycopene and beta-carotene were extracted, concentrations in fermentation broth previously calculated, units mg/L. Commentary!A3 identifies rows as technical replicates and columns as conditions. No extra extraction-volume or broth-dilution factor is invented.",
+    "author_repository_attribution": "The primary article Data Availability Statement explicitly links https://github.com/SysBioengLab/BcarGRASP.",
+    "balanced_growth_qualification": "The reported chemostat steady state supports the balanced-growth pool interpretation. Raw BiomassMeasurements.xlsx Commentary!A2 says biomass measurements were taken after four residence times at steady state, whereas article carotenoid sampling is after five. This distinction is retained; time-alignment and independent stabilization cannot be established from these summaries alone.",
+    "net_versus_gross_decision": "Methods 2.1.4 identifies SK_lyc and SK_b_car as separate intracellular membrane-accumulation drains estimated from measured carotenoid content and biomass. Lycopene is an intermediate in the expressed Phaffia CrtE/CrtYB/CrtI beta-carotene pathway. Labels normalize the measured lycopene pool only; no beta-carotene concentration/flux is added or subtracted, and no gross desaturase flux, FVA flux, or kinetic fit is substituted.",
+    "not_used": ["Earlier shake-flask production phenotypes", "Author kinetic models or predicted production scenarios", "FVA/ERG9 outputs", "Local legacy SOURCE.md or local outcome transcription", "Sealed prediction values or partial prediction_details.json"]
+  },
+  "normalization": {
+    "quantity": "balanced_growth_intracellular_content",
+    "unit": "mg/gDW",
+    "formula": "content_mg_per_gDW = mean_lycopene_mg_per_L / (mean_OD600 * mean_biomass_factor_gDCW_per_L_per_OD600)",
+    "unit_derivation": "(mg/L) / (OD600 * ((gDCW/L)/OD600)) = mg/gDCW = mg/gDW. No factor of 1000 is present in this mass-normalization formula.",
+    "point_estimator": "Ratio of the three author measurement-summary means; not a ratio of Monte Carlo means and not an average of paired single-cell or biological-replicate contents.",
+    "molecular_weight_or_growth_used_in_final_label_formula": false,
+    "rate_derivation_verified_before_any_possible_inversion": {
+      "source": "Supporting Information S4, pages S37-S38, lines 54-85, Eq. S1; author data_pre-processing/fluxes/processData.m lines 231-318, 325-327, 353-365 and 391-393.",
+      "equation": "For lycopene absent from the feed, q_mmol_per_gDW_per_h = mu_per_h * content_mg_per_gDW / MW_mg_per_mmol.",
+      "author_code_equation": "metaboliteFluxDistribution = metaboliteProductionDistribution*1000./metaboliteMolWeight./biomassMeasurementDistribution./biomassConversionDistribution.*dilutionRateDistribution;",
+      "author_code_units": "Lycopene concentration is mg/L; MolWeights.xlsx Data!B6:C6 is 536872.6 mg/mol. Thus concentration*1000/MW_mg_per_mol gives mmol/L. The source does not use 536872.6 g/mol.",
+      "correct_rate_inversion_if_used": "content_mg_per_gDW = q_mmol_per_gDW_per_h * 536.8726_g_per_mol / mu_per_h. Since g/mol equals mg/mmol numerically, there is NO additional factor of 1000. Article nmol/gDCW/h rates would first be multiplied by 1e-6 to obtain mmol/gDCW/h.",
+      "performed_for_final_labels": false,
+      "reason": "Original measured mass concentrations and measured biomass-normalization summaries are available for all six. The author rate summary uses Monte Carlo propagation of those measurements. Its mean need not equal the formula evaluated at the input means; it is not silently treated as a direct mass-content measurement."
+    },
+    "molecular_identity_check": {
+      "compound": "lycopene",
+      "formula": "C40H56",
+      "charge": 0,
+      "CAS": "502-65-8",
+      "independent_authority": "NIST Chemistry WebBook, SRD 69, Lycopene, Formula and Molecular weight fields",
+      "independent_molecular_weight_g_per_mol": 536.8726,
+      "author_original_cell": "author_molecular_weights; Data!B6:C6",
+      "author_original_numeric_string": "536872.6",
+      "author_original_unit": "mg/mol",
+      "author_value_converted_to_g_per_mol": 536.8726,
+      "independent_value_matches_author_unit_conversion": true,
+      "corroborating_authority": "ChEBI:15948, name=lycopene, chemical_data.formula=C40H56, charge=0, default_structure.standard_inchi_key=OAIJSZIZWZSQBC-GYZMGTAESA-N.",
+      "corroborating_mass_qualification": "ChEBI lists average mass 536.888 rather than the NIST/author 536.8726 atomic-weight convention. No mass value was fitted, and final labels do not depend on this small difference because they use direct mass normalization.",
+      "chemical_isomer_qualification": "The experiment reports HPLC lycopene. No unreported isomer-specific assay or purity is asserted; C40H56 is the mass-formula basis consistent with the declared measurement."
+    },
+    "numeric_representation": "Workbook numeric XML strings are preserved below. Labels are the deterministic Python binary64 result of C/(OD*F), with no additional rounding. Extra digits preserve reproducibility, not experimental precision."
+  },
+  "aggregation_and_uncertainty": {
+    "author_preprocessing_only": "No new outlier rule or alternative estimator was chosen from label magnitudes. The existing author processData.m uses MATLAB isoutlier(...,'median'), replaces flagged values with NaN, and computes means/SD/SE on retained measurements. Supplement S4 lines 57-62 independently describes that filtering.",
+    "hplc": "Three technical measurements are released per fixed condition. The author's retained counts are 2, 3, 2, 2, 3, 3. Source-excluded HPLC cells are Lycopene!B3, D4, and E4. These are replicate exclusions made by the author, NOT exclusions of conditions by this curation. All 18 original concentration values are preserved below.",
+    "hplc_filter_verification": "The documented default median criterion was checked as abs(value-median) > 3*MAD/Phi_inverse(0.75); retained means, sample SDs and counts match the existing author output. This was arithmetic verification, not execution of author MATLAB code or a new data-cleaning pass.",
+    "OD600": "Author OD600 summary means pool the recorded steady-state OD measurements, retaining 15/18, 12/18, 15/21, 15/15, 19/21 and 18/18. Stored author outlier flags were read from BiomassMeasurementsOutliers.xlsx; all source OD values match BiomassMeasurements.xlsx. Means and sample SDs from retained values reproduce the author summary. These counts are not asserted to be independent chemostat biological replicates.",
+    "biomass_factor": "Author processData.m lines 60-84 first averages three technical measurements within each of four biological replicate IDs, then applies the median outlier rule to the biological-replicate means. Retained biological replicate IDs are [1,2,3,4] for Bcar2, [2,3,4] for Bcar3, and [1,2,3,4] for Bcar4. Published factor means and SDs were independently reproduced by arithmetic; one factor is shared across the two dilution settings of a strain.",
+    "no_pseudoreplication": "Only six condition-level labels are created; technical HPLC/OD measurements or shared calibration replicates are not expanded into independent test cases.",
+    "uncertainty_policy": "Original author SDs, SEs, counts, degrees of freedom and rate intervals are retained as provenance, not as newly estimated label uncertainty. No confidence interval is fabricated for C/(OD*F); pairing/covariance between measurements is unavailable and shared calibrations create dependence. Extraction recovery and HPLC calibration uncertainty are not independently quantified in the released concentration table.",
+    "author_rate_statistic_qualification": "FluxesBiomassStatistics.xlsx is an experimentally derived Monte Carlo uncertainty-propagation summary, not an independent flux assay or a kinetic-model prediction. processData.m line 364 calculates its column labelled SE using std(metaboliteFluxDistribution,1), not SE across independent cultures. The sampled t distributions include low degrees of freedom (including df=1); these simulated summary statistics and their marginal bounds are not promoted to label confidence intervals.",
+    "supplement_code_difference": "Supplement S4 reports one million Monte Carlo particles; the pinned processData.m line 54 sets simulationN=1e7. Neither simulation was executed here, and neither supplies the final labels. This documentary discrepancy does not affect the deterministic measured-mass normalization.",
+    "remaining_limitations": [
+      "Intracellular content is reconstructed from condition-level mass and biomass means, rather than directly released as mg/gDW with matched replicate-level denominators.",
+      "The author released already converted broth carotenoid concentrations; raw chromatograms, extraction recoveries, and the preceding peak-area calibration were not independently reconstructed.",
+      "The reported steady-state protocol is accepted with the four-versus-five-residence-time distinction preserved; no unseen time course was used to certify stabilization.",
+      "The strict chemistry lane remains blocked and the three redox alternatives remain unverified hypotheses. These measurements cannot repair missing downstream/enzyme constraints or validate a hypothesis mechanism.",
+      "Primary-article XML, NIST HTML, and ChEBI JSON are live representations rather than immutable archives; hashes below identify retrieved bytes. Pinned author GitHub files are commit-addressed."
+    ]
+  },
+  "original_assets": [
+    {
+      "asset_id": "primary_article",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12455641/fullTextXML",
+      "sha256": "562ff19cbf449fe2f20721b94d33f9a7a209d12bb57141721cf9a29e8d11f6e1",
+      "coordinates": "JATS sec2.1.1, sec2.1.2, sec2.1.4, tbl2 and _adda93_",
+      "role": "Primary experimental protocol, direct assay/drain interpretation, rounded rate cross-check and repository attribution"
+    },
+    {
+      "asset_id": "primary_supplement",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12455641/supplementaryFiles",
+      "archive_member": "sb5c00256_si_001.pdf",
+      "archive_sha256": "97046fd436697e74353a70e426b7a6b9f32b9bcbcd6ff0201f74a48f8f3d9740",
+      "sha256": "9746473f211129d05fd0e6ed9ef0deaeb5428410a321bacf2dd3552c908890e9",
+      "publisher_url": "https://pubs.acs.org/doi/suppl/10.1021/acssynbio.5c00256/suppl_file/sb5c00256_si_001.pdf",
+      "coordinates": "Section S4, pages S37-S38, lines 54-100, especially Eq. S1 and lines 55-74",
+      "role": "Primary equation and disclosure of measurement filtering and Monte Carlo propagation; no model parameter tables used"
+    },
+    {
+      "asset_id": "raw_lycopene_measurements",
+      "repository_path": "biomass_and_metabolites_data/MetabolitesMeasurements.xlsx",
+      "sha256": "81cbd4ca2d36d7181c897910ba14eeac20032afac76d90fb2f05fcc2473aacbd",
+      "git_blob_sha": "4145caddb8f12fdd8cdd0bcbc6126f5d565e06ce",
+      "coordinates": "Lycopene!A1:G4 (xl/worksheets/sheet6.xml); Commentary!A2:A3 (xl/worksheets/sheet8.xml)",
+      "role": "Original author-released technical HPLC-derived concentration measurements in mg/L of broth"
+    },
+    {
+      "asset_id": "author_concentration_summary",
+      "repository_path": "data_pre-processing/fluxes/output/MetabolitesProductionStatistics.xlsx",
+      "sha256": "1ebbbbe8910fd12e9a7ee55fdb0134372c00cb27bbec6e9935340ccf616e47c8",
+      "git_blob_sha": "2d970046be218b6ee57e2ccdc300c9ba2d3b4f83",
+      "coordinates": "Lycopene!A1:F7; xl/worksheets/sheet6.xml",
+      "role": "Author filtered experimental concentration mean, SD, SE and counts; supplies the numerator"
+    },
+    {
+      "asset_id": "raw_biomass_measurements",
+      "repository_path": "biomass_and_metabolites_data/BiomassMeasurements.xlsx",
+      "sha256": "15cb7af1f2faca3dcc5e98a0f7586c751dc11cd18e41e8f297622a82ed059cde",
+      "git_blob_sha": "e36d5222f9bc0b498f1e0f573036d992487928e7",
+      "coordinates": "Six sheets named 2D01/2D025/3D01/3D025/4D01/4D025, columns A=Measurement and B=OD600; Commentary!A1:A3",
+      "role": "Original OD600 observations and reported steady-state sampling qualification"
+    },
+    {
+      "asset_id": "author_biomass_outliers",
+      "repository_path": "data_pre-processing/fluxes/output/BiomassMeasurementsOutliers.xlsx",
+      "sha256": "dfe7ff1ba110485e099478ab9eb49671a39fba98a44c60e0a6c9e92bee4ccc8d",
+      "git_blob_sha": "3e71db6f224b32cde9bfede2254dc4bb1550b04f",
+      "coordinates": "Each of the six condition sheets, A=Measurement, B=OD600, C=Outliers",
+      "role": "Existing author flags; used to verify existing OD summary, not to create new exclusions"
+    },
+    {
+      "asset_id": "author_biomass_summary",
+      "repository_path": "data_pre-processing/fluxes/output/BiomassMeasurementsStatistics.xlsx",
+      "sha256": "73b2bb49fd91e29879f31fc91fc9bf8f5d452c65e80ec777040479906e203859",
+      "git_blob_sha": "6d6349016e2bed5db26b8d9914ea175151308123",
+      "coordinates": "Statistics!A1:F7; xl/worksheets/sheet2.xml",
+      "role": "Author experimental mean OD600 and its summary statistics; supplies a denominator factor"
+    },
+    {
+      "asset_id": "raw_biomass_conversion",
+      "repository_path": "biomass_and_metabolites_data/BiomassConversion.xlsx",
+      "sha256": "a03e0c55f889b8eaddf7220260c08991861430e75726860b631ea94d5cdba66e",
+      "git_blob_sha": "b47fda19177587febca50c1c04f3589aa23d5ced",
+      "coordinates": "Data!A1:E13; B=Bcar2, C=Bcar3, D=Bcar4, E=Replicate; Commentary!A1",
+      "role": "Measured (gDCW/L)/OD600 factors and biological-replicate grouping, not fitted product parameters"
+    },
+    {
+      "asset_id": "author_biomass_factor_summary",
+      "repository_path": "data_pre-processing/fluxes/output/BiomassConversionsStatistics.xlsx",
+      "sha256": "b8229b1b98230bfcd3eaf07ff180105ef9bfaee95ef45729a8b2976158b10ea4",
+      "git_blob_sha": "7cfc5352cd42add1cd33ef51db87bd85ffd56b63",
+      "coordinates": "Statistics!A1:F7; xl/worksheets/sheet2.xml",
+      "role": "Author measured dry-mass conversion summary projected to conditions; supplies the other denominator factor"
+    },
+    {
+      "asset_id": "author_dilution_summary",
+      "repository_path": "data_pre-processing/fluxes/output/DilutionRatesStatistics.xlsx",
+      "sha256": "7a68aebe25cada6319299c648ecb4e1914d8584bb3b9d08bd84bcf715f3f73b7",
+      "git_blob_sha": "24af5854d1adb90c3f2edf4ec521af07aea5d0f0",
+      "coordinates": "Statistics!A1:E7; xl/worksheets/sheet2.xml",
+      "role": "Cross-check unchanged growth/dilution inputs; not used in direct mass-normalized labels"
+    },
+    {
+      "asset_id": "author_rate_summary",
+      "repository_path": "data_pre-processing/fluxes/output/FluxesBiomassStatistics.xlsx",
+      "sha256": "20881f0498bbdf110f886e89267b0b7814de35b260a8689da8acadfed90778c9",
+      "git_blob_sha": "6c57ac499cb81ac4a521523178b6077375cff223",
+      "coordinates": "Lycopene!A1:E7; xl/worksheets/sheet6.xml",
+      "role": "Verified measurement-derived net dilution-rate summary, cross-checked against article Table 2; NOT the final numerical label source"
+    },
+    {
+      "asset_id": "author_preprocessing",
+      "repository_path": "data_pre-processing/fluxes/processData.m",
+      "sha256": "c38894f1801752d99908e5b5713f6ac56009ed646881675ee1a84c95c8c02320",
+      "git_blob_sha": "d24e51acb8452f7239513e5b5ae96439c64cc731",
+      "coordinates": "Lines 40-50 identify inputs; 60-102 biomass conversion aggregation; 127-143 OD aggregation; 292-318 carotenoid aggregation; 353-365 rate equation/statistics; 391-393 rate output",
+      "role": "Read-only evidence of measurement derivation; not executed, no fitted kinetic parameters inspected"
+    },
+    {
+      "asset_id": "author_molecular_weights",
+      "repository_path": "biomass_and_metabolites_data/MolWeights.xlsx",
+      "sha256": "b06fd5e4c9efcc002c55159bcdc3793512b57ae1f674240d9d92408338287563",
+      "git_blob_sha": "522fd30c7a6703efb0e40939db1d0ef136998627",
+      "coordinates": "Data!A6:C6, headers A1:C1; xl/worksheets/sheet1.xml",
+      "role": "Author-declared lycopene molecular mass and mg/mol unit, independently checked against NIST"
+    },
+    {
+      "asset_id": "author_measurement_readme",
+      "repository_path": "biomass_and_metabolites_data/README.md",
+      "sha256": "b1568e49be00186f891dcdf0e43ee8e10006dd3309a63380d18c1cf5dca7acfb",
+      "coordinates": "Lines 3-8",
+      "role": "Corroborating author metadata; primary Methods and workbook Commentary were also inspected"
+    },
+    {
+      "asset_id": "author_flux_readme",
+      "repository_path": "data_pre-processing/fluxes/README.md",
+      "sha256": "daf23e71f5a61fffb9285bd8ca72f1664c11247b261f4967e1f3538ad547a5f6",
+      "coordinates": "Lines 2-5 and 10-22",
+      "role": "Distinguishes measurement preprocessing from later FVA/ERG9 estimates; no FVA values used"
+    },
+    {
+      "asset_id": "independent_nist_lycopene",
+      "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=502-65-8&Units=SI",
+      "sha256": "791f2d6843c485640c3391a8b4c2a5f6c91b0cd7f6544ed5ce033e7af7ecc9fd",
+      "coordinates": "Retrieved HTML lines 291-298 Formula=C40H56 and Molecular weight=536.8726; line 339 CAS=502-65-8",
+      "role": "Independent physical molecular-weight authority, not a fitted parameter",
+      "representation_note": "Live HTML; a prior retrieval returned SHA256 73859e2d5a795af075e4debd32628bfc00c37845834cb2d207a06af196a237ea. The cited inspected formula/mass lines and digest are from the later retrieval."
+    },
+    {
+      "asset_id": "independent_chebi_lycopene",
+      "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/15948/",
+      "sha256": "26185ef26ddb4fc41508c4de8f10c157cc512978360ad0bf75b1bc10abd296ed",
+      "coordinates": "chebi_accession, name, chemical_data.formula/charge/mass, default_structure.standard_inchi_key",
+      "role": "Independent identity/formula corroboration; its alternative atomic-weight convention is not used to change labels"
+    }
+  ],
+  "repository_asset_resolution": {
+    "repository": "SysBioengLab/BcarGRASP",
+    "pinned_commit": "ec6f1290711fba8091e92c77da4a5684ff8cad4d",
+    "retrieval_method": "gh api repos/SysBioengLab/BcarGRASP/contents/{repository_path}?ref=ec6f1290711fba8091e92c77da4a5684ff8cad4d; base64-decoded bytes hashed and XLSX XML parsed in memory",
+    "raw_url_template": "https://raw.githubusercontent.com/SysBioengLab/BcarGRASP/ec6f1290711fba8091e92c77da4a5684ff8cad4d/{repository_path}",
+    "browser_url_template": "https://github.com/SysBioengLab/BcarGRASP/blob/ec6f1290711fba8091e92c77da4a5684ff8cad4d/{repository_path}",
+    "hash_semantics": "sha256 is over original decoded asset bytes, not JSON API wrappers or projected tables. Git blob SHA values are Git object identifiers, not SHA256 file hashes.",
+    "local_copies_created": false
+  },
+  "source_column_schemas": {
+    "concentration_summary": {"asset_id": "author_concentration_summary", "sheet": "Lycopene", "A": "StrainCondition", "B": "Mean [mg/L]", "C": "SD [mg/L]", "D": "SE [mg/L]", "E": "N Measurements", "F": "Freedom Degrees"},
+    "biomass_summary": {"asset_id": "author_biomass_summary", "sheet": "Statistics", "A": "StrainCondition", "B": "Mean [OD600]", "C": "SD [OD600]", "D": "SE [OD600]", "E": "N Measurements", "F": "Freedom Degrees"},
+    "factor_summary": {"asset_id": "author_biomass_factor_summary", "sheet": "Statistics", "A": "StrainCondition", "B": "Mean [(gDCW/L)/OD600]", "C": "SD [(gDCW/L)/OD600]", "D": "SE [(gDCW/L)/OD600]", "E": "N Measurements", "F": "Freedoom Degrees"},
+    "rate_summary": {"asset_id": "author_rate_summary", "sheet": "Lycopene", "A": "StrainCondition", "B": "Mean [mmol/gDCWh]", "C": "SE [mmol/gDCWh]", "D": "Lower CI 95% [mmol/gDCWh]", "E": "Upper CI 95% [mmol/gDCWh]"},
+    "dilution_summary": {"asset_id": "author_dilution_summary", "sheet": "Statistics", "A": "strainConditions", "B": "Mean [1/h]", "C": "SE [1/h]", "D": "N Measurements", "E": "Freedom Degrees"},
+    "per_observation_cell_rule": "Each summary_original_cells dictionary uses the exact Excel cell coordinates and original XML value strings for the corresponding schema above. Original raw HPLC cells refer to raw_lycopene_measurements/Lycopene, units mg/L."
+  },
+  "observations": [
+    {
+      "experiment_id": "elizondo2025_2D01",
+      "source_condition_id": "2D01",
+      "source_summary_row": 2,
+      "raw_hplc_original_cells": {"B2": "0.21620218463385094", "B3": "0.18575333853064105", "B4": "0.21863094450411732"},
+      "author_retained_hplc_cells": ["B2", "B4"],
+      "author_excluded_hplc_cells": ["B3"],
+      "concentration_summary_original_cells": {"A2": "2D01", "B2": "0.21741656456898412", "C2": "0.0017173925741391233", "D2": "0.0012143799351331946", "E2": "2", "F2": "1"},
+      "biomass_summary_original_cells": {"A2": "2D01", "B2": "0.81166666666666665", "C2": "0.013047532151257356", "D2": "0.003368858315395038", "E2": "15", "F2": "14"},
+      "raw_OD_coordinate": "raw_biomass_measurements; 2D01!B2:B19; author_biomass_outliers 2D01!C2:C19",
+      "author_excluded_OD_cells": ["B8", "B9", "B10"],
+      "factor_summary_original_cells": {"A2": "2D01", "B2": "0.53303107536886807", "C2": "0.016933504172974012", "D2": "0.0084667520864870061", "E2": "4", "F2": "3"},
+      "raw_factor_coordinate": "raw_biomass_conversion; Data!B2:B13 and E2:E13",
+      "author_retained_factor_biological_replicate_ids": [1, 2, 3, 4],
+      "dilution_summary_original_cells": {"A2": "2D01", "B2": "0.10098798657810984", "C2": "0.0015733978711242665", "D2": "8", "E2": "6"},
+      "fixed_growth_rate_per_h": 0.10098798657810984,
+      "rate_summary_original_cells": {"A2": "2D01", "B2": "9.4376186071537727e-05", "C2": "0.0011799726858909066", "D2": "8.537045210468136e-05", "E2": "0.00010443064876401345"},
+      "article_table2_lycopene_mean_nmol_per_gDCW_per_h": 94.4,
+      "conversion_inputs": {"lycopene_mean_mg_per_L": 0.21741656456898412, "OD600_mean": 0.8116666666666666, "biomass_factor_gDCW_per_L_per_OD600": 0.5330310753688681},
+      "calculated_biomass_gDW_per_L": 0.4326435561743979,
+      "value_mg_per_gDW": 0.5025304583095278
+    },
+    {
+      "experiment_id": "elizondo2025_2D025",
+      "source_condition_id": "2D025",
+      "source_summary_row": 3,
+      "raw_hplc_original_cells": {"C2": "3.2463638476494937E-2", "C3": "3.4314602112867999E-2", "C4": "3.1455841774615065E-2"},
+      "author_retained_hplc_cells": ["C2", "C3", "C4"],
+      "author_excluded_hplc_cells": [],
+      "concentration_summary_original_cells": {"A3": "2D025", "B3": "0.032744694121326003", "C3": "0.0014499558181236287", "D3": "0.00083713238190674113", "E3": "3", "F3": "2"},
+      "biomass_summary_original_cells": {"A3": "2D025", "B3": "0.34549999999999997", "C3": "0.0029999999999999858", "D3": "0.00086602540378443458", "E3": "12", "F3": "11"},
+      "raw_OD_coordinate": "raw_biomass_measurements; 2D025!B2:B19; author_biomass_outliers 2D025!C2:C19",
+      "author_excluded_OD_cells": ["B5", "B6", "B7", "B8", "B9", "B10"],
+      "factor_summary_original_cells": {"A3": "2D025", "B3": "0.53303107536886807", "C3": "0.016933504172974012", "D3": "0.0084667520864870061", "E3": "4", "F3": "3"},
+      "raw_factor_coordinate": "raw_biomass_conversion; Data!B2:B13 and E2:E13",
+      "author_retained_factor_biological_replicate_ids": [1, 2, 3, 4],
+      "dilution_summary_original_cells": {"A3": "2D025", "B3": "0.2543201820522904", "C3": "0.0014921364031387889", "D3": "8", "E3": "6"},
+      "fixed_growth_rate_per_h": 0.2543201820522904,
+      "rate_summary_original_cells": {"A3": "2D025", "B3": "8.4283269648404983e-05", "C3": "2.7042548235758768e-05", "D3": "7.4085473863714753e-05", "E3": "9.4909689589193347e-05"},
+      "article_table2_lycopene_mean_nmol_per_gDCW_per_h": 84.3,
+      "conversion_inputs": {"lycopene_mean_mg_per_L": 0.032744694121326, "OD600_mean": 0.3455, "biomass_factor_gDCW_per_L_per_OD600": 0.5330310753688681},
+      "calculated_biomass_gDW_per_L": 0.1841622365399439,
+      "value_mg_per_gDW": 0.17780352115903977
+    },
+    {
+      "experiment_id": "elizondo2025_3D01",
+      "source_condition_id": "3D01",
+      "source_summary_row": 4,
+      "raw_hplc_original_cells": {"D2": "0.94246790850870132", "D3": "0.95463461605434141", "D4": "0.87130792563627468"},
+      "author_retained_hplc_cells": ["D2", "D3"],
+      "author_excluded_hplc_cells": ["D4"],
+      "concentration_summary_original_cells": {"A4": "3D01", "B4": "0.94855126228152131", "C4": "0.0086031614102356421", "D4": "0.0060833537728200437", "E4": "2", "F4": "1"},
+      "biomass_summary_original_cells": {"A4": "3D01", "B4": "0.69499999999999995", "C4": "0.0065465367070797476", "D4": "0.0016903085094570269", "E4": "15", "F4": "14"},
+      "raw_OD_coordinate": "raw_biomass_measurements; 3D01!B2:B22; author_biomass_outliers 3D01!C2:C22",
+      "author_excluded_OD_cells": ["B8", "B9", "B10", "B11", "B12", "B13"],
+      "factor_summary_original_cells": {"A4": "3D01", "B4": "0.54148009932678154", "C4": "0.0037201697250771669", "D4": "0.0021478409922043983", "E4": "3", "F4": "2"},
+      "raw_factor_coordinate": "raw_biomass_conversion; Data!C2:C13 and E2:E13",
+      "author_retained_factor_biological_replicate_ids": [2, 3, 4],
+      "dilution_summary_original_cells": {"A4": "3D01", "B4": "0.10098798657810984", "C4": "0.0015733978711242665", "D4": "8", "E4": "6"},
+      "fixed_growth_rate_per_h": 0.10098798657810984,
+      "rate_summary_original_cells": {"A4": "3D01", "B4": "0.00047202537336640105", "C4": "0.008756868115114471", "D4": "0.00043068407278665038", "E4": "0.00051845840045190868"},
+      "article_table2_lycopene_mean_nmol_per_gDCW_per_h": 472.0,
+      "conversion_inputs": {"lycopene_mean_mg_per_L": 0.9485512622815213, "OD600_mean": 0.695, "biomass_factor_gDCW_per_L_per_OD600": 0.5414800993267815},
+      "calculated_biomass_gDW_per_L": 0.37632866903211315,
+      "value_mg_per_gDW": 2.520539465465436
+    },
+    {
+      "experiment_id": "elizondo2025_3D025",
+      "source_condition_id": "3D025",
+      "source_summary_row": 5,
+      "raw_hplc_original_cells": {"E2": "2.59277305756444E-2", "E3": "2.5930853658511065E-2", "E4": "2.6054987601708136E-2"},
+      "author_retained_hplc_cells": ["E2", "E3"],
+      "author_excluded_hplc_cells": ["E4"],
+      "concentration_summary_original_cells": {"A5": "3D025", "B5": "0.025929292117077733", "C5": "2.2083530732267874e-06", "D5": "1.5615414333328137e-06", "E5": "2", "F5": "1"},
+      "biomass_summary_original_cells": {"A5": "3D025", "B5": "0.17933333333333332", "C5": "0.0045303211281110707", "D5": "0.0011697238854763848", "E5": "15", "F5": "14"},
+      "raw_OD_coordinate": "raw_biomass_measurements; 3D025!B2:B16; author_biomass_outliers 3D025!C2:C16",
+      "author_excluded_OD_cells": [],
+      "factor_summary_original_cells": {"A5": "3D025", "B5": "0.54148009932678154", "C5": "0.0037201697250771669", "D5": "0.0021478409922043983", "E5": "3", "F5": "2"},
+      "raw_factor_coordinate": "raw_biomass_conversion; Data!C2:C13 and E2:E13",
+      "author_retained_factor_biological_replicate_ids": [2, 3, 4],
+      "dilution_summary_original_cells": {"A5": "3D025", "B5": "0.2543201820522904", "C5": "0.0014921364031387889", "D5": "8", "E5": "6"},
+      "fixed_growth_rate_per_h": 0.2543201820522904,
+      "rate_summary_original_cells": {"A5": "3D025", "B5": "0.000126493012951795", "C5": "7.8210470234448559e-05", "D5": "0.0001231814962694584", "E5": "0.00012990812885011952"},
+      "article_table2_lycopene_mean_nmol_per_gDCW_per_h": 126.5,
+      "conversion_inputs": {"lycopene_mean_mg_per_L": 0.025929292117077733, "OD600_mean": 0.17933333333333332, "biomass_factor_gDCW_per_L_per_OD600": 0.5414800993267815},
+      "calculated_biomass_gDW_per_L": 0.09710543114593614,
+      "value_mg_per_gDW": 0.2670220585098846
+    },
+    {
+      "experiment_id": "elizondo2025_4D01",
+      "source_condition_id": "4D01",
+      "source_summary_row": 6,
+      "raw_hplc_original_cells": {"F2": "2.3431530814766242", "F3": "2.2296828145407281", "F4": "2.0923594431845238"},
+      "author_retained_hplc_cells": ["F2", "F3", "F4"],
+      "author_excluded_hplc_cells": [],
+      "concentration_summary_original_cells": {"A6": "4D01", "B6": "2.2217317797339589", "C6": "0.1255857335361826", "D6": "0.072506957063491639", "E6": "3", "F6": "2"},
+      "biomass_summary_original_cells": {"A6": "4D01", "B6": "1.1042105263157895", "C6": "0.023467658471863957", "D6": "0.005383850090546375", "E6": "19", "F6": "18"},
+      "raw_OD_coordinate": "raw_biomass_measurements; 4D01!B2:B22; author_biomass_outliers 4D01!C2:C22",
+      "author_excluded_OD_cells": ["B9", "B10"],
+      "factor_summary_original_cells": {"A6": "4D01", "B6": "0.49778111557127852", "C6": "0.012487646488702557", "D6": "0.0062438232443512787", "E6": "4", "F6": "3"},
+      "raw_factor_coordinate": "raw_biomass_conversion; Data!D2:D13 and E2:E13",
+      "author_retained_factor_biological_replicate_ids": [1, 2, 3, 4],
+      "dilution_summary_original_cells": {"A6": "4D01", "B6": "0.10098798657810984", "C6": "0.0015733978711242665", "D6": "8", "E6": "6"},
+      "fixed_growth_rate_per_h": 0.10098798657810984,
+      "rate_summary_original_cells": {"A6": "4D01", "B6": "0.00076074862669175784", "C6": "0.00010797341054909745", "D6": "0.00064754698672687874", "E6": "0.00087706293023310806"},
+      "article_table2_lycopene_mean_nmol_per_gDCW_per_h": 760.7,
+      "conversion_inputs": {"lycopene_mean_mg_per_L": 2.221731779733959, "OD600_mean": 1.1042105263157895, "biomass_factor_gDCW_per_L_per_OD600": 0.4977811155712785},
+      "calculated_biomass_gDW_per_L": 0.5496551476150223,
+      "value_mg_per_gDW": 4.042046707602303
+    },
+    {
+      "experiment_id": "elizondo2025_4D025",
+      "source_condition_id": "4D025",
+      "source_summary_row": 7,
+      "raw_hplc_original_cells": {"G2": "0.1217325043945332", "G3": "0.13124945935910814", "G4": "0.12672465699386506"},
+      "author_retained_hplc_cells": ["G2", "G3", "G4"],
+      "author_excluded_hplc_cells": [],
+      "concentration_summary_original_cells": {"A7": "4D025", "B7": "0.12656887358250213", "C7": "0.0047603896167098354", "D7": "0.0027484122266549231", "E7": "3", "F7": "2"},
+      "biomass_summary_original_cells": {"A7": "4D025", "B7": "0.30672222222222223", "C7": "0.0084143124255503712", "D7": "0.0019832724583762982", "E7": "18", "F7": "17"},
+      "raw_OD_coordinate": "raw_biomass_measurements; 4D025!B2:B19; author_biomass_outliers 4D025!C2:C19",
+      "author_excluded_OD_cells": [],
+      "factor_summary_original_cells": {"A7": "4D025", "B7": "0.49778111557127852", "C7": "0.012487646488702557", "D7": "0.0062438232443512787", "E7": "4", "F7": "3"},
+      "raw_factor_coordinate": "raw_biomass_conversion; Data!D2:D13 and E2:E13",
+      "author_retained_factor_biological_replicate_ids": [1, 2, 3, 4],
+      "dilution_summary_original_cells": {"A7": "4D025", "B7": "0.2543201820522904", "C7": "0.0014921364031387889", "D7": "8", "E7": "6"},
+      "fixed_growth_rate_per_h": 0.2543201820522904,
+      "rate_summary_original_cells": {"A7": "4D025", "B7": "0.00039290451784479983", "C7": "5.2209165224627912e-05", "D7": "0.00035262759923190823", "E7": "0.00043462974448866577"},
+      "article_table2_lycopene_mean_nmol_per_gDCW_per_h": 392.9,
+      "conversion_inputs": {"lycopene_mean_mg_per_L": 0.12656887358250213, "OD600_mean": 0.30672222222222223, "biomass_factor_gDCW_per_L_per_OD600": 0.4977811155712785},
+      "calculated_biomass_gDW_per_L": 0.15268052994827938,
+      "value_mg_per_gDW": 0.8289784796095312
+    }
+  ],
+  "checks": {
+    "fixed_IDs_order_and_count_match": true,
+    "all_six_labels_finite_and_positive": true,
+    "source_row_IDs_joined_explicitly_not_by_magnitude": true,
+    "all_raw_HPLC_retained_means_SDs_counts_match_author_summary": true,
+    "all_raw_OD_values_match_author_outlier_workbook": true,
+    "all_OD_retained_means_SDs_counts_match_author_summary": true,
+    "all_biomass_factor_means_SDs_counts_match_author_grouped_raw_data": true,
+    "growth_values_equal_fixed_condition_inputs": true,
+    "all_author_rate_means_times_1e6_round_to_article_table2": true,
+    "independent_molecular_weight_matches_author_declared_units": true,
+    "rate_is_measured_pool_dilution_not_gross_pathway_flux": true,
+    "labels_use_mass_measurement_normalization_not_MC_summary_or_model_prediction": true,
+    "rate_summary_or_hypothesis_selected_for_performance": false,
+    "scoring_or_performance_comparison_performed": false
+  },
+  "execution_scope": {
+    "only_new_files_written": ["data/holdout_transfer/labels.json", "data/holdout_transfer/labels_manifest.json", "data/holdout_transfer/label_provenance.json"],
+    "existing_files_edited": [],
+    "training_model_code_config_dependencies_changed": false,
+    "legacy_product_parameters_opened": false,
+    "predictor_optimizer_or_parameter_fit_executed": false,
+    "author_MATLAB_or_MC_simulation_executed": false,
+    "new_code_or_documentation_files_created": false,
+    "maximum_HTTP_or_gh_subprocess_timeout_seconds": 30,
+    "tools_and_commands": ["read tool for the three allowed input/provenance specifications", "shasum -a 256 for frozen artifacts and allowed local data files", "gh api repository trees/contents with subprocess timeout=30", "HTTP retrieval with timeout=30", "Python standard-library in-memory XLSX XML parsing, hashing, arithmetic and summary validation", "existing pdftotext -layout - - for the primary supplement, without saving files", "write tool for only the three authorized JSON files", "git status --short to observe existing unrelated worktree changes"],
+    "source_access_issues_resolved": [
+      "Initial NIST C502658 URL returned HTTP 403; the canonical CAS=502-65-8 URL with a standard user agent returned the exact independent molecular weight.",
+      "PubChem property endpoint returned HTTP 503; it was not used as evidence. NIST and ChEBI supplied independent chemical identity evidence.",
+      "Publisher supplement URL returned HTTP 403; the original PDF was obtained from the Europe PMC supplementaryFiles archive and hashed."
+    ],
+    "blockers": []
+  },
+  "parent_actions": [
+    "Use this single, sealed set of six labels for every prespecified hypothesis; do not replace it with inverted Monte Carlo means or choose between label estimators after seeing scores.",
+    "Score only through the already frozen API without retraining, prediction changes, fits, exclusions, or hypothesis selection.",
+    "Preserve the intermediate-pool interpretation, author technical-replicate exclusions, mass-normalization/uncertainty limits, and incomplete operator-blinding history in reporting."
+  ]
+}

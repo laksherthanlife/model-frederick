@@ -1,0 +1,9 @@
+,pairs,mean_score,recovered,peer_definition
+0,4,-0.41716664405894643,0.5,panel target lists
+1-2,4,0.2302124292200029,0.25,panel target lists
+3-5,6,0.6916970243214792,1.0,panel target lists
+6+,0,,,panel target lists
+0,2,0.0036848749154642646,0.0,measured regulon movement
+1-2,5,-0.2677060702764925,0.4,measured regulon movement
+3-5,7,0.6762179840178051,1.0,measured regulon movement
+6+,0,,,measured regulon movement

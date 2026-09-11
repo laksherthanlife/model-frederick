@@ -1,0 +1,17 @@
+glucose_lower_bound_mmol_per_gdcw_h,oxygen_lower_bound_mmol_per_gdcw_h,regime,growth_at_zero_ngam_per_h,ethanol_at_zero_ngam_mmol_per_gdcw_h,ngam_slope_per_h_per_mmol_atp,ngam_slope_spread_relative,slope_linearity_growth_error_per_h,growth_assay_floor_per_h,slope_probes_used,top_slope_probe_mmol_atp_per_gdw_h,ethanol_at_top_probe_mmol_per_gdcw_h,regime_at_top_probe,slope_at_top_probe_per_h_per_mmol_atp,measured_total_ngam_mmol_atp_per_gdw_h,asserted_total_ngam_mmol_atp_per_gdw_h,growth_penalty_measured_percent,growth_penalty_asserted_percent,penalty_ratio_asserted_over_measured,no_growth_ngam_mmol_atp_per_gdw_h,slope_ratio_to_oxygen_unlimited,ablation_growth_error_at_measured_per_h,ablation_growth_error_at_asserted_per_h,ablation_over_growth_floor_at_asserted
+-1.0,-1000.0,respiratory,0.089094,0.0,0.004642,0.0,0.0,0.0117,5,10.0,0.0,respiratory,0.004642,1.64,7.2,8.55,37.52,4.39,19.19,1.0,0.0,0.0,0.0
+-1.0,-3.7,respiratory,0.089093,0.0,0.004642,0.239637,0.01463,0.0117,5,10.0,0.367,fermentative,0.006105,1.64,7.2,8.55,37.52,4.39,12.6,1.0,0.0,0.0,0.0
+-1.0,-2.0,fermentative,0.083319,0.145,0.010778,0.0,0.0,0.0117,4,7.2,1.252,fermentative,0.010778,1.64,7.2,21.21,93.14,4.39,7.73,2.322,0.010063,0.044179,3.776
+-1.0,-1.0,fermentative,0.052437,0.919,0.010778,0.0,0.0,0.0117,2,2.0,1.226,fermentative,0.010778,1.64,7.2,33.71,,,4.86,2.322,0.010063,0.044179,3.776
+-1.5,-1000.0,respiratory,0.13364,0.0,0.004642,0.0,0.0,0.0117,5,10.0,0.0,respiratory,0.004642,1.64,7.2,5.7,25.01,4.39,28.79,1.0,0.0,0.0,0.0
+-1.5,-3.7,respiratory,0.13364,0.0,0.004642,0.510426,0.048399,0.0117,5,10.0,1.213,fermentative,0.009482,1.64,7.2,5.7,48.37,8.491,13.6,1.0,0.0,0.0,0.0
+-1.5,-2.0,fermentative,0.094097,0.991,0.010778,0.0,0.0,0.0117,4,7.2,2.098,fermentative,0.010778,1.64,7.2,18.78,82.47,4.39,8.73,2.322,0.010063,0.044179,3.776
+-1.5,-1.0,fermentative,0.063215,1.765,0.010778,0.0,0.0,0.0117,3,5.0,2.534,fermentative,0.010778,1.64,7.2,27.96,,,5.86,2.322,0.010063,0.044179,3.776
+-10.0,-1000.0,respiratory,0.890935,0.0,0.004642,0.0,0.0,0.0117,5,10.0,0.0,respiratory,0.004642,1.64,7.2,0.85,3.75,4.39,191.92,1.0,0.0,0.0,0.0
+-10.0,-3.7,fermentative,0.329818,14.061,0.010778,0.0,0.0,0.0117,5,10.0,15.599,fermentative,0.010778,1.64,7.2,5.36,23.53,4.39,30.6,2.322,0.010063,0.044179,3.776
+-10.0,-2.0,fermentative,0.276688,15.386,0.010223,0.045847,0.004912,0.0117,5,10.0,16.915,fermentative,0.010715,1.64,7.2,6.16,27.82,4.516,25.73,2.202,0.009153,0.040183,3.434
+-10.0,-1.0,fermentative,0.23616,16.298,0.009759,0.002289,0.000224,0.0117,5,10.0,17.693,fermentative,0.009782,1.64,7.2,6.78,29.75,4.39,22.86,2.102,0.008392,0.036842,3.149
+-11.1,-1000.0,respiratory,0.988938,0.0,0.004642,0.0,0.0,0.0117,5,10.0,0.0,respiratory,0.004642,1.64,7.2,0.77,3.38,4.39,213.03,1.0,0.0,0.0,0.0
+-11.1,-3.7,fermentative,0.353529,15.923,0.010778,0.0,0.0,0.0117,5,10.0,17.461,fermentative,0.010778,1.64,7.2,5.0,21.95,4.39,32.8,2.322,0.010063,0.044179,3.776
+-11.1,-2.0,fermentative,0.298606,17.273,0.00986,0.064138,0.006757,0.0117,5,10.0,18.776,fermentative,0.010535,1.64,7.2,5.42,25.18,4.641,27.93,2.124,0.008558,0.03757,3.211
+-11.1,-1.0,fermentative,0.257631,18.191,0.009759,0.0,0.0,0.0117,5,10.0,19.584,fermentative,0.009759,1.64,7.2,6.21,27.27,4.39,25.06,2.102,0.008392,0.036842,3.149

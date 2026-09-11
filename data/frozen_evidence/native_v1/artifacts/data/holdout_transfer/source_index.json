@@ -1,0 +1,484 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "data/holdout_transfer/source_index.json",
+    "sha256": "6ad84e0aacea5b861d982b930f8f0b1eb6a5278c2899e36c416ad76d3826220b"
+  },
+  "payload": {
+    "author_repository": {
+      "commit_url": "https://github.com/SysBioengLab/BcarGRASP/commit/ec6f1290711fba8091e92c77da4a5684ff8cad4d",
+      "default_branch_at_retrieval": "main",
+      "license": null,
+      "license_note": "GitHub repository metadata returned license=null. Do not assume the article's CC-BY license independently establishes a repository-data license.",
+      "pinned_commit": "ec6f1290711fba8091e92c77da4a5684ff8cad4d",
+      "url": "https://github.com/SysBioengLab/BcarGRASP"
+    },
+    "blinding_audit": {
+      "incident": {
+        "asset_id": "local_legacy_provenance_note",
+        "dataset_and_six_condition_selection_preceded_exposure": true,
+        "description": "A read intended to retrieve upstream provenance-table rows also included the immediately following cross-check prose, which contained numeric product-rate outcomes. Those values are deliberately not reproduced here or in condition_records.json.",
+        "exposed_line_numbers": [
+          31,
+          32
+        ],
+        "path": "data/carotenoid/SOURCE.md",
+        "response": "The exposure was promptly disclosed to the parent. The note was not read further. Subsequent source checks used structured Methods, verified genotype fields, header-only schemas, and condition/growth column projections."
+      },
+      "no_predictions_read_or_run": true,
+      "no_product_fit_or_parameter_tuning": true,
+      "no_product_outcome_values_in_created_artifacts": true,
+      "no_product_values_used_for_condition_or_dataset_selection": true,
+      "no_product_values_used_to_estimate_growth_or_nacl_or_genotype": true,
+      "no_training_or_checkpoint_contents_read_or_changed": true,
+      "parent_action_required": "Do not describe this curator session as strictly blinded, and do not forward its tool-output context to the predictor. If strict curator-level blinding is required, independently revalidate the deterministic six-condition packet in a fresh outcome-blind session using the allowlisted Methods/condition/genotype projections and avoiding the mixed provenance note. Resolve this audit issue before treating the evaluation as fully blinded.",
+      "strict_outcome_blind_curator_session": false
+    },
+    "condition_asset": {
+      "assembly_note": "The parent assembles final conditions.json with the independently prepared chemistry path and hash. No chemistry file, model, configuration, training asset, checkpoint, or label was edited by this curator.",
+      "format": "intermediate_condition_curation",
+      "path": "data/holdout_transfer/condition_records.json",
+      "sha256": "198c1cbc7dd6e89bacc6ed4763f891bf9bbcb7f0592582da0c533e56fae3cd82",
+      "source_id": "holdout-transfer:elizondo2025:six-chemostats:condition-records:v1"
+    },
+    "condition_id_mapping": [
+      {
+        "construction_strain": "beta-Car2.1",
+        "experiment_id": "elizondo2025_2D01",
+        "growth_rate_per_h": 0.10098798657810984,
+        "growth_rate_se_per_h": 0.0015733978711242665,
+        "growth_source": "author_dilution_workbook; Statistics!A2:C2; strainConditions=2D01; Mean [1/h] and SE [1/h]",
+        "later_scorer_row_locator": "author_fluxes_biomass_workbook; Lycopene!A2:E2; StrainCondition=2D01; local_steady_states_tsv line 2",
+        "local_condition_fields": "local_steady_states_tsv line 2; condition, strain, mu_per_h, mu_se_per_h only",
+        "local_strain_field": "b-car2",
+        "nominal_dilution_rate_per_h": 0.1,
+        "source_condition_id": "2D01"
+      },
+      {
+        "construction_strain": "beta-Car2.1",
+        "experiment_id": "elizondo2025_2D025",
+        "growth_rate_per_h": 0.2543201820522904,
+        "growth_rate_se_per_h": 0.0014921364031387889,
+        "growth_source": "author_dilution_workbook; Statistics!A3:C3; strainConditions=2D025; Mean [1/h] and SE [1/h]",
+        "later_scorer_row_locator": "author_fluxes_biomass_workbook; Lycopene!A3:E3; StrainCondition=2D025; local_steady_states_tsv line 3",
+        "local_condition_fields": "local_steady_states_tsv line 3; condition, strain, mu_per_h, mu_se_per_h only",
+        "local_strain_field": "b-car2",
+        "nominal_dilution_rate_per_h": 0.25,
+        "source_condition_id": "2D025"
+      },
+      {
+        "construction_strain": "beta-Car3",
+        "experiment_id": "elizondo2025_3D01",
+        "growth_rate_per_h": 0.10098798657810984,
+        "growth_rate_se_per_h": 0.0015733978711242665,
+        "growth_source": "author_dilution_workbook; Statistics!A4:C4; strainConditions=3D01; Mean [1/h] and SE [1/h]",
+        "later_scorer_row_locator": "author_fluxes_biomass_workbook; Lycopene!A4:E4; StrainCondition=3D01; local_steady_states_tsv line 4",
+        "local_condition_fields": "local_steady_states_tsv line 4; condition, strain, mu_per_h, mu_se_per_h only",
+        "local_strain_field": "b-car3",
+        "nominal_dilution_rate_per_h": 0.1,
+        "source_condition_id": "3D01"
+      },
+      {
+        "construction_strain": "beta-Car3",
+        "experiment_id": "elizondo2025_3D025",
+        "growth_rate_per_h": 0.2543201820522904,
+        "growth_rate_se_per_h": 0.0014921364031387889,
+        "growth_source": "author_dilution_workbook; Statistics!A5:C5; strainConditions=3D025; Mean [1/h] and SE [1/h]",
+        "later_scorer_row_locator": "author_fluxes_biomass_workbook; Lycopene!A5:E5; StrainCondition=3D025; local_steady_states_tsv line 5",
+        "local_condition_fields": "local_steady_states_tsv line 5; condition, strain, mu_per_h, mu_se_per_h only",
+        "local_strain_field": "b-car3",
+        "nominal_dilution_rate_per_h": 0.25,
+        "source_condition_id": "3D025"
+      },
+      {
+        "construction_strain": "beta-Car4.b",
+        "experiment_id": "elizondo2025_4D01",
+        "growth_rate_per_h": 0.10098798657810984,
+        "growth_rate_se_per_h": 0.0015733978711242665,
+        "growth_source": "author_dilution_workbook; Statistics!A6:C6; strainConditions=4D01; Mean [1/h] and SE [1/h]",
+        "later_scorer_row_locator": "author_fluxes_biomass_workbook; Lycopene!A6:E6; StrainCondition=4D01; local_steady_states_tsv line 6",
+        "local_condition_fields": "local_steady_states_tsv line 6; condition, strain, mu_per_h, mu_se_per_h only",
+        "local_strain_field": "b-car4",
+        "nominal_dilution_rate_per_h": 0.1,
+        "source_condition_id": "4D01"
+      },
+      {
+        "construction_strain": "beta-Car4.b",
+        "experiment_id": "elizondo2025_4D025",
+        "growth_rate_per_h": 0.2543201820522904,
+        "growth_rate_se_per_h": 0.0014921364031387889,
+        "growth_source": "author_dilution_workbook; Statistics!A7:C7; strainConditions=4D025; Mean [1/h] and SE [1/h]",
+        "later_scorer_row_locator": "author_fluxes_biomass_workbook; Lycopene!A7:E7; StrainCondition=4D025; local_steady_states_tsv line 7",
+        "local_condition_fields": "local_steady_states_tsv line 7; condition, strain, mu_per_h, mu_se_per_h only",
+        "local_strain_field": "b-car4",
+        "nominal_dilution_rate_per_h": 0.25,
+        "source_condition_id": "4D025"
+      }
+    ],
+    "genotype_citation": {
+      "article_number": "578793",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7556307/",
+      "authors": [
+        "J. Lopez",
+        "D. Bustos",
+        "C. Camilo",
+        "N. Arenas",
+        "P. A. Saa",
+        "E. Agosin"
+      ],
+      "doi": "10.3389/fbioe.2020.578793",
+      "evidence_locations": [
+        "Methods: Yeast Strains Construction, JATS S4.SS2",
+        "Table 1, JATS T1, section A"
+      ],
+      "journal": "Frontiers in Bioengineering and Biotechnology",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "pmcid": "PMC7556307",
+      "pmid": "33102463",
+      "structured_source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7556307/fullTextXML",
+      "title": "Engineering Saccharomyces cerevisiae for the Overproduction of beta-Ionone and Its Precursor beta-Carotene",
+      "use_restriction": "Construction/genotype provenance only. The earlier shake-flask production experiment is not the selected holdout experiment.",
+      "volume": "8",
+      "year": 2020
+    },
+    "genotype_evidence": {
+      "chemistry_context_for_parent": "These are beta-carotene-pathway strains containing CrtYB as well as CrtE and CrtI, with intracellular lycopene measured as an intermediate. They are not terminal lycopene-only constructs. The selected Table 1 lineages do not include the later tHMG1 or CCD1 additions. Copy counts do not imply quantitative enzyme activity, gene-dose-to-flux scaling, or a calibrated product capacity.",
+      "copy_number_derivation": "Count explicit gene-bearing integrations in Table 1, following its Parental strain links. Do not infer copies from the numeric part of a strain name, expression measurements, or production performance.",
+      "donor_as_reported_in_2025": "Phaffia rhodozyma",
+      "lineages": [
+        {
+          "construction_strain": "beta-Car2.1",
+          "dataset_strain": "b-car2",
+          "new_integration": {
+            "XI-5": [
+              "CrtE",
+              "CrtYB",
+              "CrtI"
+            ]
+          },
+          "parent": "CEN.PK2-1c",
+          "total_integrated_gene_copies": {
+            "CrtE": 1,
+            "CrtI": 1,
+            "CrtYB": 1
+          }
+        },
+        {
+          "construction_strain": "beta-Car3",
+          "dataset_strain": "b-car3",
+          "new_integration": {
+            "XI-3": [
+              "CrtE",
+              "CrtYB",
+              "CrtI"
+            ]
+          },
+          "parent": "beta-Car2.1",
+          "total_integrated_gene_copies": {
+            "CrtE": 2,
+            "CrtI": 2,
+            "CrtYB": 2
+          }
+        },
+        {
+          "construction_strain": "beta-Car4.b",
+          "dataset_strain": "b-car4",
+          "new_integration": {
+            "X-2": [
+              "CrtE",
+              "CrtYB"
+            ]
+          },
+          "parent": "beta-Car3",
+          "total_integrated_gene_copies": {
+            "CrtE": 3,
+            "CrtI": 2,
+            "CrtYB": 3
+          }
+        }
+      ],
+      "parental_genotype_source": "PMC7556307 Methods S4.SS2 and Table 1: CEN.PK2-1c, MATa ura3-52 trp1-289 leu2-3,112 his3Delta; Delta is an ASCII rendering of the published deletion symbol.",
+      "study_to_construction_identity_source": "PMC12455641 Methods 2.1.1 explicitly names beta-car2.1, beta-car3 and beta-car4.b and renames them beta-car2, beta-car3 and beta-car4.",
+      "table_schema_read": [
+        "Strain",
+        "Parental strain",
+        "Genotype",
+        "Integration site (Chr-Site)"
+      ],
+      "transcription_unit_notation": "The construction table uses PTEF1-CrtE-TADH1, PPGK1-CrtYB-TCYC and PTDH3-CrtI-TCYC. The 2025 Methods names the corresponding constitutive promoters TEF1, PGK1 and TDH3 and terminators ADH1 or CYC1."
+    },
+    "original_assets": [
+      {
+        "asset_id": "local_steady_states_tsv",
+        "contains_outcome_columns": true,
+        "forward_original_to_predictor": false,
+        "header_only_read": true,
+        "local_absolute_path": "data/carotenoid/elizondo2025_steady_states.tsv",
+        "original_file_path": "data/carotenoid/elizondo2025_steady_states.tsv",
+        "outcome_column_values_read": false,
+        "permitted_projection_read": [
+          "condition",
+          "strain",
+          "mu_per_h",
+          "mu_se_per_h"
+        ],
+        "role": "Existing local transcription, not the primary authority for protocol or construct identity",
+        "sha256": "e4a6f292e3f92010c9d681832c1978e0aa064e111ead700adbfdbfeb7639ef17"
+      },
+      {
+        "asset_id": "local_legacy_provenance_note",
+        "contains_outcomes": true,
+        "forward_original_to_predictor": false,
+        "local_absolute_path": "data/carotenoid/SOURCE.md",
+        "original_file_path": "data/carotenoid/SOURCE.md",
+        "outcome_exposure": "An attempted provenance-only read unexpectedly included outcome-rate values at lines 31-32. See blinding_audit. Do not open this note in a blinded predictor or reviewer session.",
+        "role": "Discovery pointer only; mixed provenance/outcome text",
+        "sha256": "8f9974fdae761a0c6b85e86a02a6b9e2ea386f81ba5862eb0354a16bb12fea85"
+      },
+      {
+        "asset_id": "author_fluxes_biomass_workbook",
+        "contains_outcome_columns": true,
+        "forward_original_to_predictor": false,
+        "local_saved_copy": null,
+        "original_file_path": "SysBioengLab/BcarGRASP:data_pre-processing/fluxes/output/FluxesBiomassStatistics.xlsx",
+        "outcome_column_values_read": false,
+        "permitted_data_projection_read": {
+          "columns": [
+            "StrainCondition"
+          ],
+          "sheet": "Lycopene"
+        },
+        "role": "Author-released experimentally derived specific-rate summary; primary future-scorer asset",
+        "schema_access": "Excel sheet names and header rows only; data rows projected exclusively to Lycopene/StrainCondition",
+        "sha256": "20881f0498bbdf110f886e89267b0b7814de35b260a8689da8acadfed90778c9",
+        "url": "https://raw.githubusercontent.com/SysBioengLab/BcarGRASP/ec6f1290711fba8091e92c77da4a5684ff8cad4d/data_pre-processing/fluxes/output/FluxesBiomassStatistics.xlsx"
+      },
+      {
+        "asset_id": "author_dilution_workbook",
+        "contains_product_outcomes": false,
+        "growth_input_policy": "Use the author workbook's reported mean in 1/h. The local TSV is rounded; its values were not used instead of the higher-precision original. No missing growth value was replaced by zero.",
+        "local_saved_copy": null,
+        "original_file_path": "SysBioengLab/BcarGRASP:data_pre-processing/fluxes/output/DilutionRatesStatistics.xlsx",
+        "permitted_data_projection_read": {
+          "columns": [
+            "strainConditions",
+            "Mean [1/h]",
+            "SE [1/h]"
+          ],
+          "sheet": "Statistics"
+        },
+        "role": "Author-released condition growth/dilution rates",
+        "sha256": "7a68aebe25cada6319299c648ecb4e1914d8584bb3b9d08bd84bcf715f3f73b7",
+        "url": "https://raw.githubusercontent.com/SysBioengLab/BcarGRASP/ec6f1290711fba8091e92c77da4a5684ff8cad4d/data_pre-processing/fluxes/output/DilutionRatesStatistics.xlsx"
+      },
+      {
+        "accessed_content": "Bibliographic/license metadata, section structure, selected direct Methods paragraphs from sec2.1.1, sec2.1.2 and sec2.1.4, Data Availability Statement, bibliography references, table header schemas, and the sec2.1.1 figure caption without numeric product outcomes. No Results-body or abstract text was displayed.",
+        "asset_id": "primary_article_jats",
+        "contains_outcomes": true,
+        "forward_original_to_predictor": false,
+        "local_saved_copy": null,
+        "original_file_path": "EuropePMC:PMC12455641/fullTextXML",
+        "role": "Primary protocol, readout definition, and repository attribution",
+        "sha256": "562ff19cbf449fe2f20721b94d33f9a7a209d12bb57141721cf9a29e8d11f6e1",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12455641/fullTextXML"
+      },
+      {
+        "accessed_content": "Bibliographic/license metadata, section structure, Methods S4.SS2, and Table 1's verified strain/parent/genotype/integration-site schema and fields. No Results-body or abstract text was displayed.",
+        "asset_id": "construction_article_jats",
+        "contains_outcomes": true,
+        "forward_original_to_predictor": false,
+        "local_saved_copy": null,
+        "original_file_path": "EuropePMC:PMC7556307/fullTextXML",
+        "role": "Explicit strain genealogy and integration/genotype fields",
+        "sha256": "a6c3221e45acdffb007e61fd9d6932689d5eb4fdc02e578459f517eb70f04c47",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7556307/fullTextXML"
+      }
+    ],
+    "outcome_schema_for_later_scorer": {
+      "article_table_schema": {
+        "header_group": "production rate (nmol/gDCW/h) / lycopene",
+        "location": "PMC12455641 Table 2, JATS tbl2",
+        "note": "This display unit differs from the original workbook's mmol unit. Only the table header schema was inspected, not its product data cells.",
+        "subcolumns": [
+          "mean",
+          "95% CI"
+        ],
+        "unit": "nmol/(gDCW*h)"
+      },
+      "condition_key_column": "StrainCondition",
+      "condition_key_excel_column": "A",
+      "conversion_required_for_mg_per_gDW": {
+        "biological_basis": "Methods 2.1.4 describes the carotenoid drain as intracellular membrane accumulation at steady state, estimated from carotenoid content and biomass. For a retained intracellular pool under balanced growth, q = mu * content on a molar/dry-mass basis.",
+        "conversion_or_labels_computed_in_this_phase": false,
+        "formula_for_workbook_units": "content_mg_per_gDW = q_lycopene_mmol_per_gDCW_per_h * lycopene_molecular_mass_mg_per_mmol / growth_rate_per_h",
+        "limitations": "This is a dilution-balance conversion of the measured intracellular pool, not an estimate of total gross lycopene biosynthesis before downstream conversion. No broth density, biomass concentration, extraction recovery, or OD conversion needs to be invented when starting from the already biomass-specific author rate. Growth uncertainty and its dependence with the derived rate require appropriate later-scorer treatment; independent uncertainties must not be assumed silently.",
+        "reported_quantity": "Specific intracellular-product accumulation rate, not already mg/gDW and not a point fermentation titre",
+        "required_inputs": [
+          "The lycopene rate field, read only by the later scorer after prediction sealing",
+          "The matching condition's published growth/dilution rate from author_dilution_workbook",
+          "The molecular mass from the separately curated and frozen chemistry asset, with its units made explicit"
+        ],
+        "required_target_basis": "mg/gDW",
+        "unit_equivalences": "gDCW and gDW both denote dry-cell mass. Molecular mass in g/mol is numerically equal to mg/mmol. If the rounded article table in nmol/(gDCW*h) is used instead, first multiply its rate by 1e-6 to obtain mmol/(gDCW*h)."
+      },
+      "embargo": "Locations, column names and units only. Reading outcomes, computing labels, and scoring are a separate phase after predictions are sealed. Do not pass mixed original assets to the predictor.",
+      "fields": [
+        {
+          "column": "Mean [mmol/gDCWh]",
+          "excel_column": "B",
+          "meaning": "Specific net intracellular-lycopene accumulation/dilution rate mean",
+          "unit": "mmol/(gDCW*h)"
+        },
+        {
+          "column": "SE [mmol/gDCWh]",
+          "excel_column": "C",
+          "meaning": "Standard error of the specific rate",
+          "unit": "mmol/(gDCW*h)"
+        },
+        {
+          "column": "Lower CI 95% [mmol/gDCWh]",
+          "excel_column": "D",
+          "meaning": "Lower 95% confidence bound",
+          "unit": "mmol/(gDCW*h)"
+        },
+        {
+          "column": "Upper CI 95% [mmol/gDCWh]",
+          "excel_column": "E",
+          "meaning": "Upper 95% confidence bound",
+          "unit": "mmol/(gDCW*h)"
+        }
+      ],
+      "local_transcription_schema": {
+        "asset_id": "local_steady_states_tsv",
+        "condition_key_column": "condition",
+        "delimiter": "tab",
+        "fields": [
+          {
+            "column": "q_lycopene",
+            "unit": "mmol/(gDCW*h)",
+            "upstream_column": "Mean [mmol/gDCWh]"
+          },
+          {
+            "column": "q_lycopene_lo95",
+            "unit": "mmol/(gDCW*h)",
+            "upstream_column": "Lower CI 95% [mmol/gDCWh]"
+          },
+          {
+            "column": "q_lycopene_hi95",
+            "unit": "mmol/(gDCW*h)",
+            "upstream_column": "Upper CI 95% [mmol/gDCWh]"
+          }
+        ],
+        "verification_limit": "Header and provenance mapping only. No numeric outcome equivalence check between local transcription and author workbook was performed in this phase; prefer the pinned, hashed original author workbook for later scoring."
+      },
+      "preferred_asset_id": "author_fluxes_biomass_workbook",
+      "sheet": "Lycopene"
+    },
+    "primary_citation": {
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12455641/",
+      "author_repository_link_evidence": "Data Availability Statement, JATS section _adda93_, explicitly links https://github.com/SysBioengLab/BcarGRASP.",
+      "authors": [
+        "Benjamin R. Elizondo",
+        "Pedro A. Saa"
+      ],
+      "doi": "10.1021/acssynbio.5c00256",
+      "doi_url": "https://doi.org/10.1021/acssynbio.5c00256",
+      "issue": "9",
+      "journal": "ACS Synthetic Biology",
+      "license": "CC-BY-4.0",
+      "license_evidence": "Article front/article-meta/permissions states: This article is licensed under CC-BY 4.0.",
+      "pmcid": "PMC12455641",
+      "pmid": "40891387",
+      "structured_source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12455641/fullTextXML",
+      "title": "Complex Kinetic Models Predict beta-Carotene Production and Reveal Flux Limitations in Recombinant Saccharomyces cerevisiae Strains",
+      "volume": "14",
+      "year": 2025
+    },
+    "protocol_evidence": {
+      "added_nacl": {
+        "added_nacl_molar": 0.0,
+        "curation_inference": "Zero is assigned from absence of an extra NaCl intervention in that enumerated recipe, not from a strain or condition-name heuristic. This is an explicit protocol-completeness inference, not a measured zero-salt result.",
+        "evidence": "The complete enumerated cultivation recipe/interventions in Methods 2.1.1 consist of 1x named YNB, the listed auxotrophic supplements, glucose, ammonium sulfate, aeration, temperature/agitation control, and NaOH pH control. No NaCl addition or osmotic challenge is part of that protocol.",
+        "limitations": "Zero does not mean zero basal sodium, zero ionic strength, or zero osmolarity. The named basal medium contains salts and the protocol includes NaOH. Supplement doses and a YNB catalogue number are not stated; total medium sodium/osmolality cannot be reconstructed.",
+        "meaning": "Additional NaCl perturbation above the reported basal cultivation medium"
+      },
+      "agitation_rpm": 200,
+      "airflow_L_per_min": 0.3,
+      "balanced_growth_readout": {
+        "growth_source": "Methods 2.1.4 states that specific growth rate corresponds to dilution rate in a chemostat cultivation. Numeric condition inputs come from the original author dilution-rate workbook, not from fitting product data.",
+        "justification": "Glucose-limited continuous cultures sampled after five residence times provide the reported steady-state/balanced-growth basis for intracellular content. No batch endpoint or unvalidated fed-batch segment is reclassified as balanced growth.",
+        "limitation": "The classification relies on the reported chemostat protocol; this curation did not inspect target biomass/product time series to independently test stabilization.",
+        "readout_basis": "balanced_growth_intracellular_content",
+        "sample_processing": "Carotenoids were extracted from centrifuged cell pellets and lycopene and beta-carotene were separated and measured by HPLC, Methods 2.1.2.",
+        "sampling_quote": "Sampling was performed after 5 residence times. Intracellular carotenoids, extracellular metabolites, and intracellular RNA were sampled in technical triplicates.",
+        "sampling_source": "PMC12455641 Methods 2.1.2, JATS sec2.1.2, first direct paragraph"
+      },
+      "cultivation_mode": "carbon-limited aerobic stirred-tank bioreactors in continuous mode",
+      "cultivation_source": "PMC12455641 Methods 2.1.1, JATS sec2.1.1, second direct paragraph",
+      "medium": {
+        "ammonium_sulfate_g_per_L": 5,
+        "auxotrophic_supplement_concentrations": null,
+        "auxotrophic_supplements_as_reported": [
+          "histidine",
+          "leucine",
+          "tryptophan",
+          "methionine",
+          "uracil"
+        ],
+        "basal_medium_as_reported": "Yeast Nitrogen Base w/o AA, Carbohydrate & w/o AS (US Biologicals), used at 1x concentration",
+        "basal_medium_catalog_number": null,
+        "carbon_evidence": "Methods explicitly identifies glucose as the carbon source and the cultures as carbon-limited. Glucose classification is not inferred from a title, condition suffix, or construct dose. Amino-acid/base supplementation is disclosed rather than represented as a chemically carbon-free background.",
+        "carbon_input_classification": "glucose",
+        "glucose_feed_g_per_L": 12
+      },
+      "native_context_assumption": "Frozen DS28911/W303 growth-dependent glucose/O2 exchange curves and native glycerol commitments are extrapolated to supplemented-YNB CEN.PK2-1c-derived strains. No cross-strain or medium equivalence is established by this dataset curation. Target-study uptake, byproduct, transcript, and carotenoid measurements must not be substituted into or used to tune these native priors.",
+      "nominal_dilution_rates_per_h": [
+        0.1,
+        0.25
+      ],
+      "organism": "Saccharomyces cerevisiae",
+      "pH": 5.0,
+      "pH_control": "Addition of 1 M NaOH solution",
+      "reported_dissolved_oxygen_lower_bound_ppm": 2.7,
+      "temperature_C": 30,
+      "temperature_tolerance_C": 0.5,
+      "working_volume_mL": 500
+    },
+    "remaining_limitations": [
+      "Only a feasible balanced-growth intracellular-content envelope in mg/gDW is the requested prediction target; neither these conditions nor the source establish a point-titre prediction contract.",
+      "CEN.PK2-1c strains and supplemented YNB are outside an assumption of exact identity to native DS28911/W303 priors; this extrapolation is explicit in every condition record.",
+      "Gene-copy differences are descriptive experimental metadata. No fitted expression, catalytic capacity, or strain-specific product constant is supplied; conditions sharing growth/media may therefore share the same native resource envelope.",
+      "All remote original-byte hashes identify the retrieved representations, which were parsed in memory and not saved as additional local files. Author workbooks are pinned to a commit; Europe PMC XML endpoints are not immutable archives.",
+      "No labels, score, target concentrations, product-rate values, or performance comparisons are contained in these two new assets."
+    ],
+    "role": "Condition provenance and later-scorer schema index; not an outcome-label file or a predictor input table",
+    "schema_version": 1,
+    "scope": "evaluation_task",
+    "selected_dataset_identity": {
+      "all_conditions_retained": true,
+      "condition_count": 6,
+      "dataset_id": "elizondo2025_six_glucose_limited_aerobic_chemostats",
+      "description": "The three recombinant strains beta-car2, beta-car3 and beta-car4, each cultivated at the two dilution settings in Methods 2.1.1. The author's Lycopene workbook sheet contains exactly the six corresponding StrainCondition identifiers.",
+      "excluded_condition_ids": [],
+      "experimental_replicate_structure": "Intracellular carotenoids sampled in technical triplicates, Methods 2.1.2. Six condition-level records are retained; technical measurements are not presented as additional independently chosen conditions.",
+      "not_selected": [
+        "The earlier 72-hour YPD shake-flask experiment reproduced in Figure 2b is not this chemostat experiment and is not relabeled as balanced growth.",
+        "The repository's model simulations, kinetic ensembles, and production-scenario predictions are not experimental holdout labels.",
+        "The unrelated local published_batch_titres.tsv compilation is not part of this selection."
+      ],
+      "selection_basis": "Authoritative experimental protocol and presence of an intracellular-lycopene measurement schema at chemostat steady state, not target magnitudes, model predictions, or fitted constants.",
+      "source_condition_ids_in_order": [
+        "2D01",
+        "2D025",
+        "3D01",
+        "3D025",
+        "4D01",
+        "4D025"
+      ],
+      "unsupported_condition_ids_on_protocol_or_carbon_basis": [],
+      "unsupported_note": "No condition was dropped. All six have an explicitly glucose-limited continuous-culture protocol and published dilution measurements. This establishes readout/carbon compatibility, not validation of cross-strain native-prior transfer."
+    }
+  },
+  "schema_version": 1
+}

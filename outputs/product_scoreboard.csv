@@ -1,0 +1,5 @@
+product,status,n_states,median_abs_error_pct,worst_fold,detail
+beta_carotene,SCORED,6,23.505445933859054,2.1256714982846048,leave-one-strain-out; no product measurement of the held-out strain enters anywhere
+lycopene,SCORED,6,67.18116472595968,3.0080644116208406,leave-one-strain-out; no product measurement of the held-out strain enters anywhere
+phb,CANNOT SCORE,11,,,"q_phb is content x mu to 4.7e-06 on all 11 states, so content = q/mu returns its own input. No expression series exists either, which is why spec.calibratable is False"
+glycogen,REFUSED AT SOLVE,0,,,"node 'glycogen' is declared DEGRADED -- a native enzyme consumes it -- and no degradation_rate_per_h was supplied for it. Solving without one returns content = flux/mu, which omits that outlet entirel"

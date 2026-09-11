@@ -1,0 +1,59 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/native_training_run_02/read_audit.json",
+    "sha256": "7f83a82d46d229c4795db2f08be7efb8a0b32a954f4444cec407083770ef3174"
+  },
+  "payload": {
+    "loaded_project_modules": [
+      "scripts/run_native_training.py",
+      "src/ystwin/__init__.py",
+      "src/ystwin/analysis/__init__.py",
+      "src/ystwin/analysis/hog_data.py",
+      "src/ystwin/analysis/hog_learning.py",
+      "src/ystwin/analysis/native_physiology.py",
+      "src/ystwin/analysis/training_freeze.py",
+      "src/ystwin/mech/__init__.py",
+      "src/ystwin/mech/hog.py",
+      "src/ystwin/mech/kinetic_sbml.py",
+      "src/ystwin/paths.py"
+    ],
+    "phase": "freeze_integrity_check",
+    "reads": {
+      "freeze_integrity_check:data/gem/ecYeastGEM_batch.xml.gz": 1,
+      "freeze_integrity_check:data/hog2013/methods.pdf": 1,
+      "freeze_integrity_check:data/hog2013/model_wt.xml": 1,
+      "freeze_integrity_check:data/hog2013/native_training_protocol.json": 1,
+      "freeze_integrity_check:data/hog2013/observations.xls": 1,
+      "freeze_integrity_check:data/hog2013/sources.json": 1,
+      "freeze_integrity_check:data/physiology/chemostatData_VanHoek1998.tsv": 1,
+      "freeze_integrity_check:pyproject.toml": 1,
+      "freeze_integrity_check:scripts/evaluate_frozen_transfer.py": 1,
+      "freeze_integrity_check:scripts/run_native_training.py": 1,
+      "freeze_integrity_check:src/ystwin/__init__.py": 1,
+      "freeze_integrity_check:src/ystwin/analysis/__init__.py": 1,
+      "freeze_integrity_check:src/ystwin/analysis/blind_transfer.py": 1,
+      "freeze_integrity_check:src/ystwin/analysis/hog_data.py": 1,
+      "freeze_integrity_check:src/ystwin/analysis/hog_learning.py": 1,
+      "freeze_integrity_check:src/ystwin/analysis/native_physiology.py": 1,
+      "freeze_integrity_check:src/ystwin/analysis/training_freeze.py": 1,
+      "freeze_integrity_check:src/ystwin/fba/__init__.py": 1,
+      "freeze_integrity_check:src/ystwin/fba/chemical_task.py": 1,
+      "freeze_integrity_check:src/ystwin/fba/dynamic_rates.py": 1,
+      "freeze_integrity_check:src/ystwin/fba/native_obligations.py": 1,
+      "freeze_integrity_check:src/ystwin/fba/physiology.py": 1,
+      "freeze_integrity_check:src/ystwin/fba/solver.py": 1,
+      "freeze_integrity_check:src/ystwin/mech/__init__.py": 1,
+      "freeze_integrity_check:src/ystwin/mech/hog.py": 1,
+      "freeze_integrity_check:src/ystwin/mech/kinetic_sbml.py": 1,
+      "freeze_integrity_check:src/ystwin/paths.py": 1,
+      "native_modeling:data/hog2013/methods.pdf": 1,
+      "native_modeling:data/hog2013/model_wt.xml": 2,
+      "native_modeling:data/hog2013/observations.xls": 1,
+      "native_modeling:data/hog2013/sources.json": 2,
+      "native_modeling:data/physiology/chemostatData_VanHoek1998.tsv": 1
+    },
+    "scope": "Python audit events for project-local file reads/writes; interpreter libraries are separate, not an OS sandbox or a claim about arbitrary native-code I/O"
+  },
+  "schema_version": 1
+}

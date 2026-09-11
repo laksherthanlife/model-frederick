@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "source": {
+    "authority": "User-authorized UNVERIFIED redox hypothesis, not established fungal enzymology",
+    "source_id": "holdout-transfer:user-authorized-redox-hypothesis:oxygen-peroxide:v1",
+    "reference": "assumption_status=unverified_user_authorized_hypothesis; user_authorized_hypothesis=true; manifest.json#variants/1. C40H64 + 4 O2 -> C40H56 + 4 H2O2 is a declared, unverified fungal acceptor/product hypothesis. Relaxed intermediate-accumulation capacity upper bound; strict chemistry remains blocked. No outcome-based selection or new detoxification shortcut.",
+    "scope": "evaluation_task"
+  },
+  "task": {
+    "metabolites": [
+      {
+        "id": "task_intermediate_c",
+        "formula": "C40H64",
+        "charge": 0,
+        "compartment": "c"
+      },
+      {
+        "id": "task_output_c",
+        "formula": "C40H56",
+        "charge": 0,
+        "compartment": "c"
+      }
+    ],
+    "reactions": [
+      {
+        "id": "task_extension",
+        "stoichiometry": [
+          ["s_0190[c]", -1],
+          ["s_0943[c]", -1],
+          ["s_0189[c]", 1],
+          ["s_0633[c]", 1]
+        ],
+        "source": "Independently curated precursor reaction: IUBMB EC 2.5.1.29; native BTS1/Q12051 reaction; Phaffia CrtE construct in DOI:10.1021/acssynbio.5c00256 Methods 2.1.1 and DOI:10.3389/fbioe.2020.578793 Table 1. In this user-authorized hypothesis, cytosolic aggregation and missing heterologous enzyme constraints are common upper-bound relaxations; no gene-copy scaling is supplied.",
+        "enzyme_id": null,
+        "kcat_per_s": null
+      },
+      {
+        "id": "task_condensation",
+        "stoichiometry": [
+          ["s_0189[c]", -2],
+          ["task_intermediate_c", 1],
+          ["s_0633[c]", 2]
+        ],
+        "source": "Independently curated CrtYB phytoene-synthase reaction: IUBMB EC 2.5.1.32 and reviewed fungal Q7Z859/RHEA:34475 with experimental provenance PMID:10589832; construct documented in the unchanged strict evidence. This hypothesis omits the same CrtYB downstream cyclase consumption as a declared relaxation in all variants; it is not a terminal-producer reconstruction.",
+        "enzyme_id": null,
+        "kcat_per_s": null
+      },
+      {
+        "id": "task_desaturation",
+        "stoichiometry": [
+          ["task_intermediate_c", -1],
+          ["s_1275[c]", -4],
+          ["task_output_c", 1],
+          ["s_0837[c]", 4]
+        ],
+        "source": "UNVERIFIED USER-AUTHORIZED HYPOTHESIS: C40H64 + 4 O2 -> C40H56 + 4 H2O2, using native cytosolic dioxygen and hydrogen-peroxide pools. Direct oxygen use and peroxide release by the actual fungal CrtI, catalytic coupling and thermodynamics are NOT established. No new detoxification reaction or peroxide drain is added. See manifest.json#variants/1; neither the bacterial oxygen study nor successful installation validates this fungal reaction.",
+        "enzyme_id": null,
+        "kcat_per_s": null
+      }
+    ],
+    "output_metabolite_id": "task_output_c",
+    "enzymes": [],
+    "protein_pool_metabolite_id": null
+  }
+}

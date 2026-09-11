@@ -1,0 +1,311 @@
+{
+  "schema_version": 1,
+  "document_type": "independent_phase_c_integrity_and_sequence_verification_not_scoring",
+  "review_id": "granados-sfp1-development-phase-c-verification-01",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "sealed_freeze_verdict": "PASS",
+  "phase_c_release_status": "ISSUED_AND_INDEPENDENTLY_SOURCE_VERIFIED",
+  "phase_c_release_verdict": "PASS",
+  "response_projection_verdict": "PASS",
+  "observation_transformation_verdict": "PASS",
+  "registered_observation_coverage": "COMPLETE_FOR_BOTH_DEV_GROUPS",
+  "scorer_adapter_verification": "SEPARATE_NOT_PERFORMED_BY_THIS_SOURCE_REVIEW",
+  "strong_biological_claim_authorized": false,
+  "independent_law_ready": false,
+  "scope": {
+    "only_file_created_or_modified": "data/native_law_v2/development_phase_c_verification.json",
+    "task": "Check the sealed freeze, typed references, complete inventory and phase sequence before scoring. After a matching custody release exists, independently replay only rep4/rep5 response frames 50-73 and the frozen cohort/measurement adapter.",
+    "parent_authorization": "Parent explicitly authorized inspection of the now-issued phase-C responses for rep4/rep5 frames 50-73. The actual decision, request, manifest, event and freeze linkage were checked before numeric response decoding. No other source group or private coverage file was opened.",
+    "fitting_performed": false,
+    "score_or_loss_recomputation_performed": false,
+    "model_or_optimizer_start_selection_performed": false,
+    "training_losses_parameters_or_prediction_values_rendered": false,
+    "existing_frozen_numeric_fields": "Parsed only for finite JSON/schema and record-copy integrity; not ranked, optimized, compared to observations or used to judge predictive quality.",
+    "development_response_values_inspected": true,
+    "authorized_response_scalar_slots_replayed": 25344,
+    "observation_means_and_sample_SDs_computed_for_integrity_only": true,
+    "response_values_means_or_SDs_rendered": false,
+    "predictions_compared_to_observations": false,
+    "private_source_coverage_opened": false,
+    "rep6_or_other_unapproved_source_response_values_inspected": false,
+    "new_primary_research_or_HTTP_requests": false,
+    "new_dependencies_or_authentication_changes": false
+  },
+  "sealed_artifacts": [
+    {
+      "path": "outputs/native_population_development/native_training_01/development_prediction_freeze.json",
+      "sha256": "e03f6b9407b29e7e76da7a0be566ce9036c5cf27ac65bfaa9a4d3d7e009b5753",
+      "bytes": 124917,
+      "document_type": "development_prediction_freeze_not_final_validation",
+      "schema_result": "PASS",
+      "coordinates": "Root source/approval digests; /attempts; /prefix_summaries; /predictions; /environment artifact references"
+    },
+    {
+      "path": "outputs/native_population_development/native_training_01/attempt_log.json",
+      "sha256": "4740203cf2ecd2ffe1626c5a288ac6b5949f086d189e302f4be8cc3f8c51e4f3",
+      "bytes": 20091,
+      "document_type": "population_development_complete_attempt_log",
+      "coordinates": "/families/{canonical_model_id}/attempts",
+      "integrity_result": "PASS"
+    },
+    {
+      "path": "outputs/native_population_development/native_training_01/conditioning_checkpoint.json",
+      "sha256": "2814d3827aa8b6d3f5cd4974c92a30809c30ae4ae330d98a5262a7f650908ca3",
+      "bytes": 70295,
+      "coordinates": "/prefix_summaries; /development_coordinates; /training_frames; H_train/S_train",
+      "integrity_result": "PASS"
+    }
+  ],
+  "freeze_checks": {
+    "finite_duplicate_key_rejecting_JSON": "PASS",
+    "actual_DevelopmentPredictionFreeze_schema": "PASS",
+    "protocol_schema_source": "data/native_law_v2/development_protocol.json#/export_contract/schemas/$defs/DevelopmentPredictionFreeze",
+    "protocol_sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+    "canonical_families": ["prefix_persistence", "training_constant", "prefix_offset", "prefix_affine_time", "first_order_response", "transient_response"],
+    "canonical_family_count": 6,
+    "unique_attempt_count": 41,
+    "attempt_inventory": "Exactly one prefix_persistence attempt and start indices 0-7 for each of the five parameterized families. No duplicate or missing (model_id,start_index) key.",
+    "attempt_seed_and_budget_check": "Each recorded seed matches the protocol seed at its start index; each loss_evaluations field is an integer within 0-2000. These are integrity/budget checks, not recomputed losses.",
+    "unique_prediction_count": 288,
+    "prediction_inventory": "Exactly all six canonical families times rep4/rep5 times one-based frames 50-73. Complete unique (model_id,group_id,frame_1based) lattice; no omitted failure slots or extra group/frame keys.",
+    "prediction_schema_and_units": "All frozen entries satisfy the actual typed schema, prescribed quantity/unit, status/null rules and finite numeric-domain rules. No model was scored.",
+    "prediction_time_binding": "All 288 time coordinates exactly match the corresponding 48 conditioning development-coordinate records.",
+    "no_selected_development_model": "No selected_development_model field is present in the freeze, conditioning checkpoint or attempt log. Six within-family recorded checkpoint choices are not a development-model winner.",
+    "attempt_log_reconciliation": {
+      "status": "PASS",
+      "shared_fields_checked": ["model_id", "start_index", "seed", "loss_evaluations", "status", "parameters", "training_mean_mse", "reason"],
+      "shared_values": "All 41 freeze attempts agree exactly with their corresponding rich attempt-log record on every shared field. Values were not rendered or ranked.",
+      "freeze_only_field": "checkpoint",
+      "log_only_fields_retained_in_sealed_log": ["initial_parameters", "jacobian_evaluations", "optimizer_message", "optimizer_status"],
+      "format_distinction": "The freeze uses the protocol's thin Attempt schema and adds checkpoint references. The separate rich log retains optimizer diagnostics. Unequal whole dictionaries are therefore not missing or inconsistent attempts.",
+      "checkpoint_membership": "Each recorded selected checkpoint is the checkpoint reference of a recorded attempt in the same canonical family at the already recorded selected_start_index. No minimum-loss calculation, optimization or reselection was performed."
+    }
+  },
+  "conditioning_and_source_binding": {
+    "status": "PASS",
+    "prefix_summary_count": 5,
+    "training_frame_count": 72,
+    "development_coordinate_count": 48,
+    "frozen_prefix_summary_copy": "Freeze prefix_summaries, H_train and S_train exactly equal the sealed conditioning checkpoint. No new normalization or conditioning values were fitted.",
+    "cohort_membership_check": "Each frozen cohort has unique in-range original source row indices; its sorted-index SHA256 and count match the independently verified phase-B source cohort.",
+    "prefix_counts_by_source_group": {"rep1": 50, "rep2": 136, "rep3": 202, "rep4": 195, "rep5": 156},
+    "source_origin_1based": 49,
+    "prefix_columns_1based": [28, 47],
+    "response_columns_1based": [50, 73],
+    "prefix_operator": "complete_prefix_raw_ratio_mean_and_mean_frame_sd_o_minus_21_to_o_minus_2",
+    "input_projection_binding": "Training prefix summaries bind the training projection; development prefix summaries bind the prefix/timing projection. Original data approval 87536d... remains distinct from the refreshed executor approval.",
+    "training_projection_sha256": "fc8000c7720e554756c90e0da79f2d0ae4a7928d5923f0efa1a2ed5823d37c9e",
+    "development_inputs_sha256": "41ee2a8ce6b09cb664859873fd59fd005e31e6eaa054c3703098c91e3f790613",
+    "source_approval_sha256": "87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533",
+    "development_conditioning_fields": ["group_id", "frame_1based", "time_min"],
+    "development_conditioning_contains_observed_response_fields": false,
+    "training_only_statement_scope": "The declared input/reference graph contains only approved phase-B training and development-prefix/timing data. This verifies record provenance and intended information flow, not a cryptographically complete history of possible unlogged accesses."
+  },
+  "typed_reference_verification": {
+    "stage": "Completed pre-response freeze gate, retained without repeating model or primary-source research",
+    "status": "PASS",
+    "distinct_typed_artifact_references_verified": 65,
+    "checkpoint_artifacts_verified": 41,
+    "method": "Collected actual typed ArtifactRef objects from the freeze and rich log; rejected private/raw-source or development-response dependencies; verified safe relative paths, regular nonsymlink files, byte sizes and SHA256 values. Checkpoint and diagnostic artifact bodies were byte-hashed, not interpreted as model-quality evidence.",
+    "private_or_raw_source_reference_opened": false,
+    "development_response_artifact_opened_during_pre_release_gate": false,
+    "checkpoint_reference_coordinates": "Freeze /attempts/{i}/checkpoint and /environment/selected_checkpoints/{canonical_model_id}",
+    "conditioning_reference_coordinates": "Freeze /environment/conditioning_checkpoint",
+    "attempt_log_reference_coordinates": "Freeze /environment/attempt_log",
+    "executor_admission_sha256": "b967279da5186529d784e66b99a066e785f487558d0858a50cf91b950d979763",
+    "executor_approval_sha256": "04ac928add5528beabd2a9f77a2055643dc120d3b76bff7315ffdc3f062f786e",
+    "executor_configuration_sha256": "7e1aa35c8f6c248fc921f2348d362b8fc76e23bd8cfff070b19d21b2d9195cdb",
+    "current_main_code_sha256": "654dd5729d204c5963f5e51576a4830b61f736296c877ffc419efa77d009e2a0",
+    "code_configuration_binding": "Freeze code_artifacts equal the admitted versioned snapshots; provenance live-code artifacts equal admitted configuration artifacts; optimizer settings equal the admitted configuration. Current executor/source approvals and operational event references match."
+  },
+  "custodian_freeze_verification_observed": {
+    "path": "data/native_law_v2/granados/development/phase_c_01/freeze_verification.json",
+    "sha256": "ad3768db1a5eab8b61ffbc631cefdc0be9676f26d49d24dd01adcee226ebd897",
+    "coordinates": "5-22 sealed artifact references; 29-69 inventory/binding claims; 71-76 non-scoring, no response access and source approval",
+    "relation_to_independent_review": "Its six-family/41-attempt/288-prediction claims agree with the independent replay above. Custodian success flags were not used as substitutes for the independent checks.",
+    "is_a_response_release_decision": false
+  },
+  "phase_c_response_release": {
+    "status": "PASS",
+    "reason": "The actual issued phase-C records were checked against the pinned hashes and typed schemas before response decoding. Every authorized response scalar and source pointer was then independently replayed. The previous pending snapshot is superseded, not a data or protocol failure.",
+    "custody_metadata_root_observed": "data/native_law_v2/granados/development/phase_c_01/",
+    "required_projection_root": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/",
+    "permitted_source_groups": ["1b38366b-7473-4ddf-9cf9-26e625533686:/rep4", "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"],
+    "permitted_response_frames_1based": [50, 73],
+    "source_cell_records_verified": 8448,
+    "source_scalar_comparisons": 25344,
+    "response_intensity_scalar_slots": 16896,
+    "response_time_scalar_slots": 8448,
+    "source_time_only_records_in_response_projection": 0,
+    "unapproved_source_value_slots_decoded": 0,
+    "preserved_null_counts": {"max5": 1, "median": 1, "relative_time_min": 0},
+    "exact_scalar_and_source_pointer_equality": "PASS",
+    "complete_unique_group_row_frame_inventory": "PASS",
+    "unchanged_row_times_from_phase_b_inputs": "PASS",
+    "projection_schema": "PASS",
+    "regular_nonsymlink_projection_and_ancestors": "PASS",
+    "source_sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+    "ordered_payload_sha256": "90971be871b1f5d51ebc893dd543a780349b8df5867824808abe2ccfac5a835d",
+    "manifest": {
+      "path": "data/native_law_v2/granados/development/phase_c_01/release_manifest.json",
+      "sha256": "0e2d18b1d239f33fd21165219c512b52546635b733ec47d67c85f726a919ec82",
+      "bytes": 8574,
+      "coordinates": "6-40 request/decision/freeze bindings; 48-70 distinct prior approvals; 98-143 response allowlist, audit and scorer-lineage requirement",
+      "schema_result": "PASS"
+    },
+    "projection": {
+      "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_responses.json",
+      "sha256": "9090f1e8ced8094f4ed445f5285bf5f85a7c457b07c34c28e9fa0cb0e0ea6178",
+      "bytes": 3520217,
+      "coordinates": "/source_cells: original rows of rep4/rep5, response columns 50-73; /source_times is empty",
+      "approval_sha256": "ccdf78fa1d986758a9f760747d755b02fd2d52c11098e14c3043ee7d8a47806e",
+      "result": "PASS"
+    },
+    "decision": {
+      "path": "data/native_law_v2/granados/development/phase_c_01/custody_decision.json",
+      "sha256": "ccdf78fa1d986758a9f760747d755b02fd2d52c11098e14c3043ee7d8a47806e",
+      "bytes": 4148,
+      "coordinates": "2-20 source/request and new response scope; 22-24 distinct approval lineage and no stronger grade",
+      "schema_result": "PASS",
+      "scope_note": "The common decision schema retains the five original registered group IDs. Its phase-C conditions and actual response allowlist authorize only new rep4/rep5 response values; no other group was decoded in this replay."
+    },
+    "request": {
+      "path": "data/native_law_v2/granados/development/phase_c_01/release_request.json",
+      "sha256": "fe3b56ac5999b0382a8457f398a1f0d270016ff2bd15c2378d4d91bb719ed78a",
+      "bytes": 2348,
+      "schema_result": "PASS"
+    },
+    "event": {
+      "path": "data/native_law_v2/granados/development/phase_c_01/release_event.json",
+      "sha256": "838953156f44a5e3b06d018b53a9dbfbaca3365408bbab42ba3d2c4b8d230760",
+      "coordinates": "5-12 after-freeze response-extraction phase, exact freeze and prior approval/admission/request linkage",
+      "event_id": "granados-phase-c-01",
+      "result": "PASS for record linkage; not external timestamp attestation"
+    },
+    "source_binding_audit": {
+      "path": "data/native_law_v2/granados/development/phase_c_01/source_binding_audit.json",
+      "sha256": "349f20acb2bc9762129686b59df090f67b6a1872e766b03c67eefded6b27a728",
+      "bytes": 1843,
+      "coordinates": "5-13 source/freeze/distinct approvals/groups; 14-42 exact frames and payload inventory",
+      "result": "PASS"
+    },
+    "source_replay_verification": {
+      "path": "data/native_law_v2/granados/development/phase_c_01/source_replay_verification.json",
+      "sha256": "359f9834bd22905ccc27d7662f86d7a3b196abba6da6567656bdc9b991aef319",
+      "bytes": 5105,
+      "coordinates": "/checks and /frozen_prefix_cohorts_used",
+      "result": "Actual source counts, null counts, pointers, scalar values, prior timing and frozen cohorts independently corroborated; not accepted from success flags."
+    },
+    "coverage_audit": {
+      "path": "data/native_law_v2/granados/development/phase_c_01/coverage_audit.json",
+      "sha256": "270c845038ef39ae3261a38593083540f1b25fa85ad0612fa93ed5fd2d874f13",
+      "bytes": 23467,
+      "coordinates": "/groups/{rep4,rep5}/frozen_prefix_cell_indices and /frames",
+      "result": "All 48 frame inventories, frozen times, valid/missing/invalid counts, reasons and mean/SD-defined flags match independent replay."
+    },
+    "phase_c_manifest_schema": {
+      "path": "data/native_law_v2/granados/development/phase_c_01/PhaseCReleaseManifest.schema.json",
+      "sha256": "8aa36b59650246da115b92f2075873ddcceac5c04aa2c84ea26ff37d236c012f",
+      "bytes": 34595,
+      "result": "PASS; request/decision/Projection were additionally checked against the actual unchanged development-protocol definitions."
+    },
+    "numeric_access_method": "Metadata and exact artifact hashes were validated first. A selective lexical reader decoded only rep4/rep5 raw max5, median and times at frames 50-73, plus their origin metadata. All other raw groups, fields and columns were skipped without numeric interpretation. Frozen cohort indices and development-coordinate metadata were extracted without parsing other groups' observations or model prediction values.",
+    "source_scalar_policy": "Direct exact equality, including null preservation; no tolerance, interpolation, imputation, row renumbering or ratio substitution was allowed for source scalars. Response time scalars also exactly equal the previously approved phase-B SourceTimes.",
+    "payload_digest_policy": "SHA256 of UTF-8 json.dumps({group_ids,source_cells,source_times}, sort_keys=True, separators=(',', ':'), allow_nan=False) followed by one newline; independently agrees with the recorded phase-C binding."
+  },
+  "observation_mean_and_attrition_replay": {
+    "status": "PASS",
+    "source_rows_retained": {"rep4": 195, "rep5": 157},
+    "frozen_prefix_cohorts_used": {"rep4": 195, "rep5": 156},
+    "cohorts_selected_from_responses": false,
+    "rule": "For each registered frame and each fixed cohort, classify original row observations as missing, invalid or valid. Compute the arithmetic mean of valid individual max5/median ratios, never the ratio of mean intensities. Preserve a missing row at one frame in its unchanged cohort for all other frames.",
+    "validity": "Finite nonnegative numerator, finite strictly positive denominator and finite strictly positive source time; a representationally nonfinite ratio is an error, not an amplitude-based exclusion.",
+    "timing": "The source-time mean over the fixed prefix cohort, independent of intensity validity, exactly reproduces the already frozen conditioning time coordinate. No new time normalization or source clock offset is fitted.",
+    "arithmetic": "Independent source and projection observation paths used numpy.mean and sample numpy.std(ddof=1), with mean=null for no valid cells and SD=null below two cells. No prediction value entered the arithmetic. Source and projection summaries agreed exactly.",
+    "defined_observation_means": 48,
+    "defined_descriptive_sample_SDs": 48,
+    "group_results": [
+      {
+        "group_id": "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4",
+        "frozen_prefix_cells": 195,
+        "prefix_cohort_sha256": "0c44827b4261f6783bd3bcda4bea9b44be06053ffb3343bc42afeb2efffb9186",
+        "response_frames": 24,
+        "defined_means": 24,
+        "defined_sample_SDs": 24,
+        "valid_cell_count_range": [195, 195],
+        "source_vs_projection_means_SD_attrition": "PASS",
+        "frozen_time_coordinates": "PASS",
+        "observation_trace_sha256": "3514f1bcb7ab0307393ba9e333d8c3199620af8c8d5997d4832377a791eacb7a"
+      },
+      {
+        "group_id": "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5",
+        "frozen_prefix_cells": 156,
+        "prefix_cohort_sha256": "2eac4113ff860cab6bb973fa06d04ac3728fb28a253312ced36bdcff4755b785",
+        "response_frames": 24,
+        "defined_means": 24,
+        "defined_sample_SDs": 24,
+        "valid_cell_count_range": [155, 156],
+        "source_vs_projection_means_SD_attrition": "PASS",
+        "frozen_time_coordinates": "PASS",
+        "observation_trace_sha256": "c8114c67cf170a878378a967de97ec23714bd2b9fb209e8968435e9418467ff9"
+      }
+    ],
+    "trace_digest_convention": "SHA256 of canonical UTF-8 JSON without trailing newline over the 24 ordered observation records: group_id, frame_1based, time_min, mean_ratio, sample_sd, prefix_cells, valid_cells, source_missing_cells, invalid_cells, valid_cell_indices, source_missing_details and invalid_details. Values were not rendered or compared to predictions.",
+    "coverage_interpretation": "All registered observation means and measured coordinates are available for these two groups. This is source coverage, not good predictive performance or a selected-model result."
+  },
+  "distinct_approval_lineage": {
+    "status": "PASS",
+    "training_data_approval_sha256": "87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533",
+    "executor_refresh_approval_sha256": "04ac928add5528beabd2a9f77a2055643dc120d3b76bff7315ffdc3f062f786e",
+    "response_release_approval_sha256": "ccdf78fa1d986758a9f760747d755b02fd2d52c11098e14c3043ee7d8a47806e",
+    "unchanged_prediction_freeze_sha256": "e03f6b9407b29e7e76da7a0be566ce9036c5cf27ac65bfaa9a4d3d7e009b5753",
+    "verified_relations": [
+      "The immutable prediction freeze retains the original training data approval, original phase-B training/development-input hashes and refreshed executor admission.",
+      "The phase-C decision binds its own request, the same source/protocol and explicitly restricted response scope after that exact prediction freeze.",
+      "The release manifest, event and source-binding record link the original training approval, unchanged freeze and refreshed executor admission to the new response approval.",
+      "The response Projection correctly carries the NEW response approval, not the training approval. The two data-approval hashes were checked as distinct records, not required to be equal."
+    ],
+    "legacy_consumer_equality_is_not_a_source_requirement": true,
+    "scorer_adapter_boundary": "A separately versioned, reviewed post-freeze scorer-lineage adapter is the executor's next integration step. Do not overwrite approval hashes, edit sealed predictions/modules, refit, change observations or alter the numerical scoring recipe to satisfy the old equality shortcut. This source review neither executes nor authorizes an unreviewed scorer adapter."
+  },
+  "superseded_pending_snapshot": {
+    "prior_report_sha256": "c6a0bfaf3de22c9c9113efcc0da65bef24ee33af6a14df76fd693b8ee5746d56",
+    "prior_state": "Freeze PASS; response release not yet issued when inspected.",
+    "current_state": "Actual phase-C decision/manifest/projection now verified; the earlier pending state is no longer current.",
+    "no_source_protocol_or_frozen_data_change_was_used_to_clear_it": true
+  },
+  "response_replay_rules_applied": [
+    "Verify actual response projection identity/hash, permitted regular nonsymlink path, typed metadata, approval/freeze references and phase sequence before numeric response decoding.",
+    "Only rep4/rep5 GFP/max5, GFP/median and general/times in frames 50-73 may be replayed, with original zero-based row and one-based frame/source-pointer conversion retained. No rep6 or other source group is opened.",
+    "All 195 plus 157 original source rows must remain represented across 24 response frames, including nulls and invalid entries. Do not reduce the export to only complete or responding cells.",
+    "Use the previously frozen prefix cohorts of 195 and 156 rows. Never recompute a new cohort from response amplitude, sign, persistence, completeness or fit behavior.",
+    "Compute source and projection observation summaries as means of valid individual max5/median ratios, with finite nonnegative numerator, finite positive denominator and finite positive source time. Record per-frame attrition/missingness/invalidity and sample SD where defined; do not calculate prediction errors or scores.",
+    "Use the previously supplied measured time coordinates independently of response-intensity validity. Verify row-wise response times against the prior timing projection and the frozen coordinate map; do not refit offsets or invent a nominal grid.",
+    "Retain all group/window failures and incomplete means without replacement or criterion changes. An accurate source export can coexist with incomplete downstream comparison coverage; neither permits hidden subset selection."
+  ],
+  "preservation_checks": [
+    {"path": "data/native_law_v2/development_provenance_review.json", "sha256": "19924f461bc6881a61081aed35e8ea081c4a37fcee8b4adf6242c5b81e2d32b7", "unchanged": true, "meaning": "Phase-B source-release PASS and executor-refresh binding PASS preserved."},
+    {"path": "data/native_law_v2/development_protocol.json", "sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6", "unchanged": true},
+    {"path": "data/native_law_v2/protocol.json", "sha256": "e901d3985b5577d6f846229e1178062414e3220a7307b6d8ee40b0d01e9dffde", "unchanged": true},
+    {"path": "data/native_law_v2/provenance_review.json", "sha256": "d596c2a541ead99a2050449fe799e8b3386f71559418879ea9cf45006a9ed8d7", "unchanged": true, "meaning": "Original strong-protocol candidate FAIL remains unchanged."}
+  ],
+  "limitations": [
+    "This is integrity and operational-sequence verification for limited retrospective published-processed-cohort development. It is not independent biological-law validation or a prospective forecast certification.",
+    "Original source cohort selection, filtering and inpainting may have involved future observations; this review does not certify causally prefix-only data generation.",
+    "The readout is a dimensionless fluorescence ratio, not Hog1 phosphorylation, absolute nuclear fraction, active enzyme or metabolic flux. Glucose percentages remain as reported, without an assumed w/v or molar conversion.",
+    "Cells, frames, technical observations and copied source aliases are not extra independent biological replicates. Rep6/all aliases and other reserved groups remain outside this task.",
+    "No development-model winner, predictive quality threshold, loss recomputation, p-value, biological ready grade or strong-protocol authorization is produced.",
+    "A local sealed hash and declared input graph support reproducibility, not external immutable chronology or proof against unlogged access."
+  ],
+  "verification_record": {
+    "completed_freeze_check": "Independent validator process 6538e3 passed actual schema, complete unique inventories, shared attempt-log fields, checkpoint membership, frozen conditioning/cohort/time consistency and 65 typed artifact byte/hash checks.",
+    "completed_issued_response_recheck": "Independent validator process 4c696e first validated the actual phase-C decision/request/manifest/event and intentionally distinct approval lineage, then passed all 8448 records, 25344 source scalars, pointers, nulls, prior row times, frozen cohorts and 48 source/projection observation means/SDs/attrition records. No prediction residual or model score was calculated.",
+    "current_recheck_commands": ["Read-only issued-record and derivation-field inspection", "Strict JSON and Draft 2020-12 validation of actual release/request/decision/Projection documents", "Local source integrity hashing and selective rep4/rep5 response-only decoding; no primary HTTP research", "Independent NumPy observation means and sample SDs from source and projection, without importing or running the executor/scorer", "Current snapshot hashes and strict final report validation"],
+    "files_modified_by_current_recheck": ["data/native_law_v2/development_phase_c_verification.json"],
+    "sealed_predictions_source_data_protocols_or_code_modified": false,
+    "verifier_format_issue_resolved": "The first checker assumed whole rich-log and thin-freeze Attempt dictionaries were identical. Field-only inspection showed all shared fields equal; the log has four retained optimizer diagnostics and the freeze adds checkpoint. The checker was corrected to the actual typed contract; no source, protocol, model, metric or attempt was altered.",
+    "commands": ["Read-only file inventory and metadata/schema inspection", "SHA256 checks of pinned freeze, log, conditioning, code/admission, referenced checkpoints and approved phase-B inputs", "Strict finite/duplicate-key-rejecting JSON and Draft 2020-12 schema validation", "No model execution, fitting, scoring or source-parameter selection"],
+    "files_created": ["data/native_law_v2/development_phase_c_verification.json"],
+    "existing_other_files_modified": []
+  }
+}

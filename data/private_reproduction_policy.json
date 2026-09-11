@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "permission": "explicit_env_file_read_only",
+  "ci_private_bytes": "skip_unless_explicitly_reverified",
+  "sources": {
+    "data/gen5": {
+      "environment": "YSTWIN_GEN5_XPT",
+      "suffix": ".xpt",
+      "resolver": "gen5_xpt_dir"
+    },
+    "data/qpcr_raw": {
+      "environment": "YSTWIN_QPCR_RAW",
+      "suffix": ".xlsx",
+      "resolver": "qpcr_raw_dir"
+    },
+    "data/qpcr_repaired": {
+      "environment": "YSTWIN_QPCR",
+      "suffix": ".xlsx",
+      "resolver": "qpcr_dir",
+      "repository_root": "data/qpcr_repaired"
+    }
+  },
+  "runs": {
+    "afl-circuit": {
+      "data/gen5/20260705_AFL&control_1st.xpt": {"kind": "file"},
+      "data/gen5/20260802_AFL-debugging_1st.xpt": {"kind": "file"},
+      "data/gen5/20260803_AFL-debugging_2nd.xpt": {"kind": "file"},
+      "data/gen5/20260804_AFL-debugging_3rd.xpt": {"kind": "file"}
+    },
+    "autofluorescence-measured": {
+      "data/gen5/20260807_BY4741_ER_Oxidative.xpt": {"kind": "file"}
+    },
+    "gain-linearity": {
+      "data/gen5": {"kind": "directory", "glob": "*.xpt"}
+    },
+    "g4": {
+      "data/qpcr_repaired/20260724_ER_Ox_rep1_Cq.xlsx": {"kind": "file"},
+      "data/qpcr_raw/11 August ER and Oxidative Stress/iGEM 11 August_ER&Ox 2nd Biological Replicate -  Quantification Cq Results.xlsx": {"kind": "file"},
+      "data/qpcr_raw/13 August ER and Oxidative Stress/iGEM 13 August_ER&Ox 3rd Biological Replicate -  Quantification Cq Results.xlsx": {"kind": "file"}
+    }
+  }
+}

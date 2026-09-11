@@ -1,0 +1,14 @@
+{
+  "document_type": "local_development_custody_events_not_external_registry",
+  "events": [
+    {
+      "event_id": "granados-development-source-review-before-value-release",
+      "recorded_at_utc": "2026-09-07T12:18:39.633275+00:00",
+      "operator": "Granados observation/data custodian subagent; distinct from any model fitting/selection operator",
+      "action": "Source audit and typed-contract extraction only; no response projection or operational export approval issued.",
+      "protocol_sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+      "source_sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+      "source_binding_audit_sha256": "e58f682b49a2f74ae0fff41e429893454c630b7c6daa55523f97fb02cd556985"
+    }
+  ]
+}

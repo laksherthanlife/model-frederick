@@ -1,0 +1,35 @@
+arxiv_id,version,title,published_title,published_doi,cited_in
+1210.7559,unpinned:1210.7559v4,Tensor decompositions for learning latent variable models,,,docs/research/IDENTIFIABILITY.md:135;docs/research/IDENTIFIABILITY.md:58
+1301.3853,unpinned:1301.3853v1,Rao-Blackwellised Particle Filtering for Dynamic Bayesian Networks,,,docs/research/HYBRID_METHODS.md:223
+1306.5825,unpinned:1306.5825v5,Fourier PCA and Robust Tensor Decomposition,,,docs/research/IDENTIFIABILITY.md:141;docs/research/IDENTIFIABILITY.md:70
+1307.1870,unpinned:1307.1870v1,Crossing the Reality Gap: a Short Introduction to the Transferability Approach,,,docs/research/CIRCULARITY.md:120;docs/research/CIRCULARITY.md:170
+1406.4905,unpinned:1406.4905v2,Variational Gaussian Process State-Space Models,,,docs/research/HYBRID_METHODS.md:226
+1411.5799,unpinned:1411.5799v2,Group Factor Analysis,,,docs/research/IDENTIFIABILITY.md:138
+1605.06336,unpinned:1605.06336v1,Unsupervised Feature Extraction by Time-Contrastive Learning and Nonlinear ICA,,,docs/research/IDENTIFIABILITY.md:120;docs/research/IDENTIFIABILITY.md:50
+1610.08466,unpinned:1610.08466v1,Recurrent switching linear dynamical systems,,,docs/research/HYBRID_METHODS.md:224
+1703.06907,unpinned:1703.06907v1,Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World,,,docs/research/CIRCULARITY.md:162
+1710.06537,unpinned:1710.06537v3,Sim-to-Real Transfer of Robotic Control with Dynamics Randomization,Sim-to-Real Transfer of Robotic Control with Dynamics Randomization,10.1109/ICRA.2018.8460528,docs/research/CIRCULARITY.md:161;docs/research/CIRCULARITY.md:54
+1804.06788,unpinned:1804.06788v2,Validating Bayesian Inference Algorithms with Simulation-Based Calibration,,,docs/CLAIM_BOUNDARY.md:13;docs/research/CIRCULARITY.md:174;docs/research/CIRCULARITY.md:80;docs/research/TOOLING.md:328
+1805.08651,unpinned:1805.08651v3,Nonlinear ICA Using Auxiliary Variables and Generalized Contrastive Learning,,,docs/research/IDENTIFIABILITY.md:122;docs/research/IDENTIFIABILITY.md:50
+1810.05687,unpinned:1810.05687v4,Closing the Sim-to-Real Loop: Adapting Simulation Randomization with Real World Experience,,,docs/research/CIRCULARITY.md:166;docs/research/CIRCULARITY.md:65
+1904.04762,unpinned:1904.04762v2,Active Domain Randomization,,,docs/research/CIRCULARITY.md:164
+1907.04685,unpinned:1907.04685v2,Assessing Transferability from Simulation to Reality for Reinforcement Learning,Assessing Transferability From Simulation to Reality for Reinforcement Learning,10.1109/TPAMI.2019.2952353,docs/research/CIRCULARITY.md:153
+1907.04809,unpinned:1907.04809v4,Variational Autoencoders and Nonlinear ICA: A Unifying Framework,,,docs/research/IDENTIFIABILITY.md:119;docs/research/IDENTIFIABILITY.md:50
+1910.07113,unpinned:1910.07113v1,Solving Rubik's Cube with a Robot Hand,,,docs/research/CIRCULARITY.md:163;docs/research/CIRCULARITY.md:45
+1912.06321,unpinned:1912.06321v2,Sim2Real Predictivity: Does Evaluation in Simulation Predict Real-World Performance?,Sim2Real Predictivity: Does Evaluation in Simulation Predict Real-World Performance?,10.1109/LRA.2020.3013848,docs/research/CIRCULARITY.md:171;docs/research/CIRCULARITY.md:82
+2003.02471,unpinned:2003.02471v4,Data-efficient Domain Randomization with Bayesian Optimization,Data-Efficient Domain Randomization With Bayesian Optimization,10.1109/LRA.2021.3052391,docs/research/CIRCULARITY.md:167
+2012.05841,unpinned:2012.05841v3,A Probabilistic Graphical Model Foundation for Enabling Predictive Digital Twins at Scale,,,docs/research/PREDICTION.md:1304
+2012.05841v2,2012.05841v3,A Probabilistic Graphical Model Foundation for Enabling Predictive Digital Twins at Scale,,,docs/CITATION_AUDIT.md:162;docs/research/PREDICTION.md:176
+2106.09620,unpinned:2106.09620v2,Disentangling Identifiable Features from Noisy Data with Structured Nonlinear ICA,,,docs/research/IDENTIFIABILITY.md:124
+2107.10098,unpinned:2107.10098v3,Disentanglement via Mechanism Sparsity Regularization: A New Principle for Nonlinear ICA,,,docs/research/IDENTIFIABILITY.md:123;docs/research/IDENTIFIABILITY.md:50
+2110.06581,unpinned:2110.06581v3,A Trust Crisis In Simulation-Based Inference? Your Posterior Approximations Can Be Unfaithful,,,docs/CITATION_AUDIT.md:134;docs/research/CIRCULARITY.md:179
+2203.16437,unpinned:2203.16437v3,Weakly supervised causal representation learning,,,docs/research/IDENTIFIABILITY.md:131
+2209.01845,unpinned:2209.01845v1,Investigating the Impact of Model Misspecification in Neural Simulation-based Inference,,,docs/research/CIRCULARITY.md:183
+2209.11924,unpinned:2209.11924v4,Interventional Causal Representation Learning,,,docs/research/IDENTIFIABILITY.md:127;docs/research/IDENTIFIABILITY.md:54
+2210.06564,unpinned:2210.06564v1,Robust Neural Posterior Estimation and Statistical Model Criticism,,,docs/research/CIRCULARITY.md:182
+2211.02383,unpinned:2211.02383v3,Simulation-Based Calibration Checking for Bayesian Computation: The Choice of Test Quantities Shapes Sensitivity,Simulation-Based Calibration Checking for Bayesian Computation: The Choice of Test Quantities Shapes Sensitivity,10.1214/23-BA1404,docs/research/CIRCULARITY.md:175
+2211.16467,unpinned:2211.16467v3,Linear Causal Disentanglement via Interventions,,,docs/research/IDENTIFIABILITY.md:128
+2302.03026,unpinned:2302.03026v2,Sampling-Based Accuracy Testing of Posterior Estimators for General Inference,,,docs/research/CIRCULARITY.md:180
+2306.02235,unpinned:2306.02235v2,Learning Linear Causal Representations from Interventions under General Nonlinear Mixing,,,docs/research/IDENTIFIABILITY.md:129;docs/research/IDENTIFIABILITY.md:54
+2306.03580,unpinned:2306.03580v2,L-C2ST: Local Diagnostics for Posterior Approximations in Simulation-Based Inference,,,docs/research/CIRCULARITY.md:181
+2310.15450,unpinned:2310.15450v2,General Identifiability and Achievability for Causal Representation Learning,,,docs/research/IDENTIFIABILITY.md:130;docs/research/IDENTIFIABILITY.md:54

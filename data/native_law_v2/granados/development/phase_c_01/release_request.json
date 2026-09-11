@@ -1,0 +1,61 @@
+{
+  "development_ids": [
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"
+  ],
+  "document_type": "development_release_request",
+  "executor_code": [
+    {
+      "bytes": 92464,
+      "path": "src/ystwin/analysis/native_population_development.py",
+      "role": "execution_code",
+      "sha256": "654dd5729d204c5963f5e51576a4830b61f736296c877ffc419efa77d009e2a0"
+    },
+    {
+      "bytes": 4212,
+      "path": "scripts/run_native_population_development.py",
+      "role": "execution_code",
+      "sha256": "f96a36702867262718997acaae7131d4b616725a563e27f795dc65ee8bd6f03c"
+    },
+    {
+      "bytes": 31449,
+      "path": "tests/test_native_population_development.py",
+      "role": "execution_code",
+      "sha256": "6f8d067c99f501a2311143ace0d316233df85703e6943bdc19a17559dc7e66bc"
+    },
+    {
+      "bytes": 3729,
+      "path": "outputs/native_population_development/executor_refresh_01/execution_configuration.json",
+      "role": "execution_code",
+      "sha256": "7e1aa35c8f6c248fc921f2348d362b8fc76e23bd8cfff070b19d21b2d9195cdb"
+    }
+  ],
+  "exporter_code": [
+    {
+      "bytes": 104189,
+      "path": "scripts/export_granados_training.py",
+      "role": "execution_code",
+      "sha256": "6447608e622c6bdd47e16f4f930f91f9297077aaccfbc5a0745b359b1bbd7159"
+    },
+    {
+      "path": "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py",
+      "sha256": "68c31da88770e4718bc5668791edd38de6a054fa821aaa074a2ef48d6c676d8a",
+      "bytes": 42204,
+      "role": "execution_code"
+    }
+  ],
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "protocol_sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+  "requested_phases": [
+    "training_and_conditioning_export",
+    "development_response_export"
+  ],
+  "requester": "Parent PHASEC instruction after the sealed native_training_01 batch; encoded by the Granados custodian for response frames 50-73 only, without requesting another fit or data replacement.",
+  "source_asset_id": "1b38366b-7473-4ddf-9cf9-26e625533686",
+  "source_sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+  "train_ids": [
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep1",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3"
+  ]
+}

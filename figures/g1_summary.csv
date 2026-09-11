@@ -1,0 +1,66 @@
+plate,outcome,n_wells_with_outcome,n_wells,n_pass,pass_rate,n_criteria
+"2026-07-01
+ER preliminary",passed,53,90,53,0.5888888888888889,0
+"2026-07-01
+ER preliminary","linear_range,sustained_decline",15,90,53,0.5888888888888889,2
+"2026-07-01
+ER preliminary","sustained_decline,dynamic_range",10,90,53,0.5888888888888889,2
+"2026-07-01
+ER preliminary",sustained_decline,7,90,53,0.5888888888888889,1
+"2026-07-01
+ER preliminary",linear_range,2,90,53,0.5888888888888889,1
+"2026-07-01
+ER preliminary",other (5 rarer signatures),3,90,53,0.5888888888888889,3
+"2026-07-09
+ER stress 1st",passed,8,42,8,0.19047619047619047,0
+"2026-07-09
+ER stress 1st",linear_range,29,42,8,0.19047619047619047,1
+"2026-07-09
+ER stress 1st","linear_range,sustained_decline",4,42,8,0.19047619047619047,2
+"2026-07-09
+ER stress 1st","sustained_decline,dynamic_range",1,42,8,0.19047619047619047,2
+"2026-07-22
+ERandOxidativeStress
+NewProtocol
+ANALYSED",passed,67,84,67,0.7976190476190477,0
+"2026-07-22
+ERandOxidativeStress
+NewProtocol
+ANALYSED","sustained_decline,reporter_above_background",9,84,67,0.7976190476190477,2
+"2026-07-22
+ERandOxidativeStress
+NewProtocol
+ANALYSED",sustained_decline,5,84,67,0.7976190476190477,1
+"2026-07-22
+ERandOxidativeStress
+NewProtocol
+ANALYSED",other (5 rarer signatures),3,84,67,0.7976190476190477,2
+"2026-07-28
+ERandOxidativeStress
+NewProtocol
+Replicate2",passed,64,84,64,0.7619047619047619,0
+"2026-07-28
+ERandOxidativeStress
+NewProtocol
+Replicate2",sustained_decline,8,84,64,0.7619047619047619,1
+"2026-07-28
+ERandOxidativeStress
+NewProtocol
+Replicate2","sustained_decline,dynamic_range,reporter_above_background",6,84,64,0.7619047619047619,3
+"2026-07-28
+ERandOxidativeStress
+NewProtocol
+Replicate2","sustained_decline,reporter_above_background",3,84,64,0.7619047619047619,2
+"2026-07-28
+ERandOxidativeStress
+NewProtocol
+Replicate2",other (5 rarer signatures),3,84,64,0.7619047619047619,2
+"2026-08-03
+ERandoxidativestress
+Replicate3",passed,52,86,52,0.6046511627906976,0
+"2026-08-03
+ERandoxidativestress
+Replicate3",sustained_decline,32,86,52,0.6046511627906976,1
+"2026-08-03
+ERandoxidativestress
+Replicate3",other (5 rarer signatures),2,86,52,0.6046511627906976,1

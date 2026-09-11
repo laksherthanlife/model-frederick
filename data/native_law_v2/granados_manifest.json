@@ -1,0 +1,467 @@
+{
+  "$schema": "granados/manifest.schema.json",
+  "schema_version": 1,
+  "dataset_id": "granados2018",
+  "status": "metadata_schema_verified_ineligible_current_protocol",
+  "custody": {
+    "measurement_values_disclosed": false,
+    "measurement_statistics_computed": true,
+    "models_fit_or_reserved_data_scored": false,
+    "raw_files_allowed_for_training": false,
+    "training_allowlist": [],
+    "protocol_path": "data/native_law_v2/protocol.json",
+    "protocol_sha256": "e901d3985b5577d6f846229e1178062414e3220a7307b6d8ee40b0d01e9dffde",
+    "export_authorized": false,
+    "raw_storage": "data/native_law_v2/granados/sealed/raw_mixed",
+    "reservation": "All response measurements are provisionally reserved. No response-bearing projection may be opened by the learner before an explicit verifier protocol approves its whole-experiment source IDs and observation mapping. Metadata and shapes alone may be disclosed.",
+    "seal_limit": "Local custodial separation is not encryption or an OS-level boundary against other processes running as the same user. The learner must use an exact projection allowlist, never recursive discovery of this directory.",
+    "measurement_statistics_scope": "Baseline means/SDs are evaluated privately only inside the source-defined identity replays requested in the metadata follow-up. No response moments, constants or intermediate projections are released; no models are fitted/scored.",
+    "measurement_statistics_disclosed": false
+  },
+  "sources": [
+    {
+      "source_id": "catalogue",
+      "url": "https://datashare.ed.ac.uk/server/api/core/items/82d65e34-a1a2-4a8d-9bc7-b72d14b80111",
+      "local_path": "data/native_law_v2/granados/provenance/repository_item.json",
+      "sha256": "00246d9ff14956571fbcd94e82d6aebf363289b3d5537292e9ffb1f86ccc5605",
+      "kind": "repository_metadata",
+      "verification": "Live API verified; item 82d65e34-a1a2-4a8d-9bc7-b72d14b80111, DOI 10.7488/ds/2214, CC BY 4.0, paper DOI 10.1073/pnas.1716659115."
+    },
+    {
+      "source_id": "bundle",
+      "url": "https://datashare.ed.ac.uk/server/api/core/bundles/29a5d553-9aa0-4898-9b2c-d5a010c52628/bitstreams",
+      "local_path": "data/native_law_v2/granados/provenance/repository_bundle.json",
+      "sha256": "7de6eb6f33ade36c6e4140369dfc895be2425bdcb154fc6337392e8b8fbe3715",
+      "kind": "repository_metadata",
+      "verification": "Live API verified eight original bitstreams, their UUIDs, byte lengths, MD5 checksums and content links. API IDs, not inconsistent supplementary-figure headings, are authoritative."
+    },
+    {
+      "source_id": "readme",
+      "url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/c779e1c9-0b73-4824-8dae-e5f7fc39f212/content",
+      "local_path": "data/native_law_v2/granados/provenance/readme_source.txt",
+      "sha256": "fbce9f1ec3abbff57ee3c2e1af29cdecfc8122cfe393287954a11776d8724ebf",
+      "kind": "repository_readme",
+      "verification": "Live README acquired; SHA256 rechecked against the existing metadata candidate and stored with source evidence."
+    },
+    {
+      "source_id": "europe_pmc_lookup",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1073%2Fpnas.1716659115&format=json&resultType=core",
+      "local_path": "data/native_law_v2/granados/provenance/europe_pmc_lookup.json",
+      "sha256": "4c3ab110500e7f2f9f6dae7e433d2d285ed13f8a1187ae7790cdbfedcaff652a",
+      "kind": "lookup_metadata",
+      "verification": "Exact DOI lookup returned PMCID PMC6003323; used structured PMCID to locate the primary archived article."
+    },
+    {
+      "source_id": "primary_article",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6003323/",
+      "local_path": "data/native_law_v2/granados/sealed/primary_sources/primary_article.html",
+      "sha256": "e892b560518d24bb5e6844969af986465b8216eda80059cf75e23afafed338fa",
+      "kind": "primary_article",
+      "verification": "Primary PMC article; only Materials and Methods and supplement links disclosed. Full source retained in sealed primary_sources."
+    },
+    {
+      "source_id": "primary_supplement",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/6003323/bin/pnas.1716659115.sapp.pdf",
+      "local_path": "data/native_law_v2/granados/sealed/primary_sources/primary_supplement.pdf",
+      "sha256": "0e610cbad1ebcdd3954e61fd1f210d1340bc7cdd2b42198ea02b7e8b51a1cd28",
+      "kind": "primary_supplement",
+      "verification": "Exact PDF link in primary article; 39-page supplement acquired and hashed. SI sections 1.1-1.2.4, Tables 1-3, and 3.1 verified for assay context, replication and normalization. Public excerpt omits the published aggregate calibration outcome; no measurement-figure values were extracted. Full source stays sealed."
+    },
+    {
+      "source_id": "author_processing_code",
+      "url": "https://github.com/swainlab/mi-by-decoding",
+      "local_path": "data/native_law_v2/granados/provenance/source_code_acquisition.json",
+      "sha256": "c47b91e9e596319188ecc13b81b70dd7a4d1e21c7419076d98619b6b330e5fc4",
+      "kind": "repository_metadata",
+      "verification": "Supplement page 14 links mi-by-decoding; README links DISCO and its GeneralMatlabFunctions submodule. Immutable API blobs were acquired with gh, source hashes checked, and the named normalization helpers used only in the fixed custodial identity replay. No MI/classifier/plotting or model-performance code was executed; no package was installed."
+    }
+  ],
+  "verified_facts": [
+    {
+      "field": "measurement_semantics",
+      "value": "median is median fluorescence over segmented cell pixels; max5 is the mean of the five brightest pixels; nucLoc=max5/median is an image-derived nuclear-localization proxy, not a phosphorylation or kinase-activity assay.",
+      "evidence_ids": [
+        "readme"
+      ],
+      "locator": "Description of the data; measurement definitions"
+    },
+    {
+      "field": "time_and_missingness",
+      "value": "Rows are cells and columns measurement time points. null means absent cells, not zero. Nominal imaging cadence is 2.5 min. The authors' worked example and linked exporter verify origin as a 1-based frame index; it is not minutes or a calendar timestamp. All 119 raw groups with actual times place that index at the nearest-zero mean relative-time column. Raw files put times/origin under general, except marker data under GFP; normalized fig2 replicates have GFP/origin but no times. A nominal 2.5*(j-origin) grid can be explicitly annotated, not passed off as recovered timestamps or a full-movie acquisition clock.",
+      "evidence_ids": [
+        "readme",
+        "primary_article",
+        "primary_supplement"
+      ],
+      "locator": "README timing definitions; SI 1.2.1, 1.2.4 and 3.1; provenance/source_code/example_script.m:51-70; provenance/source_code/formatCellInf.m:100-128; timing_review.json; metadata_supplement.json origin_and_clock_semantics"
+    },
+    {
+      "field": "documented_replication",
+      "value": "fig1 has six Sfp1 carbon-stress biological replicates on different days. fig2_stress_type_expts is explicitly the same first biological replicate also present in fig2_stress_type_replicates; the latter includes an additional biological replicate, not an independent version of rep1.",
+      "evidence_ids": [
+        "readme"
+      ],
+      "locator": "fig1_sfp1_replicates.json; fig2_stress_type_expts.json; fig2_stress_type_replicates.json"
+    },
+    {
+      "field": "strain_channels_not_joint_by_default",
+      "value": "Single-colour factor strains cannot be joined into co-measured cell vectors. Actual two-colour pairs are Dot6/Msn2, Hog1/Msn2, Mig1/Msn2 and Yap1/Msn2, each under carbon and osmotic stress (8 source groups). README assigns GFP to the first factor and mCherry to the second. Both channels share one general time matrix and matching cell/time shapes within each experiment. No Sfp1 two-colour group is deposited. Explicit persistent cell IDs/channel acquisition offsets are not provided.",
+      "evidence_ids": [
+        "readme"
+      ],
+      "locator": "figS19_two_colour_expts.json"
+    },
+    {
+      "field": "independent_nuclear_marker_assay",
+      "value": "Nhp6A-mCherry supplies an orthogonal nuclear mask for GFP nucInnerMedian/cytInnerMedian. The Sfp1 marker group contains these fields plus raw nucLoc, median, max5, nucCytRatio and times on matching 60-cell by 91-frame arrays, so same-experiment paired observation validation is supported. It is one biological unit with correlated GFP/segmentation errors, not additional biological replication or an absolute activity assay. Actual marker factors are Dot6, Maf1, Mig1, Sfp1 and Tod6; other experiments lacked the marker. A newly registered paired-sample design is scientifically distinct from the original six-disjoint-support-group requirement, which remains unmet.",
+      "evidence_ids": [
+        "readme",
+        "primary_supplement"
+      ],
+      "locator": "SI 1.1 and 1.2.3; README nuclear-marker description; inventory_summary.json:201-214; bitstream 0dcc11fc-dcd1-4983-930e-26265b48a0e9"
+    },
+    {
+      "field": "catalogue_heading_discrepancy",
+      "value": "README headings say figS2 nuclear marker and figS8 rich-to-rich; actual bundle names are figS1_nuclear_marker_expts.json and figS7_rich_to_rich_expts.json. Use UUIDs 0dcc11fc-dcd1-4983-930e-26265b48a0e9 and f0ff4386-a4a5-40a4-b501-42b3e222e698.",
+      "evidence_ids": [
+        "readme",
+        "bundle"
+      ],
+      "locator": "File descriptions versus bitstream name/id fields"
+    },
+    {
+      "field": "strain_media_temperature",
+      "value": "Primary Methods call these BY strains. SI 1.1 states that GFP-collection strains were sequence-validated; Mig1-GFP was rebuilt and sequence-validated in BY4741 using yEGFP-His from pKT012. Marker strains additionally tag Nhp6A with mCherry-KanR from pBS34. Standard synthetic complete (SC) medium plus 2% glucose is the baseline, not YPD. Both culture growth and the microfluidic/pump incubator are at 30 C. The devices were prefilled with medium containing 0.05% BSA. Exact collection clone identifiers and complete genotypes for every deposited strain are not supplied in the inspected Methods.",
+      "evidence_ids": [
+        "primary_article",
+        "primary_supplement"
+      ],
+      "locator": "primary_methods.txt:3-11; supplement_methods_excerpt.txt, PDF page 3, SI 1.1 and 1.2.1"
+    },
+    {
+      "field": "stimulus_physical_definitions",
+      "value": "Stress-type interventions are SC with glucose reduced to 0.1%, SC supplemented with 0.4 M NaCl, or SC supplemented with 0.5 mM H2O2. SI explicitly lists dose-panel glucose percentages 0.8, 0.4, 0.2, 0.1; added NaCl 0.1, 0.2, 0.3, 0.4 M; and added H2O2 0.22, 0.28, 0.36, 0.50 mM. These numeric definitions were verified in Methods, not inferred only from filenames. Cy5 dye in stress medium marks arrival and switch sharpness.",
+      "evidence_ids": [
+        "primary_supplement",
+        "readme"
+      ],
+      "locator": "SI 1.2.2, PDF pages 3-4; inventory_summary.json:135-195; condition_metadata.json"
+    },
+    {
+      "field": "optical_measurement_and_background",
+      "value": "Fluorescence is the maximum projection over five z-sections spaced 0.6 micrometres apart; Cy5 is acquired at one focal plane. Brightfield DISCO segmentation defines cell regions. max5/median is computed within that region. imBackground is a separate median outside segmented regions; the stated nucLoc definition does not specify subtracting it. Fluorescence has no absolute molecule or kinase-activity calibration in these exports. Multiplicative intensity invariance of a ratio does not remove additive background or establish biochemical identifiability.",
+      "evidence_ids": [
+        "primary_supplement",
+        "readme"
+      ],
+      "locator": "SI 1.2.3, PDF page 4; README measurement definitions"
+    },
+    {
+      "field": "nucLocNorm_exact_published_scope",
+      "value": "SI 3.1 specifies an experiment-specific pre-stress z-score, not future-peak or min-max scaling. Newly located normMeanOffset.m gives the exact operator: mean of per-frame cell means and mean of per-frame cell sample SDs on columns o-21:o-2 (20 frames), not a pooled cell-time SD. Its core uses pre-stimulus values, which could be legitimate known-prefix calibration inputs under a newly registered post-stimulus conditional estimand. The full worked example first interpolates/inpaints whole traces and selects cells using a window including origin, so it is not certified prefix-only. Original raw-target/training-only exclusions remain unchanged; no normalized response is substituted for raw nucLoc.",
+      "evidence_ids": [
+        "primary_supplement",
+        "readme"
+      ],
+      "locator": "SI 3.1, PDF page 6 and source-code link on PDF page 14; provenance/source_code/normMeanOffset.m:7-10; filterCellsByNucLoc.m:29-64; metadata_supplement.json prefix_normalization_and_conditional_estimand"
+    },
+    {
+      "field": "additional_exact_cross_file_reuse",
+      "value": "An equality-only SHA256 audit of complete [median,max5,nucLoc] triplets found seven reuse sets: fig1 /rep6 equals fig2 /sfp1/gluc; fig2 NaCl entries for Dot6, Hog1, Maf1, Msn2 and Sfp1 equal their fig3 nacl_0_4M entries; fig2 /yap1/oxid equals fig3 /oxid/yap1/oxid_0_50mM. The 30 documented normalized-rep1 aliases are additionally inseparable. That raw-equality audit computed no response moments, amplitudes, scores or fits. Later private source-normalizer identity replays are separately recorded. Nonidentical hashes are not proof of independent movies or cultures.",
+      "evidence_ids": [
+        "bundle",
+        "readme"
+      ],
+      "locator": "overlap_audit.json:3-155; acquisition.json binds bitstream IDs and SHA256 values"
+    },
+    {
+      "field": "biological_batch_and_clock_limits",
+      "value": "SI defines biological replicates as different cultures of the same strain under the same conditions on different days; README explicitly declares six such fig1 replicates. Up to five strains occupy distinct chambers sharing one chip's extracellular input, but actual chip/movie/culture/day memberships are not exported. Shared paper or strain alone is not identity; documented duplicates must remain inseparable, while shared nuisance batches are a different relation. Full-movie pre-imaging is 5 h for carbon/osmotic versus 3 h for oxidative stress. Sfp1 glucose dose varies under a shared nominal carbon schedule and relative-time grid, but actual calendar/day/chip crossing and full acquisition clocks remain unresolved.",
+      "evidence_ids": [
+        "primary_supplement"
+      ],
+      "locator": "SI 1.2.1, 1.2.2 and 1.2.4; inventory.schema.json and schema_inventory.json"
+    }
+  ],
+  "unknowns": [
+    "Full collection clone identifiers, complete genotypes for each fluorescent strain, and equivalence of marker-tagged to marker-free strain context remain unestablished.",
+    "No complete cross-file movie/culture/day/chamber identifiers exist in the inspected schemas. Additional cropped/reprocessed reuse cannot be excluded by distinct hashes.",
+    "Origin is now source-verified as a 1-based frame index. Actual normalized-only timestamps, exact export cohort/time selections and globally independent identity of normalized Sfp1/carbon rep2 remain unresolved; a nominal grid is not measured time recovery.",
+    "No per-observation standard-uncertainty fields or independently calibrated cross-assay uncertainty fields are present. A published aggregate comparison is not the required fresh support experiment or its uncertainty budget.",
+    "External registration, role-separated authorities and complete ancestral model/data exposure remain parent/verifier responsibilities. Local files and hashes are not proof of independence or preregistration."
+  ],
+  "available_group_sets": [
+    {
+      "asset_id": "1b38366b-7473-4ddf-9cf9-26e625533686",
+      "name": "fig1_sfp1_replicates.json",
+      "grouping": "replicate -> channel -> measurement",
+      "documented_scope": "Sfp1; rich medium to 0.1% glucose; rep1 through rep6 on different days",
+      "actual_group_count": 6,
+      "inventory_path": "data/native_law_v2/granados/schema_inventory.json"
+    },
+    {
+      "asset_id": "32cf23e6-ff7c-4b41-8304-f60afca3f4a6",
+      "name": "fig2_stress_type_expts.json",
+      "grouping": "factor -> stress type -> channel -> measurement",
+      "documented_scope": "Actual complete 10-factor by 3-stress panel (30 source entries), all declared rep1; raw GFP localization and fluorescence with general time arrays. Some factors share a microfluidic assay; source entries are not automatically independent biological groups.",
+      "actual_group_count": 30,
+      "inventory_path": "data/native_law_v2/granados/schema_inventory.json"
+    },
+    {
+      "asset_id": "721ef5f2-b858-4257-8cc8-5eea9a8599bb",
+      "name": "fig2_stress_type_replicates.json",
+      "grouping": "factor -> stress type -> biological replicate -> channel -> measurement",
+      "documented_scope": "Actual complete 10-factor by 3-stress by 2-replicate panel (60 entries). rep1 aliases raw fig2 expts; rep2 is declared additional biological replication. Only GFP/nucLocNorm and GFP/origin are deposited; no raw fluorescence, normalization constants or times.",
+      "actual_group_count": 60,
+      "inventory_path": "data/native_law_v2/granados/schema_inventory.json"
+    },
+    {
+      "asset_id": "5b7ea616-fdd5-4978-951e-8cfc3f722eb1",
+      "name": "fig3_stress_level_expts.json",
+      "grouping": "stress type -> factor -> condition ID -> channel -> measurement",
+      "documented_scope": "Actual 60 source entries: each stress has four documented doses and five factors. Carbon: Dot6, Maf1, Mig1, Msn2, Sfp1. NaCl: Dot6, Hog1, Maf1, Msn2, Sfp1. H2O2: Dot6, Maf1, Msn2, Sfp1, Yap1. No biological-replicate or movie/day IDs are present; some entries exactly reuse fig2 arrays.",
+      "actual_group_count": 60,
+      "inventory_path": "data/native_law_v2/granados/schema_inventory.json"
+    },
+    {
+      "asset_id": "0dcc11fc-dcd1-4983-930e-26265b48a0e9",
+      "name": "figS1_nuclear_marker_expts.json",
+      "grouping": "factor -> channel -> measurement",
+      "documented_scope": "Actual five 0.1%-glucose groups: Dot6, Maf1, Mig1, Sfp1, Tod6. Exactly one Sfp1 marker group; nuclei segmented independently with Nhp6A-mCherry, GFP-derived localization measures and GFP times/origin. No replicate grouping is deposited.",
+      "actual_group_count": 5,
+      "inventory_path": "data/native_law_v2/granados/schema_inventory.json"
+    },
+    {
+      "asset_id": "f0ff4386-a4a5-40a4-b501-42b3e222e698",
+      "name": "figS7_rich_to_rich_expts.json",
+      "grouping": "factor -> channel -> measurement",
+      "documented_scope": "Actual one rich-to-rich entry for each of the ten single-colour factors; only one Sfp1 sham group. The published figure supplemented this collection with fig2 data, which is not a declaration of extra independent sham experiments. No replicate grouping is deposited.",
+      "actual_group_count": 10,
+      "inventory_path": "data/native_law_v2/granados/schema_inventory.json"
+    },
+    {
+      "asset_id": "5546d389-8424-40f3-8620-6be68ca9b16d",
+      "name": "figS19_two_colour_expts.json",
+      "grouping": "paired strain -> stress type -> channel -> measurement",
+      "documented_scope": "Actual Dot6/Msn2, Hog1/Msn2, Mig1/Msn2 and Yap1/Msn2 pairs under both 0.1% glucose and 0.4 M NaCl (8 groups). GFP is the first factor; mCherry is Msn2. No Sfp1 pair is present, so this file cannot supply joint validation for the current Sfp1 candidate.",
+      "actual_group_count": 8,
+      "inventory_path": "data/native_law_v2/granados/schema_inventory.json"
+    }
+  ],
+  "proposed_partition": {
+    "status": "ineligible_no_export",
+    "unit": "Whole independent biological experiment, including all cells, times, channels and all aliases across files",
+    "training_group_ids": [],
+    "development_group_ids": [],
+    "reserved_group_ids": [
+      "0dcc11fc-dcd1-4983-930e-26265b48a0e9:/dot6",
+      "0dcc11fc-dcd1-4983-930e-26265b48a0e9:/maf1",
+      "0dcc11fc-dcd1-4983-930e-26265b48a0e9:/mig1",
+      "0dcc11fc-dcd1-4983-930e-26265b48a0e9:/sfp1",
+      "0dcc11fc-dcd1-4983-930e-26265b48a0e9:/tod6",
+      "1b38366b-7473-4ddf-9cf9-26e625533686:/rep1",
+      "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2",
+      "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3",
+      "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4",
+      "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5",
+      "1b38366b-7473-4ddf-9cf9-26e625533686:/rep6",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/dot6/gluc",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/dot6/nacl",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/dot6/oxid",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/hog1/gluc",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/hog1/nacl",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/hog1/oxid",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/maf1/gluc",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/maf1/nacl",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/maf1/oxid",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/mig1/gluc",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/mig1/nacl",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/mig1/oxid",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/mig2/gluc",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/mig2/nacl",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/mig2/oxid",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/msn2/gluc",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/msn2/nacl",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/msn2/oxid",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/msn4/gluc",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/msn4/nacl",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/msn4/oxid",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/sfp1/gluc",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/sfp1/nacl",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/sfp1/oxid",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/tod6/gluc",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/tod6/nacl",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/tod6/oxid",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/yap1/gluc",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/yap1/nacl",
+      "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/yap1/oxid",
+      "5546d389-8424-40f3-8620-6be68ca9b16d:/dot6_msn2/gluc",
+      "5546d389-8424-40f3-8620-6be68ca9b16d:/dot6_msn2/nacl",
+      "5546d389-8424-40f3-8620-6be68ca9b16d:/hog1_msn2/gluc",
+      "5546d389-8424-40f3-8620-6be68ca9b16d:/hog1_msn2/nacl",
+      "5546d389-8424-40f3-8620-6be68ca9b16d:/mig1_msn2/gluc",
+      "5546d389-8424-40f3-8620-6be68ca9b16d:/mig1_msn2/nacl",
+      "5546d389-8424-40f3-8620-6be68ca9b16d:/yap1_msn2/gluc",
+      "5546d389-8424-40f3-8620-6be68ca9b16d:/yap1_msn2/nacl",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/dot6/gluc_0_1",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/dot6/gluc_0_2",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/dot6/gluc_0_4",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/dot6/gluc_0_8",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/maf1/gluc_0_1",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/maf1/gluc_0_2",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/maf1/gluc_0_4",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/maf1/gluc_0_8",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/mig1/gluc_0_1",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/mig1/gluc_0_2",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/mig1/gluc_0_4",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/mig1/gluc_0_8",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/msn2/gluc_0_1",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/msn2/gluc_0_2",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/msn2/gluc_0_4",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/msn2/gluc_0_8",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/sfp1/gluc_0_1",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/sfp1/gluc_0_2",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/sfp1/gluc_0_4",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/sfp1/gluc_0_8",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/dot6/nacl_0_1M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/dot6/nacl_0_2M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/dot6/nacl_0_3M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/dot6/nacl_0_4M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/hog1/nacl_0_1M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/hog1/nacl_0_2M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/hog1/nacl_0_3M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/hog1/nacl_0_4M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/maf1/nacl_0_1M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/maf1/nacl_0_2M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/maf1/nacl_0_3M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/maf1/nacl_0_4M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/msn2/nacl_0_1M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/msn2/nacl_0_2M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/msn2/nacl_0_3M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/msn2/nacl_0_4M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/sfp1/nacl_0_1M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/sfp1/nacl_0_2M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/sfp1/nacl_0_3M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/sfp1/nacl_0_4M",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/dot6/oxid_0_22mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/dot6/oxid_0_28mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/dot6/oxid_0_36mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/dot6/oxid_0_50mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/maf1/oxid_0_22mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/maf1/oxid_0_28mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/maf1/oxid_0_36mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/maf1/oxid_0_50mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/msn2/oxid_0_22mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/msn2/oxid_0_28mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/msn2/oxid_0_36mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/msn2/oxid_0_50mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/sfp1/oxid_0_22mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/sfp1/oxid_0_28mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/sfp1/oxid_0_36mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/sfp1/oxid_0_50mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/yap1/oxid_0_22mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/yap1/oxid_0_28mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/yap1/oxid_0_36mM",
+      "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/yap1/oxid_0_50mM",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/dot6/gluc/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/dot6/gluc/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/dot6/nacl/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/dot6/nacl/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/dot6/oxid/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/dot6/oxid/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/hog1/gluc/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/hog1/gluc/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/hog1/nacl/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/hog1/nacl/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/hog1/oxid/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/hog1/oxid/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/maf1/gluc/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/maf1/gluc/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/maf1/nacl/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/maf1/nacl/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/maf1/oxid/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/maf1/oxid/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig1/gluc/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig1/gluc/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig1/nacl/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig1/nacl/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig1/oxid/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig1/oxid/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig2/gluc/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig2/gluc/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig2/nacl/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig2/nacl/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig2/oxid/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig2/oxid/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn2/gluc/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn2/gluc/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn2/nacl/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn2/nacl/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn2/oxid/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn2/oxid/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn4/gluc/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn4/gluc/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn4/nacl/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn4/nacl/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn4/oxid/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn4/oxid/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/gluc/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/gluc/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/nacl/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/nacl/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/oxid/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/oxid/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/tod6/gluc/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/tod6/gluc/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/tod6/nacl/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/tod6/nacl/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/tod6/oxid/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/tod6/oxid/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/yap1/gluc/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/yap1/gluc/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/yap1/nacl/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/yap1/nacl/rep2",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/yap1/oxid/rep1",
+      "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/yap1/oxid/rep2",
+      "f0ff4386-a4a5-40a4-b501-42b3e222e698:/dot6",
+      "f0ff4386-a4a5-40a4-b501-42b3e222e698:/hog1",
+      "f0ff4386-a4a5-40a4-b501-42b3e222e698:/maf1",
+      "f0ff4386-a4a5-40a4-b501-42b3e222e698:/mig1",
+      "f0ff4386-a4a5-40a4-b501-42b3e222e698:/mig2",
+      "f0ff4386-a4a5-40a4-b501-42b3e222e698:/msn2",
+      "f0ff4386-a4a5-40a4-b501-42b3e222e698:/msn4",
+      "f0ff4386-a4a5-40a4-b501-42b3e222e698:/sfp1",
+      "f0ff4386-a4a5-40a4-b501-42b3e222e698:/tod6",
+      "f0ff4386-a4a5-40a4-b501-42b3e222e698:/yap1"
+    ],
+    "excluded_group_ids": [],
+    "selection_basis": "Only documented input interventions, replicate metadata, compatible assay availability and overlap provenance; never response amplitudes, fits or model performance",
+    "proposal": "Do not form a train/development/final partition, fit, select, calibrate, or export response-bearing projections under this protocol. All source groups remain reserved. Do not replace Sfp1 with another factor or relax criteria without a new independently registered protocol before response access.",
+    "approval_required": "The verifier must commit protocol.json with exact source/group IDs, alias-aware disjointness, eligibility exclusions and a training-only/fixed observation transform before projections are exported."
+  },
+  "observation_mapping": {
+    "target": "Current registered candidate: empirical Sfp1 GFP-localization response conditional on carbon input in the declared SC/BY/30 C context. This is not a Hog1-phosphorylation assay, native kinase-activity law or identified intracellular causal mechanism.",
+    "preferred_raw_field": "nucLoc",
+    "preferred_definition": "The original target remains identity on source max5/median, preserving missingness and actual switch-relative minutes. origin is a frame index and must not be subtracted as minutes. Any nominal grid must be labelled nominal, not measured. Never impose a [0,1] phosphorylation bound on localization.",
+    "normalization_policy": "Original protocol restrictions remain unchanged: no normalization-for-learning or response export is authorized. A predeclared known prefix could legitimately supply initial-state/calibration inputs for a NEW post-stimulus conditional estimand; that is not inherently post-outcome leakage. A normalized target would still require an explicit new protocol and verified prefix-only preprocessing, which the full published example does not establish. Private source-normalizer execution here was for identity auditing only, never fitting or scoring.",
+    "calibration_policy": "The original support rule remains unmet. Independently of that rule, the marker-tagged Sfp1 experiment contains paired raw and mask-derived GFP readouts on the same cells/times. A new paired observation-validation design can reserve both together, freeze its observation map beforehand and account for their error covariance, without counting them as separate biological experiments. No mapping or uncertainty model was fitted, and no marker response was released.",
+    "paired_data_policy": "Joint validation requires source-supported within-experiment pairing: genuine paired-factor GFP/mCherry strains, or raw GFP and independent-mask-derived GFP readouts in the marker experiment. Do not join separate single-colour strains or count paired readouts/same-movie cells as independent biological replicates.",
+    "causal_scope": "Environmental input-response prediction can be tested; success would not identify intracellular causal regulation or metabolic/product flux."
+  },
+  "artifacts": {
+    "schema_inventory": "data/native_law_v2/granados/schema_inventory.json",
+    "overlap_audit": "data/native_law_v2/granados/overlap_audit.json",
+    "methods_evidence": "data/native_law_v2/granados/provenance/supplement_methods_excerpt.txt",
+    "condition_metadata": "data/native_law_v2/granados/condition_metadata.json",
+    "access_audit": "data/native_law_v2/granados/access_audit.json",
+    "training_projection": null,
+    "development_projection": null,
+    "withheld_projection": null,
+    "export_receipt": null,
+    "eligibility_audit": "data/native_law_v2/granados/eligibility_audit.json",
+    "dependency_components": "data/native_law_v2/granados/dependency_components.json",
+    "identity_checks": "data/native_law_v2/granados/identity_checks.json",
+    "timing_review": "data/native_law_v2/granados/timing_review.json",
+    "metadata_supplement": "data/native_law_v2/granados/metadata_supplement.json"
+  }
+}

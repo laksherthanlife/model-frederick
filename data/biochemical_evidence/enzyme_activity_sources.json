@@ -1,0 +1,585 @@
+{
+  "schema_version": 1,
+  "artifact_type": "independent_biochemical_evidence_not_an_installable_chemical_task",
+  "curation_date_utc": "2026-09-07",
+  "source": {
+    "authority": "Primary fungal enzymology and protein-detection studies; primary abstracts where full text is unavailable; explicitly qualified UniProt/ENA records; bacterial redox comparison kept separate",
+    "source_id": "independent-fungal-enzyme-evidence-01",
+    "scope": "independent_biochemical_evidence",
+    "reference": "Alcaino et al. 2014, PMID 24796858; Rabeharindranto et al. 2019, PMID 30723675; Verdoes et al. 1999, PMIDs 10397832 and 10589832; Schaub et al. 2012, PMID 22745782, comparison only"
+  },
+  "status": {
+    "strict_fungal_redox_chemistry": "still_unresolved_do_not_unblock",
+    "selected_construct_compatible_kcat_values": [],
+    "selected_construct_active_enzyme_abundances": [],
+    "selected_construct_consumption_rate_constants": [],
+    "independent_fungal_quantitative_finding": "A CrtE-containing E. coli soluble-extract activity is available, but its total-extract protein denominator and endpoint assay do not identify intrinsic CrtE kcat or target-strain capacity.",
+    "independent_heterologous_protein_finding": "Western-blot and peptide evidence exists for fungal pathway proteins in a different S. cerevisiae expression system; it is not calibrated active-enzyme abundance or demonstrated organelle localization.",
+    "preferred_redox_hypothesis": null,
+    "model_or_parameter_changes_authorized_by_this_file": false
+  },
+  "scope_guard": {
+    "existing_local_files_read": [
+      "data/holdout_transfer/chemistry_evidence.json",
+      "data/holdout_transfer/condition_records.json",
+      "data/holdout_transfer/input_resolution.json",
+      "data/holdout_transfer/hypotheses/manifest.json"
+    ],
+    "manifest_path_resolution": "The requested hypotheses/manifest.json is nested under data/holdout_transfer; a read of the project-root hypotheses/manifest.json returned not found.",
+    "target_product_outcomes_or_labels_read": false,
+    "scoring_or_prediction_outputs_read": false,
+    "legacy_fitted_kinetics_or_pathway_calibrations_read": false,
+    "checkpoints_or_model_code_read": false,
+    "target_publication_results_or_abstracts_retrieved": false,
+    "culture_product_endpoint_values_collected": false,
+    "direct_in_vitro_assay_product_measurements_used": true,
+    "product_endpoint_fitting_performed": false,
+    "numerical_selection_using_prediction_performance": false,
+    "only_file_written": "data/biochemical_evidence/enzyme_activity_sources.json",
+    "existing_files_modified": [],
+    "packages_installed": false,
+    "github_operations_performed": false,
+    "http_timeout_seconds_max": 30,
+    "interpretation": "Measuring product formation in a controlled enzyme assay is distinct from fitting enzyme parameters to a culture product endpoint. The former can establish assay activity when its denominator and timing are specified; it is not automatically kcat. This curation does not restore or claim fresh validation on an already scored product set."
+  },
+  "input_context": {
+    "host": "Saccharomyces cerevisiae CEN.PK2-1c derivatives",
+    "donor": "Phaffia rhodozyma, synonym Xanthophyllomyces dendrorhous",
+    "enzymes": ["CrtE", "CrtYB", "CrtI"],
+    "gene_copy_counts_are_not_enzyme_mass": true,
+    "target_is_a_consumable_intermediate": true,
+    "provenance": [
+      {"path": "data/holdout_transfer/condition_records.json", "lines": "21-35, 75-90, 131-146", "use": "Construct identities only, including integrated gene counts; no copy-to-activity scaling."},
+      {"path": "data/holdout_transfer/chemistry_evidence.json", "lines": "16-29, 256-290", "use": "Existing fungal redox blocker and missing enzyme constraints."},
+      {"path": "data/holdout_transfer/input_resolution.json", "lines": "11-17, 46-74, 124-128", "use": "No retroactive upgrade of annotations or hypothesis packaging to measured biochemical evidence."},
+      {"path": "data/holdout_transfer/hypotheses/manifest.json", "lines": "29-42, 49-68", "use": "All three redox variants remain unverified; downstream cyclase omission is an explicit common relaxation."}
+    ],
+    "exact_engineered_amino_acid_sequences_verified": false,
+    "sequence_matching_rule": "Reference accessions below identify literature proteins, not automatically the engineered constructs. Resolve amino-acid sequence, tags, isoform and targeting modifications before transferring any quantitative property."
+  },
+  "evidence_grade_definitions": {
+    "measured_extract_assay": "Direct substrate/product experiment in a protein extract, normalized as reported; not necessarily a purified-enzyme initial rate.",
+    "derived_unit_conversion": "Arithmetic conversion of reported assay units, without adding biological assumptions about active enzyme fraction.",
+    "primary_abstract_functional_complementation": "Primary authors report gene-dependent chemical conversion in a heterologous cell. Function is supported, but purification, intrinsic kinetic constants and electron stoichiometry are not established by this readout.",
+    "measured_protein_detection": "Protein/peptide detection independent of product titers. Relative band intensity or peptide coverage is not absolute active-enzyme mass.",
+    "reviewed_functional_annotation": "Reviewed annotation with experimental provenance; the underlying experiment and its scope still determine what was measured.",
+    "automated_annotation": "Computational/automatic annotation, not a biochemical experiment.",
+    "measured_comparator_only": "A primary biochemical measurement for a different organism/protein; explicitly excluded from fungal numerical inputs.",
+    "unresolved": "Not established in the sources inspected. Null means unknown, not zero or absent."
+  },
+  "sources": [
+    {
+      "source_id": "verdoes_1999_crti",
+      "citation": "Verdoes JC, Misawa N, van Ooyen AJ. Cloning and characterization of the astaxanthin biosynthetic gene encoding phytoene desaturase of Xanthophyllomyces dendrorhous. Biotechnology and Bioengineering 63:750-755 (1999).",
+      "pmid": "10397832",
+      "doi": "10.1002/(SICI)1097-0290(19990620)63:6<750::AID-BIT13>3.0.CO;2-7",
+      "primary_full_text_inspected": false,
+      "inspected_coordinates": ["Primary abstract via Europe PMC", "Wageningen author-repository metadata and Access to Document section"],
+      "verified_access": [
+        {"url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:10397832%20AND%20SRC:MED&format=json&resultType=core", "http_status": 200, "result": "Primary abstract and bibliographic metadata accessible; no Europe PMC full text."},
+        {"url": "https://api.openalex.org/works/https://doi.org/10.1002%2F%28SICI%291097-0290%2819990620%2963%3A6%3C750%3A%3AAID-BIT13%3E3.0.CO%3B2-7", "http_status": 200, "result": "Index labels a Wageningen repository location green OA, but supplies no PDF URL. This index flag was not accepted as full-text access."},
+        {"url": "https://research.wur.nl/en/publications/cloning-and-characterization-of-the-astaxanthin-biosynthetic-gene", "http_status": 200, "result": "Legitimate author-institution page reached. Access to Document exposes the DOI only; no manuscript/PDF download link was found in the inspected page."},
+        {"url": "https://onlinelibrary.wiley.com/doi/full/10.1002/(SICI)1097-0290(19990620)63:6%3C750::AID-BIT13%3E3.0.CO;2-7", "http_status": 403, "method": "HEAD", "result": "Publisher access denied. No access-control bypass attempted."}
+      ],
+      "access_conclusion": "Abstract supports function. No claim is made that the inaccessible body contains, or lacks, a particular kinetic/redox assay. Request an author copy or normal institutional/interlibrary access if the body is needed."
+    },
+    {
+      "source_id": "verdoes_1999_crtyb",
+      "citation": "Verdoes JC, Krubasik KP, Sandmann G, van Ooyen AJ. Isolation and functional characterisation of a novel type of carotenoid biosynthetic gene from Xanthophyllomyces dendrorhous. Molecular and General Genetics 262:453-461 (1999).",
+      "pmid": "10589832",
+      "doi": "10.1007/s004380051105",
+      "primary_full_text_inspected": false,
+      "inspected_coordinates": ["Primary abstract", "Publisher access notice", "Reviewed annotation's primary-reference provenance"],
+      "verified_access": [
+        {"url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:10589832%20AND%20SRC:MED&format=json&resultType=core", "http_status": 200, "result": "Primary abstract accessible; subscription full text indicated."},
+        {"url": "https://api.openalex.org/works/https://doi.org/10.1007/s004380051105", "http_status": 200, "result": "No OA location supplied by this index."},
+        {"url": "https://doi.org/10.1007/s004380051105", "http_status_after_redirects": 200, "result": "Publisher abstract page explicitly says preview of subscription content; institution/purchase access offered, not full article text."},
+        {"url": "https://link.springer.com/content/pdf/10.1007/s004380051105.pdf", "http_status_after_redirects": 200, "method": "HEAD", "result": "Publisher-advertised PDF link redirected through its normal access flow to text/html article landing page, not a PDF. No manuscript obtained and no bypass attempted."}
+      ]
+    },
+    {
+      "source_id": "alcaino_2014_crte",
+      "citation": "Alcaino J, Romero I, Niklitschek M, Sepulveda D, Rojas MC, Baeza M, Cifuentes V. Functional Characterization of the Xanthophyllomyces dendrorhous Farnesyl Pyrophosphate Synthase and Geranylgeranyl Pyrophosphate Synthase Encoding Genes That Are Involved in the Synthesis of Isoprenoid Precursors. PLoS ONE 9:e96626 (2014).",
+      "pmid": "24796858",
+      "pmcid": "PMC4010515",
+      "doi": "10.1371/journal.pone.0096626",
+      "primary_full_text_inspected": "selected enzymology sections only",
+      "inspected_coordinates": [
+        "Materials and Methods s2a: strain and cultivation identity",
+        "Materials and Methods s2f: cDNA/expression constructs and genomic accession",
+        "Materials and Methods s2i: Protein extraction",
+        "Materials and Methods s2j: Prenyl transferase activity assays",
+        "Materials and Methods s2k: Product quantification and analysis",
+        "Results and Discussion s3a: sequence identity",
+        "Results and Discussion s3b: Heterologous expression of FPS and crtE genes from X. dendrorhous in E. coli",
+        "Table 3, XML id pone-0096626-t003, and its footnotes",
+        "Table 4, XML id pone-0096626-t004, and its footnotes, extract-assay specificity limitations only",
+        "Relevant reference metadata"
+      ],
+      "excluded_coordinates": ["Culture carotenoid/sterol outcome sections", "Table 5 culture carotenoid amounts"],
+      "verified_access": [
+        {"url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4010515/fullTextXML", "http_status": 200, "result": "OA primary XML retrieved in memory; only the listed assay/identity sections, enzymatic tables and reference metadata were rendered."}
+      ]
+    },
+    {
+      "source_id": "rabeharindranto_2019_proteins",
+      "citation": "Rabeharindranto H, Castano-Cerezo S, Lautier T, Garcia-Alles LF, Treitz C, Tholey A, Truan G. Enzyme-fusion strategies for redirecting and improving carotenoid synthesis in S. cerevisiae. Metabolic Engineering Communications 8:e00086 (2019).",
+      "pmid": "30723675",
+      "pmcid": "PMC6350077",
+      "doi": "10.1016/j.mec.2019.e00086",
+      "primary_full_text_inspected": "selected construct and protein-detection sections only",
+      "inspected_coordinates": [
+        "Methods 2.1, s0015: Plasmid construction",
+        "Methods 2.2, s0020: Strain construction",
+        "Methods 2.6, s0040: Western blot analysis",
+        "Methods 2.7, s0045: Protein analysis by GeLC-MS",
+        "Results 3.1.1, s0065: Defining CrtB and CrtY domains, sequence-alignment discussion",
+        "Results 3.2, s0075: Enzyme detection by western blots, Fig. 3 caption and associated text",
+        "Results 3.3, s0080: Detection by GeLC-MS, Fig. 4 caption and associated text",
+        "Relevant reference metadata"
+      ],
+      "excluded_coordinates": ["Product-amount results in catalytic-efficiency/fusion sections", "Product outcome tables/figures", "Supplementary production data"],
+      "verified_access": [
+        {"url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6350077/fullTextXML", "http_status": 200, "result": "OA primary XML retrieved in memory; only the listed construct/protein sections and reference metadata were rendered. No densitometry or supplementary proteome quantification was performed."}
+      ]
+    },
+    {
+      "source_id": "schaub_2012_comparator",
+      "citation": "Schaub P et al. On the Structure and Function of the Phytoene Desaturase CRTI from Pantoea ananatis, a Membrane-Peripheral and FAD-Dependent Oxidase/Isomerase. PLoS ONE 7:e39550 (2012).",
+      "pmid": "22745782",
+      "pmcid": "PMC3382138",
+      "doi": "10.1371/journal.pone.0039550",
+      "organism_transfer": "bacterial comparison only, never a fungal capacity/localization/redox input",
+      "inspected_coordinates": [
+        "Results s2a: CRTI Purification and Enzymatic Activity",
+        "Results s2b: Role of FAD and Nature of the Terminal Electron Acceptor; Figs. 5 and 6",
+        "Results s2c: Flavin-binding and Membrane Association is one Concerted Process; Fig. 7",
+        "Discussion s3a: CRTI-redox Reaction",
+        "Methods s4b: CRTI Cloning, Expression and Purification",
+        "Methods s4d: Preparation of Phytoene Liposomes and Phytoene Desaturase Reactions",
+        "Methods s4e: Desaturation Reactions in the Presence of Alternative Electron Acceptors"
+      ],
+      "verified_access": [
+        {"url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3382138/fullTextXML", "http_status": 200, "result": "Primary enzymology text and figure captions inspected directly; no inference from prior curation alone."}
+      ]
+    },
+    {
+      "source_id": "uniprot_q7z859",
+      "citation": "UniProtKB Q7Z859, reviewed bifunctional lycopene cyclase/phytoene synthase, Phaffia rhodozyma.",
+      "source_type": "reviewed_annotation",
+      "verified_access": [
+        {"url": "https://rest.uniprot.org/uniprotkb/Q7Z859.json", "http_status": 200, "result": "Reviewed status, organism, catalytic reactions, primary references, location evidence codes and domain-feature evidence inspected."}
+      ],
+      "important_scope_distinction": "Catalytic reactions carry ECO:0000269 / PMID:10589832. Membrane/multi-pass location and transmembrane features carry ECO:0000255; domain boundary features carry ECO:0000305. These are not experimental organelle localization or kinetic measurements."
+    },
+    {
+      "source_id": "uniprot_o13506",
+      "citation": "UniProtKB O13506, unreviewed phytoene desaturase, Phaffia rhodozyma; reference strain CBS 6938, EMBL protein CAA75240.1.",
+      "source_type": "unreviewed_annotation",
+      "verified_access": [
+        {"url": "https://rest.uniprot.org/uniprotkb/O13506.json", "http_status": 200, "result": "Cofactor NAD(+) is automatic ECO:0000256 / ARBA00001911. Primary reference PMID:10397832 is recorded for nucleotide sequence; no experimentally supported catalytic equation was supplied in the inspected comments."}
+      ]
+    },
+    {
+      "source_id": "ena_crte_dq012943",
+      "citation": "ENA DQ012943.1, Xanthophyllomyces dendrorhous crtE genomic sequence, translated CDS AAY33921.1.",
+      "source_type": "sequence_record",
+      "verified_access": [
+        {"url": "https://www.ebi.ac.uk/ena/browser/api/embl/DQ012943.1?download=false", "http_status": 200, "result": "Record identifies Phaffia rhodozyma, crtE, GGDP synthase and protein_id AAY33921.1. Used only to resolve the sequence accession cited by the 2014 primary paper."}
+      ]
+    }
+  ],
+  "quantitative_fungal_candidates": [
+    {
+      "measurement_id": "crte_fpp_ipp_soluble_extract_activity",
+      "enzyme": "Geranylgeranyl diphosphate synthase CrtE",
+      "organism": "Xanthophyllomyces dendrorhous (Phaffia rhodozyma), UCD 67-385 / ATCC 24230",
+      "reference_accession": "AAY33921.1",
+      "reference_nucleotide_accession": "DQ012943.1",
+      "accession_mapping": "The primary paper links crtE to DQ012943.1 and constructs pET28-ccrtE from sequenced cDNA of this strain. ENA links that genomic CDS to AAY33921.1. No sequence equality to the selected engineered strains is asserted.",
+      "expression_host_and_construct": "E. coli BL21-Gold (DE3), induced BL21+crtE carrying pET28-ccrtE",
+      "parameter_measured": "Prenyl-transferase activity per mg soluble extract protein",
+      "reported_value": 2.44,
+      "reported_error": 0.16,
+      "error_type": "SEM as stated in Table 3 footnote",
+      "reported_column_heading": "Prenyl Transferase Activity (U/mg x 10^6)",
+      "unit_definition": "Methods s2j defines 1 U as 1 micromole product formed per minute under the assay conditions; denominator is mg protein extract.",
+      "converted_value": {
+        "value": 2.44e-6,
+        "error": 1.6e-7,
+        "units": "micromole product min^-1 mg_total_soluble_extract_protein^-1",
+        "equivalent_value": 2.44,
+        "equivalent_error": 0.16,
+        "equivalent_units": "pmol product min^-1 mg_total_soluble_extract_protein^-1",
+        "grade": "derived_unit_conversion",
+        "calculation": "The displayed column is (U/mg) multiplied by 10^6. Divide its numerical value by 10^6 to recover U/mg; multiply micromoles by 10^6 to express pmoles.",
+        "qualification": "This follows the printed heading and the stated U definition only. Raw counts and an initial-rate time course were not supplied in the inspected text for independent rederivation; do not silently reinterpret the small rate or its scale."
+      },
+      "assay_readout": "14C-IPP incorporation into acid-hydrolysable allylic prenyl products, hexane extraction and liquid-scintillation counting; RP-TLC of derived prenyl alcohols identifies the C20 product fraction. Table 3 reports the FPP-fed BL21+crtE assay product as C20. This is direct enzyme-assay product formation, not a culture carotenoid endpoint.",
+      "substrates": [
+        {"name": "FPP", "concentration": 13.8, "units": "micromolar", "qualification": "Called saturating in Methods s2j; no FPP saturation curve or Km is reported in these inspected sections."},
+        {"name": "IPP", "concentration_as_listed": 20.2, "units": "micromolar"},
+        {"name": "14C-IPP", "amount_as_listed": 0.81, "units": "nmol", "radioactivity_dpm": 100000, "specific_radioactivity_mCi_per_mmol": 56.6, "qualification": "Protocol lists labeled IPP and 20.2 micromolar IPP separately; preserve that recipe rather than silently changing the substrate concentration."}
+      ],
+      "redox_partner": null,
+      "redox_partner_note": "CrtE prenyl transfer is not the unresolved CrtI desaturation. No terminal-electron-acceptor experiment is provided by this assay. DTT in the buffer is an assay additive, not a demonstrated CrtI electron donor/acceptor.",
+      "temperature_celsius": 22,
+      "assay_pH": null,
+      "pH_qualification": "Methods s2j specifies 50 mM MOPS but not an explicit assay pH. E. coli extraction buffer is MOPS pH 7.5 in s2i; extraction pH is not silently promoted to a separately measured assay pH.",
+      "other_assay_conditions": {
+        "volume_microliter": 500,
+        "incubation_minutes": 60,
+        "MOPS_millimolar": 50,
+        "MgCl2_millimolar": 5,
+        "DTT_millimolar": 6,
+        "protein_extract_microgram": 12,
+        "replication": "Two protein extracts from two replicate cultures; two assays per extract. The primary footnote reports means and SEM.",
+        "not_enzyme_assay_temperature": "The subsequent acid-hydrolysis step is 37 C for 1 h; it must not be mistaken for the enzyme incubation temperature."
+      },
+      "protein_purification_and_abundance_basis": {
+        "purified_target_enzyme": false,
+        "fraction": "Soluble supernatant after 14000 x g centrifugation of sonicated E. coli",
+        "denominator": "Total soluble extract protein, not measured CrtE mass",
+        "target_identity_evidence": "Induction-dependent SDS-PAGE band and MALDI-TOF identification, Results s3b / Fig. S3 description",
+        "CrtE_fraction_of_extract_established_here": false,
+        "active_fraction_or_active_site_titration_established_here": false,
+        "target_host_abundance_established_here": false
+      },
+      "primary_source_id": "alcaino_2014_crte",
+      "exact_primary_coordinates": ["Table 3, BL21+crtE / FPP row; table footnotes", "Methods s2i, s2j, s2k", "Results s3b; construct/accession in s2f"],
+      "evidence_grade": "measured_extract_assay",
+      "derived_from_product_amounts": true,
+      "product_amount_derivation_kind": "Controlled 60-minute in vitro enzyme-assay product formation normalized by assay time and total extract protein; not a culture product endpoint fit.",
+      "what_it_establishes": [
+        "A protein extract expressing this fungal CrtE catalyzes FPP plus IPP conversion to a C20 prenyl product under the stated conditions.",
+        "The primary experiment supplies an extract-normalized average activity and an assay design useful for independent follow-up."
+      ],
+      "what_it_does_not_establish": [
+        "Intrinsic kcat, because CrtE mass and active fraction in the extract are unknown.",
+        "A validated initial rate or Vmax, because the inspected protocol uses one 60-minute incubation and does not establish time linearity, depletion or product inhibition.",
+        "Km, because a substrate concentration described as saturating is not a measured saturation curve.",
+        "Activity per biomass or active enzyme abundance in CEN.PK2-1c-derived strains.",
+        "A mandatory Mg2+ stoichiometry or metal dependence: including MgCl2 is not a cofactor-titration experiment."
+      ],
+      "transfer_limitations": [
+        "Different donor strain/possible sequence, expression host, promoter, extraction and assay environment.",
+        "Soluble-extract recovery and host background activities are not accounted for by target gene copy counts.",
+        "A sequence-predicted molecular weight cannot convert a rate per mg mixed extract into kcat.",
+        "The assay's substrate/product detection supports CrtE function but does not quantify target in vivo allocation."
+      ],
+      "accepted_as_target_model_parameter": false,
+      "target_kcat_per_second": null,
+      "target_Km_molar": null,
+      "target_capacity_mmol_per_gDW_per_hour": null
+    }
+  ],
+  "functional_and_protein_evidence": [
+    {
+      "evidence_id": "fungal_crte_substrate_identity",
+      "enzyme": "CrtE",
+      "reference_accession": "AAY33921.1",
+      "organism": "X. dendrorhous UCD 67-385",
+      "source_ids": ["alcaino_2014_crte", "ena_crte_dq012943"],
+      "coordinates": ["Table 3, BL21+crtE rows and vector controls", "Results s3b", "Methods s2j-s2k"],
+      "grade": "measured_extract_assay",
+      "observation": "Induced fungal-CrtE-containing E. coli extract used FPP plus IPP to form C20 product. DMAPP- or GPP-fed CrtE extracts and vector/non-induced controls did not show detected products under these assay conditions.",
+      "assay_metadata_ref": "crte_fpp_ipp_soluble_extract_activity",
+      "interpretation": "Supports the FPP + IPP to GGPP reaction assignment. Non-detection is assay-limited, not proof that another substrate can never react.",
+      "native_extract_caution": "Table 4 reports aggregate prenyl-transfer activities in native-yeast soluble extracts. Several FPP-fed products were below TLC detection; the overexpressing extract contained a mixture of labeled products. These values were not promoted to pure CrtE rates or target enzyme abundance.",
+      "quantitative_target_constraint": null,
+      "uses_product_readout": true,
+      "culture_product_endpoint_fit": false
+    },
+    {
+      "evidence_id": "fungal_crti_function_not_redox",
+      "enzyme": "Phytoene desaturase CrtI",
+      "reference_accession": "O13506 / CAA75240.1",
+      "organism": "X. dendrorhous; UniProt primary sequence reference identifies CBS 6938",
+      "source_ids": ["verdoes_1999_crti", "uniprot_o13506"],
+      "coordinates": ["PMID:10397832 primary abstract", "O13506 referenceNumber=1 nucleotide-sequence provenance and comments"],
+      "grade": "primary_abstract_functional_complementation",
+      "assay_readout": "Heterologous complementation in E. coli carrying Erwinia GGPP-synthase and phytoene-synthase genes; chemical identity of the downstream carotenoid supports phytoene-to-lycopene conversion by the introduced fungal gene.",
+      "substrate": "Phytoene supplied by the heterologous upstream system, not a quantified purified-substrate kinetic assay in the accessible abstract",
+      "redox_partner": null,
+      "temperature_celsius": null,
+      "pH": null,
+      "purification_or_abundance_basis": "Whole-cell complementation; no purified protein or measured active enzyme mass in the accessible abstract",
+      "units": null,
+      "kinetic_value": null,
+      "what_it_establishes": "The fungal gene can carry out the four desaturation steps needed for lycopene formation in the complementation system.",
+      "what_it_does_not_establish": "Terminal acceptor, reduction product, FAD occupancy/exchange, host compartment, kcat, Km, exclusive product specificity, or a steady synthesis flux in the selected strains.",
+      "derived_from_product_amounts": false,
+      "product_readout_qualification": "Function is inferred from product identity in complementation; no quantitative enzyme parameter is inferred from accumulated amounts.",
+      "transfer_limitations": ["Different host and auxiliary enzymes", "Exact engineered CrtI sequence unverified", "Full primary body inaccessible"]
+    },
+    {
+      "evidence_id": "fungal_crtyb_two_activities",
+      "enzyme": "Bifunctional phytoene synthase / lycopene beta-cyclase CrtYB",
+      "reference_accession": "Q7Z859",
+      "organism": "X. dendrorhous (Phaffia rhodozyma)",
+      "source_ids": ["verdoes_1999_crtyb", "uniprot_q7z859"],
+      "coordinates": ["PMID:10589832 primary abstract", "Q7Z859 CATALYTIC ACTIVITY entries RHEA:34475, RHEA:32219 and RHEA:32239; ECO:0000269 / PMID:10589832"],
+      "grade": "primary_abstract_functional_complementation",
+      "annotation_grade": "reviewed_functional_annotation",
+      "assay_readout": "Expression/complementation in different carotenogenic E. coli strains and deletion derivatives identifies both functions and their domain association.",
+      "supported_transformations": ["Two GGPP molecules to phytoene", "All-trans-lycopene to gamma-carotene", "Gamma-carotene to all-trans-beta-carotene"],
+      "redox_partner": null,
+      "temperature_celsius": null,
+      "pH": null,
+      "purification_or_abundance_basis": "Functional expression/deletion studies in the accessible primary abstract; no purified CrtYB dose or kinetic normalization established",
+      "units": null,
+      "kinetic_value": null,
+      "what_it_establishes": "The expressed CrtYB identity entails an upstream synthase function and a downstream lycopene-consuming cyclase function; a standalone CrtB or terminal lycopene-only pathway is not an adequate biological description.",
+      "what_it_does_not_establish": [
+        "A nonzero consumption floor under every target condition.",
+        "Cyclase Km/kcat, a synthase-to-cyclase activity ratio, a branch partition fraction or inhibition constant.",
+        "Mutually exclusive catalysis of the two domains or a measured common-enzyme occupancy constraint.",
+        "In vivo compartment-specific lycopene accessibility or enzyme mass."
+      ],
+      "derived_from_product_amounts": false,
+      "product_readout_qualification": "Product identity/complementation establishes function. No amount-based kinetic fit or numerical flux partition is made.",
+      "transfer_limitations": ["Exact construct/isoform match unverified", "Functional evidence is not a quantitative branch competition assay", "Primary body inaccessible"]
+    },
+    {
+      "evidence_id": "fungal_proteins_detected_in_other_s_cerevisiae",
+      "enzymes": ["CrtE", "CrtYB", "CrtI"],
+      "donor": "X. dendrorhous",
+      "reference_accessions": {"CrtE": null, "CrtYB": null, "CrtI": null},
+      "accession_qualification": "The primary Methods identify the pYEplac195 CRTYB/CRTI/CRTE template and describe sequence verification; exact supplementary construct sequences were not inspected. Q7Z859/O13506/AAY33921.1 must not be silently equated with these tagged/fused constructs.",
+      "expression_host": "S. cerevisiae BY4741-derived yHR21 strains; GAL80 deletion, GAL1-GAL10 expression system and tHMG1/CrtE background",
+      "source_id": "rabeharindranto_2019_proteins",
+      "coordinates": ["Methods 2.1-2.2, 2.6-2.7", "Results 3.2 / Fig. 3", "Results 3.3 / Fig. 4"],
+      "grade": "measured_protein_detection",
+      "assay_readout": "Tagged-protein Western blots of normalized cell extracts, and in-gel trypsin digestion followed by LC-MS/MS peptide identification (GeLC-MS)",
+      "protein_purification_and_abundance_basis": "Cell lysates and excised SDS-PAGE regions, not purified active protein. Western preparations normalize starting cells by OD600; the GeLC-MS protocol specifies crude-lysate loading and peptide identification, not absolute isotope-standard quantitation of active enzyme.",
+      "assayed_culture_time_hours": 72,
+      "temperature_celsius": null,
+      "pH": null,
+      "temperature_pH_qualification": "No catalytic reaction temperature/pH applies to this denaturing protein-detection assay. Culture temperature/pH are not supplied here as transferable kinetic conditions.",
+      "substrate_and_redox_partner": "Not a substrate-turnover/redox assay",
+      "units_for_target_active_abundance": null,
+      "active_abundance_value": null,
+      "observations": [
+        "Natural CrtYB is detected by Western blot. CrtI detection depends on coexpression/construct context, and some bands are only tentatively assigned as truncation products.",
+        "GeLC-MS detects peptides supporting CrtI and the synthase portion of natural CrtYB; separate CrtE peptides are detected in the analyzed yeast extracts. Peptides also support the engineered tridomain fusion.",
+        "The authors explicitly characterize Western information as semi-quantitative. Peptide coverage and apparent gel molecular mass are identity/detection evidence, not an active-enzyme mass fraction.",
+        "The experimental host is BY4741-derived. A CEN.PK113-7D sequence database used for peptide searching in Methods 2.7 is not evidence that the experimental cells were CEN.PK2-1c."
+      ],
+      "localization_limit": "No organelle fractionation or live-cell colocalization measurement was established by these inspected experiments. The discussion extrapolates from bacterial/plant membrane-association work; that extrapolation is not measured fungal localization. Similarly, Q7Z859 membrane annotations are predictive, not a demonstrated target compartment.",
+      "turnover_limit": "A possible truncation band is not a measured degradation half-life. Failure to detect a hydrophobic domain is not proof of its absence.",
+      "derived_from_product_amounts": false,
+      "transfer_limitations": ["Different yeast background and promoters", "Tagged/domain-fusion expression and batch harvest rather than the selected balanced-growth conditions", "Extraction, blot transfer and peptide ionization bias", "No calibrated protein amount, holoenzyme fraction or specific activity"],
+      "accepted_as_target_model_parameter": false
+    },
+    {
+      "evidence_id": "fungal_nad_annotation_not_coupling",
+      "enzyme": "CrtI",
+      "reference_accession": "O13506",
+      "organism": "Phaffia rhodozyma",
+      "source_id": "uniprot_o13506",
+      "coordinates": ["COFACTOR comment: NAD(+), ECO:0000256, ARBA00001911"],
+      "grade": "automated_annotation",
+      "assay_readout": null,
+      "units": null,
+      "value": null,
+      "substrate_or_redox_partner_tested": null,
+      "temperature_celsius": null,
+      "pH": null,
+      "purification_or_abundance_basis": null,
+      "derived_from_product_amounts": false,
+      "conclusion": "An automatic cofactor annotation is neither a measured terminal electron acceptor nor a stoichiometric NADH-production assay. It does not authorize the NAD hypothesis as strict chemistry, and does not resolve whether fungal CrtI contains catalytic FAD."
+    }
+  ],
+  "bacterial_comparison_not_fungal_inputs": {
+    "source_id": "schaub_2012_comparator",
+    "enzyme": "Pantoea ananatis CRTI-His6 expressed in E. coli JM109",
+    "assayed_accession": null,
+    "accession_qualification": "The primary experiment is identified by its organism and described construct. An exact accession-to-assayed-sequence match was not established here. The separately inspected P21685 record is labeled Pantoea ananas / Erwinia uredovora and is not asserted to be the selected fungal enzyme.",
+    "purification": "Soluble bacterial expression fraction, immobilized-metal affinity chromatography followed by gel permeation; near homogeneity. Protein estimated by Bradford. Mainly apoenzyme was recovered before reconstitution.",
+    "activity_and_cofactor_findings": [
+      {"coordinates": "s2a, s2b and s4d; Figs. 3-5", "grade": "measured_comparator_only", "finding": "Purified bacterial CRTI desaturates liposomal 15-cis-phytoene to all-trans-lycopene when FAD is supplied. LC-MS/MS detects FAD with traces of FMN in the isolated material; NAD(H)/NADP(H) analyses yield no signals. This does not establish fungal cofactor occupancy or exclude fungal NAD coupling."},
+      {"coordinates": "s2b; Fig. 6A", "grade": "measured_comparator_only", "finding": "Desaturation is inactive under nitrogen without an alternative acceptor despite excess oxidized FAD. Oxygen consumption accompanies conversion under aerobic conditions. This supports oxygen as an acceptor for this bacterial assay, not an identified fungal terminal pair."},
+      {"coordinates": "s2c and s3a; Fig. 7", "grade": "measured_comparator_only", "finding": "Reconstitution with FAD during membrane association yields active material after removal of free FAD. Protein associated without FAD is inactive and is not rescued by subsequently adding FAD. This supports a structural/catalytic bound-flavin role and argues against freely exchanging FAD/FADH2 as a net catalytic-cycle electron sink for this comparator."},
+      {"coordinates": "s2b, s4e; Fig. 6B", "grade": "measured_comparator_only", "finding": "Quinones including duroquinone and Q10 support anaerobic activity in the in vitro lipid system. The paper raises respiratory-chain coupling as a question. This does not prove Q6 access, mitochondrial localization or electron transfer for the fungal construct."}
+    ],
+    "oxygen_product_identification_experiment": {
+      "coordinates": "Results s2b, oxygen-electrode paragraph and Fig. 6A; standard assay conditions described in s4d",
+      "grade": "measured_comparator_only",
+      "assay_readout": "Oxygen electrode plus quantified lycopene formation in an upscaled liposome assay; response of oxygen-consumption kinetics to added superoxide dismutase and catalase",
+      "substrate": "15-cis-phytoene in liposomes",
+      "initial_phytoene_nmol": 15,
+      "protein_microgram": 250,
+      "protein_nmol_as_reported": 4.5,
+      "assay_volume_milliliter": 1,
+      "time_minutes": 10,
+      "oxygen_consumed_nmol_approximate": 60,
+      "lycopene_formed_nmol": 8,
+      "uncertainty_for_these_values": "Oxygen amount is approximate in the text; no error interval for this paired accounting is supplied in the inspected paragraph.",
+      "terminal_acceptor_tested": "O2",
+      "reduction_product_identified": null,
+      "standard_assay_temperature_celsius": 37,
+      "standard_assay_pH": 8,
+      "condition_qualification": "s4d gives the standard phosphate-buffer/liposome assay at 37 C and pH 8.0 with FAD. The upscaled oxygen paragraph explicitly changes volume and enzyme/substrate doses; a complete separate upscaled buffer/FAD recipe is not reported there, so those standard conditions are not represented as a newly verified upscaled recipe.",
+      "protein_abundance_basis": "Purified bacterial CRTI dose, not fungal enzyme or in vivo protein abundance",
+      "derived_from_product_amounts": true,
+      "product_amount_derivation_kind": "Direct in vitro redox accounting with independently measured oxygen uptake; not culture endpoint fitting",
+      "authors_test_and_limit": "SOD and catalase did not change the oxygen-consumption kinetics. The authors propose that superoxide, if generated, might not be released and could react with liposomal components. They do not report an identified released water/peroxide stoichiometry.",
+      "accepted_net_reaction": null,
+      "transfer_limitations": ["Bacterial protein, not fungal CrtI", "Membrane/reconstitution conditions matter", "Oxygen uptake alone is not released-product identification", "ROS controls cannot establish water production by elimination"]
+    },
+    "bacterial_kcat_Km_or_localization_transferred": false,
+    "fungal_terminal_acceptor_selected": null,
+    "fungal_reduction_product_selected": null,
+    "fungal_catalytic_FAD_occupancy_selected": null
+  },
+  "usable_inputs_and_unresolved_facts": {
+    "usable_now": [
+      {"fact": "Fungal CrtE catalyzes the FPP-plus-IPP extension reaction in an independent controlled extract assay.", "evidence_ids": ["crte_fpp_ipp_soluble_extract_activity", "fungal_crte_substrate_identity"], "allowed_use": "Reaction identity and a reproducible assay starting point, not a target capacity coefficient."},
+      {"fact": "CrtYB supports both upstream phytoene synthesis and downstream lycopene cyclization.", "evidence_ids": ["fungal_crtyb_two_activities"], "allowed_use": "Retain intermediate-consumption scope explicitly; do not relabel it as a standalone CrtB or assume a terminal producer."},
+      {"fact": "Fungal pathway proteins can be independently detected in heterologous yeast, and detection/expression is construct-context dependent.", "evidence_ids": ["fungal_proteins_detected_in_other_s_cerevisiae"], "allowed_use": "Design a protein assay and reject copy-count-to-active-mass substitution, not set enzyme amounts."},
+      {"fact": "Existing evidence is insufficient to choose NAD, oxygen-to-peroxide or oxygen-to-water for fungal CrtI.", "evidence_ids": ["fungal_crti_function_not_redox", "fungal_nad_annotation_not_coupling"], "allowed_use": "Preserve strict blocker and separate explicitly unverified hypotheses."}
+    ],
+    "numerical_target_inputs_supplied": [],
+    "unresolved": [
+      {"quantity": "Exact engineered CrtE/CrtYB/CrtI sequences and targeting/tag/isoform changes", "value": null, "needed_evidence_plan_ids": ["P1_sequence_and_abundance"]},
+      {"quantity": "Intrinsic CrtE kcat and Km for FPP and IPP under relevant conditions", "value": null, "needed_evidence_plan_ids": ["P2_direct_activity"]},
+      {"quantity": "CrtYB synthase and both cyclization-step kcat/Km; simultaneous-domain occupancy and substrate/product competition", "value": null, "needed_evidence_plan_ids": ["P2_direct_activity", "P4_joint_branches"]},
+      {"quantity": "Fungal CrtI initial-rate kinetics, intermediate specificity and electron-coupling mechanism", "value": null, "needed_evidence_plan_ids": ["P2_direct_activity", "P3_fungal_redox"]},
+      {"quantity": "Fungal CrtI catalytic FAD binding/occupancy and free-flavin exchange on the turnover timescale", "value": null, "needed_evidence_plan_ids": ["P3_fungal_redox"]},
+      {"quantity": "Absolute enzyme amount, active fraction and accessible membrane/compartment in the selected host/conditions", "value": null, "needed_evidence_plan_ids": ["P1_sequence_and_abundance", "P3_fungal_redox"]},
+      {"quantity": "Lycopene synthesis, cyclase consumption, degradation/sequestration and growth-dilution contributions separately", "value": null, "needed_evidence_plan_ids": ["P5_identifiable_flux_timecourse"]}
+    ]
+  },
+  "identifiability_and_conversion_rules": {
+    "pool_balance": "For intracellular lycopene amount L normalized to biomass, dL/dt = v_synthesis - v_consumption - mu*L; add an explicit loss term if oxidation/export is material. Rates and time units must be consistent.",
+    "steady_state": "dL/dt = 0 identifies only v_synthesis - v_consumption = mu*L if other losses are absent. It does not identify either flux alone.",
+    "nonidentifiability": "For any admissible g(t), replacing v_synthesis by v_synthesis+g(t) and v_consumption by v_consumption+g(t) leaves the same pool trajectory. Even a dense L(t) series is insufficient without another flux-sensitive readout or a separately verified perturbation.",
+    "minimal_extra_information": "Independently identify one flux, or observe labeled formation and disappearance with upstream input and downstream products in a mass-balanced time course. Measure dilution independently and test additional losses rather than absorbing them into a product-specific multiplier.",
+    "enzyme_capacity": "Only after compatible kcat and enzyme amount are available can v_max = kcat*E_active be formed. With kcat in s^-1 and E_active in mmol/gDW, multiply by 3600 for mmol/gDW/h. If only total enzyme is known, unknown active fraction makes that capacity an optimistic bound, not realized flux.",
+    "specific_activity_to_kcat": "For a saturated, linear assay expressed as A micromol min^-1 mg^-1 of pure enzyme, molecular mass M g/mol gives kcat = A*M/60000 s^-1 per polypeptide when one active site per polypeptide is independently appropriate. Correct the site convention, purity and active fraction explicitly. This conversion is NOT valid for the 2014 total-extract denominator without measured CrtE fraction and active-site basis.",
+    "reaction_counting": "Define whether an event is one phytoene molecule made, one lycopene molecule formed, one desaturation or one ring closure. Two GGPP per phytoene, four desaturations per phytoene-to-lycopene conversion, and two cyclization steps must not be mixed into an unlabelled kcat conversion.",
+    "bifunctional_protein_accounting": "CrtYB is one polypeptide carrying two functional domains. Do not charge its mass twice as if synthase and cyclase were independently expressed proteins. Separate per-domain capacity inequalities may refer to the same measured CrtYB pool; an additive occupancy constraint or fixed activity partition requires evidence that simultaneous catalysis is excluded. Mere bifunctionality does not establish that exclusion.",
+    "intermediate_relaxation": "Omitting downstream consumption can define a relaxed intermediate-capacity bound; it cannot be called a realized content prediction. Conversely, functional annotation alone cannot justify an arbitrary positive cyclase flux floor."
+  },
+  "minimal_independent_evidence_plan": [
+    {
+      "plan_id": "P1_sequence_and_abundance",
+      "priority": 1,
+      "objective": "Identify the actual proteins and independently measure their amounts and location.",
+      "minimal_measurements": [
+        "Obtain the actual amino-acid sequences/construct maps, including tags, domain mutations, isoforms and targeting additions, without opening product outcomes. Match to the literature proteins explicitly.",
+        "Use isotope-dilution targeted LC-MS/MS with distinguishable proteotypic peptides and recovery controls, or calibrated immunoblots with purified standards, for absolute CrtE, CrtYB and CrtI amount per gDW in independently specified conditions. Include peptides from both CrtYB domains and intact-size checks.",
+        "Measure soluble/membrane partition and compartment access with marker-controlled fractionation and/or validated imaging. Control tag effects and membrane extraction recovery; proximity is not proof of electron transfer.",
+        "Pair protein amount with independent activity recovery or active-site/cofactor occupancy measurements. Total expressed mass is not necessarily folded, assembled, active holoenzyme."
+      ],
+      "identifies": ["Sequence compatibility", "Absolute total enzyme and defensible active-fraction bounds", "Accessible compartment rather than a presumed cytosolic/mitochondrial connection"],
+      "does_not_identify_alone": ["kcat", "Terminal redox product", "Realized pathway allocation"]
+    },
+    {
+      "plan_id": "P2_direct_activity",
+      "priority": 2,
+      "objective": "Measure substrate-controlled initial rates using actual fungal constructs, not culture endpoint fits.",
+      "minimal_measurements": [
+        "Purify or quantitatively immunocapture active full-length CrtE, CrtI and CrtYB; quantify target purity and active-site basis. Retain required membrane/reconstitution context.",
+        "For CrtE, measure FPP + IPP conversion to chemically identified GGPP. Use several early time points, several enzyme doses, and a matrix of FPP and IPP concentrations. Verify linearity and substrate mass balance before estimating kcat/Km. The Alcaino assay is a methodological starting point, not the target parameter.",
+        "For CrtYB synthase, measure GGPP disappearance and phytoene appearance with the two-to-one substrate stoichiometry. For cyclase, supply independently quantified lycopene or gamma-carotene and resolve gamma- and beta-carotene formation separately.",
+        "For CrtI, resolve phytoene and desaturation intermediates as well as lycopene over early time points; identify any extra products before assigning a single event rate. Couple rate measurements to P3 rather than silently assuming an acceptor.",
+        "Report pH, temperature, salt, lipid composition, accessible substrate activity, purification, oligomer/site convention, cofactors, error model and replicates. Membrane-associated apparent Km is not automatically a bulk intracellular concentration constant."
+      ],
+      "identifies": ["Intrinsic/apparent kinetics with a declared assay context", "Specific activity with a valid pure-enzyme conversion", "Initial-rate and specificity evidence"],
+      "does_not_identify_alone": ["Target in vivo active protein amount", "Realized synthesis/consumption fluxes"]
+    },
+    {
+      "plan_id": "P3_fungal_redox",
+      "priority": 2,
+      "objective": "Resolve the actual fungal electron acceptor, released reduction product and catalytic flavin role before strict chemistry installation.",
+      "minimal_measurements": [
+        "Use purified sequence-matched fungal CrtI in a defined membrane/substrate system with no-enzyme, heat-inactivated, no-substrate, no-cofactor and contaminating-activity controls.",
+        "Compare aerobic and rigorously anaerobic turnover with explicitly supplied candidate acceptors. Measure acceptor reduction directly, not just carotenoid appearance: oxygen uptake, NADH/NADPH or reduced quinone as appropriate. Do not assume host quinone access from a cell-free reaction.",
+        "Quantify released peroxide with validated recovery and orthogonal detection; test superoxide and lipid oxidation with interference controls. SOD/catalase effects or their absence are insufficient to identify water. If water is claimed, use suitable isotope/product analysis or complete electron/product accounting that discriminates direct enzyme chemistry from a composite detoxification route.",
+        "Close an electron balance against chemically identified carotenoid conversions and any oxidized lipids/other sinks. A phytoene-to-lycopene conversion removes eight hydrogen atoms, but that arithmetic does not identify the acceptor or product.",
+        "Measure bound flavin identity and occupancy by spectroscopy/LC-MS after separation of free cofactor. Test apo/holo reconstitution, washout and redox cycling, and free-FAD exchange relative to turnover. Do not represent catalytic FAD as a stoichiometrically consumed free pool.",
+        "If activity requires a host redox partner or membrane fraction, identify that partner and demonstrate physical access/coupling in the selected yeast compartment before introducing an overall reaction."
+      ],
+      "identifies": ["A specific supported terminal pair and stoichiometry, or continued ambiguity", "Catalytic versus freely exchanged cofactor", "Whether a composite partner-dependent mechanism is required"],
+      "does_not_identify_alone": ["In vivo flux or enzyme allocation", "A capacity-favorable hypothesis as biologically true"]
+    },
+    {
+      "plan_id": "P4_joint_branches",
+      "priority": 3,
+      "objective": "Test CrtYB's joint domain behavior and downstream substrate competition without inventing a partition multiplier.",
+      "minimal_measurements": [
+        "At a fixed independently measured amount of intact CrtYB, assay synthase and cyclase separately and together in a factorial GGPP/lycopene/gamma-carotene design. Quantify both activities and test cross-substrate/product effects.",
+        "Vary the active CrtI:CrtYB ratio in a reconstituted fungal-enzyme system and follow the full intermediate panel over time. A changed intermediate fraction alone is not a measured individual enzyme rate.",
+        "Use branch-selective mutants only after verifying that the other activity, folding, abundance and localization are retained. A whole CrtYB deletion removes both synthesis and consumption and is not an isolated cyclase perturbation.",
+        "Determine whether domains can turn over concurrently. Fit only experimentally identifiable inhibition/occupancy terms; otherwise retain interval bounds and structural uncertainty."
+      ],
+      "identifies": ["Whether separate or joint domain constraints are appropriate", "Mechanistic competition/inhibition if supported", "Downstream-consumption capability under a measured protein basis"],
+      "does_not_identify_alone": ["An arbitrary target-strain flux floor", "A universal synthase/cyclase partition"]
+    },
+    {
+      "plan_id": "P5_identifiable_flux_timecourse",
+      "priority": 3,
+      "objective": "Separate intermediate synthesis, consumption and dilution with an independent perturbation or tracer experiment.",
+      "minimal_measurements": [
+        "Measure biomass/growth dilution, phytoene, lycopene, gamma-carotene and beta-carotene amounts and isotopologues at multiple short time points, with extraction-recovery and membrane-pool controls.",
+        "One minimal route is a rapid, independently verified synthesis shutoff upstream of lycopene while retaining cyclase activity. During the validated shutoff interval, lycopene disappearance after correcting for growth dilution measures total removal; simultaneous downstream appearance separates cyclization from other loss. Confirm the perturbation does not directly alter CrtYB or pool accessibility.",
+        "An alternative is a pulse-chase with a measured input-label time course and both upstream and downstream labeling. Do not assume extracellular lycopene enters the relevant intracellular membrane pool; validate tracer access or label its intracellular precursor.",
+        "Measure or bound oxidation, export, storage-pool exchange and recovery loss rather than assigning all disappearance to cyclase. Multiple initial intermediate levels are needed to distinguish an effective first-order decay constant from saturable consumption.",
+        "Jointly analyze independent enzyme amounts/activities and these time courses. Reject models in which only v_synthesis-v_consumption is identifiable; retain separate flux intervals if the data cannot distinguish them."
+      ],
+      "identifies": ["Separate fluxes if the additional measurements/perturbation truly constrain them", "Condition-specific consumption/turnover bounds", "Whether the assumed single pool is adequate"],
+      "does_not_identify_alone": ["Both fluxes from an unperturbed lycopene pool trajectory", "kcat without enzyme normalization"]
+    },
+    {
+      "plan_id": "P6_prospective_validation",
+      "priority": 4,
+      "objective": "Keep independent biochemical parameterization separate from validation of product predictions.",
+      "minimal_measurements": [
+        "Freeze the enzyme-assay inputs, sequence-transfer rules, redox evidence status, uncertainty propagation and analysis before new product outcomes are inspected.",
+        "Use genuinely new, prespecified strains/conditions or experiments for prospective prediction assessment. The already scored product set remains retrospective/diagnostic and cannot become fresh validation after new evidence or model changes.",
+        "Do not choose a redox variant, active-enzyme fraction, compartment or branch partition by which value improves existing prediction scores."
+      ],
+      "identifies": ["Prospective predictive validity only if a new independent test is actually performed"],
+      "does_not_identify_alone": ["A biochemical mechanism from prediction agreement"]
+    }
+  ],
+  "bounded_search_and_access_limits": {
+    "search_scope": "Prioritized the two original fungal gene papers, a primary fungal CrtE assay, a primary heterologous protein-detection study, and one primary bacterial redox comparator. Europe PMC searches rendered bibliographic metadata only; production studies were not harvested for fitted rates or product outcomes.",
+    "searches_actually_performed": [
+      {"service": "Europe PMC", "query": "(TITLE_ABS:Phaffia OR TITLE_ABS:Xanthophyllomyces) AND (TITLE_ABS:phytoene OR TITLE_ABS:geranylgeranyl OR TITLE_ABS:cyclase) AND (TITLE_ABS:kinetic OR TITLE_ABS:purification OR TITLE_ABS:characterization OR TITLE_ABS:activity)", "result_handling": "17 title/identifier records; led to the 2014 CrtE study."},
+      {"service": "Europe PMC", "query": "(TITLE_ABS:Phaffia OR TITLE_ABS:Xanthophyllomyces) AND (TITLE_ABS:phytoene OR TITLE_ABS:crtI OR TITLE_ABS:crtYB OR TITLE_ABS:cyclase OR TITLE_ABS:geranylgeranyl) AND (TITLE_ABS:enzyme OR TITLE_ABS:enzymatic OR TITLE_ABS:characterisation)", "result_handling": "23 title/identifier records; led to the 2019 protein-detection study and original CrtYB paper."},
+      {"service": "Europe PMC", "query": "(TITLE_ABS:Phaffia OR TITLE_ABS:Xanthophyllomyces) AND (TITLE_ABS:carotenoid OR TITLE_ABS:crtI OR TITLE_ABS:crtYB) AND (TITLE_ABS:localization OR TITLE_ABS:localisation OR TITLE_ABS:proteomic OR TITLE_ABS:protein OR TITLE_ABS:turnover)", "result_handling": "38 title/identifier records; native-donor proteomics and production-regulation papers were not treated as absolute heterologous enzyme amounts."},
+      {"service": "Europe PMC", "query": "TITLE_ABS:(Phaffia OR Xanthophyllomyces) AND TITLE_ABS:(kinetics OR kinetic OR \"specific activity\" OR \"purified\" OR \"electron acceptor\")", "result_handling": "40 title/identifier records; fermentation kinetics and unrelated enzymes were excluded as intrinsic CrtE/CrtYB/CrtI measurements."},
+      {"service": "Europe PMC", "query": "(TITLE_ABS:Phaffia OR TITLE_ABS:Xanthophyllomyces) AND (TITLE_ABS:phytoene OR TITLE_ABS:crtI OR TITLE_ABS:crtYB) AND (TITLE_ABS:FAD OR TITLE_ABS:NAD OR TITLE_ABS:electron OR TITLE_ABS:turnover OR TITLE_ABS:half-life OR TITLE_ABS:pulse)", "result_count": 0, "qualification": "A negative title/abstract query is not proof that the literature contains no relevant experiment."}
+    ],
+    "additional_verified_leads_not_used_as_quantitative_evidence": [
+      {"url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A16928467+AND+SRC%3AMED&format=json&resultType=core", "http_status": 200, "reference": "Sandmann et al. 2006, DOI 10.1016/j.bbalip.2006.06.002", "reason_not_used": "Abstract concerns Neurospora al-2 functional specificity, not purified kinetics of the actual Phaffia enzymes. Its presence in a reviewed CrtYB reference list does not supply a fungal rate or competition constant."},
+      {"url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC165150/fullTextXML", "http_status": 404, "reference": "Verdoes et al. 2003, PMID 12839738, DOI 10.1128/AEM.69.7.3728-3738.2003", "reason_not_used": "Selected follow-up primary source identified from references; this XML endpoint returned no article. No kinetic or competition conclusion was inferred from the failed request."},
+      {"url": "https://rest.uniprot.org/uniprotkb/P21685.json", "http_status": 200, "reason_not_used": "Reviewed bacterial record is labeled Pantoea ananas / Erwinia uredovora; no reference entry for PMID 22745782 appeared in the inspected response. No exact assay-sequence link or fungal identity was inferred."}
+    ],
+    "availability_limit": "The two 1999 fungal papers were accessible at abstract/annotation level, not full primary body. The repository OA flag for CrtI did not yield a manuscript. No paywall or access-control bypass, new dependency, or broad local filesystem search was used.",
+    "absence_claim_limit": "No compatible fungal CrtI/CrtYB kcat/Km, measured terminal acceptor/product pair, calibrated target active abundance or independently identifiable target consumption flux was established in the inspected material. This is a bounded evidence conclusion, not a claim of exhaustive literature absence."
+  },
+  "validation": {
+    "status": "passed_evidence_structure_and_arithmetic_checks_only",
+    "checks": [
+      "python3 -m json.tool accepted the newly created JSON.",
+      "Standard-library validation rejected duplicate keys/non-finite numbers and checked unique source/plan identifiers, evidence/source/plan references and grade names.",
+      "Unit arithmetic for the CrtE reported value and SEM matched the printed-column conversion.",
+      "Unresolved quantities remain null, numerical target inputs remain empty, strict redox status remains blocked and no preferred hypothesis is designated.",
+      "Read-tool review checked the candidate's species/accession, substrate/readout, units, timing/pH qualification, total-protein denominator, source coordinates and transfer limitations.",
+      "Path-limited git status identified this file as new/untracked; no commit or edits to existing files were made."
+    ],
+    "model_imports_or_execution": false,
+    "optimization_or_scoring": false,
+    "scope": "Evidence JSON structure, explicit grades/units/unknowns and internal references only; no biochemical parameter is validated by model performance."
+  },
+  "parent_actions": [
+    "Keep strict chemistry blocked and every registered redox variant labeled unverified. This evidence file is not a ChemicalTask or a request to alter existing hypotheses.",
+    "Use the fungal CrtE assay as direct functional evidence and a protocol lead, not a kcat or capacity coefficient. Check the printed activity scale and obtain raw/initial-rate data before any quantitative reuse; never use gene copies or predicted molecular weight to fill the missing active-enzyme denominator.",
+    "Recognize CrtYB's lycopene-consuming branch without inserting a fitted partition, duplicate protein mass or an invented positive consumption floor.",
+    "If needed, obtain the original fungal full texts through an author or normal library access; prioritize actual construct sequence/active protein and fungal redox measurements over more endpoint-production literature.",
+    "Carry out the independent activity/abundance and flux-identification plan before claiming a narrower realized-content prediction. Maintain separation between biochemical input acquisition and the already scored product set."
+  ]
+}

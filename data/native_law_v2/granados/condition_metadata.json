@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "scope": "Input and assay metadata only; not response-bearing training data.",
+  "evidence": {
+    "condition_values": "Primary supplement, SI 1.2.2, PDF pages 3-4; provenance/supplement_methods_excerpt.txt",
+    "source_condition_keys": "Repository README hierarchy definitions and examples, verified against the actual keys in schema_inventory.json",
+    "strain_and_medium": "Primary Methods; SI 1.1 and 1.2.1, PDF page 3",
+    "pair_channel_semantics": "Repository README, figS19_two_colour_expts description; actual eight group keys in inventory_summary.json"
+  },
+  "baseline": {
+    "medium": "standard synthetic complete (SC)",
+    "glucose_percent_as_reported": 2.0,
+    "added_nacl_mol_per_l": 0.0,
+    "added_h2o2_millimol_per_l": 0.0,
+    "temperature_celsius": 30.0,
+    "percent_convention": "The inspected text reports glucose percent without explicitly stating mass/volume convention; no conversion to absolute glucose molarity was made.",
+    "zero_definition": "Zero added stressor denotes no declared supplementation, not an assay of zero total chemical content."
+  },
+  "switch": {
+    "time_reference": "arrival of Cy5-labelled stress medium; actual times are switch-relative minutes",
+    "nominal_sampling_interval_minutes": 2.5,
+    "absolute_acquisition_clock_available": false,
+    "origin_index_base_verified": true,
+    "origin_index_base": 1,
+    "origin_evidence": "provenance/source_code/example_script.m:51-70; formatCellInf.m:100-128; timing_review.json",
+    "normalized_only_nominal_grid": "2.5*(j-origin) minutes with one-based j; nominal annotation only, not measured timestamps or full-movie elapsed time",
+    "carbon_and_osmotic_pre_stress_imaging_hours": 5.0,
+    "oxidative_pre_stress_imaging_hours": 3.0,
+    "post_stress_imaging_hours": 5.0,
+    "export_window_note": "The acquisition protocol's duration is not the same as the deposited time-window length. Use the actual time arrays and registered windows; do not invent missing frames."
+  },
+  "stress_type_panel": {
+    "gluc": {"final_glucose_percent_as_reported": 0.1, "added_nacl_mol_per_l": 0.0, "added_h2o2_millimol_per_l": 0.0},
+    "nacl": {"final_glucose_percent_as_reported": 2.0, "added_nacl_mol_per_l": 0.4, "added_h2o2_millimol_per_l": 0.0},
+    "oxid": {"final_glucose_percent_as_reported": 2.0, "added_nacl_mol_per_l": 0.0, "added_h2o2_millimol_per_l": 0.5}
+  },
+  "dose_panel": {
+    "gluc_0_8": {"stress_id": "gluc", "final_glucose_percent_as_reported": 0.8},
+    "gluc_0_4": {"stress_id": "gluc", "final_glucose_percent_as_reported": 0.4},
+    "gluc_0_2": {"stress_id": "gluc", "final_glucose_percent_as_reported": 0.2},
+    "gluc_0_1": {"stress_id": "gluc", "final_glucose_percent_as_reported": 0.1},
+    "nacl_0_1M": {"stress_id": "nacl", "added_nacl_mol_per_l": 0.1},
+    "nacl_0_2M": {"stress_id": "nacl", "added_nacl_mol_per_l": 0.2},
+    "nacl_0_3M": {"stress_id": "nacl", "added_nacl_mol_per_l": 0.3},
+    "nacl_0_4M": {"stress_id": "nacl", "added_nacl_mol_per_l": 0.4},
+    "oxid_0_22mM": {"stress_id": "oxid", "added_h2o2_millimol_per_l": 0.22},
+    "oxid_0_28mM": {"stress_id": "oxid", "added_h2o2_millimol_per_l": 0.28},
+    "oxid_0_36mM": {"stress_id": "oxid", "added_h2o2_millimol_per_l": 0.36},
+    "oxid_0_50mM": {"stress_id": "oxid", "added_h2o2_millimol_per_l": 0.5}
+  },
+  "dose_panel_factor_coverage": {
+    "gluc": ["dot6", "maf1", "mig1", "msn2", "sfp1"],
+    "nacl": ["dot6", "hog1", "maf1", "msn2", "sfp1"],
+    "oxid": ["dot6", "maf1", "msn2", "sfp1", "yap1"]
+  },
+  "rich_to_rich": {
+    "source_asset_id": "f0ff4386-a4a5-40a4-b501-42b3e222e698",
+    "before_glucose_percent_as_reported": 2.0,
+    "after_glucose_percent_as_reported": 2.0,
+    "medium_before_and_after": "SC",
+    "interpretation": "Actual no-declared-input-change media-switch challenge, not an assumed zero measured response or a pair of independent pre/post experiments."
+  },
+  "two_colour_pair_channels": {
+    "dot6_msn2": {"GFP": "dot6", "mCherry": "msn2", "stress_ids": ["gluc", "nacl"]},
+    "hog1_msn2": {"GFP": "hog1", "mCherry": "msn2", "stress_ids": ["gluc", "nacl"]},
+    "mig1_msn2": {"GFP": "mig1", "mCherry": "msn2", "stress_ids": ["gluc", "nacl"]},
+    "yap1_msn2": {"GFP": "yap1", "mCherry": "msn2", "stress_ids": ["gluc", "nacl"]}
+  },
+  "observation": {
+    "raw_localization": "nucLoc = max5 / median; dimensionless fluorescence proxy",
+    "intensity_calibration": "No absolute fluorescence-to-molecule or fluorescence-to-kinase-activity calibration is supplied in the deposited fields.",
+    "nucLocNorm_formula": "(x_i(t) - mu_experiment_pre20) / sigma_experiment_pre20",
+    "nucLocNorm_reference": "SI 3.1, PDF page 6; linked normMeanOffset.m:7-10 uses the mean of per-frame cell means and mean of per-frame sample SDs over 1-based columns origin-21:origin-2, not a pooled cell-time SD.",
+    "core_normalizer_uses_post_stimulus_frames": false,
+    "complete_published_preprocessing_proven_prefix_only": false,
+    "conditional_prefix_note": "A fixed normalizer of a known pre-stimulus prefix can be a legitimate calibration input for a newly registered post-stimulus conditional estimand. The full published example interpolates/inpaints whole traces and filters using the origin frame, so that entire pipeline is not automatically prefix-only. Original protocol restrictions are unchanged.",
+    "nucLocNorm_uses_heldout_responses_if_whole_experiment_reserved": true,
+    "null_policy": "Preserve as missing; never impute as zero. Published inpainting was executed only for private identity replay, not authorized as learner preprocessing.",
+    "row_pairing_policy": "Use source-supported same-experiment row/time pairing, including genuine two-colour factors or raw and independent-mask-derived readouts within the marker experiment. Do not join separate single-colour strains or count measurement channels as biological replicates."
+  }
+}

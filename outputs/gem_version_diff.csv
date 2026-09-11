@@ -1,0 +1,20 @@
+check,vendored,candidate,delta,breaking
+count: reactions,4131,4105,-26,False
+count: metabolites,2806,2748,-58,False
+count: genes,1161,1143,-18,False
+pinned id: r_2111 (biomass objective),True,True,,False
+"pinned id: r_4046 (NGAM, the maintenance layer)",True,True,,False
+pinned id: r_1714 (glucose exchange),True,True,,False
+pinned id: r_1992 (oxygen exchange),True,True,,False
+pinned id: r_1761 (ethanol exchange),True,True,,False
+"pinned id: s_0373 (acetyl-CoA, PHB precursor)",True,True,,False
+"pinned id: s_0189 (GGPP, beta-carotene precursor)",True,True,,False
+"pinned id: s_1543 (UDP-glucose, glycogen precursor)",True,True,,False
+"pinned id: s_1427 (sedoheptulose-7-phosphate, gadusol precursor)",True,True,,False
+pinned id: s_1212 (NADPH),True,True,,False
+pinned id: s_1207 (NADP+),True,True,,False
+pinned id: s_0529 (coenzyme A),True,True,,False
+pinned id: s_0794 (H+),True,True,,False
+"growth /h at glucose -1, O2 unlimited",0.085844,0.0811,-5.53%,False
+"growth /h at glucose -1.5, O2 unlimited",0.130391,0.123185,-5.53%,False
+"growth /h at glucose -10, O2 unlimited",0.887685,0.838632,-5.53%,False

@@ -1,0 +1,7 @@
+test,null,observed,null_median,p_value,draws,beats_null
+transfer (median own-target score),rotated_subspace,0.6334097985182285,0.5636229876084076,0.1691542288557214,200,False
+transfer (median own-target score),matched_marginals,0.6334097985182285,-0.0012432992333225867,0.004975124378109453,200,True
+"redundancy law, peers from panel target lists",peers shuffled,0.7098455951499935,0.039983586763849936,0.004975124378109453,200,True
+"redundancy law, peers from measured regulon movement",peers shuffled,0.6175207126796788,0.001605339807659477,0.004975124378109453,200,True
+"redundancy law, peers from panel target lists",rotated_subspace,0.7098455951499935,0.7930990908774618,0.9402985074626866,200,False
+known-loadings readout (median Spearman),shuffled_loadings,0.4651475287957881,0.09733514001806684,0.004975124378109453,200,True

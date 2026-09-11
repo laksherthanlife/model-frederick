@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "kind": "historical_diagnostic_dispositions",
+  "baseline_ref": "84561f51502b5b4bf66c052dc88c853038917934",
+  "current_scientific_support": false,
+  "historical_execution_verified": false,
+  "scope": "Bounded disposition of 31 previously noncurrent failures. The 25 external references are original Git-pinned diagnostic, review or operational records, not newly reproduced numerical results. The six authoritative final-reconciliation records remain blocked separately. No original runtime, custody, numerical success or biological validation is inferred from preserving a report. Existing negative results and all distinct source identities remain unchanged.",
+  "identity_policy": "This immutable ledger records original full-path Git byte identities and inspected role evidence. It contains no public copies or reconstructed outputs, no mutable inventory pins, and no self-referential proof. The enclosing historical bundle pin verifies ledger integrity; independent Git comparisons verify these declarations. Re-signing a ledger is not evidence of an original run.",
+  "records": [],
+  "external_references": [
+    {
+      "origin_path": "outputs/audit_claims.csv",
+      "original_sha256": "aaf00188caceaf562da484bfc976c0f31daf8912293b736c5cb5f42418536f9a",
+      "original_bytes": 74086,
+      "previous_run": "retained-audit-claims",
+      "role": "historical_repository_diagnostic",
+      "basis": "A retained check/expected/actual/status/detail audit report. docs/AUDITS.md classifies this family as interrogating the repository rather than biology. The recorded checks are not current audit results or successful reproduction receipts."
+    },
+    {
+      "origin_path": "outputs/audit_determinism.csv",
+      "original_sha256": "66f61d3dd2b3cc7324c465b7c90502b740e9cf1a014d02e01167f1174ef04ac6",
+      "original_bytes": 9458,
+      "previous_run": "retained-audit-determinism",
+      "role": "historical_repository_diagnostic",
+      "basis": "Recorded seed-repeatability and seed-sensitivity checks, including their timings and explanations. Neither this historical report nor its old PASS labels establish current producer behavior or biological validation."
+    },
+    {
+      "origin_path": "outputs/audit_output_tables.csv",
+      "original_sha256": "7fb36b639fb8a0797e784a8e1a1e19c7ba300c2d059850eb7ee64b6858305bb9",
+      "original_bytes": 1268,
+      "previous_run": "retained-audit-output-tables",
+      "role": "historical_repository_diagnostic",
+      "basis": "The original script/table/ok/detail diagnostic, not provenance for its cited scientific outputs. The worktree replacement does not match this original Git record; the exact parent restoration request below remains necessary."
+    },
+    {
+      "origin_path": "outputs/audit_reproducibility.csv",
+      "original_sha256": "1f28a2c8c1b4e02c6d3edebf45ea66152c07411370dc1725d81306f7fc00ab55",
+      "original_bytes": 91797,
+      "previous_run": "retained-audit-reproducibility",
+      "role": "historical_repository_diagnostic",
+      "basis": "Legacy environment/writer/source audit observations. Original invocation and audited runtime are not reconstructed. An old audit table cannot authorize current output reproduction or replace durable child-execution evidence."
+    },
+    {
+      "origin_path": "outputs/provenance.json",
+      "original_sha256": "fdb79357f5028b590e54e5e4ec2cd149d0c305ad6430f16c0dbf7d74b20dc29a",
+      "original_bytes": 4685,
+      "previous_run": "retained-audit-reproducibility",
+      "role": "historical_repository_diagnostic",
+      "basis": "The original basename-to-producer-digest stamp is retained as a legacy diagnostic only. It does not identify full output paths, output bytes, executed parameters, models or runtime, and is never promoted to a reproduction receipt."
+    },
+    {
+      "origin_path": "outputs/biology_learning_audit_01/diagnostic_plan.json",
+      "original_sha256": "54d1910984a05cf0e377421788bb0ff2773df923ff5c046865e5b5c46d1e08bf",
+      "original_bytes": 2189,
+      "previous_run": "biology-learning-audit-01",
+      "role": "historical_diagnostic_protocol",
+      "basis": "Original retrospective diagnostic design and original audit-code declarations. The current reuse reader checks this design and explicitly disclaims rerunning the diagnostic or granting biological validation credit.",
+      "source_assertions": {"/selection_from_diagnostic_results": false, "/significance_or_confidence_intervals": null}
+    },
+    {
+      "origin_path": "outputs/biology_learning_audit_01/ledger.json",
+      "original_sha256": "0ea37461df15fcf35d09139a98c4d17f6d10de183595b4833199a2da954f4d06",
+      "original_bytes": 354844,
+      "previous_run": "biology-learning-audit-01",
+      "role": "historical_source_audit",
+      "basis": "Recorded native evidence/source audit, not a current authorization. Existing release gates recompute authoritative evidence instead of trusting serialized grades.",
+      "source_assertions": {"/kind": "biology_learning_audit", "/diagnostic_results_do_not_upgrade_claims": true}
+    },
+    {
+      "origin_path": "outputs/biology_learning_audit_01/native_diagnostics.json",
+      "original_sha256": "b88d338879fc617b1ebfd82fe88ee9fe6fd0fd9cb927f9db973939b134f19ec8",
+      "original_bytes": 453666,
+      "previous_run": "biology-learning-audit-01",
+      "role": "historical_retrospective_diagnostic",
+      "basis": "The original hog/native_exchange diagnostic payload. The audit-02 ledger binds this exact reused digest and states numerical_diagnostics_rerun=false and biological_validation_credit=false; the current reuse API preserves those limitations. No historical fit is certified here."
+    },
+    {
+      "origin_path": "outputs/biology_learning_audit_02_gate_hardening/diagnostic_plan.json",
+      "original_sha256": "3e2fc8d79607a412d0b11f92a60e904771734cb0d819c84f3c4159126306beaa",
+      "original_bytes": 2250,
+      "previous_run": "biology-learning-audit-02",
+      "role": "historical_diagnostic_protocol",
+      "basis": "A distinct gate-hardening plan with its own recorded code identities, not the audit-01 plan or a new fit. The original code declarations are preserved rather than replaced with current hashes.",
+      "source_assertions": {"/execution_mode": "reuse_prior_retrospective_diagnostics", "/selection_from_diagnostic_results": false}
+    },
+    {
+      "origin_path": "outputs/biology_learning_audit_02_gate_hardening/ledger.json",
+      "original_sha256": "d8e4e24e922b5ead5f91b28c3de76730206d88c4abff77fc14f5cf1ed787d7b0",
+      "original_bytes": 371082,
+      "previous_run": "biology-learning-audit-02",
+      "role": "historical_source_audit",
+      "basis": "Recorded gate-hardening source audit with explicitly reused retrospective diagnostics. Live consumers must still use the source-bound require_claim gate; preserving old grades does not authorize them.",
+      "source_assertions": {"/diagnostic_results_do_not_upgrade_claims": true, "/diagnostics_origin/mode": "reused_unchanged_retrospective_evidence", "/diagnostics_origin/numerical_diagnostics_rerun": false, "/diagnostics_origin/biological_validation_credit": false}
+    },
+    {
+      "origin_path": "outputs/biology_learning_audit_02_gate_hardening/native_diagnostics.json",
+      "original_sha256": "b88d338879fc617b1ebfd82fe88ee9fe6fd0fd9cb927f9db973939b134f19ec8",
+      "original_bytes": 453666,
+      "previous_run": "biology-learning-audit-02",
+      "role": "historical_retrospective_diagnostic",
+      "basis": "Explicit byte-identical reuse documented by this run's diagnostics_origin, not independent replication or a rerun. Both full paths remain separately identified.",
+      "recorded_alias_of": "outputs/biology_learning_audit_01/native_diagnostics.json"
+    },
+    {
+      "origin_path": "outputs/biology_learning_review.json",
+      "original_sha256": "0c1f8c7a39f3a54ecd9683dcee34cb7a461e52b66d56eb7bb0f572e438103812",
+      "original_bytes": 7650,
+      "previous_run": "manual-review-records",
+      "role": "historical_negative_assessment",
+      "basis": "A combined assessment referencing the frozen checkpoint, distinct authoritative final reconciliation and evidence gates. It records unresolved biological-law identification, not executable authorship or a newly validated result.",
+      "source_assertions": {"/native_reconciliation/calibration_adopted": false, "/architecture_changes/ready_for_biological_law_claim": false}
+    },
+    {
+      "origin_path": "outputs/biology_observability_gauge.json",
+      "original_sha256": "6476da449ba5137342745038f44b68f88ab08725a90cee291c04344660e639fd",
+      "original_bytes": 2577,
+      "previous_run": "manual-review-records",
+      "role": "historical_negative_assessment",
+      "basis": "Original model-structural counterexample report. The current collector labels it reported_source_structural_counterexample_not_empirical_validation and numerical_probe_rerun_by_collector=false. Retaining the report does not verify its numerical probe anew.",
+      "source_assertions": {"/assessment": "model_structural_nonidentifiability_counterexample_not_biological_validation"}
+    },
+    {
+      "origin_path": "outputs/heldout_transfer_summary.json",
+      "original_sha256": "c202e7f09305ab84bec300cee340b9f2f530caf0c0aa230aba0c11291c3c5390",
+      "original_bytes": 7248,
+      "previous_run": "manual-review-records",
+      "role": "historical_negative_assessment",
+      "basis": "Recorded strict-chemistry refusal and conditional unverified-hypothesis assessment. Canonical sealed predictions and score records remain separately pinned; this summary does not replace them or turn containment into forecast accuracy.",
+      "source_assertions": {"/strict_verified_chemistry_lane/status": "blocked_not_scored", "/blinding_qualification/fully_blinded_operator_knowledge": false, "/reporting_limitation/status": "auxiliary_diagnostic_export_failed_after_prediction_seal"}
+    },
+    {
+      "origin_path": "outputs/partial_order_v2/run_context.json",
+      "original_sha256": "069198f187ca1b3b11c9cce2d7a1fbbc8d96e8e26f07b70f191ad16b74a0b3a8",
+      "original_bytes": 378,
+      "previous_run": "manual-review-records",
+      "role": "historical_engineering_protocol",
+      "basis": "Original command/scope record for the corrected synthetic demonstration. It remains the unchanged protocol input of the current partial-orders-v2 recipe and supersession evidence for the original demo; those generated result obligations are not reclassified.",
+      "source_assertions": {"/biological_evidence": false, "/historical_demo_overwritten": false}
+    },
+    {
+      "origin_path": "outputs/consolidation_checks/portable_review_resolved.json",
+      "original_sha256": "86afc7be1b08a42a55dfef1aa1c0bffa5dea9ab6f40b4be1fb83f3fddce11ae5",
+      "original_bytes": 14224,
+      "previous_run": "manual-review-records",
+      "role": "historical_source_audit",
+      "basis": "Scoped independent review follow-up, explicitly preserving the earlier historical RED report. Recorded resolution is not current test execution, private-original authentication or biological authorization.",
+      "source_assertions": {"/strong_biological_claim_authorized": false, "/biological_validation": false, "/historical_report/preserved_without_edits": true}
+    },
+    {
+      "origin_path": "outputs/consolidation_checks/reconciliation.json",
+      "original_sha256": "8364e16d0c8d26ec54440d884707ed91b84ae6b1f6a2b7c7a8724e6e1542f7e6",
+      "original_bytes": 7082,
+      "previous_run": "manual-review-records",
+      "role": "historical_operational_record",
+      "basis": "Reviewed history-consolidation plan and prior cleanup authorization. Keeping that record neither reruns Git operations nor authorizes new cleanup, restores old numerical outputs, or attributes a human assessment to a script.",
+      "source_assertions": {"/record_kind": "reviewed_history_consolidation_plan", "/cleanup_authorization/push_authorized": false}
+    },
+    {
+      "origin_path": "outputs/consolidation_checks/verification.json",
+      "original_sha256": "df7334c5bef87594a53a8f28fb72f9932051b551f54bb3b109666b1418c267fe",
+      "original_bytes": 4753,
+      "previous_run": "manual-review-records",
+      "role": "historical_source_audit",
+      "basis": "Recorded pre-consolidation checks and explicit public replay pin. It remains the immutable evidence for the already registered historical public-replay record, not a present-day full-suite pass or scientific validation.",
+      "source_assertions": {"/scientific_scope/strong_biological_readiness": false, "/scientific_scope/new_fit_or_selection_during_portable_replay": false}
+    },
+    {
+      "origin_path": "outputs/native_reconciliation_20260907_01/findings.json",
+      "original_sha256": "fafd51aa35a115ef782b88854a6b86f2a578b2db35fb9c6083424028bd5b1bdc",
+      "original_bytes": 7245,
+      "previous_run": "manual-review-records",
+      "role": "historical_negative_assessment",
+      "basis": "Written native discrepancy assessment that names final as authoritative and retains the initial variant separately. Original numerical claims and infeasible cases remain unchanged; integrity of this assessment does not certify reproduction of the six authoritative final records below.",
+      "source_assertions": {"/authoritative_run": "final", "/calibration_adopted": false}
+    },
+    {
+      "origin_path": "outputs/native_reconciliation_20260907_01/followup_checks.json",
+      "original_sha256": "9ba64b08602c3758608d02cdee66396294e571de9b440467001ac2d4c1e66878",
+      "original_bytes": 3144,
+      "previous_run": "manual-review-records",
+      "role": "historical_negative_assessment",
+      "basis": "Recorded native counterexample/rounding witness checks, not a new solve or independently identified maintenance law. The NGAM-only deletion counterexample and non-adoption remain intact.",
+      "source_assertions": {"/kind": "native_counterexample_and_rounding_witness_checks", "/ngam_deletion_at_D_0_10/calibration_adopted": false}
+    },
+    {
+      "origin_path": "outputs/native_reconciliation_20260907_01/source_lineage_audit.json",
+      "original_sha256": "73518ac0902da3f6d0aaca5b85bc2d286e55046965b1b573d24488c3bb569581",
+      "original_bytes": 6579,
+      "previous_run": "manual-review-records",
+      "role": "historical_source_audit",
+      "basis": "Original primary-precision and native model-fit overlap investigation. Missing exact historical build dependencies, unmeasured volume conversions and absence of an independent outcome holdout remain disclosed; no network/source revalidation is asserted.",
+      "source_assertions": {"/hog_scope/absolute_volume_per_dry_mass": null}
+    },
+    {
+      "origin_path": "outputs/native_reconciliation_20260907_01/verification.json",
+      "original_sha256": "fce43799c95d0931f9c12be7a3d800a6e7a653e1429de3d2134863bc8905bf34",
+      "original_bytes": 2963,
+      "previous_run": "manual-review-records",
+      "role": "historical_source_audit",
+      "basis": "Original execution/test report, which preserves 19 infeasible cases and the final producer declaration. This integrity-only disposition does not authenticate that unavailable producer revision or turn its recorded execution into a current receipt.",
+      "source_assertions": {"/native_experiment/infeasible": 19, "/implementation_sha256/scripts~1run_native_reconciliation.py": "73a4aafb649bd0e65ea8368b75f0b5f32fc8e651c37efdb4c5b9769e2a550621"}
+    },
+    {
+      "origin_path": "outputs/native_population_development/executor_refresh_01/development_protocol.json",
+      "original_sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+      "original_bytes": 47873,
+      "previous_run": "population-executor-refresh-additional-records",
+      "role": "historical_operational_record",
+      "basis": "Exact original protocol copy accompanying the executor-refresh request; Git bytes equal the named checkout protocol. Its document type and authorization boundary explicitly deny export permission or a strong biological claim.",
+      "recorded_alias_of": "data/native_law_v2/development_protocol.json",
+      "source_assertions": {"/document_type": "non_authorizing_operational_development_protocol", "/authorization_boundary/this_file_is_an_export_permission": false}
+    },
+    {
+      "origin_path": "outputs/native_population_development/executor_refresh_01/executor_refresh_request.json",
+      "original_sha256": "0b9539cfc3c53dd88186541613c1e6cdb338ecb79d9406db592bdbb215236d91",
+      "original_bytes": 3418,
+      "previous_run": "population-executor-refresh-additional-records",
+      "role": "historical_operational_record",
+      "basis": "A declared executor-refresh request binding previous approval, phase-B manifest and new configuration/request identities. The record explicitly says it accessed no development responses, performed no native fits and requested no data re-export. Preserving it issues no new custody request or approval.",
+      "source_assertions": {"/document_type": "population_development_executor_refresh_request_v1", "/native_fits_performed_by_this_request": false, "/development_responses_accessed": false, "/data_reexport_requested": false}
+    },
+    {
+      "origin_path": "outputs/native_population_development/native_training_01_phase_c_01_scoring/independent_review.json",
+      "original_sha256": "f7157b1e5bffe4a09e4d0c4ae9fa82abc600d945ddce2f79eac7c4fdd16d9db9",
+      "original_bytes": 13940,
+      "previous_run": "manual-review-records",
+      "role": "historical_negative_assessment",
+      "basis": "Independent scoring review whose overall verdict remains RED for a reusable admitted-bundle integrity gap, distinct from its limited numerical recomputation PASS. Its strong-claim refusal, parameter-bound warning and source-access limits are not overridden by this disposition.",
+      "source_assertions": {"/document_type": "independent_phase_c_scoring_review_not_biological_authorization", "/overall_verdict": "RED_reusable_admitted_bundle_integrity_gap", "/strong_claim_authorized": false}
+    }
+  ],
+  "blocked_records": [
+    {"origin_path": "outputs/native_reconciliation_20260907_01/final/case_summary.csv", "original_sha256": "35aeda9059a2342cb3a0e1aa3302a7437637c97e578a12f97ee5bb3fe357f0da", "original_bytes": 30389, "basis": "Authoritative final numerical diagnostic; original bytes pinned, original producer revision not recovered."},
+    {"origin_path": "outputs/native_reconciliation_20260907_01/final/case_summary.json", "original_sha256": "5a324ab6eca8626b7571849dc72b345c7e81517fd8a6d03808c2b86f8751e8ab", "original_bytes": 92424, "basis": "Authoritative final summary and existing case membership index; its index binding is retained, not replaced by the initial variant."},
+    {"origin_path": "outputs/native_reconciliation_20260907_01/final/completion.json", "original_sha256": "5acbad071149d6fe6c5e1edc0892bc601eb54707c82481e74239a902af758376", "original_bytes": 774, "basis": "Recorded final completion does not authenticate the unavailable original producer or current numerical reproduction."},
+    {"origin_path": "outputs/native_reconciliation_20260907_01/final/native_conditions.json", "original_sha256": "3b95477cdbe45d5d4b90fa9b989591487c58b483889da34a9eb34139123b1d8a", "original_bytes": 55391, "basis": "Condition-specific final numerical diagnostics; no current calibration or proof is substituted for the original run."},
+    {"origin_path": "outputs/native_reconciliation_20260907_01/final/native_structure.json", "original_sha256": "63de75190a82a2ebde5eb34f039c6f2c3520b64df97bc5c6e2be375a2ee6d755", "original_bytes": 12758, "basis": "Final native model-structure record remains attached to its own unreproduced diagnostic run."},
+    {"origin_path": "outputs/native_reconciliation_20260907_01/final/protocol.json", "original_sha256": "3d8695c058af52620e15c46a5ed44c6b681da12c3e25b265fc6898494f494d17", "original_bytes": 3308, "basis": "The recorded environment exists, but the final producer declaration is not the Git-baseline producer or the distinct initial variant.", "source_assertions": {"/calibrated": false, "/independent_validation/used": false, "/implementation_sha256/scripts~1run_native_reconciliation.py": "73a4aafb649bd0e65ea8368b75f0b5f32fc8e651c37efdb4c5b9769e2a550621"}}
+  ],
+  "blocked_reproduction": {
+    "run_id": "native-reconciliation-final",
+    "required_producer_sha256": "73a4aafb649bd0e65ea8368b75f0b5f32fc8e651c37efdb4c5b9769e2a550621",
+    "initial_variant_producer_sha256": "9579fee36be9af4a1e6efd0a8f98c081956e8422a932da2ece27a2ed5382c739",
+    "git_baseline_producer_sha256": "36a7869cabb76822d430c5a71131f09a238601c00d368569d0fd06d43ba39449",
+    "scope": "The library hash matches, but that does not repair the mismatched entrypoint. Bounded full-history inspection of the named script found the consolidated version, not the declared original. Recover authoritative original source or obtain an explicit owner decision on these live numerical diagnostics. No current/final/initial code substitution or runtime invention is authorized."
+  },
+  "restoration_requests": [
+    {
+      "path": "outputs/audit_output_tables.csv",
+      "source_ref": "84561f51502b5b4bf66c052dc88c853038917934",
+      "required_sha256": "7fb36b639fb8a0797e784a8e1a1e19c7ba300c2d059850eb7ee64b6858305bb9",
+      "required_bytes": 1268,
+      "observed_replacement_sha256": "f23060ec977c7413c96ff477c8dd91a6f7af584cbb12bb463754d66b86a12dec",
+      "observed_replacement_bytes": 1711,
+      "decision": "Parent may preserve the newer diagnostic externally and restore these exact original Git bytes. The integrator did not copy, restore or modify the output. Until restoration, historical byte-integrity verification must fail. Restoring this diagnostic is not acceptance of any scientific output it names."
+    }
+  ],
+  "consumer_review": {
+    "active_claim_selectors": [],
+    "claim_boundary": "No direct active claim evidence or value-marker selector names these 31 records. Their scientific result sources and current generation recipes remain unchanged; archived assessments are not substitutes for those sources.",
+    "current_recipe_inputs": [{"path": "outputs/partial_order_v2/run_context.json", "run_id": "partial-orders-v2", "role": "protocol", "effect": "Preserve this input identity and the current generated-result obligations."}],
+    "guarded_readers": [
+      {"path": "src/ystwin/analysis/biology_learning_audit.py", "symbols": ["_additional_qualifications", "_reused_native_diagnostics"], "effect": "Gauge is a reported structural counterexample with no numerical rerun or biological credit; reused diagnostic bytes and original design are checked and never authorize stronger biological grades."},
+      {"path": "src/ystwin/analysis/frozen_runtime.py", "symbols": ["_audit_report"], "effect": "Historical diagnostic reuse must retain numerical_diagnostics_rerun=false and biological_validation_credit=false; original-code/source attestations are checked separately."}
+    ],
+    "metadata_consumers": [
+      {"path": "data/frozen_runtime.json", "pointer": "/audit_support", "effect": "Existing support pins cover the original diagnostic plan/payload and gauge. They are not an original execution certificate for those diagnostic runs."},
+      {"path": "data/native_law_v2/development_provenance_review.json", "pointer": "/current_executor_admission/refresh_request", "effect": "The original refresh-request digest remains an operational reference. The separate admission and phase-C manifest bind release_request, execution_configuration and code snapshots, not a scientific grade from this ledger."}
+    ],
+    "documentation": [
+      {"path": "README.md", "scope": "The native-transfer and biology-learning sections cite recorded assessments while retaining strict-chemistry refusal, infeasible cases, lack of accurate point forecasts and source-recomputed authorization. Those qualifications and the underlying result sources are unchanged."},
+      {"path": "docs/AUDITS.md", "scope": "Repository-check reports, not biological results. Its old output-writing description is not an assertion about the current read-only CLIs."},
+      {"path": "docs/COMPARISON.md", "scope": "Recorded audit-count comparison at lines 169-174 is not refreshed or authenticated as a current run by this disposition."},
+      {"path": "docs/REPRODUCING.md", "scope": "Sections 13-14 retain the strict refusal, conditional hypotheses and native assessment references. The final reconciliation remains authoritative and blocked, while require_claim must recompute authorization rather than trust serialized flags."}
+    ]
+  }
+}

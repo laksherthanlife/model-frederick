@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Granados 2018 metadata-only custody manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema_version", "dataset_id", "status", "custody", "sources", "verified_facts", "unknowns", "available_group_sets", "proposed_partition", "observation_mapping", "artifacts"],
+  "properties": {
+    "$schema": {"const": "granados/manifest.schema.json"},
+    "schema_version": {"const": 1},
+    "dataset_id": {"const": "granados2018"},
+    "status": {"enum": ["catalogue_verified_schema_pending", "metadata_schema_verified_eligibility_gated", "metadata_schema_verified_ineligible_current_protocol", "protocol_approved_projections_exported"]},
+    "custody": {
+      "type": "object", "additionalProperties": false,
+      "required": ["measurement_values_disclosed", "measurement_statistics_computed", "models_fit_or_reserved_data_scored", "raw_files_allowed_for_training", "training_allowlist", "protocol_path", "protocol_sha256", "export_authorized", "raw_storage", "reservation", "seal_limit"],
+      "properties": {
+        "measurement_values_disclosed": {"type": "boolean"},
+        "measurement_statistics_computed": {"type": "boolean"},
+        "measurement_statistics_scope": {"type": "string"},
+        "measurement_statistics_disclosed": {"const": false},
+        "models_fit_or_reserved_data_scored": {"const": false},
+        "raw_files_allowed_for_training": {"const": false},
+        "training_allowlist": {"$ref": "#/$defs/strings"},
+        "protocol_path": {"const": "data/native_law_v2/protocol.json"},
+        "protocol_sha256": {"$ref": "#/$defs/nullableHash"},
+        "export_authorized": {"type": "boolean"},
+        "raw_storage": {"const": "data/native_law_v2/granados/sealed/raw_mixed"},
+        "reservation": {"type": "string"},
+        "seal_limit": {"type": "string"}
+      }
+    },
+    "sources": {
+      "type": "array", "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["source_id", "url", "local_path", "sha256", "kind", "verification"],
+        "properties": {
+          "source_id": {"type": "string"}, "url": {"type": "string", "format": "uri"},
+          "local_path": {"$ref": "#/$defs/nullableString"},
+          "sha256": {"$ref": "#/$defs/nullableHash"},
+          "kind": {"enum": ["repository_metadata", "repository_readme", "primary_article", "primary_supplement", "lookup_metadata"]},
+          "verification": {"type": "string"}
+        }
+      }
+    },
+    "verified_facts": {
+      "type": "array", "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["field", "value", "evidence_ids", "locator"],
+        "properties": {
+          "field": {"type": "string"}, "value": {"type": "string"},
+          "evidence_ids": {"$ref": "#/$defs/strings"}, "locator": {"type": "string"}
+        }
+      }
+    },
+    "unknowns": {"$ref": "#/$defs/strings"},
+    "available_group_sets": {
+      "type": "array", "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["asset_id", "name", "grouping", "documented_scope", "actual_group_count", "inventory_path"],
+        "properties": {
+          "asset_id": {"type": "string", "format": "uuid"}, "name": {"type": "string"},
+          "grouping": {"type": "string"}, "documented_scope": {"type": "string"},
+          "actual_group_count": {"type": ["integer", "null"], "minimum": 0},
+          "inventory_path": {"$ref": "#/$defs/nullableString"}
+        }
+      }
+    },
+    "proposed_partition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "unit", "training_group_ids", "development_group_ids", "reserved_group_ids", "excluded_group_ids", "selection_basis", "proposal", "approval_required"],
+      "properties": {
+        "status": {"enum": ["provisional_no_response_access", "proposed_awaiting_protocol", "ineligible_no_export", "approved_by_protocol"]},
+        "unit": {"type": "string"},
+        "training_group_ids": {"$ref": "#/$defs/strings"},
+        "development_group_ids": {"$ref": "#/$defs/strings"},
+        "reserved_group_ids": {"$ref": "#/$defs/strings"},
+        "excluded_group_ids": {"$ref": "#/$defs/strings"},
+        "selection_basis": {"type": "string"}, "proposal": {"type": "string"},
+        "approval_required": {"type": "string"}
+      }
+    },
+    "observation_mapping": {
+      "type": "object", "additionalProperties": false,
+      "required": ["target", "preferred_raw_field", "preferred_definition", "normalization_policy", "calibration_policy", "paired_data_policy", "causal_scope"],
+      "properties": {
+        "target": {"type": "string"}, "preferred_raw_field": {"type": "string"},
+        "preferred_definition": {"type": "string"}, "normalization_policy": {"type": "string"},
+        "calibration_policy": {"type": "string"}, "paired_data_policy": {"type": "string"},
+        "causal_scope": {"type": "string"}
+      }
+    },
+    "artifacts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_inventory", "overlap_audit", "methods_evidence", "training_projection", "development_projection", "withheld_projection", "export_receipt"],
+      "properties": {
+        "schema_inventory": {"$ref": "#/$defs/nullableString"},
+        "overlap_audit": {"$ref": "#/$defs/nullableString"},
+        "methods_evidence": {"$ref": "#/$defs/nullableString"},
+        "training_projection": {"$ref": "#/$defs/nullableString"},
+        "development_projection": {"$ref": "#/$defs/nullableString"},
+        "withheld_projection": {"$ref": "#/$defs/nullableString"},
+        "export_receipt": {"$ref": "#/$defs/nullableString"},
+        "eligibility_audit": {"$ref": "#/$defs/nullableString"},
+        "dependency_components": {"$ref": "#/$defs/nullableString"},
+        "condition_metadata": {"$ref": "#/$defs/nullableString"},
+        "access_audit": {"$ref": "#/$defs/nullableString"},
+        "metadata_supplement": {"$ref": "#/$defs/nullableString"},
+        "identity_checks": {"$ref": "#/$defs/nullableString"},
+        "timing_review": {"$ref": "#/$defs/nullableString"}
+      }
+    }
+  },
+  "$defs": {
+    "strings": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "nullableString": {"type": ["string", "null"]},
+    "nullableHash": {"anyOf": [{"type": "string", "pattern": "^[a-f0-9]{64}$"}, {"type": "null"}]}
+  }
+}

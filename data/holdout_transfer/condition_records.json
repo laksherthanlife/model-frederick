@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "source": {
+    "authority": "Primary experimental Methods and author-released condition fields, with the original strain-construction table",
+    "source_id": "holdout-transfer:elizondo2025:six-chemostats:condition-records:v1",
+    "reference": "Elizondo BR and Saa PA (2025), ACS Synthetic Biology 14(9), DOI 10.1021/acssynbio.5c00256, PMC12455641, Methods 2.1.1-2.1.2 and 2.1.4; author repository SysBioengLab/BcarGRASP; constructs verified in Lopez et al. (2020), DOI 10.3389/fbioe.2020.578793, Table 1.",
+    "scope": "evaluation_task"
+  },
+  "experiments": [
+    {
+      "experiment_id": "elizondo2025_2D01",
+      "condition": {
+        "experiment_id": "elizondo2025_2D01",
+        "growth_rate_per_h": 0.10098798657810984,
+        "carbon_input": "glucose",
+        "readout_basis": "balanced_growth_intracellular_content",
+        "native_context_assumption": "Transfer from frozen native DS28911/W303 glucose/O2 exchange curves and native glycerol commitments to a CEN.PK2-1c-derived strain in supplemented YNB. Cross-strain and medium equivalence is an explicit, unvalidated extrapolation; no product measurements or target-study exchange rates adjust these priors."
+      },
+      "added_nacl_molar": 0.0,
+      "condition_source_ref": "source_index.json#/condition_id_mapping/0; PMC12455641 Methods 2.1.1-2.1.2; BcarGRASP DilutionRatesStatistics.xlsx, Statistics!A2:C2. Zero denotes no extra NaCl intervention in the enumerated cultivation recipe, not zero basal sodium or osmolality; see source_index.json#/protocol_evidence/added_nacl.",
+      "strain_and_construct": {
+        "organism": "Saccharomyces cerevisiae",
+        "background": "CEN.PK2-1c",
+        "background_genotype_as_reported": "MATa ura3-52 trp1-289 leu2-3,112 his3Delta",
+        "dataset_strain_field": "b-car2",
+        "paper_strain_label": "beta-car2",
+        "construction_reference_strain": "beta-Car2.1",
+        "heterologous_gene_donor_as_reported": "Phaffia rhodozyma",
+        "integrated_gene_copies": {"CrtE": 1, "CrtYB": 1, "CrtI": 1},
+        "transcription_units_by_locus": {
+          "XI-5": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC", "PTDH3-CrtI-TCYC"]
+        },
+        "construct_evidence": "PMC7556307 Table 1, beta-Car2.1 row; PMC12455641 Methods 2.1.1 explicitly maps beta-car2 to beta-Car2.1. ASCII beta and Delta replace the corresponding Greek characters; TCYC is the construction table's notation.",
+        "product_context": "Beta-carotene-pathway strain with intracellular lycopene measured as an intermediate, not a lycopene-only terminal producer. Gene copies describe construction, not fitted expression or flux capacity."
+      }
+    },
+    {
+      "experiment_id": "elizondo2025_2D025",
+      "condition": {
+        "experiment_id": "elizondo2025_2D025",
+        "growth_rate_per_h": 0.2543201820522904,
+        "carbon_input": "glucose",
+        "readout_basis": "balanced_growth_intracellular_content",
+        "native_context_assumption": "Transfer from frozen native DS28911/W303 glucose/O2 exchange curves and native glycerol commitments to a CEN.PK2-1c-derived strain in supplemented YNB. Cross-strain and medium equivalence is an explicit, unvalidated extrapolation; no product measurements or target-study exchange rates adjust these priors."
+      },
+      "added_nacl_molar": 0.0,
+      "condition_source_ref": "source_index.json#/condition_id_mapping/1; PMC12455641 Methods 2.1.1-2.1.2; BcarGRASP DilutionRatesStatistics.xlsx, Statistics!A3:C3. Zero denotes no extra NaCl intervention in the enumerated cultivation recipe, not zero basal sodium or osmolality; see source_index.json#/protocol_evidence/added_nacl.",
+      "strain_and_construct": {
+        "organism": "Saccharomyces cerevisiae",
+        "background": "CEN.PK2-1c",
+        "background_genotype_as_reported": "MATa ura3-52 trp1-289 leu2-3,112 his3Delta",
+        "dataset_strain_field": "b-car2",
+        "paper_strain_label": "beta-car2",
+        "construction_reference_strain": "beta-Car2.1",
+        "heterologous_gene_donor_as_reported": "Phaffia rhodozyma",
+        "integrated_gene_copies": {"CrtE": 1, "CrtYB": 1, "CrtI": 1},
+        "transcription_units_by_locus": {
+          "XI-5": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC", "PTDH3-CrtI-TCYC"]
+        },
+        "construct_evidence": "PMC7556307 Table 1, beta-Car2.1 row; PMC12455641 Methods 2.1.1 explicitly maps beta-car2 to beta-Car2.1. ASCII beta and Delta replace the corresponding Greek characters; TCYC is the construction table's notation.",
+        "product_context": "Beta-carotene-pathway strain with intracellular lycopene measured as an intermediate, not a lycopene-only terminal producer. Gene copies describe construction, not fitted expression or flux capacity."
+      }
+    },
+    {
+      "experiment_id": "elizondo2025_3D01",
+      "condition": {
+        "experiment_id": "elizondo2025_3D01",
+        "growth_rate_per_h": 0.10098798657810984,
+        "carbon_input": "glucose",
+        "readout_basis": "balanced_growth_intracellular_content",
+        "native_context_assumption": "Transfer from frozen native DS28911/W303 glucose/O2 exchange curves and native glycerol commitments to a CEN.PK2-1c-derived strain in supplemented YNB. Cross-strain and medium equivalence is an explicit, unvalidated extrapolation; no product measurements or target-study exchange rates adjust these priors."
+      },
+      "added_nacl_molar": 0.0,
+      "condition_source_ref": "source_index.json#/condition_id_mapping/2; PMC12455641 Methods 2.1.1-2.1.2; BcarGRASP DilutionRatesStatistics.xlsx, Statistics!A4:C4. Zero denotes no extra NaCl intervention in the enumerated cultivation recipe, not zero basal sodium or osmolality; see source_index.json#/protocol_evidence/added_nacl.",
+      "strain_and_construct": {
+        "organism": "Saccharomyces cerevisiae",
+        "background": "CEN.PK2-1c",
+        "background_genotype_as_reported": "MATa ura3-52 trp1-289 leu2-3,112 his3Delta",
+        "dataset_strain_field": "b-car3",
+        "paper_strain_label": "beta-car3",
+        "construction_reference_strain": "beta-Car3",
+        "heterologous_gene_donor_as_reported": "Phaffia rhodozyma",
+        "integrated_gene_copies": {"CrtE": 2, "CrtYB": 2, "CrtI": 2},
+        "transcription_units_by_locus": {
+          "XI-5": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC", "PTDH3-CrtI-TCYC"],
+          "XI-3": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC", "PTDH3-CrtI-TCYC"]
+        },
+        "construct_evidence": "PMC7556307 Table 1, beta-Car3 row plus its explicitly listed parent beta-Car2.1. Copy counts include inherited integrations, not numerical strain-name heuristics. ASCII beta and Delta replace the corresponding Greek characters; TCYC is the construction table's notation.",
+        "product_context": "Beta-carotene-pathway strain with intracellular lycopene measured as an intermediate, not a lycopene-only terminal producer. Gene copies describe construction, not fitted expression or flux capacity."
+      }
+    },
+    {
+      "experiment_id": "elizondo2025_3D025",
+      "condition": {
+        "experiment_id": "elizondo2025_3D025",
+        "growth_rate_per_h": 0.2543201820522904,
+        "carbon_input": "glucose",
+        "readout_basis": "balanced_growth_intracellular_content",
+        "native_context_assumption": "Transfer from frozen native DS28911/W303 glucose/O2 exchange curves and native glycerol commitments to a CEN.PK2-1c-derived strain in supplemented YNB. Cross-strain and medium equivalence is an explicit, unvalidated extrapolation; no product measurements or target-study exchange rates adjust these priors."
+      },
+      "added_nacl_molar": 0.0,
+      "condition_source_ref": "source_index.json#/condition_id_mapping/3; PMC12455641 Methods 2.1.1-2.1.2; BcarGRASP DilutionRatesStatistics.xlsx, Statistics!A5:C5. Zero denotes no extra NaCl intervention in the enumerated cultivation recipe, not zero basal sodium or osmolality; see source_index.json#/protocol_evidence/added_nacl.",
+      "strain_and_construct": {
+        "organism": "Saccharomyces cerevisiae",
+        "background": "CEN.PK2-1c",
+        "background_genotype_as_reported": "MATa ura3-52 trp1-289 leu2-3,112 his3Delta",
+        "dataset_strain_field": "b-car3",
+        "paper_strain_label": "beta-car3",
+        "construction_reference_strain": "beta-Car3",
+        "heterologous_gene_donor_as_reported": "Phaffia rhodozyma",
+        "integrated_gene_copies": {"CrtE": 2, "CrtYB": 2, "CrtI": 2},
+        "transcription_units_by_locus": {
+          "XI-5": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC", "PTDH3-CrtI-TCYC"],
+          "XI-3": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC", "PTDH3-CrtI-TCYC"]
+        },
+        "construct_evidence": "PMC7556307 Table 1, beta-Car3 row plus its explicitly listed parent beta-Car2.1. Copy counts include inherited integrations, not numerical strain-name heuristics. ASCII beta and Delta replace the corresponding Greek characters; TCYC is the construction table's notation.",
+        "product_context": "Beta-carotene-pathway strain with intracellular lycopene measured as an intermediate, not a lycopene-only terminal producer. Gene copies describe construction, not fitted expression or flux capacity."
+      }
+    },
+    {
+      "experiment_id": "elizondo2025_4D01",
+      "condition": {
+        "experiment_id": "elizondo2025_4D01",
+        "growth_rate_per_h": 0.10098798657810984,
+        "carbon_input": "glucose",
+        "readout_basis": "balanced_growth_intracellular_content",
+        "native_context_assumption": "Transfer from frozen native DS28911/W303 glucose/O2 exchange curves and native glycerol commitments to a CEN.PK2-1c-derived strain in supplemented YNB. Cross-strain and medium equivalence is an explicit, unvalidated extrapolation; no product measurements or target-study exchange rates adjust these priors."
+      },
+      "added_nacl_molar": 0.0,
+      "condition_source_ref": "source_index.json#/condition_id_mapping/4; PMC12455641 Methods 2.1.1-2.1.2; BcarGRASP DilutionRatesStatistics.xlsx, Statistics!A6:C6. Zero denotes no extra NaCl intervention in the enumerated cultivation recipe, not zero basal sodium or osmolality; see source_index.json#/protocol_evidence/added_nacl.",
+      "strain_and_construct": {
+        "organism": "Saccharomyces cerevisiae",
+        "background": "CEN.PK2-1c",
+        "background_genotype_as_reported": "MATa ura3-52 trp1-289 leu2-3,112 his3Delta",
+        "dataset_strain_field": "b-car4",
+        "paper_strain_label": "beta-car4",
+        "construction_reference_strain": "beta-Car4.b",
+        "heterologous_gene_donor_as_reported": "Phaffia rhodozyma",
+        "integrated_gene_copies": {"CrtE": 3, "CrtYB": 3, "CrtI": 2},
+        "transcription_units_by_locus": {
+          "XI-5": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC", "PTDH3-CrtI-TCYC"],
+          "XI-3": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC", "PTDH3-CrtI-TCYC"],
+          "X-2": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC"]
+        },
+        "construct_evidence": "PMC7556307 Table 1, beta-Car4.b row plus the explicit beta-Car3 and beta-Car2.1 parental chain. PMC12455641 Methods 2.1.1 maps beta-car4 to beta-Car4.b, not beta-Car4.a. ASCII beta and Delta replace the corresponding Greek characters; TCYC is the construction table's notation.",
+        "product_context": "Beta-carotene-pathway strain with intracellular lycopene measured as an intermediate, not a lycopene-only terminal producer. Gene copies describe construction, not fitted expression or flux capacity."
+      }
+    },
+    {
+      "experiment_id": "elizondo2025_4D025",
+      "condition": {
+        "experiment_id": "elizondo2025_4D025",
+        "growth_rate_per_h": 0.2543201820522904,
+        "carbon_input": "glucose",
+        "readout_basis": "balanced_growth_intracellular_content",
+        "native_context_assumption": "Transfer from frozen native DS28911/W303 glucose/O2 exchange curves and native glycerol commitments to a CEN.PK2-1c-derived strain in supplemented YNB. Cross-strain and medium equivalence is an explicit, unvalidated extrapolation; no product measurements or target-study exchange rates adjust these priors."
+      },
+      "added_nacl_molar": 0.0,
+      "condition_source_ref": "source_index.json#/condition_id_mapping/5; PMC12455641 Methods 2.1.1-2.1.2; BcarGRASP DilutionRatesStatistics.xlsx, Statistics!A7:C7. Zero denotes no extra NaCl intervention in the enumerated cultivation recipe, not zero basal sodium or osmolality; see source_index.json#/protocol_evidence/added_nacl.",
+      "strain_and_construct": {
+        "organism": "Saccharomyces cerevisiae",
+        "background": "CEN.PK2-1c",
+        "background_genotype_as_reported": "MATa ura3-52 trp1-289 leu2-3,112 his3Delta",
+        "dataset_strain_field": "b-car4",
+        "paper_strain_label": "beta-car4",
+        "construction_reference_strain": "beta-Car4.b",
+        "heterologous_gene_donor_as_reported": "Phaffia rhodozyma",
+        "integrated_gene_copies": {"CrtE": 3, "CrtYB": 3, "CrtI": 2},
+        "transcription_units_by_locus": {
+          "XI-5": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC", "PTDH3-CrtI-TCYC"],
+          "XI-3": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC", "PTDH3-CrtI-TCYC"],
+          "X-2": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC"]
+        },
+        "construct_evidence": "PMC7556307 Table 1, beta-Car4.b row plus the explicit beta-Car3 and beta-Car2.1 parental chain. PMC12455641 Methods 2.1.1 maps beta-car4 to beta-Car4.b, not beta-Car4.a. ASCII beta and Delta replace the corresponding Greek characters; TCYC is the construction table's notation.",
+        "product_context": "Beta-carotene-pathway strain with intracellular lycopene measured as an intermediate, not a lycopene-only terminal producer. Gene copies describe construction, not fitted expression or flux capacity."
+      }
+    }
+  ]
+}

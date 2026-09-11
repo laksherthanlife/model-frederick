@@ -1,0 +1,12 @@
+{
+  "document_type": "local_operational_custody_event_not_external_registry",
+  "event_id": "phase-b-approved",
+  "recorded_at_utc": "2026-09-07T12:33:45.548215+00:00",
+  "request_sha256": "b812da162bd1962484c505bdb32d9c0d4b191e51051f1e2d64a42eab5b6ca349",
+  "approval_sha256": "87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533",
+  "source_binding_audit_sha256": "e58f682b49a2f74ae0fff41e429893454c630b7c6daa55523f97fb02cd556985",
+  "superseded_blocker_sha256": "2f7c75f47310be7c41241fb96712d95a96cc90e41310049761f390a74bc4c1a6",
+  "resolution": "Saved source coverage passes. A real resumed executor now exists and was frozen. The writer now distinguishes custody metadata root from the exact protocol-required projection root; no source, cohort, window, target or threshold was amended.",
+  "values_released_before_this_approval": false,
+  "strong_claim_authorized": false
+}

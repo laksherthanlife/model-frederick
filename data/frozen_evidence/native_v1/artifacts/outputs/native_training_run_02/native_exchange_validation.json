@@ -1,0 +1,1081 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/native_training_run_02/native_exchange_validation.json",
+    "sha256": "8e787ff7ae6d4b2eeff7a10ad2dba8d9a0698faf06b92d61da9b06e99e58a2a2"
+  },
+  "payload": {
+    "coverage": 0.6666666666666666,
+    "metrics": {
+      "Acetate": {
+        "coverage": 0.3333333333333333,
+        "mae": 0.1150000000000001,
+        "n_observed_censored": 1,
+        "n_observed_quantified": 2,
+        "n_scored": 1,
+        "n_total": 3,
+        "prediction_status_counts": {
+          "quantified": 1,
+          "unquantified_censored_support": 2,
+          "unsupported_growth_rate": 0
+        },
+        "quantified_observation_coverage": 0.5,
+        "rmse": 0.1150000000000001,
+        "unit": "mmol/gDW/h"
+      },
+      "BiomassYield_g_per_g": {
+        "coverage": 1.0,
+        "mae": 0.03700000000000004,
+        "n_observed_censored": 0,
+        "n_observed_quantified": 3,
+        "n_scored": 3,
+        "n_total": 3,
+        "prediction_status_counts": {
+          "quantified": 3,
+          "unquantified_censored_support": 0,
+          "unsupported_growth_rate": 0
+        },
+        "quantified_observation_coverage": 1.0,
+        "rmse": 0.04179712908801277,
+        "unit": "gDW/g_glucose"
+      },
+      "CO2production": {
+        "coverage": 1.0,
+        "mae": 0.44333333333333513,
+        "n_observed_censored": 0,
+        "n_observed_quantified": 3,
+        "n_scored": 3,
+        "n_total": 3,
+        "prediction_status_counts": {
+          "quantified": 3,
+          "unquantified_censored_support": 0,
+          "unsupported_growth_rate": 0
+        },
+        "quantified_observation_coverage": 1.0,
+        "rmse": 0.6274020507882777,
+        "unit": "mmol/gDW/h"
+      },
+      "CarbonRecovery_pct": {
+        "coverage": 1.0,
+        "mae": 2.7833333333333363,
+        "n_observed_censored": 0,
+        "n_observed_quantified": 3,
+        "n_scored": 3,
+        "n_total": 3,
+        "prediction_status_counts": {
+          "quantified": 3,
+          "unquantified_censored_support": 0,
+          "unsupported_growth_rate": 0
+        },
+        "quantified_observation_coverage": 1.0,
+        "rmse": 3.09098150539059,
+        "unit": "%"
+      },
+      "Ethanol": {
+        "coverage": 0.3333333333333333,
+        "mae": 1.4000000000000021,
+        "n_observed_censored": 1,
+        "n_observed_quantified": 2,
+        "n_scored": 1,
+        "n_total": 3,
+        "prediction_status_counts": {
+          "quantified": 1,
+          "unquantified_censored_support": 2,
+          "unsupported_growth_rate": 0
+        },
+        "quantified_observation_coverage": 0.5,
+        "rmse": 1.4000000000000021,
+        "unit": "mmol/gDW/h"
+      },
+      "GlucoseUptake": {
+        "coverage": 1.0,
+        "mae": 0.40666666666666773,
+        "n_observed_censored": 0,
+        "n_observed_quantified": 3,
+        "n_scored": 3,
+        "n_total": 3,
+        "prediction_status_counts": {
+          "quantified": 3,
+          "unquantified_censored_support": 0,
+          "unsupported_growth_rate": 0
+        },
+        "quantified_observation_coverage": 1.0,
+        "rmse": 0.521664004253058,
+        "unit": "mmol/gDW/h"
+      },
+      "Glycerol": {
+        "coverage": 0.0,
+        "mae": null,
+        "n_observed_censored": 2,
+        "n_observed_quantified": 1,
+        "n_scored": 0,
+        "n_total": 3,
+        "prediction_status_counts": {
+          "quantified": 0,
+          "unquantified_censored_support": 3,
+          "unsupported_growth_rate": 0
+        },
+        "quantified_observation_coverage": 0.0,
+        "rmse": null,
+        "unit": "mmol/gDW/h"
+      },
+      "O2uptake": {
+        "coverage": 1.0,
+        "mae": 0.38000000000000034,
+        "n_observed_censored": 0,
+        "n_observed_quantified": 3,
+        "n_scored": 3,
+        "n_total": 3,
+        "prediction_status_counts": {
+          "quantified": 3,
+          "unquantified_censored_support": 0,
+          "unsupported_growth_rate": 0
+        },
+        "quantified_observation_coverage": 1.0,
+        "rmse": 0.5548573390220836,
+        "unit": "mmol/gDW/h"
+      },
+      "Pyruvate": {
+        "coverage": 0.3333333333333333,
+        "mae": 6.938893903907228e-18,
+        "n_observed_censored": 1,
+        "n_observed_quantified": 2,
+        "n_scored": 1,
+        "n_total": 3,
+        "prediction_status_counts": {
+          "quantified": 1,
+          "unquantified_censored_support": 2,
+          "unsupported_growth_rate": 0
+        },
+        "quantified_observation_coverage": 0.5,
+        "rmse": 6.938893903907228e-18,
+        "unit": "mmol/gDW/h"
+      }
+    },
+    "n_conditions": 3,
+    "n_readouts": 27,
+    "n_scored": 18,
+    "readouts": [
+      {
+        "bounds": null,
+        "condition_index": 0,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.15,
+        "method": null,
+        "observable_id": "Acetate",
+        "observation_status": "below_detection_limit",
+        "observed_value": null,
+        "prediction": null,
+        "prediction_status": "unquantified_censored_support",
+        "reported_value": 0.0,
+        "residual": null,
+        "row_id": "vanHoek1998:D=0.15",
+        "scored": false,
+        "source_line": 5,
+        "support": [
+          {
+            "growth_rate_per_h": 0.1,
+            "observation_status": "below_detection_limit",
+            "reported_value": 0.0,
+            "source_line": 4,
+            "value": null
+          },
+          {
+            "growth_rate_per_h": 0.2,
+            "observation_status": "below_detection_limit",
+            "reported_value": 0.0,
+            "source_line": 6,
+            "value": null
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 0,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.15,
+        "method": "linear_interpolation",
+        "observable_id": "BiomassYield_g_per_g",
+        "observation_status": "quantified",
+        "observed_value": 0.49,
+        "prediction": 0.48,
+        "prediction_status": "quantified",
+        "reported_value": 0.49,
+        "residual": -0.010000000000000009,
+        "row_id": "vanHoek1998:D=0.15",
+        "scored": true,
+        "source_line": 5,
+        "support": [
+          {
+            "growth_rate_per_h": 0.1,
+            "observation_status": "quantified",
+            "reported_value": 0.48,
+            "source_line": 4,
+            "value": 0.48
+          },
+          {
+            "growth_rate_per_h": 0.2,
+            "observation_status": "quantified",
+            "reported_value": 0.48,
+            "source_line": 6,
+            "value": 0.48
+          }
+        ],
+        "unit": "gDW/g_glucose"
+      },
+      {
+        "bounds": null,
+        "condition_index": 0,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.15,
+        "method": "linear_interpolation",
+        "observable_id": "CO2production",
+        "observation_status": "quantified",
+        "observed_value": 4.2,
+        "prediction": 4.2,
+        "prediction_status": "quantified",
+        "reported_value": 4.2,
+        "residual": 0.0,
+        "row_id": "vanHoek1998:D=0.15",
+        "scored": true,
+        "source_line": 5,
+        "support": [
+          {
+            "growth_rate_per_h": 0.1,
+            "observation_status": "quantified",
+            "reported_value": 2.7,
+            "source_line": 4,
+            "value": 2.7
+          },
+          {
+            "growth_rate_per_h": 0.2,
+            "observation_status": "quantified",
+            "reported_value": 5.7,
+            "source_line": 6,
+            "value": 5.7
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 0,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.15,
+        "method": "linear_interpolation",
+        "observable_id": "CarbonRecovery_pct",
+        "observation_status": "quantified",
+        "observed_value": 102.4,
+        "prediction": 98.45,
+        "prediction_status": "quantified",
+        "reported_value": 102.4,
+        "residual": -3.950000000000003,
+        "row_id": "vanHoek1998:D=0.15",
+        "scored": true,
+        "source_line": 5,
+        "support": [
+          {
+            "growth_rate_per_h": 0.1,
+            "observation_status": "quantified",
+            "reported_value": 96.0,
+            "source_line": 4,
+            "value": 96.0
+          },
+          {
+            "growth_rate_per_h": 0.2,
+            "observation_status": "quantified",
+            "reported_value": 100.9,
+            "source_line": 6,
+            "value": 100.9
+          }
+        ],
+        "unit": "%"
+      },
+      {
+        "bounds": null,
+        "condition_index": 0,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.15,
+        "method": null,
+        "observable_id": "Ethanol",
+        "observation_status": "below_detection_limit",
+        "observed_value": null,
+        "prediction": null,
+        "prediction_status": "unquantified_censored_support",
+        "reported_value": 0.0,
+        "residual": null,
+        "row_id": "vanHoek1998:D=0.15",
+        "scored": false,
+        "source_line": 5,
+        "support": [
+          {
+            "growth_rate_per_h": 0.1,
+            "observation_status": "below_detection_limit",
+            "reported_value": 0.0,
+            "source_line": 4,
+            "value": null
+          },
+          {
+            "growth_rate_per_h": 0.2,
+            "observation_status": "below_detection_limit",
+            "reported_value": 0.0,
+            "source_line": 6,
+            "value": null
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 0,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.15,
+        "method": "linear_interpolation",
+        "observable_id": "GlucoseUptake",
+        "observation_status": "quantified",
+        "observed_value": 1.7,
+        "prediction": 1.6999999999999997,
+        "prediction_status": "quantified",
+        "reported_value": 1.7,
+        "residual": -2.220446049250313e-16,
+        "row_id": "vanHoek1998:D=0.15",
+        "scored": true,
+        "source_line": 5,
+        "support": [
+          {
+            "growth_rate_per_h": 0.1,
+            "observation_status": "quantified",
+            "reported_value": 1.1,
+            "source_line": 4,
+            "value": 1.1
+          },
+          {
+            "growth_rate_per_h": 0.2,
+            "observation_status": "quantified",
+            "reported_value": 2.3,
+            "source_line": 6,
+            "value": 2.3
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 0,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.15,
+        "method": null,
+        "observable_id": "Glycerol",
+        "observation_status": "below_detection_limit",
+        "observed_value": null,
+        "prediction": null,
+        "prediction_status": "unquantified_censored_support",
+        "reported_value": 0.0,
+        "residual": null,
+        "row_id": "vanHoek1998:D=0.15",
+        "scored": false,
+        "source_line": 5,
+        "support": [
+          {
+            "growth_rate_per_h": 0.1,
+            "observation_status": "below_detection_limit",
+            "reported_value": 0.0,
+            "source_line": 4,
+            "value": null
+          },
+          {
+            "growth_rate_per_h": 0.2,
+            "observation_status": "below_detection_limit",
+            "reported_value": 0.0,
+            "source_line": 6,
+            "value": null
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 0,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.15,
+        "method": "linear_interpolation",
+        "observable_id": "O2uptake",
+        "observation_status": "quantified",
+        "observed_value": 3.9,
+        "prediction": 3.8999999999999995,
+        "prediction_status": "quantified",
+        "reported_value": 3.9,
+        "residual": -4.440892098500626e-16,
+        "row_id": "vanHoek1998:D=0.15",
+        "scored": true,
+        "source_line": 5,
+        "support": [
+          {
+            "growth_rate_per_h": 0.1,
+            "observation_status": "quantified",
+            "reported_value": 2.5,
+            "source_line": 4,
+            "value": 2.5
+          },
+          {
+            "growth_rate_per_h": 0.2,
+            "observation_status": "quantified",
+            "reported_value": 5.3,
+            "source_line": 6,
+            "value": 5.3
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 0,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.15,
+        "method": null,
+        "observable_id": "Pyruvate",
+        "observation_status": "below_detection_limit",
+        "observed_value": null,
+        "prediction": null,
+        "prediction_status": "unquantified_censored_support",
+        "reported_value": 0.0,
+        "residual": null,
+        "row_id": "vanHoek1998:D=0.15",
+        "scored": false,
+        "source_line": 5,
+        "support": [
+          {
+            "growth_rate_per_h": 0.1,
+            "observation_status": "below_detection_limit",
+            "reported_value": 0.0,
+            "source_line": 4,
+            "value": null
+          },
+          {
+            "growth_rate_per_h": 0.2,
+            "observation_status": "below_detection_limit",
+            "reported_value": 0.0,
+            "source_line": 6,
+            "value": null
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 1,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.28,
+        "method": null,
+        "observable_id": "Acetate",
+        "observation_status": "quantified",
+        "observed_value": 0.08,
+        "prediction": null,
+        "prediction_status": "unquantified_censored_support",
+        "reported_value": 0.08,
+        "residual": null,
+        "row_id": "vanHoek1998:D=0.28",
+        "scored": false,
+        "source_line": 8,
+        "support": [
+          {
+            "growth_rate_per_h": 0.25,
+            "observation_status": "below_detection_limit",
+            "reported_value": 0.0,
+            "source_line": 7,
+            "value": null
+          },
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 0.41,
+            "source_line": 9,
+            "value": 0.41
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 1,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.28,
+        "method": "linear_interpolation",
+        "observable_id": "BiomassYield_g_per_g",
+        "observation_status": "quantified",
+        "observed_value": 0.46,
+        "prediction": 0.4139999999999999,
+        "prediction_status": "quantified",
+        "reported_value": 0.46,
+        "residual": -0.046000000000000096,
+        "row_id": "vanHoek1998:D=0.28",
+        "scored": true,
+        "source_line": 8,
+        "support": [
+          {
+            "growth_rate_per_h": 0.25,
+            "observation_status": "quantified",
+            "reported_value": 0.48,
+            "source_line": 7,
+            "value": 0.48
+          },
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 0.37,
+            "source_line": 9,
+            "value": 0.37
+          }
+        ],
+        "unit": "gDW/g_glucose"
+      },
+      {
+        "bounds": null,
+        "condition_index": 1,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.28,
+        "method": "linear_interpolation",
+        "observable_id": "CO2production",
+        "observation_status": "quantified",
+        "observed_value": 8.0,
+        "prediction": 8.280000000000001,
+        "prediction_status": "quantified",
+        "reported_value": 8.0,
+        "residual": 0.28000000000000114,
+        "row_id": "vanHoek1998:D=0.28",
+        "scored": true,
+        "source_line": 8,
+        "support": [
+          {
+            "growth_rate_per_h": 0.25,
+            "observation_status": "quantified",
+            "reported_value": 7.5,
+            "source_line": 7,
+            "value": 7.5
+          },
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 8.8,
+            "source_line": 9,
+            "value": 8.8
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 1,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.28,
+        "method": "linear_interpolation",
+        "observable_id": "CarbonRecovery_pct",
+        "observation_status": "quantified",
+        "observed_value": 97.0,
+        "prediction": 100.5,
+        "prediction_status": "quantified",
+        "reported_value": 97.0,
+        "residual": 3.5,
+        "row_id": "vanHoek1998:D=0.28",
+        "scored": true,
+        "source_line": 8,
+        "support": [
+          {
+            "growth_rate_per_h": 0.25,
+            "observation_status": "quantified",
+            "reported_value": 102.6,
+            "source_line": 7,
+            "value": 102.6
+          },
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 99.1,
+            "source_line": 9,
+            "value": 99.1
+          }
+        ],
+        "unit": "%"
+      },
+      {
+        "bounds": null,
+        "condition_index": 1,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.28,
+        "method": null,
+        "observable_id": "Ethanol",
+        "observation_status": "quantified",
+        "observed_value": 0.11,
+        "prediction": null,
+        "prediction_status": "unquantified_censored_support",
+        "reported_value": 0.11,
+        "residual": null,
+        "row_id": "vanHoek1998:D=0.28",
+        "scored": false,
+        "source_line": 8,
+        "support": [
+          {
+            "growth_rate_per_h": 0.25,
+            "observation_status": "below_detection_limit",
+            "reported_value": 0.0,
+            "source_line": 7,
+            "value": null
+          },
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 2.3,
+            "source_line": 9,
+            "value": 2.3
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 1,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.28,
+        "method": "linear_interpolation",
+        "observable_id": "GlucoseUptake",
+        "observation_status": "quantified",
+        "observed_value": 3.4,
+        "prediction": 3.820000000000001,
+        "prediction_status": "quantified",
+        "reported_value": 3.4,
+        "residual": 0.42000000000000126,
+        "row_id": "vanHoek1998:D=0.28",
+        "scored": true,
+        "source_line": 8,
+        "support": [
+          {
+            "growth_rate_per_h": 0.25,
+            "observation_status": "quantified",
+            "reported_value": 2.8,
+            "source_line": 7,
+            "value": 2.8
+          },
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 4.5,
+            "source_line": 9,
+            "value": 4.5
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 1,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.28,
+        "method": null,
+        "observable_id": "Glycerol",
+        "observation_status": "below_detection_limit",
+        "observed_value": null,
+        "prediction": null,
+        "prediction_status": "unquantified_censored_support",
+        "reported_value": 0.0,
+        "residual": null,
+        "row_id": "vanHoek1998:D=0.28",
+        "scored": false,
+        "source_line": 8,
+        "support": [
+          {
+            "growth_rate_per_h": 0.25,
+            "observation_status": "below_detection_limit",
+            "reported_value": 0.0,
+            "source_line": 7,
+            "value": null
+          },
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "below_detection_limit",
+            "reported_value": 0.0,
+            "source_line": 9,
+            "value": null
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 1,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.28,
+        "method": "linear_interpolation",
+        "observable_id": "O2uptake",
+        "observation_status": "quantified",
+        "observed_value": 7.4,
+        "prediction": 6.459999999999999,
+        "prediction_status": "quantified",
+        "reported_value": 7.4,
+        "residual": -0.9400000000000013,
+        "row_id": "vanHoek1998:D=0.28",
+        "scored": true,
+        "source_line": 8,
+        "support": [
+          {
+            "growth_rate_per_h": 0.25,
+            "observation_status": "quantified",
+            "reported_value": 7.0,
+            "source_line": 7,
+            "value": 7.0
+          },
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 6.1,
+            "source_line": 9,
+            "value": 6.1
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 1,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.28,
+        "method": null,
+        "observable_id": "Pyruvate",
+        "observation_status": "quantified",
+        "observed_value": 0.01,
+        "prediction": null,
+        "prediction_status": "unquantified_censored_support",
+        "reported_value": 0.01,
+        "residual": null,
+        "row_id": "vanHoek1998:D=0.28",
+        "scored": false,
+        "source_line": 8,
+        "support": [
+          {
+            "growth_rate_per_h": 0.25,
+            "observation_status": "below_detection_limit",
+            "reported_value": 0.0,
+            "source_line": 7,
+            "value": null
+          },
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 0.01,
+            "source_line": 9,
+            "value": 0.01
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 2,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.35,
+        "method": "linear_interpolation",
+        "observable_id": "Acetate",
+        "observation_status": "quantified",
+        "observed_value": 0.62,
+        "prediction": 0.5049999999999999,
+        "prediction_status": "quantified",
+        "reported_value": 0.62,
+        "residual": -0.1150000000000001,
+        "row_id": "vanHoek1998:D=0.35",
+        "scored": true,
+        "source_line": 10,
+        "support": [
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 0.41,
+            "source_line": 9,
+            "value": 0.41
+          },
+          {
+            "growth_rate_per_h": 0.4,
+            "observation_status": "quantified",
+            "reported_value": 0.6,
+            "source_line": 11,
+            "value": 0.6
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 2,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.35,
+        "method": "linear_interpolation",
+        "observable_id": "BiomassYield_g_per_g",
+        "observation_status": "quantified",
+        "observed_value": 0.23,
+        "prediction": 0.28500000000000003,
+        "prediction_status": "quantified",
+        "reported_value": 0.23,
+        "residual": 0.05500000000000002,
+        "row_id": "vanHoek1998:D=0.35",
+        "scored": true,
+        "source_line": 10,
+        "support": [
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 0.37,
+            "source_line": 9,
+            "value": 0.37
+          },
+          {
+            "growth_rate_per_h": 0.4,
+            "observation_status": "quantified",
+            "reported_value": 0.2,
+            "source_line": 11,
+            "value": 0.2
+          }
+        ],
+        "unit": "gDW/g_glucose"
+      },
+      {
+        "bounds": null,
+        "condition_index": 2,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.35,
+        "method": "linear_interpolation",
+        "observable_id": "CO2production",
+        "observation_status": "quantified",
+        "observed_value": 14.9,
+        "prediction": 13.849999999999996,
+        "prediction_status": "quantified",
+        "reported_value": 14.9,
+        "residual": -1.0500000000000043,
+        "row_id": "vanHoek1998:D=0.35",
+        "scored": true,
+        "source_line": 10,
+        "support": [
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 8.8,
+            "source_line": 9,
+            "value": 8.8
+          },
+          {
+            "growth_rate_per_h": 0.4,
+            "observation_status": "quantified",
+            "reported_value": 18.9,
+            "source_line": 11,
+            "value": 18.9
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 2,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.35,
+        "method": "linear_interpolation",
+        "observable_id": "CarbonRecovery_pct",
+        "observation_status": "quantified",
+        "observed_value": 99.4,
+        "prediction": 98.5,
+        "prediction_status": "quantified",
+        "reported_value": 99.4,
+        "residual": -0.9000000000000057,
+        "row_id": "vanHoek1998:D=0.35",
+        "scored": true,
+        "source_line": 10,
+        "support": [
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 99.1,
+            "source_line": 9,
+            "value": 99.1
+          },
+          {
+            "growth_rate_per_h": 0.4,
+            "observation_status": "quantified",
+            "reported_value": 97.9,
+            "source_line": 11,
+            "value": 97.9
+          }
+        ],
+        "unit": "%"
+      },
+      {
+        "bounds": null,
+        "condition_index": 2,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.35,
+        "method": "linear_interpolation",
+        "observable_id": "Ethanol",
+        "observation_status": "quantified",
+        "observed_value": 9.5,
+        "prediction": 8.099999999999998,
+        "prediction_status": "quantified",
+        "reported_value": 9.5,
+        "residual": -1.4000000000000021,
+        "row_id": "vanHoek1998:D=0.35",
+        "scored": true,
+        "source_line": 10,
+        "support": [
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 2.3,
+            "source_line": 9,
+            "value": 2.3
+          },
+          {
+            "growth_rate_per_h": 0.4,
+            "observation_status": "quantified",
+            "reported_value": 13.9,
+            "source_line": 11,
+            "value": 13.9
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 2,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.35,
+        "method": "linear_interpolation",
+        "observable_id": "GlucoseUptake",
+        "observation_status": "quantified",
+        "observed_value": 8.6,
+        "prediction": 7.799999999999998,
+        "prediction_status": "quantified",
+        "reported_value": 8.6,
+        "residual": -0.8000000000000016,
+        "row_id": "vanHoek1998:D=0.35",
+        "scored": true,
+        "source_line": 10,
+        "support": [
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 4.5,
+            "source_line": 9,
+            "value": 4.5
+          },
+          {
+            "growth_rate_per_h": 0.4,
+            "observation_status": "quantified",
+            "reported_value": 11.1,
+            "source_line": 11,
+            "value": 11.1
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 2,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.35,
+        "method": null,
+        "observable_id": "Glycerol",
+        "observation_status": "quantified",
+        "observed_value": 0.05,
+        "prediction": null,
+        "prediction_status": "unquantified_censored_support",
+        "reported_value": 0.05,
+        "residual": null,
+        "row_id": "vanHoek1998:D=0.35",
+        "scored": false,
+        "source_line": 10,
+        "support": [
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "below_detection_limit",
+            "reported_value": 0.0,
+            "source_line": 9,
+            "value": null
+          },
+          {
+            "growth_rate_per_h": 0.4,
+            "observation_status": "quantified",
+            "reported_value": 0.15,
+            "source_line": 11,
+            "value": 0.15
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 2,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.35,
+        "method": "linear_interpolation",
+        "observable_id": "O2uptake",
+        "observation_status": "quantified",
+        "observed_value": 5.1,
+        "prediction": 4.9,
+        "prediction_status": "quantified",
+        "reported_value": 5.1,
+        "residual": -0.1999999999999993,
+        "row_id": "vanHoek1998:D=0.35",
+        "scored": true,
+        "source_line": 10,
+        "support": [
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 6.1,
+            "source_line": 9,
+            "value": 6.1
+          },
+          {
+            "growth_rate_per_h": 0.4,
+            "observation_status": "quantified",
+            "reported_value": 3.7,
+            "source_line": 11,
+            "value": 3.7
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      },
+      {
+        "bounds": null,
+        "condition_index": 2,
+        "detection_limit": null,
+        "growth_rate_per_h": 0.35,
+        "method": "linear_interpolation",
+        "observable_id": "Pyruvate",
+        "observation_status": "quantified",
+        "observed_value": 0.03,
+        "prediction": 0.029999999999999992,
+        "prediction_status": "quantified",
+        "reported_value": 0.03,
+        "residual": -6.938893903907228e-18,
+        "row_id": "vanHoek1998:D=0.35",
+        "scored": true,
+        "source_line": 10,
+        "support": [
+          {
+            "growth_rate_per_h": 0.3,
+            "observation_status": "quantified",
+            "reported_value": 0.01,
+            "source_line": 9,
+            "value": 0.01
+          },
+          {
+            "growth_rate_per_h": 0.4,
+            "observation_status": "quantified",
+            "reported_value": 0.05,
+            "source_line": 11,
+            "value": 0.05
+          }
+        ],
+        "unit": "mmol/gDW/h"
+      }
+    ],
+    "scope": "native condition evaluation; growth is imposed, not scored"
+  },
+  "schema_version": 1
+}

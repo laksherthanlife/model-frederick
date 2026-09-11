@@ -1,0 +1,46 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_0.json",
+    "sha256": "83a0d50899211128e391309221da804e1ce90a8c4b4ad1c594cfb9acc7255187"
+  },
+  "payload": {
+    "H_train": 1.9510223214601747,
+    "S_train": 0.21037428181983453,
+    "bounds": {
+      "A": [
+        -19.510223214601748,
+        19.510223214601748
+      ],
+      "tau": [
+        2.5,
+        480.0
+      ]
+    },
+    "document_type": "population_development_model_checkpoint",
+    "initial_parameters": {
+      "A": 0.0,
+      "tau": 34.64101615137755
+    },
+    "model_id": "first_order_response",
+    "observation_transform": "identity",
+    "output_map": "max(0, unbounded_mean) before fitting and scoring",
+    "parameter_order": [
+      "A",
+      "tau"
+    ],
+    "parameters": {
+      "A": -0.21771275480748362,
+      "tau": 5.522541901095112
+    },
+    "protocol_id": "granados-sfp1-published-cohort-development-01",
+    "scientific_scope": "retrospective_source_cohort_development",
+    "seed": 201801,
+    "selected_for_family": true,
+    "start_index": 0,
+    "strong_claim_authorized": false,
+    "training_mean_mse": 0.012658802837916832,
+    "training_projection_sha256": "fc8000c7720e554756c90e0da79f2d0ae4a7928d5923f0efa1a2ed5823d37c9e"
+  },
+  "schema_version": 1
+}

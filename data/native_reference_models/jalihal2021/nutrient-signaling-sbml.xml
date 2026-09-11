@@ -1,0 +1,1549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" level="3" version="2">
+  <model substanceUnits="mole" timeUnits="second" extentUnits="mole">
+    <listOfCompartments>
+      <compartment id="c" spatialDimensions="3" size="1" units="litre" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="EGOGAP" compartment="c" initialAmount="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cAMP" compartment="c" initialAmount="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Sch9" compartment="c" initialAmount="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Gcn2" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Gcn4" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Glutamine" compartment="c" initialAmount="0.001" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Snf1" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="PKA" compartment="c" initialAmount="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="eIF" compartment="c" initialAmount="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Gln3" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Gln1" compartment="c" initialAmount="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Rtg13" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Gis1" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Mig1" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Cyr1" compartment="c" initialAmount="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="PDE" compartment="c" initialAmount="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Sak" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Dot6" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="TORC1" compartment="c" initialAmount="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Tps1" compartment="c" initialAmount="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Trehalase" compartment="c" initialAmount="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Ras" compartment="c" initialAmount="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="EGO" compartment="c" initialAmount="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Protein" compartment="c" initialAmount="0.1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Rib" compartment="c" initialAmount="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="w_rtg" value="0.186412268402" constant="true"/>
+      <parameter id="w_sak" value="0.205140223044" constant="true"/>
+      <parameter id="w_pka_camp" value="102.109826697" constant="true"/>
+      <parameter id="w_mig_snf" value="1.21479427525" constant="true"/>
+      <parameter id="k_acc_glu" value="0.0492311292391" constant="true"/>
+      <parameter id="w_sch9_torc" value="1.96219039127" constant="true"/>
+      <parameter id="k_mRNA_degr" value="0.0730004044196" constant="true"/>
+      <parameter id="w_torc_egoin" value="0.30260360841" constant="true"/>
+      <parameter id="k_acc_pro" value="0.000214641490256" constant="true"/>
+      <parameter id="sigma_gcn2" value="20" constant="true"/>
+      <parameter id="w_sch9" value="0.565348248672" constant="true"/>
+      <parameter id="w_eif_gcn2" value="0.275514108409" constant="true"/>
+      <parameter id="w_gln1_gln3" value="0.519802074308" constant="true"/>
+      <parameter id="w_snf_sak" value="1.51831949656" constant="true"/>
+      <parameter id="w_tps_pka" value="0.573915723095" constant="true"/>
+      <parameter id="w_pka" value="0.0580860701396" constant="true"/>
+      <parameter id="gamma_gcn2" value="4.71028660913" constant="true"/>
+      <parameter id="sigma_gis1" value="10" constant="true"/>
+      <parameter id="w_dot" value="0.292969276177" constant="true"/>
+      <parameter id="w_tre" value="1.06748143104" constant="true"/>
+      <parameter id="w_torc" value="0.538903351393" constant="true"/>
+      <parameter id="w_pka_sch9" value="17.4971243642" constant="true"/>
+      <parameter id="gammatre" value="0.341746174318" constant="true"/>
+      <parameter id="w_gis" value="1.30388948487" constant="true"/>
+      <parameter id="sigma_gln1" value="1" constant="true"/>
+      <parameter id="sigma_tps" value="5" constant="true"/>
+      <parameter id="sigma_dot" value="20" constant="true"/>
+      <parameter id="sigma_eif" value="1" constant="true"/>
+      <parameter id="w_gln_snf" value="3.90445735339" constant="true"/>
+      <parameter id="w_torc_glut" value="0.863231820077" constant="true"/>
+      <parameter id="w_ego" value="0.284475372776" constant="true"/>
+      <parameter id="sigma_ras" value="1" constant="true"/>
+      <parameter id="sigma_tor" value="5" constant="true"/>
+      <parameter id="w_mig" value="10.6446018992" constant="true"/>
+      <parameter id="gammacyr" value="8.95550770947" constant="true"/>
+      <parameter id="gammagap" value="0.562145750461" constant="true"/>
+      <parameter id="sigma_rtg" value="10" constant="true"/>
+      <parameter id="gammasnf" value="0.819616489712" constant="true"/>
+      <parameter id="Cyr1_T" value="1" constant="true"/>
+      <parameter id="k_camp_deg" value="0.0838063704863" constant="true"/>
+      <parameter id="sigma_mig1" value="0.27" constant="true"/>
+      <parameter id="gammasch9" value="4.63314532353" constant="true"/>
+      <parameter id="w_snf_glc" value="1.15001639964" constant="true"/>
+      <parameter id="w_gcn4_gcn2_trna" value="1.53157062813" constant="true"/>
+      <parameter id="Gln1_T" value="1" constant="true"/>
+      <parameter id="sigma_ego" value="5" constant="true"/>
+      <parameter id="w_mig_pka" value="2.30555200295" constant="true"/>
+      <parameter id="Gcn2_T" value="1" constant="true"/>
+      <parameter id="gammatps" value="0.471347096514" constant="true"/>
+      <parameter id="k_pr" value="0.0201693698466" constant="true"/>
+      <parameter id="tRNA_total" value="2.47451146942" constant="true"/>
+      <parameter id="w_tps" value="0.0529949376897" constant="true"/>
+      <parameter id="w_tre_pka" value="3.07232519451" constant="true"/>
+      <parameter id="gammator" value="7.54843313097" constant="true"/>
+      <parameter id="w_gcn4" value="0.742819875259" constant="true"/>
+      <parameter id="gammapka" value="2.67588273674" constant="true"/>
+      <parameter id="w_rtg_torc" value="0.876816147213" constant="true"/>
+      <parameter id="sigma_gln" value="10" constant="true"/>
+      <parameter id="Sak_T" value="1" constant="true"/>
+      <parameter id="w_ego_basal" value="0.0109926702877" constant="true"/>
+      <parameter id="w_gln3" value="0.639194021909" constant="true"/>
+      <parameter id="k_acc_nh4" value="0.00146932708863" constant="true"/>
+      <parameter id="PKA_T" value="1" constant="true"/>
+      <parameter id="k_camp_cyr" value="10.8655884228" constant="true"/>
+      <parameter id="gammagln3" value="0.0809218108437" constant="true"/>
+      <parameter id="w_torc_snf" value="0.437340183291" constant="true"/>
+      <parameter id="gammaeif" value="0.471028772049" constant="true"/>
+      <parameter id="Trehalase_T" value="1" constant="true"/>
+      <parameter id="ATP" value="0.5" constant="true"/>
+      <parameter id="gammapde" value="0.281811406645" constant="true"/>
+      <parameter id="k_degr" value="0.0898253686393" constant="true"/>
+      <parameter id="Rtg13_T" value="1" constant="true"/>
+      <parameter id="Ras_T" value="1" constant="true"/>
+      <parameter id="tRNA_sensitivity" value="74.507463086" constant="true"/>
+      <parameter id="w_gln_sit" value="0.861343608332" constant="true"/>
+      <parameter id="w_cyr_glu" value="5.12925553067" constant="true"/>
+      <parameter id="w_pde_pka" value="2.89230085203" constant="true"/>
+      <parameter id="Carbon" value="0.5" constant="true"/>
+      <parameter id="Gcn4_T" value="1" constant="true"/>
+      <parameter id="k_camp_pde" value="14.1162421901" constant="true"/>
+      <parameter id="gammaras" value="1.82228382029" constant="true"/>
+      <parameter id="sigma_snf" value="3" constant="true"/>
+      <parameter id="w_snf" value="0.537671836477" constant="true"/>
+      <parameter id="sigma_gap" value="1" constant="true"/>
+      <parameter id="w_gap_torc" value="88.3263828822" constant="true"/>
+      <parameter id="Gln3_T" value="1" constant="true"/>
+      <parameter id="eIF_T" value="1" constant="true"/>
+      <parameter id="w_cyr_snf" value="0.119130742303" constant="true"/>
+      <parameter id="w_dot_sch_pka" value="0.162969752116" constant="true"/>
+      <parameter id="k_transcription" value="0.235950807701" constant="true"/>
+      <parameter id="Dot6_T" value="1" constant="true"/>
+      <parameter id="Glutamine_ext" value="0" constant="true"/>
+      <parameter id="PDE_T" value="1" constant="true"/>
+      <parameter id="w_sak_pka" value="0.375154791579" constant="true"/>
+      <parameter id="gammaego" value="50.6551762575" constant="true"/>
+      <parameter id="sigma_cyr" value="3.5" constant="true"/>
+      <parameter id="w_gcn_torc" value="1.29443701855" constant="true"/>
+      <parameter id="gamma_mig" value="0.655857797953" constant="true"/>
+      <parameter id="Mig1_T" value="1" constant="true"/>
+      <parameter id="sigma_sch9" value="8" constant="true"/>
+      <parameter id="w_ras_glu" value="0.206713370722" constant="true"/>
+      <parameter id="Tps1_T" value="1" constant="true"/>
+      <parameter id="Proline" value="0" constant="true"/>
+      <parameter id="TORC1_T" value="1" constant="true"/>
+      <parameter id="w_ras" value="0.0207813759533" constant="true"/>
+      <parameter id="w_cyr" value="1.35141380018" constant="true"/>
+      <parameter id="w_ras_pka" value="1.87230225794" constant="true"/>
+      <parameter id="sigma_trehalase" value="10" constant="true"/>
+      <parameter id="sigma_gcn4" value="5" constant="true"/>
+      <parameter id="w_gis_pka" value="3.30131718395" constant="true"/>
+      <parameter id="w_gcn" value="0.11547502832" constant="true"/>
+      <parameter id="w_gap_N" value="7.75731921965" constant="true"/>
+      <parameter id="Gis1_T" value="1" constant="true"/>
+      <parameter id="sigma_pde" value="1.9" constant="true"/>
+      <parameter id="w_ego_gap" value="2.20798971462" constant="true"/>
+      <parameter id="NH4" value="0" constant="true"/>
+      <parameter id="gammagln1" value="0.0635115135427" constant="true"/>
+      <parameter id="w_gln1" value="0.222322780374" constant="true"/>
+      <parameter id="Snf1_T" value="1" constant="true"/>
+      <parameter id="w_pde" value="0.382693037748" constant="true"/>
+      <parameter id="EGO_T" value="1" constant="true"/>
+      <parameter id="w_eif" value="3.72843982973" constant="true"/>
+      <parameter id="sigma_pka" value="1" constant="true"/>
+      <parameter id="sigma_sak" value="20" constant="true"/>
+      <parameter id="Sch9_T" value="1" constant="true"/>
+      <parameter id="EGOGAP_T" value="1" constant="true"/>
+      <parameter id="w_torc_ego" value="0.877473800695" constant="true"/>
+      <parameter id="w_gis_sch" value="0.842195608342" constant="true"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="EGOGAP_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="EGOGAP" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EGOGAP"/>
+          <modifierSpeciesReference species="Glutamine"/>
+          <modifierSpeciesReference species="TORC1"/>
+          <modifierSpeciesReference species="EGO"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gammagap </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> EGOGAP_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_gap </ci>
+                          </apply>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <times/>
+                              <ci> w_gap_N </ci>
+                              <apply>
+                                <minus/>
+                                <cn type="integer"> 1 </cn>
+                                <ci> Glutamine </ci>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <ci> w_gap_torc </ci>
+                              <ci> TORC1 </ci>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> EGOGAP </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cAMP_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="cAMP" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cAMP"/>
+          <modifierSpeciesReference species="Cyr1"/>
+          <modifierSpeciesReference species="PDE"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k_camp_cyr </ci>
+                  <ci> Cyr1 </ci>
+                  <ci> ATP </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_camp_pde </ci>
+                  <ci> PDE </ci>
+                  <ci> cAMP </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k_camp_deg </ci>
+                <ci> cAMP </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Sch9_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Sch9" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Sch9"/>
+          <modifierSpeciesReference species="TORC1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gammasch9 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Sch9_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_sch9 </ci>
+                          </apply>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <times/>
+                              <ci> w_sch9_torc </ci>
+                              <ci> TORC1 </ci>
+                            </apply>
+                            <ci> w_sch9 </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> Sch9 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Gcn2_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Gcn2" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Sch9"/>
+          <modifierSpeciesReference species="Gcn2"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gamma_gcn2 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Gcn2_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_gcn2 </ci>
+                          </apply>
+                          <apply>
+                            <minus/>
+                            <ci> w_gcn </ci>
+                            <apply>
+                              <times/>
+                              <ci> w_gcn_torc </ci>
+                              <ci> Sch9 </ci>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> Gcn2 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Gcn4_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Gcn4" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Gcn2"/>
+          <modifierSpeciesReference species="Gcn4"/>
+          <modifierSpeciesReference species="Glutamine"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> Gcn4_T </ci>
+                <apply>
+                  <divide/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <exp/>
+                      <apply>
+                        <times/>
+                        <apply>
+                          <minus/>
+                          <ci> sigma_gcn4 </ci>
+                        </apply>
+                        <apply>
+                          <minus/>
+                          <apply>
+                            <times/>
+                            <ci> w_gcn4_gcn2_trna </ci>
+                            <apply>
+                              <min/>
+                              <ci> Gcn2 </ci>
+                              <apply>
+                                <times/>
+                                <ci> tRNA_sensitivity </ci>
+                                <apply>
+                                  <minus/>
+                                  <ci> tRNA_total </ci>
+                                  <apply>
+                                    <min/>
+                                    <ci> tRNA_total </ci>
+                                    <ci> Glutamine </ci>
+                                  </apply>
+                                </apply>
+                              </apply>
+                            </apply>
+                          </apply>
+                          <ci> w_gcn4 </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> Gcn4 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Glutamine_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Glutamine" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Glutamine"/>
+          <modifierSpeciesReference species="Gln1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> k_acc_glu </ci>
+                  <ci> Glutamine_ext </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_acc_pro </ci>
+                  <ci> Proline </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k_acc_nh4 </ci>
+                  <ci> NH4 </ci>
+                  <ci> Gln1 </ci>
+                  <ci> Carbon </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k_degr </ci>
+                <ci> Glutamine </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Snf1_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Snf1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Snf1"/>
+          <modifierSpeciesReference species="Sak"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gammasnf </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Snf1_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_snf </ci>
+                          </apply>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <plus/>
+                              <apply>
+                                <times/>
+                                <apply>
+                                  <minus/>
+                                  <ci> w_snf_glc </ci>
+                                </apply>
+                                <ci> Carbon </ci>
+                              </apply>
+                              <apply>
+                                <times/>
+                                <ci> w_snf_sak </ci>
+                                <ci> Sak </ci>
+                              </apply>
+                            </apply>
+                            <ci> w_snf </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> Snf1 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="PKA_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="PKA" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cAMP"/>
+          <modifierSpeciesReference species="Sch9"/>
+          <modifierSpeciesReference species="PKA"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gammapka </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> PKA_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_pka </ci>
+                          </apply>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <minus/>
+                              <apply>
+                                <times/>
+                                <ci> w_pka_camp </ci>
+                                <ci> cAMP </ci>
+                              </apply>
+                              <ci> w_pka </ci>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <ci> w_pka_sch9 </ci>
+                              <ci> Sch9 </ci>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> PKA </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="eIF_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="eIF" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Gcn2"/>
+          <modifierSpeciesReference species="eIF"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gammaeif </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> eIF_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_eif </ci>
+                          </apply>
+                          <apply>
+                            <minus/>
+                            <ci> w_eif </ci>
+                            <apply>
+                              <times/>
+                              <ci> w_eif_gcn2 </ci>
+                              <ci> Gcn2 </ci>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> eIF </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Gln3_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Gln3" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Snf1"/>
+          <modifierSpeciesReference species="Gln3"/>
+          <modifierSpeciesReference species="TORC1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gammagln3 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Gln3_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_gln </ci>
+                          </apply>
+                          <apply>
+                            <plus/>
+                            <apply>
+                              <minus/>
+                              <ci> w_gln3 </ci>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <ci> w_gln_snf </ci>
+                              <ci> Snf1 </ci>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <ci> w_gln_sit </ci>
+                              <apply>
+                                <minus/>
+                                <cn type="integer"> 1 </cn>
+                                <ci> TORC1 </ci>
+                              </apply>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> Gln3 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Gln1_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Gln1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Gln3"/>
+          <modifierSpeciesReference species="Gln1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gammagln1 </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Gln1_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_gln1 </ci>
+                          </apply>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <times/>
+                              <ci> w_gln1_gln3 </ci>
+                              <ci> Gln3 </ci>
+                            </apply>
+                            <ci> w_gln1 </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> Gln1 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Rtg13_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Rtg13" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Rtg13"/>
+          <modifierSpeciesReference species="TORC1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> Rtg13_T </ci>
+                <apply>
+                  <divide/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <exp/>
+                      <apply>
+                        <times/>
+                        <apply>
+                          <minus/>
+                          <ci> sigma_rtg </ci>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <apply>
+                            <times/>
+                            <apply>
+                              <minus/>
+                              <ci> w_rtg_torc </ci>
+                            </apply>
+                            <ci> TORC1 </ci>
+                          </apply>
+                          <ci> w_rtg </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> Rtg13 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Gis1_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Gis1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Sch9"/>
+          <modifierSpeciesReference species="PKA"/>
+          <modifierSpeciesReference species="Gis1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> Gis1_T </ci>
+                <apply>
+                  <divide/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <exp/>
+                      <apply>
+                        <times/>
+                        <apply>
+                          <minus/>
+                          <ci> sigma_gis1 </ci>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <times/>
+                              <apply>
+                                <minus/>
+                                <ci> w_gis_pka </ci>
+                              </apply>
+                              <ci> PKA </ci>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <ci> w_gis_sch </ci>
+                              <ci> Sch9 </ci>
+                            </apply>
+                          </apply>
+                          <ci> w_gis </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> Gis1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Mig1_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Mig1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Snf1"/>
+          <modifierSpeciesReference species="PKA"/>
+          <modifierSpeciesReference species="Mig1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gamma_mig </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Mig1_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_mig1 </ci>
+                          </apply>
+                          <apply>
+                            <plus/>
+                            <apply>
+                              <minus/>
+                              <apply>
+                                <times/>
+                                <ci> w_mig_pka </ci>
+                                <ci> PKA </ci>
+                              </apply>
+                              <apply>
+                                <times/>
+                                <ci> w_mig_snf </ci>
+                                <ci> Snf1 </ci>
+                              </apply>
+                            </apply>
+                            <ci> w_mig </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> Mig1 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Cyr1_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Cyr1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Snf1"/>
+          <modifierSpeciesReference species="Cyr1"/>
+          <modifierSpeciesReference species="Ras"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gammacyr </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Cyr1_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_cyr </ci>
+                          </apply>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <minus/>
+                              <apply>
+                                <times/>
+                                <ci> w_cyr_glu </ci>
+                                <ci> Carbon </ci>
+                                <ci> Ras </ci>
+                              </apply>
+                              <ci> w_cyr </ci>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <ci> w_cyr_snf </ci>
+                              <ci> Snf1 </ci>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> Cyr1 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="PDE_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="PDE" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="PKA"/>
+          <modifierSpeciesReference species="PDE"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gammapde </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> PDE_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_pde </ci>
+                          </apply>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <times/>
+                              <ci> w_pde_pka </ci>
+                              <ci> PKA </ci>
+                            </apply>
+                            <ci> w_pde </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> PDE </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Sak_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Sak" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="PKA"/>
+          <modifierSpeciesReference species="Sak"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> Sak_T </ci>
+                <apply>
+                  <divide/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <exp/>
+                      <apply>
+                        <times/>
+                        <apply>
+                          <minus/>
+                          <ci> sigma_sak </ci>
+                        </apply>
+                        <apply>
+                          <minus/>
+                          <ci> w_sak </ci>
+                          <apply>
+                            <times/>
+                            <ci> w_sak_pka </ci>
+                            <ci> PKA </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> Sak </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Dot6_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Dot6" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Sch9"/>
+          <modifierSpeciesReference species="PKA"/>
+          <modifierSpeciesReference species="Dot6"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> Dot6_T </ci>
+                <apply>
+                  <divide/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <exp/>
+                      <apply>
+                        <times/>
+                        <apply>
+                          <minus/>
+                          <ci> sigma_dot </ci>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <apply>
+                            <times/>
+                            <apply>
+                              <minus/>
+                              <ci> w_dot_sch_pka </ci>
+                            </apply>
+                            <ci> Sch9 </ci>
+                            <ci> PKA </ci>
+                          </apply>
+                          <ci> w_dot </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> Dot6 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="TORC1_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="TORC1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Glutamine"/>
+          <modifierSpeciesReference species="Snf1"/>
+          <modifierSpeciesReference species="TORC1"/>
+          <modifierSpeciesReference species="EGO"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gammator </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> TORC1_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_tor </ci>
+                          </apply>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <minus/>
+                              <apply>
+                                <minus/>
+                                <apply>
+                                  <plus/>
+                                  <apply>
+                                    <times/>
+                                    <ci> w_torc_glut </ci>
+                                    <ci> Glutamine </ci>
+                                  </apply>
+                                  <apply>
+                                    <times/>
+                                    <ci> w_torc_ego </ci>
+                                    <ci> EGO </ci>
+                                  </apply>
+                                </apply>
+                                <apply>
+                                  <times/>
+                                  <ci> w_torc_egoin </ci>
+                                  <apply>
+                                    <minus/>
+                                    <cn type="integer"> 1 </cn>
+                                    <ci> EGO </ci>
+                                  </apply>
+                                </apply>
+                              </apply>
+                              <ci> w_torc </ci>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <ci> w_torc_snf </ci>
+                              <ci> Snf1 </ci>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> TORC1 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Tps1_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Tps1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="PKA"/>
+          <modifierSpeciesReference species="Tps1"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gammatps </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Tps1_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_tps </ci>
+                          </apply>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <times/>
+                              <ci> w_tps_pka </ci>
+                              <apply>
+                                <minus/>
+                                <ci> PKA_T </ci>
+                                <ci> PKA </ci>
+                              </apply>
+                            </apply>
+                            <ci> w_tps </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> Tps1 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Trehalase_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Trehalase" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="PKA"/>
+          <modifierSpeciesReference species="Trehalase"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gammatre </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Trehalase_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_trehalase </ci>
+                          </apply>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <times/>
+                              <ci> w_tre_pka </ci>
+                              <ci> PKA </ci>
+                            </apply>
+                            <ci> w_tre </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> Trehalase </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Ras_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Ras" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="PKA"/>
+          <modifierSpeciesReference species="Ras"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gammaras </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Ras_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_ras </ci>
+                          </apply>
+                          <apply>
+                            <plus/>
+                            <apply>
+                              <times/>
+                              <apply>
+                                <minus/>
+                                <ci> w_ras_pka </ci>
+                              </apply>
+                              <ci> PKA </ci>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <ci> w_ras_glu </ci>
+                              <ci> Carbon </ci>
+                            </apply>
+                            <ci> w_ras </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> Ras </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="EGO_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="EGO" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EGOGAP"/>
+          <modifierSpeciesReference species="Glutamine"/>
+          <modifierSpeciesReference species="EGO"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> gammaego </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> EGO_T </ci>
+                  <apply>
+                    <divide/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <minus/>
+                            <ci> sigma_ego </ci>
+                          </apply>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <minus/>
+                              <apply>
+                                <times/>
+                                <ci> w_ego_gap </ci>
+                                <ci> EGOGAP </ci>
+                                <apply>
+                                  <plus/>
+                                  <ci> Glutamine_ext </ci>
+                                  <apply>
+                                    <times/>
+                                    <cn> 0.5 </cn>
+                                    <ci> NH4 </ci>
+                                  </apply>
+                                  <apply>
+                                    <times/>
+                                    <cn> 0.01 </cn>
+                                    <ci> Proline </ci>
+                                  </apply>
+                                </apply>
+                              </apply>
+                              <apply>
+                                <times/>
+                                <ci> w_ego </ci>
+                                <apply>
+                                  <minus/>
+                                  <cn type="integer"> 1 </cn>
+                                  <ci> Glutamine </ci>
+                                </apply>
+                              </apply>
+                            </apply>
+                            <ci> w_ego_basal </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> EGO </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Protein_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Protein" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Glutamine"/>
+          <modifierSpeciesReference species="eIF"/>
+          <modifierSpeciesReference species="Protein"/>
+          <modifierSpeciesReference species="Rib"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k_pr </ci>
+              <ci> ATP </ci>
+              <apply>
+                <min/>
+                <apply>
+                  <min/>
+                  <ci> Rib </ci>
+                  <ci> eIF </ci>
+                </apply>
+                <apply>
+                  <min/>
+                  <ci> tRNA_total </ci>
+                  <ci> Glutamine </ci>
+                </apply>
+              </apply>
+              <ci> Protein </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Rib_r" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Rib" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Dot6"/>
+          <modifierSpeciesReference species="Rib"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> k_transcription </ci>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> Dot6 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> k_mRNA_degr </ci>
+                <ci> Rib </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

@@ -1,0 +1,28 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/native_population_development/native_training_01/checkpoints/prefix_persistence_start_0.json",
+    "sha256": "5075ce2a2fe293b55c44f741bcee3395c36b32631b400951d9207260ed318061"
+  },
+  "payload": {
+    "H_train": 1.9510223214601747,
+    "S_train": 0.21037428181983453,
+    "bounds": {},
+    "document_type": "population_development_model_checkpoint",
+    "initial_parameters": {},
+    "model_id": "prefix_persistence",
+    "observation_transform": "identity",
+    "output_map": "max(0, unbounded_mean) before fitting and scoring",
+    "parameter_order": [],
+    "parameters": {},
+    "protocol_id": "granados-sfp1-published-cohort-development-01",
+    "scientific_scope": "retrospective_source_cohort_development",
+    "seed": 201801,
+    "selected_for_family": true,
+    "start_index": 0,
+    "strong_claim_authorized": false,
+    "training_mean_mse": 0.05447872927667314,
+    "training_projection_sha256": "fc8000c7720e554756c90e0da79f2d0ae4a7928d5923f0efa1a2ed5823d37c9e"
+  },
+  "schema_version": 1
+}

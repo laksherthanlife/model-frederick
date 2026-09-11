@@ -1,0 +1,8 @@
+product,supply_mmol_c_per_gdcw_h,growth_rate_per_h,ratio_precursor_sink,ratio_full_pathway,full_over_sink
+phb,11.0,0.05,1.3584,1.4059,1.035
+phb,11.0,0.1,1.5606,1.5371,0.985
+phb,11.0,0.15,3.0139,2.9687,0.985
+phb,20.0,0.05,1.3212,1.4001,1.0597
+phb,20.0,0.1,1.3553,1.4097,1.0401
+phb,20.0,0.15,1.4408,1.4658,1.0174
+phb,20.0,0.2,1.606,1.5818,0.985

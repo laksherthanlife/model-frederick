@@ -1,0 +1,7 @@
+promoter	rfu_per_od600	rfu_per_od600_sd	relative_to_tef3	carbon_source	temperature_c	measured_in
+PGK	10	1	0.1163	xylose	30	EGFP reporter strain
+SSA3	15	11	0.1744	xylose	30	EGFP reporter strain
+ADH1	25	18	0.2907	xylose	30	EGFP reporter strain
+HHF1	47	7	0.5465	xylose	30	EGFP reporter strain
+TEF3	86	3	1.0000	xylose	30	EGFP reporter strain
+NC1	95	14	1.1047	xylose	30	EGFP reporter strain

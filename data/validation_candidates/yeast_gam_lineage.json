@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "assessment": "verified_upstream_procedure_and_dataset_overlap_with_incomplete_exact_ec_build_lineage",
+  "purpose": "Prevent a later analysis split from being mistaken for independence from inherited model calibration.",
+  "upstream": {
+    "repository": "SysBioChalmers/yeast-GEM",
+    "tag": "v8.3.4",
+    "commit": "bf49eaafb997769e2fb5f4adff8b124fe6a93c8d",
+    "tag_reference_url": "https://api.github.com/repos/SysBioChalmers/yeast-GEM/git/ref/tags/v8.3.4"
+  },
+  "verified_artifacts": [
+    {
+      "path": "ComplementaryScripts/modelCuration/fitGAM.m",
+      "git_blob": "480628f3b524d47b1b0df4db69e5d11c4a521386",
+      "sha256": "577c7b8e0ad6859cb45f6aad488a5307e8c2aab521dba93548f6897affa6768c",
+      "bytes": 3437,
+      "api_url": "https://api.github.com/repos/SysBioChalmers/yeast-GEM/git/blobs/480628f3b524d47b1b0df4db69e5d11c4a521386",
+      "observed_behavior": [
+        "Loads ComplementaryData/physiology/chemostatData_VanHoek1998.tsv",
+        "Uses dilution rate, glucose uptake, oxygen uptake and carbon-dioxide production",
+        "Searches GAM values and minimizes relative exchange-flux discrepancy over the supplied rows",
+        "At each row fixes a growth lower bound and minimizes glucose uptake",
+        "Updates ATP/water/ADP/proton/phosphate coefficients of the biomass pseudoreaction"
+      ]
+    },
+    {
+      "path": "ComplementaryData/physiology/chemostatData_VanHoek1998.tsv",
+      "git_blob": "fee0076333626d4f740f49e2ef23aee6381619bf",
+      "sha256": "57dceb4b9a8ff16f5b4f6440f7b1e2750b539da726975a33997588ddfdc5d855",
+      "api_url": "https://api.github.com/repos/SysBioChalmers/yeast-GEM/git/blobs/fee0076333626d4f740f49e2ef23aee6381619bf",
+      "columns": ["Drate", "GlucoseUptake", "O2uptake", "CO2production"],
+      "dilution_rates_per_h": [0.025, 0.05, 0.10, 0.15],
+      "rows": [
+        [0.025, 0.30, 0.80, 0.80],
+        [0.05, 0.60, 1.30, 1.40],
+        [0.10, 1.10, 2.50, 2.70],
+        [0.15, 1.70, 3.90, 4.20]
+      ],
+      "qualification": "The upstream curated file is a four-row subset, not the ten-row primary table now used locally. Its decimal formatting is not independent evidence of the primary publication's measurement precision."
+    },
+    {
+      "path": "ComplementaryScripts/modelCuration/modelCorrections.m",
+      "git_blob": "e1f4461ae4527d0452582eb7437aef7a015d71d6",
+      "sha256": "9d3764869b7d48ce802172f3a40a465529f2cd88e2cac4c56c505cf3af639bf4",
+      "api_url": "https://api.github.com/repos/SysBioChalmers/yeast-GEM/git/blobs/e1f4461ae4527d0452582eb7437aef7a015d71d6",
+      "relevant_lines": [34, 35, 36, 37, 38],
+      "documented_values": {"GAM": 40.8, "protein_mass_fraction_P": 0.4266, "NGAM": 0.7},
+      "documented_sources": {"GAM_and_P": "Van Hoek et al. 1998", "NGAM": "Nilsson and Nielsen 2016 refit"},
+      "qualification": "Observed source code, not proof that this exact correction sequence or these intermediate coefficients generated the frozen EC artifact. Non-UTF8 bytes were decoded losslessly as Latin-1 for inspection of the ASCII calibration lines."
+    }
+  ],
+  "local_comparison": {
+    "native_dataset": "data/physiology/chemostatData_VanHoek1998.tsv",
+    "dataset_sha256": "4c01b3465ea1410c86709568da44a32b1de652c21a88de623bbf566838506117",
+    "current_native_condition_holdouts_per_h": [0.15, 0.28, 0.35],
+    "condition_also_in_verified_upstream_gam_data_per_h": [0.15],
+    "frozen_ec_model": "data/gem/ecYeastGEM_batch.xml.gz",
+    "frozen_ec_sha256": "63d0f76e88586fcee25e9e67f9dae558e7b308172c837d44a0d055510b287ef3",
+    "observed_ec_biomass_energy_reaction": "r_4041",
+    "observed_ec_atp_water_adp_proton_phosphate_coefficient_magnitude": 56.6883,
+    "observed_ec_ngam_reaction": "r_4046",
+    "observed_ec_ngam_bounds": [0.7, 0.7]
+  },
+  "interpretation": [
+    "The source version documents and supplies native van Hoek observations for GAM fitting; they are not independent merely because a later learner withholds a row.",
+    "The local holdout at dilution 0.15 is present in this verified upstream calibration subset.",
+    "This does not prove the precise fitting execution/biomass rescaling history of the separately generated EC batch model; its observed energy coefficient differs from modelCorrections.m's intermediate value.",
+    "Absence of the other local holdout rates from this one upstream file does not certify their independence from every model-development or enzyme-model calibration step.",
+    "Future strong validation requires explicit ancestral fit/selection lineage, rather than only current training-file exclusion."
+  ],
+  "modifications": "No existing model, source dataset, fitted parameter, checkpoint or held-out product artifact was changed."
+}

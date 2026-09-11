@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "source": {
+    "authority": "Input-only audit resolution and explicitly user-authorized UNVERIFIED REDOX HYPOTHESIS packaging",
+    "source_id": "holdout-transfer:elizondo2025:six-chemostats:input-resolution:v1",
+    "reference": "Unchanged condition_records.json and condition_verification.json; PMC7556307 Table 1; independent reviewed UniProtKB Q7Z859 reaction annotations recorded in chemistry_evidence.json and checked directly; unchanged hypotheses/manifest.json.",
+    "scope": "evaluation_task"
+  },
+  "status": "resolved_for_prespecified_hypothesis_input_packaging_only",
+  "resolved_at_utc": "2026-09-07T06:41:12Z",
+  "strict_lane": {
+    "status": "blocked_no_installable_task",
+    "unblocked_or_replaced": false,
+    "evidence_path": "data/holdout_transfer/chemistry_evidence.json",
+    "evidence_sha256": "bb9ff21723f73bd94d6ec8e602d8ba8ef0c396a2627b35886e796461ac88a518",
+    "reason": "The expressed fungal CrtI terminal acceptor, reduction product and accessible coupling remain unresolved. Reviewed CrtYB cyclase evidence does not resolve that redox mechanism. Hypothesis authorization is not biochemical validation."
+  },
+  "unchanged_local_inputs_sha256": {
+    "data/holdout_transfer/condition_records.json": "198c1cbc7dd6e89bacc6ed4763f891bf9bbcb7f0592582da0c533e56fae3cd82",
+    "data/holdout_transfer/condition_verification.json": "36f4771951205d6ae21e9f1356e38a950cf5ede7d35073a953f845f37045c379",
+    "data/holdout_transfer/chemistry_evidence.json": "bb9ff21723f73bd94d6ec8e602d8ba8ef0c396a2627b35886e796461ac88a518",
+    "data/holdout_transfer/hypotheses/manifest.json": "df946c96374f7a1c6974564603bbc17ef3835e82b646fded73329a2b49867354",
+    "data/holdout_transfer/hypotheses/chemistry_nad.json": "bb76b6815c6a3a9dfb4313ed90a19ad0d815c9d4d87445d4f8fcf2fab5d11a5b",
+    "data/holdout_transfer/hypotheses/chemistry_oxygen_peroxide.json": "690da85593b4aa00ddf9572650c6a26e7ce396a8c3abeaffce5cb6aee0cc4d9b",
+    "data/holdout_transfer/hypotheses/chemistry_oxygen_water.json": "184d91f35bf2fc86fe5f54d7979179e00adad3b514325aee900863b291f14034"
+  },
+  "resolutions": [
+    {
+      "item": "literal_background_genotype_transcription",
+      "status": "correction_recorded_in_this_sidecar_only",
+      "packet_jsonpath": "$.experiments[*].strain_and_construct.background_genotype_as_reported",
+      "packet_lines": [24, 51, 78, 106, 134, 163],
+      "original_packet_literal": "MATa ura3-52 trp1-289 leu2-3,112 his3Delta",
+      "primary_table_literal": "Mata ura3-52 trp1-289 leu2-3, 112 his3D",
+      "literal_token_correction": {"from": "his3Delta", "to": "his3D"},
+      "primary_publication": "PMC7556307; DOI:10.3389/fbioe.2020.578793",
+      "primary_source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7556307/fullTextXML",
+      "primary_coordinate": "Table 1(A), CEN.PK2-1c row, Genotype column; (//table-wrap[@id='T1']//tr)[4]/td[3]",
+      "prior_verification_coordinate": "data/holdout_transfer/condition_verification.json:155-162",
+      "biological_genotype_difference_asserted": false,
+      "D_Delta_biological_equivalence_asserted": false,
+      "original_packet_or_verification_edited": false,
+      "numerical_model_input": false,
+      "finding": "The exact primary spelling is recorded here, not patched into the preserved packet. The old claim that Delta transcribes a Greek character is not retained as a model input. This is a literal-text correction only."
+    },
+    {
+      "item": "exclude_intermediate_curation_fields_from_numerical_rows",
+      "status": "resolved_by_schema_projection_not_by_inventing_evidence",
+      "excluded_row_fields": ["condition_source_ref", "strain_and_construct"],
+      "excluded_metadata": ["background_genotype_as_reported", "dataset_strain_field", "gene_copy_counts_as_constraints", "per_row_construct_and_intermediate_commentary"],
+      "dataset_alias_evidence_status": "unverified_exact_b-car_aliases_not_promoted_to_verified_inputs",
+      "prior_verification_coordinate": "data/holdout_transfer/condition_verification.json:165-171",
+      "reference_location": "Each bundle's source.reference and source.audit_qualifications; this resolution sidecar retains the correction and limits.",
+      "finding": "Genotype-as-reported strings and unverified dataset aliases are not needed for the numerical condition schema and are excluded. Verified construction copy counts remain provenance only; they do not supply missing enzyme abundances, kcat values, activities or capacities. No excluded field is reconstructed from an experiment identifier."
+    },
+    {
+      "item": "lycopene_intermediate_and_CrtYB_cyclase_qualification",
+      "status": "supported_by_separate_reviewed_reaction_evidence",
+      "existing_evidence_coordinates": ["data/holdout_transfer/chemistry_evidence.json:49", "data/holdout_transfer/chemistry_evidence.json:318-324"],
+      "independent_source_url": "https://rest.uniprot.org/uniprotkb/Q7Z859.json",
+      "direct_recheck_scope": "primaryAccession, entryType, organism.scientificName and comments with commentType CATALYTIC ACTIVITY only",
+      "accession": "Q7Z859",
+      "entry_type": "UniProtKB reviewed (Swiss-Prot)",
+      "organism": "Phaffia rhodozyma",
+      "reviewed_cyclase_reactions": [
+        {"reaction": "all-trans-lycopene = gamma-carotene", "rhea": "RHEA:32219", "ec": "5.5.1.19", "evidence_code": "ECO:0000269", "pmid": "10589832"},
+        {"reaction": "gamma-carotene = all-trans-beta-carotene", "rhea": "RHEA:32239", "ec": "5.5.1.19", "evidence_code": "ECO:0000269", "pmid": "10589832"}
+      ],
+      "reviewed_synthase_activity": {"rhea": "RHEA:34475", "ec": "2.5.1.32", "evidence_code": "ECO:0000269", "pmid": "10589832"},
+      "primary_reference_doi": "10.1007/s004380051105",
+      "primary_full_text_inspected": false,
+      "earlier_restricted_projection_claim": "The earlier Methods/Table-1-only condition verification did not establish this intermediate role. Its unverified result at condition_verification.json:174-179 is preserved, not retroactively represented as a successful check.",
+      "finding": "Together with the independently verified CrtYB constructs, these reviewed catalytic annotations support the lycopene-intermediate qualification. They do not establish CrtI redox chemistry, exact engineered sequence identity, actual downstream flux, expression or allocation."
+    },
+    {
+      "item": "retain_condition_inputs_without_filtering_or_new_numbers",
+      "status": "pass",
+      "packet_coordinate": "data/holdout_transfer/condition_records.json:9-178",
+      "retained_row_values": ["experiment_id", "condition (entire dictionary)", "added_nacl_molar"],
+      "record_count_per_bundle": 6,
+      "record_order_preserved": true,
+      "condition_dictionary_values_and_numeric_types_preserved": true,
+      "added_nacl_interpretation": "The preserved zero is an additional NaCl intervention dose, not basal sodium, total salinity or osmolality.",
+      "native_transfer_interpretation": "Every unchanged condition retains the explicit unvalidated DS28911/W303 to CEN.PK2-1c/supplemented-YNB transfer assumption; no cross-strain or medium equivalence is certified."
+    }
+  ],
+  "bundle_contract": {
+    "top_level_keys": ["schema_version", "source", "experiments"],
+    "schema_version": 1,
+    "required_source_keys": ["authority", "source_id", "reference", "scope"],
+    "additional_source_key": "audit_qualifications",
+    "source_scope": "evaluation_task",
+    "exact_row_keys": ["experiment_id", "chemistry_path", "chemistry_sha256", "condition", "added_nacl_molar"],
+    "chemistry_paths": "Repository-relative paths matching the unchanged registered variants",
+    "source_ids": "Unique per bundle; documentary identity, not a numerical condition difference",
+    "shared_source_qualification": "UNVERIFIED REDOX HYPOTHESIS; relaxed_intermediate_capacity_envelope; strict lane remains blocked"
+  },
+  "validation": {
+    "status": "pass_input_structure_and_integrity_checks_only",
+    "method": "SHA256 of permitted local files before/after; supplied read-tool text for the original packet and three chemistry files was byte-hash matched to the actual files, then parsed in memory. Bundles were projected from that exact packet and JSON/schema/equality checked without model imports. Actual written bundle hashes match the validated serialized texts.",
+    "shared_condition_projection_sha256": "5614e22b760aa9aeb4eaf49eb6b54cd7bea89245e3e8fd75fc7d6d7f2810331b",
+    "projection_definition": "Original-order array of six objects containing experiment_id, condition and added_nacl_molar. Fingerprint is SHA256 of UTF-8 json.dumps(array, sort_keys=True, separators=(',', ':'), ensure_ascii=True, allow_nan=False).",
+    "all_six_condition_dictionaries_equal_original": true,
+    "all_ids_and_order_equal_original": true,
+    "all_added_nacl_values_equal_original": true,
+    "all_numeric_inputs_and_types_equal_original": true,
+    "inputs_equal_across_all_three_bundles": true,
+    "source_ids_unique": true,
+    "source_qualifications_identical_across_bundles": true,
+    "only_bundle_difference_paths": ["/source/source_id", "/experiments/*/chemistry_path", "/experiments/*/chemistry_sha256"],
+    "only_referenced_task_difference_paths": ["/task/reactions/2/stoichiometry", "/task/reactions/2/source"],
+    "task_difference_reaction_id": "task_desaturation",
+    "same_metabolites_precursor_reactions_and_unsupplied_enzyme_constraints": true,
+    "actual_chemistry_hashes_match_manifest_and_requester_report": true,
+    "actual_bundle_hashes_match_validated_serializations": true,
+    "manifest_installation_claim": "The unchanged manifest reports non-optimizing installation checks. This input-packaging task did not repeat installation, access the host/interface, run a predictor or optimize anything.",
+    "pre_release_integrity_correction": "One copied source-level packet-hash typo in the new oxygen_peroxide bundle was detected by the expected-vs-actual file-hash check and corrected using the write tool. No condition value, registered chemistry or existing source artifact was changed. Final hashes below match the validated drafts."
+  },
+  "bundles": [
+    {"variant": "nad", "path": "data/holdout_transfer/hypotheses/conditions_nad.json", "source_id": "holdout-transfer:elizondo2025:six-chemostats:hypothesis-conditions:nad:v1", "file_sha256": "42aa149374a7b8dbbfb953abb6595ec9c4aa4855b49855665fa600a9262eeecc", "chemistry_path": "data/holdout_transfer/hypotheses/chemistry_nad.json", "chemistry_sha256": "bb76b6815c6a3a9dfb4313ed90a19ad0d815c9d4d87445d4f8fcf2fab5d11a5b", "manifest_coordinate": "hypotheses/manifest.json#/variants/0", "condition_equality_status": "pass", "file_hash_status": "pass"},
+    {"variant": "oxygen_peroxide", "path": "data/holdout_transfer/hypotheses/conditions_oxygen_peroxide.json", "source_id": "holdout-transfer:elizondo2025:six-chemostats:hypothesis-conditions:oxygen-peroxide:v1", "file_sha256": "94673a74c7b50e9ada616829ce97233fc00068a265c96adcc246e1f6f5ad0028", "chemistry_path": "data/holdout_transfer/hypotheses/chemistry_oxygen_peroxide.json", "chemistry_sha256": "690da85593b4aa00ddf9572650c6a26e7ce396a8c3abeaffce5cb6aee0cc4d9b", "manifest_coordinate": "hypotheses/manifest.json#/variants/1", "condition_equality_status": "pass", "file_hash_status": "pass"},
+    {"variant": "oxygen_water", "path": "data/holdout_transfer/hypotheses/conditions_oxygen_water.json", "source_id": "holdout-transfer:elizondo2025:six-chemostats:hypothesis-conditions:oxygen-water:v1", "file_sha256": "1fc9257d2ef344d615c9ce50a53ed69e1a4522e303e2a0a92ff583d245fa8bb4", "chemistry_path": "data/holdout_transfer/hypotheses/chemistry_oxygen_water.json", "chemistry_sha256": "184d91f35bf2fc86fe5f54d7979179e00adad3b514325aee900863b291f14034", "manifest_coordinate": "hypotheses/manifest.json#/variants/2", "condition_equality_status": "pass", "file_hash_status": "pass"}
+  ],
+  "hypothesis_limits": [
+    "All three alternatives remain UNVERIFIED REDOX HYPOTHESES, with none designated preferred or biologically validated.",
+    "The oxygen_water alternative is an overall redox/composite hypothesis, not an observed single-enzyme fungal mechanism.",
+    "The common envelope relaxes CrtYB downstream consumption and lacks heterologous enzyme-capacity constraints. It is not a terminal-producer reconstruction or a realized-content prediction.",
+    "Missing enzyme constraints, thermodynamic evidence, localization/coupling evidence and native-to-target transfer equivalence are not inferred from copy counts or filled by new parameters."
+  ],
+  "blinding_incident": {
+    "provenance": "Explicit requester report; no prohibited source note or incident context opened",
+    "previous_curator_incidental_outcome_exposure": true,
+    "reported_timing": "after_model_freeze",
+    "reported_used_or_forwarded_to_model": false,
+    "reported_model_or_input_adjustment_using_incident": false,
+    "outcome_values_read_or_reproduced_by_this_resolver": false,
+    "clean_input_verification_retroactively_restores_curator_blindness": false,
+    "qualification": "The incident remains part of the audit history. Input consistency and unchanged file hashes do not prove historical blindness or independently establish past curation motives. No such retrospective claim is made."
+  },
+  "frozen_checkpoint": {
+    "path_from_request": "outputs/native_training_run_02/checkpoint.json",
+    "identity_as_supplied": "SHA384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94",
+    "opened_rehashed_or_modified": false,
+    "independent_digest_verification": "not_performed_outside_local_read_allowlist",
+    "model_changes_made": false
+  },
+  "execution_scope": {
+    "only_new_files_written": ["data/holdout_transfer/input_resolution.json", "data/holdout_transfer/hypotheses/conditions_nad.json", "data/holdout_transfer/hypotheses/conditions_oxygen_peroxide.json", "data/holdout_transfer/hypotheses/conditions_oxygen_water.json"],
+    "existing_input_model_code_config_or_dependency_files_edited": [],
+    "file_writes_used_write_tool": true,
+    "prohibited_notes_indexes_outcomes_or_legacy_calibrations_opened": false,
+    "predictor_executed": false,
+    "optimization_executed": false,
+    "scoring_executed": false,
+    "http_timeout_seconds": 30
+  },
+  "parent_actions": [
+    "Use these bundles only for the already authorized, explicitly labelled hypothesis-sensitivity lane; keep strict chemistry blocked.",
+    "Run the frozen predictor separately for every registered variant without changing conditions or selecting a preferred mechanism from results.",
+    "Seal all variants before any target labels are opened. Preserve the exposure incident and all hypothesis/relaxation qualifications in subsequent reporting."
+  ]
+}

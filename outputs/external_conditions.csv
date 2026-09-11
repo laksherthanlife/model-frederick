@@ -1,0 +1,156 @@
+gsm,title,platform,stressor,note,excluded,used
+GSM854,heat shock 05 min,GPL51,heat,"25->37 C shock, plus the variable pre-shift ladder",a channel gene has no probe on this array's print run,False
+GSM855,heat shock 10 min,GPL51,heat,"25->37 C shock, plus the variable pre-shift ladder",a channel gene has no probe on this array's print run,False
+GSM856,heat shock 15 min,GPL51,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM857,heat shock 20 min,GPL51,heat,"25->37 C shock, plus the variable pre-shift ladder",a channel gene has no probe on this array's print run,False
+GSM864,heat shock 20 min repeat,GPL51,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM865,heat shock 40 min,GPL51,heat,"25->37 C shock, plus the variable pre-shift ladder",a channel gene has no probe on this array's print run,False
+GSM868,heat shock 60 min,GPL51,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM872,heat shock 80 min,GPL51,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM883,"heat shock 17 to 37, 20 minutes",GPL51,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM925,"heat shock 37 to 37, 20 minutes",GPL51,heat,"25->37 C shock, plus the variable pre-shift ladder",a channel gene has no probe on this array's print run,False
+GSM926,"heat shock 33 to 37, 20 minutes",GPL51,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM928,"heat shock 29 to 37, 20 minutes",GPL51,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM929,"heat shock 25 to 37, 20 minutes",GPL51,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM930,"heat shock 21 to 37, 20 minutes",GPL51,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM986,DBYyap1- 37degree heat - 20 min (redo),GPL51,,"genotype perturbation, not a stressor","genotype perturbation, not a stressor",False
+GSM1002,DBY7286 + 0.3 mM H2O2 (20 min),GPL51,,"genotype perturbation, not a stressor","genotype perturbation, not a stressor",False
+GSM1003,DBYyap1- + 0.3 mM H2O2 (20 min),GPL51,,"genotype perturbation, not a stressor","genotype perturbation, not a stressor",False
+GSM1035,DBY7286 37degree heat - 20 min,GPL51,,"genotype perturbation, not a stressor","genotype perturbation, not a stressor",False
+GSM842,YPD 2 h (25C),GPL52,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM843,YPD 4 h (25C),GPL52,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM844,YPD 8 h (25C),GPL52,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",a channel gene has no probe on this array's print run,False
+GSM845,YPD 12 h (25C),GPL52,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM846,YPD 1 d (25C),GPL52,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM847,YPD 2 d (25C),GPL52,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM848,YPD 3 d (25C),GPL52,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM849,YPD 5 d (25C),GPL52,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM850,YPD 7 d (25C),GPL52,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM851,YPD 13 d (25C),GPL52,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",a channel gene has no probe on this array's print run,False
+GSM874,Nitrogen Depletion 4 h,GPL52,rapamycin,"nitrogen depletion; matched on module, not agent",,True
+GSM875,Nitrogen Depletion 8 h,GPL52,rapamycin,"nitrogen depletion; matched on module, not agent",,True
+GSM876,Nitrogen Depletion 12 h,GPL52,rapamycin,"nitrogen depletion; matched on module, not agent",,True
+GSM877,Nitrogen Depletion 1 d,GPL52,rapamycin,"nitrogen depletion; matched on module, not agent",,True
+GSM878,Nitrogen Depletion 2 d,GPL52,rapamycin,"nitrogen depletion; matched on module, not agent",,True
+GSM879,Nitrogen Depletion 3 d,GPL52,rapamycin,"nitrogen depletion; matched on module, not agent",,True
+GSM880,Nitrogen Depletion 30 min.,GPL52,rapamycin,"nitrogen depletion; matched on module, not agent",,True
+GSM881,Nitrogen Depletion 1 h,GPL52,rapamycin,"nitrogen depletion; matched on module, not agent",a channel gene has no probe on this array's print run,False
+GSM882,Nitrogen Depletion 2 h,GPL52,rapamycin,"nitrogen depletion; matched on module, not agent",,True
+GSM907,YP raffinose vs reference pool,GPL52,,"reference is a pool, not a paired unstressed control","reference is a pool, not a paired unstressed control",False
+GSM938,1M sorbitol - 60 min,GPL52,sorbitol,1 M sorbitol hyper-osmotic shock,,True
+GSM939,1M sorbitol - 90 min,GPL52,sorbitol,1 M sorbitol hyper-osmotic shock,,True
+GSM941,Heat Shock 000 minutes,GPL52,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM972,1M sorbitol - 5 min,GPL52,sorbitol,1 M sorbitol hyper-osmotic shock,,True
+GSM990,YP glucose vs reference pool,GPL52,,"reference is a pool, not a paired unstressed control","reference is a pool, not a paired unstressed control",False
+GSM991,YP galactose vs reference pool,GPL52,,"reference is a pool, not a paired unstressed control","reference is a pool, not a paired unstressed control",False
+GSM997,YP fructose vs reference pool,GPL52,,"reference is a pool, not a paired unstressed control","reference is a pool, not a paired unstressed control",False
+GSM999,YP sucrose vs reference pool,GPL52,,"reference is a pool, not a paired unstressed control","reference is a pool, not a paired unstressed control",False
+GSM1001,YP ethanol vs reference pool,GPL52,,"reference is a pool, not a paired unstressed control","reference is a pool, not a paired unstressed control",False
+GSM1037,1M sorbitol - 45 min (* centrifugation problem),GPL52,,flagged by the depositors,flagged by the depositors,False
+GSM1038,DBYmsn2-4- 37degree heat - 20 min,GPL52,,"genotype perturbation, not a stressor","genotype perturbation, not a stressor",False
+GSM1039,1M sorbitol - 15 min,GPL52,sorbitol,1 M sorbitol hyper-osmotic shock,,True
+GSM1040,1M sorbitol - 30 min,GPL52,sorbitol,1 M sorbitol hyper-osmotic shock,,True
+GSM912,"heat shock 37 to 37, 30 minutes",GPL53,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM961,2.5mM DTT 005 min,GPL53,DTT,two DTT time courses,a channel gene has no probe on this array's print run,False
+GSM962,2.5mM DTT 015 min,GPL53,DTT,two DTT time courses,a channel gene has no probe on this array's print run,False
+GSM963,2.5mM DTT 030 min,GPL53,DTT,two DTT time courses,a channel gene has no probe on this array's print run,False
+GSM964,2.5mM DTT 045 min,GPL53,DTT,two DTT time courses,,True
+GSM965,2.5mM DTT 060 min,GPL53,DTT,two DTT time courses,a channel gene has no probe on this array's print run,False
+GSM966,2.5mM DTT 090 min,GPL53,DTT,two DTT time courses,a channel gene has no probe on this array's print run,False
+GSM967,2.5mM DTT 120 min,GPL53,DTT,two DTT time courses,,True
+GSM968,2.5mM DTT 180 min,GPL53,DTT,two DTT time courses,,True
+GSM971,1.5 mM diamide (5 min),GPL53,diamide,1.5 mM diamide time course,,True
+GSM978,17 deg growth,GPL53,,"adapted steady state, not a shift; cold has no module","adapted steady state, not a shift; cold has no module",False
+GSM979,21 deg growth,GPL53,,"adapted steady state, not a shift; cold has no module","adapted steady state, not a shift; cold has no module",False
+GSM981,25 deg growth,GPL53,,"adapted steady state, not a shift; cold has no module","adapted steady state, not a shift; cold has no module",False
+GSM982,29 deg growth,GPL53,,"adapted steady state, not a shift; cold has no module","adapted steady state, not a shift; cold has no module",False
+GSM983,37 deg growth,GPL53,,"adapted steady state, not a shift; cold has no module","adapted steady state, not a shift; cold has no module",False
+GSM1027,Heat Shock 000 minutes (series 2),GPL53,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM1057,1.5 mM diamide (10 min),GPL53,diamide,1.5 mM diamide time course,,True
+GSM1058,1.5 mM diamide (20 min),GPL53,diamide,1.5 mM diamide time course,,True
+GSM1059,1.5 mM diamide (30 min),GPL53,diamide,1.5 mM diamide time course,,True
+GSM1060,1.5 mM diamide (40 min),GPL53,diamide,1.5 mM diamide time course,,True
+GSM1061,1.5 mM diamide (50 min),GPL53,diamide,1.5 mM diamide time course,,True
+GSM1063,1.5 mM diamide (60 min),GPL53,diamide,1.5 mM diamide time course,,True
+GSM1064,1.5 mM diamide (90 min),GPL53,diamide,1.5 mM diamide time course,,True
+GSM1029,Heat Shock 000 minutes (series 3),GPL54,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM1030,Heat Shock 005 minutes,GPL54,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM1032,Heat Shock 015 minutes,GPL54,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM1033,Heat Shock 030inutes,GPL54,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM1034,Heat Shock 060 minutes,GPL54,heat,"25->37 C shock, plus the variable pre-shift ladder",,True
+GSM1041,steady state 15 dec C,GPL54,,"adapted steady state, not a shift; cold has no module","adapted steady state, not a shift; cold has no module",False
+GSM1042,steady state 21 dec C,GPL54,,"adapted steady state, not a shift; cold has no module","adapted steady state, not a shift; cold has no module",False
+GSM1043,steady state 25 dec C,GPL54,,"adapted steady state, not a shift; cold has no module","adapted steady state, not a shift; cold has no module",False
+GSM1044,steady state 29 dec C,GPL54,,"adapted steady state, not a shift; cold has no module","adapted steady state, not a shift; cold has no module",False
+GSM1045,steady state 33 dec C,GPL54,,"adapted steady state, not a shift; cold has no module","adapted steady state, not a shift; cold has no module",False
+GSM1046,steady state 36 dec C,GPL54,,"adapted steady state, not a shift; cold has no module","adapted steady state, not a shift; cold has no module",False
+GSM1047,steady state 17 dec C,GPL54,,"adapted steady state, not a shift; cold has no module","adapted steady state, not a shift; cold has no module",False
+GSM1048,dtt 000 min,GPL54,DTT,two DTT time courses,,True
+GSM1049,dtt 015 min,GPL54,DTT,two DTT time courses,,True
+GSM1050,dtt 030 min,GPL54,DTT,two DTT time courses,,True
+GSM1051,dtt 060 min,GPL54,DTT,two DTT time courses,,True
+GSM1052,dtt 120 min,GPL54,DTT,two DTT time courses,,True
+GSM1053,dtt 240 min,GPL54,DTT,two DTT time courses,,True
+GSM1054,dtt 480 min,GPL54,DTT,two DTT time courses,,True
+GSM1055,steady state 36 dec C: y14n095,GPL54,,"adapted steady state, not a shift; cold has no module","adapted steady state, not a shift; cold has no module",False
+GSM1065,YPD_4_h_30C,GPL54,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM1066,YPD_6_h_30C,GPL54,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM1067,YPD_8_h_30C,GPL54,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM1068,YPD_10_h_30C,GPL54,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM1069,YPD_12_h_30C,GPL54,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM1070,YPD_1_d_30C,GPL54,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM1071,YPD_2_d_30C,GPL54,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM1073,YPD_3_d_30C,GPL54,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM1074,YPD_5_d_30C,GPL54,glucose_starvation,"growth to stationary phase, i.e. glucose exhaustion",,True
+GSM1075,Amino acid + adenine starvation 0.5 h,GPL54,,no panel module: general amino-acid starvation is Gcn4,no panel module: general amino-acid starvation is Gcn4,False
+GSM1076,Amino acid + adenine starvation 1 h,GPL54,,no panel module: general amino-acid starvation is Gcn4,no panel module: general amino-acid starvation is Gcn4,False
+GSM1077,Amino acid + adenine starvation 4 h,GPL54,,no panel module: general amino-acid starvation is Gcn4,no panel module: general amino-acid starvation is Gcn4,False
+GSM1078,Amino acid + adenine starvation 6 h,GPL54,,no panel module: general amino-acid starvation is Gcn4,no panel module: general amino-acid starvation is Gcn4,False
+GSM1080,FY3 pRZ-MSN2 - Msn2 overexpression,GPL54,,"genotype perturbation, not a stressor","genotype perturbation, not a stressor",False
+GSM1081,FY3 pRZ-MSN4 - Msn4 overexpression,GPL54,,"genotype perturbation, not a stressor","genotype perturbation, not a stressor",False
+GSM1090,Amino acid + adenine starvation 2 h,GPL54,,no panel module: general amino-acid starvation is Gcn4,no panel module: general amino-acid starvation is Gcn4,False
+GSM873,DBYyap1 + 37degree heat (repeat),GPL55,,"genotype perturbation, not a stressor","genotype perturbation, not a stressor",False
+GSM884,DBYmsn2msn4 (good strain) + 0.32 mM H2O2,GPL55,,"genotype perturbation, not a stressor","genotype perturbation, not a stressor",False
+GSM908,Hypo-osmotic shock - 5 min,GPL56,,no panel stressor: hypo-osmotic shock has no module,no panel stressor: hypo-osmotic shock has no module,False
+GSM913,Hypo-osmotic shock -15 minutes,GPL56,,no panel stressor: hypo-osmotic shock has no module,no panel stressor: hypo-osmotic shock has no module,False
+GSM914,Hypo-osmotic shock -30 minutes,GPL56,,no panel stressor: hypo-osmotic shock has no module,no panel stressor: hypo-osmotic shock has no module,False
+GSM915,Hypo-osmotic shock - 45 minutes,GPL56,,no panel stressor: hypo-osmotic shock has no module,no panel stressor: hypo-osmotic shock has no module,False
+GSM916,Hypo-osmotic shock - 60 minutes,GPL56,,no panel stressor: hypo-osmotic shock has no module,no panel stressor: hypo-osmotic shock has no module,False
+GSM917,1M sorbitol vs. YPD - basal,GPL56,,"adapted steady state, not a shock","adapted steady state, not a shock",False
+GSM918,29C to 33C - 5 min,GPL56,,mild or combined shift with no matching panel dose,mild or combined shift with no matching panel dose,False
+GSM919,29C to 33C - 15 min,GPL56,,mild or combined shift with no matching panel dose,mild or combined shift with no matching panel dose,False
+GSM932,29C to 33C -30 min,GPL56,,mild or combined shift with no matching panel dose,mild or combined shift with no matching panel dose,False
+GSM933,29C to 33C - 90 min,GPL56,,mild or combined shift with no matching panel dose,mild or combined shift with no matching panel dose,False
+GSM934,29C +1M sorbitol to 33C + 1M sorbitol - 15 min,GPL56,,mild or combined shift with no matching panel dose,mild or combined shift with no matching panel dose,False
+GSM935,29C +1M sorbitol to 33C + 1M sorbitol - 5 min,GPL56,,mild or combined shift with no matching panel dose,mild or combined shift with no matching panel dose,False
+GSM936,29C +1M sorbitol to 33C + 1M sorbitol - 30 min,GPL56,,mild or combined shift with no matching panel dose,mild or combined shift with no matching panel dose,False
+GSM937,33C + 1M sorbitol vs. 29C - adapted,GPL56,,mild or combined shift with no matching panel dose,mild or combined shift with no matching panel dose,False
+GSM1016,DBYyap1 0.32 mM H2O2 - 20 min,GPL56,,"genotype perturbation, not a stressor","genotype perturbation, not a stressor",False
+GSM1017,DBY msn2msn4 0.32 mM H2O2 - 20 min,GPL56,,"genotype perturbation, not a stressor","genotype perturbation, not a stressor",False
+GSM1018,DBY msn2msn4 37C - 20 min,GPL56,,"genotype perturbation, not a stressor","genotype perturbation, not a stressor",False
+GSM1019,25C -- 15 min,GPL56,,mild or combined shift with no matching panel dose,mild or combined shift with no matching panel dose,False
+GSM1020,25C -- 30 min,GPL56,,mild or combined shift with no matching panel dose,mild or combined shift with no matching panel dose,False
+GSM1021,25C -- 45 min,GPL56,,mild or combined shift with no matching panel dose,mild or combined shift with no matching panel dose,False
+GSM1022,25C -- 60 min,GPL56,,mild or combined shift with no matching panel dose,mild or combined shift with no matching panel dose,False
+GSM1023,25C -- 90 min,GPL56,,mild or combined shift with no matching panel dose,mild or combined shift with no matching panel dose,False
+GSM1024,33C no sorbitol 30 min,GPL56,,mild or combined shift with no matching panel dose,mild or combined shift with no matching panel dose,False
+GSM1025,33C no sorbitol 5 min,GPL56,,mild or combined shift with no matching panel dose,mild or combined shift with no matching panel dose,False
+GSM1088,yap59,GPL57,,"genotype perturbation, not a stressor","genotype perturbation, not a stressor",False
+GSM895,1 mM Menadione (50 min)redo,GPL64,menadione,1 mM menadione time course,,True
+GSM1100,1 mM Menadione (20 min) redo,GPL64,menadione,1 mM menadione time course,,True
+GSM1101,1 mM Menadione (30 min) redo,GPL64,menadione,1 mM menadione time course,,True
+GSM1102,1 mM Menadione (120 min)redo,GPL64,menadione,1 mM menadione time course,,True
+GSM1103,1 mM Menadione (160 min) redo,GPL64,menadione,1 mM menadione time course,,True
+GSM1104,1mM Menadione (40 min) redo,GPL64,menadione,1 mM menadione time course,,True
+GSM1105,1 mM Menadione (10 min)redo,GPL64,menadione,1 mM menadione time course,,True
+GSM1106,1 mM Menadione (80 min) redo,GPL64,menadione,1 mM menadione time course,,True
+GSM1107,1 mM Menadione (105 min) redo,GPL64,menadione,1 mM menadione time course,,True
+GSM1112,constant 0.32 mM H2O2 (20 min) redo,GPL64,H2O2,0.32 mM peroxide time course,a channel gene has no probe on this array's print run,False
+GSM1113,constant 0.32 mM H2O2 (30 min) redo,GPL64,H2O2,0.32 mM peroxide time course,,True
+GSM1114,constant 0.32 mM H2O2 (50 min) redo,GPL64,H2O2,0.32 mM peroxide time course,,True
+GSM1115,constant 0.32 mM H2O2 (60 min) redo,GPL64,H2O2,0.32 mM peroxide time course,a channel gene has no probe on this array's print run,False
+GSM1116,constant 0.32 mM H2O2 (10 min) redo,GPL64,H2O2,0.32 mM peroxide time course,,True
+GSM1117,constant 0.32 mM H2O2 (100 min) redo,GPL64,H2O2,0.32 mM peroxide time course,,True
+GSM1118,constant 0.32 mM H2O2 (120 min) redo,GPL64,H2O2,0.32 mM peroxide time course,,True
+GSM1119,constant 0.32 mM H2O2 (160 min) redo,GPL64,H2O2,0.32 mM peroxide time course,,True
+GSM1120,constant 0.32 mM H2O2 (80 min) redo,GPL64,H2O2,0.32 mM peroxide time course,,True

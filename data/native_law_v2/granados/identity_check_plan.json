@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "purpose": "Source-defined representation/identity audit only, fixed before replay. Not model fitting, scientific scoring, data selection or an amendment of the original protocol.",
+  "original_protocol_sha256": "e901d3985b5577d6f846229e1178062414e3220a7307b6d8ee40b0d01e9dffde",
+  "original_candidate_remains_ineligible": true,
+  "source_groups": [
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep1",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep6"
+  ],
+  "target_groups": [
+    "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/gluc/rep1",
+    "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/gluc/rep2"
+  ],
+  "known_duplicate_control": {
+    "source": "1b38366b-7473-4ddf-9cf9-26e625533686:/rep6",
+    "target": "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/gluc/rep1",
+    "basis": "Raw triplet equality with fig2 /sfp1/gluc plus the README-declared normalized-rep1 alias. Failure to reproduce this known alias means a replay is not a sensitive identity exclusion test."
+  },
+  "fixed_replays": [
+    {
+      "id": "deposited_nucLoc_source_normalizer_only",
+      "definition": "Apply the linked normMeanOffset.m directly to the deposited nucLoc matrix with its source origin, seriesLength=20 and type=2. This audits the normalizer in isolation, not an assertion that it is the full export pipeline."
+    },
+    {
+      "id": "recomputed_ratio_source_normalizer_only",
+      "definition": "Same normalizer, but first form max5/median using the README's exact measurement definition. This checks whether rounding the deposited nucLoc ratio alone prevents reproduction; it is not a new target or fitted observation adapter."
+    },
+    {
+      "id": "deposited_nucLoc_worked_example",
+      "definition": "Copy only example_script.m lines 39-62: per-cell linear interp1 at median times, then filterCellsByNucLoc with nStd=0.5, filterType=1, propTime=0.8 and the source origin. Its inpaint_nans and both normMeanOffset calls are executed unchanged. No MI/classifier, plots or model-performance code is executed."
+    },
+    {
+      "id": "recomputed_ratio_worked_example",
+      "definition": "Same fixed worked-example preprocessing, with max5/median formed from the deposited intensity fields before alignment."
+    }
+  ],
+  "comparison": {
+    "window": "The author's explicitly defined 40-frame rich/stress comparison: columns origin-20 through origin+19 inclusive, 1-based, in each source/target. Whole row sets and their source order are retained after the specified filtering; no searched row permutations, arbitrary subsets or offsets.",
+    "equality_checks": ["Exact double-array equality including identical missingness", "Exact equality of canonical %.10g numeric-token strings including identical missingness"],
+    "serialization_source": "The linked JSONlab-1.5 savejson.m explicitly defaults FloatFormat to %.10g; exportJSONCellInf.m does not override it. This is a fixed representational check, not an adjustable curve-distance tolerance.",
+    "no_similarity_heuristics": true,
+    "no_error_moments_distances_or_best_match_rankings": true,
+    "positive_match_interpretation": "Exact shared source-defined windows establish observation reuse and must be kept inseparable. They do not create additional biological replicates.",
+    "negative_match_interpretation": "Inconclusive about independent biological origin. Rounded inputs, different original curation/resampling, an unavailable export call, or implementation differences can prevent exact reproduction. Do not loosen equality or search processing choices to obtain a match."
+  },
+  "custody": {
+    "internal_baseline_constants_may_be_computed_for_identity_only": true,
+    "normalization_constants_or_response_values_may_be_released": false,
+    "intermediate_response_projections_may_be_written": false,
+    "allowed_output": "Source/target/variant identifiers; schema compatibility and exact-equality booleans; source hashes and implementation provenance only.",
+    "training_allowlist": [],
+    "response_export_authorized": false
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "data_reexport_requested": false,
+  "development_responses_accessed": false,
+  "document_type": "population_development_executor_refresh_request_v1",
+  "fixes": [
+    "POP001 authoritative protocol-domain validation before inference",
+    "POP003 exact family set with protocol-ordered replay",
+    "POP004 explicit phase-B manifest-v1 administrative adapter"
+  ],
+  "native_fits_performed_by_this_request": false,
+  "new_configuration": {
+    "bytes": 3729,
+    "path": "outputs/native_population_development/executor_refresh_01/execution_configuration.json",
+    "role": "execution_code",
+    "sha256": "7e1aa35c8f6c248fc921f2348d362b8fc76e23bd8cfff070b19d21b2d9195cdb"
+  },
+  "new_request": {
+    "bytes": 1727,
+    "path": "outputs/native_population_development/executor_refresh_01/release_request.json",
+    "role": "operational_event_log",
+    "sha256": "3bc3f5d0441288a13c67bc3a17380002ed09916340f78102a5d39fb16c782caf"
+  },
+  "phase_b_manifest": {
+    "bytes": 6904,
+    "path": "data/native_law_v2/granados/development/release_manifest.json",
+    "role": "operational_event_log",
+    "sha256": "3b8c67c79191bf4dec0a1e7e0514b1a145359c30061868bbfdd136f0ee1cd3dd"
+  },
+  "previous_approval": {
+    "bytes": 3861,
+    "path": "data/native_law_v2/granados/development/phase_b/custody_decision.json",
+    "role": "operational_approval",
+    "sha256": "87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533"
+  },
+  "previous_executor_artifacts": [
+    {
+      "bytes": 71949,
+      "path": "data/native_law_v2/granados/development/phase_b/frozen_executor/native_population_development.py",
+      "role": "execution_code",
+      "sha256": "7755844db3d777fdec1c9f7fb8b4fc4168597e735182353b1c6efc5a13f3c787"
+    },
+    {
+      "bytes": 2290,
+      "path": "data/native_law_v2/granados/development/phase_b/executor_environment.json",
+      "role": "execution_code",
+      "sha256": "a650be44dced11e101115663d665a6d39254f8fd1adccd8c63b0a0752a4e4ff4"
+    }
+  ],
+  "previous_request": {
+    "bytes": 1682,
+    "path": "data/native_law_v2/granados/development/phase_b/release_request.json",
+    "role": "operational_event_log",
+    "sha256": "b812da162bd1962484c505bdb32d9c0d4b191e51051f1e2d64a42eab5b6ca349"
+  },
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "recorded_at_utc": "2026-09-07T13:08:02.730962+00:00",
+  "required_custodian_admission": {
+    "authority": "An independent custodian must issue the matching protocol-defined DevelopmentCustodyDecision and this operational refresh record. A request or caller-supplied success flag is not approval.",
+    "document_type": "population_development_executor_refresh_admission_v1",
+    "required_fields": [
+      "document_type",
+      "schema_version",
+      "protocol_id",
+      "protocol_sha256",
+      "phase_b_manifest",
+      "previous_approval_sha256",
+      "request",
+      "approval",
+      "configuration",
+      "custodian_identity",
+      "operational_event_reference",
+      "reuse_existing_projections",
+      "scientific_recipe_changed",
+      "data_reexport_permitted",
+      "development_responses_released",
+      "strong_claim_authorized"
+    ],
+    "schema_version": 1
+  },
+  "reuse_existing_projections": [
+    {
+      "bytes": 7093970,
+      "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/training_projection.json",
+      "role": "training_projection",
+      "sha256": "fc8000c7720e554756c90e0da79f2d0ae4a7928d5923f0efa1a2ed5823d37c9e"
+    },
+    {
+      "bytes": 4764543,
+      "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_inputs.json",
+      "role": "development_inputs",
+      "sha256": "41ee2a8ce6b09cb664859873fd59fd005e31e6eaa054c3703098c91e3f790613"
+    }
+  ],
+  "schema_version": 1,
+  "scientific_recipe_changed": false,
+  "scientific_scope": "retrospective_source_cohort_development",
+  "strong_claim_authorized": false
+}

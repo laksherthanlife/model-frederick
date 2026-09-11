@@ -1,0 +1,52 @@
+{
+  "document_type": "phase_c_source_scalar_binding_not_biological_validation",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "protocol_sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+  "source_asset_id": "1b38366b-7473-4ddf-9cf9-26e625533686",
+  "source_sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+  "prediction_freeze_sha256": "e03f6b9407b29e7e76da7a0be566ce9036c5cf27ac65bfaa9a4d3d7e009b5753",
+  "response_release_approval_sha256": "ccdf78fa1d986758a9f760747d755b02fd2d52c11098e14c3043ee7d8a47806e",
+  "original_data_approval_sha256": "87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533",
+  "group_ids": [
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"
+  ],
+  "frames_1based": [
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73
+  ],
+  "ordered_payload_sha256": "90971be871b1f5d51ebc893dd543a780349b8df5867824808abe2ccfac5a835d",
+  "expected_source_cells": 8448,
+  "expected_source_scalars": 25344,
+  "selection_policy": "Only registered source fields in rep4/rep5 and columns 50-73 were numerically decoded. Other groups/fields/columns were lexically skipped, not normalized or evaluated.",
+  "row_policy": "Every original source row is exported; frozen prefix eligibility is used only in downstream aggregation and is not recomputed from responses.",
+  "freeze_verification": {
+    "path": "data/native_law_v2/granados/development/phase_c_01/freeze_verification.json",
+    "sha256": "ad3768db1a5eab8b61ffbc631cefdc0be9676f26d49d24dd01adcee226ebd897",
+    "bytes": 2689,
+    "role": "source_binding_audit"
+  },
+  "strong_claim_authorized": false
+}

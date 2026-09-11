@@ -1,0 +1,130 @@
+# Glycogen in Saccharomyces cerevisiae -- a NATIVE storage polysaccharide, not a
+# heterologous cassette. Read the scope warnings below before using this spec for anything.
+#
+# Chemistry and stoichiometry from yeast-GEM v9.0.2 as vendored in data/gem/yeast-GEM.xml.gz
+# (reaction r_0510, "glycogen (starch) synthase"), read out of the SBML this session. Gene
+# identities resolved against SGD (www.yeastgenome.org/backend/locus/<systematic name>) this
+# session. Measured states from Boender LGM, de Hulster EAF, van Maris AJA, Daran-Lapujade
+# PAS, Pronk JT. 2009. Quantitative physiology of Saccharomyces cerevisiae at near-zero
+# specific growth rates. Appl Environ Microbiol 75:5607-5614. PMID 19592533, PMC2737911,
+# doi 10.1128/AEM.00429-09. See data/glycogen/SOURCE.md.
+#
+# WHAT IS NOT DECLARED HERE: any fitted constant, because none exists. Boender 2009 measured
+# no transcript, no enzyme and no flux into glycogen, so there is nothing to fit and
+# data/glycogen/ ships no calibration. A spec is chemistry.
+
+[pathway]
+product = "glycogen"
+organism = "Saccharomyces cerevisiae"
+
+# THIS FIELD IS THE WEAKEST CLAIM IN THE FILE AND IT IS NOT SUPPORTED BY THE DATASET.
+#
+# For beta-carotene, CrtE was nominated by an exploratory fourteen-gene comparison:
+# training-only LOSO baselines give CrtE +0.745 and weakly positive native ERG9 +0.003.
+# That ranking does not validate the selected gene. No corresponding comparison is
+# possible here because Boender 2009 reports no expression measurement of any gene.
+#
+# GSY2 (YLR258W) is named because yeast-GEM's GPR for r_0510 is
+#   (YFR015C and YJL137C) or (YFR015C and YKR058W) or (YJL137C and YLR258W) or (YKR058W and YLR258W)
+# i.e. one glycogenin (GLG1/YKR058W or GLG2/YJL137C) AND one glycogen synthase
+# (GSY1/YFR015C or GSY2/YLR258W). SGD calls YLR258W and YFR015C both "Glycogen synthase" and
+# describes them as whole-genome-duplication paralogs of each other; NOTHING I read
+# distinguishes them by flux control. The choice of GSY2 over GSY1 is therefore ARBITRARY,
+# and the choice of a synthase over a glycogenin is a convention, not a measurement.
+#
+# The carotenoid law uses relative transcript measurements, not causal cassette dosage.
+# ERG9 is weakly positive in that panel; native-pathway failure is not established by it.
+# No glycogen flux/expression calibration exists. Do not transfer the carotenoid law here.
+entry_enzyme = "GSY2"
+
+# UDP-D-glucose in the cytosol, yeast-GEM v9.0.2 (formula C15H22N2O17P2, charge -2).
+precursor_metabolite = "s_1543"
+# One UDP-D-glucose per glucosyl residue, read off r_0510:
+#   s_1543 --> s_0773 + s_0794 + s_1538   (UDP-D-glucose --> glycogen + H+ + UDP)
+precursor_stoichiometry = 1.0
+
+source = "yeast-GEM v9.0.2 r_0510 (EC 2.4.1.11, 2.4.1.186) for the chemistry; SGD for gene identities; PMID 19592533 (Boender 2009) for the measured states"
+notes = """
+GSY2 is a chemistry-based label, not a calibrated predictor of glycogen flux. The named
+fixed-CrtE empirical comparison for carotenoids does not establish a causal expression
+law that transfers here. Its training-only LOSO baseline gives native ERG9 a weakly
+positive score, so it also does not prove that every native pathway must fail. Boender
+2009 supplies no expression/flux series with which to fit or validate a glycogen law.
+
+GLYCOGEN IS TERMINAL IN THIS DECLARED CHAIN, NOT IN THE HOST METABOLISM.
+
+`enzyme = ""` means no next reaction in this chain. The separate `fate = "degraded"`
+declaration represents native turnover, and the current solver requires a measured
+NodeKinetics.degradation_rate_per_h instead of silently treating glycogen as diluted only.
+yeast-GEM v9.0.2 consumes cytosolic glycogen s_0773 through:
+
+    r_0511  glycogen phosphorylase            GPH1 / YPR160W
+    r_0463  glucan 1,4-alpha-glucosidase      GDB1 / YPR184W
+    r_1174  vacuolar transport via autophagy   (no GPR) -> then r_0464, SGA1 / YIL099W
+
+The steady-state balance is `v_syn - v_deg - mu*X = 0`. Thus `mu*X` calculated from a
+measured pool is net accumulation against dilution, not gross glycogen synthesis. With
+the solver's first-order turnover approximation, `X = v_syn / (mu + k_deg)`. Supplying
+`mu*X` as gross entry flux while also applying degradation would double-count turnover.
+Neither a synthesis flux nor k_deg is measured in the Boender dataset, so this spec is
+under-parameterised and the solver refuses a prediction without that turnover parameter.
+
+NEAR-ZERO GROWTH REQUIRES TURNOVER AND A MATCHED PHYSIOLOGICAL CALIBRATION.
+
+Boender 2009 reports glycogen increasing as growth approaches zero, with the retentostat
+rate given only as a bound. The current solver requires a positive numerical growth rate
+and can represent a finite pool under first-order turnover; the old diluted-only `v/mu`
+divergence is not an impossibility theorem for this architecture. No matched turnover,
+synthesis flux or exact retentostat growth rate is supplied here, so extrapolating the
+chemostat's inferred net flux does not predict that state. The single chemostat state at
+D = 0.025 /h cannot identify synthesis and degradation separately or validate a predictor.
+
+WHAT IS NOT DECLARED AS A NODE, AND WHY.
+
+Two chemical steps between UDP-D-glucose and branched glycogen get no node of their own:
+
+  1. Glycogenin autoglucosylation (EC 2.4.1.186, GLG1/GLG2), which primes a protein-bound
+     maltosaccharide before any synthase can elongate it.
+  2. Alpha-1,6 branching (EC 2.4.1.18, GLC3/YEL011W), which makes the polymer branched.
+
+Both are omitted following yeast-GEM v9.0.2, which carries EC 2.4.1.186 on r_0510 itself --
+one reaction for priming plus elongation -- and which, checked this session, contains NO
+reaction annotated EC 2.4.1.18 and NO gene YEL011W at all. So the collapse is the GEM's and
+this spec inherits it rather than inventing it. It is still an assumption: no pool
+measurement of a glycogenin-bound primer or of unbranched glucan exists in Boender 2009 or
+anywhere in this repository, and a protein-bound oligosaccharide has no single molar mass to
+declare even if one did. Recorded here rather than left to be inferred from a missing node.
+
+TREHALOSE IS MEASURED IN THE SAME PAPER AND IS NOT A NODE OF THIS CHAIN.
+
+Boender 2009 reports trehalose at 1.0% +/- 0.4% in both the chemostat and the retentostat.
+It is not downstream of glycogen: yeast-GEM makes it on a PARALLEL branch off the same
+precursor, r_0195 (trehalose-6-phosphate synthase, TPS1/TPS2 complex) consuming s_1543 and
+s_0568, then r_1051 (trehalose-phosphatase). A `PathwaySpec` is a linear chain and cannot
+express a branch point, so trehalose gets no node. Its numbers are carried in
+data/glycogen/boender2009_storage_carbohydrates.tsv as their own columns, not silently
+folded into glycogen. A separate trehalose spec would also need a measured turnover rate:
+r_0194, alpha,alpha-trehalase (NTH1/YDR001C), consumes it.
+
+MOLAR MASS.
+
+162.141 g/mol is one anhydroglucose (glucosyl) residue, C6H10O5, computed from IUPAC
+conventional atomic weights C 12.011, H 1.008, O 15.999:
+6(12.011) + 10(1.008) + 5(15.999) = 72.066 + 10.080 + 79.995 = 162.141. That formula is not
+a choice made here -- it is the formula yeast-GEM v9.0.2 assigns to s_0773 -- and a polymer
+has no other per-mole mass that makes mmol/gDCW mean anything. `content_mmol_per_gdcw` on
+this pathway therefore counts GLUCOSYL RESIDUES, and `content_mg_per_gdcw` is the mass of
+the polymer, which is NOT the same as the mass of glucose the assay released. Boender 2009's
+percentages are printed as "glucose equivalents/biomass"; the conversion, both readings of
+it, and the arithmetic are in data/glycogen/SOURCE.md.
+"""
+
+# The chain. One step, one node: UDP-D-glucose -> glycogen, as yeast-GEM r_0510 writes it.
+
+[[node]]
+name = "glycogen"
+enzyme = ""                    # nothing in the PATHWAY consumes it; GPH1/GDB1 do -- see fate
+rate_law = "passthrough"       # terminal content uses X = v_in/(mu + k_deg)
+fate = "degraded"    # GPH1, GDB1, SGA1 consume it; a measured degradation_rate_per_h is required
+molar_mass_g_per_mol = 162.141 # C6H10O5, one glucosyl residue; see notes
+measurable = true              # Parrou & Francois assay, Boender 2009 Materials and Methods

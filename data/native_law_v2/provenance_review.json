@@ -1,0 +1,825 @@
+{
+  "schema_version": 1,
+  "review_id": "native-law-v2-source-measurement-review-01",
+  "review_date_utc": "2026-09-07",
+  "role": "Independent source/measurement verifier, not data custodian or model executor",
+  "protocol_id": "native-law-v2-preregistered-01",
+  "decision": {
+    "status": "FAIL",
+    "meaning": "Neither named candidate is eligible for fitting, export, or scientific authorization under the inspected protocol and current source inventory. This is a source-eligibility decision, not a scored biological failure.",
+    "candidate_status": {
+      "hackett2016_cdc19_flux_response": "FAIL",
+      "granados2018_sfp1_carbon_localization": "FAIL"
+    },
+    "learner_release_authorized": false,
+    "authorized_projection_ids": [],
+    "scientific_validation_performed": false,
+    "ready_label_supported": false,
+    "criteria_relaxed": false,
+    "report_is_not_an_authorization_receipt": true
+  },
+  "verdict_semantics": {
+    "PASS": "The explicitly scoped source fact or measurement classification was independently established. PASS for semantics or source identity does not authorize a train/test projection.",
+    "FAIL": "The stated projection or interpretation conflicts with primary evidence or cannot meet a specific registered requirement using the available identified units.",
+    "UNVERIFIED": "Necessary evidence, exact source mapping, or access is missing. This is not zero, absence, independence, or permission to infer a convenient value.",
+    "original_measurement": "Instrument observations from an experiment, before any claim that a derived biological quantity was directly observed.",
+    "derived_measurement": "An explicitly documented transformation of instrument observations, such as an intensity ratio, calibrated concentration, or fitted initial slope. Its calibration, denominator, uncertainty and experimental unit remain part of the measurement.",
+    "inferred_quantity": "A model-dependent flux, kinetic constant, imputation, prediction, or physiological bound. It is not experimental ground truth merely because it is packaged with measurements."
+  },
+  "scope_and_exposure": {
+    "only_file_written": "data/native_law_v2/provenance_review.json",
+    "historical_models_inputs_and_product_artifacts_modified": false,
+    "fitting_performed": false,
+    "parameter_or_hypothesis_selection_performed": false,
+    "partitions_selected": false,
+    "native_law_model_performance_artifacts_opened": false,
+    "reserved_response_values_released_in_this_report": false,
+    "reserved_response_statistics_computed": false,
+    "public_primary_source_handling": "HTTP bodies were held in memory. Granados numerical JSON bodies were structurally parsed only for keys, shapes, source checksums and exact-copy equality; no response element, response summary, fit, rank, or prediction was printed or used for eligibility. Paper Methods and source code, not paper response figures, were the review targets.",
+    "local_sealed_response_files_opened": false,
+    "public_conclusion_exposure": "Primary Methods describe why the authors selected assays, normalization and the localization proxy. Reuse of those published choices is replication, not blind novel discovery. No regulatory direction or fitted kinetic value is provided here.",
+    "incidental_legacy_performance_exposure": {
+      "occurred": true,
+      "cause": "An overly broad read intended to verify build provenance also displayed historical performance comments.",
+      "locations": ["scripts/gecko/build_ecyeastgem.m:25-27,48-50", "data/gem/MANIFEST.md:17-22,28-89"],
+      "disposition": "Not used to judge data eligibility; historical scores are not reproduced. A claim that this reviewer never saw any performance text would be false. No new native-law performance was requested or inspected."
+    },
+    "old_lycopene_policy": "Already consumed development evidence, as directed; not a new test and not opened for this review.",
+    "packages_installed": false,
+    "authentication_or_access_control_bypass_attempted": false,
+    "http_policy": "Primary curl requests used --max-time 25 and --connect-timeout 8, with a 29-second subprocess timeout; GitHub requests used gh with a 25-second subprocess timeout. Initial bibliographic API lookups used a 25-second socket timeout. No source request was intentionally allowed more than 30 seconds.",
+    "authority_limit": "No external registry head, protected issuer key, acquisition/access ledger, or closed learner ancestry graph was supplied. This JSON is an unsigned review, not proof of preregistration or a release capability."
+  },
+  "reviewed_local_snapshots": [
+    {"path": "data/native_law_v2/protocol.json", "git_blob_sha1_no_filters": "e4e1c854e0962451f27b754e5eded2af225d9fc0", "coordinates": "1-95", "use": "Registered criteria only; no thresholds changed."},
+    {"path": "data/native_law_v2/claim_domain.json", "git_blob_sha1_no_filters": "49db5ce7763467c4b5215800f1e7ef0c86bbf4b1", "coordinates": "7-37,50-64", "use": "Exact named observables, units, context and exclusion criteria."},
+    {"path": "data/native_law_v2/biochemical_catalogue.json", "git_blob_sha1_no_filters": "956afb4bcd26d5097947014cb87db458cd2cba7d", "coordinates": "1-181, final ineligible-candidate snapshot", "use": "Reconciled after the initial in-progress catalogue and later metadata-validation notes changed. Current refusal agrees with independently verified primary evidence."},
+    {"path": "data/native_law_v2/granados_manifest.json", "git_blob_sha1_no_filters": "f5ffa8dd99137763e32f4b5c543d88b8a7272e2f", "coordinates": "1-240,410-454; provisional all-reserved list not treated as an approved split", "use": "Reconciled after the initial 214-line manifest changed. Current no-export decision agrees with independent source verification."},
+    {"path": "data/native_law_v2/biochemical/hackett2016_metadata.json", "git_blob_sha1_no_filters": "b3e0b7269cce9f287b0d1026f1bc14b765681ab4", "coordinates": "1-202", "use": "Source hashes/protein header/code claims independently corroborated; newly supplied R-object schema and dates remain custodian evidence, not independently rederived here."},
+    {"path": "data/native_law_v2/biochemical/boer2010_metadata.json", "git_blob_sha1_no_filters": "27d4e341a972af918eec671928868a96e15491ca", "coordinates": "1-153", "use": "Primary Methods and both text-member hashes/headers corroborated independently; workbook cells were not independently parsed in this review."},
+    {"path": "data/native_law_v2/biochemical/activity_alternatives.json", "git_blob_sha1_no_filters": "6af1571e7cb752185e80ff08e66be463a7430eb9", "coordinates": "1-142", "use": "Both alternative primary Methods inspected independently; neither was selected as a replacement, and raw replicate-level activity labels remain unverified."},
+    {"path": "data/biochemical_evidence/enzyme_activity_sources.json", "git_blob_sha1_no_filters": "b0c319346be00988507ac43224de062d141be1d9", "coordinates": "192-273,344-390", "use": "Starting mixed-extract, protein-detection and unresolved-redox records; key assay semantics independently checked below."},
+    {"path": "data/validation_candidates/granados2018.json", "git_blob_sha1_no_filters": "6c42bedfebe2ae612018265a3c1fbba317a8e318", "coordinates": "16-38,53-115", "use": "Starting access and measurement contract; README, bundle and all seven raw schemas independently checked."},
+    {"path": "data/validation_candidates/yeast_gam_lineage.json", "git_blob_sha1_no_filters": "4115e9384197c21ff8d0f191492b90956cb38f1f", "coordinates": "5-49,64-69", "use": "Starting inherited-calibration claim; upstream tag, code and source-file header/hash independently checked."}
+  ],
+  "snapshot_limit": "The custodians may update their files concurrently. Local git-blob checksums identify inspected snapshots, not an external append-only registration. Later changes need reconciliation; they do not inherit a PASS from this review.",
+  "primary_sources": [
+    {
+      "source_id": "H_METHODS",
+      "doi": "10.1126/science.aaf2786",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5414049/",
+      "kind": "Primary author manuscript Methods",
+      "status": "PASS",
+      "http_status": 200,
+      "bytes": 319880,
+      "observations": [
+        {"sha256": "c26db2312c2c9a7798e970a6de6a47738da2ad1a5b3e3a8dd5eb52a06af4440d", "coordinates": "#S10-#S12, #S21-#S22, #S27, #S29-#S31, #S54"},
+        {"sha256": "1f4f6791b959dc6e15dae9d2e5417ba2525df0165cc5c42c889ee512bf3ec482", "coordinates": "#S10, #S23-#S24, #S26, #S44-#S46"}
+      ],
+      "checksum_note": "PMC HTML chrome changes between responses. These are actual fetched-body hashes, not the custodian's different HTML-response hash. Section IDs identify the scientific passages.",
+      "facts": [
+        "#S10 explicitly says proteomics and fluxomics came from one biological culture per condition and metabolomics from a prior culture; omics repeats were technical.",
+        "#S11 says isotope labeling was not used to probe internal fluxes. This does not mean isotope labels were absent from proteomic/metabolomic quantification.",
+        "#S22 derives internal fluxes and FVA ranges from modified YEASTNET 7 and constrained optimization, even where the prose calls the range experimentally observed.",
+        "#S23-#S27 describe isotope-reference relative protein quantification, peptide aggregation and some kNN imputation, not absolute active enzyme.",
+        "#S44 says the in-vitro targets were selected from the authors' predictions; #S45-#S46 describe separate coupled/direct Cdc19 assays.",
+        "#S54 identifies Table S9 as a data location, not proof that every entry in it is a direct measurement."
+      ]
+    },
+    {
+      "source_id": "H_CODE",
+      "repository": "shackett/simmer",
+      "commit": "7138a45fb9653ce50d8556676a9fd1cc00bf0395",
+      "commit_verified_via": "gh api repos/shackett/simmer/git/ref/heads/master",
+      "kind": "Authors' derivation code and data headers, inspected but never executed",
+      "status": "PASS",
+      "files": [
+        {"path": "README.md", "git_blob": "fc8f7e47315b97646e83bff353fcd3ccf6ef3c0f", "bytes": 1623, "sha256": "286a3f3d3adddd2e2e8f619388f3c89e1181e02bdeee379f7c598f4f7d67578c", "coordinates": "3,16-32"},
+        {"path": "inst/doc/QP_FBA.Rmd", "git_blob": "36cf6fc42e6e142692399e3ef9e9dbf10ea4bdff", "bytes": 1413, "sha256": "bca5537a10bcf59f462b89f3c3e9b1e068ac799fee33d8560def060a9178d90a", "coordinates": "16-38"},
+        {"path": "inst/doc/MCMC_NNLS.Rmd", "git_blob": "731abab9fba4b6ac2dc61fbc8255b4290119d049", "bytes": 2891, "sha256": "8d74ea987d30b60ea1f14abf7e50f3ca6c7285d65980fe76cace073d88dcb78d", "coordinates": "22-24,45-66"},
+        {"path": "R/QP_FBA_functions.R", "git_blob": "80d9923aa8130bc9510c6830bfa214fabf073366", "bytes": 61889, "sha256": "731bdcc39b482092de999b29e3ba94f0ba89e196a96a11dba22935481756f924", "coordinates": "106-111,155-159,266-355,385-387,668-689,801-812"},
+        {"path": "R/MCMC_NNLS_functions.R", "git_blob": "6c3ee19614490486a1c2d4bc9ae2791f45cf2fb5", "bytes": 28423, "sha256": "88fa63bd270cc513682289b26f664f306fd7b70d729e3a5ec792a7bc53a60bf3", "coordinates": "10-54,153-163,442-466"},
+        {"path": "inst/extdata/flux_input_data/proteinAbundance.tsv", "git_blob": "b951dc2ec4bcf86534c58f6efdc331676b78c406", "bytes": 553249, "sha256": "5227daf2a6358f188ec58b2dbfebadeac27c76d7eef03a0a82e0ad86ac9e3a9d", "coordinates": "Header only; 1187 data rows counted, no values inspected", "header": ["Gene", "c0.05", "c0.11", "c0.16", "c0.22", "c0.30", "L0.05", "L0.11", "L0.16", "L0.22", "L0.30", "n0.05", "n0.11", "n0.16", "n0.22", "n0.30", "p0.05", "p0.11", "p0.16", "p0.22", "p0.30", "u0.05", "u0.11", "u0.16", "u0.22", "u0.30"]},
+        {"path": "inst/extdata/flux_input_data/Boer_nutrients.txt", "git_blob": "49b39ba3a1fdaaa03e2383487ecec16256689b5e", "bytes": 675, "sha256": "da8c4ee3ddd7076e3e52c79c3113cdec10002c34d8e7eabca0e10e79d5185c9e", "coordinates": "Header only", "header": ["", "Ammonium", "Phosphate", "Glucose", "Leucine", "Uracil", "MW"]},
+        {"path": "inst/extdata/reactionEqn_fitting/rMech_summary_table.tsv", "git_blob": "d4a729f64bd949b41cff217f01dd8543d09ec80e", "bytes": 3136, "sha256": "ef64e9c8813688a8336db149d67a800e0b36cc63d5790d07df19fe79ad638c24", "coordinates": "Header only", "header": ["reaction", "rMech", "modelType"]},
+        {"path": "inst/extdata/flux_input_data/boundaryFluxes.Rdata", "git_blob": "08be5778cc7dd77242bae0535bb436eb199e2522", "bytes": 70639, "sha256": "15e9bd86d5667671f58e911fa77374bf33085b05052f10113cc7c685af8338d1", "coordinates": "Source bytes hashed only; binary objects not deserialized", "schema_status": "UNVERIFIED"}
+      ],
+      "retrieval": "Each blob obtained with gh api repos/shackett/simmer/git/blobs/{git_blob}; base64 decoded in memory before hashing.",
+      "critical_derivations": [
+        "QP_FBA_functions.R:277-294 loads condition summaries and multiplies medium changes/uncertainties by actual dilution rate.",
+        "QP_FBA_functions.R:296-299 removes the measured phosphate constraint; 301-321 constructs an oxygen approximation rather than an oxygen assay; 385-387 makes CO2 a free exchange.",
+        "QP_FBA_functions.R:330-351 adds modeled biomass and energetic demands, including default uncertainties for some components.",
+        "QP_FBA_functions.R:106-111,155-159,686-689 uses measured-enzyme availability and pathway annotations in flux penalties. Internal flux is not independent of these modeling choices.",
+        "MCMC_NNLS_functions.R:454-466 constructs enzyme activity from relative abundance and model occupancy, then fits to the midpoint of the FVA bounds. Neither the midpoint nor the fitted coefficients are independent observations."
+      ]
+    },
+    {
+      "source_id": "B_METHODS",
+      "doi": "10.1091/mbc.E09-07-0597",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2801714/fullTextXML",
+      "kind": "Primary Boer 2010 Methods, prior metabolomics source",
+      "status": "PASS",
+      "http_status": 200,
+      "bytes": 183239,
+      "sha256": "66cb4b12bab16006da3c6048c235a62873aa7d1037f75aa13f3c24f42e22fda9",
+      "coordinates": "MATERIALS AND METHODS / Strains and Cultivation; Sampling and Extraction of Intracellular Metabolites; LC-MS/MS Analysis; Normalization and Clustering",
+      "facts": [
+        "FY derivatives: DBY11069 (MATa) for carbon/nitrogen/phosphorus limitation; DBY11167 (MATa leu2Delta1) for leucine; DBY7284 (MATa ura3-52) for uracil. These IDs directly identify Boer cultures; correspondence to each later Hackett culture still needs original sample records.",
+        "Mineral media are referred to Supplemental Table S4. The inspected Methods specify continuous chemostats and pH 5.0, but do not establish a culture temperature. The LC-MS autosampler temperature is not a culture temperature.",
+        "Four sampling occasions over two days from each experimental chemostat, paired to two phosphorus-limited reference cultures, yield repeated ratios, not eight independent experimental cultures.",
+        "Relative concentrations use volume-normalized ion counts and date/extraction-method-matched phosphorus references. Near-limit/non-detected signals are floored in the published preprocessing.",
+        "The heat-map representation is log2 transformed and mean-centered across all conditions. It is not an untouched absolute concentration table."
+      ]
+    },
+    {
+      "source_id": "B_RAW_HEADERS",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2801714/supplementaryFiles",
+      "kind": "Official primary supplementary archive; text-table headers and structure only",
+      "status": "PASS",
+      "http_status": 200,
+      "bytes": 1239812,
+      "sha256": "c525c7141cf5a26715fc45db8a53b8656d60263bec5a248d6a0269205d073f82",
+      "archive_note": "Packaging hash differs from the custodian's earlier ZIP response; the text-member bytes below match exactly. No numerical measurement cells were inspected or rendered.",
+      "members": [
+        {"name": "E09-07-0597_Data_Set_2.txt", "bytes": 159952, "sha256": "9104f7fa0a24d3bd34f58f542ec9151009ff3e1d1ab6e0723b0b25cbbd478e6c", "coordinates": "Line 1 headers; every row width checked", "data_rows": 136, "columns": 113, "metadata_headers": ["", "Month", "Which", "Gr", "Nutr", "Exp/Ref", "Method"], "analyte_header_count": 106},
+        {"name": "E09-07-0597_Data_Set_1.txt", "bytes": 35709, "sha256": "be06bda773cbefdc75ad9c826fc3ee24779c7b2817dc587d03036c6157b136e0", "coordinates": "Line 1 headers; 108 total lines of width 28", "metadata_headers": ["Metabolite", "KEGG", "GWEIGHT"], "condition_header_count": 25}
+      ],
+      "interpretation": "The second text dataset is normalized LC-MS ion-count data, not a molar-concentration table; the publication matrix requires its own reference/log/centering lineage. Aggregate analyte names do not establish resolved molecular species. Workbook layouts and the complete per-sample calibration map remain unverified by this reviewer."
+    },
+    {
+      "source_id": "A_SMALLBONE_METHODS",
+      "doi": "10.1016/j.febslet.2013.06.043",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3764422/fullTextXML",
+      "kind": "Primary Methods for a later-received alternative, not a selected replacement",
+      "status": "PASS",
+      "http_status": 200,
+      "bytes": 186478,
+      "sha256": "03224a1e5e75f5d6cec2648bdc3227cdbb208d700a210ed0e53338c84cc639a6",
+      "coordinates": "#s0015 (2.1 preparation), #s0020 (2.2 kinetic assays), #s0025 (2.3 culture)",
+      "facts": [
+        "Tagged yeast-expressed preparations from MORF/GST/TAP collections are purified; BCA measures total preparation protein and electrophoresis/Bioanalyzer checks preparation quality, not catalytic active fraction.",
+        "Initial rates at varied substrate concentrations are obtained from NAD(P)H-linked 340-nm assays at 30 C, with coupling/background controls and at least duplicate determinations. The duplicate determinations are not documented independent preparation cultures.",
+        "The paper subsequently fits kinetic equations to those initial rates. Its fitted kcat/Km values, alternate fitted forms and model simulations are not the original initial-rate observations.",
+        "The omics culture is Y23925, a diploid BY4743-derived strain in nutrient-unlimited turbidostat-like growth, not the registered FY chemostat context."
+      ],
+      "raw_assay_record_projection_status": "UNVERIFIED",
+      "raw_assay_records_or_supplement_cells_inspected": false
+    },
+    {
+      "source_id": "A_VANEUNEN_METHODS",
+      "doi": "10.1371/journal.pcbi.1002483",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3343101/fullTextXML",
+      "kind": "Primary Methods for a later-received alternative, not a selected replacement",
+      "status": "PASS",
+      "http_status": 200,
+      "bytes": 145742,
+      "sha256": "ed6223ce32e00d20b55bbc62b240ec21841d5ee71fd43f38a95b867a3fab7dd5",
+      "coordinates": "#s4a culture/starvation; #s4b glucose-transport assay; #s4c extract activity",
+      "facts": [
+        "CEN.PK113-7D haploid prototrophic cells are grown in aerobic glucose-limited defined-mineral-medium chemostats and transferred for nitrogen-starvation experiments. These are not Hackett FY cultures.",
+        "A separate five-second 14C-glucose zero-trans uptake assay at 30 C is an original transport measurement; nonlinear Michaelis-Menten fitting is a subsequent inference, not another independent uptake observation.",
+        "NAD(P)H-linked activities are measured at 30 C in freshly prepared cell-free extracts under a standardized in-vivo-like buffer. They are mixed-extract activities, not purified-enzyme or active-site-normalized turnover.",
+        "Substrate/coupling recipes are referred to Text S1. Exact response-table denominator, original preparation identities, uncertainties and a primary assay pH were not established in this review."
+      ],
+      "raw_assay_record_projection_status": "UNVERIFIED",
+      "raw_assay_records_or_supplement_cells_inspected": false
+    },
+    {
+      "source_id": "G_ITEM",
+      "url": "https://datashare.ed.ac.uk/server/api/core/items/82d65e34-a1a2-4a8d-9bc7-b72d14b80111",
+      "kind": "Primary repository metadata",
+      "status": "PASS",
+      "http_status": 200,
+      "bytes": 8631,
+      "sha256": "00246d9ff14956571fbcd94e82d6aebf363289b3d5537292e9ffb1f86ccc5605",
+      "coordinates": "metadata.dc.identifier.uri, dc.relation.isreferencedby, dc.rights",
+      "dataset_doi": "10.7488/ds/2214",
+      "paper_doi": "10.1073/pnas.1716659115",
+      "license": "Creative Commons Attribution 4.0 International Public License"
+    },
+    {
+      "source_id": "G_BUNDLE",
+      "url": "https://datashare.ed.ac.uk/server/api/core/bundles/29a5d553-9aa0-4898-9b2c-d5a010c52628/bitstreams",
+      "kind": "Primary repository bitstream identities",
+      "status": "PASS",
+      "http_status": 200,
+      "bytes": 16454,
+      "sha256": "7de6eb6f33ade36c6e4140369dfc895be2425bdcb154fc6337392e8b8fbe3715",
+      "coordinates": "_embedded.bitstreams[*].uuid/name/sizeBytes/checkSum",
+      "verified_against_downloads": "All seven data-file byte lengths and MD5 values matched this API; independently computed SHA256 values are below."
+    },
+    {
+      "source_id": "G_README",
+      "url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/c779e1c9-0b73-4824-8dae-e5f7fc39f212/content",
+      "kind": "Primary data README",
+      "status": "PASS",
+      "http_status": 200,
+      "bytes": 9932,
+      "sha256": "fbce9f1ec3abbff57ee3c2e1af29cdecfc8122cfe393287954a11776d8724ebf",
+      "coordinates": "15-20 rows/missingness; 29-47 measurement definitions; 51-59 independent days; 61-83 duplicate rep1; 85-98 dose hierarchy; 100-111 nuclear marker; 113-119 sham figure reuse; 121-130 genuine two-colour strains; 151-160 time-unit example"
+    },
+    {
+      "source_id": "G_SI",
+      "doi": "10.1073/pnas.1716659115",
+      "url": "https://swainlab.bio.ed.ac.uk/papers/pnas18sup.pdf",
+      "kind": "Primary authors' openly linked Supporting Information",
+      "status": "PASS",
+      "http_status": 200,
+      "bytes": 4078578,
+      "sha256": "995a826e1fa33ecc0f98696e835c9a5a5321b6e86ec389f67c982d42cf20f1bb",
+      "link_provenance": "https://swainlab.bio.ed.ac.uk/publications.html links papers/pnas18.pdf and papers/pnas18sup.pdf. PDF first page identifies the title, authors and paper DOI.",
+      "coordinates": "SI sections 1.1-1.2.4, pages 3-4; section 1.4 and experimental-size tables, page 5; section 3.1, page 6; section 3.11, page 14",
+      "copy_limit": "This is not asserted to be byte-identical to the different PMC PDF hash in the custodian manifest. Methods were inspected directly in this author-hosted copy.",
+      "facts": [
+        "GFP-collection strains were sequence validated; a replacement Mig1-GFP strain was separately constructed in BY4741. Nhp6A-mCherry marker strains derive from the GFP strains. Do not infer every reporter's full genotype from the Mig1 sentence.",
+        "SC medium with 2% glucose before downshift; glucose stress uses lower SC glucose. Culture and microfluidic incubation are 30 C. Assay/culture pH is not specified in these sections.",
+        "Five different strains may occupy separate chambers of a shared ALCATRAS device and receive the same media. This is not five independently delivered perturbations.",
+        "Fluorescence uses the maximum projection of five z sections before max5/median extraction. Biological replicates use different cultures on different days; nominal sampling is 2.5 minutes.",
+        "The nuclear-marker experiments were used to validate and justify adopting the marker-free proxy for the remaining experiments.",
+        "Section 3.1 describes per-experiment pre-stress population z-normalization using 20 time points, not future peaks or whole-trace extrema. It also describes pooling rich-media segments for the authors' classification analysis."
+      ]
+    },
+    {
+      "source_id": "G_CODE",
+      "repository": "swainlab/mi-by-decoding",
+      "commit": "8adaa770aad4e93f410b64aff1120f7ff1e93a6a",
+      "commit_verified_via": "gh api repos/swainlab/mi-by-decoding/git/ref/heads/master",
+      "kind": "Authors' preprocessing example code, inspected but never executed",
+      "status": "PASS",
+      "files": [
+        {"path": "matlab/DataProcessingFunctions/normMeanOffset.m", "git_blob": "ed14a79a2fd7f7a35a9b1d3b69f0674ea2ca1e33", "bytes": 466, "sha256": "2e525010b785fa67b2182161ff628c91d34e01d8439ef1f412f6a7c34d5ea22e", "coordinates": "1-10"},
+        {"path": "matlab/DataProcessingFunctions/filterCellsByNucLoc.m", "git_blob": "7da9364e393bdda1aa8fdc4cd9908cc4a6796435", "bytes": 2552, "sha256": "88fc7d3a823fa34f726d4f232c26c0e418e708c3f7d70e17385e587dd2aedd94", "coordinates": "21-35,37-64"},
+        {"path": "matlab/ExampleScript/example_script.m", "git_blob": "953cf2063ab3044a4fb1a515c0221138ab9bfb0b", "bytes": 5696, "sha256": "629a8c4719ffcfb6ac33a87b3b8ca479e05b4fc4ce7b8c843dee20c3be66ad87", "coordinates": "23-70"},
+        {"path": "R/MIdecoding/man/YeastStressTypeResponse.Rd", "git_blob": "6e2473fea13fcde0bebb989dce400b14f746ef34", "bytes": 1604, "sha256": "d588f83b6f4ae5b878ab0e919a8338f77411acaa488c4ebf3fa9490d4950a4b3", "coordinates": "16-27"},
+        {"path": "matlab/ExampleScript/fig1_sfp1_replicates.json", "git_blob": "8b2872a54b3c23cfa9fb6f534e009764b5487de0", "bytes": 4178902, "sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87", "coordinates": "Complete file byte comparison; no response values displayed"}
+      ],
+      "implementation_caveat": "normMeanOffset:7-8 uses mean(mean(var(:,window))) and mean(std(var(:,window))) over switchPoint-seriesLength-1:switchPoint-2. The latter is a mean of per-time-point across-cell standard deviations, not the pooled standard deviation a reader might infer from SI prose. The example interpolates time series and filters cells before renormalizing. This is not a demonstrated exporter for every deposited nucLocNorm array; exact export lineage remains unverified."
+    },
+    {
+      "source_id": "F_CRTE_METHODS",
+      "doi": "10.1371/journal.pone.0096626",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4010515/fullTextXML",
+      "status": "PASS",
+      "http_status": 200,
+      "bytes": 161541,
+      "sha256": "2d550d064fe8af0d8de5911d91ab78c6bb48f4c8df84aaa32ddce78b81159bce",
+      "coordinates": "Methods #s2i-#s2k; Table pone-0096626-t003 header and footnotes only",
+      "scope": "No culture-product table or numerical activity response was rendered. Mixed-extract denominator, unit definition, timing, temperature and replication were independently checked."
+    },
+    {
+      "source_id": "F_PROTEIN_METHODS",
+      "doi": "10.1016/j.mec.2019.e00086",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6350077/fullTextXML",
+      "status": "PASS",
+      "http_status": 200,
+      "bytes": 116939,
+      "sha256": "9a1d4b3f5c0ddb27aa4f299ffae14b6b481c1f834a1576fcfcfa13acb1ddae8f",
+      "coordinates": "Methods #s0020 (2.2), #s0040 (2.6), #s0045 (2.7)",
+      "scope": "BY4741-derived expression strains, OD-normalized denaturing blots, and crude-lysate GeLC-MS identification; no product values or densitometry extracted."
+    },
+    {
+      "source_id": "Y_GAM_CODE",
+      "repository": "SysBioChalmers/yeast-GEM",
+      "tag": "v8.3.4",
+      "commit": "bf49eaafb997769e2fb5f4adff8b124fe6a93c8d",
+      "status": "PASS",
+      "verification": "Tag reference and all following blobs retrieved independently using gh.",
+      "files": [
+        {"path": "ComplementaryScripts/modelCuration/fitGAM.m", "git_blob": "480628f3b524d47b1b0df4db69e5d11c4a521386", "bytes": 3437, "sha256": "577c7b8e0ad6859cb45f6aad488a5307e8c2aab521dba93548f6897affa6768c", "coordinates": "9-28,50-71,78-88,94-111"},
+        {"path": "ComplementaryData/physiology/chemostatData_VanHoek1998.tsv", "git_blob": "fee0076333626d4f740f49e2ef23aee6381619bf", "bytes": 124, "sha256": "57dceb4b9a8ff16f5b4f6440f7b1e2750b539da726975a33997588ddfdc5d855", "coordinates": "Header and four-row structure verified; response values not rendered", "header": ["Drate", "GlucoseUptake", "O2uptake", "CO2production"]},
+        {"path": "ComplementaryScripts/modelCuration/modelCorrections.m", "git_blob": "e1f4461ae4527d0452582eb7437aef7a015d71d6", "bytes": 2139, "sha256": "9d3764869b7d48ce802172f3a40a465529f2cd88e2cac4c56c505cf3af639bf4", "coordinates": "34-38", "decoding": "Latin-1 for source bytes; no fitted values repeated here"}
+      ],
+      "fact": "Native van Hoek exchange observations enter GAM fitting and biomass curation upstream. A new downstream row holdout does not undo that exposure.",
+      "limit": "This verifies the upstream procedure, not the exact execution history of the separately generated frozen ecModel or the ancestry of every Hackett/Granados observation."
+    }
+  ],
+  "granados_raw_sources": [
+    {
+      "source_id": "G_FIG1",
+      "bitstream_id": "1b38366b-7473-4ddf-9cf9-26e625533686",
+      "name": "fig1_sfp1_replicates.json",
+      "bytes": 4178902,
+      "sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+      "md5": "5059d66947b995a8a93441495f511882",
+      "schema_status": "PASS",
+      "coordinates": "/rep1 through /rep6; general/{origin,times}, GFP/{nucLoc,max5,median,imBackground}, cy5/imBackground",
+      "GFP_nucLoc_shapes_by_replicate": {"rep1": [55, 97], "rep2": [136, 97], "rep3": [202, 97], "rep4": [195, 97], "rep5": [157, 97], "rep6": [158, 97]},
+      "independent_experiments": "Six different-day biological replicates documented by G_README:51-59; rep6 is also a figure-2 source experiment."
+    },
+    {
+      "source_id": "G_FIG2_RAW",
+      "bitstream_id": "32cf23e6-ff7c-4b41-8304-f60afca3f4a6",
+      "name": "fig2_stress_type_expts.json",
+      "bytes": 27014075,
+      "sha256": "5d9f9fa10395b6e90729ecfdfcf75d9dbf86172a71871c59c6263c37d2badcd5",
+      "md5": "a435c108a4782a37bca18b07ab9b081a",
+      "schema_status": "PASS",
+      "coordinates": "Ten factor keys, each with gluc/nacl/oxid; /sfp1/gluc/{general,GFP,cy5}",
+      "named_group_count": 30,
+      "sfp1_gluc_GFP_nucLoc_shape": [158, 97],
+      "independence_status": "UNVERIFIED",
+      "reason": "Factor/stress keys are not device/day/movie IDs. The source explicitly overlaps normalized rep1 and exactly overlaps figure-1 rep6."
+    },
+    {
+      "source_id": "G_FIG2_NORM",
+      "bitstream_id": "721ef5f2-b858-4257-8cc8-5eea9a8599bb",
+      "name": "fig2_stress_type_replicates.json",
+      "bytes": 14360462,
+      "sha256": "56f00e2b39407965837f917d6e7cb43feb39f258ad360334625fcc6600ad7e27",
+      "md5": "f6f94871541f018c38689ddb2a98996f",
+      "schema_status": "PASS",
+      "coordinates": "/sfp1/gluc/{rep1,rep2}/GFP/{nucLocNorm,origin}",
+      "named_group_count": 60,
+      "sfp1_gluc_nucLocNorm_shapes": {"rep1": [164, 96], "rep2": [155, 96]},
+      "missing_fields_in_this_representation": ["nucLoc", "max5", "median", "times", "per-experiment normalization constants", "cell IDs", "movie/date IDs"],
+      "raw_identity_projection_status": "FAIL",
+      "reason": "This is not a raw-proxy replicate-2 export. Its rep1 has different row/column counts from the known same-experiment raw representation; a presumed cellwise affine transform is not established."
+    },
+    {
+      "source_id": "G_FIG3",
+      "bitstream_id": "5b7ea616-fdd5-4978-951e-8cfc3f722eb1",
+      "name": "fig3_stress_level_expts.json",
+      "bytes": 51227456,
+      "sha256": "0d4b43fc5c78a8dce277872a6ae8f102cff47e9d9e39e62dd118082e598a6e68",
+      "md5": "5fdd8df3894fe064e58a20bddc1e1979",
+      "schema_status": "PASS",
+      "coordinates": "/gluc/sfp1/{gluc_0_8,gluc_0_4,gluc_0_2,gluc_0_1}/GFP/nucLoc",
+      "named_group_count": 60,
+      "sfp1_gluc_shapes": {"gluc_0_8": [161, 97], "gluc_0_4": [121, 97], "gluc_0_2": [212, 97], "gluc_0_1": [178, 97]},
+      "independence_status": "UNVERIFIED",
+      "reason": "Four named Sfp1 carbon-dose groups are not proof of distinct dates/devices or absence of cropped/reprocessed reuse. Other factor/stress duplicates reported in the custodian audit must also remain merged or blocked, not presumed independent."
+    },
+    {
+      "source_id": "G_MARKER",
+      "bitstream_id": "0dcc11fc-dcd1-4983-930e-26265b48a0e9",
+      "name": "figS1_nuclear_marker_expts.json",
+      "bytes": 4062841,
+      "sha256": "3d48d1772244bc74956996411b4eacfa1b89924aeb254dd830356af9969fd619",
+      "md5": "16d5115cede7a0c1c41b852c52a7db76",
+      "schema_status": "PASS",
+      "top_level_keys": ["maf1", "mig1", "dot6", "tod6", "sfp1"],
+      "coordinates": "/sfp1/GFP/{origin,cytInnerMedian,imBackground,max5,median,nucCytRatio,nucInnerMedian,nucLoc,times}",
+      "sfp1_matrix_shape": [60, 91],
+      "named_sfp1_support_groups": 1,
+      "support_projection_status": "FAIL",
+      "reason": "Only one named Sfp1 group, no independent replicate/date/movie IDs and no exported mCherry image/mask provenance. The other four factors cannot supply matched Sfp1 biological replicates."
+    },
+    {
+      "source_id": "G_SHAM",
+      "bitstream_id": "f0ff4386-a4a5-40a4-b501-42b3e222e698",
+      "name": "figS7_rich_to_rich_expts.json",
+      "bytes": 7280122,
+      "sha256": "386683f43d0f93b6deb4f2765ef98ad3b230e9ad96a450703da6187824e362a3",
+      "md5": "2b7bca079f00269b7cc3cab15a0aa1af",
+      "schema_status": "PASS",
+      "coordinates": "/sfp1/{general,GFP,cy5}; GFP/{nucLoc,max5,median,imBackground}",
+      "sfp1_matrix_shape": [187, 97],
+      "named_sfp1_sham_groups": 1,
+      "sham_projection_status": "FAIL",
+      "reason": "One named matched Sfp1 sham is not the two independent sham groups required by protocol:69. The published sham figure also used figure-2 data; a figure is not an additional acquisition."
+    },
+    {
+      "source_id": "G_TWO_COLOUR",
+      "bitstream_id": "5546d389-8424-40f3-8620-6be68ca9b16d",
+      "name": "figS19_two_colour_expts.json",
+      "bytes": 8900018,
+      "sha256": "3da2f7728331fac4b3375292c4e0502d17254f032518fbfbbdc1510a61cca44e",
+      "md5": "af3d0b67d0ae677548729d957608a4c2",
+      "schema_status": "PASS",
+      "paired_strain_keys": ["dot6_msn2", "mig1_msn2", "yap1_msn2", "hog1_msn2"],
+      "stress_keys_per_pair": ["nacl", "gluc"],
+      "coordinates": "/{paired_strain}/{stress}/{general,GFP,mCherry}",
+      "named_group_count": 8,
+      "sfp1_projection_status": "FAIL",
+      "other_joint_response_projection_status": "UNVERIFIED",
+      "reason": "Real two-colour assays exist, but none contains Sfp1. For another predeclared target, row alignment and original acquisition units still require verification; unrelated single-colour cells cannot be fabricated into pairs."
+    }
+  ],
+  "raw_source_retrieval_rule": "Every G_* bitstream above was fetched from https://datashare.ed.ac.uk/server/api/core/bitstreams/{bitstream_id}/content with HTTP 200. No local sealed source was used as the independent primary proof.",
+  "quantity_reviews": [
+    {
+      "quantity_id": "hackett_internal_pyruvate_kinase_flux",
+      "status": "FAIL",
+      "classification": "Model-inferred internal flux and FVA interval, not an original reaction-rate assay",
+      "sources": ["H_METHODS:#S11,#S22", "H_CODE:inst/doc/QP_FBA.Rmd:16-38", "H_CODE:R/MCMC_NNLS_functions.R:454-466"],
+      "claimed_canonical_unit": "mmol/gDW/h",
+      "verified_raw_unit_mapping": null,
+      "root_cause": "Modified YEASTNET stoichiometry/directionality, fitted boundary constraints, penalties and FVA produce the label. Authors' naming of an experimentally observed range does not change its derivation. A new law trained on it would be learning an inherited model target, not a measured Cdc19 law.",
+      "additional_limits": ["FVA is a model feasibility range, not a measured sampling-confidence interval.", "Cdc19-specific attribution is not a direct assay of Cdc19 flux versus minor isozymes.", "No source-bound conversion from the deposited rate denominator to the protocol dry-biomass denominator was established."]
+    },
+    {
+      "quantity_id": "hackett_measured_medium_metabolites_and_exchange",
+      "status": "UNVERIFIED",
+      "classification": "NMR concentrations are derived experimental measurements; their dilution/volume-derived net exchange is not a single-enzyme rate",
+      "sources": ["H_METHODS:#S10,#S12", "H_CODE:R/QP_FBA_functions.R:277-294"],
+      "verified_definition": "Spent-medium peaks normalized to DSS and compared with external standards; uptake/excretion obtained from medium concentration changes and dilution, with the cell/culture volume or biomass denominator retained.",
+      "experimental_unit": "One chemostat culture; two medium samples are sampling/technical repeats, not independent cultures.",
+      "temperature_C": null,
+      "culture_pH": 5,
+      "raw_rate_unit": null,
+      "root_cause": "Original per-sample spectral/medium records, analyte-specific calibration, concentration and rate units, exact culture IDs, denominator and uncertainty lineage have not been source-bound. The binary boundaryFluxes object was not deserialized here. Boundary exchange cannot replace the registered intracellular pyruvate-kinase observable."
+    },
+    {
+      "quantity_id": "hackett_oxygen_CO2_biomass_maintenance_constraints_as_measured_fluxes",
+      "status": "FAIL",
+      "classification": "Mixture of approximations, free model exchanges and derived/model-assumed biomass demands",
+      "sources": ["H_CODE:R/QP_FBA_functions.R:296-323,330-351,385-387", "H_METHODS:#S21,#S22"],
+      "root_cause": "Oxygen is constructed from an RQ approximation; CO2 is free exchange; biomass monomer proportions and energetic demands include assumptions. The code also removes an actual phosphate constraint. A generic boundary-flux label cannot certify an original assay for each quantity."
+    },
+    {
+      "quantity_id": "hackett_relative_protein_covariate",
+      "status": "UNVERIFIED",
+      "classification": "Derived relative isotope-reference protein abundance, with some model-imputed entries",
+      "sources": ["H_METHODS:#S23-#S27", "H_CODE:proteinAbundance.tsv:header"],
+      "measurement_definition_status": "PASS",
+      "unit_class": "Relative light/heavy peptide-ion-current representation; Methods use log2 ratios, peptide aggregation and reference normalization, not mol/L or active sites per biomass.",
+      "reference": "Equal total extracted protein mixed with a 15N-labeled reference made from two phosphate-limited cultures.",
+      "experimental_unit": "One biological culture per condition, measured in technical triplicate.",
+      "root_cause": "The table header does not identify absolute enzyme amount, active fraction, original peptide-to-protein mapping or which entries were kNN-imputed. Exact per-cell measured-versus-imputed provenance is needed before admitting an all-measured input projection."
+    },
+    {
+      "quantity_id": "absolute_active_Cdc19_or_intrinsic_kcat_from_relative_protein",
+      "status": "FAIL",
+      "classification": "Unidentified biological quantities, not determined by relative proteomics or a fitted gain",
+      "sources": ["H_METHODS:#S23-#S27", "H_CODE:R/MCMC_NNLS_functions.R:454-466"],
+      "absolute_active_enzyme": null,
+      "intrinsic_kcat": null,
+      "root_cause": "Relative abundance, total extracted protein and model-fitted scaling do not identify target active-enzyme concentration. Denaturing extraction and isotope-ratio measurement cannot establish catalytic active fraction."
+    },
+    {
+      "quantity_id": "hackett_boer_metabolite_concentrations",
+      "status": "UNVERIFIED",
+      "classification": "Derived relative metabolomics, with absolute calibration for a stated subset and reused prior-culture measurements",
+      "sources": ["H_METHODS:#S10,#S29,#S30", "B_METHODS:Sampling and Extraction,LC-MS/MS Analysis,Normalization and Clustering", "B_RAW_HEADERS:Data_Set_1.txt:1,Data_Set_2.txt:1"],
+      "measurement_definition_status": "PASS",
+      "absolute_calibration": "Hackett #S29 describes commercial-standard calibration for 56 metabolites, using labeled phosphate-limited samples for nitrogen-containing metabolites and a batch-culture reference route for other metabolites. This is not a blanket absolute-unit certificate for every table entry.",
+      "compartment": "Whole-cell/cellular-volume-normalized measurements; compartment-specific free concentrations not established.",
+      "root_cause": "Need exact metabolite IDs, source tables and cells, calibration lineage, units, detection-floor treatment, technical-sampling IDs and original culture-to-later-condition mapping. Boer heat-map centering across all conditions must not silently become training-only normalization."
+    },
+    {
+      "quantity_id": "same_culture_joint_enzyme_substrate_flux_triplet",
+      "status": "FAIL",
+      "classification": "Nominal-condition-matched measurements from different culture sets plus an inferred flux",
+      "sources": ["H_METHODS:#S10", "B_METHODS:Strains and Cultivation,Sampling and Extraction"],
+      "root_cause": "Primary Methods explicitly distinguish the prior metabolomics culture from the later proteomics/fluxomics culture. Joining a condition label does not make simultaneous or same-biological-culture observations. Technical replicates and shared reference cultures cannot repair this claim."
+    },
+    {
+      "quantity_id": "hackett_Cdc19_in_vitro_initial_activity",
+      "status": "UNVERIFIED",
+      "classification": "Direct/coupled experimental reaction-progress measurements with blank-subtracted fitted initial slopes; not the SIMMER kinetic fit",
+      "sources": ["H_METHODS:#S44-#S46"],
+      "measurement_definition_status": "PASS",
+      "protein": "N-terminal His-tagged S. cerevisiae Cdc19 obtained via the cited Xu 2012 preparation; affinity purification and SDS-PAGE are described. Exact prior construct/preparation lineage and active-site concentration remain unverified.",
+      "assay_temperature_C": 30,
+      "assay_pH": 7.5,
+      "assay_context": "Tris/MgCl2/KCl buffer with PEP and ADP; NADH/LDH-coupled 340-nm readout and a separate direct 232-nm PEP-to-pyruvate readout. Reaction progress recorded for one hour; initial slopes and enzyme-free blanks, not a one-hour endpoint relabeled as an initial rate.",
+      "source_readout_units": "Absorbance versus time; rate derivation needs assay geometry/extinction/path length and enzyme dose where applicable.",
+      "intrinsic_kcat": null,
+      "root_cause": "No original assay table, plate/well/preparation IDs, replicate lineage, raw rate units or uncertainty records were obtained. Six independent matched preparations are not established. Purified tagged protein in assay buffer is not identical to the native chemostat intracellular context.",
+      "selection_history": "#S44 explicitly says these assays tested predictions selected by the original authors. Reusing known assay-supported targets/hypotheses is replication, not blind new discovery."
+    },
+    {
+      "quantity_id": "SIMMER_kinetic_constants_predictions_and_reaction_forms_as_truth",
+      "status": "FAIL",
+      "classification": "Authors' inferred kinetic parameters, selected model forms and predictions",
+      "sources": ["H_CODE:inst/doc/MCMC_NNLS.Rmd:22-24,45-66", "H_CODE:R/MCMC_NNLS_functions.R:10-54,442-466", "H_METHODS:#S31,#S44"],
+      "root_cause": "Embedded omics, model-inferred FVA targets, fitting and prior/model selection are upstream dependencies. The authors also selected some condition subsets using observed data. No fitted parameter, inferred flux midpoint, selected regulator, or best-fit curve is an independent label for a new law learner."
+    },
+    {
+      "quantity_id": "smallbone2013_original_initial_rates_versus_fitted_turnover",
+      "status": "UNVERIFIED",
+      "classification": "Initial absorbance slopes are derived assay measurements; fitted kcat/Km or model predictions are inferred summaries, not those original observations",
+      "sources": ["A_SMALLBONE_METHODS:#s0015-#s0025"],
+      "measurement_definition_status": "PASS",
+      "assay_temperature_C": 30,
+      "assay_pH": null,
+      "raw_readout_unit": "Absorbance at 340 nm versus time; quantitative rate-unit adapter not established",
+      "enzyme_amount_basis": "BCA-estimated total purified tagged preparation, not active-site titration",
+      "fitted_parameters_as_ground_truth_status": "FAIL",
+      "root_cause": "No source-bound raw initial-rate/timecourse table, independent preparation IDs or matched FY-culture support exists in this review. Technical duplicates do not establish biological replication. The underlying omics culture is BY4743-derived and nutrient unlimited. This is not an eligible replacement for the registered Hackett intracellular-flux label."
+    },
+    {
+      "quantity_id": "vaneunen2012_extract_activity_and_glucose_uptake",
+      "status": "UNVERIFIED",
+      "classification": "Cell-free-extract NAD(P)H-linked activity and separate original short-interval glucose uptake; fitted transport kinetics are inferred, not raw uptake",
+      "sources": ["A_VANEUNEN_METHODS:#s4a-#s4c"],
+      "measurement_definition_status": "PASS",
+      "assay_temperature_C": 30,
+      "assay_pH": null,
+      "culture": "CEN.PK113-7D, defined mineral medium, glucose-limited and nitrogen-starvation contexts",
+      "intrinsic_kcat_from_extract_status": "FAIL",
+      "fitted_transport_parameters_as_raw_observations_status": "FAIL",
+      "root_cause": "Mixed extract does not identify an enzyme-specific active amount. Original replicate-level activity/uptake records, the exact denominator and uncertainty remain unverified, and this strain/starvation context is not matched Hackett FY support."
+    },
+    {
+      "quantity_id": "granados_median_max5_and_nucLoc_measurement_semantics",
+      "status": "PASS",
+      "classification": "Image-derived intensity summaries and their dimensionless ratio, not an absolute protein or phosphorylation measurement",
+      "sources": ["G_README:29-47", "G_SI:1.2.3,p.4", "G_FIG1", "G_FIG2_RAW", "G_FIG3"],
+      "raw_intensity_units": "Uncalibrated instrument intensity units; absolute photons or molecular counts not established.",
+      "nucLoc_units": "Dimensionless max5/median",
+      "biological_mapping_status": "UNVERIFIED",
+      "root_cause": "The ratio measures spatial concentration of GFP signal under the documented segmentation/projection procedure. It is not an absolute nuclear fraction, and valid positive denominators and per-row quality have not been inspected in this metadata-only review."
+    },
+    {
+      "quantity_id": "granados_nucLocNorm_as_the_registered_raw_observable",
+      "status": "FAIL",
+      "classification": "Response-derived per-experiment normalization, not an identity/unit adapter",
+      "sources": ["G_README:42-43,75-83", "G_SI:3.1,p.6", "G_CODE:normMeanOffset.m:7-10", "G_CODE:filterCellsByNucLoc.m:29-35,56-64", "G_FIG2_NORM"],
+      "published_transform_class_status": "PASS",
+      "exact_deposited_array_derivation_status": "UNVERIFIED",
+      "root_cause": "The published transformation estimates an offset and scale from heldout-experiment pre-stress response measurements. The current identity-transform protocol does not permit this as a fixed unit conversion. The example code's SD/window convention differs from a naive pooled-SD reading, and interpolation/filtering/export lineage is incomplete.",
+      "important_correction": "Primary SI does not support alleging future-peak or whole-trace min-max normalization. The verified problem is per-experiment pre-stress normalization and unresolved exact export lineage.",
+      "noninvertibility_evidence": "The deposited normalized Sfp1 rep1 has shape 164x96 while its documented raw counterpart is 158x97; normalization constants, row identities and raw replicate-2 intensities are not present."
+    },
+    {
+      "quantity_id": "granados_Hog1_phosphorylation_kinase_activity_flux_or_absolute_protein",
+      "status": "FAIL",
+      "classification": "Unmeasured quantities incorrectly substituted for a localization proxy",
+      "sources": ["G_README:39-47", "G_SI:1.2.3,p.4"],
+      "root_cause": "No phospho-specific assay, active-enzyme calibration, metabolite/product flux assay or absolute protein calibration is supplied by these imaging summaries. A [0,1] phosphorylation bound is inappropriate for max5/median."
+    },
+    {
+      "quantity_id": "granados_nuclear_marker_support",
+      "status": "FAIL",
+      "classification": "GFP target intensities in regions segmented using an additional Nhp6A-mCherry marker; empirical localization support, not an independent protein-activity assay",
+      "sources": ["G_README:100-111", "G_SI:1.1,1.2.3,pp.3-4", "G_MARKER"],
+      "assay_definition_status": "PASS",
+      "assay_temperature_C": 30,
+      "assay_pH": null,
+      "medium": "SC, glucose downshift to 0.1% as documented",
+      "root_cause": "The current projection does not establish six independent matched Sfp1 support acquisitions, uncertainty, original masks or disjoint original movie/day IDs. The same GFP pixels contribute to different summaries; the mCherry marker adds a spatial reference, not independent catalytic information.",
+      "source_history": "These experiments were used by the original authors to choose/validate adoption of the proxy. Reusing that published justification is not a blind independent discovery test. A separately acquired support experiment could be useful only with its own verified lineage and a prefrozen adapter."
+    },
+    {
+      "quantity_id": "granados_times_origin_and_acquisition_clock",
+      "status": "UNVERIFIED",
+      "classification": "Stimulus-relative acquisition metadata, not a verified absolute-clock intervention design",
+      "sources": ["G_README:44-45,151-160", "G_SI:1.2.1-1.2.4,3.1", "G_CODE:example_script.m:40-70", "G_FIG1", "G_FIG2_NORM"],
+      "verified_nominal_time_unit": "minutes; nominal imaging interval 2.5 minutes",
+      "origin_semantics": "Deposited origin is an integer; the authors' example uses it as an array transition index. Do not subtract that integer as though it were a physical time in minutes from times already relative to the switch.",
+      "root_cause": "Actual per-group time vectors, absolute start timestamps, device/day IDs, and independent crossing of acquisition clock with stimulus are not source-bound here. Normalized replicate files omit times entirely. The protocol's crossed-clock requirement cannot be established from a simulation replay or array column index."
+    },
+    {
+      "quantity_id": "Alcaino_CrtE_mixed_extract_activity_definition",
+      "status": "PASS",
+      "classification": "Direct radiolabeled product assay expressed as an extract-normalized average activity, not purified-enzyme kcat",
+      "sources": ["F_CRTE_METHODS:#s2i-#s2k,Table3_header_and_footnote"],
+      "assay_temperature_C": 22,
+      "assay_pH": null,
+      "pH_note": "E. coli extraction buffer is MOPS pH 7.5; the activity recipe does not explicitly state assay pH. These are not interchangeable facts.",
+      "duration_minutes": 60,
+      "denominator": "Total soluble protein extract, not quantified active CrtE",
+      "unit_definition": "One U is one micromole product per minute; Table 3 displays (U/mg)*10^6. Scaling the printed unit does not create an enzyme-specific denominator.",
+      "replication": "Two independent culture extracts, two assays per extract; four assays are not four biological cultures.",
+      "root_cause": "The assay supports reaction identity and a reported extract-level activity. Intrinsic turnover, initial-rate linearity, active fraction and target-host enzyme abundance are not established. The subsequent 37 C acid hydrolysis is not the enzyme assay temperature."
+    },
+    {
+      "quantity_id": "fungal_extract_rate_or_gene_copy_as_target_kcat_capacity",
+      "status": "FAIL",
+      "classification": "Unjustified cross-host/denominator transfer",
+      "sources": ["F_CRTE_METHODS:#s2i-#s2k", "data/biochemical_evidence/enzyme_activity_sources.json:239-273"],
+      "target_kcat": null,
+      "target_active_abundance": null,
+      "root_cause": "Mixed E. coli extract activity, protein size and gene copy count do not determine active fungal enzyme mass or target-strain in-vivo capacity. No strain/sequence, promoter, compartment or active-fraction equivalence was established."
+    },
+    {
+      "quantity_id": "fungal_Western_GeLCMS_as_absolute_active_abundance",
+      "status": "FAIL",
+      "classification": "Protein detection/identification in another expression system, not active-enzyme quantification",
+      "sources": ["F_PROTEIN_METHODS:2.2,2.6,2.7"],
+      "experimental_background": "BY4741-derived yHR21 strains",
+      "root_cause": "OD-normalized denatured lysates, Western detection and peptide identification do not provide calibrated target active-enzyme mass. The CEN.PK113-7D database used for peptide searching is not the experimental strain. Denaturation/digestion temperatures are not transferable catalytic assay conditions."
+    },
+    {
+      "quantity_id": "fungal_CrtI_redox_partner_and_target_CrtE_CrtYB_CrtI_kinetics",
+      "status": "UNVERIFIED",
+      "classification": "Unresolved biochemical facts",
+      "sources": ["data/biochemical_evidence/enzyme_activity_sources.json:294-390,435-448"],
+      "independently_reverified_in_this_review": false,
+      "root_cause": "The current native-law sources do not establish these facts. Prior abstract-only or automated-annotation statements, inaccessible primary bodies, bacterial comparators and copied metadata cannot upgrade the missing fungal measurements. No redox partner, active abundance, kcat or Km is supplied or selected."
+    }
+  ],
+  "verified_overlap_and_source_history": {
+    "granados_exact_copy": {
+      "status": "PASS",
+      "github_file": "swainlab/mi-by-decoding/matlab/ExampleScript/fig1_sfp1_replicates.json",
+      "repository_bitstream": "1b38366b-7473-4ddf-9cf9-26e625533686",
+      "shared_file_sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+      "interpretation": "A byte-identical mirror, not an additional study or replication."
+    },
+    "granados_exact_group_alias": {
+      "status": "PASS",
+      "members": ["G_FIG1:/rep6", "G_FIG2_RAW:/sfp1/gluc"],
+      "canonical_complete_group_sha256": "eeda7f045feade0a2886236e344077a390c324f38380abb413871e6caf880e72",
+      "method": "SHA256 of UTF-8 json.dumps(complete_group, sort_keys=True, separators=(',', ':'), ensure_ascii=False, allow_nan=False), including channels, origin and times. No response statistics calculated.",
+      "required_transitive_member": "G_FIG2_NORM:/sfp1/gluc/rep1, from the original README's same-experiment declaration, despite different shape and preprocessing."
+    },
+    "granados_all_figure2_rep1_aliases": {
+      "status": "PASS",
+      "coordinates": "G_README:61-83; raw inventories contain all ten factors and all three stresses",
+      "rule": "For every actual factor/stress key, fig2_stress_type_expts/{factor}/{stress} and fig2_stress_type_replicates/{factor}/{stress}/rep1 are one experiment component. This declaration is primary-source provenance, not a guess from similar names."
+    },
+    "other_custodian_reported_aliases": {
+      "status": "UNVERIFIED",
+      "coordinates": "data/native_law_v2/granados/overlap_audit.json:130-153",
+      "scope": "Six further cross-figure raw-triplet equality groups are reported by the custodian. Their individual group hashes were not independently recomputed in this review. They must not be treated as independent pending corroboration; none is needed to derive the Sfp1-carbon insufficiency below."
+    },
+    "biological_unit_rules": [
+      "Random cells, time points, channels, technical extracts and repeated injections are not independent biological replicates.",
+      "Different shapes or unequal hashes cannot prove independence: cropping, segmentation, filtering or normalization can change a representation of the same experiment.",
+      "Shared five-chamber Granados device/media delivery, day/batch and movie dependencies need original acquisition identifiers. A factor-specific array is not a verified independent device run.",
+      "Hackett/Boer per-condition technical repeats, shared isotope-reference pools and date-matched metabolomics references require a calibration/dependency graph and correlated-error accounting. Do not assume 25 independent joint same-culture triplets.",
+      "A new split does not erase earlier source-template, feature, normalization, hypothesis or upstream calibration exposure."
+    ],
+    "inherited_calibration": {
+      "status": "UNVERIFIED",
+      "verified_procedures": ["Y_GAM_CODE:fitGAM.m reads and fits van Hoek observations; modelCorrections.m attributes biomass/GAM and NGAM settings to prior source studies.", "scripts/gecko/build_ecyeastgem.m:51-64 uses predicted/database-matched and selected kcats, then growth-directed sensitivity tuning; no execution or score comparison performed here."],
+      "unclosed_leaves": ["Exact build/execution lineage of the frozen ecModel", "Whether the named Hackett/Boer assays entered the exact BRENDA/SABIO-RK/DLKcat/GECKO ancestors", "Original Granados movie/date and preprocessing/export records", "All source-template/hypothesis/normalization exposure of a prospective learner", "Externally anchored complete access and selection history"],
+      "interpretation": "Do not claim no overlap merely because an exact overlap has not been proved. Conversely, the verified van Hoek upstream fit does not prove every Hackett or Granados observation was used in every frozen model."
+    },
+    "published_hypothesis_and_assay_history": {
+      "status": "PASS",
+      "evidence": ["H_METHODS:#S44 explicitly describes prediction-selected in-vitro tests.", "G_SI:1.2.3 explicitly describes using nuclear-marker results to adopt the proxy for other experiments.", "G_SI:3.1 and G_CODE show experiment-level response normalization; B_METHODS shows shared references and all-condition heat-map centering."],
+      "required_claim_label": "Replication or prospective testing of a previously selected hypothesis/observable, not blind novel discovery. Separate acquisition alone does not undo published assay-based selection history."
+    }
+  },
+  "dataset_projection_reviews": [
+    {
+      "projection_id": "hackett2016_cdc19_flux_response",
+      "status": "FAIL",
+      "protocol_coordinates": "protocol.json:8,12,17-24,64,69,75-79,87-89; claim_domain.json:7-21",
+      "root_causes": [
+        "The registered pyruvate-kinase flux label is model inferred, violating the explicitly excluded FBA/teacher-label case.",
+        "Substrate metabolomics and proteomics/fluxomics are from different biological culture sets, not a measured same-culture joint triplet.",
+        "Exact canonical dry-mass flux conversion, isozyme attribution, direct activity assay groups, assay/context equivalence and uncertainty remain unverified.",
+        "Original culture/day/calibration dependencies and upstream source exposure are not closed."
+      ],
+      "allowed_action": "Keep the learner allowlist empty. A genuinely measured boundary-exchange or in-vitro activity task would be a different, newly registered projection, not a relabeling of this candidate. No such replacement is selected here."
+    },
+    {
+      "projection_id": "granados2018_sfp1_carbon_localization",
+      "status": "FAIL",
+      "protocol_coordinates": "protocol.json:17-22,37,64,69,75-79; claim_domain.json:23-37",
+      "metadata_only_group_accounting": {
+        "fig1_named_raw_groups": 6,
+        "additional_fig2_raw_carbon_groups_after_exact_alias": 0,
+        "fig3_named_raw_carbon_groups_before_unresolved_dependencies": 4,
+        "upper_bound_raw_target_components_from_named_groups": 10,
+        "bound_is_not_a_certificate_of_ten_independent_groups": true,
+        "split_rule_final_groups_at_upper_bound": 6,
+        "split_rule_development_groups_at_upper_bound": 2,
+        "maximum_remaining_training_groups": 2,
+        "required_training_groups": 3,
+        "named_matched_support_groups": 1,
+        "required_independent_support_groups": 6,
+        "named_matched_sham_groups": 1,
+        "required_independent_sham_groups": 2,
+        "two_colour_sfp1_groups": 0
+      },
+      "root_causes": [
+        "Even the generous named-group upper bound fails the frozen split rule before unknown overlaps reduce it further.",
+        "Normalized replicate 2 cannot substitute for missing raw-proxy groups. Even adding that one group hypothetically would not repair the frozen rounding rule or the support/sham deficits.",
+        "The marker and sham projections do not identify the required independent Sfp1 biological groups; other factors or random cells cannot supply them.",
+        "Full reporter genotype, original device/day/movie/cell identifiers, exact deposited normalization pipeline, actual time axes and crossed acquisition/input schedules remain unresolved."
+      ],
+      "allowed_action": "No fit or export. Obtain additional genuinely independent source-identified matched experiments if this protocol is to be attempted; do not reduce group minima or reinterpret other strains/cells/copies to produce readiness."
+    },
+    {
+      "projection_id": "smallbone2013_assay_specific_alternative",
+      "status": "UNVERIFIED",
+      "sources": ["A_SMALLBONE_METHODS", "data/native_law_v2/biochemical/activity_alternatives.json:10-60"],
+      "as_replacement_for_registered_Hackett_candidate": "FAIL",
+      "root_cause": "Genuine purified-preparation initial-rate assays are described, but accessible fitted parameter summaries are not raw response records. Preparation-level replication, raw records, exact adapter, ancestral database exposure and context matching are unresolved.",
+      "allowed_action": "Metadata investigation only; any different assay-specific target requires a new appropriate preregistration. No replacement or parameter is selected here."
+    },
+    {
+      "projection_id": "vaneunen2012_extract_or_transport_alternative",
+      "status": "UNVERIFIED",
+      "sources": ["A_VANEUNEN_METHODS", "data/native_law_v2/biochemical/activity_alternatives.json:63-133"],
+      "as_replacement_for_registered_Hackett_candidate": "FAIL",
+      "root_cause": "Extract-level activity or directly assayed transport could support a narrower new task, but not intrinsic active-enzyme kcat or the current native intracellular-flux candidate. Raw assay/preparation identities, units, uncertainty and independent groups remain unverified.",
+      "allowed_action": "Metadata investigation only; do not hand a mixed supplement or fitted kinetic table to a learner as new measurements."
+    },
+    {
+      "projection_id": "source_only_measurement_dictionary",
+      "status": "PASS",
+      "scope": "The verified measurement definitions, input conditions, source hashes and exact-copy findings in this review may be used as provenance metadata.",
+      "not_authorized": ["Numerical response export", "New model fitting", "Claiming independent validation", "Selecting fitted parameters", "Assigning new train/development/final/support roles"]
+    }
+  ],
+  "catalogue_and_manifest_assessment": {
+    "biochemical_catalogue": {
+      "status": "UNVERIFIED",
+      "no_export_decision_status": "PASS",
+      "final_snapshot_state": "metadata_verified_current_flux_candidate_ineligible_no_measurements_exported",
+      "correctly_conservative_claims": ["Internal FBA/FVA and SIMMER fits excluded as labels", "Relative protein not active enzyme", "Prior metabolomics culture separated", "Raw activity and unit/adapter gates remain closed", "No silent replacement by an exchange or alternative activity task"],
+      "updates_reconciled": ["Per-analyte boundary observations versus constructed oxygen and biomass assumptions", "Relative protein normalization and imputation caveat", "Boer source cultures and shared-reference/centering history", "Pinned author-code/data digests", "Current Cdc19 candidate explicitly ineligible"],
+      "remaining_independent_review_limits": ["RData object schemas and NMR dates were supplied by the custodian but not independently deserialized here", "Boer workbook cells/units were not independently parsed, although both primary text-table headers/hashes and Methods were checked", "Alternative primary Methods were checked; raw activity/preparation records and exact alternative supplement table cells remain unverified", "Exact measured units, assay-group lineage, imputation masks and ancestral exposure are still not a complete approved projection"],
+      "limit": "The final 181-line catalogue, including its later metadata-validation notes, was reconciled after the first in-progress snapshot. Its refusal is source-supported, but the catalogue's claims of completed raw-object parsing are not a substitute for a second independent parser/code audit."
+    },
+    "granados_manifest": {
+      "status": "UNVERIFIED",
+      "no_export_decision_status": "PASS",
+      "final_snapshot_state": "metadata_schema_verified_ineligible_current_protocol",
+      "verified_independently": ["Repository item/bundle/README identities and hashes", "All seven raw file hashes and structural hierarchies", "Unnormalized proxy definition and documented media/30 C imaging conditions", "Published pre-stress normalization class", "Documented figure-2 rep1 overlap", "Exact figure-1 rep6 overlap and GitHub mirror", "Missing Sfp1 in the two-colour file and support/sham group insufficiency"],
+      "updates_reconciled": ["The manifest now explicitly refuses fitting/export and keeps every group reserved", "It correctly rejects future-peak/min-max allegations in favor of the published pre-stress normalization", "It retains uncertainty about full genotypes, original experiment identifiers, clock crossing and calibration"],
+      "remaining_independent_review_limits": ["The exact deposited normalized-array exporter is not identified; the authors' example code provides additional SD/window and filtering cautions", "Six other custodian-reported cross-figure aliases were not individually rehashed by this reviewer", "No positive independent-group or external preregistration authorization follows from metadata completeness"]
+    },
+    "protocol": {
+      "status": "PASS",
+      "scope": "As a rule set, it correctly refuses inferred-only labels, cellwise pseudoreplication, inherited exposure and missing support; the named candidates fail those existing gates.",
+      "registration_authority_status": "UNVERIFIED",
+      "reason": "An externally anchored preregistration/access ledger was not supplied to this source reviewer. A local hash or status string is not that evidence. No scientific threshold or candidate definition was changed."
+    }
+  },
+  "access_and_evidence_blockers": [
+    {
+      "id": "A_H_XML",
+      "status": "UNVERIFIED",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5414049/fullTextXML",
+      "observed_http_status": 404,
+      "observed_bytes": 0,
+      "observed_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "disposition": "Public PMC HTML Methods were accessible separately. XML API failure does not imply the paper is absent."
+    },
+    {
+      "id": "A_H_SUPPLEMENT",
+      "status": "UNVERIFIED",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/5414049/bin/NIHMS846973-supplement-supplement_1.pdf",
+      "observed_http_status": 200,
+      "observed_bytes": 21376,
+      "observed_body_sha256": "f5fb310d5cd732d5e891f05fc7ad6fecf2728fa022fd4580904d8358026ea297",
+      "observed_signature": "HTML beginning <!doc, not %PDF",
+      "root_cause": "Normal linked request did not provide the PDF body. No bypass attempted.",
+      "disposition": "Exact original in-vitro data tables/assay IDs and Table S9 per-quantity provenance remain unverified. This review does not claim those files do not exist or can never be accessed."
+    },
+    {
+      "id": "A_H_BINARY",
+      "status": "UNVERIFIED",
+      "source": "H_CODE:boundaryFluxes.Rdata",
+      "root_cause": "The binary source was located and hashed but not deserialized by this reviewer. Rscript was not available on PATH; no dependencies were installed. The custodian later supplied a passive typed-parser schema and specimen/date metadata in biochemical/hackett2016_metadata.json:75-175. That new parser/schema has not been independently audited here, so this is a reviewer verification limit, not a claim that the source is inaccessible. Code-visible or copied field names are not substituted for independent raw-object verification."
+    },
+    {
+      "id": "A_G_XML",
+      "status": "UNVERIFIED",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6003323/fullTextXML",
+      "observed_http_status": 404,
+      "observed_bytes": 0,
+      "disposition": "Resolved for Methods by the primary authors' public Supporting Information, not by treating the API 404 as paper unavailability."
+    },
+    {
+      "id": "A_G_PMC_SUPPLEMENT",
+      "status": "UNVERIFIED",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/6003323/bin/pnas.1716659115.sapp.pdf",
+      "observed_http_status": 200,
+      "observed_bytes": 21338,
+      "observed_body_sha256": "d2f03b1c94210d5227e2fad28892275f4a5b5762595f96ad783d075eef42edb0",
+      "observed_signature": "HTML beginning <!doc, not %PDF",
+      "disposition": "Primary SI accessed normally via G_SI author-hosted PDF. Do not assert byte equality with the custodian's separate PMC PDF without a comparison."
+    },
+    {
+      "id": "A_IDENTITIES_AND_CALIBRATION",
+      "status": "UNVERIFIED",
+      "root_cause": "Original culture/movie/date/device/cell identifiers, exact reporter genotypes, complete calibration and normalization exporter records, matched independent activity/marker/sham acquisitions, and a closed upstream exposure graph were not established. These are missing experimental evidence, not a problem solvable by copied metadata or a permissive schema."
+    }
+  ],
+  "critical_findings_notified_before_final": [
+    {"finding_id": "PV-001", "status": "FAIL", "finding": "Figure-2 raw and normalized rep1 are the same experiment; cells are not independent biological replicates."},
+    {"finding_id": "PV-002", "status": "FAIL", "finding": "SIMMER internal flux and kinetic fitting code supplies inferred targets, not experimental ground truth."},
+    {"finding_id": "PV-003", "status": "FAIL", "finding": "Published Granados pre-stress experiment normalization, shared devices and prior marker-based proxy selection preclude a blind fixed-calibration interpretation."},
+    {"finding_id": "PV-004", "status": "FAIL", "finding": "Exact complete-group equality links figure-1 rep6 and figure-2 Sfp1/glucose; the GitHub figure-1 file is an exact mirror."},
+    {"finding_id": "PV-005", "status": "FAIL", "finding": "Boundary flux packaging includes constructed oxygen, free CO2 and assumed biomass/maintenance constraints; analyte-specific lineage is mandatory."},
+    {"finding_id": "PV-006", "status": "FAIL", "finding": "The Sfp1-carbon inventory cannot satisfy the existing train/development/final/support/sham requirements."}
+  ],
+  "required_parent_actions": [
+    "Keep both learner measurement allowlists empty and do not issue a ready/validated label for these candidate projections.",
+    "Reconcile later custodian snapshots with this review's exact hashes, source coordinates, duplicate components and remaining unknowns; do not edit this review's findings into stronger claims without new primary evidence.",
+    "Preserve the distinction between public-paper-guided replication and blind novel discovery, including the original marker/assay-based selection history.",
+    "If pursuing the registered claims, obtain new or newly source-resolved independent matched experiments and exact experimental-unit/calibration records. Do not substitute unrelated strains, random cells, technical repeats, processed copies or inferred fluxes.",
+    "Resolve external registration/access authority and the closed inherited-dependency graph independently of the data custodian and model executor.",
+    "Record the procedural legacy-performance-text exposure noted above; no scores were used for this source decision and none are included here."
+  ],
+  "changes_and_commands": {
+    "files_created": ["data/native_law_v2/provenance_review.json"],
+    "existing_files_edited": [],
+    "command_classes_run": [
+      "pwd/date/command -v/ls for location, environment and read-only capability checks",
+      "Bounded curl HTTP retrievals and Python standard-library in-memory JSON/XML/HTML parsing and checksumming",
+      "pdftotext -layout with PDF bytes on stdin and text on stdout; no downloaded source file written by this reviewer",
+      "gh search repos and gh api for primary author repositories, exact refs/trees/blobs and source-header checks",
+      "Read-only git hash-object --no-filters, git diff --check and git status for local snapshot identity and owned-path checks",
+      "jq -e structural validation of the review JSON; native plutil -lint was also attempted but did not recognize this JSON format"
+    ],
+    "artifact_validation": {
+      "status": "PASS",
+      "validator": "jq -e",
+      "checks": ["Valid JSON object", "FAIL decision and no learner release", "20 quantity reviews with PASS/FAIL/UNVERIFIED verdicts", "5 dataset projections", "14 primary-source records with unique IDs", "7 raw Granados assets", "Recorded SHA256 fields contain 64 hexadecimal characters"],
+      "not_scientific_validation": true,
+      "initial_validator_issue": "plutil -lint rejected the leading JSON brace; a JSON-aware jq parse and assertions then passed. No report content was changed to relax scientific criteria."
+    },
+    "authors_analysis_code_executed": false,
+    "models_or_tests_fit_or_scored": false,
+    "new_dependencies_or_authentication_changes": false
+  }
+}

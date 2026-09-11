@@ -1,0 +1,123 @@
+[build-system]
+requires = ["setuptools==82.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ystwin"
+version = "0.1.0"
+description = "Growth-corrected promoter activity from reporter and optical-density time series"
+requires-python = ">=3.11"
+
+# Pinned exactly, and deliberately. This project reports FBA and FVA fluxes to three or
+# four decimals and chooses latent dimensions by comparing scores that differ in the third:
+# a cobrapy minor release that changes how a model is built or which optlang solver
+# interface it picks moves those digits, and a numpy or scipy release that changes an
+# SVD's sign convention or a least-squares tie-break moves the others. A range would let
+# `pip install -e .` produce numbers that disagree with the tables in outputs/ with nothing
+# to point at. These are the versions the committed results were produced with.
+#
+# cobra 0.32.1 solves through optlang's GLPK interface here (swiglpk 5.0.13); CPLEX,
+# Gurobi and HiGHS are all absent. GLPK is the slowest of them and the only one whose
+# availability is guaranteed by cobra's own dependencies, so it is the reproducible
+# choice. Installing a commercial solver changes which optimum a degenerate LP returns --
+# the FVA widths in outputs/d1_capacity_sweep_ec.csv are the ones GLPK reports.
+dependencies = [
+  "numpy==2.4.1",
+  "scipy==1.17.0",
+  "pandas==2.3.3",
+  "openpyxl==3.1.2",
+  "cobra==0.32.1",
+  "optlang==1.9.1",
+  "swiglpk==5.0.13",
+  "sympy==1.14.0",
+  "xlrd==2.0.2",
+  "python-libsbml==5.21.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.0.2",
+    "matplotlib==3.10.8",
+    "ruff==0.15.22",
+    "olefile==0.47",
+    "PyYAML==6.0.3",
+    "jsonschema==4.26.0",
+]
+# The thermodynamic bridge only. pytfa is pinned hardest of all: 0.9.1 clears
+# MetaboliteThermo.__dict__ inside __init__, which is why thermodynamic.py reads
+# `deltaGf_tr` rather than calling `calcDGis()`, and a release that fixes that would
+# silently return different formation energies. Tests skip when these are absent.
+thermo = [
+  "pytfa==0.9.1",
+  "setuptools==82.0.0",
+  "equilibrator-api==0.7.0",
+  "component-contribution==0.7.0",
+  "equilibrator-cache==0.7.1",
+]
+sbml-audit = [
+    "libroadrunner==2.10.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ystwin.quality]
+python-version = "3.14.2"
+extras = ["dev", "thermo", "sbml-audit"]
+
+# Public source checks require Octave for Zheng2016's MATLAB code and pdftotext
+# for Pincus2010's equations; source-only status is not permission to omit them.
+# These are system runtimes, not additions to the Python dependency lock.
+# Ubuntu 24.04 amd64 publication metadata and .deb availability verified 2026-09-08:
+# https://api.launchpad.net/1.0/ubuntu/+archive/primary/+binarypub/207539124
+# https://api.launchpad.net/1.0/ubuntu/+archive/primary/+binarypub/245160820
+# Linux quality runs enforce these upstream versions. Other local platforms must
+# still provide the tools, but report their actual versions without claiming this pin.
+[tool.ystwin.quality.source-runtimes.octave]
+linux-version = "8.4.0"
+ubuntu-package = "octave"
+ubuntu-package-version = "8.4.0-1build5"
+
+[tool.ystwin.quality.source-runtimes.pdftotext]
+linux-version = "24.02.0"
+ubuntu-package = "poppler-utils"
+ubuntu-package-version = "24.02.0-1ubuntu9.9"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Deliberately no -q here. It combines with the -q in the documented
+# invocation to give -qq, which suppresses the summary and the FAILED list,
+# and a red suite then reads as a wall of dots.
+addopts = "--strict-markers"
+filterwarnings = [
+  "error",
+  "ignore:datetime.datetime.utcnow:DeprecationWarning:openpyxl",
+]
+markers = [
+  "integration: touches real wet-lab data or the full GSMM (slow)",
+  "slow: long-running",
+  "private_data: optional original wet-lab exports; public measurements and models remain mandatory in CI",
+]
+
+# Lint. Pinned like everything else, and for the same kind of reason: a ruff release that
+# adds a rule turns a clean checkout red for a change nobody made, and one that drops a
+# rule stops checking something silently. This section exists because `.ruff_cache/` had
+# been in the working tree for weeks while `python3 -m ruff check` reported 41 findings
+# and nothing ran it -- among them five dead `_resolve` calls in `fba/` that made two
+# pathway installers refuse host models over cofactors they no longer used.
+#
+# The rule set is deliberately the default (E, F) rather than a large selection. The value
+# here is a gate that is always green and therefore means something when it is not; a
+# hundred style findings nobody intends to fix would train everyone to ignore the output,
+# which is the state this repository was already in.
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["archive"]
+
+[tool.ruff.lint]
+select = ["E", "F"]
+# E501 is off on purpose. This codebase is 31% docstring by line and several tables in
+# those docstrings do not wrap without becoming unreadable; `line-length` above is what
+# the formatter would aim for, not a hard gate. Every OTHER E and F rule is on.
+ignore = ["E501"]

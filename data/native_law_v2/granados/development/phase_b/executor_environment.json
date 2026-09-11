@@ -1,0 +1,58 @@
+{
+  "document_type": "pre_value_executor_implementation_freeze_not_a_fit",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "protocol_sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+  "original_implementation_path": "src/ystwin/analysis/native_population_development.py",
+  "original_implementation_sha256_at_freeze": "7755844db3d777fdec1c9f7fb8b4fc4168597e735182353b1c6efc5a13f3c787",
+  "frozen_implementation": {
+    "path": "data/native_law_v2/granados/development/phase_b/frozen_executor/native_population_development.py",
+    "sha256": "7755844db3d777fdec1c9f7fb8b4fc4168597e735182353b1c6efc5a13f3c787",
+    "bytes": 71949,
+    "role": "execution_code"
+  },
+  "versions": {
+    "python": "3.14.2",
+    "numpy": "2.4.1",
+    "scipy": "1.17.0"
+  },
+  "python_executable": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+  "optimizer_settings": {
+    "optimizer": "scipy.optimize.least_squares",
+    "method": "trf",
+    "jacobian": "analytic; derivative of the nonnegative map is zero at and below zero",
+    "x_scale": "jac",
+    "loss": "linear",
+    "ftol": 1e-10,
+    "xtol": 1e-10,
+    "gtol": 1e-10,
+    "max_nfev": 2000,
+    "loss_evaluation_accounting": "every residual invocation; analytic Jacobian calls are counted separately",
+    "prng": "numpy.random.Generator(numpy.random.PCG64(seed))",
+    "starts": 8,
+    "seeds": [
+      201801,
+      201802,
+      201803,
+      201804,
+      201805,
+      201806,
+      201807,
+      201808
+    ],
+    "reference_time_minutes": 60.0,
+    "output_map": "max(0, unbounded_mean) before fitting and scoring",
+    "within_family_selection": "finite successful minimum training MSE; numerical ties prefer lexicographic parameters then start index",
+    "tie_tolerance": "1e-12 * (1 + abs(best MSE))"
+  },
+  "canonical_model_ids": [
+    "prefix_persistence",
+    "training_constant",
+    "prefix_offset",
+    "prefix_affine_time",
+    "first_order_response",
+    "transient_response"
+  ],
+  "model_code_executed": false,
+  "model_fitting_or_scoring_performed": false,
+  "use_policy": "Execute this byte-bound implementation with these settings/versions. The editable original path is provenance only; it is not permission to change the frozen recipe after data release."
+}

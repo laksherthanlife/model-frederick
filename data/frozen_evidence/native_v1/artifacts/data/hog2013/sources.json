@@ -1,0 +1,193 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "data/hog2013/sources.json",
+    "sha256": "b005bc93e8dd50151f687e672948b0891637a4bacc51981c66349b8906eaafdf"
+  },
+  "payload": {
+    "assets": {
+      "glycerol_assays": {
+        "bytes": 215552,
+        "filename": "glycerol_assays.xls",
+        "kind": "excel",
+        "purpose": "Intracellular glycerol enzyme-assay measurements across strains and stresses.",
+        "resolved_url": "https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pcbi.1003084/1/pcbi.1003084.s005.xls?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=wombat-sa%40plos-prod.iam.gserviceaccount.com%2F20260907%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260907T032430Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=7bbd17e7b631f54f05246d7e76fa28248a46c637d97c29a26546052429341de63b8ef6af64d8e4dcc1dca6b6d92ddee992a1fea654418119ac210666a06a19f218f300472cee4d2724a2166ec205bbcb73e71b4bd511a30937cfdb0ade87283779c0865fdad31fcf512992edab540bffc787bdabea3a82068e2087e665e335e91321aecbd9b94d030db53753a5101cba85a962c9995ca44c6ebabe22ceb07dd1cfd5f72145cc2617bc8a4e371d6369abafffa63669f6e1ad23cee1ce6ada50f65ac8875964af37a15e352f663f00405cf35d4b59d1dbe9b5d821abf2349a78aa003c0c9c1cfc59ae3acda4149032fa5bba4b404afd13007fa46c4687697446c8",
+        "sha256": "6a280df3db499685108e294d2b3a7f26ebececeab37221193a1cbfa3c4330a94",
+        "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003084.s005&type=supplementary"
+      },
+      "methods": {
+        "bytes": 257003,
+        "filename": "methods.pdf",
+        "kind": "pdf",
+        "purpose": "Published methods, measurement processing, model equations and parameter-estimation protocol.",
+        "resolved_url": "https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pcbi.1003084/1/pcbi.1003084.s030.pdf?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=wombat-sa%40plos-prod.iam.gserviceaccount.com%2F20260907%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260907T031938Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=02664693e2518cce697fe148cc99732c70ca60d49998d9f7f9e001989cb8ad9b22ffea747c642a4bf221568c5efd3b68225daf6df9a1b98f467a9e871356781887a42a44394867ac0308f6c12a921ade682fe7fc5c98e78b289ff910c206a8fadf63cf92780c029229f49d3c34dfeba75ef8992699fad08cda07a639d69bc5cde181cc4227555663b6e8efd15979b8dbd42c3959a504dbf83e1d56a17d5dde573bf4ec2118b3d787f1ca79fa5b99b49f146e19274673e72986267fc16240518ab81ef05500fdafc06a203ff6f0260d811f53798c02bfef98c9cc77066ca47a5d49bd6127857fbc0a866a6b1147f9c5ba33074f7a0463c900147c0769894d86ec",
+        "sha256": "59c57d8816f5101dc5a6f2552df81eedecffe69e8d0e9848ffb9af5710c45344",
+        "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003084.s030&type=supplementary"
+      },
+      "model_fps1_open": {
+        "bytes": 178165,
+        "filename": "model_fps1_open.xml",
+        "kind": "sbml",
+        "model_id": "PetelenzKuehn_osmoadaptation_fps1D1",
+        "model_name": "PetelenzKuehn_osmoadaptation_fps1D1",
+        "parameters": 126,
+        "purpose": "Corrected FPS1-delta1 identity; includes an empirical time-dependent Hog1 deactivation term.",
+        "reactions": 58,
+        "resolved_url": "https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pcbi.1003663/1/pcbi.1003663.s003.xml?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=wombat-sa%40plos-prod.iam.gserviceaccount.com%2F20260907%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260907T031800Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=4ff6f529fc81cbf43cef31fa4da899c939b7c43ac43780ae2eb423140c6e55c49269cb11a491d27d53a4335305d0cb7bd0cb5ce290eec7533cd1c1103a0209f45a42d9df7534eff81f52f18a4263fa4ce17d642b8dddf53979e93895d7604f4f5e566aadc47e6504f5d57afcd6d549dbb8124dbdac0e44bd739a913d94e3acfe0ef449cf460f1e736afd6fa18f80510272ef79db4c8d88b351543d46a7035173d3157fc841e4eab2c8bc62385461dbfc195bcd6b0563f5e5a227978d7a6afe6144ef49b930c7caf05559742092c290fbb5a19fecddcd159a7487fd5fdb5378b63d7529bcc8827dcfdd464ba1919ec3ece96ae77b94301843f29ee33b67fd18a0",
+        "rules": 28,
+        "sbml_level": 2,
+        "sbml_version": 1,
+        "sha256": "6d3f086d01af56bc3ac81a8979f42432426cd1dfac638f6be1e738f0acc4b933",
+        "species": 29,
+        "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003663.s003&type=supplementary"
+      },
+      "model_gpd1_del": {
+        "bytes": 177673,
+        "filename": "model_gpd1_del.xml",
+        "kind": "sbml",
+        "model_id": "PetelenzKuehn_osmoadaptation_gpd1D",
+        "model_name": "PetelenzKuehn_osmoadaptation_gpd1D",
+        "parameters": 126,
+        "purpose": "Published gpd1 deletion model; inferred intracellular glycerol is not an independent measurement.",
+        "reactions": 58,
+        "resolved_url": "https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pcbi.1003084/1/pcbi.1003084.s027.xml?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=wombat-sa%40plos-prod.iam.gserviceaccount.com%2F20260906%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260906T230923Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=1396166f8262ddd44dae3978e8fc24d32d5053e58b044de86f10d9e5843290592532b9d8124f85fbbe452e815b4e398fe11ccbfac634e48733e8f024046d1dae820a0ad0251b8cd37a7af659fa6801291d2d448a10fff9de84b550cd739fbfc82e858cb94c927932a7d882017e4ff8b3ea802be8caa946767131dd31b73ec3383a560a185b6a04624a66f21de8e9b422889ca9b9e493bdfb7d6bdefe66a047199a398913da181586aac84a4e2adfa6373688ce3949b90fcfd24b8919c9ffa85b76dba4b6f7f6f3aeab763fcd46237246feb0c3f1f9123bde17641d69c53b731f80eb638246e073bf78f490f45c577fc747d3a465fb788d624e1800158ebfdf3b",
+        "rules": 28,
+        "sbml_level": 2,
+        "sbml_version": 1,
+        "sha256": "936fd47b886221612dbab59581af57f5342bb38203212ed2d0988265b249cd7d",
+        "species": 29,
+        "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003084.s027&type=supplementary"
+      },
+      "model_hog1_att": {
+        "bytes": 178409,
+        "filename": "model_hog1_att.xml",
+        "kind": "sbml",
+        "model_id": "PetelenzKuehn_osmoadaptation_HOG1att",
+        "model_name": "PetelenzKuehn_osmoadaptation_HOG1att",
+        "parameters": 126,
+        "purpose": "Corrected membrane-tethered Hog1 model identity; not an independent holdout of the published fit.",
+        "reactions": 58,
+        "resolved_url": "https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pcbi.1003663/1/pcbi.1003663.s002.xml?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=wombat-sa%40plos-prod.iam.gserviceaccount.com%2F20260907%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260907T031759Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=9f36f3095fb7b0e96b992f2d94d731b9af26c20e1fa105db0791885a06c2c1949a7effc6dac06ef9069c082a9a8c653214050785b201f74f0e8769c1b2825792ddc511510b0fd1d49a65387cf8464d720e48c274977efaf5017f47bb880fcf86858608438e70d3902dff6dbdad7bced46d36866e9d339b9491525c186757eaf250490708541dd60277b19493c3bf296af1cee4ad73a02438bdf43e291fee504a1ae0a0979ce36245507f99d11286afd59dd7c7f3f224210f6db69ccd953e47b986e7b646625e263f0b0fd2019e537682b36a8e339ddf77d45d9e84e68b55232fdfc997f8ae8f60baed9a69f218fbd282fa7a6f35fff1eb8930aa2d8430714d35",
+        "rules": 28,
+        "sbml_level": 2,
+        "sbml_version": 1,
+        "sha256": "89498eb09805e68c53270698a498b4ec8291dd9d5b351500009012bca14b1675",
+        "species": 29,
+        "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003663.s002&type=supplementary"
+      },
+      "model_hog1_del": {
+        "bytes": 176105,
+        "filename": "model_hog1_del.xml",
+        "kind": "sbml",
+        "model_id": "PetelenzKuehn_osmoadaptation_hog1D",
+        "model_name": "PetelenzKuehn_osmoadaptation_hog1D",
+        "parameters": 126,
+        "purpose": "Corrected hog1 deletion identity; includes an empirical time-dependent Fps1 reopening term.",
+        "reactions": 54,
+        "resolved_url": "https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pcbi.1003663/1/pcbi.1003663.s001.xml?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=wombat-sa%40plos-prod.iam.gserviceaccount.com%2F20260907%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260907T031758Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=00ed743701d9f68af6a743639167260dd5bbeb00c3c6c7aa054c3273ff07252413425791d3214d3a892516931d6e79d65901a896f8d97a26df74368f84db689ef44978b9845250118a304355059fe7b70b5d67570be97f56e2b05aea827f25364bdaea96fcffcce2d293c6838144fb73f10bbcff2def465bf4b8aa6dfe3402e0ea5fa38861405c27190e052d698293f985668a734d3b14cf67465b32e9c74d218fb35ed81e393db7aead10f2b20f8b3d143193d5ad19217d786cbd756c78a7227d50986381232d1c57d8aa0dfb0bc9108e94ada12d34b3d96ef35f032a15930ae33e7ff30c04b49038a0357c740bd6bb083ded5d9da88c59a8ed2061ec8e73f7",
+        "rules": 28,
+        "sbml_level": 2,
+        "sbml_version": 1,
+        "sha256": "c40b6aef69cd33fc263d1533f8f4bc853f4cb676f2d2bd3be48e649bd27dc491",
+        "species": 29,
+        "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003663.s001&type=supplementary"
+      },
+      "model_pfk2627_del": {
+        "bytes": 172809,
+        "filename": "model_pfk2627_del.xml",
+        "kind": "sbml",
+        "model_id": "PetelenzKuehn_osmoadaptation_pfk2627D",
+        "model_name": "PetelenzKuehn_osmoadaptation_pfk2627D",
+        "parameters": 126,
+        "purpose": "Published pfk26/27 deletion model; parameters participate in the authors' joint fit.",
+        "reactions": 54,
+        "resolved_url": "https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pcbi.1003084/1/pcbi.1003084.s024.xml?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=wombat-sa%40plos-prod.iam.gserviceaccount.com%2F20260906%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260906T190742Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=73d0ffe2dfbc057c35fe685ca68bb776cabec4f075301937c7f6a74237bf1d2d3af50df8f56ad24d9f19cc874f918ad73f1fe2aab80a791b37e39281e6a8eb6bf7eb8e88da5312cbeeb5a1281d174b9fd943f01fdd78b0928ea265810d4f681cb897f51d5556c3faca1f4bfa9ccf0135ad90cb29b412229b3d7f2229629ec374830c54d4ad2a75463071b793c7c4a69c4434b23107673732956aeaf6d01c9b96fdcc27353092474b23a297452cb34d15e760386293fadec4b201e0202a3044608732fb3f1ba7f3d55cb8c9e798aed7105e5cbf15cd2d9dea071b7d5bd3e74bb04a94869849603b5918ed0d4261566445c9a42ba6536c3a14bc1ffac62f65839a",
+        "rules": 28,
+        "sbml_level": 2,
+        "sbml_version": 1,
+        "sha256": "20cd023348ef294ff95dfd966ed540cc3f22f09710c609ab784969731583c8dd",
+        "species": 29,
+        "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003084.s024&type=supplementary"
+      },
+      "model_wt": {
+        "bytes": 178306,
+        "filename": "model_wt.xml",
+        "kind": "sbml",
+        "model_id": "PetelenzKuehn_osmoadaptation_WT",
+        "model_name": "PetelenzKuehn_osmoadaptation_WT",
+        "parameters": 126,
+        "purpose": "Published fitted wild-type kinetic model; imported structure/parameters are not independent validation.",
+        "reactions": 58,
+        "resolved_url": "https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pcbi.1003084/1/pcbi.1003084.s023.xml?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=wombat-sa%40plos-prod.iam.gserviceaccount.com%2F20260907%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260907T031051Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=69e9fbc2a7db2fc673b0fca4ae813ec83a64b1004990f85b3b488d084766232e26601302f7128b06863ad56d30fe5dcc0474248e7cb9c42789b4c284b5a3b8514d008804e2075efcfe50bafad9bf8224eb46a98092af2a4e822ee481cae6e0e35e993f00efc1c8283539ebc8ec2c0483f415c8b0ddaeb5e89ef8d3e2fa32c75a3978aa495d138c125efe49395852808a05779825431354256b4277d3fd18db598ee0b2d8ef27e55b23a87adaa023722c88d5cd05fbcf49255cd29b24414a4d9e4c211215ffed9bc58b9a4801b43edc27242ac0c9e9a799afe5b6f00fafd397c43065477e6414e25e8ac9f53616cbe092aeb487e4163df347286b6407136d366e",
+        "rules": 28,
+        "sbml_level": 2,
+        "sbml_version": 1,
+        "sha256": "7da99398c53185503022a4dc2ec54b7666280f4d461cf96a7ccc762d56963c19",
+        "species": 29,
+        "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003084.s023&type=supplementary"
+      },
+      "observations": {
+        "bytes": 198656,
+        "filename": "observations.xls",
+        "kind": "excel",
+        "purpose": "Experimental data as used in the authors' model fitting; not an independent test of the published parameter set.",
+        "resolved_url": "https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pcbi.1003084/1/pcbi.1003084.s002.xls?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=wombat-sa%40plos-prod.iam.gserviceaccount.com%2F20260907%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260907T031727Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=7f27e523d69e165791dce3e0f664fb2d11c0f02eeef72c558f904fd42881d52e16e2a476dd1b594f060e3c4d9ec0b0fbada3f50043db3499e1ffb8aa6bd35cc6344459e98a670cc7da694da0637f4aa9d3cf8415d9906bfe12565e6cf3417a528ac098a1827416781fdb3be53b363f057cf1204be9bbddcf8067cbd00f46132a1a02e8a75e185d968292ebb347e7680d86769657be56e86c8d812992c739c5cd6e6b137fbf72a6402af106488f9a772c69f628f149b6daa5d9add235a82a55e3fcc020dbeb08ecfd5b851469bfbf6c8e5541f2bbdefceeccf4452b0245312206038d161a43bbf93d1d79a024029bc0f8ab35e1b2b4d44047299fab25f02db494",
+        "sha256": "87854ff96bf22943f1347abdf5636e261ddfcdec041ea78fe498d62d924a967e",
+        "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003084.s002&type=supplementary"
+      },
+      "raw_metabolites": {
+        "bytes": 255488,
+        "filename": "raw_metabolites.xls",
+        "kind": "excel",
+        "purpose": "Raw and processed metabolite measurements; retain source distinctions before fitting.",
+        "resolved_url": "https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pcbi.1003084/1/pcbi.1003084.s001.xls?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=wombat-sa%40plos-prod.iam.gserviceaccount.com%2F20260907%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260907T032428Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=128b1bd0be9d1e7626e66e362a6dcf3e8269650e50a3bc185c5f58505bd338be3e058fcd5eea53d65fe3567e413a0fe048cc56a1e6db1e17b2265683e4e7484b4ba305512ee5e999c237619e5f95ea88b74bfbb309e13e692822199e12685d592b85ffe8fa82e19b0e856b04123ff7564b8f1de13ef685635ef028712120d41082018c292ecf34c6df1bd980beb331d6e13647231c343b602f3962f7c71ae30dc71746342fef9dd3cc36bb5d56300b5d7c4015e078d3ab46aa6c7846db5d54ba720aedb09d0fea0192e5d3328018aa07ecc44af17075467c91d56f99b1120300ada5902340cc481bf83a4fcfdf31a338601da107f174cc91118a9da52dfd1f72",
+        "sha256": "c653c8f4e996142ba403bd37d299986dbd94e14334a5c8f9bc8fe80e20fc829b",
+        "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003084.s001&type=supplementary"
+      },
+      "western_blots": {
+        "bytes": 91136,
+        "filename": "western_blots.xls",
+        "kind": "excel",
+        "purpose": "Western-blot measurements for strains and stress strengths; inspect normalization and fitting overlap.",
+        "resolved_url": "https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pcbi.1003084/1/pcbi.1003084.s004.xls?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=wombat-sa%40plos-prod.iam.gserviceaccount.com%2F20260907%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260907T031727Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=2841bc1c97eaba77f58209356c57be904b7d9181f66bfb79a1926ea0f9229a324ac49336769742caf0fb4839121c4adc90e74c26ca0cc32d51740b3d21ee9402db26f88468a82ba02a4904275042763ae31d9fab682b83d0f1aa5e99ad05eec035f18c1204a5a1926548a0b95811c1be0c2309e72d79de756ebf8675ad8a761cb469c75a29f3f3ecc93846307c721bd8979ef20a63bd861807b89c4dc9c4636e469b4d78db55cb14d5dc6e72d49cf8e2760e7820a0f74eef488eccf8054adb68d46c2ee8f9cc8ec3cdaaa3dfbcb351c9e0d154ba28620631434f066de4e9a22fa51f2908a9f62af34600e5be7b8921348c9eeb5637115ef21789401f39bd794e",
+        "sha256": "9fdb4e3a9b35fce549f5635adc17c5e511ea057dc429de7b808601d0d32d5ef6",
+        "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003084.s004&type=supplementary"
+      }
+    },
+    "correction": {
+      "doi": "10.1371/journal.pcbi.1003663",
+      "issue": "Original captions for mutant SBML supplements S3/S4/S6 were mismatched; use corrected artifacts and internal model identities.",
+      "pmcid": "PMC4036733"
+    },
+    "interpretation": [
+      "Published model parameters were fitted to experimental data; agreement with that fitting data is not independent validation.",
+      "Original artifacts are retained without numerical edits. Derived observation tables must retain assay, normalization, time and genotype provenance.",
+      "Intracellular glycerol retention and extracellular secretion are different observables."
+    ],
+    "license": {
+      "evidence": "License element in the primary article's Europe PMC fullTextXML, verified before acquisition.",
+      "id": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "publication": {
+      "authors": "Petelenz-Kurdziel et al.",
+      "doi": "10.1371/journal.pcbi.1003084",
+      "pmcid": "PMC3677637",
+      "pmid": "23762021",
+      "title": "Quantitative analysis of glycerol accumulation, glycolysis and growth under hyper osmotic stress",
+      "year": 2013
+    },
+    "schema_version": 1,
+    "source_assumptions": {
+      "evidence": "Primary Text S1, sections 2, 3 and 4",
+      "inferred_glycerol": "Intracellular glycerol for gpd1 deletion was inferred from other pools rather than directly measured; some wild-type repeats are also inferred.",
+      "metabolite_normalization": "Intracellular data were processed with a constant reference cell volume; source assignment rules map dynamic concentrations back to that measurement basis.",
+      "mutant_forcing": "FPS1-delta1 and hog1-deletion variants contain empirical time-dependent terms introduced to reproduce observations; these are not established molecular mechanisms.",
+      "optical_density": "The source model supplies a time-dependent OD fit and derives cell density from it; this is an experimental input, not a predicted growth law.",
+      "processed_hog1": "Processed Hog1PP values assume a wild-type phosphorylation peak of 90% of total Hog1; absolute activation fractions are therefore not independently measured.",
+      "published_fit": "A joint parameter set was estimated using wild type and multiple mutants; those mutants are not held out from the published parameters.",
+      "trehalose": "Trehalose data were excluded from the final parameter fit because the source model lacks its regulatory dynamics."
+    }
+  },
+  "schema_version": 1
+}

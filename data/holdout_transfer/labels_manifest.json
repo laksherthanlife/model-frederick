@@ -1,0 +1,24 @@
+{
+  "labels": [
+    {
+      "path": "data/holdout_transfer/labels.json",
+      "sha256": "1a8e6cd6171408594e4f99389aceb9dbedbd73214fa707da36dac06480c8dc2c",
+      "role": "outcome_labels",
+      "source": {
+        "authority": "Elizondo and Saa (2025) primary intracellular-carotenoid HPLC experiment and author-released raw measurements and measurement-summary workbooks",
+        "source_id": "holdout-transfer:elizondo2025:six-chemostats:lycopene-hplc-content-author-means:v1",
+        "reference": "Elizondo BR and Saa PA (2025), Complex Kinetic Models Predict beta-Carotene Production and Reveal Flux Limitations in Recombinant Saccharomyces cerevisiae Strains, ACS Synthetic Biology 14(9), DOI 10.1021/acssynbio.5c00256, PMC12455641, Methods 2.1.1-2.1.2 and 2.1.4, Supporting Information S4/Eq. S1. SysBioengLab/BcarGRASP@ec6f1290711fba8091e92c77da4a5684ff8cad4d: biomass_and_metabolites_data/MetabolitesMeasurements.xlsx, Lycopene!B2:G4 and Commentary!A2:A3; data_pre-processing/fluxes/output/MetabolitesProductionStatistics.xlsx, Lycopene!A2:F7; data_pre-processing/fluxes/output/BiomassMeasurementsStatistics.xlsx and data_pre-processing/fluxes/output/BiomassConversionsStatistics.xlsx, Statistics!A2:F7. Exact original cells, hashes, source replicate filtering, and normalization inputs are recorded in label_provenance.json.",
+        "scope": "heldout_outcomes",
+        "outcome_projection": "All six fixed conditions; intracellular lycopene measured by HPLC, normalized to dry-cell mass. This is an outcome-data projection, not the condition, chemistry, training, or model-prediction asset.",
+        "label_estimator": "Author mean extracted-lycopene concentration in mg/L of fermentation broth divided by (author mean OD600 times author measured (gDCW/L)/OD600 conversion factor). One ratio-of-author-means rule for all six; no Monte Carlo or kinetic-model output is used as a label.",
+        "provenance_path": "data/holdout_transfer/label_provenance.json",
+        "audit_qualifications": [
+          "These are measurement-derived intracellular-content estimates, not directly reported mg/gDW assays, point fermentation titres, gross biosynthetic fluxes, or model fits. Lycopene is an intermediate in the CrtE/CrtYB/CrtI beta-carotene pathway.",
+          "All six conditions are retained. Existing author replicate filtering is preserved; no new sample or condition exclusions, label variants, hypothesis selection, parameter fits, or performance comparisons were made.",
+          "An earlier condition curator accidentally saw rate values after model freeze; the incident values were not used or reproduced in condition curation or passed into estimator training/prediction. Independent input verification does not restore that curator's blindness. Fully blinded operator knowledge is not claimed.",
+          "Estimator training and all three predictions remain frozen and product-outcome-blind as authorized/reported. The label curator accessed outcomes only in the authorized scoring-data phase and did not inspect sealed prediction values. Hash equality verifies artifact integrity, not historical operator blindness."
+        ]
+      }
+    }
+  ]
+}

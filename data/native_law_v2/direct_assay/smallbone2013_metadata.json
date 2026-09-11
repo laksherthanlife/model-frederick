@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "lead_id": "smallbone2013_purified_glycolytic_assays",
+  "status": "real_experiments_verified_raw_records_not_verified_no_registration",
+  "primary_source": {
+    "title": "A model of yeast glycolysis based on a consistent kinetic characterisation of all its enzymes",
+    "authors_short": "Smallbone K, Messiha HL, Carroll KM, et al.",
+    "year": 2013,
+    "doi": "10.1016/j.febslet.2013.06.043",
+    "pmid": "23831062",
+    "pmcid": "PMC3764422",
+    "url": "https://europepmc.org/articles/PMC3764422",
+    "metadata_container": {
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3764422/fullTextXML",
+      "http_status": 200,
+      "bytes": 186478,
+      "sha256": "03224a1e5e75f5d6cec2648bdc3227cdbb208d700a210ed0e53338c84cc639a6",
+      "hash_scope": "Retrieved publication XML, not a raw assay file",
+      "stored_full_container_locally": false
+    }
+  },
+  "primary_evidence_locators": [
+    {
+      "locator": "Materials and methods / Enzyme production and purification",
+      "supports": "Yeast expression collections, tags, purification quality checks and protein quantification"
+    },
+    {
+      "locator": "XML sec s0020: Enzyme kinetic assays",
+      "supports": "Actual absorbance-based assays, substrate titrations, technical duplication, background controls and source fitting procedure"
+    },
+    {
+      "locator": "XML table-wrap t0010: Table 2",
+      "supports": "Published fitted parameter schema and isoenzyme labels only; numerical value/SEM cells not inspected"
+    },
+    {
+      "locator": "XML sec s0040: Modelling; Table 1",
+      "supports": "Iterative source-model construction and distinction between experiments and SBML/model outputs"
+    },
+    {
+      "locator": "XML supplementary-material m0005/media",
+      "supports": "A single distinct linked supplement, mmc1.pdf; repeated Associated Data link is not an extra data file"
+    },
+    {
+      "locator": "Reference b0205 (Swainston et al. 2010)",
+      "supports": "Cited KineticsWizard/raw-repository provenance lead, not proof all 2013 raw records were deposited"
+    }
+  ],
+  "experimental_authenticity": {
+    "directly_measured": true,
+    "signal": "Spectrophotometric NADH/NADPH consumption or production, directly or with coupling enzymes, at experimentally varied substrate concentrations",
+    "not_teacher_labels": "The experiments are described independently of the paper's downstream network model. SBML simulations, flux-control coefficients and model-predicted metabolite/flux values are not accepted as observations.",
+    "not_raw": "Table 2 parameters are reductions of these experiments through specified kinetic fits, not raw concentration-rate observations."
+  },
+  "enzyme_preparation": {
+    "sequence_species": "Saccharomyces cerevisiae",
+    "expression_host_species": "Saccharomyces cerevisiae",
+    "native_context_qualification": "Yeast-expressed tagged proteins, generally overexpressed or chromosomally tagged; purified in vitro, not intact-cell physiological rates or unmodified endogenous preparations.",
+    "collections": ["Yeast ORF/MORF collection", "Yeast GST-tagged collection", "Yeast TAP collection"],
+    "expression_control": "GAL1-inducible promoter for overexpression constructs; tag placement varied when required for enzyme function.",
+    "composition_checks": ["SDS-PAGE of intermediate and final preparations", "Agilent Bioanalyzer quality assessment"],
+    "protein_quantification_method": "QuantiPro BCA Assay Kit",
+    "actual_assay_enzyme_mass_or_molar_amount": null,
+    "amount_blocker": "A method for quantifying purified protein is documented, but no per-assay enzyme concentration was verified. The 5 microlitre enzyme addition is a volume, not an enzyme amount.",
+    "active_site_titration_or_active_fraction": null,
+    "special_case": "Pfk1 and Pfk2 were co-expressed and co-purified as the active heterooctamer after individual-subunit preparations proved unsuitable. The complex is one assay target, not two independent observations.",
+    "culture_preparation_lot_ids": null
+  },
+  "input_conditions_verified": {
+    "temperature_C": 30,
+    "pH": null,
+    "pH_status": "Not stated in the inspected main-text assay section; obtain the source-linked detailed protocol before use.",
+    "reaction_volume_uL": 60,
+    "plate_wells": 384,
+    "reagent_buffer_volume_uL": 45,
+    "enzyme_solution_addition_uL": 5,
+    "substrate_solution_addition_uL": 10,
+    "instrument": "BMG Labtech NOVOstar plate reader",
+    "detection_wavelength_nm": 340,
+    "extinction_coefficient_as_printed": {"value": 6.62, "unit": "mM^-1 cm^-1"},
+    "calibration_warning": "The inspected source prints 6.62. Do not silently replace it with a conventional NADH coefficient; confirm the actual calibration and optical path from the instrument/protocol record.",
+    "optical_path_cm": null,
+    "independently_controlled_inputs": ["Substrate concentration in each enzyme titration", "Reaction direction where forward and reverse assays were possible"],
+    "concentration_grid_and_fixed_cosubstrates": null,
+    "independent_regulator_matrix": "Not established; substrate titration is not evidence that a regulator was crossed independently with substrate.",
+    "allocation_randomization": "Not reported in the inspected methods",
+    "clock_order_plate_map": null,
+    "controls": "Parallel background-activity controls and adjustment of coupling-enzyme concentrations to make the target reaction rate-limiting are described; control record IDs and calibration uncertainty are missing."
+  },
+  "inventory_counts": {
+    "published_parameter_rows": 49,
+    "distinct_isoenzyme_labels_in_table_2": 21,
+    "isoenzyme_labels": ["Adh1p", "Adh5p", "Cdc19p", "Eno1p", "Eno2p", "Fba1p", "Glk1p", "Gpm1p", "Hxk1p", "Hxk2p", "Pdc1p", "Pdc5p", "Pdc6p", "Pfk1p:Pfk2p", "Pgi1p", "Pgk1p", "Pyk2p", "Tdh1p", "Tdh2p", "Tdh3p", "Tpi1p"],
+    "minimum_technical_rate_determinations_per_substrate": 2,
+    "source_for_technical_count": "Methods: at least duplicate determination of reaction rates at each substrate concentration",
+    "raw_progress_curve_count": null,
+    "initial_rate_observation_count": null,
+    "distinct_substrate_levels_per_assay": null,
+    "independent_biological_culture_count": null,
+    "independent_enzyme_preparation_count": null,
+    "independently_randomized_assay_count": null,
+    "warning": "49 fitted-parameter rows, 21 isoenzyme labels, 384 plate positions and technical duplicates are not biological replicate counts."
+  },
+  "data_availability_and_schema": {
+    "raw_response_files_downloaded": false,
+    "raw_response_file_sha256": null,
+    "raw_progress_or_initial_rate_schema": null,
+    "raw_schema_status": "Not verified; request original instrument export and metadata-only header/plate-map inventory before any response release.",
+    "publication_parameter_table": {
+      "locator": "Table 2 / t0010",
+      "headers": ["Reaction", "Isoenzyme", "Parameter", "Value", "SEM (%)", "Ref. [23]", "Unit"],
+      "published_parameter_units": ["mM", "s^-1"],
+      "response_value_cells_opened": false,
+      "sem_cells_opened": false,
+      "scope": "Conditional source-fitted parameter checks only; no raw-curve functional-form discovery."
+    },
+    "linked_supplement": {
+      "filename": "mmc1.pdf",
+      "source_locator": "PMC3764422 supplementary-material m0005",
+      "description": "Supplementary material",
+      "body_retrieved": false,
+      "sha256": null,
+      "contents_verified": false
+    },
+    "required_raw_schema_not_asserted_present": [
+      "source_record_id and publication/repository locator",
+      "culture_id, preparation_id, purification batch, assay/well and technical replicate IDs",
+      "enzyme isoform/construct, enzyme amount and its measurement/calibration",
+      "substrate/cosubstrate/regulator identities, concentrations and units",
+      "pH, temperature, buffer, coupling-enzyme doses, reaction volume, path length",
+      "stimulus/start/read time and documented allocation/acquisition order",
+      "detector identity and raw observation unit, blank/control IDs, initial-rate extraction window",
+      "uncertainty, censoring/missingness, normalization and duplicate lineage"
+    ]
+  },
+  "historical_raw_repository_lead": {
+    "primary_methods_source_doi": "10.1111/j.1742-4658.2010.07778.x",
+    "primary_methods_source_title": "Enzyme kinetics informatics: from instrument to browser",
+    "primary_methods_pdf_url": "https://eprints.maths.manchester.ac.uk/1522/1/swainston10.pdf",
+    "primary_methods_pdf_sha256": "44a9ec162477390c5a880a04082a7a5abbd3d875e82a88b4bcc7b314dc666fc4",
+    "primary_methods_pdf_bytes": 710094,
+    "primary_methods_pdf_pages": 12,
+    "evidence_locators": ["PDF page 3: generic spreadsheet/instrument data import", "PDF page 4 / Figure 1: MeMo-RK raw experimental data versus SABIO-RK fitted parameters", "PDF pages 6-7 / Table 1 and Data access: yeast examples and linked records"],
+    "publication_claim": "MeMo-RK stores experimental raw data with laboratory/instrument metadata and supports SBRML export; SABIO-RK stores derived parameters. Three yeast examples are linked to SABIO entries 29371, 29401 and 29390.",
+    "historical_urls": ["http://www.mcisb.org/MeMo-RK/", "http://www.mcisb.org/resources/kinetics/"],
+    "access_probe": {
+      "https_status": "Certificate hostname mismatch; verification was not disabled",
+      "original_http_status": 301,
+      "original_http_location": "https://guidenetworth.com/MeMo-RK/",
+      "redirect_classification": "Unrelated destination, not accepted as the historical biological repository; following the HTTP redirect failed with connection reset.",
+      "follow_up_policy": "Stop. Contact authors/institutional archive for source-linked recovery; do not supply credentials or trust replacement content."
+    },
+    "author_repository": {
+      "url": "https://github.com/neilswainston/KineticsWizard",
+      "access_method": "gh API metadata/tree only; no cloning or execution",
+      "tree_sha": "e055bfc5dba75a2422f346c8e3450713a5458f0b",
+      "tree_truncated": false,
+      "finding": "The inspected tree contains Java/software resources and SQL schema, not an assay observation archive. Source code or a database schema is not experimental data."
+    },
+    "ancestry_warning": "This is the same research/software pipeline, not an independent validation study. No exact mapping from these 2010 example records to 2013 assay records was verified."
+  },
+  "source_modeling_and_normalization_history": [
+    "Background correction precedes initial-rate estimation; exact blank files and extraction windows were not retrieved.",
+    "Initial rates at varied substrates were fitted by KineticsWizard to Michaelis-Menten kinetics. Tpi1 substrate-inhibited data were analysed with COPASI using a supplied inhibition law.",
+    "The network model was iteratively revised using flux-control analysis to prioritize experimental characterization. Source-model outputs and model-refitted parameters cannot become independent reaction truth.",
+    "Purified protein quantification is distinct from active enzyme fraction; published kcat labels do not establish intrinsic in-vivo turnover or native active abundance.",
+    "Separate QconCAT proteomics/metabolomics in this paper do not independently calibrate the active fraction of each purified assay preparation. Source iteration/parameter lineage must be audited before any use as validation."
+  ],
+  "reserved_labels_and_support": {
+    "currently_reserved": [],
+    "potential_reservation": "Unexposed complete preparation/day assays or, only under a new conditional-assay protocol, genuinely randomized reaction units with preparation-aware inference. Source records and allocation evidence are required first.",
+    "orthogonal_rate_support_verified": false,
+    "published_other_channels": ["Purity/amount assays", "QconCAT proteomics", "Metabolomics"],
+    "support_limit": "Protein presence and whole-pathway metabolite consistency are not orthogonal validation of a catalytic response law. No independent pyruvate/product-formation rate assay in matched conditions was verified.",
+    "literal_current_protocol_inventory_satisfied": false
+  },
+  "decision": "Scientifically promising direct substrate-response source, but raw data access, preparation/unit/randomization/validation inventory and new registration are blocking. No fitting authorized."
+}

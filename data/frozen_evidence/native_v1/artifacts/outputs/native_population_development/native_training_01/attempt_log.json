@@ -1,0 +1,1000 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/native_population_development/native_training_01/attempt_log.json",
+    "sha256": "4740203cf2ecd2ffe1626c5a288ac6b5949f086d189e302f4be8cc3f8c51e4f3"
+  },
+  "payload": {
+    "document_type": "population_development_complete_attempt_log",
+    "environment": {
+      "limitations": [
+        "scientific_scope=retrospective_source_cohort_development",
+        "The original strong candidates remain ineligible; this protocol never authorizes biological readiness and defines no final test.",
+        "All groups have one reported Sfp1/context/glucose schedule. No dose response, causal glucose effect, universal mechanism or intrinsic kinetic parameter is identified.",
+        "The historical published cohort and processing may depend on future observations; this is not a certified prospective forecast from untouched acquisitions.",
+        "Targets are means of individual raw max5/median ratios among the fixed prefix cohort observed at each frame, not individual trajectories, ratios of mean intensities or phosphorylation fractions.",
+        "Finite-cell sampling, within-movie dependence, measurement/calibration error, day/strain effects, attrition and inherited processing-selection bias are distinct; unmeasured components remain unresolved.",
+        "Cell sample SD is descriptive, not a biological confidence interval or SD/sqrt(cell count) uncertainty estimate.",
+        "Local digests and accountable operational custody are not external registration, encryption, adversarial isolation or a scientific authorization."
+      ],
+      "numpy": "2.4.1",
+      "observation_transform": "identity raw individual max5/median ratios; prefix mean is a conditioning input",
+      "optimizer_settings": {
+        "ftol": 1e-10,
+        "gtol": 1e-10,
+        "jacobian": "analytic; derivative of the nonnegative map is zero at and below zero",
+        "loss": "linear",
+        "loss_evaluation_accounting": "every residual invocation; analytic Jacobian calls are counted separately",
+        "max_nfev": 2000,
+        "method": "trf",
+        "optimizer": "scipy.optimize.least_squares",
+        "output_map": "max(0, unbounded_mean) before fitting and scoring",
+        "prng": "numpy.random.Generator(numpy.random.PCG64(seed))",
+        "reference_time_minutes": 60.0,
+        "seeds": [
+          201801,
+          201802,
+          201803,
+          201804,
+          201805,
+          201806,
+          201807,
+          201808
+        ],
+        "starts": 8,
+        "tie_tolerance": "1e-12 * (1 + abs(best MSE))",
+        "within_family_selection": "finite successful minimum training MSE; numerical ties prefer lexicographic parameters then start index",
+        "x_scale": "jac",
+        "xtol": 1e-10
+      },
+      "python": "3.14.2",
+      "scientific_scope": "retrospective_source_cohort_development",
+      "scipy": "1.17.0"
+    },
+    "families": {
+      "first_order_response": {
+        "attempts": [
+          {
+            "initial_parameters": {
+              "A": 0.0,
+              "tau": 34.64101615137755
+            },
+            "jacobian_evaluations": 9,
+            "loss_evaluations": 14,
+            "model_id": "first_order_response",
+            "optimizer_message": "`ftol` termination condition is satisfied.",
+            "optimizer_status": 2,
+            "parameters": {
+              "A": -0.21771275480748362,
+              "tau": 5.522541901095112
+            },
+            "reason": null,
+            "seed": 201801,
+            "start_index": 0,
+            "status": "ok",
+            "training_mean_mse": 0.012658802837916832
+          },
+          {
+            "initial_parameters": {
+              "A": 10.748435678465237,
+              "tau": 56.0483174159113
+            },
+            "jacobian_evaluations": 17,
+            "loss_evaluations": 23,
+            "model_id": "first_order_response",
+            "optimizer_message": "`ftol` termination condition is satisfied.",
+            "optimizer_status": 2,
+            "parameters": {
+              "A": -0.2177126906673045,
+              "tau": 5.52252441849577
+            },
+            "reason": null,
+            "seed": 201802,
+            "start_index": 1,
+            "status": "ok",
+            "training_mean_mse": 0.012658802837926001
+          },
+          {
+            "initial_parameters": {
+              "A": 0.5088192222876047,
+              "tau": 90.70278439119834
+            },
+            "jacobian_evaluations": 16,
+            "loss_evaluations": 25,
+            "model_id": "first_order_response",
+            "optimizer_message": "`ftol` termination condition is satisfied.",
+            "optimizer_status": 2,
+            "parameters": {
+              "A": -0.21771255457244523,
+              "tau": 5.52252464191199
+            },
+            "reason": null,
+            "seed": 201803,
+            "start_index": 2,
+            "status": "ok",
+            "training_mean_mse": 0.012658802837944525
+          },
+          {
+            "initial_parameters": {
+              "A": -17.559757406857088,
+              "tau": 2.68728699989152
+            },
+            "jacobian_evaluations": 1,
+            "loss_evaluations": 1,
+            "model_id": "first_order_response",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "A": -17.559757406857088,
+              "tau": 2.68728699989152
+            },
+            "reason": null,
+            "seed": 201804,
+            "start_index": 3,
+            "status": "ok",
+            "training_mean_mse": 2.8076567901124414
+          },
+          {
+            "initial_parameters": {
+              "A": -11.416124038427164,
+              "tau": 5.78989575740746
+            },
+            "jacobian_evaluations": 1,
+            "loss_evaluations": 1,
+            "model_id": "first_order_response",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "A": -11.416124038427164,
+              "tau": 5.78989575740746
+            },
+            "reason": null,
+            "seed": 201805,
+            "start_index": 4,
+            "status": "ok",
+            "training_mean_mse": 2.8076567901124414
+          },
+          {
+            "initial_parameters": {
+              "A": 12.84863307524473,
+              "tau": 24.446819127933434
+            },
+            "jacobian_evaluations": 17,
+            "loss_evaluations": 23,
+            "model_id": "first_order_response",
+            "optimizer_message": "`ftol` termination condition is satisfied.",
+            "optimizer_status": 2,
+            "parameters": {
+              "A": -0.2177127008164881,
+              "tau": 5.52252530671832
+            },
+            "reason": null,
+            "seed": 201806,
+            "start_index": 5,
+            "status": "ok",
+            "training_mean_mse": 0.012658802837924074
+          },
+          {
+            "initial_parameters": {
+              "A": 8.09947773955111,
+              "tau": 43.652115581136414
+            },
+            "jacobian_evaluations": 17,
+            "loss_evaluations": 23,
+            "model_id": "first_order_response",
+            "optimizer_message": "`ftol` termination condition is satisfied.",
+            "optimizer_status": 2,
+            "parameters": {
+              "A": -0.21771269330240986,
+              "tau": 5.5225250220348725
+            },
+            "reason": null,
+            "seed": 201807,
+            "start_index": 6,
+            "status": "ok",
+            "training_mean_mse": 0.012658802837924723
+          },
+          {
+            "initial_parameters": {
+              "A": -5.194287009188842,
+              "tau": 4.857781798446209
+            },
+            "jacobian_evaluations": 1,
+            "loss_evaluations": 1,
+            "model_id": "first_order_response",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "A": -5.194287009188842,
+              "tau": 4.857781798446209
+            },
+            "reason": null,
+            "seed": 201808,
+            "start_index": 7,
+            "status": "ok",
+            "training_mean_mse": 2.8076567901124414
+          }
+        ],
+        "bounds": {
+          "A": [
+            -19.510223214601748,
+            19.510223214601748
+          ],
+          "tau": [
+            2.5,
+            480.0
+          ]
+        },
+        "model_id": "first_order_response",
+        "parameter_order": [
+          "A",
+          "tau"
+        ],
+        "parameters": {
+          "A": -0.21771275480748362,
+          "tau": 5.522541901095112
+        },
+        "reason": null,
+        "selected_start_index": 0,
+        "status": "ok",
+        "training_mean_mse": 0.012658802837916832
+      },
+      "prefix_affine_time": {
+        "attempts": [
+          {
+            "initial_parameters": {
+              "a": 0.0,
+              "b": 0.0
+            },
+            "jacobian_evaluations": 4,
+            "loss_evaluations": 4,
+            "model_id": "prefix_affine_time",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "a": -0.24579796495629463,
+              "b": 0.09159377330146405
+            },
+            "reason": null,
+            "seed": 201801,
+            "start_index": 0,
+            "status": "ok",
+            "training_mean_mse": 0.014568015862503517
+          },
+          {
+            "initial_parameters": {
+              "a": 10.748435678465237,
+              "b": 3.571223511998989
+            },
+            "jacobian_evaluations": 7,
+            "loss_evaluations": 7,
+            "model_id": "prefix_affine_time",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "a": -0.24579796496064205,
+              "b": 0.09159377330851197
+            },
+            "reason": null,
+            "seed": 201802,
+            "start_index": 1,
+            "status": "ok",
+            "training_mean_mse": 0.014568015862503518
+          },
+          {
+            "initial_parameters": {
+              "a": 0.5088192222876047,
+              "b": 7.143918142483016
+            },
+            "jacobian_evaluations": 6,
+            "loss_evaluations": 6,
+            "model_id": "prefix_affine_time",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "a": -0.24579796496773854,
+              "b": 0.0915937733219929
+            },
+            "reason": null,
+            "seed": 201803,
+            "start_index": 2,
+            "status": "ok",
+            "training_mean_mse": 0.014568015862503522
+          },
+          {
+            "initial_parameters": {
+              "a": -17.559757406857088,
+              "b": -18.97405692627504
+            },
+            "jacobian_evaluations": 1,
+            "loss_evaluations": 1,
+            "model_id": "prefix_affine_time",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "a": -17.559757406857088,
+              "b": -18.97405692627504
+            },
+            "reason": null,
+            "seed": 201804,
+            "start_index": 3,
+            "status": "ok",
+            "training_mean_mse": 2.8076567901124414
+          },
+          {
+            "initial_parameters": {
+              "a": -11.416124038427164,
+              "b": -13.277162081072811
+            },
+            "jacobian_evaluations": 1,
+            "loss_evaluations": 1,
+            "model_id": "prefix_affine_time",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "a": -11.416124038427164,
+              "b": -13.277162081072811
+            },
+            "reason": null,
+            "seed": 201805,
+            "start_index": 4,
+            "status": "ok",
+            "training_mean_mse": 2.8076567901124414
+          },
+          {
+            "initial_parameters": {
+              "a": 12.84863307524473,
+              "b": -2.586805958335449
+            },
+            "jacobian_evaluations": 7,
+            "loss_evaluations": 7,
+            "model_id": "prefix_affine_time",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "a": -0.24579796496054038,
+              "b": 0.09159377330832714
+            },
+            "reason": null,
+            "seed": 201806,
+            "start_index": 5,
+            "status": "ok",
+            "training_mean_mse": 0.01456801586250352
+          },
+          {
+            "initial_parameters": {
+              "a": 8.09947773955111,
+              "b": 1.7160352457250427
+            },
+            "jacobian_evaluations": 6,
+            "loss_evaluations": 10,
+            "model_id": "prefix_affine_time",
+            "optimizer_message": "`xtol` termination condition is satisfied.",
+            "optimizer_status": 3,
+            "parameters": {
+              "a": -0.24579796454641467,
+              "b": 0.0915937726172716
+            },
+            "reason": null,
+            "seed": 201807,
+            "start_index": 6,
+            "status": "ok",
+            "training_mean_mse": 0.01456801586250352
+          },
+          {
+            "initial_parameters": {
+              "a": -5.194287009188842,
+              "b": -14.579940515786703
+            },
+            "jacobian_evaluations": 1,
+            "loss_evaluations": 1,
+            "model_id": "prefix_affine_time",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "a": -5.194287009188842,
+              "b": -14.579940515786703
+            },
+            "reason": null,
+            "seed": 201808,
+            "start_index": 7,
+            "status": "ok",
+            "training_mean_mse": 2.8076567901124414
+          }
+        ],
+        "bounds": {
+          "a": [
+            -19.510223214601748,
+            19.510223214601748
+          ],
+          "b": [
+            -19.510223214601748,
+            19.510223214601748
+          ]
+        },
+        "model_id": "prefix_affine_time",
+        "parameter_order": [
+          "a",
+          "b"
+        ],
+        "parameters": {
+          "a": -0.24579796496773854,
+          "b": 0.0915937733219929
+        },
+        "reason": null,
+        "selected_start_index": 2,
+        "status": "ok",
+        "training_mean_mse": 0.014568015862503522
+      },
+      "prefix_offset": {
+        "attempts": [
+          {
+            "initial_parameters": {
+              "a": 0.0
+            },
+            "jacobian_evaluations": 4,
+            "loss_evaluations": 4,
+            "model_id": "prefix_offset",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "a": -0.19800709156534813
+            },
+            "reason": null,
+            "seed": 201801,
+            "start_index": 0,
+            "status": "ok",
+            "training_mean_mse": 0.015271920966504133
+          },
+          {
+            "initial_parameters": {
+              "a": 10.748435678465237
+            },
+            "jacobian_evaluations": 6,
+            "loss_evaluations": 6,
+            "model_id": "prefix_offset",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "a": -0.1980070915652073
+            },
+            "reason": null,
+            "seed": 201802,
+            "start_index": 1,
+            "status": "ok",
+            "training_mean_mse": 0.015271920966504132
+          },
+          {
+            "initial_parameters": {
+              "a": 0.5088192222876047
+            },
+            "jacobian_evaluations": 5,
+            "loss_evaluations": 5,
+            "model_id": "prefix_offset",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "a": -0.19800709156534813
+            },
+            "reason": null,
+            "seed": 201803,
+            "start_index": 2,
+            "status": "ok",
+            "training_mean_mse": 0.015271920966504133
+          },
+          {
+            "initial_parameters": {
+              "a": -17.559757406857088
+            },
+            "jacobian_evaluations": 1,
+            "loss_evaluations": 1,
+            "model_id": "prefix_offset",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "a": -17.559757406857088
+            },
+            "reason": null,
+            "seed": 201804,
+            "start_index": 3,
+            "status": "ok",
+            "training_mean_mse": 2.8076567901124414
+          },
+          {
+            "initial_parameters": {
+              "a": -11.416124038427164
+            },
+            "jacobian_evaluations": 1,
+            "loss_evaluations": 1,
+            "model_id": "prefix_offset",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "a": -11.416124038427164
+            },
+            "reason": null,
+            "seed": 201805,
+            "start_index": 4,
+            "status": "ok",
+            "training_mean_mse": 2.8076567901124414
+          },
+          {
+            "initial_parameters": {
+              "a": 12.84863307524473
+            },
+            "jacobian_evaluations": 6,
+            "loss_evaluations": 6,
+            "model_id": "prefix_offset",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "a": -0.1980070915607582
+            },
+            "reason": null,
+            "seed": 201806,
+            "start_index": 5,
+            "status": "ok",
+            "training_mean_mse": 0.015271920966504133
+          },
+          {
+            "initial_parameters": {
+              "a": 8.09947773955111
+            },
+            "jacobian_evaluations": 6,
+            "loss_evaluations": 6,
+            "model_id": "prefix_offset",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "a": -0.19800709156534987
+            },
+            "reason": null,
+            "seed": 201807,
+            "start_index": 6,
+            "status": "ok",
+            "training_mean_mse": 0.015271920966504132
+          },
+          {
+            "initial_parameters": {
+              "a": -5.194287009188842
+            },
+            "jacobian_evaluations": 1,
+            "loss_evaluations": 1,
+            "model_id": "prefix_offset",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "a": -5.194287009188842
+            },
+            "reason": null,
+            "seed": 201808,
+            "start_index": 7,
+            "status": "ok",
+            "training_mean_mse": 2.8076567901124414
+          }
+        ],
+        "bounds": {
+          "a": [
+            -19.510223214601748,
+            19.510223214601748
+          ]
+        },
+        "model_id": "prefix_offset",
+        "parameter_order": [
+          "a"
+        ],
+        "parameters": {
+          "a": -0.19800709156534987
+        },
+        "reason": null,
+        "selected_start_index": 6,
+        "status": "ok",
+        "training_mean_mse": 0.015271920966504132
+      },
+      "prefix_persistence": {
+        "attempts": [
+          {
+            "initial_parameters": {},
+            "jacobian_evaluations": 0,
+            "loss_evaluations": 1,
+            "model_id": "prefix_persistence",
+            "optimizer_message": "registered persistence family",
+            "optimizer_status": "parameter_free",
+            "parameters": {},
+            "reason": null,
+            "seed": 201801,
+            "start_index": 0,
+            "status": "ok",
+            "training_mean_mse": 0.05447872927667314
+          }
+        ],
+        "bounds": {},
+        "model_id": "prefix_persistence",
+        "parameter_order": [],
+        "parameters": {},
+        "reason": null,
+        "selected_start_index": 0,
+        "status": "ok",
+        "training_mean_mse": 0.05447872927667314
+      },
+      "training_constant": {
+        "attempts": [
+          {
+            "initial_parameters": {
+              "c": 1.669793461168489
+            },
+            "jacobian_evaluations": 1,
+            "loss_evaluations": 1,
+            "model_id": "training_constant",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "c": 1.669793461168489
+            },
+            "reason": null,
+            "seed": 201801,
+            "start_index": 0,
+            "status": "ok",
+            "training_mean_mse": 0.01944658715139829
+          },
+          {
+            "initial_parameters": {
+              "c": 15.129329446533491
+            },
+            "jacobian_evaluations": 9,
+            "loss_evaluations": 9,
+            "model_id": "training_constant",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "c": 1.6697934611686553
+            },
+            "reason": null,
+            "seed": 201802,
+            "start_index": 1,
+            "status": "ok",
+            "training_mean_mse": 0.01944658715139829
+          },
+          {
+            "initial_parameters": {
+              "c": 10.009521218444677
+            },
+            "jacobian_evaluations": 8,
+            "loss_evaluations": 9,
+            "model_id": "training_constant",
+            "optimizer_message": "`xtol` termination condition is satisfied.",
+            "optimizer_status": 3,
+            "parameters": {
+              "c": 1.6697934612879428
+            },
+            "reason": null,
+            "seed": 201803,
+            "start_index": 2,
+            "status": "ok",
+            "training_mean_mse": 0.01944658715139829
+          },
+          {
+            "initial_parameters": {
+              "c": 0.9752329038723293
+            },
+            "jacobian_evaluations": 5,
+            "loss_evaluations": 5,
+            "model_id": "training_constant",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "c": 1.669793461168489
+            },
+            "reason": null,
+            "seed": 201804,
+            "start_index": 3,
+            "status": "ok",
+            "training_mean_mse": 0.01944658715139829
+          },
+          {
+            "initial_parameters": {
+              "c": 4.047049588087292
+            },
+            "jacobian_evaluations": 7,
+            "loss_evaluations": 7,
+            "model_id": "training_constant",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "c": 1.6697934611684917
+            },
+            "reason": null,
+            "seed": 201805,
+            "start_index": 4,
+            "status": "ok",
+            "training_mean_mse": 0.01944658715139829
+          },
+          {
+            "initial_parameters": {
+              "c": 16.17942814492324
+            },
+            "jacobian_evaluations": 9,
+            "loss_evaluations": 9,
+            "model_id": "training_constant",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "c": 1.6697934611697838
+            },
+            "reason": null,
+            "seed": 201806,
+            "start_index": 5,
+            "status": "ok",
+            "training_mean_mse": 0.01944658715139829
+          },
+          {
+            "initial_parameters": {
+              "c": 13.804850477076428
+            },
+            "jacobian_evaluations": 9,
+            "loss_evaluations": 9,
+            "model_id": "training_constant",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "c": 1.6697934611684968
+            },
+            "reason": null,
+            "seed": 201807,
+            "start_index": 6,
+            "status": "ok",
+            "training_mean_mse": 0.019446587151398294
+          },
+          {
+            "initial_parameters": {
+              "c": 7.157968102706453
+            },
+            "jacobian_evaluations": 8,
+            "loss_evaluations": 8,
+            "model_id": "training_constant",
+            "optimizer_message": "`gtol` termination condition is satisfied.",
+            "optimizer_status": 1,
+            "parameters": {
+              "c": 1.669793461168492
+            },
+            "reason": null,
+            "seed": 201808,
+            "start_index": 7,
+            "status": "ok",
+            "training_mean_mse": 0.01944658715139829
+          }
+        ],
+        "bounds": {
+          "c": [
+            0.0,
+            19.510223214601748
+          ]
+        },
+        "model_id": "training_constant",
+        "parameter_order": [
+          "c"
+        ],
+        "parameters": {
+          "c": 1.669793461168489
+        },
+        "reason": null,
+        "selected_start_index": 0,
+        "status": "ok",
+        "training_mean_mse": 0.01944658715139829
+      },
+      "transient_response": {
+        "attempts": [
+          {
+            "initial_parameters": {
+              "A": 0.0,
+              "tau_off": 34.64101615137755,
+              "tau_on": 34.64101615137755
+            },
+            "jacobian_evaluations": 33,
+            "loss_evaluations": 36,
+            "model_id": "transient_response",
+            "optimizer_message": "`ftol` termination condition is satisfied.",
+            "optimizer_status": 2,
+            "parameters": {
+              "A": -19.510223214601744,
+              "tau_off": 19.632150935409083,
+              "tau_on": 469.56518369401306
+            },
+            "reason": null,
+            "seed": 201801,
+            "start_index": 0,
+            "status": "ok",
+            "training_mean_mse": 0.005875078454319338
+          },
+          {
+            "initial_parameters": {
+              "A": 10.748435678465237,
+              "tau_off": 56.0483174159113,
+              "tau_on": 29.940792391680425
+            },
+            "jacobian_evaluations": 26,
+            "loss_evaluations": 28,
+            "model_id": "transient_response",
+            "optimizer_message": "`ftol` termination condition is satisfied.",
+            "optimizer_status": 2,
+            "parameters": {
+              "A": -19.510223214601744,
+              "tau_off": 19.632148316226843,
+              "tau_on": 469.5650962705303
+            },
+            "reason": null,
+            "seed": 201802,
+            "start_index": 1,
+            "status": "ok",
+            "training_mean_mse": 0.005875078454315299
+          },
+          {
+            "initial_parameters": {
+              "A": 0.5088192222876047,
+              "tau_off": 90.70278439119834,
+              "tau_on": 20.999658916858444
+            },
+            "jacobian_evaluations": 38,
+            "loss_evaluations": 42,
+            "model_id": "transient_response",
+            "optimizer_message": "`ftol` termination condition is satisfied.",
+            "optimizer_status": 2,
+            "parameters": {
+              "A": -19.510223214601744,
+              "tau_off": 19.63213353906535,
+              "tau_on": 469.5646030330712
+            },
+            "reason": null,
+            "seed": 201803,
+            "start_index": 2,
+            "status": "ok",
+            "training_mean_mse": 0.005875078454312564
+          },
+          {
+            "initial_parameters": {
+              "A": -17.559757406857088,
+              "tau_off": 2.68728699989152,
+              "tau_on": 12.814546302621665
+            },
+            "jacobian_evaluations": 32,
+            "loss_evaluations": 34,
+            "model_id": "transient_response",
+            "optimizer_message": "`ftol` termination condition is satisfied.",
+            "optimizer_status": 2,
+            "parameters": {
+              "A": -19.510223214601744,
+              "tau_off": 19.632123041181444,
+              "tau_on": 469.5642526310647
+            },
+            "reason": null,
+            "seed": 201804,
+            "start_index": 3,
+            "status": "ok",
+            "training_mean_mse": 0.005875078454331329
+          },
+          {
+            "initial_parameters": {
+              "A": -11.416124038427164,
+              "tau_off": 5.78989575740746,
+              "tau_on": 452.47545743543446
+            },
+            "jacobian_evaluations": 14,
+            "loss_evaluations": 14,
+            "model_id": "transient_response",
+            "optimizer_message": "`ftol` termination condition is satisfied.",
+            "optimizer_status": 2,
+            "parameters": {
+              "A": -19.510223214601744,
+              "tau_off": 19.63214570635456,
+              "tau_on": 469.56500915759875
+            },
+            "reason": null,
+            "seed": 201805,
+            "start_index": 4,
+            "status": "ok",
+            "training_mean_mse": 0.005875078454312338
+          },
+          {
+            "initial_parameters": {
+              "A": 12.84863307524473,
+              "tau_off": 24.446819127933434,
+              "tau_on": 6.440218358203417
+            },
+            "jacobian_evaluations": 29,
+            "loss_evaluations": 31,
+            "model_id": "transient_response",
+            "optimizer_message": "`ftol` termination condition is satisfied.",
+            "optimizer_status": 2,
+            "parameters": {
+              "A": -19.510223214601744,
+              "tau_off": 19.632148351648624,
+              "tau_on": 469.5650974528455
+            },
+            "reason": null,
+            "seed": 201806,
+            "start_index": 5,
+            "status": "ok",
+            "training_mean_mse": 0.005875078454315346
+          },
+          {
+            "initial_parameters": {
+              "A": 8.09947773955111,
+              "tau_off": 43.652115581136414,
+              "tau_on": 224.74793265525062
+            },
+            "jacobian_evaluations": 20,
+            "loss_evaluations": 21,
+            "model_id": "transient_response",
+            "optimizer_message": "`ftol` termination condition is satisfied.",
+            "optimizer_status": 2,
+            "parameters": {
+              "A": -19.510223214601744,
+              "tau_off": 19.632154166042827,
+              "tau_on": 469.56529152634835
+            },
+            "reason": null,
+            "seed": 201807,
+            "start_index": 6,
+            "status": "ok",
+            "training_mean_mse": 0.0058750784543258015
+          },
+          {
+            "initial_parameters": {
+              "A": -5.194287009188842,
+              "tau_off": 4.857781798446209,
+              "tau_on": 60.14977934980149
+            },
+            "jacobian_evaluations": 31,
+            "loss_evaluations": 32,
+            "model_id": "transient_response",
+            "optimizer_message": "`ftol` termination condition is satisfied.",
+            "optimizer_status": 2,
+            "parameters": {
+              "A": -19.510223214601744,
+              "tau_off": 19.632131123240047,
+              "tau_on": 469.5645223967319
+            },
+            "reason": null,
+            "seed": 201808,
+            "start_index": 7,
+            "status": "ok",
+            "training_mean_mse": 0.0058750784543153585
+          }
+        ],
+        "bounds": {
+          "A": [
+            -19.510223214601748,
+            19.510223214601748
+          ],
+          "tau_off": [
+            2.5,
+            480.0
+          ],
+          "tau_on": [
+            2.5,
+            480.0
+          ]
+        },
+        "model_id": "transient_response",
+        "parameter_order": [
+          "A",
+          "tau_off",
+          "tau_on"
+        ],
+        "parameters": {
+          "A": -19.510223214601744,
+          "tau_off": 19.632123041181444,
+          "tau_on": 469.5642526310647
+        },
+        "reason": null,
+        "selected_start_index": 3,
+        "status": "ok",
+        "training_mean_mse": 0.005875078454331329
+      }
+    },
+    "protocol_id": "granados-sfp1-published-cohort-development-01",
+    "scientific_scope": "retrospective_source_cohort_development",
+    "strong_claim_authorized": false
+  },
+  "schema_version": 1
+}

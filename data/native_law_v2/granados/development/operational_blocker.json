@@ -1,0 +1,31 @@
+{
+  "document_type": "development_blocker_no_biological_verdict",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "phase": "operational_approval",
+  "reason_code": "custody_not_approved",
+  "reason": "Protocol export_contract.root_policy names granados/development_exports/granados-sfp1-published-cohort-development-01/, but current write ownership is granados/development/. Parent must resolve the administrative root before projections are released. No typed release request with an actual frozen executor implementation/PRNG/optimizer configuration has been supplied. Protocol model_recipe.budget.initialization requires that freeze before training-value export. The exact selected source groups satisfy the reviewed prefix/timing/response-availability checks; this is not a biological validation result.",
+  "affected_group_ids": [
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep1",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"
+  ],
+  "available_artifacts": [
+    {
+      "path": "data/native_law_v2/granados/development/contracts/development_protocol.json",
+      "sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+      "bytes": 47873,
+      "role": "protocol_snapshot"
+    },
+    {
+      "path": "data/native_law_v2/granados/development/source_binding_audit.json",
+      "sha256": "e58f682b49a2f74ae0fff41e429893454c630b7c6daa55523f97fb02cd556985",
+      "bytes": 3903,
+      "role": "source_binding_audit"
+    }
+  ],
+  "operational_event_reference": "granados-development-source-review-before-value-release",
+  "strong_claim_authorized": false,
+  "further_exports_permitted": false
+}

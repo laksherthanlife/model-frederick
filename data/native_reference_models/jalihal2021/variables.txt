@@ -1,0 +1,25 @@
+EGOGAP	gammagap*(EGOGAP_T*shs(sigma_gap,w_gap_N*(1-Glutamine)-w_gap_torc*TORC1)-EGOGAP)
+cAMP	k_camp_cyr*Cyr1*ATP-k_camp_pde*PDE*cAMP-k_camp_deg*cAMP
+Sch9	gammasch9*(Sch9_T*shs(sigma_sch9,w_sch9_torc*TORC1-w_sch9)-Sch9)
+Gcn2	gamma_gcn2*(Gcn2_T*shs(sigma_gcn2,w_gcn-w_gcn_torc*Sch9)-Gcn2) 
+Gcn4	Gcn4_T*shs(sigma_gcn4,w_gcn4_gcn2_trna*min(Gcn2,tRNA_sensitivity*(tRNA_total-tRNA(tRNA_total,Glutamine)))-w_gcn4)-Gcn4
+Glutamine	(k_acc_glu*Glutamine_ext + k_acc_pro*Proline + k_acc_nh4*NH4*Gln1*Carbon) - k_degr*Glutamine 
+Snf1	gammasnf*(Snf1_T*shs(sigma_snf, -w_snf_glc*Carbon + w_snf_sak*Sak - w_snf)-Snf1) 
+PKA	gammapka*(PKA_T*shs(sigma_pka,w_pka_camp*cAMP-w_pka-w_pka_sch9*Sch9)-PKA)        
+eIF	gammaeif*(eIF_T*shs(sigma_eif,w_eif-w_eif_gcn2*Gcn2)-eIF)
+Gln3	gammagln3*(Gln3_T*shs(sigma_gln,-w_gln3+w_gln_snf*Snf1+w_gln_sit*(1-TORC1))-Gln3)
+Gln1	gammagln1*(Gln1_T*shs(sigma_gln1,w_gln1_gln3*Gln3-w_gln1)- Gln1)
+Rtg13	Rtg13_T*shs(sigma_rtg,-w_rtg_torc*TORC1+w_rtg)-Rtg13
+Gis1	Gis1_T*shs(sigma_gis1,-w_gis_pka*PKA-w_gis_sch*Sch9+w_gis)-Gis1
+Mig1	gamma_mig*(Mig1_T*shs(sigma_mig1, w_mig_pka*PKA - w_mig_snf*Snf1 + w_mig) - Mig1)
+Cyr1	gammacyr*(Cyr1_T*shs(sigma_cyr,w_cyr_glu*Carbon*Ras-w_cyr-w_cyr_snf*Snf1)-Cyr1)
+PDE	gammapde*(PDE_T*shs(sigma_pde,w_pde_pka*PKA-w_pde)-PDE)
+Sak	Sak_T*shs(sigma_sak,w_sak-w_sak_pka*PKA)-Sak
+Dot6	Dot6_T*shs(sigma_dot,-w_dot_sch_pka*Sch9*PKA+w_dot)-Dot6
+TORC1	gammator*(TORC1_T*shs(sigma_tor,w_torc_glut*Glutamine + w_torc_ego*EGO-w_torc_egoin*(1-EGO)-w_torc - w_torc_snf*Snf1)-TORC1)
+Tps1	gammatps*(Tps1_T*shs(sigma_tps,w_tps_pka*(PKA_T-PKA)-w_tps)-Tps1)
+Trehalase	gammatre*(Trehalase_T*shs(sigma_trehalase,w_tre_pka*PKA-w_tre)-Trehalase)
+Ras	gammaras*(Ras_T*shs(sigma_ras,-w_ras_pka*PKA+w_ras_glu*Carbon+w_ras)-Ras)
+EGO	gammaego*(EGO_T*shs(sigma_ego, w_ego_gap*EGOGAP*(Glutamine_ext+0.5*NH4+0.01*Proline) - w_ego*(1-Glutamine) - w_ego_basal )-EGO)
+Protein	k_pr*ATP*min(pRib(Rib,eIF),tRNA(tRNA_total,Glutamine))*Protein
+Rib	k_transcription*(1-Dot6) - k_mRNA_degr*Rib 

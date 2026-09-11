@@ -1,0 +1,23 @@
+Materials and Methods
+Time-Lapse Microscopy.
+BY strains with fluorescently tagged transcription factors (
+32
+) are grown in ALCATRAS microfluidic devices (
+20
+) in synthetic complete medium with 2% glucose for at least 3 h and then exposed to stress for 5 h (
+SI Appendix
+). Switching between media is via an external mixer and syringe pumps. Bright-field and fluorescence images are acquired every 2.5 min, and cells are segmented by using the DISCO algorithm (
+33
+).
+Estimating the Mutual Information.
+Our algorithm involves (
+SI Appendix
+): (
+i
+) using principal component analysis to delineate a basis for the time series; (
+ii
+) training a linear support vector machine to classify time series in this basis; (
+iii
+) calculating a confusion matrix using the test data; and (
+iv
+) estimating (a lower bound on) the mutual information by interpreting the entries of the confusion matrix as conditional probabilities.

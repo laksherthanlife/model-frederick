@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6003323/",
+  "supplement_url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/6003323/bin/pnas.1716659115.sapp.pdf",
+  "supplement_pages": 39,
+  "page_term_locators_only": [
+    {
+      "page": 1,
+      "terms": [
+        "strain",
+        "Materials",
+        "Methods"
+      ]
+    },
+    {
+      "page": 2,
+      "terms": [
+        "30"
+      ]
+    },
+    {
+      "page": 3,
+      "terms": [
+        "strain",
+        "30",
+        "Nhp6",
+        "Materials",
+        "Methods"
+      ]
+    },
+    {
+      "page": 4,
+      "terms": [
+        "strain",
+        "30",
+        "Nhp6",
+        "replicate"
+      ]
+    },
+    {
+      "page": 5,
+      "terms": [
+        "strain",
+        "30"
+      ]
+    },
+    {
+      "page": 6,
+      "terms": [
+        "normaliz"
+      ]
+    },
+    {
+      "page": 7,
+      "terms": []
+    },
+    {
+      "page": 8,
+      "terms": [
+        "strain"
+      ]
+    },
+    {
+      "page": 9,
+      "terms": [
+        "30",
+        "replicate"
+      ]
+    },
+    {
+      "page": 10,
+      "terms": [
+        "replicate"
+      ]
+    },
+    {
+      "page": 11,
+      "terms": []
+    },
+    {
+      "page": 12,
+      "terms": [
+        "replicate"
+      ]
+    },
+    {
+      "page": 13,
+      "terms": [
+        "strain"
+      ]
+    },
+    {
+      "page": 14,
+      "terms": [
+        "30"
+      ]
+    },
+    {
+      "page": 15,
+      "terms": [
+        "strain",
+        "30"
+      ]
+    },
+    {
+      "page": 16,
+      "terms": [
+        "30"
+      ]
+    },
+    {
+      "page": 17,
+      "terms": [
+        "strain"
+      ]
+    },
+    {
+      "page": 18,
+      "terms": [
+        "Nhp6"
+      ]
+    },
+    {
+      "page": 19,
+      "terms": []
+    },
+    {
+      "page": 20,
+      "terms": []
+    },
+    {
+      "page": 21,
+      "terms": [
+        "30",
+        "replicate"
+      ]
+    },
+    {
+      "page": 22,
+      "terms": [
+        "replicate"
+      ]
+    },
+    {
+      "page": 23,
+      "terms": [
+        "30",
+        "replicate"
+      ]
+    },
+    {
+      "page": 24,
+      "terms": [
+        "replicate"
+      ]
+    },
+    {
+      "page": 25,
+      "terms": [
+        "normaliz",
+        "normalis",
+        "replicate"
+      ]
+    },
+    {
+      "page": 26,
+      "terms": [
+        "normaliz",
+        "normalis",
+        "replicate"
+      ]
+    },
+    {
+      "page": 27,
+      "terms": []
+    },
+    {
+      "page": 28,
+      "terms": []
+    },
+    {
+      "page": 29,
+      "terms": []
+    },
+    {
+      "page": 30,
+      "terms": [
+        "30",
+        "replicate"
+      ]
+    },
+    {
+      "page": 31,
+      "terms": [
+        "replicate"
+      ]
+    },
+    {
+      "page": 32,
+      "terms": [
+        "30",
+        "replicate"
+      ]
+    },
+    {
+      "page": 33,
+      "terms": [
+        "normaliz",
+        "replicate"
+      ]
+    },
+    {
+      "page": 34,
+      "terms": []
+    },
+    {
+      "page": 35,
+      "terms": [
+        "strain"
+      ]
+    },
+    {
+      "page": 36,
+      "terms": []
+    },
+    {
+      "page": 37,
+      "terms": [
+        "30"
+      ]
+    },
+    {
+      "page": 38,
+      "terms": []
+    },
+    {
+      "page": 39,
+      "terms": []
+    }
+  ],
+  "response_values_disclosed": false
+}

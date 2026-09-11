@@ -1,0 +1,18 @@
+script,table,ok,detail
+content_band_coverage,content_band_coverage.csv,True,reproduces
+simulate_proteomics_gain,proteomics_gain.csv,True,reproduces
+environment_channel,environment_channel.csv,True,reproduces
+environment_channel,environment_law_scores.csv,True,reproduces
+score_phb_environment,phb_environment_score.csv,True,reproduces
+error_budget,error_budget.csv,True,reproduces
+fit_carotenoid_kinetics,carotenoid_fit.csv,True,reproduces
+fit_carotenoid_kinetics,carotenoid_heldout.csv,True,reproduces
+fit_carotenoid_kinetics,carotenoid_parsimony.csv,True,reproduces
+fit_carotenoid_kinetics,carotenoid_strain_capacity.csv,True,reproduces
+build_report,,True,EXEMPT: assembles other scripts' outputs rather than computing a table
+design_flux_experiment,,True,EXEMPT: needs the genome-scale model
+gem_environment_predictions,,True,"EXEMPT: needs data/gem/yeast-GEM.xml.gz and solves ~200 LPs; minutes, and impossible on a checkout without the model"
+maintenance_scale,,True,EXEMPT: needs the genome-scale model
+product_environment_sweep,,True,EXEMPT: needs the genome-scale model
+run_sensor_characterisation,,True,"EXEMPT: needs the wet-lab plate exports, which are not vendored"
+(coverage),,True,89 committed tables enrolled in neither REGISTRY nor EXEMPT (ceiling 89)

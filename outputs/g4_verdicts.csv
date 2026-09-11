@@ -1,0 +1,5 @@
+construct,stressor,anchor,verdict,anchor_effect,anchor_spread,reporter_anchor_r,rt_minus_pass_rate,replicates_needed
+UPRE1,DTT,Hac1,INCONCLUSIVE,,,,0.0,0
+UPRE2,DTT,Hac1,INCONCLUSIVE,,,,0.0,0
+NativeYap1,H2O2,TRX2,INCONCLUSIVE,0.17522779347678244,0.4506027113800637,,1.0,80
+AlteredYap1,H2O2,TRX2,INCONCLUSIVE,0.561551632741021,0.4737832590739412,,1.0,9

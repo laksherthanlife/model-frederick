@@ -1,0 +1,228 @@
+{
+  "$schema": "metadata_supplement.schema.json",
+  "schema_version": 1,
+  "supplement_id": "granados2018-source-questions-01",
+  "status": "metadata_review_only_original_ineligibility_preserved",
+  "original_protocol_sha256": "e901d3985b5577d6f846229e1178062414e3220a7307b6d8ee40b0d01e9dffde",
+  "original_candidate_id": "granados2018_sfp1_carbon_localization",
+  "original_candidate_status": "ineligible_under_current_protocol",
+  "parent_design_review_path": "data/native_law_v2/protocol_review.json",
+  "response_export_authorized": false,
+  "model_training_performed": false,
+  "thresholds_or_protocol_criteria_changed": false,
+  "new_estimand_selected_or_authorized": false,
+  "custody_note": "All response values remain custodial. The follow-up specifically authorized deterministic identity checks: source normalizer means/SDs were computed privately for that purpose only. No constants, response summaries, distances, curve similarities, model scores or response projections were released. No original protocol outcome was scored.",
+  "questions": [
+    {
+      "question_id": "prefix_normalization_and_conditional_estimand",
+      "resolution": "Core prefix normalizer verified; a legitimate prefix-conditional estimand is possible in principle but the full published preprocessing is not certified prefix-only.",
+      "facts": [
+        {
+          "id": "primary_text_definition",
+          "statement": "SI 3.1 states x_i(t) -> (x_i(t)-mu)/sigma, with mu and sigma obtained from all cells in one microfluidic experiment across 20 pre-stress time points described as 50 minutes. This is not normalization by a future peak or a whole-trace extremum.",
+          "evidence": ["provenance/supplement_methods_excerpt.txt:173-186", "provenance/readme_source.txt:42-45"],
+          "qualification": "The prose alone does not specify how the time and cell dimensions are combined to compute sigma, how missingness is processed, or which cell cohort was retained."
+        },
+        {
+          "id": "linked_source_definition",
+          "statement": "The supplement links swainlab/mi-by-decoding. Its normMeanOffset.m uses B = {o-L-1,...,o-2}, L=20, with one-based origin o. It computes mu = mean_j(mean_i R_ij) and s = mean_j(std_i R_ij), then (R-mu)/s. The standard deviation is the ordinary MATLAB column-wise sample SD, averaged over baseline frames; it is NOT the SD of all pooled cell-time observations. The type argument is unused.",
+          "evidence": ["provenance/source_links.json:143-147", "provenance/source_code/normMeanOffset.m:1-10", "provenance/source_code_acquisition.json:6-12"],
+          "qualification": "For a complete n-cell cohort, s = (1/L) sum_j sqrt(sum_i (R_ij-mean_i R_ij)^2/(n-1)). Direct mean/std calls do not omit NaNs. The worked example inpaints before normalization. The source code resolves the operator but does not establish the unrecorded export call for every normalized bitstream."
+        },
+        {
+          "id": "baseline_index_offset",
+          "statement": "At deposited origin o=49, the normalizer uses columns 28:47. The worked example's rich classification segment instead uses columns 29:48; stress starts at column 49. Under the nominal 2.5-minute grid, the normalizer's frame centres are -52.5 through -5 minutes, whereas the rich segment is -50 through -2.5 minutes.",
+          "evidence": ["provenance/source_code/normMeanOffset.m:7-10", "provenance/source_code/example_script.m:64-70", "timing_review.json:1078-1098"],
+          "qualification": "These nominal times describe indexing conventions, not recovered acquisition timestamps. Do not silently replace the implemented baseline window with a different 20-frame window."
+        },
+        {
+          "id": "core_prefix_input_not_future_outcome_leakage",
+          "statement": "If the complete required pre-stimulus observations and their cohort are explicitly declared available inputs before prediction, a fixed map B -> (mu(B),s(B)) can be test-time initial-state/assay calibration for a post-stimulus conditional response. Use of that known prefix is not in itself access to post-stimulus outcomes.",
+          "evidence": ["provenance/source_code/normMeanOffset.m:7-10", "../protocol_review.json:44-47"],
+          "qualification": "This is a scientific design option, not the original blind whole-experiment/training-only protocol. Prefix membership, normalization, missingness and invalid-scale handling must be fixed before future-response access. A conditional normalized target is a different target from raw nucLoc and requires an explicit new protocol."
+        },
+        {
+          "id": "full_example_can_depend_on_future_processing",
+          "statement": "The linked worked example linearly interpolates each whole trace using all available samples. filterCellsByNucLoc then inpaints the full cell-by-time matrix before normalization, filters using columns o-40:o inclusive, and renormalizes the retained cohort. Since o is the first stress frame in that example, the filter includes that frame. The two-dimensional inpainting solves against known entries across both rows and columns, without a pre-stimulus boundary.",
+          "evidence": ["provenance/source_code/example_script.m:39-62,64-70", "provenance/source_code/filterCellsByNucLoc.m:29-64", "provenance/source_code_lf/inpaint_nans.m:125-189"],
+          "qualification": "Thus the normalizer's core index set is pre-stimulus, but the full example does not guarantee that its baseline values or selected cohort are functions of a known prefix alone. This is a potential processing dependence, not an assertion that every deposited normalized trace used this exact example pipeline."
+        },
+        {
+          "id": "original_target_and_custody_unchanged",
+          "statement": "The original raw nucLoc target, thresholds, exclusions and ineligibility finding remain unchanged. No normalized response has been substituted for raw nucLoc. No prefix or post-stimulus measurement values have been released as learner inputs.",
+          "evidence": ["../granados_manifest.json:5-17", "eligibility_audit.json:21-52", "identity_check_plan.json"],
+          "qualification": "A source-backed conditional design can be reviewed without claiming that the current files or original strong protocol already satisfy it."
+        }
+      ]
+    },
+    {
+      "question_id": "normalized_rep2_identity",
+      "resolution": "Unresolved: no additional independent Sfp1 experiment is certified from normalized rep2, and no new alias is established by the fixed deterministic checks.",
+      "facts": [
+        {
+          "id": "fixed_source_replays",
+          "statement": "Before computation, identity_check_plan.json fixed four representations for all six fig1 replicates against normalized Sfp1/carbon rep1 and rep2: the source normalizer alone or the published worked-example preprocessing, each using deposited nucLoc or the source-defined max5/median ratio. The comparison was the author's origin-20:origin+19 window, retaining whole row sets and row order. Exact double equality and exact %.10g serialized-token equality were specified; no similarity, distance tolerance, arbitrary subsets or offset search was allowed.",
+          "evidence": ["identity_check_plan.json", "identity_replay.m:1-90", "provenance/source_code/jsonlab_savejson.m:471-498"],
+          "qualification": "The %.10g rule is the linked JSONlab default, not a fitted amplitude threshold. Rounded source exports and incomplete provenance can still prevent deterministic reconstruction of a previous internal representation."
+        },
+        {
+          "id": "replay_result_and_positive_control",
+          "statement": "All fixed replay cases completed, but none produced the same complete row-set shape as the target central window, including the known experiment-level alias fig1 rep6 -> normalized fig2 rep1. Numerical equality was therefore not established; false equality fields must not be read as evaluated unequal trajectories when shape compatibility is false.",
+          "evidence": ["identity_checks.json:7-500", "identity_checks.json:408-476"],
+          "qualification": "Failure on the known alias demonstrates that these source-defined replays are not sensitive identity-exclusion tests for the deposited cohorts. Nonmatch cannot establish biological independence. No response values, normalization constants or error statistics were released."
+        },
+        {
+          "id": "known_alias_has_different_exported_cohorts",
+          "statement": "The raw fig1 rep6 and raw fig2 Sfp1/carbon arrays are identical triplets and have 158 rows by 97 frames. Their README-declared normalized rep1 alias has 164 rows by 96 frames. The additional normalized cells cannot be reconstructed by row filtering of this smaller raw export. Normalized rep2 has 155 rows by 96 frames.",
+          "evidence": ["overlap_audit.json:125-129", "schema_inventory.json:542-585,2896-2939,5623-5704", "provenance/readme_source.txt:61-83"],
+          "qualification": "These are source shapes, not response statistics. Keep the experiment-level rep1 aliases inseparable despite differing exported cell/frame selections; do not assume identical row IDs or a lossless transform between files."
+        },
+        {
+          "id": "rep2_additional_is_local_not_global",
+          "statement": "README calls rep2 an additional biological replicate relative to rep1 within the stress-type collection. It does not state that rep2 is absent from all six fig1 experiments. No persistent cell/movie/culture/day crosswalk or the exact normalized-file export call was located.",
+          "evidence": ["provenance/readme_source.txt:51-83", "identity_checks.json:497-500", "provenance/source_code/example_script.m:23-70"],
+          "qualification": "The six fig1 experiments remain a source-declared biological replicate set. Normalized rep2 must not be counted as a seventh globally independent Sfp1/carbon experiment without further provenance. Conversely, lack of proof of independence is not proof of identity."
+        }
+      ]
+    },
+    {
+      "question_id": "origin_and_clock_semantics",
+      "resolution": "origin is a one-based frame index; normalized-only nominal grids can be annotated but actual timestamps and absolute clocks cannot be reconstructed.",
+      "facts": [
+        {
+          "id": "origin_frame_index",
+          "statement": "The author's worked example reads the deposited general.origin and uses it directly for MATLAB column indexing and the first stress frame. The linked exporter indexes times(:,origin), subtracts that column's mean time, and remaps origin after TimeFilter. All 119 raw experiment entries with measured time matrices have stored origin equal to the one-based column whose mean relative time is closest to zero.",
+          "evidence": ["provenance/source_code/example_script.m:51-70", "provenance/source_code/formatCellInf.m:100-128,163-166", "timing_review.json:1-1077"],
+          "qualification": "origin is neither minutes nor a calendar timestamp. The numerical time check corroborates the source code; exact dye-arrival subframe timing or the complete export call is not recovered."
+        },
+        {
+          "id": "nominal_normalized_grid",
+          "statement": "For the normalized Sfp1/carbon matrices, o=49 and there are 96 columns. The source-reported nominal cadence supports t_nominal(j)=2.5*(j-o) minutes, j=1,...,96, giving -120 through 117.5 minutes and zero at column 49.",
+          "evidence": ["provenance/supplement_methods_excerpt.txt:119-123", "provenance/source_code/visualizeExper.m:10-11", "timing_review.json:1078-1098"],
+          "qualification": "This is explicitly a nominal annotation assuming consecutive sampled columns with the retained source origin convention. It is not measured time reconstruction and does not restore jitter, position offsets, dropped/cropped frames or unknown resampling."
+        },
+        {
+          "id": "absolute_calendar_clock",
+          "statement": "No calendar dates or absolute image-acquisition timestamps are exported. origin cannot serve as this clock, and a relative-time origin shift cannot demonstrate real calendar-time randomization or crossed day-by-dose batches.",
+          "evidence": ["inventory.schema.json", "schema_inventory.json", "provenance/source_code/formatCellInf.m:100-118"],
+          "qualification": "Absence of calendar metadata limits batch/confounding claims; it does not erase the known stimulus-relative ordering or the declared experimental dose interventions."
+        },
+        {
+          "id": "acquisition_elapsed_clock",
+          "statement": "The Methods prescribe imaging in rich medium for 5 h for carbon/osmotic experiments and 3 h for oxidative experiments, then 5 h under stress. Subtracting the first deposited time gives elapsed time within the exported window, not necessarily elapsed time from the start of the full movie. Cropping can change origin's frame number.",
+          "evidence": ["provenance/supplement_methods_excerpt.txt:81-100", "provenance/source_code/formatCellInf.m:112-118", "condition_metadata.json:switch"],
+          "qualification": "Do not turn origin=49 into a claim that the medium switch occurred 120 minutes after full acquisition began. Stress-type comparisons can be confounded with the documented 3-h versus 5-h pre-imaging schedule."
+        },
+        {
+          "id": "stimulus_relative_clock_and_dose",
+          "statement": "Stimulus-relative times are tied to Cy5-detected medium arrival. The Sfp1 carbon dose panel contains final glucose levels 0.1%, 0.2%, 0.4% and 0.8% under the same nominal carbon-stress pre-imaging schedule. Thus dose varies across experiments while stimulus-relative time and the nominal protocol schedule are shared.",
+          "evidence": ["provenance/supplement_methods_excerpt.txt:84-100,183-186", "inventory_summary.json:152-155", "condition_metadata.json:dose_panel"],
+          "qualification": "This provides potential dose-versus-relative-clock contrasts; it is not proof of calendar/day/chip randomization, identical actual acquisition clocks, or causal separation from unmeasured batch effects. A clock-only comparison must specify which clock it sees."
+        }
+      ]
+    },
+    {
+      "question_id": "same_experiment_nuclear_marker_support",
+      "resolution": "Yes, paired observation validation is source-supported within the marker-tagged Sfp1 experiment; it is one biological source group, with correlated readout errors, not disjoint independent biological replication.",
+      "facts": [
+        {
+          "id": "paired_raw_and_marker_readouts",
+          "statement": "The single group 0dcc11fc-dcd1-4983-930e-26265b48a0e9:/sfp1 contains GFP nucLoc, median, max5, nucInnerMedian, cytInnerMedian, nucCytRatio and times on matching 60-cell by 91-frame arrays. README explicitly says the Nhp6A-mCherry nuclear mask provides additional GFP measurements in these same experiments. Pair these fields by their common source row/time, not by joining to marker-free fig1/fig2 cells.",
+          "evidence": ["provenance/readme_source.txt:100-111", "timing_review.json:1100-1164", "provenance/supplement_methods_excerpt.txt:108-118"],
+          "qualification": "The deposited marker file does not contain a separate raw mCherry intensity array or persistent cell labels. Pairing is supported by the within-experiment storage contract, not by an external cell-ID crosswalk."
+        },
+        {
+          "id": "measurement_process_vs_sample_independence",
+          "statement": "The Nhp6A-mCherry signal supplies a nuclear mask independently of identifying bright GFP pixels. However, raw max5/median and mask-derived nuclear/cytosolic fluorescence use the same cells, GFP images, illumination and parts of the same segmentation pipeline. Their errors are not generally independent.",
+          "evidence": ["provenance/readme_source.txt:39-46,100-111", "provenance/supplement_methods_excerpt.txt:101-118"],
+          "qualification": "An orthogonal segmentation channel can support observation semantics in the same heldout biological sample. It is not an absolute detector calibration, a nuclear kinase-activity assay or an additional biological replicate."
+        },
+        {
+          "id": "legitimate_paired_validation_design",
+          "statement": "In a separately registered design, reserve the entire marker-tagged experiment and both readouts together. Freeze any cross-readout map and its error model using other calibration material or a justified fixed definition before release. One can then compare joint predictions or prespecified paired contrasts within that heldout experiment, accounting for shared errors.",
+          "evidence": ["provenance/readme_source.txt:100-111", "../protocol_review.json:14-17"],
+          "qualification": "For a paired discrepancy, Var(A-B)=Var(A)+Var(B)-2*Cov(A,B); the covariance must not silently be set to zero. Using observed post-stimulus GFP nucLoc to predict its paired marker readout tests an observation relationship, not an input-only forecast of the biological response. No such covariance or mapping was estimated here."
+        },
+        {
+          "id": "one_biological_unit_and_context",
+          "statement": "The deposited Sfp1 marker group is one biological experiment, not two experiments because two measurement procedures are available and not 60 biological experiments because it has 60 cells. It carries an added Nhp6A-mCherry tag; other experiments lacked the marker.",
+          "evidence": ["timing_review.json:1161-1164", "provenance/supplement_methods_excerpt.txt:54-57,114-118"],
+          "qualification": "A within-marker-strain observation claim is narrower than assuming marker-tagged and marker-free contexts are equivalent. The original protocol's six disjoint support-group requirement remains unmet and has not been altered."
+        }
+      ]
+    },
+    {
+      "question_id": "movie_chip_culture_day_clustering",
+      "resolution": "Some replicate relations are explicitly documented; actual cross-file chip/movie/day memberships remain incompletely identified. Identity and shared nuisance dependence must remain separate relations.",
+      "facts": [
+        {
+          "id": "declared_biological_replication",
+          "statement": "README explicitly describes fig1 rep1 through rep6 as six Sfp1 biological replicates performed on different days. SI defines biological replicates as identical experimental conditions applied to different cultures of the same strain on different days.",
+          "evidence": ["provenance/readme_source.txt:51-59", "provenance/supplement_methods_excerpt.txt:119-125"],
+          "qualification": "This supports a source-declared six-replicate set even though calendar dates are absent. It does not establish that every other file contributes additional cultures beyond that set."
+        },
+        {
+          "id": "culture_preparation",
+          "statement": "Overnight cultures were grown to mid-log phase, diluted into fresh medium, then incubated another 3-4 h before loading. The paper does not provide a deposited mapping from culture preparations to all chips, image positions and file entries.",
+          "evidence": ["provenance/supplement_methods_excerpt.txt:63-73", "schema_inventory.json"],
+          "qualification": "Do not infer that every image position is a new culture or that repeated use of a strain means the same culture. Reuse of one preparation across technical assays would require a preparation-cluster relation if documented."
+        },
+        {
+          "id": "shared_chip_not_shared_cells",
+          "statement": "The multi-chamber ALCATRAS design loads up to five different strains into physically distinct chambers sharing the supplied extracellular medium. PDMS barriers prevent cross-contamination during loading. Images are acquired at multiple positions with timing-offset correction.",
+          "evidence": ["provenance/supplement_methods_excerpt.txt:67-80"],
+          "qualification": "These are distinct cells/strains with potentially shared chip, pump, medium, imaging and day effects. The method does not disclose which particular five named factor entries share each actual chip. Do not invent such memberships from ordering, filename or equal origin values."
+        },
+        {
+          "id": "identity_edges_vs_batch_edges",
+          "statement": "Documented same-experiment aliases and exact raw triplet duplicates are identity relations and remain inseparable across any future split. Multiple times, channels and technical copies of the same tracked cells are not independent biological replication. Shared chip/day/preparation, if known, is a separate nuisance or randomization-cluster relation; shared paper or strain alone is neither proof of duplicate identity nor a reason to merge every experiment.",
+          "evidence": ["overlap_audit.json:3-155", "dependency_components.json:3-6", "../protocol_review.json:20-23"],
+          "qualification": "The 142 stored components merge known aliases only. They are not 142 certified independent biological units and do not encode unobserved batch memberships. Cluster-aware inference requires the actual assignment design or explicit sensitivity/limitations, not invented N."
+        },
+        {
+          "id": "missing_crosswalk",
+          "statement": "The exports lack persistent cell/movie/chip/culture/day IDs and the per-file export selections. Required provenance to resolve the remaining cases is a biological-run crosswalk plus technical row/channel identity and exact preprocessing/export calls, preferably retaining the original full-precision data.",
+          "evidence": ["inventory.schema.json", "schema_inventory.json", "identity_checks.json:497-500"],
+          "qualification": "Unknown identifiers do not increase independent N. Unknown identity also must not be replaced by an unsupported assertion that all experiments in the same paper are one biological sample."
+        }
+      ]
+    }
+  ],
+  "conditional_estimand_options": [
+    {
+      "option_id": "raw_poststimulus_population_response_given_prefix",
+      "selected_or_authorized": false,
+      "definition": "Predict the post-stimulus experiment/population mean of raw R=max5/median conditional on the declared glucose intervention, stimulus-relative time, assay context and a known pre-stimulus prefix B. A stochastic extension would predict the individual-cell distribution conditional on those inputs rather than pretending to predict each noisy trajectory exactly.",
+      "known_inputs": "Only a predeclared prefix, its pre-stimulus cohort and actual input/timing metadata. Prefix summaries or initial-state features are fixed functions of B, not functions of future responses.",
+      "readout": "Raw nucLoc remains the output. Providing an observed prefix changes the information available to the predictor, not the units or raw target.",
+      "requirements_before_use": "New explicit registration of prefix access, cohort, missingness, aggregation/uncertainty and model-selection rules. Any learned mapping or noise parameters are fixed from allowed development material. Whole biological experiment/channel aliases stay grouped. No source filtering or interpolation may allow future responses to alter the known prefix.",
+      "limitations": "The published exports alone do not certify prefix-only preprocessing or complete batch independence. Conditional prediction need not identify an intracellular mechanism, remove unmeasured batch confounding, or satisfy the original strong protocol.",
+      "evidence": ["provenance/source_code/normMeanOffset.m", "provenance/source_code/example_script.m:39-70", "../protocol_review.json:44-47"]
+    },
+    {
+      "option_id": "prefix_standardized_poststimulus_population_response",
+      "selected_or_authorized": false,
+      "definition": "Define Z_ei(t)=(R_ei(t)-mu_e(B))/s_e(B) for post-stimulus t, then predict its conditional population mean or distribution given the prefix, intervention and context. A source-code-faithful normalizer would use the documented mean of per-frame means and mean of per-frame sample SDs on the fixed baseline index set.",
+      "known_inputs": "The complete prespecified pre-stimulus calibration prefix and cohort, with a positive finite s_e(B) and a fixed rule for undefined/missing calibration. Neither future peaks nor post-stimulus cell selection can contribute.",
+      "readout": "A different, explicitly baseline-standardized response; it is not raw nucLoc and not kinase activity. Prefix-derived mu/s are observed calibration inputs under this estimand, not secretly learned parameters from the future test outcomes.",
+      "requirements_before_use": "A new protocol must name this target, the exact baseline operator/window, strictly prefix-only preprocessing, aggregation and the covariance/uncertainty induced by the shared estimated baseline. Do not adopt the deposited nucLocNorm file as this target until its export processing and row identities are verified.",
+      "limitations": "The existing source example's inpainting/filtering is not certified prefix-only; normalized rep2 identity remains unresolved. This option does not authorize release, relax the original criteria or turn one marker experiment into multiple independent groups.",
+      "evidence": ["provenance/supplement_methods_excerpt.txt:173-186", "provenance/source_code/normMeanOffset.m:7-10", "provenance/source_code/filterCellsByNucLoc.m:29-64"]
+    }
+  ],
+  "artifact_paths": [
+    "provenance/source_links.json",
+    "provenance/source_code_acquisition.json",
+    "identity_check_plan.json",
+    "identity_checks.json",
+    "timing_review.json",
+    "access_audit.json"
+  ],
+  "parent_actions": [
+    "Keep the current candidate ineligible under the original protocol; no training, normalization-for-learning or response export is authorized.",
+    "Have the independent protocol owner/verifier review the conditional estimand and paired-sample measurement distinctions before any amendment, without looking at reserved outcomes or model performance.",
+    "Obtain the exact normalized-file export script, original full-precision/cell-cohort data and biological-run crosswalk if normalized rep2 is to be treated as an additional independent experiment.",
+    "If a prefix-conditional design is later registered, enforce a prefix-only cohort and preprocessing boundary rather than assuming the published whole-trace example is already causally safe.",
+    "Treat paired marker validation as correlated observations within one biological experiment; do not double-count channels/cells or silently substitute that design for the original support requirement."
+  ]
+}

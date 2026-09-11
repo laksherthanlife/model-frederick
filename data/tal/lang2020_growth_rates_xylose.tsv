@@ -1,0 +1,5 @@
+temperature_c	mu_per_h	carbon_source	strain	plasmid	in_scope_for_the_2ps_panel
+30	0.28	xylose	CBS6556 dHIS3 dURA3	pIW578 blank	yes
+37	0.34	xylose	CBS6556 dHIS3 dURA3	pIW578 blank	yes
+41	0.35	xylose	CBS6556 dHIS3 dURA3	pIW578 blank	yes
+45	0.14	xylose	CBS6556 dHIS3 dURA3	pIW578 blank	no

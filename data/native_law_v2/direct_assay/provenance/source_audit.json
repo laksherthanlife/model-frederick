@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "audit_id": "direct-assay-primary-source-audit-01",
+  "research_date_utc": "2026-09-07",
+  "audit_kind": "Accountable metadata research record, not an authenticated registry/custodian receipt",
+  "allowed_output_scope": [
+    "data/native_law_v2/direct_assay_catalogue.json",
+    "data/native_law_v2/direct_assay/ metadata and provenance JSON only"
+  ],
+  "existing_repository_artifacts_read": [
+    "data/native_law_v2/protocol.json",
+    "data/native_law_v2/claim_domain.json",
+    "data/native_law_v2/protocol_review.json"
+  ],
+  "access_and_selection_declaration": {
+    "no_fit_or_scoring": true,
+    "no_model_or_dependency_changes": true,
+    "no_formal_registration_attempted": true,
+    "no_response_values_released": true,
+    "no_raw_assay_supplement_body_retrieved": true,
+    "method_only_supplement_retrieved": "van Eunen 2012 Text S1, source-labelled input concentrations and coupling enzymes",
+    "public_narrative_exposure": "Methods, source-data availability, design captions and some numerical-redacted explanatory text were inspected. Publication containers include reported outcomes; their receipt in memory is explicitly acknowledged. No zero-exposure or independently enforced sealing claim is made.",
+    "numerical_output_policy": "Only identifiers, counts, input conditions, units, calibration/protocol constants and source/container hashes were retained. All numerical reaction responses, fitted kinetic constants, error values, p-values and model scores were suppressed.",
+    "selection_policy": "Leads were chosen for experimental provenance, target relevance and identifiable input variation/access prospects, not for fit performance or a regulator's expected sign.",
+    "lineage_caveat": "Public conclusions informed the search. Any later use is paper-informed replication unless a stronger discovery claim is independently justified. Prior exposure through existing source-template parameters or earlier datasets remains unaudited."
+  },
+  "verified_source_containers": [
+    {
+      "id": "smallbone2013_article_xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3764422/fullTextXML",
+      "http_status": 200,
+      "bytes": 186478,
+      "sha256": "03224a1e5e75f5d6cec2648bdc3227cdbb208d700a210ed0e53338c84cc639a6",
+      "retained_projection": "Methods, attachment metadata, Table 2 headers/units/isoenzyme labels and parameter-row count",
+      "raw_observation_file": false
+    },
+    {
+      "id": "swainston2010_informatics_paper",
+      "url": "https://eprints.maths.manchester.ac.uk/1522/1/swainston10.pdf",
+      "doi": "10.1111/j.1742-4658.2010.07778.x",
+      "http_status": 200,
+      "bytes": 710094,
+      "sha256": "44a9ec162477390c5a880a04082a7a5abbd3d875e82a88b4bcc7b314dc666fc4",
+      "retained_projection": "Historical raw-repository/schema/URL and SABIO record identifiers; surrounding numerical values redacted",
+      "raw_observation_file": false
+    },
+    {
+      "id": "vaneunen2012_article_xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3343101/fullTextXML",
+      "http_status": 200,
+      "bytes": 145742,
+      "sha256": "ed6223ce32e00d20b55bbc62b240ec21841d5ee71fd43f38a95b867a3fab7dd5",
+      "retained_projection": "Culture/assay methods, attachment descriptions, normalization method and ancestry citations",
+      "raw_observation_file": false
+    },
+    {
+      "id": "vaneunen2012_input_recipes",
+      "url": "https://journals.plos.org/ploscompbiol/article/file?type=supplementary&id=10.1371/journal.pcbi.1002483.s017",
+      "http_status": 200,
+      "bytes": 53834,
+      "sha256": "b4ffb47a34b8375fec380b28842cea428ced68c7cc4f03d3a41d93b7668d0cb4",
+      "retained_projection": "Text S1 input-only assay recipes, not measurement values",
+      "raw_observation_file": false
+    },
+    {
+      "id": "cereghetti2021_article_xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7611853/fullTextXML",
+      "http_status": 200,
+      "bytes": 154455,
+      "sha256": "b2251d876f3b712a24d7388f08c7292aedf2484990229ff2b42d15171d597bc0",
+      "retained_projection": "Purification/activity methods, design/replication/randomization, availability and attachment inventory",
+      "raw_observation_file": false
+    },
+    {
+      "id": "cereghetti2021_pmc_html",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7611853/",
+      "http_status": 200,
+      "bytes": 262749,
+      "sha256": "6e9411593e74cd43523c84a008ef327d5b2f7aeb545eb63ce3a44ddb2ac92d09",
+      "retained_projection": "Actual /articles/instance/... attachment URL, not worksheet contents",
+      "raw_observation_file": false
+    },
+    {
+      "id": "oliveira2012_article_xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3531909/fullTextXML",
+      "http_status": 200,
+      "bytes": 124105,
+      "sha256": "3831fc3fe1fc6f8565a7363aa8a7298fc5edc5d9200cb3c296e8436e2f07dd81",
+      "retained_projection": "GPD assay methods, source-data descriptions and Figure 4D design with numerical outcomes redacted",
+      "raw_observation_file": false
+    }
+  ],
+  "response_bearing_artifacts_not_opened": [
+    {
+      "source": "Smallbone 2013",
+      "artifact": "mmc1.pdf",
+      "available_evidence": "Linked as Supplementary material in primary XML",
+      "body_retrieved": false,
+      "sha256": null,
+      "exact_content_and_raw_availability": "Not verified"
+    },
+    {
+      "source": "van Eunen 2012",
+      "artifact": "pcbi.1002483.s004.pdf",
+      "url": "https://journals.plos.org/ploscompbiol/article/file?type=supplementary&id=10.1371/journal.pcbi.1002483.s004",
+      "available_evidence": "Primary caption calls this a new kinetic-parameter summary; HEAD confirms PDF object",
+      "http_status_after_normal_publisher_redirect": 200,
+      "provider_bytes": 24849,
+      "provider_md5_hex": "60dd54a9f12440b849e98232327f40b6",
+      "provider_md5_base64": "YN1UqfEkQLhJ6YIyMn9Atg==",
+      "provider_generation": "1606761536715722",
+      "hash_semantics": "Provider-supplied x-goog-hash, not locally verified and not SHA256",
+      "body_retrieved": false,
+      "sha256": null,
+      "raw_curve_file": false
+    },
+    {
+      "source": "Cereghetti 2021",
+      "artifact": "EMS133472-supplement-Source_Data_Figure_2___Statistical_Source_Data.xlsx",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/7611853/bin/EMS133472-supplement-Source_Data_Figure_2___Statistical_Source_Data.xlsx",
+      "available_evidence": "Primary XML/HTML attachment plus source-data statement including all repeats",
+      "head_status": 200,
+      "head_content_type": "text/html; charset=utf-8",
+      "head_content_length": 1817,
+      "body_retrieved": false,
+      "sha256": null,
+      "exact_schema_and_raw_curves": "Not verified; slope source data are not necessarily original progress curves"
+    },
+    {
+      "source": "Cereghetti 2021",
+      "artifact": "PMC7611853_SupplementaryFiles.zip",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7611853/supplementaryFiles",
+      "available_evidence": "Official endpoint HEAD returns application/zip with attachment filename",
+      "head_status": 200,
+      "head_content_length": 0,
+      "body_retrieved": false,
+      "sha256": null,
+      "warning": "HEAD response does not establish ZIP member integrity or measurement schema"
+    }
+  ],
+  "precise_access_failures_and_stopping_rules": [
+    {
+      "resource": "Historical MeMo-RK and KineticsWizard resource website",
+      "urls": ["https://www.mcisb.org/MeMo-RK/", "https://www.mcisb.org/resources/kinetics/", "http://www.mcisb.org/MeMo-RK/"],
+      "observed": "HTTPS certificate hostname mismatch. Original HTTP URL returns 301 to https://guidenetworth.com/MeMo-RK/; redirect connection then reset.",
+      "action": "No TLS weakening, login, authentication bypass or continued crawl. Unrelated redirect is not accepted as biological data provenance. Ask authors/institutional archive."
+    },
+    {
+      "resource": "Cereghetti publisher original article and correction PDF",
+      "urls": ["https://www.nature.com/articles/s41556-021-00760-4", "https://www.nature.com/articles/s41556-021-00799-3.pdf"],
+      "observed": "HTTP 200 text/html Client Challenge, 3038 bytes, not requested article/PDF",
+      "challenge_body_sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "action": "No challenge bypass. Original article methods were available independently from its public PMC record. Correction content remains unresolved."
+    },
+    {
+      "resource": "Initial non-authoritative reconstruction of a PMC supplement URL",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7611853/bin/EMS133472-supplement-Source_Data_Extended_Data_Figure_1___Statistical_Source_Data.xlsx",
+      "observed": "HEAD 404; also the extended figure is not the activity target",
+      "action": "Discarded this guessed path. Parsed the actual primary article link for Figure 2 instead; do not interpret the 404 as proof that the attachment is absent."
+    }
+  ],
+  "other_primary_leads_stopped_or_deferred": [
+    {
+      "lead": "Oliveira et al. 2012 GPD extract activity",
+      "doi": "10.1038/msb.2012.55",
+      "title": "Regulation of yeast central metabolism by enzyme phosphorylation",
+      "pmcid": "PMC3531909",
+      "source_locators": ["sec11: Strains and plasmids", "sec20: In vitro glycerol-3-phosphate dehydrogenase activity", "Figure 4D", "Supplementary Table 3 description / d35e38"],
+      "real_experiment_verified": true,
+      "method_metadata": {
+        "wild_type": "FY4 MATa",
+        "mutant_background": "FY3 MATa ura3-52; plasmid-complemented phosphosite mutants",
+        "sample": "Bead-beaten cell-free extract, desalted through Zeba column",
+        "pH": 6.5,
+        "DHAP_mM": 0.8,
+        "NADH_mM": 0.15,
+        "reaction_volume_uL": 200,
+        "wavelength_nm": 340,
+        "optical_path_cm": 0.6,
+        "NADH_extinction_coefficient_M_inverse_cm_inverse": 6220,
+        "reported_unit": "U per gram total protein; one unit is one micromole NADH oxidised per minute",
+        "reported_biological_replicates": 2,
+        "assay_dilutions": 2,
+        "assay_temperature_C": null
+      },
+      "supplement_metadata": [
+        {"filename": "msb201255-s1.pdf", "description": "Supplementary Figures S1-6 and Supplementary Table S1, verified from primary XML d35e26; supplement body not opened"},
+        {"filename": "msb201255-s2.xls", "description": "Phosphoproteome data; not opened"},
+        {"filename": "msb201255-s3.xls", "description": "Physiology and metabolite concentrations for point mutants; sheets Description, PhysiologyPhosphoSiteMutants, MetabolomePFK2_eth, MetabolomeGPD1_glc as described in primary XML; not opened"}
+      ],
+      "stopping_reason": "Genuine fixed-input extract activity contrast, but two biological replicates and two dilutions do not provide a functional-form titration design or the current group inventory. No raw GPD progress-curve/initial-rate table was identified in the source supplement descriptions. Total protein is not Gpd1 active amount; intracellular metabolite/product changes are not catalytic-rate labels.",
+      "alternative_use": "Could support a separately registered narrow extract-activity replication after original detector records and culture IDs are obtained; not a kcat candidate."
+    },
+    {
+      "lead": "Xu et al. 2012 Cdc19 allostery",
+      "doi": "10.1016/j.molcel.2012.07.013",
+      "title": "Regulation of yeast pyruvate kinase by ultrasensitive allostery independent of phosphorylation",
+      "pmid": "22902555",
+      "pmcid": "PMC3472130",
+      "bibliographic_source": "Europe PMC core search record; hasSuppl=Y, isOpenAccess=N",
+      "access_attempts": [
+        {"url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3472130/fullTextXML", "result": "HTTP 404"},
+        {"url": "https://europepmc.org/articles/PMC3472130", "result": "HTTP 403"},
+        {"url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3472130/", "result": "HEAD returned challenge-related HTML/security headers rather than verified article content"}
+      ],
+      "stopping_reason": "Primary methods/raw supplement contents were not verified through these accessible routes. No rate/response data opened; do not infer eligibility, assay counts or available raw matrices from title/abstract. Same-lab/parameter ancestry relative to later Cdc19 literature would also need an independent audit."
+    },
+    {
+      "lead": "van Eunen et al. 2010 standardized activities",
+      "doi": "10.1111/j.1742-4658.2009.07524.x",
+      "title": "Measuring enzyme activities under standardized in vivo-like conditions for systems biology",
+      "pmid": "20067525",
+      "verified_level": "Bibliographic metadata and role as the protocol referenced by the 2012 primary paper",
+      "stopping_reason": "Did not pursue a separate raw-data candidate after the 2012 primary methods/recipe inventory established the directly measured assays and raw-record blockers. A standardized protocol alone is not observation data."
+    }
+  ],
+  "enzymeml_and_author_repository_metadata_leads": [
+    {
+      "primary_doi": "10.1038/s41592-022-01763-1",
+      "title": "EnzymeML: seamless data flow and modeling of enzymatic data",
+      "repository": "https://github.com/EnzymeML/Lauterbach_2022",
+      "access_method": "gh search repos, gh API README and recursive file tree",
+      "tree_sha": "348b742f3c5f7e4e0d0a679b22ccd6b4d9bfdbe3",
+      "tree_truncated": false,
+      "readme_git_blob_sha": "71dc6ff351a6003203014ac55968ce8d2b384a03",
+      "selected_inventory_entries": [
+        {"path": "Scenario1/Desulfuration_Cysteine_Pinto.omex", "git_blob_sha": "a2977f398b55ffc4f6ad4b1397fd2dcfaa30887c"},
+        {"path": "Scenario2/CarboligationOfPyruvateCatalysedByHcAHAS_C_unit_Malzacher.omex", "git_blob_sha": "5aaa5f728f5bc7d8ca7561db3ceb867b98e3daa0"},
+        {"path": "Scenario3/PropioinSynthesis_Spoering.omex", "git_blob_sha": "99a2b20d63cd68be03a99fe8c48ccf3dc20b10f7"},
+        {"path": "Scenario4/ABTS_Measurement_Ngubane.omex", "git_blob_sha": "b22838db658eaf9d93ea5666474e7c9f9343c689"},
+        {"path": "Scenario5/COPASI/data/EnzymeML_Lagerman.omex", "git_blob_sha": "e22d740dce13d52c16d6a0bde43357e09061ed32"},
+        {"path": "Scenario6/DeactivationOfGlucoseOxidase_Host.omex", "git_blob_sha": "2782721eebcd3074d64eceb487ec569a793a1969"}
+      ],
+      "hash_semantics": "Git object identifiers reported by the hosting API, not plain-file SHA256 digests",
+      "observation_files_or_notebooks_opened": false,
+      "biological_authenticity_of_each_example": "Not assessed from file bodies. Do not classify an example as real, simulated or native yeast merely from its filename or serialization format.",
+      "stopping_reason": "No source-bound target native-yeast experiment was established by the inventory/README. No OMEX or modelled-output file was adopted. EnzymeML/STRENDA conformance is not evidence that labels came from experiments."
+    },
+    {
+      "repository": "https://github.com/neilswainston/KineticsWizard",
+      "access_method": "gh API repository metadata, recursive tree and README",
+      "tree_sha": "e055bfc5dba75a2422f346c8e3450713a5458f0b",
+      "readme_git_blob_sha": "318c804ee7d3546c5147386f703455195eb065bf",
+      "stopping_reason": "Software and SQL schema only in the inspected full tree. No public assay-record archive identified. Do not count a parser, test fixture or schema as measured biology."
+    }
+  ],
+  "network_and_tool_summary": {
+    "bibliographic_queries": "Bounded Europe PMC REST core-search queries for the named Smallbone/van Eunen/Xu/Cereghetti/Oliveira studies, cited kinetics-informatics paper, EnzymeML papers and a targeted GPD/GND kinetic-paper query",
+    "publication_projection": "Python standard-library HTTP and XML parsing; preinstalled pypdf for selected publication/methods PDF text; output restricted to metadata/input conditions or numerical-redacted text",
+    "bounds": "HTTP calls used timeout=25 seconds or curl --max-time 25 --connect-timeout 10. GitHub access used gh; subsequent gh calls were wrapped in a 25-second subprocess timeout. No installs or authentication/challenge bypasses.",
+    "query_error": "One Europe PMC targeted search used an unsupported sort parameter and returned no hitCount; retried once without that parameter. No data-derived decision resulted.",
+    "repository_operations": "Initial pwd/ls/git status and metadata file reads; new JSON files only. Repository contained unrelated existing edits, left untouched.",
+    "not_run": ["Model training", "Parameter fitting", "FBA/SIMMER teacher generation", "Notebook execution", "New dependencies", "Old lycopene outcome access"]
+  },
+  "required_parent_follow_up": [
+    "Review the three provisional lead metadata files without treating them as registered candidates.",
+    "Obtain author/source metadata-only record inventories and independently controlled access; insist on raw-file provenance rather than inventing checksums or biological IDs.",
+    "Resolve the Cdc19 source discrepancy/correction and actual assay temperature; resolve exact pH, enzyme amounts, normalization and raw-data availability for the other leads.",
+    "Document biological source, preparation, assay randomization unit, technical read and shared calibration relations separately. Shared batches are not automatically duplicates; independent biological counts cannot be inferred from technical N.",
+    "If no appropriately scoped candidate satisfies the protocol, stop at ineligibility. Do not relax protocol criteria or fit summary constants to manufacture a native-law result."
+  ]
+}

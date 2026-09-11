@@ -1,0 +1,376 @@
+from __future__ import annotations
+
+from copy import deepcopy
+from dataclasses import replace
+import json
+import math
+from pathlib import Path
+
+import cobra
+import numpy as np
+import pytest
+
+from ystwin.fba.native_reconciliation import (
+    EnergyRoles,
+    FluxObservable,
+    NativeConsistencyError,
+    ObservationConstraint,
+    biomass_flux_equivalence,
+    boundary_observable,
+    bound_metadata,
+    condition_constraints,
+    ec_native_observables,
+    energy_diagnostic,
+    minimum_relaxation,
+    native_conditions,
+    require_native_consistency,
+    solve_native,
+)
+from ystwin.fba.solver import PINNED_TOLERANCE, configure
+
+from _frozen_runtime_helpers import run_frozen_python
+
+
+def _reaction(model, rid, stoichiometry, bounds=(0.0, 1000.0)):
+    reaction = cobra.Reaction(rid, lower_bound=bounds[0], upper_bound=bounds[1])
+    reaction.add_metabolites(stoichiometry)
+    model.add_reactions([reaction])
+    return reaction
+
+
+def _snapshot(model):
+    return {
+        "reactions": [(r.id, r.bounds, {m.id: c for m, c in r.metabolites.items()})
+                      for r in model.reactions],
+        "constraints": [(c.name, c.lb, c.ub, str(c.expression)) for c in model.constraints],
+        "objective": str(model.objective.expression),
+        "direction": model.objective.direction,
+        "notes": deepcopy(model.notes),
+        "tolerance": model.solver.configuration.tolerances.feasibility,
+        "timeout": model.solver.configuration.timeout,
+    }
+
+
+@pytest.fixture
+def toy():
+    model = cobra.Model("explicit_native_roles")
+    glucose = cobra.Metabolite("a", formula="C6H12O6", compartment="e")
+    _reaction(model, "in", {glucose: 2.0}, (0.0, 20.0))
+    _reaction(model, "out", {glucose: -1.0}, (0.0, 0.0))
+    precursor = cobra.Metabolite("b", formula="C6H12O6", compartment="c")
+    _reaction(model, "transfer", {glucose: -1.0, precursor: 1.0})
+    _reaction(model, "growth", {precursor: -1.0})
+    model.objective = "growth"
+    configure(model)
+    uptake = boundary_observable(
+        model, key="GlucoseUptake", metabolite_id="a", reaction_ids=("in", "out"),
+        direction="uptake", formula="C6H12O6", source="explicit toy chemistry",
+    )
+    growth = FluxObservable("growth", "1/h", {"growth": 1.0}, "toy biomass mass basis")
+    return model, uptake, growth
+
+
+def test_boundary_roles_are_molecular_and_label_independent(toy):
+    model, uptake, growth = toy
+    assert uptake.coefficients == {"in": 2.0, "out": -1.0}
+    for reaction in model.reactions:
+        reaction.name = "uninformative display label"
+    cap = ObservationConstraint(uptake, 0.0, 3.0, "toy measured uptake")
+    before = _snapshot(model)
+    result = solve_native(model, constraints=(cap,), objective=growth)
+    assert result["status"] == "optimal"
+    assert result["objective_value"] == pytest.approx(3.0)
+    assert result["fluxes"]["in"] == pytest.approx(1.5)
+    assert result["audit"]["summary"]["max_abs_mass_balance"] <= PINNED_TOLERANCE
+    assert _snapshot(model) == before
+
+
+def test_missing_or_nonboundary_roles_are_not_inferred_from_titles(toy):
+    model, _, _ = toy
+    with pytest.raises(ValueError, match="formula"):
+        boundary_observable(model, key="x", metabolite_id="a", reaction_ids=("in",),
+                            direction="uptake", formula="C3H8O3", source="toy")
+    model.reactions.get_by_id("out").upper_bound = 1.0
+    with pytest.raises(ValueError, match="every|boundary"):
+        boundary_observable(model, key="x", metabolite_id="a", reaction_ids=("in",),
+                            direction="uptake", formula="C6H12O6", source="toy")
+
+
+def test_minimum_discrepancy_has_physical_units_and_does_not_replace_hard_bounds(toy):
+    model, uptake, growth = toy
+    constraints = (ObservationConstraint(uptake, 0.0, 3.0, "native measured cap"),
+                   ObservationConstraint(growth, 4.0, 4.0, "native dilution rate"))
+    before = _snapshot(model)
+    failed = solve_native(model, constraints=constraints, objective=growth)
+    assert failed["status"] == "infeasible"
+    assert failed["objective_value"] is None
+    assert failed["fluxes"] is None
+    assert failed["audit"] is None
+    result = minimum_relaxation(
+        model, constraints=constraints, relaxations={"GlucoseUptake": (0.0, 1.0)},
+        max_relaxation=2.0, relaxation_unit="mmol/gDW/h",
+    )
+    assert result["status"] == "optimal"
+    assert result["minimum_relaxation"] == pytest.approx(1.0)
+    assert result["relaxation_unit"] == "mmol/gDW/h"
+    assert result["adjustments"]["GlucoseUptake"]["upper_excess"] == pytest.approx(1.0)
+    assert result["audit"]["summary"]["max_constraint_violation"] <= PINNED_TOLERANCE
+    assert _snapshot(model) == before
+    model.reactions.get_by_id("in").upper_bound = 1.5
+    result = minimum_relaxation(
+        model, constraints=constraints, relaxations={"GlucoseUptake": (0.0, 1.0)},
+        max_relaxation=2.0, relaxation_unit="mmol/gDW/h",
+    )
+    assert result["status"] == "infeasible"
+    assert result["minimum_relaxation"] is None
+    assert result["adjustments"] is None
+    assert model.reactions.get_by_id("in").upper_bound == 1.5
+
+
+def test_full_residual_audit_includes_custom_constraints_and_variables(toy):
+    model, uptake, growth = toy
+    auxiliary = model.problem.Variable("explicit_shared_resource", lb=0.0, ub=2.0)
+    model.add_cons_vars([auxiliary])
+    model.add_cons_vars([model.problem.Constraint(
+        model.reactions.get_by_id("growth").flux_expression - auxiliary,
+        ub=0.0, name="custom_native_resource",
+    )])
+    result = solve_native(model, constraints=(), objective=growth)
+    assert result["objective_value"] == pytest.approx(2.0)
+    audit = result["audit"]
+    assert len(audit["mass_balance"]) == len(model.metabolites)
+    assert len(audit["reaction_bounds"]) == len(model.reactions)
+    assert "custom_native_resource" in audit["constraints"]
+    assert "explicit_shared_resource" in audit["variables"]
+    assert all(abs(v) <= PINNED_TOLERANCE for v in audit["mass_balance"].values())
+    assert all(v["violation"] <= PINNED_TOLERANCE for v in audit["constraints"].values())
+
+
+def test_nonoptimal_and_nonfinite_solver_results_are_not_zero_filled(toy, monkeypatch):
+    import ystwin.fba.native_reconciliation as module
+
+    model, _, growth = toy
+
+    def fail(*args, **kwargs):
+        raise RuntimeError("bounded iteration limit reached")
+
+    monkeypatch.setattr(module, "_validated_optimize", fail)
+    result = solve_native(model, constraints=(), objective=growth)
+    assert result["status"] == "failed"
+    assert "iteration limit" in result["reason"]
+    assert result["objective_value"] is None
+    assert result["fluxes"] is None
+    with pytest.raises(NativeConsistencyError):
+        require_native_consistency(result, growth_key="growth", target_growth_per_h=0.1)
+
+
+def test_verified_printed_precision_is_not_tsv_formatting_or_uncertainty(toy):
+    conditions = native_conditions()
+    assert len(conditions) == 10
+    condition = next(c for c in conditions if c["growth_rate_per_h"] == 0.1)
+    assert condition["evidence_scope"] == "native_development_training"
+    glc = condition["observations"]["GlucoseUptake"]
+    assert glc["primary_printed_token"] == "1.1"
+    assert glc["rounding_half_width"] == pytest.approx(0.05)
+    assert glc["rounding_is_confidence_interval"] is False
+    glycerol = condition["observations"]["Glycerol"]
+    assert glycerol["reported_value"] == 0.0
+    assert glycerol["value"] is None
+    assert glycerol["rounding_half_width"] is None
+    assert glycerol["detection_limit"] is None
+    assert next(c for c in conditions if c["growth_rate_per_h"] == 0.15)["evidence_scope"] == "native_development_interpolation"
+    model, uptake, growth = toy
+    observables = {"GlucoseUptake": uptake, "growth": growth}
+    bounds = condition_constraints(condition, observables, mode="printed_rounding", impose_growth=True)
+    cap = next(c for c in bounds if c.observable.key == "GlucoseUptake")
+    assert (cap.lower, cap.upper) == pytest.approx((1.05, 1.15))
+    assert all(c.observable.key != "Glycerol" for c in bounds)
+    assert next(c for c in bounds if c.observable.key == "growth").lower == 0.1
+
+
+@pytest.mark.parametrize("value", [np.nan, np.inf, -np.inf, True])
+def test_nonfinite_physical_inputs_are_refused(toy, value):
+    _, uptake, _ = toy
+    with pytest.raises(ValueError):
+        ObservationConstraint(uptake, 0.0, value, "native measurement")
+    with pytest.raises(ValueError):
+        FluxObservable("x", "mmol/gDW/h", {"in": value}, "native role")
+
+
+def test_unbounded_metadata_is_explicit_without_accepting_nonfinite_physics():
+    encoded = {"lower": bound_metadata(-math.inf), "upper": bound_metadata(math.inf)}
+    assert encoded == {"lower": {"kind": "unbounded", "direction": "negative"},
+                       "upper": {"kind": "unbounded", "direction": "positive"}}
+    assert "Infinity" not in json.dumps(encoded, allow_nan=False)
+    with pytest.raises(ValueError):
+        bound_metadata(math.nan)
+    with pytest.raises(ValueError):
+        json.dumps({"physical_flux": math.inf}, allow_nan=False)
+
+
+def _energy_model():
+    model = cobra.Model("energy_roles")
+    formulas = {"atp": "C10H12N5O13P3", "water": "H2O", "adp": "C10H12N5O10P2",
+                "proton": "H", "phosphate": "HO4P", "carbon": "C", "biomass": None}
+    species = {key: cobra.Metabolite(key, formula=formula, compartment="c")
+               for key, formula in formulas.items()}
+    hydrolysis = {species[k]: c for k, c in {"atp": -1, "water": -1, "adp": 1,
+                                           "proton": 1, "phosphate": 1}.items()}
+    _reaction(model, "maintenance", hydrolysis, (0.7, 0.7))
+    _reaction(model, "assembly", {**{m: 56.6883 * c for m, c in hydrolysis.items()},
+                                  species["carbon"]: -1.0, species["biomass"]: 1.0})
+    roles = EnergyRoles("maintenance", "assembly", "atp", "water", "adp", "proton", "phosphate")
+    return model, roles
+
+
+def test_energy_diagnostic_changes_the_complete_balanced_vector_on_a_copy():
+    model, roles = _energy_model()
+    before = _snapshot(model)
+    variant, provenance = energy_diagnostic(
+        model, roles=roles, gam_mmol_atp_per_gdw=40.0, ngam_mmol_atp_per_gdw_h=0.2,
+        source="diagnostic endpoints, not fitted or independently validated",
+    )
+    assert _snapshot(model) == before
+    assert variant.reactions.get_by_id("maintenance").bounds == (0.2, 0.2)
+    assembly = variant.reactions.get_by_id("assembly")
+    assert assembly.get_coefficient("atp") == -40.0
+    assert assembly.get_coefficient("water") == -40.0
+    assert assembly.get_coefficient("adp") == 40.0
+    assert assembly.get_coefficient("proton") == 40.0
+    assert assembly.get_coefficient("phosphate") == 40.0
+    assert assembly.get_coefficient("carbon") == -1.0
+    assert provenance["calibrated"] is False
+    assert provenance["original_gam_mmol_atp_per_gdw"] == 56.6883
+    before_balance = model.reactions.get_by_id("assembly").check_mass_balance()
+    assert assembly.check_mass_balance() == pytest.approx(before_balance)
+
+
+def test_energy_parameterization_requires_explicit_stoichiometry_not_a_reaction_title():
+    model, roles = _energy_model()
+    model.reactions.get_by_id("maintenance").add_metabolites({model.metabolites.get_by_id("water"): 0.5})
+    with pytest.raises(ValueError, match="hydrolysis|stoichiometry"):
+        energy_diagnostic(model, roles=roles, gam_mmol_atp_per_gdw=40.0, source="test")
+    with pytest.raises(ValueError):
+        energy_diagnostic(model, roles=replace(roles, atp_metabolite_id="carbon"),
+                          gam_mmol_atp_per_gdw=40.0, source="test")
+
+
+def test_biomass_equivalence_uses_closed_flux_bounds_not_identifier_spelling():
+    model, _ = _energy_model()
+    biomass = model.metabolites.get_by_id("biomass")
+    _reaction(model, "growth", {biomass: -2.0})
+    inactive = _reaction(model, "unrelated_label", {biomass: 1.0}, (0.0, 0.0))
+    evidence = biomass_flux_equivalence(model, growth_reaction_id="growth",
+                                        assembly_reaction_id="assembly", biomass_metabolite_id="biomass")
+    assert evidence["assembly_flux_per_growth_flux"] == 2.0
+    assert evidence["closed_other_reaction_ids"] == ["unrelated_label"]
+    inactive.upper_bound = 1.0
+    with pytest.raises(ValueError, match="unaccounted|active"):
+        biomass_flux_equivalence(model, growth_reaction_id="growth",
+                                 assembly_reaction_id="assembly", biomass_metabolite_id="biomass")
+
+
+def test_nonfinite_return_from_optimizer_is_a_failure_not_metadata(toy, monkeypatch):
+    import ystwin.fba.native_reconciliation as module
+
+    model, _, growth = toy
+    monkeypatch.setattr(module, "_validated_optimize", lambda *a, **k: (math.inf, np.zeros(4)))
+    result = solve_native(model, constraints=(), objective=growth)
+    assert result["status"] == "failed"
+    assert result["fluxes"] is None
+    assert result["objective_value"] is None
+
+
+def test_runner_portable_native_context_distinguishes_original_and_export_bytes():
+    import hashlib
+
+    from ystwin.analysis.frozen_runtime import FROZEN_CODE_REF, _git_blobs, materialize_frozen_runtime
+
+    root = Path(__file__).resolve().parents[1]
+    support = {
+        "scripts/run_native_reconciliation.py": "36a7869cabb76822d430c5a71131f09a238601c00d368569d0fd06d43ba39449",
+        "src/ystwin/fba/native_reconciliation.py": "5a817180d0d1ecb09e898f884b7e187d7efdf29fad4f50423b56358296a24f53",
+        "src/ystwin/analysis/biology_learning_audit.py": "aefb6953fa2cd9ac50d541b6ed57e5ff6795062ae3da309e1d38fc3b0895e2e5",
+    }
+    with materialize_frozen_runtime(root) as snapshot:
+        for relative, content in _git_blobs(root, FROZEN_CODE_REF, support).items():
+            assert hashlib.sha256(content).hexdigest() == support[relative]
+            with (snapshot.root / relative).open("xb") as handle:
+                handle.write(content)
+        completed = run_frozen_python(snapshot.root, """
+            import runpy
+
+            runner = runpy.run_path(str(root / "scripts/run_native_reconciliation.py"))
+            scenarios, receipt = runner["_frozen_native_context"](root, artifact_source="portable")
+            print(json.dumps({"scenarios": scenarios, "receipt": receipt}, allow_nan=False))
+        """)
+    assert completed.returncode == 0, completed.stderr
+    result = json.loads(completed.stdout)
+    scenarios, receipt = result["scenarios"], result["receipt"]
+    assert receipt["checkpoint_sha256"] == "384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94"
+    assert receipt["sha256"] == receipt["checkpoint_reference"]["sha256"]
+    assert receipt["sha256"] != receipt["checkpoint_sha256"]
+    assert receipt["all_frozen_inputs_and_code_verified"] is True
+    assert receipt["original_checkpoint_bytes_verified"] is False
+    assert receipt["original_checkpoint_bytes"]["status"] == "not_checked"
+    assert receipt["scientific_content_preserved"] is True
+    assert {s["nacl_molar"] for s in scenarios.values()} == {0.0, 0.4}
+    assert all(0 <= s["minimum"] <= s["maximum"] <= 1 for s in scenarios.values())
+
+
+def test_runner_preserves_existing_runs_and_allows_fresh_nested_experiments(tmp_path, monkeypatch):
+    import importlib.util
+
+    root = Path(__file__).resolve().parents[1]
+    script = tmp_path / "scripts/run_native_reconciliation.py"
+    script.parent.mkdir()
+    script.write_bytes((root / "scripts/run_native_reconciliation.py").read_bytes())
+    spec = importlib.util.spec_from_file_location("native_reconciliation_runner_paths", script)
+    runner = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(runner)
+    container = tmp_path / "outputs" / "native_reconciliation_test"
+    container.mkdir(parents=True)
+
+    def stop_before_inputs():
+        raise RuntimeError("inputs not opened")
+
+    monkeypatch.setattr(runner, "native_conditions", stop_before_inputs)
+    with pytest.raises(ValueError, match="overwrite"):
+        runner.main(["--output-dir", str(container)])
+    with pytest.raises(ValueError, match="native_reconciliation"):
+        runner.main(["--output-dir", str(tmp_path / "outputs" / "unowned")])
+    with pytest.raises(RuntimeError, match="inputs not opened"):
+        runner.main(["--output-dir", str(container / "fresh_run")])
+
+
+@pytest.mark.integration
+def test_native_ec_repro_fails_consistency_before_any_added_obligation():
+    root = Path(__file__).resolve().parents[1]
+    model = cobra.io.read_sbml_model(str(root / "data/gem/ecYeastGEM_batch.xml.gz"))
+    configure(model)
+    before = _snapshot(model)
+    observables = ec_native_observables(model)
+    condition = next(c for c in native_conditions() if c["growth_rate_per_h"] == 0.1)
+    constraints = condition_constraints(condition, observables, mode="uptake_caps")
+    result = solve_native(model, constraints=constraints, objective=observables["growth"])
+    assert result["status"] == "optimal"
+    assert result["objective_value"] == pytest.approx(0.09615183476516025, abs=1e-8)
+    with pytest.raises(NativeConsistencyError, match="shortfall"):
+        require_native_consistency(result, growth_key="growth", target_growth_per_h=0.1)
+    assert result["audit"]["summary"]["max_abs_mass_balance"] <= PINNED_TOLERANCE
+    assert result["audit"]["summary"]["max_constraint_violation"] <= PINNED_TOLERANCE
+    protein = result["fluxes"]["prot_pool_exchange"]
+    assert protein < 0.5 * model.reactions.get_by_id("prot_pool_exchange").upper_bound
+    roles = EnergyRoles("r_4046", "r_4041", "s_0434[c]", "s_0803[c]", "s_0394[c]", "s_0794[c]", "s_1322[c]")
+    zero_ngam, _ = energy_diagnostic(model, roles=roles, ngam_mmol_atp_per_gdw_h=0.0,
+                                     source="Native NGAM deletion diagnostic, not calibration")
+    zero = solve_native(zero_ngam, constraints=constraints, objective=observables["growth"])
+    assert zero["status"] == "optimal"
+    assert zero["objective_value"] == pytest.approx(0.09918758764888434, abs=1e-8)
+    with pytest.raises(NativeConsistencyError, match="shortfall"):
+        require_native_consistency(zero, growth_key="growth", target_growth_per_h=0.1)
+    rounded = solve_native(model, constraints=condition_constraints(
+        condition, observables, mode="printed_rounding", impose_growth=True), objective=observables["growth"])
+    assert rounded["status"] == "optimal"
+    assert require_native_consistency(rounded, growth_key="growth", target_growth_per_h=0.1) == pytest.approx(0.1)
+    assert _snapshot(model) == before

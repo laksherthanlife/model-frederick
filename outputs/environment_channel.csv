@@ -1,0 +1,8 @@
+growth_rate_per_h,carbon_source,ethanol_carbon_fraction,glucose_mg_per_gdw,test_mg_per_gdw,fold_vs_glucose,separation_sd,ethanol_better
+0.05,ethanol,1.0,4.33,16.55,3.8222,63.96,True
+0.05,glucose_ethanol_1to2,0.677,4.33,18.34,4.2356,24.88,True
+0.1,ethanol,1.0,5.59,13.49,2.4132,,True
+0.1,glucose_ethanol_1to2,0.677,5.59,12.41,2.22,,True
+0.15,ethanol,1.0,5.94,5.3,0.8923,-0.9,False
+0.15,glucose_ethanol_1to2,0.677,5.94,7.5,1.2626,2.34,True
+0.2,glucose_ethanol_1to2,0.677,5.59,4.56,0.8157,-4.48,False

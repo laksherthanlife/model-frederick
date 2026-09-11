@@ -1,0 +1,389 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/heldout_transfer_oxygen_water/task_manifest.json",
+    "sha256": "1aedca7103197e9ca6601155bf3dc42fab528990c21835db84c24592169f0842"
+  },
+  "payload": {
+    "checkpoint_sha256": "384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94",
+    "experiment_inputs": [
+      {
+        "experiment_id": "elizondo2025_2D01",
+        "input_paths": [
+          "data/holdout_transfer/hypotheses/chemistry_oxygen_water.json",
+          "data/holdout_transfer/hypotheses/conditions_oxygen_water.json"
+        ]
+      },
+      {
+        "experiment_id": "elizondo2025_2D025",
+        "input_paths": [
+          "data/holdout_transfer/hypotheses/chemistry_oxygen_water.json",
+          "data/holdout_transfer/hypotheses/conditions_oxygen_water.json"
+        ]
+      },
+      {
+        "experiment_id": "elizondo2025_3D01",
+        "input_paths": [
+          "data/holdout_transfer/hypotheses/chemistry_oxygen_water.json",
+          "data/holdout_transfer/hypotheses/conditions_oxygen_water.json"
+        ]
+      },
+      {
+        "experiment_id": "elizondo2025_3D025",
+        "input_paths": [
+          "data/holdout_transfer/hypotheses/chemistry_oxygen_water.json",
+          "data/holdout_transfer/hypotheses/conditions_oxygen_water.json"
+        ]
+      },
+      {
+        "experiment_id": "elizondo2025_4D01",
+        "input_paths": [
+          "data/holdout_transfer/hypotheses/chemistry_oxygen_water.json",
+          "data/holdout_transfer/hypotheses/conditions_oxygen_water.json"
+        ]
+      },
+      {
+        "experiment_id": "elizondo2025_4D025",
+        "input_paths": [
+          "data/holdout_transfer/hypotheses/chemistry_oxygen_water.json",
+          "data/holdout_transfer/hypotheses/conditions_oxygen_water.json"
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "path": "data/holdout_transfer/hypotheses/chemistry_oxygen_water.json",
+        "resolved_path": "data/holdout_transfer/hypotheses/chemistry_oxygen_water.json",
+        "role": "task_structure",
+        "sha256": "184d91f35bf2fc86fe5f54d7979179e00adad3b514325aee900863b291f14034",
+        "size_bytes": 3226,
+        "source": {
+          "authority": "User-authorized UNVERIFIED overall redox/composite hypothesis, not an observed single-enzyme mechanism",
+          "reference": "assumption_status=unverified_user_authorized_hypothesis; user_authorized_hypothesis=true; manifest.json#variants/2. C40H64 + 2 O2 -> C40H56 + 4 H2O is an OVERALL redox hypothesis/composite, NOT an observed fungal single-enzyme mechanism. Relaxed intermediate-accumulation capacity upper bound; strict chemistry remains blocked. No outcome-based selection.",
+          "scope": "evaluation_task",
+          "source_id": "holdout-transfer:user-authorized-redox-hypothesis:oxygen-water:v1"
+        }
+      },
+      {
+        "path": "data/holdout_transfer/hypotheses/conditions_oxygen_water.json",
+        "resolved_path": "data/holdout_transfer/hypotheses/conditions_oxygen_water.json",
+        "role": "task_conditions",
+        "sha256": "1fc9257d2ef344d615c9ce50a53ed69e1a4522e303e2a0a92ff583d245fa8bb4",
+        "size_bytes": 9109,
+        "source": {
+          "audit_qualifications": {
+            "added_nacl_interpretation": "Zero denotes no extra NaCl intervention, not zero basal salinity, sodium or osmolality.",
+            "biological_redox_validation": false,
+            "blinding_incident": "Per requester report, the previous curator incidentally encountered outcomes after model freeze; they were not used or forwarded to the model. No outcome values are carried into this bundle.",
+            "clean_verification_retroactively_restores_curator_blindness": false,
+            "condition_packet_path": "data/holdout_transfer/condition_records.json",
+            "condition_packet_sha256": "198c1cbc7dd6e89bacc6ed4763f891bf9bbcb7f0592582da0c533e56fae3cd82",
+            "excluded_row_curation_fields": [
+              "condition_source_ref",
+              "strain_and_construct"
+            ],
+            "frozen_checkpoint_identity_as_supplied": "SHA384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94",
+            "genotype_and_unverified_dataset_aliases_are_model_inputs": false,
+            "hypothesis_manifest_path": "data/holdout_transfer/hypotheses/manifest.json",
+            "hypothesis_manifest_sha256": "df946c96374f7a1c6974564603bbc17ef3835e82b646fded73329a2b49867354",
+            "hypothesis_status": "UNVERIFIED REDOX HYPOTHESIS",
+            "input_resolution_path": "data/holdout_transfer/input_resolution.json",
+            "interpretation": "relaxed_intermediate_capacity_envelope",
+            "no_gene_copy_to_activity_scaling": true,
+            "no_outcome_based_variant_selection": true,
+            "not_a_terminal_producer_or_realized_content_prediction": true,
+            "reaction_identity_qualification": "Reviewed Q7Z859 supports CrtYB conversion of lycopene through gamma-carotene to beta-carotene. This independently supports the intermediate qualification, not the CrtI redox hypothesis or actual downstream allocation; the earlier restricted verification did not establish it.",
+            "registered_hypotheses": [
+              "nad",
+              "oxygen_peroxide",
+              "oxygen_water"
+            ],
+            "shared_condition_projection_sha256": "5614e22b760aa9aeb4eaf49eb6b54cd7bea89245e3e8fd75fc7d6d7f2810331b",
+            "shared_relaxations": [
+              "CrtYB downstream cyclase consumption is omitted identically in all alternatives; no cyclase flux floor or partition constant is supplied.",
+              "Heterologous CrtE/CrtYB/CrtI enzyme capacities are unsupplied; no kcat, abundance, allocation or activity is inferred from gene-copy counts.",
+              "Cytosolic pathway aggregation and access to the declared cofactors remain assumptions, not established localization or electron-transfer coupling.",
+              "The unchanged native DS28911/W303 to CEN.PK2-1c/supplemented-YNB transfer remains an explicit unvalidated cross-strain/medium assumption."
+            ],
+            "strict_chemistry_evidence_path": "data/holdout_transfer/chemistry_evidence.json",
+            "strict_chemistry_evidence_sha256": "bb9ff21723f73bd94d6ec8e602d8ba8ef0c396a2627b35886e796461ac88a518",
+            "strict_chemistry_status": "blocked_no_installable_task",
+            "strict_lane_unblocked": false,
+            "user_authorized_hypothesis": true
+          },
+          "authority": "Primary condition inputs with user-authorized UNVERIFIED REDOX HYPOTHESIS; not verified fungal redox chemistry",
+          "reference": "Elizondo BR and Saa PA (2025), ACS Synthetic Biology 14(9), DOI 10.1021/acssynbio.5c00256, PMC12455641, Methods 2.1.1-2.1.2 and 2.1.4; author repository SysBioengLab/BcarGRASP; constructs verified in Lopez et al. (2020), DOI 10.3389/fbioe.2020.578793, Table 1. Author dilution inputs: DilutionRatesStatistics.xlsx, Statistics!A2:C7. Independent CrtYB qualification: reviewed UniProtKB Q7Z859, RHEA:32219/RHEA:32239, ECO:0000269, PMID:10589832; data/holdout_transfer/chemistry_evidence.json. Registered alternatives: data/holdout_transfer/hypotheses/manifest.json. Audit resolutions: data/holdout_transfer/input_resolution.json.",
+          "scope": "evaluation_task",
+          "source_id": "holdout-transfer:elizondo2025:six-chemostats:hypothesis-conditions:oxygen-water:v1"
+        }
+      },
+      {
+        "path": "pyproject.toml",
+        "resolved_path": "pyproject.toml",
+        "role": "evaluation_code",
+        "sha256": "0bf5440e9a8107c9d5e0e7ad1a596466be43f1f8af958129750fece811c2fc90",
+        "size_bytes": 3732,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "pyproject.toml"
+        }
+      },
+      {
+        "path": "scripts/evaluate_frozen_transfer.py",
+        "resolved_path": "scripts/evaluate_frozen_transfer.py",
+        "role": "evaluation_code",
+        "sha256": "8d675521c2aad763d5e435f93aaa7f77689774e3033dea360cf9da1edee45afa",
+        "size_bytes": 12019,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "scripts/evaluate_frozen_transfer.py"
+        }
+      },
+      {
+        "path": "scripts/run_native_training.py",
+        "resolved_path": "scripts/run_native_training.py",
+        "role": "evaluation_code",
+        "sha256": "dadef6e18704065326d4d90aef37b174dfa609f35fdf483a9b08610d9b99cb6a",
+        "size_bytes": 13127,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "scripts/run_native_training.py"
+        }
+      },
+      {
+        "path": "src/ystwin/__init__.py",
+        "resolved_path": "src/ystwin/__init__.py",
+        "role": "evaluation_code",
+        "sha256": "5132c9448d5629159d9b072da1e2d8b9a382b798338d73852eea882e50023e2e",
+        "size_bytes": 1262,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/__init__.py"
+        }
+      },
+      {
+        "path": "src/ystwin/analysis/__init__.py",
+        "resolved_path": "src/ystwin/analysis/__init__.py",
+        "role": "evaluation_code",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_bytes": 1,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/analysis/__init__.py"
+        }
+      },
+      {
+        "path": "src/ystwin/analysis/blind_transfer.py",
+        "resolved_path": "src/ystwin/analysis/blind_transfer.py",
+        "role": "evaluation_code",
+        "sha256": "51fef91c07d4305186f46e966164c08c4001c0324f1fc33313ece60af69a6b7e",
+        "size_bytes": 12347,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/analysis/blind_transfer.py"
+        }
+      },
+      {
+        "path": "src/ystwin/analysis/hog_data.py",
+        "resolved_path": "src/ystwin/analysis/hog_data.py",
+        "role": "evaluation_code",
+        "sha256": "e7935214db92f1ab515b6c4b23bea0e8bed78701159cd41454452c631c4d766a",
+        "size_bytes": 24349,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/analysis/hog_data.py"
+        }
+      },
+      {
+        "path": "src/ystwin/analysis/hog_learning.py",
+        "resolved_path": "src/ystwin/analysis/hog_learning.py",
+        "role": "evaluation_code",
+        "sha256": "1e93c017c3c13c686553fd6596b6a839cbd77257f41b94ab6241f3414edf26f0",
+        "size_bytes": 29631,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/analysis/hog_learning.py"
+        }
+      },
+      {
+        "path": "src/ystwin/analysis/native_physiology.py",
+        "resolved_path": "src/ystwin/analysis/native_physiology.py",
+        "role": "evaluation_code",
+        "sha256": "996b9a2ad7433de375a53cd9dcf92d70490f4c496c1ed46416381d310296d461",
+        "size_bytes": 16228,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/analysis/native_physiology.py"
+        }
+      },
+      {
+        "path": "src/ystwin/analysis/training_freeze.py",
+        "resolved_path": "src/ystwin/analysis/training_freeze.py",
+        "role": "evaluation_code",
+        "sha256": "0d850d536c73a0925cf9190adaefc82b443dece5d5e9b5b9d801207f99653952",
+        "size_bytes": 30944,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/analysis/training_freeze.py"
+        }
+      },
+      {
+        "path": "src/ystwin/fba/__init__.py",
+        "resolved_path": "src/ystwin/fba/__init__.py",
+        "role": "evaluation_code",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_bytes": 1,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/fba/__init__.py"
+        }
+      },
+      {
+        "path": "src/ystwin/fba/chemical_task.py",
+        "resolved_path": "src/ystwin/fba/chemical_task.py",
+        "role": "evaluation_code",
+        "sha256": "0a3c792022f4d95fa4622adbb396c3975238c7ea93595b0c20f40a543197649c",
+        "size_bytes": 10402,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/fba/chemical_task.py"
+        }
+      },
+      {
+        "path": "src/ystwin/fba/dynamic_rates.py",
+        "resolved_path": "src/ystwin/fba/dynamic_rates.py",
+        "role": "evaluation_code",
+        "sha256": "03e0458cb23cc45d367f95589a5937a256eeea88fe4702cfee1cef0d614485d0",
+        "size_bytes": 32835,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/fba/dynamic_rates.py"
+        }
+      },
+      {
+        "path": "src/ystwin/fba/native_obligations.py",
+        "resolved_path": "src/ystwin/fba/native_obligations.py",
+        "role": "evaluation_code",
+        "sha256": "e636357a4aabac495ca84639f70c9d401e8e910e9a0944cad1fd9ed989f30fd4",
+        "size_bytes": 13312,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/fba/native_obligations.py"
+        }
+      },
+      {
+        "path": "src/ystwin/fba/physiology.py",
+        "resolved_path": "src/ystwin/fba/physiology.py",
+        "role": "evaluation_code",
+        "sha256": "93d9f046aa76cc6cccb569826444b41ceeeaf480dbe68baf88aa1a4d5aa0f61b",
+        "size_bytes": 9973,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/fba/physiology.py"
+        }
+      },
+      {
+        "path": "src/ystwin/fba/solver.py",
+        "resolved_path": "src/ystwin/fba/solver.py",
+        "role": "evaluation_code",
+        "sha256": "d619c671668bd66cad80c0bfec5a3a3f4cac0a61be668abb60f010d2a282780d",
+        "size_bytes": 4691,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/fba/solver.py"
+        }
+      },
+      {
+        "path": "src/ystwin/mech/__init__.py",
+        "resolved_path": "src/ystwin/mech/__init__.py",
+        "role": "evaluation_code",
+        "sha256": "9b867039d39444c50e210e03be8f1b73fc85b49299cc276b526375e6e5a1001e",
+        "size_bytes": 736,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/mech/__init__.py"
+        }
+      },
+      {
+        "path": "src/ystwin/mech/hog.py",
+        "resolved_path": "src/ystwin/mech/hog.py",
+        "role": "evaluation_code",
+        "sha256": "5bb8dbb7f896f015a3f314a7f952afeea0487c88327fd5658b3c1b2c340bc95d",
+        "size_bytes": 15490,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/mech/hog.py"
+        }
+      },
+      {
+        "path": "src/ystwin/mech/kinetic_sbml.py",
+        "resolved_path": "src/ystwin/mech/kinetic_sbml.py",
+        "role": "evaluation_code",
+        "sha256": "158fbdd3c04fc83918500936a4aac6c4d79fad125249657749c2eec4cd238fcc",
+        "size_bytes": 36206,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/mech/kinetic_sbml.py"
+        }
+      },
+      {
+        "path": "src/ystwin/paths.py",
+        "resolved_path": "src/ystwin/paths.py",
+        "role": "evaluation_code",
+        "sha256": "b3f418d157dac09994180b993556cf0462cb3b498fa58f1923d6d0ac34d7569a",
+        "size_bytes": 14643,
+        "source": {
+          "authority": "explicit native training protocol",
+          "reference": "data/hog2013/native_training_protocol.json",
+          "scope": "evaluation_code",
+          "source_id": "src/ystwin/paths.py"
+        }
+      }
+    ],
+    "kind": "evaluation_task_manifest",
+    "quantity": "balanced_growth_intracellular_content",
+    "root": ".",
+    "schema_version": 1,
+    "sha256": "de793f150459ffd3acab7afd7991c184b578d42ae95462ecebfac10f0e2be10a",
+    "unit": "mg/gDW"
+  },
+  "schema_version": 1
+}

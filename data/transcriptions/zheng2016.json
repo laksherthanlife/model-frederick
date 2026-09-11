@@ -1,0 +1,269 @@
+{
+  "schema": "ystwin/transcription/1",
+  "transcription_id": "zheng2016_hsf1_hsp70",
+  "programme": "heat_hsf1_hsp70",
+  "availability": "local_transcription",
+  "availability_note": "A TRANSCRIPTION IS OUR ARTIFACT, NOT AN UPSTREAM ONE. This level exists so that a re-implementation can be recorded without claiming upstream provenance for it. It must never be recorded as availability=local_verified: that level means a checksummed file obtained from the publisher and loaded unchanged by the shared SBML loader, and nothing here satisfies it. What is checksummed below is the MATLAB the transcription was made FROM; the Python is ours and carries our bugs.",
+  "is_upstream_artifact": false,
+  "produced_by": "src/ystwin/mech/heat_zheng2016.py",
+  "tested_by": "tests/test_heat_transcription.py",
+  "upstream_model_ids": ["zheng2016", "krakowiak2018"],
+  "upstream_availability": "local_source_only",
+
+  "sources": [
+    {
+      "source_id": "zheng2016",
+      "citation": "Zheng X, Krakowiak J, Patel N, Beyzavi A, Ezike J, Khalil AS, Pincus D (2016) Dynamic control of Hsf1 during heat shock by a chaperone switch and phosphorylation. eLife 5:e18638.",
+      "doi": "10.7554/eLife.18638",
+      "pmid": "27831465",
+      "pmcid": "PMC5127643",
+      "code_doi": "10.7554/eLife.18638.025",
+      "local_xml": "data/native_reference_models/zheng2016/PMC5127643.xml",
+      "code_archive": {
+        "path": "data/native_reference_models/zheng2016/elife-18638-code1-v3.zip",
+        "sha256": "be16b79f50d33a73475c8e216d159d36be1702c41bc0fe9e9c30501da5fcb9d0"
+      }
+    },
+    {
+      "source_id": "krakowiak2018",
+      "citation": "Krakowiak J, Zheng X, Patel N, Feder ZA, Anandhakumar J, Valerius K, Gross DS, Khalil AS, Pincus D (2018) Hsf1 and Hsp70 constitute a two-component feedback loop that regulates the yeast heat shock response. eLife 7:e31668.",
+      "doi": "10.7554/eLife.31668",
+      "pmid": "29393852",
+      "pmcid": "PMC5809143",
+      "code_dois": ["10.7554/eLife.31668.014", "10.7554/eLife.31668.015",
+                    "10.7554/eLife.31668.016", "10.7554/eLife.31668.017"],
+      "local_xml": "data/native_reference_models/krakowiak2018/PMC5809143.xml"
+    }
+  ],
+
+  "transcribed_from": [
+    {"path": "data/native_reference_models/zheng2016/titration_YFP_FB.m",
+     "sha256": "5998094f1af311d73ecbff972f48d754a0c1048cf261df0bbe6f0307aee5c38e",
+     "bytes": 1082, "role": "right-hand side, six states, feedback intact"},
+    {"path": "data/native_reference_models/krakowiak2018/elife-31668-code1-v3.m",
+     "sha256": "5998094f1af311d73ecbff972f48d754a0c1048cf261df0bbe6f0307aee5c38e",
+     "bytes": 1082, "role": "Krakowiak Source code 1 -- BYTE-IDENTICAL to the Zheng file above"},
+    {"path": "data/native_reference_models/krakowiak2018/elife-31668-code2-v3.m",
+     "sha256": "8f2d4e977ffdc1315fb02f4a9c0ede6010480db4778d73eacbb64670fc7b0c93",
+     "bytes": 1051, "role": "Krakowiak Source code 2 -- feedback severed, the one structural addition"},
+    {"path": "data/native_reference_models/zheng2016/Fig1_IPMS.m",
+     "sha256": "43914d010b1c6e9a76250c9110de4578b4c710a534a29d98b7d5c084d777381b",
+     "bytes": 1567, "role": "driver for Zheng Figure 1C, the normalised Hsp70-Hsf1 dissociation ratio"},
+    {"path": "data/native_reference_models/zheng2016/Fig2_YFP_Reporter.m",
+     "sha256": "6058697b10b9e376803ed12514383c3740a0cae5222da800e431e4032453ae84",
+     "bytes": 1774, "role": "driver for Zheng Figure 1D, the four-temperature reporter time course"},
+    {"path": "data/native_reference_models/krakowiak2018/elife-31668-code3-v3.m",
+     "sha256": "39564aad098ed62d9b5be773393ac5c55355ff558365dd357ead8c0a1a34b421",
+     "bytes": 1535, "role": "Krakowiak Source code 3 -- basal reporter versus Hsp70-Hsf1 dissociation rate"},
+    {"path": "data/native_reference_models/krakowiak2018/elife-31668-code4-v3.m",
+     "sha256": "9817d2cf18ab4bf0b9bb33cbd0745bacd8b89ecc45d52403b622b58d4a9db6df",
+     "bytes": 1954, "role": "Krakowiak Source code 4 -- Figure 6A, wild type against a 50-fold lower affinity"}
+  ],
+
+  "not_transcribed": [
+    {"path": "data/native_reference_models/zheng2016/titration_YFP_FB_decoy.m",
+     "reason": "The eight-state decoy variant behind Zheng Figure 2C. Out of scope for this run, which ports the core feedback loop; the decoy adds two states and no new parameter."},
+    {"path": "data/native_reference_models/zheng2016/titration_YFP_FB_Phosph.m",
+     "reason": "The phospho-tuned variant behind Zheng Figure 6. Its beta(t) sigmoid introduces three further asserted constants (beta_lo 1.5, beta_hi 1e4, rate 0.25 /min) that no table in either paper reports."},
+    {"path": "data/native_reference_models/zheng2016/Hsf1_Phosph.m",
+     "reason": "Driver for the phospho variant above."},
+    {"path": "data/native_reference_models/zheng2016/Fig3_Decoy.m",
+     "reason": "Driver for the decoy variant above."}
+  ],
+
+  "one_source_not_two": {
+    "finding": "Krakowiak 2018 Source code 1 is byte-identical to Zheng 2016's titration_YFP_FB.m, sha256 5998094f1af311d73ecbff972f48d754a0c1048cf261df0bbe6f0307aee5c38e for both.",
+    "consequence": "The two papers are ONE model source. They must not be recorded as independent corroboration of the same rate constants. Krakowiak reprints k2 = 2.783 /min unchanged, and reprinting is not replication -- which matters downstream, because mech/state.py's hsf1_free carries tau = 1/k2 from exactly this number.",
+    "what_krakowiak_actually_adds": [
+      "Source code 2, the feedback-severed right-hand side (one term deleted from d[HSP]/dt).",
+      "A transcription gain five-fold lower than Zheng's, with no stated reason and no interval.",
+      "Two new drivers, Source code 3 and 4, sweeping the Hsp70-Hsf1 dissociation rate."
+    ]
+  },
+
+  "parameters": {
+    "shared": {
+      "k1_k3": {"value": 166.8, "units": "min^-1 a.u.^-1", "kind": "screened_fit",
+                "note": "k3 is set equal to k1 by assumption; the papers say the on-rates for both clients are taken to be the same."},
+      "k2": {"value": 2.783, "units": "min^-1", "kind": "screened_fit"},
+      "k4": {"value": 0.0464, "units": "min^-1", "kind": "screened_fit"},
+      "k5": {"table_value": 4.64e-07, "code_value": 4.642e-07, "units": "min^-1", "kind": "screened_fit",
+             "note": "Table 1 rounds to three digits; every shipped driver writes 4.642e-7."},
+      "Kd": {"value": 0.0022, "units": "a.u.", "kind": "screened_fit"},
+      "hill_n": {"value": 3, "units": "dimensionless", "kind": "fixed_assumption"},
+      "kdil": {"value": 0.0, "units": "min^-1", "kind": "fixed_assumption"}
+    },
+    "transcription_gain_beta": {
+      "units": "min^-1",
+      "zheng2016": {"table_value": 1.778, "code_value": 1.7783,
+                    "locator": "Zheng Table 1, DOI 10.7554/eLife.18638.021; Fig1_IPMS.m, Fig2_YFP_Reporter.m, Fig3_Decoy.m all write 1.7783"},
+      "krakowiak2018": {"table_value": 0.3557, "code_value": 0.35566,
+                        "code_literal": "1.7783/5",
+                        "locator": "Krakowiak Materials and methods, model parameter table, beta row, 'This paper's model values'; Source code 3 and 4 write beta = 1.7783/5"},
+      "ratio": 5.0,
+      "status": "declared_choice_required",
+      "finding": "One model structure, one code file, and the same coefficient published twice at a factor of five apart. Krakowiak's own table prints 1.778 and 0.3557 side by side with no interval and no stated reason; the prose says only that the first value 'exaggerated' the feedback strength. Neither value is an identified transcription rate, so this transcription refuses to default to either and makes the caller name one.",
+      "would_close_it": "An absolute transcript and reporter calibration -- molecules of HSE-YFP per minute per active Hsf1 trimer -- able to decide between the two published gains."
+    },
+    "initial_conditions": {
+      "HSP": 1.0, "Hsf1": 0.0, "HSP_Hsf1": 0.002, "HSP_UP": 0.0,
+      "YFP_reporter_runs": 3.0, "YFP_Fig1C_run": 0.0,
+      "units": "a.u.",
+      "note": "HSP_Hsf1 = 1/500 encodes the asserted 500:1 Hsp70:Hsf1 abundance ratio. Zheng Table 2 prints 1/500; Krakowiak's table prints 0.002."
+    },
+    "unfolded_protein_loads": {
+      "units": "a.u.",
+      "25": 0.5183, "35": 4.4492, "39": 10.5141, "43": 20.0397,
+      "table_39": 10.51,
+      "parameter_screen_39": 10.0,
+      "locator": "Zheng Fig2_YFP_Reporter.m and Krakowiak Source code 3 and 4, comment 'From Temp vs UP relationship'; Zheng Table 2 rounds the 39 C value to 10.51",
+      "status": "asserted_initial_conditions"
+    }
+  },
+
+  "refusals": [
+    {
+      "id": "heat.temperature_to_unfolded_protein",
+      "value": null,
+      "reason": "Both papers enter temperature ONLY as an asserted initial unfolded-protein load -- 0.5183, 4.4492, 10.5141, 20.0397 a.u. at 25, 35, 39 and 43 C. Zheng's Methods do state the form: an exponential over 25-50 C justified by calorimetry literature, passing through the screen's fixed 39 C value and a small 25 C basal, with the other temperatures picked so as to 'generally capture steady state YFP reporter outputs' -- i.e. the remaining loads were chosen to fit the output they are then used to predict. Its coefficients are never printed and no unfolded-protein amount is ever measured, so there is no temperature-entry law to promote.",
+      "consequence": "This transcription takes unfolded protein as an INPUT. It has no temperature argument anywhere, and calling for one raises.",
+      "would_close_it": "A measured relationship between temperature and unfolded-protein load in a declared abundance scale, in S. cerevisiae, on the same scale as the model's Hsp70 and Hsf1 pools."
+    },
+    {
+      "id": "heat.absolute_abundance_scale",
+      "value": null,
+      "reason": "Every state is in arbitrary units anchored only to [HSP]o = 1 and a 500:1 Hsp70:Hsf1 ratio. Kd = 0.0022 a.u. is therefore not a molar affinity and k1 = 166.8 min^-1 a.u.^-1 is not a physical on-rate.",
+      "would_close_it": "Absolute Hsp70, Hsf1 and unfolded-protein quantification in one matched sample, in molecules per cell or molar."
+    }
+  ],
+
+  "discrepancies_found_while_transcribing": [
+    {
+      "id": "up_equation_paper_versus_code",
+      "severity": "structural_but_numerically_negligible",
+      "paper": "d[UP]/dt = k4[HSP.UP] - k3[HSP][UP]   (Zheng Materials and methods, Differential equations)",
+      "code": "ty(3) = k4*HSP_UP - k3*HSP*UP - k5*HSP_UP   (titration_YFP_FB.m line 30)",
+      "meaning": "The shipped code subtracts the k5 refolding flux from FREE unfolded protein as well as from the complex, so total client is lost at 2*k5*[HSP.UP] rather than the published k5*[HSP.UP]. The code destroys unfolded protein at exactly twice the rate the published equations do.",
+      "measured_consequence": "With k5 = 4.642e-7 /min the two conventions differ by under 5e-5 in relative YFP across 240 min at 39 C. Reported because it is a real divergence between a paper's equations and its own code, not because it changes an answer.",
+      "handled_by": "Both conventions are runnable: HeatShockTranscription(client_loss='source_code'|'published_equations')."
+    },
+    {
+      "id": "fig1_ipms_temperature_label",
+      "severity": "mislabelled_source_comment",
+      "finding": "The load 10 a.u. is attached to two different temperatures by the source's own code. Fig1_IPMS.m line 30 heads its second initial condition 'INITIAL CONDITIONS for Temp = 35 C' and line 33 sets UPo = 10; Hsf1_Phosph.m line 31 writes the same number as UPo_39 = 10. Meanwhile Fig2_YFP_Reporter.m gives 35 C the load 4.4492 and 39 C the load 10.5141, and Zheng Table 2 prints [UP]o (@39 C) = 10.51. Since the screen criteria are stated for a 25 -> 39 C shift, the run labelled 35 C in Fig1_IPMS.m is the 39 C condition under a stale comment.",
+      "handled_by": "The transcription reproduces Figure 1C at 39 C and reports both UP = 10 (screen) and UP = 10.5141 (Table 2); the two agree to within 0.006 on the criterion-2 ratio."
+    },
+    {
+      "id": "no_steady_state_exists",
+      "severity": "invalidates_a_source_code_comment",
+      "finding": "kdil = 0 makes the reporter a pure integrator: d[YFP]/dt is non-negative and never returns to zero while any free Hsf1 remains. Krakowiak Source code 3 comments its readout 'Take steady-state level of YFP reporter at 25 C', but no steady state exists. At k2 = 1e4 /min the basal fold change is 5.84, 9.24, 14.06 and 20.34 at horizons of 120, 240, 480 and 960 min.",
+      "consequence": "The published y-axis of that figure, capped at 12, is set by the 240-minute simulation horizon and not by the model. Doubling the horizon takes the curve off its own published axis.",
+      "handled_by": "The transcription requires an explicit horizon and names the readout 'value at the end of the run', never 'steady state'."
+    },
+    {
+      "id": "table_rounding",
+      "severity": "cosmetic",
+      "finding": "Table 1 prints beta = 1.778 and k5 = 4.64e-7; every shipped driver writes 1.7783 and 4.642e-7. The transcription uses the code values, because the code is what produced the figures."
+    }
+  ],
+
+  "reproduction": {
+    "method": "scipy solve_ivp, BDF with an LSODA fallback (the engine's pinned stiff pair), rtol 1e-10, atol 1e-14, native minutes. Verified stable to 5 significant figures against LSODA at rtol 1e-3 -- MATLAB ode23s's default -- and against Radau.",
+    "what_a_pass_means": "The transcription reproduces the source's own published, quantitative statement. It does NOT mean the statement is true of yeast: every criterion below is one the model's parameters were selected to satisfy.",
+    "targets": [
+      {
+        "id": "zheng_screen_criterion_1",
+        "published": "Zheng Materials and methods, Parameter assignments: 'Hsf1 must be bound to Hsp70 in basal conditions at 25 C.'",
+        "reproduced": true,
+        "measured": {"bound_fraction_of_total_hsf1_at_25C": 0.98359},
+        "beta_dependence": "none to five digits"
+      },
+      {
+        "id": "zheng_screen_criterion_2",
+        "published": "'The Hsf1.Hsp70 complex must dissociate to <=10% of its basal level within five minutes following a shift from 25 C to 39 C.'",
+        "reproduced": true,
+        "measured": {"ratio_at_5_min_beta_zheng": 0.04729, "ratio_at_5_min_beta_krakowiak": 0.00918},
+        "verdict": "Passes under both published gains."
+      },
+      {
+        "id": "zheng_screen_criterion_3",
+        "published": "'The Hsf1.Hsp70 complex must re-associate to >=90% of its initial level within 60 min following a shift from 25 C to 39 C.'",
+        "reproduced": "beta_dependent",
+        "measured": {
+          "beta_zheng": {"ratio_at_60_min": 0.91719, "recovery_time_min": 41.71, "passes": true},
+          "beta_krakowiak": {"ratio_at_60_min": 0.15385, "recovery_time_min": null, "passes": false}
+        },
+        "finding": "THE SHARPEST RESULT OF THIS TRANSCRIPTION. Krakowiak's re-parameterised gain fails the acceptance criterion that Zheng's own parameter screen used to select the rest of the parameter set -- on the byte-identical model file, at 0.154 against a required 0.90, a shortfall of 5.8-fold. The five-fold gain split is therefore not a free choice between two equally licensed values: one of them contradicts the screen that produced its own co-parameters, and no paper says so."
+      },
+      {
+        "id": "zheng_figure_1D_reporter_plateaus",
+        "published": "Zheng Results: 'Simulations of the HSE-YFP reporter generated induction curves that reached temperature-dependent plateaus... the plateaus indicate that no more YFP is being produced in the simulation'. Fig2_YFP_Reporter.m plots log2 fold change over 120 min on an axis of [-0.5, 4].",
+        "reproduced": "beta_dependent",
+        "measured": {
+          "beta_zheng": {
+            "log2_fold_at_120_min": {"25": 0.0028, "35": 1.1490, "39": 2.0817, "43": 2.8870},
+            "terminal_rate_per_min": {"35": 0.000532, "39": 0.000606, "43": 0.000762},
+            "terminal_rate_as_fraction_of_peak": {"35": 0.00082, "39": 0.00084, "43": 0.00103},
+            "ordered_by_temperature": true, "within_published_axis": true, "all_plateaued": true
+          },
+          "beta_krakowiak": {
+            "log2_fold_at_120_min": {"25": 0.0006, "35": 1.1291, "39": 2.0670, "43": 2.7470},
+            "terminal_rate_per_min": {"35": 0.000452, "39": 0.001020, "43": 0.112214},
+            "terminal_rate_as_fraction_of_peak": {"35": 0.00308, "39": 0.00678, "43": 0.74080},
+            "ordered_by_temperature": true, "within_published_axis": true, "all_plateaued": false
+          }
+        },
+        "finding": "Under the reduced gain the 43 C curve has NOT plateaued at the end of the published 120-minute window: it is still producing reporter at 74.1% of its own peak transcription rate, against 0.10% under Zheng's gain. The published claim of temperature-dependent plateaus holds for beta = 1.7783 and fails for beta = 0.3557 at the highest temperature. The heights are nearly unchanged (2.75 against 2.89 in log2 fold), so the failure is invisible in the plotted curve and visible only in its slope."
+      },
+      {
+        "id": "krakowiak_figure_1_supplement_1_separation",
+        "published": "Krakowiak Results: 'the model underestimated the amount of time required to observe the separation between the wild type and dFBL strains, suggesting the strength of the feedback had been exaggerated in the first iteration of the model'. Figure 1-figure supplement 1 compares the two gains directly.",
+        "reproduced": true,
+        "measured": {
+          "separation_10pct_min": {"beta_zheng": 13.0, "beta_krakowiak": 70.0},
+          "separation_25pct_min": {"beta_zheng": 18.0, "beta_krakowiak": 84.0},
+          "separation_50pct_min": {"beta_zheng": 22.0, "beta_krakowiak": 105.0},
+          "no_feedback_over_wild_type_at_240_min": {"beta_zheng": 14.52, "beta_krakowiak": 3.12}
+        },
+        "verdict": "Direction and magnitude reproduced: the lower gain delays the wild type / dFBL separation by 4.7-fold at the 25% threshold. This is the figure that motivates the change of beta, and it is the only published justification for it."
+      },
+      {
+        "id": "krakowiak_figure_2_supplement_1_basal_versus_dissociation",
+        "published": "Krakowiak Figure 2-figure supplement 1: 'an increase in the basal level of the HSE-YFP reporter as a function of increased dissociation rate (decreased affinity) of the Hsp70.Hsf1 interaction'. Source code 3 sweeps k2 over logspace(0, 4, 20) for 240 min at 25 C and plots fold change on an axis of [0, 12].",
+        "reproduced": "identifies_which_gain_made_the_figure",
+        "measured": {
+          "monotone_increasing_in_k2": true,
+          "fold_change_at_k2_1e4": {"beta_zheng": 22.669, "beta_krakowiak": 9.243},
+          "published_axis_maximum": 12.0
+        },
+        "finding": "Only the reduced gain fits the published axis: 9.24 against a ceiling of 12. The Zheng gain overshoots it by 1.9-fold. This independently confirms which value produced Krakowiak's figures, and it is the second place where the five-fold split is visible rather than declared."
+      },
+      {
+        "id": "krakowiak_figure_6A_affinity",
+        "published": "Krakowiak Results: 'simulations in which we increased the affinity showed faster deactivation kinetics and a lower maximal output, while decreasing the affinity showed slower deactivation and increased maximal output'. Source code 4 runs the wild type against k2 * 50.",
+        "reproduced": "partially",
+        "measured": {
+          "maximal_output_monotone_in_k2": true,
+          "reporter_at_240_min": {
+            "beta_zheng": {"k2_over_3": 12.5836, "wild_type": 12.7623, "k2_times_5": 13.7324, "k2_times_50": 20.7189},
+            "beta_krakowiak": {"k2_over_3": 12.4944, "wild_type": 12.6355, "k2_times_5": 13.1342, "k2_times_50": 17.0594}
+          },
+          "deactivation_time_min_beta_zheng": {"k2_over_3": 24.82, "wild_type": 17.94,
+                                               "k2_times_5": 15.60, "k2_times_50": 30.93}
+        },
+        "finding": "The maximal-output half reproduces monotonically in k2 under both gains, including the 50-fold case that Source code 4 actually ships. The deactivation-kinetics half does NOT: deactivation time is non-monotone in affinity. Three-fold HIGHER affinity is SLOWER than wild type (24.8 min against 17.9), and five-fold lower affinity is FASTER (15.6 min), reversing the published direction at both of the modest perturbations that Figure 6-figure supplement 1A depicts. The reversal survives every shut-off threshold tested from 1% to 10% of peak transcription rate. Only the 50-fold case in Source code 4 itself is slower than wild type. Neither paper ships code for the 3-fold and 5-fold panels, so this is a non-reproduction of a stated direction rather than a mismatch against a supplied script."
+      }
+    ]
+  },
+
+  "free_scalar_gate": {
+    "verdict": "REFUSED",
+    "free_scalars": 15,
+    "independent_targets": 0,
+    "why": "Every published figure this transcription reproduces is one the model's parameters were selected against. Zheng's screen chose k1..k5, beta and Kd to satisfy criteria 1-3; Krakowiak re-fitted beta to Figure 1B. A target the model was fitted to cannot score it, so the transcription is registered with zero independent targets and the gate refuses it. This is the correct verdict, not a defect to route around: reproducing a source's own figures shows the port is faithful, and shows nothing else.",
+    "what_would_supply_an_independent_target": [
+      "Krakowiak Figure 6B, the experimental HSE-YFP time courses for Hsf1-dCE2 and Hsf1-3xCE2, which were measured AFTER the Figure 6A simulation and are a genuine prediction -- but the paper publishes them only as a figure, so scoring against them needs the underlying medians.",
+      "Any HSE-YFP time course on this project's own plates with a declared unfolded-protein load, which would also close the temperature-entry refusal."
+    ]
+  }
+}

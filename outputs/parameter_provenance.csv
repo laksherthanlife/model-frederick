@@ -1,0 +1,16 @@
+parameter,value,unit,grade,source,upgrade
+alpha (expression -> flux),0.00100847,mmol gDCW-1 h-1 per unit,MEASURED,"fitted on 6 chemostat states, CrtE, Elizondo 2025 PMID 40891387",6 producing strains at one dilution rate with entry-enzyme qPCR; size computed in scripts/design_flux_experiment.py
+leave-one-strain-out spread,0.2002,log,MEASURED,"the same fit, held out by strain","nothing: it is a property of the six states, not a knob. It shrinks only if the product assay gets more precise -- see scripts/error_budget.py"
+cyclase vmax/mu,0.0023252,mmol gDCW-1,MEASURED,fitted on the same six states,content on 3+ strains differing in crtYB dosage alone
+cyclase Km,0.0005974,mmol gDCW-1,MEASURED,fitted on the same six states,the same crtYB dosage series as the vmax above -- the two are fitted together and neither moves without it
+content ceiling,1.2483,mg gDCW-1,MEASURED,"falls out of vmax/mu; mu cancels, so it binds every strain at every rate","REFUTED, not upgradeable: Arhar 2024 PMID 39215465 measured 79 mg/gDCW by HPLC, about 63x this. The fit saw only entry-enzyme variation"
+"upstream kinetics (psy, crti)",none,-,REFUSED,"calibrated_kinetics() raises: phytoene and GGPP were never measured, so any (vmax, km) pair reproduces the data","one phytoene peak on HPLC runs that already exist -- M8, run order 1"
+growth rate mu,per condition,h-1,MEASURED,"the pump in a chemostat; d(ln OD)/dt in a flask, via growth.specific_growth_rate","nothing to buy: it is measurable on any plate you already run. The constraint is not knowing mu, it is landing inside 0.101-0.254 /h"
+reporter loss k_deg,lower bound,h-1,BOUNDED,"minimum_consistent_kdeg: the smallest loss under which inferred activity is never negative, from an ordinary growth trace",a cycloheximide chase gives the value rather than the bound; docs/PROTOCOLS.md carries it
+gdcw_per_od,0.42,g L-1 per OD,ASSERTED,working value; calibrate.py fits gain x gdcw_per_od as ONE product and lists the pair as unidentifiable without a dry weight,one gravimetric dry-weight measurement on a known OD
+biomass yield Ysx,0.45-0.49,g g-1,BORROWED,"van Hoek 1998 PMID 9797269, GLUCOSE-LIMITED chemostat",the calibration strains were glucose-EXCESS at 4.1-6.4x that uptake; measure dry weight on your own culture
+glucose uptake q_glc,0.3-11.1,mmol gDCW-1 h-1,BORROWED,"van Hoek 1998, same table, same caveat",as above -- it sets the yield column and nothing else
+molar mass,536.87,g mol-1,MEASURED,chemistry; beta-carotene C40H56,"nothing to buy: it is exact, and the only way it moves is if the molecule being reported is not the one named"
+inner-filter coefficient,none,-,REFUSED,ReporterOptics refuses the correction when it is uncalibrated rather than treating it as zero,spike purified carotenoid into a non-producing strain
+autofluorescence a,~249,RFU per OD,BOUNDED,"one recovered control plate; splices two runs eleven days apart and the control has no medium-only fluorescing well, so it is an over-estimate","a per-construct value from the recovered channel -- a data-reduction task, not a plate to run"
+ATP per unit activity,envelope,mmol gDW-1,ASSERTED,Tier 0; was found wrong by a factor of ten thousand and is now a range rather than a number,the latent branch it feeds is refused by G4 anyway

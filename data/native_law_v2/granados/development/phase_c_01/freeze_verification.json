@@ -1,0 +1,77 @@
+{
+  "document_type": "phase_c_sealed_freeze_verification_not_scoring",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "protocol_sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+  "freeze": {
+    "path": "outputs/native_population_development/native_training_01/development_prediction_freeze.json",
+    "sha256": "e03f6b9407b29e7e76da7a0be566ce9036c5cf27ac65bfaa9a4d3d7e009b5753",
+    "bytes": 124917,
+    "role": "development_predictions"
+  },
+  "attempt_log": {
+    "path": "outputs/native_population_development/native_training_01/attempt_log.json",
+    "sha256": "4740203cf2ecd2ffe1626c5a288ac6b5949f086d189e302f4be8cc3f8c51e4f3",
+    "bytes": 20091,
+    "role": "attempt_log"
+  },
+  "conditioning_checkpoint": {
+    "path": "outputs/native_population_development/native_training_01/conditioning_checkpoint.json",
+    "sha256": "2814d3827aa8b6d3f5cd4974c92a30809c30ae4ae330d98a5262a7f650908ca3",
+    "bytes": 70295,
+    "role": "model_checkpoint"
+  },
+  "training_run_summary": {
+    "path": "outputs/native_population_development/native_training_01/training_run_summary.json",
+    "sha256": "fe80ac3406d3058c7489a98d5f3ec6aa3d980d76388c280da5b9d21dc2b489cd",
+    "bytes": 12863,
+    "role": "operational_event_log"
+  },
+  "canonical_families": [
+    "prefix_persistence",
+    "training_constant",
+    "prefix_offset",
+    "prefix_affine_time",
+    "first_order_response",
+    "transient_response"
+  ],
+  "attempt_counts": {
+    "prefix_persistence": 1,
+    "training_constant": 8,
+    "prefix_offset": 8,
+    "prefix_affine_time": 8,
+    "first_order_response": 8,
+    "transient_response": 8
+  },
+  "attempt_count": 41,
+  "prediction_status_counts": {
+    "prefix_persistence": {
+      "ok": 48
+    },
+    "training_constant": {
+      "ok": 48
+    },
+    "prefix_offset": {
+      "ok": 48
+    },
+    "prefix_affine_time": {
+      "ok": 48
+    },
+    "first_order_response": {
+      "ok": 48
+    },
+    "transient_response": {
+      "ok": 48
+    }
+  },
+  "prediction_count": 288,
+  "all_frozen_prediction_coordinates_verified": true,
+  "development_prefix_cohorts_verified_without_response_access": true,
+  "all_bound_code_config_protocol_data_and_checkpoint_hashes_verified": true,
+  "training_bound_hit_policy": "Recorded bound hits are retained; no retry, bound expansion, model exclusion or scientific-recipe change is performed.",
+  "model_fitting_performed": false,
+  "family_selection_performed": false,
+  "development_scoring_performed": false,
+  "development_responses_opened": false,
+  "selected_development_model": null,
+  "original_data_approval_sha256": "87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533"
+}

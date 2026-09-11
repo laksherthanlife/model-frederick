@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "protocol_id": "hog2013_wt_activation_balance_v1",
+  "purpose": "Estimate a conditional Hog1 activation balance from measured observations and test untouched, within-paper experimental assay/dose holdouts.",
+  "model": {
+    "filename": "model_wt.xml",
+    "sha256": "7da99398c53185503022a4dc2ec54b7666280f4d461cf96a7ccc762d56963c19",
+    "mechanistic_structure": "Published SBML; not discovered by this fitting procedure",
+    "input_convention": "0.4 M NaCl maps to an added native model osmolarity of 0.8, with linear scaling for the held-out dose",
+    "stress_time_s": 3600,
+    "mixing_time_s": 5,
+    "growth_input": "Published time-dependent optical-density fit remains an imposed input, not a learned growth law"
+  },
+  "fit": {
+    "supplement": "s002",
+    "sheet": "Hog1PP_ALL",
+    "strain_id": 202,
+    "genotype": "wild_type",
+    "medium": "YPD",
+    "nacl_molar": 0.4,
+    "value_cells": "C26:C38",
+    "time_cells": "B26:B38",
+    "expected_observations": 13,
+    "observable": "Hog1PP_measured",
+    "reported_unit": "mol/L",
+    "measurement_qualification": "Relative Western intensities calibrated using literature abundance and an assumed 90% wild-type phosphorylation peak; not independent absolute phosphorylation measurements",
+    "estimated_parameters": ["kv16f_1"],
+    "held_fixed_fast_deactivation_parameter": "kv16r_1",
+    "learned_quantity": "Activation/deactivation balance relative to the published reference, conditional on fixed fast deactivation and the rest of the published model",
+    "observation_gain": "A positive least-squares scale estimated from training observations only",
+    "objective": "Unweighted residuals divided by the training-observation RMS; provided SDs are descriptive, not treated as SEM",
+    "search_fold_bounds": [0.2, 5.0],
+    "parameter_selection_evidence": {
+      "used_training_only": true,
+      "two_rate_trial_multipliers": [4.6168956226099, 4.99944226802557],
+      "two_rate_local_sensitivity_condition_number": 1160.664679703657,
+      "reason": "Both fast rates moved together toward the search ceiling with almost unchanged fit. Minute-sampled data strongly constrain their balance rather than their individual common timescale. The common timescale is therefore held at its published value.",
+      "heldout_metrics_used_for_selection": false
+    }
+  },
+  "heldouts": {
+    "supplement": "s004",
+    "source_attestation": "Readme!A4 explicitly says these preliminary data were not used for parameter fitting",
+    "heldout_dose": {
+      "sheet": "wild type pfk26Δ27Δ 0.8M",
+      "strain_id": 202,
+      "nacl_molar": 0.8,
+      "measurement_blocks": [1, 2, 4],
+      "expected_observations": 38
+    },
+    "heldout_assay": {
+      "sheet": "wild type pfk26Δ27Δ 0.4M",
+      "strain_id": 202,
+      "nacl_molar": 0.4,
+      "measurement_blocks": [1, 2, 3],
+      "expected_observations": 52
+    },
+    "time_interpretation": "Caller explicitly accepts relative minutes inferred from publication conventions; S4 time columns themselves are unlabelled",
+    "measurement_transform": "Keep published relative intensities; divide only the identified peak-100 blocks by 100",
+    "prediction_transform": "Normalize each simulated trajectory by its own maximum at that trace's recorded sampling times; do not fit an offset, gain or kinetic parameter to held-out values",
+    "metric": "RMSE of relative time-course shape per trace, then average within measurement block and across blocks",
+    "replication": "Measurement labels and duplicate trace labels are preserved; biological independence is not asserted",
+    "baselines": ["unmodified published kinetic parameters", "persistent activation after a step input"],
+    "exclusions": "No noise-based or outcome-based exclusions; only missing workbook cells are omitted",
+    "scope": "Retrospective measured parameter-fit holdout, not independence from the original model-development process or prospective new-laboratory validation"
+  },
+  "metabolic_bridge": {
+    "quantity": "Time-matched Gpd1 protein-amount ratio to a zero-NaCl control, using the source model's volume-corrected Gpd1_measured observable",
+    "application": "Relative available-enzyme capacity for GPD1, subject to existing hard bounds and the shared GEM protein pool",
+    "assumptions": "Relative protein amount is proportional to catalytic capacity; Gpd1 synthesis/turnover parameters remain source priors, not newly estimated from the Hog1-only fit",
+    "not_claimed": ["Learned multi-stress biology", "Learned absolute phosphorylation fractions", "Measured active-enzyme capacities", "Validated product titres", "Intracellular glycerol equal to secreted glycerol"]
+  }
+}

@@ -1,0 +1,169 @@
+__pycache__/
+*.pyc
+/src/ystwin.egg-info/
+.pytest_cache/
+.coverage
+.playwright-mcp/
+
+# outputs/ is an allowlist, not a blocklist. The CSV tables here are the numbers the
+# README and docs/ quote, so they are tracked: a result nobody can see is not a result,
+# and a change that moves a flux by half a percent should show up in a diff rather than
+# only on the author's disk. Everything else generated into this directory -- the fitted
+# .npz stress models, PNG figures, anything new -- stays out, because it is binary, it
+# diffs to nothing legible, and it is regenerable from the CSVs and the scripts.
+# See docs/REPRODUCING.md for which script writes which file.
+outputs/*
+!outputs/*.csv
+!outputs/stress_model_build.npz
+!outputs/stress_model_three_sensor.npz
+!outputs/stress_model_wide.npz
+!outputs/nis_manifest.json
+!outputs/gates_manifest.json
+!outputs/native_order_robustness.json
+!outputs/regulation_matched_tasks.json
+!outputs/partial_order_v2/
+outputs/partial_order_v2/*
+!outputs/partial_order_v2/partial_order_synthetic_demo.json
+!outputs/partial_order_v2/partial_order_synthetic_summary.csv
+!outputs/state_allocation/
+outputs/state_allocation/*
+!outputs/state_allocation/synthetic_demo/
+outputs/state_allocation/synthetic_demo/*
+!outputs/state_allocation/synthetic_demo/state_allocation.csv
+!outputs/state_allocation/synthetic_demo/state_allocation.json
+!outputs/state_allocation/synthetic_demo/state_distribution.json
+
+# The producer digests. Tracked, and that is the entire point: `check_output_freshness`
+# compares modification times, and `git checkout` stamps every file with the checkout time,
+# so on any clone the mtime gate passes vacuously on content that may not match the code.
+# On 2026-08-31 it reported 284/284 while eight committed artefacts disagreed with their own
+# scripts. A digest committed beside the tables survives the clone that defeats an mtime.
+# Rewrite it with `python3 scripts/audit_reproducibility.py --restamp` after regenerating.
+!outputs/provenance.json
+
+# The story set from scripts/make_figures.py: the four figures the project's argument
+# rests on. These are tracked, unlike the report set in figures/, because they are the
+# figures a reader is pointed at from docs/FIGURES.md and because each one is a claim --
+# a figure whose intervals move should show up in a review the same way a table's numbers
+# do. Both formats: the SVG is the source of record and the PNG is what a slide or a
+# poster can take. The pattern is deliberately narrow rather than `!outputs/*.png`, so
+# that other images landing in this directory -- one-off analysis plots, the ATP-sensor
+# renders -- stay out of the repository, as everything generated here does by default.
+# Regenerate: python3 scripts/make_figures.py
+!outputs/fig[0-9][0-9]_*.svg
+!outputs/fig[0-9][0-9]_*.png
+
+# data/plates/ is deliberately NOT listed here. It is the only wet-lab measurement in the
+# repository that is tracked, and the reason it can be is that it holds the numbers and
+# nothing else: 243 kB of text against 989 kB of .xlsx, no author, no revision history, no
+# workbook metadata. The workbooks themselves stay out permanently -- each one names a
+# private individual in docProps/core.xml, and committing that publishes it into git
+# history where removing it costs a rewrite. Rebuild and re-check the text with
+#   python scripts/plate_readings.py --export     # needs YSTWIN_PLATES
+# which refuses to leave an export in place unless every block round-trips bit for bit
+# against the workbook it came from. docs/REPRODUCING.md section 7 has the schema.
+
+# ModelSEED and pytfa tables for bridge/thermodynamic.py. 19 MB, third-party, unchanged
+# since download. Re-fetch: aliases.tsv is Unique_ModelSEED_Compound_Aliases.tsv and
+# compounds.tsv is compounds.tsv, both from Biochemistry/ in the ModelSEED/
+# ModelSEEDDatabase repository; thermo_data.thermodb ships inside pytfa (pip install
+# pytfa==0.9.1, or data/ in the EPFL-LCSB/pytfa repository). Set YSTWIN_THERMO to point
+# elsewhere. Tests skip when absent.
+# TRACKED since 2026-09-11. The 18 MB of ModelSEED/pytfa tables used to be ignored on the
+# grounds that they are third-party and re-fetchable, but "tests skip when absent" meant a
+# fresh clone silently ran fewer checks than the author's machine. A repository whose
+# thermodynamic tests only execute where someone has already downloaded the data is not
+# reproducible. YSTWIN_THERMO still redirects to a local copy.
+
+# BioNumbers Nov 2024 export (Milo lab, via Kaggle), used by
+# tests/test_constants_against_bionumbers.py to check the generator's constants against a
+# source that never saw this model. Re-fetch from the Kaggle BioNumbers dataset, or query
+# bionumbers.hms.harvard.edu for the BNIDs that test names. conditions_annotation.csv came
+# with it and nothing reads it. Tests skip when absent.
+# TRACKED since 2026-09-11, same reason as data/thermo: the BioNumbers check is worth more
+# running everywhere than saving 1.1 MB.
+
+# The 2026-07-24 qPCR replicate, rebuilt from an export whose zip entries the instrument
+# software lowercased. Re-create with:
+#   python scripts/repair_qpcr_export.py <original Cq export> \
+#       data/qpcr_repaired/20260724_ER_Ox_rep1_Cq.xlsx
+# The original is a wet-lab file, not ours to publish. Set YSTWIN_QPCR to point elsewhere.
+data/qpcr_repaired/
+
+# ATP-sensor Synergy exports for the 2026-08-05 and 2026-08-09 plates, 1.7 MB, renamed by
+# hand from the reader's own filenames (20260805_ATP-sensor.xlsx and the 08-09 equivalent).
+# Wet-lab data: obtain from the team rather than re-fetching. Set YSTWIN_ATP_SENSOR to
+# point elsewhere. docs/ATP_SENSOR.md describes what they contain; tests skip when absent.
+data/atp_sensor/
+
+# The genome-scale models. The gzipped copies ARE tracked: 21 MB of SBML between them is
+# 670 kB compressed, cobrapy reads .xml.gz directly, and the earlier note here reasoned
+# from the uncompressed size and so made every FBA result unreproducible by anyone without
+# the sibling checkout. Both are published models -- yeast-GEM v9.0.2 from
+# SysBioChalmers/yeast-GEM, ecYeastGEM_batch from SysBioChalmers/ecModels (built on
+# yeast-GEM 8.3.4; the mismatch is real, see paths.ec_yeast_gem). Uncompressed drops are
+# still ignored so a local .xml does not get committed by accident.
+data/gem/*
+!data/gem/*.xml.gz
+!data/gem/MANIFEST.md
+!data/gem/stress_pathway_coverage.tsv
+!data/gem/absent_stress_genes.tsv
+!data/gem/stress_response_map.json
+# TRACKED since 2026-09-11. All eight of its paths were already declared in
+# implementation_workflow.json inventory_coverage.W03; only this line kept them out.
+
+# scraped papers and API scratch
+juxie2004.txt
+s1.json
+.DS_Store
+
+# Rendered figures and the HTML report: build artefacts, regenerated by
+# scripts/make_figures.py and scripts/build_report.py from the tables in outputs/.
+# The SVGs are the source of record and stay tracked; the PNGs and the 756 kB HTML
+# do not, since they are derived from the SVGs and inflate every diff.
+figures/*.png
+figures/report.html
+
+# Public data for docs/EXTERNAL_VALIDATION.md: 23 MB across GEO and SGD,
+# both third-party and both unchanged since download, so neither is tracked. The tables
+# the write-up quotes are in outputs/external_*.csv, which are. Re-fetch with:
+#   python scripts/fetch_external_validation_data.py
+# That pulls GSE18's nine series matrices and eight platform annotations from GEO, and one
+# JSON of curated regulation records per transcription factor from SGD.
+# TRACKED since 2026-09-11. 22 MB of GEO and SGD. Previously ignored because the quoted
+# tables live in outputs/external_*.csv anyway -- but that left the inputs behind those
+# tables unavailable, so nobody could re-derive them without re-running the fetch.
+
+# Machine-local data paths; see .ystwin.env.example. Never tracked -- it names
+# directories outside the checkout and, on the lab machine, a private workbook.
+.ystwin.env
+
+# Scraped pages from literature hunts. These land in the working directory when a paper is
+# chased by hand and they are never inputs to anything: four of them -- nsp.html,
+# nsppub.html, ajvdv.html and ouci.html -- reached the repository inside two unrelated
+# commits and sat there for a week. One was a 122 kB publication list, one was a redirect
+# stub, and one was the sixteen bytes "error code: 502". Nothing imported, read or cited
+# any of them. Removed 2026-08-31; ignored here so the next hunt cannot repeat it.
+#
+# A citation belongs in data/citations/ as a resolved DOI or PMID, which is what
+# scripts/refresh_citations.py maintains and tests/test_citations.py checks.
+# Root only, so docs/, data/ and outputs/ are untouched -- nothing tracked lives at the
+# top level in any of these three formats, and the negation that was here for README.md
+# was noise, since .md matches none of these patterns.
+/*.html
+/*.json
+/*.txt
+!/requirements-quality.txt
+
+# Ruff cache. Never belonged in the tree; removed 2026-09-03.
+.ruff_cache/
+
+# Claude Code worktrees and agent scratch
+.claude/
+
+.env
+.env.local
+.env.*.local
+data/native_law_v2/granados/sealed/
+data/native_law_v2/granados/development/private/
+data/holdout_transfer/source_index.json

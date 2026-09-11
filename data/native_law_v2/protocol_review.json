@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "review_scope": "Scientific-design review before training or final measurement access; not an outcome-driven threshold change or a passing verdict",
+  "reviewed_protocol": "data/native_law_v2/protocol.json",
+  "status": "requires_protocol_owner_review_before_fitting_authorization",
+  "issues": [
+    {
+      "id": "candidate_compared_against_itself",
+      "severity": "blocking_design",
+      "finding": "Requiring the selected candidate to beat every simple-mechanism comparator by a fixed margin rejects a correct simple law if the candidate selects that same structure. The rule can reward unnecessary complexity rather than correct functional-form selection.",
+      "required_resolution": "Predeclare structural-equivalence classes and genuine null/alternative comparisons. A selected parsimonious mechanism may be supported by correctly distinguishing alternatives without outperforming an identical fitted family. Never drop a comparator after observing scores."
+    },
+    {
+      "id": "measurement_independence_vs_biological_independence",
+      "severity": "blocking_design",
+      "finding": "Independent observation channels may intentionally measure the same held-out biological sample. Requiring every support assay to come from completely disjoint biological groups confuses independent measurement/processing with independent biological replication and can prohibit the matched evidence requested by the task.",
+      "required_resolution": "Represent biological units, technical replicates, measurement channels, shared calibrations, and train/test exposure as distinct relations. Keep all channels of a held-out biological unit reserved together; do not double-count them as independent groups. Permit genuinely orthogonal measurement support within reserved paired samples when its observation model and error dependence are explicitly verified."
+    },
+    {
+      "id": "dependency_component_overmerging",
+      "severity": "design_review",
+      "finding": "Shared publication, strain or purified enzyme preparation is not automatically identity of every randomized assay experimental unit. Conversely, separate files and time points do not establish independent biological groups.",
+      "required_resolution": "Use actual randomization, culture/preparation and batch design with cluster-aware inference appropriate to the claim. Separate true duplicate identities from shared nuisance dependencies. Do not invent biological replicates or inflate sample size."
+    },
+    {
+      "id": "cross_assay_context_semantics",
+      "severity": "design_review",
+      "finding": "Literal equality between an in-vitro assay buffer and an in-vivo culture medium is not a scientific comparability criterion. Independent assays can support a narrower relative response without establishing in-vivo intrinsic turnover.",
+      "required_resolution": "State a source-backed cross-assay observation/context model and limit the claim to what it identifies. Reject unmodeled context extrapolation, but do not conflate different physical context fields."
+    },
+    {
+      "id": "current_biochemical_candidate_not_measured_flux",
+      "severity": "candidate_ineligible",
+      "finding": "The biochemical custodian verified that Hackett intracellular fluxes are derived from YEASTNET 7 quadratic optimization/FVA, not isotope or directly measured reaction rates. Proteomics and metabolomics also came from separate culture sets. These cannot be silently relabeled as measured Cdc19 flux truth.",
+      "required_resolution": "Do not fit the current intracellular-flux candidate as experimental ground truth. Research source-bound directly measured exchange/assay targets and register any different claim before measurement access. Record paper-informed target selection as replication rather than novel discovery."
+    },
+    {
+      "id": "external_authority_not_provisioned",
+      "severity": "execution_prerequisite",
+      "finding": "External append-only registry and independent protected HMAC authority infrastructure have not been provisioned. Cryptographic receipt shape alone cannot create that authority or prove biological truth.",
+      "required_resolution": "Never invent production keys, signatures, external attestations or an OS-isolation claim. Distinguish accountable operational custody and retained transcript digests from stronger external security guarantees. If the strict protocol requires unavailable external authority, retain that explicit blocker rather than claiming success."
+    },
+    {
+      "id": "population_response_vs_individual_trajectory_estimand",
+      "severity": "design_review",
+      "finding": "A deterministic input-response learner estimates a conditional population response, not every cell's stochastic trajectory. Scoring its mean prediction against each noisy cell while scaling by the IQR of almost-identical replicate means can reject the correct population law for irreducible cell variability.",
+      "required_resolution": "Declare the estimand before fitting. If it is the population response, aggregate held-out labels by the predeclared experiment/time rule and retain cell/biological uncertainty; if it is an individual-cell distribution, require an appropriate stochastic predictor and proper distributional score. Do not change aggregation after observing errors or count cells as independent cultures. Choose a training-only scale that measures the declared response variation rather than an accidentally tiny between-replicate nuisance spread."
+    },
+    {
+      "id": "support_contrast_rule_ambiguity",
+      "severity": "design_review",
+      "finding": "The phrase that predicted and measured contrasts must agree by more than a multiple of measurement uncertainty is ambiguous about whether it constrains measured signal magnitude or prediction error.",
+      "required_resolution": "Specify separately the measured signal-to-uncertainty condition, directional agreement and allowed prediction error before observing support outcomes."
+    }
+  ],
+  "nonnegotiable_invariants": [
+    "No criterion or split changes in response to final outcomes",
+    "No until-it-passes loop over a consumed test set",
+    "No generated teacher/FBA predictions substituted for independent biological measurements",
+    "No new name or protocol version that retroactively makes exposed observations unseen",
+    "No universal, causal, intrinsic-rate or whole-cell claim from weaker empirical response evidence",
+    "No architecture or status flag can substitute for missing biological measurements"
+  ]
+}

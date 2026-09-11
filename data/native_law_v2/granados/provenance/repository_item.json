@@ -1,0 +1,261 @@
+{
+  "id" : "82d65e34-a1a2-4a8d-9bc7-b72d14b80111",
+  "uuid" : "82d65e34-a1a2-4a8d-9bc7-b72d14b80111",
+  "name" : "Distributed and dynamic intracellular organization of extracellular information in yeast",
+  "handle" : "10283/2901",
+  "metadata" : {
+    "dc.contributor" : [ {
+      "value" : "Pietsch, Julian",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.contributor.other" : [ {
+      "value" : "BBSRC - Biotechnology and Biological Sciences Research Council",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    }, {
+      "value" : "EPSRC - Engineering and Physical Sciences Research Council",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 1
+    } ],
+    "dc.creator" : [ {
+      "value" : "Granados, AA",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    }, {
+      "value" : "Pietsch, JMJ",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 1
+    }, {
+      "value" : "Cepeda-Humerez, SA",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 2
+    }, {
+      "value" : "Farquhar, I",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 3
+    }, {
+      "value" : "Tkačik, G",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 4
+    }, {
+      "value" : "Swain, P",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 5
+    } ],
+    "dc.date.accessioned" : [ {
+      "value" : "2017-09-21T10:17:39Z",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.date.available" : [ {
+      "value" : "2018-06-05",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.description.abstract" : [ {
+      "value" : "Data from single-cell microscopy experiments for \"Distributed and dynamic intracellular organization of extracellular information\" by Granados, Pietsch, Cepeda-Humerez, Tkačik and Swain. The data come from a microfluidics-based screening of the dynamics of nuclear translocation for 10 transcription factors (Msn2, Msn4, Dot6, Tod6, Sfp1, Maf1, Mig1, Mig2, Hog1, and Yap1), which are the endpoints of evolutionarily conserved signaling pathways (including protein kinase A (PKA), AMP kinase and TOR kinase pathways). The data set includes single-cell time series describing the response of each factor for environmental transitions from rich media (2% glucose) into three different stresses: carbon stress (low glucose), osmotic stress or oxidative stress. Responses to different magnitudes of each stress are also included.",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.description.tableofcontents" : [ {
+      "value" : "All files in this dataset are documented in the attached README.txt file.",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.identifier.citation" : [ {
+      "value" : "Granados, AA; Pietsch, JMJ; Cepeda-Humerez, SA; Farquhar, I; Tkačik, G; Swain, P. (2017). Distributed and dynamic intracellular organization of extracellular information in yeast, [dataset]. University of Edinburgh. https://doi.org/10.7488/ds/2214",
+      "language" : "en",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.identifier.uri" : [ {
+      "value" : "https://hdl.handle.net/10283/2901",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    }, {
+      "value" : "https://doi.org/10.7488/ds/2214",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 1
+    } ],
+    "dc.language.iso" : [ {
+      "value" : "eng",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.publisher" : [ {
+      "value" : "University of Edinburgh. School of Biological Sciences",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.relation.isreferencedby" : [ {
+      "value" : "https://doi.org/10.1073/pnas.1716659115",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    }, {
+      "value" : "Granados, AA, Pietsch, JMJ, Cepeda-Humerez, SA, Farquhar, I, Tkačik, G & Swain, P 2018, 'Distributed and dynamic intracellular organization of extracellular information' Proceedings of the National Academy of Sciences. https://doi.org/10.1073/pnas.1716659115",
+      "language" : "",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 1
+    } ],
+    "dc.rights" : [ {
+      "value" : "Creative Commons Attribution 4.0 International Public License",
+      "language" : "en",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.subject" : [ {
+      "value" : "stress",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    }, {
+      "value" : "mutual information",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 1
+    }, {
+      "value" : "cell signaling",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 2
+    }, {
+      "value" : "time series",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 3
+    }, {
+      "value" : "transcription factors",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 4
+    }, {
+      "value" : "microfluidics",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 5
+    }, {
+      "value" : "fluorescence microscopy",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 6
+    }, {
+      "value" : "budding yeast",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 7
+    }, {
+      "value" : "Saccharomyces cerevisiae",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 8
+    } ],
+    "dc.subject.classification" : [ {
+      "value" : "Biological Sciences::Molecular Biology Biophysics and Biochemistry",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.title" : [ {
+      "value" : "Distributed and dynamic intracellular organization of extracellular information in yeast",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ],
+    "dc.type" : [ {
+      "value" : "dataset",
+      "language" : "en_UK",
+      "authority" : null,
+      "confidence" : -1,
+      "place" : 0
+    } ]
+  },
+  "inArchive" : true,
+  "discoverable" : true,
+  "withdrawn" : false,
+  "lastModified" : "2022-08-26T16:31:13.015+00:00",
+  "entityType" : null,
+  "type" : "item",
+  "_links" : {
+    "accessStatus" : {
+      "href" : "https://datashare.ed.ac.uk/server/api/core/items/82d65e34-a1a2-4a8d-9bc7-b72d14b80111/accessStatus"
+    },
+    "bundles" : {
+      "href" : "https://datashare.ed.ac.uk/server/api/core/items/82d65e34-a1a2-4a8d-9bc7-b72d14b80111/bundles"
+    },
+    "identifiers" : {
+      "href" : "https://datashare.ed.ac.uk/server/api/core/items/82d65e34-a1a2-4a8d-9bc7-b72d14b80111/identifiers"
+    },
+    "mappedCollections" : {
+      "href" : "https://datashare.ed.ac.uk/server/api/core/items/82d65e34-a1a2-4a8d-9bc7-b72d14b80111/mappedCollections"
+    },
+    "owningCollection" : {
+      "href" : "https://datashare.ed.ac.uk/server/api/core/items/82d65e34-a1a2-4a8d-9bc7-b72d14b80111/owningCollection"
+    },
+    "relationships" : {
+      "href" : "https://datashare.ed.ac.uk/server/api/core/items/82d65e34-a1a2-4a8d-9bc7-b72d14b80111/relationships"
+    },
+    "version" : {
+      "href" : "https://datashare.ed.ac.uk/server/api/core/items/82d65e34-a1a2-4a8d-9bc7-b72d14b80111/version"
+    },
+    "templateItemOf" : {
+      "href" : "https://datashare.ed.ac.uk/server/api/core/items/82d65e34-a1a2-4a8d-9bc7-b72d14b80111/templateItemOf"
+    },
+    "thumbnail" : {
+      "href" : "https://datashare.ed.ac.uk/server/api/core/items/82d65e34-a1a2-4a8d-9bc7-b72d14b80111/thumbnail"
+    },
+    "self" : {
+      "href" : "https://datashare.ed.ac.uk/server/api/core/items/82d65e34-a1a2-4a8d-9bc7-b72d14b80111"
+    }
+  }
+}

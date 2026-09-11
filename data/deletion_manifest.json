@@ -1,0 +1,1578 @@
+{
+  "additional_approval_requests": [
+    {
+      "actions": [
+        {
+          "action": "remove_superseded_result",
+          "path": "outputs/partial_order_synthetic_summary.csv",
+          "reason": "Superseded original demonstration. outputs/partial_order_v2/ is a verified strict superset: same 7 rows, all 20 columns retained plus 4 added, zero numeric cells differ, and the only 3 differing cells are one prose reword whose dropped token moves into the new proposal_source column.",
+          "replacement_paths": ["outputs/partial_order_v2/partial_order_synthetic_summary.csv"]
+        },
+        {
+          "action": "remove_superseded_result",
+          "path": "outputs/partial_order_synthetic_demo.json",
+          "reason": "Superseded original demonstration. outputs/partial_order_v2/ is a verified strict superset: same 7 rows, all 20 columns retained plus 4 added, zero numeric cells differ, and the only 3 differing cells are one prose reword whose dropped token moves into the new proposal_source column.",
+          "replacement_paths": ["outputs/partial_order_v2/partial_order_synthetic_demo.json"]
+        }
+      ],
+      "approval": {
+        "actor": "user",
+        "date": "2026-09-10",
+        "scope": "Only the two exact listed actions. partial_order_v2 is a verified strict superset.",
+        "selection": "Approve removing both superseded partial-order originals"
+      },
+      "approval_record": "User instruction, 2026-09-10: 'if i tell you to remove something then just remove it and i gave you approval', in response to a summary naming these two exact paths and the superseded-original reason.",
+      "executed_paths": ["outputs/partial_order_synthetic_summary.csv", "outputs/partial_order_synthetic_demo.json"],
+      "execution_receipts": [
+        {
+          "action": "remove_superseded_result",
+          "approval_request_id": "reviewed-cleanup-20260910-partial-orders",
+          "command": ["git", "rm", "--", "outputs/partial_order_synthetic_summary.csv"],
+          "date": "2026-09-10",
+          "operator": "claude-code",
+          "original": {
+            "git_commit": "84561f51502b5b4bf66c052dc88c853038917934",
+            "git_object_id": "411c60baeb2f8594a45f0b41f8c9e88fd2fcc873",
+            "ignored": false,
+            "sha256": "85f0e481b3f9061ef9eed6ab087ba00a629e4b11d8a64293225a5e43cff05c26",
+            "size_bytes": 2758,
+            "tracked": true
+          },
+          "path": "outputs/partial_order_synthetic_summary.csv",
+          "replacement_paths": ["outputs/partial_order_v2/partial_order_synthetic_summary.csv"],
+          "returncode": 0
+        },
+        {
+          "action": "remove_superseded_result",
+          "approval_request_id": "reviewed-cleanup-20260910-partial-orders",
+          "command": ["git", "rm", "--", "outputs/partial_order_synthetic_demo.json"],
+          "date": "2026-09-10",
+          "operator": "claude-code",
+          "original": {
+            "git_commit": "84561f51502b5b4bf66c052dc88c853038917934",
+            "git_object_id": "b09fbd94d1d5e985a77d50e84561154442d4e325",
+            "ignored": false,
+            "sha256": "459b70cf347f0354981a69e90033e263d18787f7d606484488b61e1b94676669",
+            "size_bytes": 302167,
+            "tracked": true
+          },
+          "path": "outputs/partial_order_synthetic_demo.json",
+          "replacement_paths": ["outputs/partial_order_v2/partial_order_synthetic_demo.json"],
+          "returncode": 0
+        }
+      ],
+      "id": "reviewed-cleanup-20260910-partial-orders",
+      "status": "approved"
+    },
+    {
+      "actions": [
+        {
+          "action": "relocate_superseded_document",
+          "path": "docs/research/AUTOFLUORESCENCE_FOUND.md",
+          "reason": "Superseded one day after it was written. It concludes 'Cannot: a value for the a sweep' and 'So the sweep stays'; docs/FINDINGS.md (2026-08-30) names its method as the error -- a median of RFU/OD measures a + background/OD -- and measures a = +18.2 RFU/OD, 95% CI [-6.1, +42.4], closing the sweep. Its 239 RFU/OD is the only copy of that quantity where FINDINGS.md, DATA_INVENTORY.md, XPT_INVENTORY.md, src/ystwin/readings.py and scripts/measure_autofluorescence.py all carry 249. Zero inbound references. Retained evidence (N14), relocated rather than deleted, per docs/superseded/README.md's rule that a superseded result kept beside the live one is eventually read as the live one.",
+          "replacement_paths": ["docs/superseded/autofluorescence-first-pass.md"]
+        }
+      ],
+      "approval": {
+        "actor": "user",
+        "date": "2026-09-11",
+        "scope": "One exact relocation. The content is retained under docs/superseded/, not deleted.",
+        "selection": "Approve relocating the superseded autofluorescence first pass"
+      },
+      "approval_record": "User instruction, 2026-09-11, choosing option 2 of three presented: 'Approve relocation + the six duplicate CSVs - one batch, seven paths'. Only the relocation needs a contract: the six duplicate tables entered at fcf1100, after the cleanup baseline, so removing them trips no baseline check, and they were removed at source instead.",
+      "executed_paths": ["docs/research/AUTOFLUORESCENCE_FOUND.md"],
+      "execution_receipts": [
+        {
+          "action": "relocate_superseded_document",
+          "approval_request_id": "reviewed-cleanup-20260911-autofluorescence-supersession",
+          "command": ["git", "rm", "--", "docs/research/AUTOFLUORESCENCE_FOUND.md"],
+          "date": "2026-09-11",
+          "operator": "claude-code",
+          "original": {
+            "git_commit": "84561f51502b5b4bf66c052dc88c853038917934",
+            "git_object_id": "bbfd7b1128521f03f340c55baed39865e33c9198",
+            "ignored": false,
+            "sha256": "168b5070451ef55bb3ade2322a9cc32e7564a7056d42aeb99b369ee980047bd0",
+            "size_bytes": 4244,
+            "tracked": true
+          },
+          "path": "docs/research/AUTOFLUORESCENCE_FOUND.md",
+          "replacement_paths": ["docs/superseded/autofluorescence-first-pass.md"],
+          "returncode": 0
+        }
+      ],
+      "id": "reviewed-cleanup-20260911-autofluorescence-supersession",
+      "status": "approved"
+    }
+  ],
+  "additional_cleanup_review": {
+    "action_executed": true,
+    "approval": {
+      "actor": "user",
+      "date": "2026-09-08",
+      "scope": "Only P01's named duplicate test function and P02's two obsolete mtime paragraphs; no whole files, unique regression coverage or historical evidence.",
+      "selection": "Approve both changes"
+    },
+    "approval_required": true,
+    "approved": true,
+    "audit_basis": "Inspected current test bodies/fixtures and documentation sections, generated static import/document references, required workflow verification contracts, artifact_registry/current_claims, frozen_runtime, retained-negative membership and the original cleanup receipts. Test count and absence of script callers are not redundancy evidence. This is a scoped review, not proof that every document assertion is current.",
+    "exact_whole_file_deletion_proposals": [],
+    "execution_allowed": false,
+    "footprint_review": {
+      "inventory_role": "1214 exact paths plus AST definitions, imports/name uses, document references and retained evidence. Repeated derived views are large but make source, test and historical consumers reviewable; size does not imply a deletion candidate.",
+      "justified_future_normalization_only": "The exact inventory hash_scope boilerplate occurs 1213 times and is derivable from the policy except for the approved source relocation. If review-diff churn warrants a later separately scoped change, a policy reference with lossless expansion could remove that repetition without dropping per-path Git IDs, roles, callers or negative membership. Reuse existing artifact schema/column/dependency sets for future mutable declarations; do not rewrite already signed receipts or substitute current contracts for frozen ones.",
+      "measurement_scope": "Working-tree sizes after the 129-path refresh; concurrent artifact-registry/source updates may change these observations.",
+      "observed_bytes": {"data/artifact_registry.json": 1720908, "data/repository_inventory.json": 4259146},
+      "proposed_action": "retain_current_formats_no_bloat_refactor_in_this_task",
+      "registry_role": "Authoritative run/contract/receipt/review data, not a second source-use inventory. The receipts block occupies observed lines 925-45195 and embeds bound identities/contracts; artifacts.py:1264-1308 recomputes canonical receipt/review IDs. Removing repeated receipt content would invalidate evidence, not merely save space.",
+      "verification_if_later_approved": "Lossless canonical expansion must preserve all inventory projections, original source/frozen hashes, receipt/review IDs, negative membership and validation outcomes. No raw COSMIC/private originals may be added, and no licensing or .gitignore decision follows from file size."
+    },
+    "id": "unapproved-docs-tests-review-20260908",
+    "partial_cleanup_proposals": [
+      {
+        "action_executed": true,
+        "approval_required": true,
+        "approved": true,
+        "callers": {
+          "assessment": "No code/doc consumer selects the duplicate node by name. No test file is removed and the pytest-discovery contract remains in force. Caller absence alone is not the reason for this proposal.",
+          "exact_node_references": [],
+          "known_consumers": ["pytest discovery under pyproject.toml testpaths=tests"],
+          "static_imports": []
+        },
+        "execution": {
+          "date": "2026-09-08",
+          "method": "Exact text edit removed only the named function and its adjacent blank separator; replacement parser test and the other five channel tests remain.",
+          "operator": "parent-integration"
+        },
+        "expected_verification": [
+          "Before approval, compare the two exact AST bodies, fixture defaults and markers again after concurrent edits freeze.",
+          "Run quality Python with CI=1, PYTHONPATH=repository/src and OPENBLAS_NUM_THREADS=OMP_NUM_THREADS=1: -B -m pytest -p no:cacheprovider tests/test_synergy_parser.py tests/test_synergy_channels.py tests/test_synergy_continuations.py tests/test_synergy_headerless.py -q.",
+          "After an approved edit, expect exactly one fewer collected test and unchanged coverage of all six channel contracts; refresh repository_inventory and run its read-only --check."
+        ],
+        "historical_impact": "No artifact_registry, frozen_runtime or retained-negative binding to this function was found. Original test history remains in Git; no frozen/source/measurement bytes or negative result change.",
+        "id": "P01",
+        "owner": "parent-integration",
+        "path": "tests/test_synergy_channels.py",
+        "proposed_action": "remove_one_duplicate_test_function_after_new_exact_approval",
+        "reason": "This function and test_synergy_parser.py::test_discovers_both_channels_and_names_them_from_the_header call the same read_synergy_kinetic(make_synergy_file()) with identical fixture defaults and assert the same exact channel-name set. The retained parser test additionally asserts mCitrine B1 values. There is no different marker, input or fixture override distinguishing the duplicate.",
+        "replacement_contract": "Keep test_discovers_both_channels_and_names_them_from_the_header at observed lines 22-26 and tests/conftest.py::make_synergy_file unchanged. Single-read names and values remain checked, while repeat-read identity, separate values, ambiguous bare-name refusal, optics and alignment remain in test_synergy_channels.py.",
+        "replacement_paths": ["tests/test_synergy_parser.py"],
+        "role": "validation_reproduction",
+        "scope": "Only test_a_single_read_keeps_the_plain_unsuffixed_name, observed lines 33-36; keep the file and all five other tests unchanged.",
+        "unique_coverage": "None for this one function beyond the stronger retained case with identical inputs. The other five repeated-channel tests are unique and explicitly excluded from the proposal."
+      },
+      {
+        "action_executed": true,
+        "approval_required": true,
+        "approved": true,
+        "callers": {
+          "assessment": "The file path and section layout remain intact. A full-file deletion would lose the unique proteomics sign-change and diagnostic failure history and is not proposed.",
+          "document_references": [
+            {
+              "line": 361,
+              "path": "docs/COMPARISON.md",
+              "scope": "references AUDITS.md as an audit overview, not the Freshness anchor"
+            }
+          ],
+          "known_consumers": ["Human audit users", "data/current_claims.json declares docs/**/*.md current claim surfaces"],
+          "static_imports": []
+        },
+        "execution": {
+          "date": "2026-09-08",
+          "method": "Replaced only the Freshness and Caveat paragraphs with current identity/reproduction guidance and an explicit historical mtime note; no file, heading or failure history was removed.",
+          "operator": "parent-integration"
+        },
+        "expected_verification": [
+          "The documentation owner verifies the exact replacement anchor, current CLI defaults and registry identity semantics after its concurrent edits freeze.",
+          "Run the read-only claim/reproducibility audits and tests/test_audits.py plus tests/test_audit_readonly.py in the quality environment; any unrelated evidence drift remains a separate failure, not a reason to relax checks.",
+          "Refresh the inventory document-reference graph and run repository_inventory.py --check; compare the diff to ensure only the two approved paragraphs changed."
+        ],
+        "historical_impact": "No frozen_runtime/artifact_registry dependency names docs/AUDITS.md. Its earlier failure narrative at lines 36-49 and the comparison document's reference remain unchanged. Do not rewrite frozen hashes or silently label old numbers current.",
+        "id": "P02",
+        "owner": "parent-integration",
+        "path": "docs/AUDITS.md",
+        "proposed_action": "replace_obsolete_operational_procedure_with_current_link_and_historical_sentence_after_new_exact_approval",
+        "reason": "This old operational prescription makes modification times authoritative and declares fresh clones exempt. The maintained Current verification and governed regeneration section of REPRODUCING.md and the exact artifact_registry now supply the current code/input/runtime receipt and reviewed-adoption procedure. Keeping two conflicting current freshness instructions is concrete maintenance duplication, not a reason to delete the historical audit record.",
+        "replacement_contract": "Replace only these two paragraphs with a link to REPRODUCING.md#current-verification-and-governed-regeneration and a sentence retaining the history that the former audit used mtime and was inert on fresh clones. The exact registry's current versus historical identities, review obligations and refusals remain authoritative.",
+        "replacement_paths": ["docs/REPRODUCING.md", "data/artifact_registry.json"],
+        "role": "validation_reproduction",
+        "scope": "Only the **Freshness.** paragraph and its *Caveat:* paragraph, observed lines 103-111; retain all headings, historical failure examples and all other sections.",
+        "unique_coverage": "The superseded mtime mechanism is preserved in a historical sentence; the replacement retains the stronger current provenance workflow rather than losing an audit gate."
+      }
+    ],
+    "retention_reviews": [
+      {
+        "consumers": ["pytest"],
+        "decision": "retain_both",
+        "paths": ["tests/test_design_flux_experiment.py", "tests/test_flux_experiment_design.py"],
+        "reason": "The former pins sampled plus-one and exact permutation resolution, ties, non-enumerating large panels and CLI/error-budget contracts (lines 37-174); the latter pins protocol-size arithmetic, conditional simulation/circularity and separate target/condition/proteomics/pathway behavior (lines 30-213). Shared producer names do not make the inputs or failure modes equivalent.",
+        "replacement": "No whole-file replacement establishes all these cases.",
+        "role": "validation_reproduction",
+        "verification_targets": [
+          "scripts/design_flux_experiment.py",
+          "scripts/error_budget.py",
+          "scripts/score_targets.py",
+          "scripts/sweep_conditions.py",
+          "scripts/simulate_proteomics_gain.py"
+        ]
+      },
+      {
+        "consumers": ["pytest"],
+        "decision": "retain_all",
+        "paths": ["tests/test_audit_readonly.py", "tests/test_quality_workflow.py", "tests/test_provenance_identity.py"],
+        "reason": "Default determinism/output-table CLI non-mutation and explicit destination cases are distinct from quality-runner subprocess mutation detection and exact artifact receipt identity. The apparent overlap protects different boundaries.",
+        "replacement": "Neither orchestration nor provenance tests replace the two actual audit CLI regressions.",
+        "role": "validation_reproduction",
+        "verification_targets": [
+          "scripts/audit_determinism.py",
+          "scripts/audit_output_tables.py",
+          "scripts/verify_quality.py",
+          "src/ystwin/artifacts.py"
+        ]
+      },
+      {
+        "consumers": ["pytest", "docs/ARCHITECTURE.md:50", "docs/ARCHITECTURE.md:1745"],
+        "decision": "retain_both",
+        "paths": ["tests/test_architecture_doc_matches_the_code.py", "tests/test_repository_inventory.py"],
+        "reason": "The architecture test requires a human-facing module map and deliberate-absence accounting; inventory verifies exact roles, graph, ownership and evidence but does not require every module to be named in ARCHITECTURE.md. The architecture check's basename-level coverage is limited, not redundant.",
+        "replacement": "No existing exact-path inventory test enforces the document-map obligation.",
+        "role": "validation_reproduction"
+      },
+      {
+        "consumers": ["pytest"],
+        "decision": "retain_both",
+        "paths": ["tests/test_native_hog_data.py", "tests/test_hog_data.py"],
+        "reason": "load_native_hog_data is tested with the preliminary workbook absent, preserving its native-only 317-row boundary. load_hog_data intentionally includes the 90 preliminary observations and explicit inferred time unit; that is a different public contract, not a replacement.",
+        "replacement": "The full-reader tests cannot prove the native-only reader never requires preliminary data.",
+        "role": "validation_reproduction",
+        "verification_targets": ["src/ystwin/analysis/hog_data.py", "native training and measured reference replay"]
+      },
+      {
+        "consumers": [
+          "tests/test_native_population_development.py",
+          "tests/test_native_population_scoring.py",
+          "tests/test_native_population_scoring_adversarial.py",
+          "tests/test_biology_learning_audit.py",
+          "tests/test_native_reconciliation.py",
+          "tests/test_portable_evidence_adversarial.py",
+          "tests/test_portable_replay.py"
+        ],
+        "decision": "retain_all",
+        "paths": [
+          "tests/test_population_historical_sources.py",
+          "tests/_frozen_runtime_helpers.py",
+          "tests/test_frozen_runtime.py"
+        ],
+        "reason": "Exact source-asset relocation/materialization checks, deliberately tampered test-only subprocess probes and production historical execution receipts are separate contracts. Sharing the word frozen does not make them interchangeable.",
+        "replacement": "None without weakening original-Git identity, tamper or process-isolation coverage; keep approved relocation history unchanged.",
+        "role": "validation_reproduction"
+      },
+      {
+        "consumers": [
+          "docs/ARCHITECTURE.md",
+          "docs/CLAIM_BOUNDARY.md",
+          "docs/FINDINGS.md",
+          "docs/MEASUREMENTS_NEEDED.md",
+          "README.md",
+          "scripts/run_regulation.py",
+          "scripts/batch_sufficiency.py",
+          "src/ystwin/fba/fva.py",
+          "src/ystwin/__init__.py"
+        ],
+        "decision": "retain_files_reconcile_current_vs_historical_prose_by_documentation_owner",
+        "evidence_scope": "historical negative context is retained even where current status prose needs reconciliation",
+        "paths": ["docs/PARKED.md", "docs/WHAT_IS_LEFT.md", "docs/DISTANCE_TO_THE_VISION.md"],
+        "reason": "PARKED explicitly preserves corrected parking/physiology premises and its inner-filter/protocol checklist (lines 3-42). WHAT_IS_LEFT preserves the N06 zero-floor explanation and experimental limits (lines 22-62, 138-161). DISTANCE retains multiple dated correction histories and measurement priorities (lines 58-102, 104-280). Similar progress headings do not constitute interchangeable records.",
+        "replacement": "Current workflow/claim registries replace status authority, not the unique historical corrections or measurement protocols. No whole-file deletion is justified.",
+        "role": "validation_reproduction"
+      },
+      {
+        "consumers": ["Retained negative registry N06/N09", "pytest", "current_claims cosmic profile", "docs/CLAIM_BOUNDARY.md"],
+        "decision": "retain_all",
+        "evidence_scope": "includes protected recorded_negative_result docs/NULL_RESULTS.md and supporting regressions",
+        "paths": [
+          "docs/NULL_RESULTS.md",
+          "tests/test_everything_is_wired.py",
+          "tests/test_cassette_layer_is_wired.py",
+          "tests/test_regulation.py",
+          "tests/test_run_regulation.py"
+        ],
+        "reason": "NULL_RESULTS is protected N09 null/transfer evidence. Legacy explicit-comparison layer/refusal tests and current typed-engine tests exercise different public routes. Regulation library invariants and runner full-task/cohort/provenance refusal cases are not interchangeable. N06, its original ranking identity and its adopted refusal must remain visible.",
+        "replacement": "No green test total or new engine implementation supersedes a recorded negative or its meaningful regression.",
+        "role": "validation_reproduction"
+      }
+    ],
+    "scope_boundary": "This review is not part of reviewed-cleanup-20260908-v1. That approval and its nine completed receipts are unchanged. Neither this review nor passing verification authorizes any further deletion, move, test weakening or source/document edit.",
+    "status": "approved_partial_cleanup_executed_and_verified",
+    "verification": {
+      "command": "python -B -m pytest -p no:cacheprovider tests/test_repository_inventory.py tests/test_archive_is_inert.py tests/test_citations.py tests/test_provenance_identity.py -q --tb=short",
+      "returncode": 0,
+      "scope": "The preserved parser/channel tests, read-only audit tests and the inventory/archive/provenance/citation suite ran after the two exact edits. The final inventory/archive/provenance/citation run passed 286 tests; no current scientific validation or additional cleanup approval is inferred."
+    },
+    "whole_file_conclusion": "No additional complete document or test file was shown to lack unique consumer, verification or historical coverage. Preserve the files; only the two exact partial cleanups below have a demonstrated replacement."
+  },
+  "approval_request": {
+    "actions": [
+      {
+        "action": "remove_generated_file",
+        "callers": ["setuptools; regenerated during builds"],
+        "frozen_impact": "No frozen scientific dependency references found.",
+        "path": "src/ystwin.egg-info/PKG-INFO",
+        "reason": "Obsolete generated distribution metadata; the isolated clean wheel build and installed import succeed without it.",
+        "replacement": "pyproject.toml and setuptools-generated distribution metadata",
+        "replacement_paths": ["pyproject.toml"]
+      },
+      {
+        "action": "remove_generated_file",
+        "callers": ["setuptools; regenerated during builds"],
+        "frozen_impact": "No frozen scientific dependency references found.",
+        "path": "src/ystwin.egg-info/SOURCES.txt",
+        "reason": "Obsolete generated packaging file list, superseded by package discovery and the checked repository inventory.",
+        "replacement": "pyproject.toml and data/repository_inventory.json",
+        "replacement_paths": ["pyproject.toml", "scripts/repository_inventory.py", "data/repository_inventory.json"]
+      },
+      {
+        "action": "remove_generated_file",
+        "callers": ["setuptools; regenerated during builds"],
+        "frozen_impact": "No frozen scientific dependency references found.",
+        "path": "src/ystwin.egg-info/dependency_links.txt",
+        "reason": "Generated packaging metadata, not an independently maintained interface.",
+        "replacement": "setuptools-generated distribution metadata",
+        "replacement_paths": ["pyproject.toml"]
+      },
+      {
+        "action": "remove_generated_file",
+        "callers": ["installed distribution metadata; regenerated during builds"],
+        "frozen_impact": "No frozen scientific dependency references found.",
+        "path": "src/ystwin.egg-info/requires.txt",
+        "reason": "Stale generated requirements duplicate and disagree with the authoritative pinned project requirements.",
+        "replacement": "pyproject.toml and requirements-quality.txt",
+        "replacement_paths": ["pyproject.toml", "requirements-quality.txt"]
+      },
+      {
+        "action": "remove_generated_file",
+        "callers": ["setuptools; regenerated during builds"],
+        "frozen_impact": "No frozen scientific dependency references found.",
+        "path": "src/ystwin.egg-info/top_level.txt",
+        "reason": "Generated namespace metadata is reproduced by clean package discovery.",
+        "replacement": "pyproject.toml and setuptools-generated distribution metadata",
+        "replacement_paths": ["pyproject.toml", "src/ystwin/__init__.py"]
+      },
+      {
+        "action": "remove_superseded_scratch",
+        "callers": [],
+        "frozen_impact": "No frozen manifest references found. The carrier-bug finding and regression remain retained; this is not removal of the finding.",
+        "path": "S.csv",
+        "reason": "Reviewed 23-row scratch comparison of PHB/carotenoid precursor yields from carrier-fix commit 385b6b8dcf0f4f1a499df3a75de509237c27188f; no runtime, script or document consumer found.",
+        "replacement": "Current GEM environment outputs and tests/test_gem_environment.py; original diagnostic bytes remain in the named Git commit.",
+        "replacement_paths": [
+          "src/ystwin/pathway/gem_environment.py",
+          "scripts/gem_environment_predictions.py",
+          "outputs/gem_environment_predictions.csv",
+          "outputs/gem_environment_scores.csv",
+          "tests/test_gem_environment.py"
+        ]
+      },
+      {
+        "action": "remove_local_download",
+        "callers": [],
+        "frozen_impact": "No tracked or frozen evidence references found; local HTML bytes would be removed.",
+        "path": "jws.html",
+        "reason": "Reviewed ignored, untracked JWS model-database index HTML. It is not a model, parameter table, or retained source asset, and no consumer was found.",
+        "replacement": "Versioned model/source assets in data/hog2013 and data/native_reference_models",
+        "replacement_paths": [
+          "data/hog2013/model_wt.xml",
+          "data/hog2013/sources.json",
+          "data/native_reference_models/jalihal2021/nutrient-signaling-sbml.xml"
+        ]
+      },
+      {
+        "action": "replace_superseded_result",
+        "callers": ["Legacy current-claim references and artifact registry must be migrated before removal."],
+        "frozen_impact": "Original bytes remain at starting Git commit; no scientific failure is erased. Removal requires the regenerated full-task refusal report and reviewed provenance to be installed first.",
+        "path": "outputs/regulation_task_priority.csv",
+        "reason": "Old two-task ranking omits biomass and is not the original measured task experiment. The repaired matched-host solve retains all three tasks and returns infeasibility, not a reduced ranking.",
+        "replacement": "outputs/regulation_matched_tasks.json",
+        "replacement_paths": [
+          "outputs/regulation_matched_tasks.json",
+          "data/artifact_registry.json",
+          "data/current_claims.json",
+          "scripts/run_regulation.py",
+          "tests/test_run_regulation.py"
+        ]
+      },
+      {
+        "action": "relocate_immutable_source_evidence",
+        "callers": [
+          "Historical release_request.json exporter reference",
+          "native population historical inspection and reproduction"
+        ],
+        "frozen_impact": "Original logical path, original hashes and frozen JSON remain unchanged. Historical inspection must materialize verified original code from Git commit 84561f51502b5b4bf66c052dc88c853038917934; byte preservation and all tamper tests are prerequisites. No lint rule is disabled.",
+        "path": "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py",
+        "reason": "Historical source is immutable evidence, not active Python. Preserve its exact bytes in a non-importable source asset rather than edit it to satisfy current style checks.",
+        "replacement": "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py.source",
+        "replacement_paths": ["data/native_law_v2/granados/development/phase_c_01/release_phase_c.py.source"],
+        "sha256": "68c31da88770e4718bc5668791edd38de6a054fa821aaa074a2ef48d6c676d8a"
+      }
+    ],
+    "approval": {
+      "actor": "user",
+      "date": "2026-09-08",
+      "scope": "Only the nine exact listed actions, after their replacement and historical-integrity preconditions pass.",
+      "selection": "Approve all nine actions"
+    },
+    "executed_paths": [
+      "src/ystwin.egg-info/PKG-INFO",
+      "src/ystwin.egg-info/SOURCES.txt",
+      "src/ystwin.egg-info/dependency_links.txt",
+      "src/ystwin.egg-info/requires.txt",
+      "src/ystwin.egg-info/top_level.txt",
+      "S.csv",
+      "jws.html",
+      "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py",
+      "outputs/regulation_task_priority.csv"
+    ],
+    "execution_receipts": [
+      {
+        "action": "remove_generated_file",
+        "approval_request_id": "reviewed-cleanup-20260908-v1",
+        "command": ["git", "rm", "--", "src/ystwin.egg-info/PKG-INFO"],
+        "date": "2026-09-08",
+        "operator": "inventory-agent",
+        "original": {
+          "git_commit": "84561f51502b5b4bf66c052dc88c853038917934",
+          "git_object_id": "b688cea1fd5651dfba7213f20cc368b8e5c1b386",
+          "ignored": false,
+          "sha256": "0f1fff8b361edaf684426c3b2941988b0b7bd3e642cac0c919da536f91fa6c73",
+          "size_bytes": 390,
+          "tracked": true
+        },
+        "path": "src/ystwin.egg-info/PKG-INFO",
+        "replacement_paths": ["pyproject.toml"],
+        "returncode": 0
+      },
+      {
+        "action": "remove_generated_file",
+        "approval_request_id": "reviewed-cleanup-20260908-v1",
+        "command": ["git", "rm", "--", "src/ystwin.egg-info/SOURCES.txt"],
+        "date": "2026-09-08",
+        "operator": "inventory-agent",
+        "original": {
+          "git_commit": "84561f51502b5b4bf66c052dc88c853038917934",
+          "git_object_id": "6fe3efee288ff9e16c6b602233704630d23ca30d",
+          "ignored": false,
+          "sha256": "cf81cc0b63e3ecf50bdad3cd94a02e3c1b20759fa92193f018b040c7c1cd7a14",
+          "size_bytes": 386,
+          "tracked": true
+        },
+        "path": "src/ystwin.egg-info/SOURCES.txt",
+        "replacement_paths": ["pyproject.toml", "scripts/repository_inventory.py", "data/repository_inventory.json"],
+        "returncode": 0
+      },
+      {
+        "action": "remove_generated_file",
+        "approval_request_id": "reviewed-cleanup-20260908-v1",
+        "command": ["git", "rm", "--", "src/ystwin.egg-info/dependency_links.txt"],
+        "date": "2026-09-08",
+        "operator": "inventory-agent",
+        "original": {
+          "git_commit": "84561f51502b5b4bf66c052dc88c853038917934",
+          "git_object_id": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+          "ignored": false,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+          "size_bytes": 1,
+          "tracked": true
+        },
+        "path": "src/ystwin.egg-info/dependency_links.txt",
+        "replacement_paths": ["pyproject.toml"],
+        "returncode": 0
+      },
+      {
+        "action": "remove_generated_file",
+        "approval_request_id": "reviewed-cleanup-20260908-v1",
+        "command": ["git", "rm", "--", "src/ystwin.egg-info/requires.txt"],
+        "date": "2026-09-08",
+        "operator": "inventory-agent",
+        "original": {
+          "git_commit": "84561f51502b5b4bf66c052dc88c853038917934",
+          "git_object_id": "a98dc2ea5acf4707172e5961016f57c34b54b6c9",
+          "ignored": false,
+          "sha256": "b9a0b9fff15425d30dfb5493736e001854c6be2481d670389168ca8886524997",
+          "size_bytes": 94,
+          "tracked": true
+        },
+        "path": "src/ystwin.egg-info/requires.txt",
+        "replacement_paths": ["pyproject.toml", "requirements-quality.txt"],
+        "returncode": 0
+      },
+      {
+        "action": "remove_generated_file",
+        "approval_request_id": "reviewed-cleanup-20260908-v1",
+        "command": ["git", "rm", "--", "src/ystwin.egg-info/top_level.txt"],
+        "date": "2026-09-08",
+        "operator": "inventory-agent",
+        "original": {
+          "git_commit": "84561f51502b5b4bf66c052dc88c853038917934",
+          "git_object_id": "08019e9d5e06a09e46792af8793e566c4a20973f",
+          "ignored": false,
+          "sha256": "ca042f34af4a425f49dd6ff3e5f5a313c830ecb52297db7aac5dad79a8fd516a",
+          "size_bytes": 7,
+          "tracked": true
+        },
+        "path": "src/ystwin.egg-info/top_level.txt",
+        "replacement_paths": ["pyproject.toml", "src/ystwin/__init__.py"],
+        "returncode": 0
+      },
+      {
+        "action": "remove_superseded_scratch",
+        "approval_request_id": "reviewed-cleanup-20260908-v1",
+        "command": ["git", "rm", "--", "S.csv"],
+        "date": "2026-09-08",
+        "operator": "inventory-agent",
+        "original": {
+          "git_commit": "385b6b8dcf0f4f1a499df3a75de509237c27188f",
+          "git_object_id": "316f94b15acd304d9bd4eb9fdc5f72d7e1ff8204",
+          "ignored": false,
+          "sha256": "b52e7e2388a9d371b4cd40db5bcbddae7de2f6373a79a4d4844b5aea43d4a73d",
+          "size_bytes": 2544,
+          "tracked": true
+        },
+        "path": "S.csv",
+        "replacement_paths": [
+          "src/ystwin/pathway/gem_environment.py",
+          "scripts/gem_environment_predictions.py",
+          "outputs/gem_environment_predictions.csv",
+          "outputs/gem_environment_scores.csv",
+          "tests/test_gem_environment.py"
+        ],
+        "returncode": 0
+      },
+      {
+        "action": "remove_local_download",
+        "approval_request_id": "reviewed-cleanup-20260908-v1",
+        "command": ["rm", "--", "jws.html"],
+        "date": "2026-09-08",
+        "operator": "inventory-agent",
+        "original": {
+          "git_commit": null,
+          "git_object_id": null,
+          "ignored": true,
+          "sha256": "95827d2849c6aea0c2ed1881218c38b336ca8809686836636ab694a3e0f324f1",
+          "size_bytes": 60203,
+          "tracked": false
+        },
+        "path": "jws.html",
+        "replacement_paths": [
+          "data/hog2013/model_wt.xml",
+          "data/hog2013/sources.json",
+          "data/native_reference_models/jalihal2021/nutrient-signaling-sbml.xml"
+        ],
+        "returncode": 0
+      },
+      {
+        "action": "relocate_immutable_source_evidence",
+        "approval_request_id": "reviewed-cleanup-20260908-v1",
+        "command": [
+          "git",
+          "mv",
+          "--",
+          "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py",
+          "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py.source"
+        ],
+        "date": "2026-09-08",
+        "operator": "inventory-agent",
+        "original": {
+          "git_commit": "84561f51502b5b4bf66c052dc88c853038917934",
+          "git_object_id": "fd9dbe4b7afbeec94dd543754396d444b3c45880",
+          "ignored": false,
+          "sha256": "68c31da88770e4718bc5668791edd38de6a054fa821aaa074a2ef48d6c676d8a",
+          "size_bytes": 42204,
+          "tracked": true
+        },
+        "path": "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py",
+        "replacement_paths": ["data/native_law_v2/granados/development/phase_c_01/release_phase_c.py.source"],
+        "returncode": 0
+      },
+      {
+        "action": "replace_superseded_result",
+        "approval_request_id": "reviewed-cleanup-20260908-v1",
+        "command": ["git", "rm", "--", "outputs/regulation_task_priority.csv"],
+        "date": "2026-09-08",
+        "execution_basis": "Parent reported successful exact execution after verifying original bytes/Git identity, adopted replacement and its reviewed provenance, validate_task_replacement, and current COSMIC claim checks. Approval selection confirmed in saved history lines 18305-18313. Inventory did not rerun deletion.",
+        "operator": "parent-integration",
+        "original": {
+          "git_commit": "84561f51502b5b4bf66c052dc88c853038917934",
+          "git_object_id": "764ef3aa9eb9c40f0b642243098d15002874c41d",
+          "ignored": false,
+          "sha256": "6ed033a695c8d723a67034aa20ec35899c34ec9655772dceadbe9a4b27041ded",
+          "size_bytes": 172,
+          "tracked": true
+        },
+        "path": "outputs/regulation_task_priority.csv",
+        "provenance_receipt_sha256": "3de3d4429a67e0f95b6bb15c8825236bca83bdc9a6104ec2089d845eaa7f6e92",
+        "provenance_review_sha256": "795c15b3b647e33849185846dcdc2350a2cc0996db0c26068ece6d7e71569cd8",
+        "replacement_paths": [
+          "outputs/regulation_matched_tasks.json",
+          "data/artifact_registry.json",
+          "data/current_claims.json",
+          "scripts/run_regulation.py",
+          "tests/test_run_regulation.py"
+        ],
+        "replacement_sha256": "5fff23d5c8e1d228783164546a6366291d2a77d1ef868b5853ded319b535eca4",
+        "returncode": 0
+      }
+    ],
+    "id": "reviewed-cleanup-20260908-v1",
+    "pending_paths": [],
+    "preconditions": [
+      "Explicit user approval for the selected exact actions",
+      "No raw private data or unrelated files removed",
+      "Replacements and affected callers verified before execution",
+      "Historical source bytes and pinned reference identities remain verifiable"
+    ],
+    "status": "approved"
+  },
+  "approval_required": true,
+  "excluded_from_proposals": [
+    {
+      "reason": "No scientific/frozen artifact deletion, rewriting or current-source hash substitution is authorized.",
+      "scope": "data/frozen_evidence/native_v1 and all original models/native frozen JSON"
+    },
+    {
+      "reason": "Historical logical identities and original bytes remain evidence; current implementations are not interchangeable replacements.",
+      "scope": "Historical Python executors, adapters and tests other than the single exact release source storage relocation"
+    },
+    {
+      "reason": "Public compatibility and finished-architecture use contracts, not test-only reachability, determine retention.",
+      "scope": "Supported public library modules with no current runner"
+    }
+  ],
+  "execution_allowed": false,
+  "execution_verification": [
+    {
+      "path": "S.csv",
+      "status": "verified_completed",
+      "original_sha256": "b52e7e2388a9d371b4cd40db5bcbddae7de2f6373a79a4d4844b5aea43d4a73d",
+      "original_absent_and_untracked": true,
+      "replacement_files_present": true
+    },
+    {
+      "path": "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py",
+      "status": "verified_completed",
+      "original_sha256": "68c31da88770e4718bc5668791edd38de6a054fa821aaa074a2ef48d6c676d8a",
+      "original_absent_and_untracked": true,
+      "replacement_files_present": true
+    },
+    {
+      "path": "docs/research/AUTOFLUORESCENCE_FOUND.md",
+      "status": "verified_completed",
+      "original_sha256": "168b5070451ef55bb3ade2322a9cc32e7564a7056d42aeb99b369ee980047bd0",
+      "original_absent_and_untracked": true,
+      "replacement_files_present": true
+    },
+    {
+      "path": "jws.html",
+      "status": "verified_completed",
+      "original_sha256": "95827d2849c6aea0c2ed1881218c38b336ca8809686836636ab694a3e0f324f1",
+      "original_absent_and_untracked": true,
+      "replacement_files_present": true
+    },
+    {
+      "path": "outputs/partial_order_synthetic_demo.json",
+      "status": "verified_completed",
+      "original_sha256": "459b70cf347f0354981a69e90033e263d18787f7d606484488b61e1b94676669",
+      "original_absent_and_untracked": true,
+      "replacement_files_present": true
+    },
+    {
+      "path": "outputs/partial_order_synthetic_summary.csv",
+      "status": "verified_completed",
+      "original_sha256": "85f0e481b3f9061ef9eed6ab087ba00a629e4b11d8a64293225a5e43cff05c26",
+      "original_absent_and_untracked": true,
+      "replacement_files_present": true
+    },
+    {
+      "path": "outputs/regulation_task_priority.csv",
+      "status": "verified_completed",
+      "original_sha256": "6ed033a695c8d723a67034aa20ec35899c34ec9655772dceadbe9a4b27041ded",
+      "original_absent_and_untracked": true,
+      "replacement_files_present": true
+    },
+    {
+      "path": "src/ystwin.egg-info/PKG-INFO",
+      "status": "verified_completed",
+      "original_sha256": "0f1fff8b361edaf684426c3b2941988b0b7bd3e642cac0c919da536f91fa6c73",
+      "original_absent_and_untracked": true,
+      "replacement_files_present": true
+    },
+    {
+      "path": "src/ystwin.egg-info/SOURCES.txt",
+      "status": "verified_completed",
+      "original_sha256": "cf81cc0b63e3ecf50bdad3cd94a02e3c1b20759fa92193f018b040c7c1cd7a14",
+      "original_absent_and_untracked": true,
+      "replacement_files_present": true
+    },
+    {
+      "path": "src/ystwin.egg-info/dependency_links.txt",
+      "status": "verified_completed",
+      "original_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "original_absent_and_untracked": true,
+      "replacement_files_present": true
+    },
+    {
+      "path": "src/ystwin.egg-info/requires.txt",
+      "status": "verified_completed",
+      "original_sha256": "b9a0b9fff15425d30dfb5493736e001854c6be2481d670389168ca8886524997",
+      "original_absent_and_untracked": true,
+      "replacement_files_present": true
+    },
+    {
+      "path": "src/ystwin.egg-info/top_level.txt",
+      "status": "verified_completed",
+      "original_sha256": "ca042f34af4a425f49dd6ff3e5f5a313c830ecb52297db7aac5dad79a8fd516a",
+      "original_absent_and_untracked": true,
+      "replacement_files_present": true
+    }
+  ],
+  "kind": "reviewed_cleanup_manifest",
+  "license_boundary": "Source/model custody and byte verification do not establish redistribution rights. Source assets with unverified licenses remain unlicensed for publication; this cleanup grants no publication license.",
+  "policy": "The user approved the nine exact actions below, conditional on their replacements and historical integrity. This records external manual execution, not a deletion capability: inventory generation/checking cannot delete, move, untrack or grant approval. No directories, wildcard cleanup, private data, unrelated scientific artifacts or current-source hash substitutions are authorized.",
+  "proposals": [
+    {
+      "action_executed": true,
+      "approval_conditions": [
+        "Recorded exact user approval",
+        "Clean wheel/install and source-distribution verification",
+        "No scientific/frozen dependency"
+      ],
+      "approval_request_id": "reviewed-cleanup-20260908-v1",
+      "approval_required": true,
+      "approved": true,
+      "callers": {
+        "static_imports": [],
+        "literal_or_document_references": [
+          {
+            "source": "tests/test_quality_workflow.py",
+            "target": "src/ystwin.egg-info/PKG-INFO",
+            "line": 297,
+            "kind": "literal_path_reference_not_execution_proof"
+          }
+        ],
+        "interpretation": "References include logical historical identities, not only runtime use. Absence of static callers never supplies approval; exact user review and replacement contracts remain required."
+      },
+      "frozen_impact": {
+        "public_bundle_or_lineage_references": [],
+        "retained_negative_ids": [],
+        "is_protected_evidence": false,
+        "assessment": "Only the independently recognized user-approved exact action can change storage. Historical logical identities and negative findings remain retained; no current-source freshness exemption is created."
+      },
+      "known_non_python_consumers": ["setuptools build backend", "installed-distribution metadata tools"],
+      "owner": "ci-agent",
+      "path": "src/ystwin.egg-info/PKG-INFO",
+      "proposed_action": "remove_generated_file",
+      "reason": "Reviewed obsolete generated metadata; isolated wheel/install validation succeeds without the tracked copy.",
+      "replacement_contract": "Setuptools derives package metadata from pyproject rather than the obsolete tracked PKG-INFO. Old metadata is retained by original Git identity, not republished as authoritative requirements.",
+      "replacement_paths": ["pyproject.toml"]
+    },
+    {
+      "action_executed": true,
+      "approval_conditions": ["Recorded exact user approval", "Fresh source-distribution inclusion check", "No scientific/frozen dependency"],
+      "approval_request_id": "reviewed-cleanup-20260908-v1",
+      "approval_required": true,
+      "approved": true,
+      "callers": {
+        "static_imports": [],
+        "literal_or_document_references": [],
+        "interpretation": "References include logical historical identities, not only runtime use. Absence of static callers never supplies approval; exact user review and replacement contracts remain required."
+      },
+      "frozen_impact": {
+        "public_bundle_or_lineage_references": [],
+        "retained_negative_ids": [],
+        "is_protected_evidence": false,
+        "assessment": "Only the independently recognized user-approved exact action can change storage. Historical logical identities and negative findings remain retained; no current-source freshness exemption is created."
+      },
+      "known_non_python_consumers": ["setuptools source-distribution builder"],
+      "owner": "ci-agent",
+      "path": "src/ystwin.egg-info/SOURCES.txt",
+      "proposed_action": "remove_generated_file",
+      "reason": "Reviewed stale source-distribution file list; package discovery and the repository inventory supply separate authoritative roles.",
+      "replacement_contract": "Fresh source-distribution building must include all current ystwin package sources without any tracked egg-info copy. Git/inventory supplies repository coverage, not the generated sdist manifest.",
+      "replacement_paths": ["pyproject.toml", "scripts/repository_inventory.py", "data/repository_inventory.json"]
+    },
+    {
+      "action_executed": true,
+      "approval_conditions": ["Recorded exact user approval", "Clean supported install verification", "No scientific/frozen dependency"],
+      "approval_request_id": "reviewed-cleanup-20260908-v1",
+      "approval_required": true,
+      "approved": true,
+      "callers": {
+        "static_imports": [],
+        "literal_or_document_references": [],
+        "interpretation": "References include logical historical identities, not only runtime use. Absence of static callers never supplies approval; exact user review and replacement contracts remain required."
+      },
+      "frozen_impact": {
+        "public_bundle_or_lineage_references": [],
+        "retained_negative_ids": [],
+        "is_protected_evidence": false,
+        "assessment": "Only the independently recognized user-approved exact action can change storage. Historical logical identities and negative findings remain retained; no current-source freshness exemption is created."
+      },
+      "known_non_python_consumers": ["setuptools build backend", "package installers"],
+      "owner": "ci-agent",
+      "path": "src/ystwin.egg-info/dependency_links.txt",
+      "proposed_action": "remove_generated_file",
+      "reason": "Reviewed generated one-byte metadata file has no independently maintained interface.",
+      "replacement_contract": "The configured setuptools backend generates dependency metadata during clean distribution builds.",
+      "replacement_paths": ["pyproject.toml"]
+    },
+    {
+      "action_executed": true,
+      "approval_conditions": [
+        "Recorded exact user approval",
+        "Clean supported install with declared extras",
+        "No scientific/frozen dependency"
+      ],
+      "approval_request_id": "reviewed-cleanup-20260908-v1",
+      "approval_required": true,
+      "approved": true,
+      "callers": {
+        "static_imports": [],
+        "literal_or_document_references": [],
+        "interpretation": "References include logical historical identities, not only runtime use. Absence of static callers never supplies approval; exact user review and replacement contracts remain required."
+      },
+      "frozen_impact": {
+        "public_bundle_or_lineage_references": [],
+        "retained_negative_ids": [],
+        "is_protected_evidence": false,
+        "assessment": "Only the independently recognized user-approved exact action can change storage. Historical logical identities and negative findings remain retained; no current-source freshness exemption is created."
+      },
+      "known_non_python_consumers": ["setuptools build backend", "package installers", "installed-distribution metadata tools"],
+      "owner": "ci-agent",
+      "path": "src/ystwin.egg-info/requires.txt",
+      "proposed_action": "remove_generated_file",
+      "reason": "Reviewed stale generated requirements disagree with the authoritative pinned project and quality requirements.",
+      "replacement_contract": "Installed metadata must reflect current pinned dependencies/extras from pyproject; quality installation uses the committed-intent hash lock, not the obsolete tracked generated requirements.",
+      "replacement_paths": ["pyproject.toml", "requirements-quality.txt"]
+    },
+    {
+      "action_executed": true,
+      "approval_conditions": [
+        "Recorded exact user approval",
+        "Clean namespace discovery and installed import",
+        "No scientific/frozen dependency"
+      ],
+      "approval_request_id": "reviewed-cleanup-20260908-v1",
+      "approval_required": true,
+      "approved": true,
+      "callers": {
+        "static_imports": [],
+        "literal_or_document_references": [],
+        "interpretation": "References include logical historical identities, not only runtime use. Absence of static callers never supplies approval; exact user review and replacement contracts remain required."
+      },
+      "frozen_impact": {
+        "public_bundle_or_lineage_references": [],
+        "retained_negative_ids": [],
+        "is_protected_evidence": false,
+        "assessment": "Only the independently recognized user-approved exact action can change storage. Historical logical identities and negative findings remain retained; no current-source freshness exemption is created."
+      },
+      "known_non_python_consumers": ["setuptools package discovery", "installed-distribution metadata tools"],
+      "owner": "ci-agent",
+      "path": "src/ystwin.egg-info/top_level.txt",
+      "proposed_action": "remove_generated_file",
+      "reason": "Reviewed generated namespace metadata is reproduced by clean package discovery.",
+      "replacement_contract": "Fresh distribution discovery/import must preserve the ystwin namespace without the tracked metadata file.",
+      "replacement_paths": ["pyproject.toml", "src/ystwin/__init__.py"]
+    },
+    {
+      "action_executed": true,
+      "approval_conditions": [
+        "Recorded exact user approval",
+        "Reviewed provenance and no located consumer",
+        "Retain original Git bytes and negative/regression evidence"
+      ],
+      "approval_request_id": "reviewed-cleanup-20260908-v1",
+      "approval_required": true,
+      "approved": true,
+      "callers": {
+        "static_imports": [],
+        "literal_or_document_references": [],
+        "interpretation": "References include logical historical identities, not only runtime use. Absence of static callers never supplies approval; exact user review and replacement contracts remain required."
+      },
+      "frozen_impact": {
+        "public_bundle_or_lineage_references": [],
+        "retained_negative_ids": [],
+        "is_protected_evidence": false,
+        "assessment": "Only the independently recognized user-approved exact action can change storage. Historical logical identities and negative findings remain retained; no current-source freshness exemption is created."
+      },
+      "known_non_python_consumers": [],
+      "owner": "repository-maintainer",
+      "path": "S.csv",
+      "proposed_action": "remove_superseded_scratch",
+      "reason": "User reviewed the 23-row carrier-fix scratch comparison and approved removal; no runtime/script/document consumer or frozen dependency was found.",
+      "replacement_contract": "Current GEM environment outputs and the carrier-conservation regression serve the maintained roles. The exact old comparison remains verifiable at Git 385b6b8dcf0f4f1a499df3a75de509237c27188f; failed applicability and the carrier-bug finding are not removed.",
+      "replacement_paths": [
+        "src/ystwin/pathway/gem_environment.py",
+        "scripts/gem_environment_predictions.py",
+        "outputs/gem_environment_predictions.csv",
+        "outputs/gem_environment_scores.csv",
+        "tests/test_gem_environment.py"
+      ]
+    },
+    {
+      "action_executed": true,
+      "approval_conditions": [
+        "Recorded exact user approval",
+        "Reviewed HTML identity and untracked/ignored status",
+        "No retained scientific/source dependency"
+      ],
+      "approval_request_id": "reviewed-cleanup-20260908-v1",
+      "approval_required": true,
+      "approved": true,
+      "callers": {
+        "static_imports": [],
+        "literal_or_document_references": [],
+        "interpretation": "References include logical historical identities, not only runtime use. Absence of static callers never supplies approval; exact user review and replacement contracts remain required."
+      },
+      "frozen_impact": {
+        "public_bundle_or_lineage_references": [],
+        "retained_negative_ids": [],
+        "is_protected_evidence": false,
+        "assessment": "Only the independently recognized user-approved exact action can change storage. Historical logical identities and negative findings remain retained; no current-source freshness exemption is created."
+      },
+      "known_non_python_consumers": [],
+      "owner": "repository-maintainer",
+      "path": "jws.html",
+      "proposed_action": "remove_local_download",
+      "reason": "User reviewed the ignored untracked JWS index and approved actual deletion; it is not a source evidence asset.",
+      "replacement_contract": "Retained model/source assets carry model evidence; a generic database index is not a substitute and has no continuing repository role. License review remains separate from custody/hash verification.",
+      "replacement_paths": [
+        "data/hog2013/model_wt.xml",
+        "data/hog2013/sources.json",
+        "data/native_reference_models/jalihal2021/nutrient-signaling-sbml.xml"
+      ]
+    },
+    {
+      "action_executed": true,
+      "approval_conditions": [
+        "Recorded exact user approval",
+        "Regenerated full-task refusal JSON installed with reviewed provenance",
+        "Affected current claims migrated",
+        "Parent owns actual removal after adoption"
+      ],
+      "approval_request_id": "reviewed-cleanup-20260908-v1",
+      "approval_required": true,
+      "approved": true,
+      "callers": {
+        "static_imports": [],
+        "literal_or_document_references": [],
+        "interpretation": "References include logical historical identities, not only runtime use. Absence of static callers never supplies approval; exact user review and replacement contracts remain required."
+      },
+      "frozen_impact": {
+        "public_bundle_or_lineage_references": [],
+        "retained_negative_ids": ["N06"],
+        "is_protected_evidence": true,
+        "assessment": "Only the independently recognized user-approved exact action can change storage. Historical logical identities and negative findings remain retained; no current-source freshness exemption is created."
+      },
+      "known_non_python_consumers": ["Current claim registry", "artifact provenance registry"],
+      "owner": "parent-integration",
+      "path": "outputs/regulation_task_priority.csv",
+      "proposed_action": "replace_superseded_result",
+      "reason": "User approved replacing the reduced two-task ranking with the actual matched-host full-task refusal, not erasing an infeasibility finding.",
+      "replacement_contract": "Parent must first install and review the regenerated JSON retaining biomass, ethanol and CO2 and both infeasible models; migrate current claims and provenance. Execution receipt must bind the replacement SHA-256. Retained-negative expansion preserves the original Git identity and adopts the refusal report only after completion.",
+      "replacement_paths": [
+        "outputs/regulation_matched_tasks.json",
+        "data/artifact_registry.json",
+        "data/current_claims.json",
+        "scripts/run_regulation.py",
+        "tests/test_run_regulation.py"
+      ]
+    },
+    {
+      "action_executed": true,
+      "approval_conditions": [
+        "Recorded exact user approval",
+        "Pre-move original Git/SHA verification",
+        "Explicit exact source-asset fixture mapping",
+        "Original-source population and tamper regressions pass",
+        "Post-move original bytes and source identity verified"
+      ],
+      "approval_request_id": "reviewed-cleanup-20260908-v1",
+      "approval_required": true,
+      "approved": true,
+      "callers": {
+        "static_imports": [],
+        "literal_or_document_references": [
+          {
+            "source": "tests/test_phase_c_release_parser.py",
+            "target": "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py",
+            "line": 107,
+            "kind": "literal_path_reference_not_execution_proof"
+          },
+          {
+            "source": "tests/test_phase_c_release_parser.py",
+            "target": "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py",
+            "line": 119,
+            "kind": "literal_path_reference_not_execution_proof"
+          },
+          {
+            "source": "tests/test_phase_c_release_parser.py",
+            "target": "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py",
+            "line": 125,
+            "kind": "literal_path_reference_not_execution_proof"
+          },
+          {
+            "source": "tests/test_population_historical_sources.py",
+            "target": "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py",
+            "line": 27,
+            "kind": "literal_path_reference_not_execution_proof"
+          }
+        ],
+        "interpretation": "References include logical historical identities, not only runtime use. Absence of static callers never supplies approval; exact user review and replacement contracts remain required."
+      },
+      "frozen_impact": {
+        "public_bundle_or_lineage_references": ["lineage_only_boundary_not_read"],
+        "retained_negative_ids": ["N04", "N05"],
+        "is_protected_evidence": true,
+        "assessment": "Only the independently recognized user-approved exact action can change storage. Historical logical identities and negative findings remain retained; no current-source freshness exemption is created."
+      },
+      "known_non_python_consumers": ["Historical release_request.json logical exporter identity", "Explicit original population source fixture"],
+      "owner": "inventory-agent",
+      "path": "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py",
+      "proposed_action": "relocate_immutable_source_evidence",
+      "reason": "Immutable historical source belongs in a non-importable source asset, never a reformatted current-runtime file or a lint exclusion.",
+      "replacement_contract": "Byte-preserving Git move only. Original SHA-256 68c31da88770e4718bc5668791edd38de6a054fa821aaa074a2ef48d6c676d8a and 42204 bytes remain pinned. Frozen logical paths/hashes/JSON are unchanged. Explicit fixture mapping verifies exactly one original or .source file, rejects tampering/ambiguity/symlinks, and materializes original Git source at the original .py path. Production strict admission is unchanged.",
+      "replacement_paths": ["data/native_law_v2/granados/development/phase_c_01/release_phase_c.py.source"]
+    },
+    {
+      "action_executed": true,
+      "approval_conditions": [
+        "Recorded exact user approval 2026-09-10",
+        "Verified strict-superset successor exists and reproduces bit-identically",
+        "Verified no doc, claim or audit:value selector references any cell"
+      ],
+      "approval_request_id": "reviewed-cleanup-20260910-partial-orders",
+      "approval_required": true,
+      "approved": true,
+      "callers": {
+        "static_imports": [],
+        "literal_or_document_references": [],
+        "interpretation": "References include logical historical identities, not only runtime use. Absence of static callers never supplies approval; exact user review and replacement contracts remain required."
+      },
+      "frozen_impact": {
+        "public_bundle_or_lineage_references": [],
+        "retained_negative_ids": [],
+        "is_protected_evidence": false,
+        "assessment": "Only the independently recognized user-approved exact action can change storage. Historical logical identities and negative findings remain retained; no current-source freshness exemption is created."
+      },
+      "known_non_python_consumers": [],
+      "owner": "parent-integration",
+      "path": "outputs/partial_order_synthetic_summary.csv",
+      "proposed_action": "remove_superseded_result",
+      "reason": "Superseded original demonstration with a verified strict-superset successor. outputs/partial_order_v2/ carries the same 7 rows and all 20 columns plus 4 added (requested_proposal, proposal_distribution, conditioning_status, proposal_source); zero numeric cells differ and the only 3 differing cells are one prose reword whose dropped token moves into proposal_source. An exhaustive grep of docs/, README.md, data/current_claims.json and scripts/ for every distinctive cell value returned no hits, and no audit:value selector targets it.",
+      "replacement_contract": "partial-orders-v2 is the registered current run and reproduces bit-identically from scripts/run_order_robustness.py at its default seed 1729; its accepted_sha256 values match a fresh regeneration.",
+      "replacement_paths": ["outputs/partial_order_v2/partial_order_synthetic_summary.csv"]
+    },
+    {
+      "action_executed": true,
+      "approval_conditions": [
+        "Recorded exact user approval 2026-09-10",
+        "Verified strict-superset successor exists and reproduces bit-identically",
+        "Verified no doc, claim or audit:value selector references any cell"
+      ],
+      "approval_request_id": "reviewed-cleanup-20260910-partial-orders",
+      "approval_required": true,
+      "approved": true,
+      "callers": {
+        "static_imports": [],
+        "literal_or_document_references": [],
+        "interpretation": "References include logical historical identities, not only runtime use. Absence of static callers never supplies approval; exact user review and replacement contracts remain required."
+      },
+      "frozen_impact": {
+        "public_bundle_or_lineage_references": [],
+        "retained_negative_ids": [],
+        "is_protected_evidence": false,
+        "assessment": "Only the independently recognized user-approved exact action can change storage. Historical logical identities and negative findings remain retained; no current-source freshness exemption is created."
+      },
+      "known_non_python_consumers": [],
+      "owner": "parent-integration",
+      "path": "outputs/partial_order_synthetic_demo.json",
+      "proposed_action": "remove_superseded_result",
+      "reason": "Superseded original demonstration with a verified strict-superset successor. outputs/partial_order_v2/ carries the same 7 rows and all 20 columns plus 4 added (requested_proposal, proposal_distribution, conditioning_status, proposal_source); zero numeric cells differ and the only 3 differing cells are one prose reword whose dropped token moves into proposal_source. An exhaustive grep of docs/, README.md, data/current_claims.json and scripts/ for every distinctive cell value returned no hits, and no audit:value selector targets it.",
+      "replacement_contract": "partial-orders-v2 is the registered current run and reproduces bit-identically from scripts/run_order_robustness.py at its default seed 1729; its accepted_sha256 values match a fresh regeneration.",
+      "replacement_paths": ["outputs/partial_order_v2/partial_order_synthetic_demo.json"]
+    },
+    {
+      "action_executed": true,
+      "approval_conditions": [
+        "Recorded exact user approval 2026-09-11",
+        "Content retained under docs/superseded/, not deleted",
+        "Verified zero inbound references before the move"
+      ],
+      "approval_request_id": "reviewed-cleanup-20260911-autofluorescence-supersession",
+      "approval_required": true,
+      "approved": true,
+      "known_non_python_consumers": [],
+      "owner": "parent-integration",
+      "path": "docs/research/AUTOFLUORESCENCE_FOUND.md",
+      "proposed_action": "relocate_superseded_document",
+      "reason": "Superseded one day after it was written. It concludes 'Cannot: a value for the a sweep' and 'So the sweep stays'; docs/FINDINGS.md (2026-08-30) names its method as the error -- a median of RFU/OD measures a + background/OD -- and measures a = +18.2 RFU/OD, 95% CI [-6.1, +42.4], closing the sweep. Its 239 RFU/OD is the only copy of that quantity where FINDINGS.md, DATA_INVENTORY.md, XPT_INVENTORY.md, src/ystwin/readings.py and scripts/measure_autofluorescence.py all carry 249. Zero inbound references. Retained evidence (N14), relocated rather than deleted, per docs/superseded/README.md's rule that a superseded result kept beside the live one is eventually read as the live one.",
+      "replacement_contract": "The body is retained verbatim under docs/superseded/ with a header naming the live result and the one relative link the move would have broken. docs/superseded/README.md gains its row; FINDINGS.md and DATA_INVENTORY.md link to the new path.",
+      "replacement_paths": ["docs/superseded/autofluorescence-first-pass.md"],
+      "callers": {
+        "static_imports": [],
+        "literal_or_document_references": [
+          {
+            "source": "docs/superseded/autofluorescence-first-pass.md",
+            "target": "docs/research/AUTOFLUORESCENCE_FOUND.md",
+            "line": 30,
+            "kind": "document_reference_not_execution_proof"
+          }
+        ],
+        "interpretation": "References include logical historical identities, not only runtime use. Absence of static callers never supplies approval; exact user review and replacement contracts remain required."
+      },
+      "frozen_impact": {
+        "public_bundle_or_lineage_references": [],
+        "retained_negative_ids": [],
+        "is_protected_evidence": false,
+        "assessment": "Only the independently recognized user-approved exact action can change storage. Historical logical identities and negative findings remain retained; no current-source freshness exemption is created."
+      }
+    }
+  ],
+  "protected_exact_paths": [
+    "archive/README.md",
+    "archive/code/deconvolve.py",
+    "archive/code/module_admission.py",
+    "archive/docs/CLEANUP.md",
+    "archive/outputs/atp_sensor_confidence.png",
+    "archive/outputs/atp_sensor_out_of_sync.png",
+    "archive/outputs/atp_sensor_reasoning_chain.png",
+    "archive/tests/test_deconvolve.py",
+    "archive/tests/test_module_admission.py",
+    "data/frozen_evidence/native_v1/artifacts/data/gem/ecYeastGEM_batch.xml.gz",
+    "data/frozen_evidence/native_v1/artifacts/data/hog2013/methods.pdf",
+    "data/frozen_evidence/native_v1/artifacts/data/hog2013/model_wt.xml",
+    "data/frozen_evidence/native_v1/artifacts/data/hog2013/native_training_protocol.json",
+    "data/frozen_evidence/native_v1/artifacts/data/hog2013/observations.xls",
+    "data/frozen_evidence/native_v1/artifacts/data/hog2013/sources.json",
+    "data/frozen_evidence/native_v1/artifacts/data/holdout_transfer/chemistry_evidence.json",
+    "data/frozen_evidence/native_v1/artifacts/data/holdout_transfer/condition_records.json",
+    "data/frozen_evidence/native_v1/artifacts/data/holdout_transfer/condition_verification.json",
+    "data/frozen_evidence/native_v1/artifacts/data/holdout_transfer/hypotheses/chemistry_nad.json",
+    "data/frozen_evidence/native_v1/artifacts/data/holdout_transfer/hypotheses/chemistry_oxygen_peroxide.json",
+    "data/frozen_evidence/native_v1/artifacts/data/holdout_transfer/hypotheses/chemistry_oxygen_water.json",
+    "data/frozen_evidence/native_v1/artifacts/data/holdout_transfer/hypotheses/conditions_nad.json",
+    "data/frozen_evidence/native_v1/artifacts/data/holdout_transfer/hypotheses/conditions_oxygen_peroxide.json",
+    "data/frozen_evidence/native_v1/artifacts/data/holdout_transfer/hypotheses/conditions_oxygen_water.json",
+    "data/frozen_evidence/native_v1/artifacts/data/holdout_transfer/hypotheses/manifest.json",
+    "data/frozen_evidence/native_v1/artifacts/data/holdout_transfer/input_resolution.json",
+    "data/frozen_evidence/native_v1/artifacts/data/holdout_transfer/label_provenance.json",
+    "data/frozen_evidence/native_v1/artifacts/data/holdout_transfer/labels.json",
+    "data/frozen_evidence/native_v1/artifacts/data/holdout_transfer/labels_manifest.json",
+    "data/frozen_evidence/native_v1/artifacts/data/holdout_transfer/source_index.json",
+    "data/frozen_evidence/native_v1/artifacts/data/native_law_v2/development_protocol.json",
+    "data/frozen_evidence/native_v1/artifacts/data/physiology/chemostatData_VanHoek1998.tsv",
+    "data/frozen_evidence/native_v1/artifacts/outputs/biology_readiness_01/readiness.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/ecmodel_prior_port_01/ecmodel_isoprenoid_kcats.csv",
+    "data/frozen_evidence/native_v1/artifacts/outputs/ecmodel_prior_port_01/ecmodel_isoprenoid_prior.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/ecmodel_prior_port_01/enzyme_capacity_sweep.csv",
+    "data/frozen_evidence/native_v1/artifacts/outputs/heldout_score_nad/score.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/heldout_score_oxygen_peroxide/score.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/heldout_score_oxygen_water/score.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/heldout_transfer_nad/predictions.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/heldout_transfer_nad/task_manifest.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/heldout_transfer_oxygen_peroxide/predictions.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/heldout_transfer_oxygen_peroxide/task_manifest.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/heldout_transfer_oxygen_water/predictions.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/heldout_transfer_oxygen_water/task_manifest.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/executor_refresh_01/execution_configuration.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/attempt_log.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_0.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_1.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_2.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_3.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_4.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_5.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_6.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_7.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_0.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_1.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_2.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_3.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_4.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_5.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_6.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_7.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_0.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_1.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_2.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_3.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_4.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_5.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_6.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_7.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/prefix_persistence_start_0.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/training_constant_start_0.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/training_constant_start_1.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/training_constant_start_2.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/training_constant_start_3.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/training_constant_start_4.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/training_constant_start_5.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/training_constant_start_6.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/training_constant_start_7.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/transient_response_start_0.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/transient_response_start_1.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/transient_response_start_2.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/transient_response_start_3.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/transient_response_start_4.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/transient_response_start_5.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/transient_response_start_6.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/checkpoints/transient_response_start_7.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/conditioning_checkpoint.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/development_prediction_freeze.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/nonnegative_map_audit.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01/training_run_summary.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01_phase_c_01_scoring/development_report.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01_phase_c_01_scoring/scoring_summary.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_population_development/native_training_01_phase_c_01_scoring_fix_v2/reusable_interface_fix_verification.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_training_run_02/checkpoint.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_training_run_02/checkpoint_receipt.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_training_run_02/contract.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_training_run_02/native_exchange_fit.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_training_run_02/native_exchange_validation.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_training_run_02/native_hog_fit.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_training_run_02/native_obligations.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_training_run_02/native_training_observations.csv",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_training_run_02/read_audit.json",
+    "data/frozen_evidence/native_v1/artifacts/outputs/native_training_run_02/training_manifest.json",
+    "data/frozen_evidence/native_v1/manifest.json",
+    "data/gem/absent_stress_genes.tsv",
+    "data/gem/stress_pathway_coverage.tsv",
+    "data/holdout_transfer/chemistry_evidence.json",
+    "data/holdout_transfer/condition_records.json",
+    "data/holdout_transfer/condition_verification.json",
+    "data/holdout_transfer/hypotheses/chemistry_nad.json",
+    "data/holdout_transfer/hypotheses/chemistry_oxygen_peroxide.json",
+    "data/holdout_transfer/hypotheses/chemistry_oxygen_water.json",
+    "data/holdout_transfer/hypotheses/conditions_nad.json",
+    "data/holdout_transfer/hypotheses/conditions_oxygen_peroxide.json",
+    "data/holdout_transfer/hypotheses/conditions_oxygen_water.json",
+    "data/holdout_transfer/hypotheses/manifest.json",
+    "data/holdout_transfer/input_resolution.json",
+    "data/holdout_transfer/label_provenance.json",
+    "data/holdout_transfer/labels.json",
+    "data/holdout_transfer/labels_manifest.json",
+    "data/native_law_v2/adversarial_review.json",
+    "data/native_law_v2/biochemical/activity_alternatives.json",
+    "data/native_law_v2/biochemical/boer2010_metadata.json",
+    "data/native_law_v2/biochemical/hackett2016_metadata.json",
+    "data/native_law_v2/biochemical_catalogue.json",
+    "data/native_law_v2/claim_domain.json",
+    "data/native_law_v2/development_adversarial_review.json",
+    "data/native_law_v2/development_phase_c_verification.json",
+    "data/native_law_v2/development_protocol.json",
+    "data/native_law_v2/development_provenance_review.json",
+    "data/native_law_v2/direct_assay/cereghetti2021_metadata.json",
+    "data/native_law_v2/direct_assay/provenance/source_audit.json",
+    "data/native_law_v2/direct_assay/smallbone2013_metadata.json",
+    "data/native_law_v2/direct_assay/vaneunen2012_metadata.json",
+    "data/native_law_v2/direct_assay_catalogue.json",
+    "data/native_law_v2/granados/access_audit.json",
+    "data/native_law_v2/granados/acquisition.json",
+    "data/native_law_v2/granados/condition_metadata.json",
+    "data/native_law_v2/granados/dependency_components.json",
+    "data/native_law_v2/granados/development/contracts/DevelopmentBlocker.schema.json",
+    "data/native_law_v2/granados/development/contracts/DevelopmentCustodyDecision.schema.json",
+    "data/native_law_v2/granados/development/contracts/DevelopmentPredictionFreeze.schema.json",
+    "data/native_law_v2/granados/development/contracts/DevelopmentReleaseRequest.schema.json",
+    "data/native_law_v2/granados/development/contracts/PrefixSummary.schema.json",
+    "data/native_law_v2/granados/development/contracts/Projection.schema.json",
+    "data/native_law_v2/granados/development/contracts/development_protocol.json",
+    "data/native_law_v2/granados/development/contracts/protocol_schemas.json",
+    "data/native_law_v2/granados/development/custody_handoff.json",
+    "data/native_law_v2/granados/development/executor_interface_handoff.json",
+    "data/native_law_v2/granados/development/executor_refresh_01/custody_decision.json",
+    "data/native_law_v2/granados/development/executor_refresh_01/executor_refresh_admission.json",
+    "data/native_law_v2/granados/development/executor_refresh_01/issue_refresh.py",
+    "data/native_law_v2/granados/development/executor_refresh_01/refresh_event.json",
+    "data/native_law_v2/granados/development/executor_refresh_01/verification.json",
+    "data/native_law_v2/granados/development/executor_refresh_01/views/execution_configuration.json",
+    "data/native_law_v2/granados/development/executor_refresh_01/views/refresh_request.json",
+    "data/native_law_v2/granados/development/executor_refresh_01/views/release_request.json",
+    "data/native_law_v2/granados/development/operational_blocker.json",
+    "data/native_law_v2/granados/development/operational_events.json",
+    "data/native_law_v2/granados/development/phase_b/approval_event.json",
+    "data/native_law_v2/granados/development/phase_b/custody_decision.json",
+    "data/native_law_v2/granados/development/phase_b/development_inputs_binding.json",
+    "data/native_law_v2/granados/development/phase_b/executor_environment.json",
+    "data/native_law_v2/granados/development/phase_b/frozen_executor/native_population_development.py",
+    "data/native_law_v2/granados/development/phase_b/release_request.json",
+    "data/native_law_v2/granados/development/phase_b/training_values_binding.json",
+    "data/native_law_v2/granados/development/phase_c_01/PhaseCReleaseManifest.schema.json",
+    "data/native_law_v2/granados/development/phase_c_01/coverage_audit.json",
+    "data/native_law_v2/granados/development/phase_c_01/custody_decision.json",
+    "data/native_law_v2/granados/development/phase_c_01/freeze_verification.json",
+    "data/native_law_v2/granados/development/phase_c_01/release_event.json",
+    "data/native_law_v2/granados/development/phase_c_01/release_manifest.json",
+    "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py",
+    "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py.source",
+    "data/native_law_v2/granados/development/phase_c_01/release_request.json",
+    "data/native_law_v2/granados/development/phase_c_01/source_binding_audit.json",
+    "data/native_law_v2/granados/development/phase_c_01/source_replay_verification.json",
+    "data/native_law_v2/granados/development/phase_c_01/test_phase_c_parser.py",
+    "data/native_law_v2/granados/development/release_manifest.json",
+    "data/native_law_v2/granados/development/source_binding_audit.json",
+    "data/native_law_v2/granados/development/test_custody_export.py",
+    "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_inputs.json",
+    "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_responses.json",
+    "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/training_projection.json",
+    "data/native_law_v2/granados/eligibility_audit.json",
+    "data/native_law_v2/granados/identity_check_plan.json",
+    "data/native_law_v2/granados/identity_checks.json",
+    "data/native_law_v2/granados/identity_checks.schema.json",
+    "data/native_law_v2/granados/identity_replay.m",
+    "data/native_law_v2/granados/inventory.schema.json",
+    "data/native_law_v2/granados/inventory_summary.json",
+    "data/native_law_v2/granados/manifest.schema.json",
+    "data/native_law_v2/granados/metadata_supplement.json",
+    "data/native_law_v2/granados/metadata_supplement.schema.json",
+    "data/native_law_v2/granados/overlap_audit.json",
+    "data/native_law_v2/granados/provenance/europe_pmc_lookup.json",
+    "data/native_law_v2/granados/provenance/primary_evidence_index.json",
+    "data/native_law_v2/granados/provenance/primary_methods.txt",
+    "data/native_law_v2/granados/provenance/readme_source.txt",
+    "data/native_law_v2/granados/provenance/repository_bundle.json",
+    "data/native_law_v2/granados/provenance/repository_item.json",
+    "data/native_law_v2/granados/provenance/source_code/YeastStressTypeResponse.Rd",
+    "data/native_law_v2/granados/provenance/source_code/calculateInfoList.m",
+    "data/native_law_v2/granados/provenance/source_code/example_script.m",
+    "data/native_law_v2/granados/provenance/source_code/exportJSONCellInf.m",
+    "data/native_law_v2/granados/provenance/source_code/filterCellsByNucLoc.m",
+    "data/native_law_v2/granados/provenance/source_code/formatCellInf.m",
+    "data/native_law_v2/granados/provenance/source_code/inpaint_nans.m",
+    "data/native_law_v2/granados/provenance/source_code/jsonlab-1.5.mltbx",
+    "data/native_law_v2/granados/provenance/source_code/jsonlab_savejson.m",
+    "data/native_law_v2/granados/provenance/source_code/mi_matlab_readme_source.txt",
+    "data/native_law_v2/granados/provenance/source_code/normMeanOffset.m",
+    "data/native_law_v2/granados/provenance/source_code/visualizeExper.m",
+    "data/native_law_v2/granados/provenance/source_code_acquisition.json",
+    "data/native_law_v2/granados/provenance/source_code_lf/inpaint_nans.m",
+    "data/native_law_v2/granados/provenance/source_links.json",
+    "data/native_law_v2/granados/provenance/supplement_methods_excerpt.txt",
+    "data/native_law_v2/granados/schema_inventory.json",
+    "data/native_law_v2/granados/timing_review.json",
+    "data/native_law_v2/granados/timing_review.schema.json",
+    "data/native_law_v2/granados_manifest.json",
+    "data/native_law_v2/protocol.json",
+    "data/native_law_v2/protocol_design_resolution.json",
+    "data/native_law_v2/protocol_review.json",
+    "data/native_law_v2/provenance_review.json",
+    "data/thermo/refuted_energies.tsv",
+    "data/validation_candidates/yeast_gam_lineage.json",
+    "docs/CROSS_FAMILY.md",
+    "docs/EXTERNAL_CAROTENOID_BOUND.md",
+    "docs/HARD_TESTS.md",
+    "docs/MECHANISTIC_LAYER.md",
+    "docs/NULL_RESULTS.md",
+    "docs/research/CAROTENOID_ENERGIES.md",
+    "docs/superseded/README.md",
+    "docs/superseded/dose-response-folds.md",
+    "docs/superseded/heldout-interpolation.md",
+    "docs/superseded/maintenance-coefficient.md",
+    "docs/superseded/module-transfer-inflation.md",
+    "docs/superseded/pool-before-regulon.md",
+    "docs/superseded/power-attribution.md",
+    "docs/superseded/reference-phenotype.md",
+    "outputs/biology_learning_audit_01/diagnostic_plan.json",
+    "outputs/biology_learning_audit_01/ledger.json",
+    "outputs/biology_learning_audit_01/native_diagnostics.json",
+    "outputs/biology_learning_audit_02_gate_hardening/diagnostic_plan.json",
+    "outputs/biology_learning_audit_02_gate_hardening/ledger.json",
+    "outputs/biology_learning_audit_02_gate_hardening/native_diagnostics.json",
+    "outputs/biology_learning_review.json",
+    "outputs/biology_observability_gauge.json",
+    "outputs/content_band_coverage.csv",
+    "outputs/cross_family_optimism.csv",
+    "outputs/cross_family_transfer.csv",
+    "outputs/d1_capacity_sweep_ec.csv",
+    "outputs/environment_law_scores.csv",
+    "outputs/flux_null_baseline.csv",
+    "outputs/fold_multiplicity.csv",
+    "outputs/g4_anchor_fold_change.csv",
+    "outputs/g4_reporter_response.csv",
+    "outputs/g4_rt_minus_qc.csv",
+    "outputs/g4_verdicts.csv",
+    "outputs/heldout_interpolation_by_dose.csv",
+    "outputs/heldout_scores.csv",
+    "outputs/heldout_transfer_nad/evaluation_receipt.json",
+    "outputs/heldout_transfer_oxygen_peroxide/evaluation_receipt.json",
+    "outputs/heldout_transfer_oxygen_water/evaluation_receipt.json",
+    "outputs/heldout_transfer_summary.json",
+    "outputs/late_window_sensitivity.csv",
+    "outputs/maintenance_scale.csv",
+    "outputs/native_population_development/executor_refresh_01/code/native_population_development.py",
+    "outputs/native_population_development/executor_refresh_01/code/run_native_population_development.py",
+    "outputs/native_population_development/executor_refresh_01/code/test_native_population_development.py",
+    "outputs/native_population_development/executor_refresh_01/development_protocol.json",
+    "outputs/native_population_development/executor_refresh_01/execution_configuration.json",
+    "outputs/native_population_development/executor_refresh_01/executor_refresh_request.json",
+    "outputs/native_population_development/executor_refresh_01/release_request.json",
+    "outputs/native_population_development/native_training_01/attempt_log.json",
+    "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_0.json",
+    "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_1.json",
+    "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_2.json",
+    "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_3.json",
+    "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_4.json",
+    "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_5.json",
+    "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_6.json",
+    "outputs/native_population_development/native_training_01/checkpoints/first_order_response_start_7.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_0.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_1.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_2.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_3.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_4.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_5.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_6.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_affine_time_start_7.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_0.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_1.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_2.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_3.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_4.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_5.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_6.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_offset_start_7.json",
+    "outputs/native_population_development/native_training_01/checkpoints/prefix_persistence_start_0.json",
+    "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_0.json",
+    "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_1.json",
+    "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_2.json",
+    "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_3.json",
+    "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_4.json",
+    "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_5.json",
+    "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_6.json",
+    "outputs/native_population_development/native_training_01/checkpoints/training_constant_start_7.json",
+    "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_0.json",
+    "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_1.json",
+    "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_2.json",
+    "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_3.json",
+    "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_4.json",
+    "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_5.json",
+    "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_6.json",
+    "outputs/native_population_development/native_training_01/checkpoints/transient_response_start_7.json",
+    "outputs/native_population_development/native_training_01/conditioning_checkpoint.json",
+    "outputs/native_population_development/native_training_01/development_prediction_freeze.json",
+    "outputs/native_population_development/native_training_01/nonnegative_map_audit.json",
+    "outputs/native_population_development/native_training_01/training_access_intent.json",
+    "outputs/native_population_development/native_training_01/training_run_summary.json",
+    "outputs/native_population_development/native_training_01_phase_c_01_scoring/adapter_code/native_population_scoring.py",
+    "outputs/native_population_development/native_training_01_phase_c_01_scoring/adapter_code/score_native_population_development.py",
+    "outputs/native_population_development/native_training_01_phase_c_01_scoring/adapter_code/test_native_population_scoring.py",
+    "outputs/native_population_development/native_training_01_phase_c_01_scoring/development_report.json",
+    "outputs/native_population_development/native_training_01_phase_c_01_scoring/independent_review.json",
+    "outputs/native_population_development/native_training_01_phase_c_01_scoring/response_aggregation_audit.json",
+    "outputs/native_population_development/native_training_01_phase_c_01_scoring/retained_training_domain_warnings.json",
+    "outputs/native_population_development/native_training_01_phase_c_01_scoring/scoring_access_intent.json",
+    "outputs/native_population_development/native_training_01_phase_c_01_scoring/scoring_summary.json",
+    "outputs/native_population_development/native_training_01_phase_c_01_scoring_fix_v2/adapter_code/native_population_scoring.py",
+    "outputs/native_population_development/native_training_01_phase_c_01_scoring_fix_v2/adapter_code/score_native_population_development.py",
+    "outputs/native_population_development/native_training_01_phase_c_01_scoring_fix_v2/adapter_code/test_native_population_scoring.py",
+    "outputs/native_reconciliation_20260907_01/final/case_summary.csv",
+    "outputs/native_reconciliation_20260907_01/final/case_summary.json",
+    "outputs/native_reconciliation_20260907_01/final/completion.json",
+    "outputs/native_reconciliation_20260907_01/final/native_conditions.json",
+    "outputs/native_reconciliation_20260907_01/final/native_structure.json",
+    "outputs/native_reconciliation_20260907_01/final/protocol.json",
+    "outputs/native_reconciliation_20260907_01/findings.json",
+    "outputs/native_reconciliation_20260907_01/followup_checks.json",
+    "outputs/native_reconciliation_20260907_01/source_lineage_audit.json",
+    "outputs/native_reconciliation_20260907_01/verification.json",
+    "outputs/native_training_run_02/checkpoint_receipt.json",
+    "outputs/native_training_run_02/native_exchange_fit.json",
+    "outputs/native_training_run_02/native_exchange_validation.json",
+    "outputs/native_training_run_02/native_hog_fit.json",
+    "outputs/native_training_run_02/native_obligations.json",
+    "outputs/native_training_run_02/native_training_observations.csv",
+    "outputs/native_training_run_02/read_audit.json",
+    "outputs/phb_environment_score.csv",
+    "outputs/product_scoreboard.csv",
+    "outputs/regulation_counterfactual.csv",
+    "outputs/regulation_depth_sweep.csv",
+    "outputs/regulation_matched_tasks.json",
+    "outputs/regulation_module_reach.csv",
+    "outputs/regulation_product_range.csv",
+    "outputs/target_scoreboard.csv",
+    "outputs/thiolase_threshold.csv",
+    "outputs/transfer_by_stressor.csv"
+  ],
+  "review_evidence": {
+    "historical_source": {
+      "fixture_mapping": "tests/test_population_historical_sources.py::SOURCE_ASSET_RELOCATIONS",
+      "git_commit": "84561f51502b5b4bf66c052dc88c853038917934",
+      "git_object_id": "fd9dbe4b7afbeec94dd543754396d444b3c45880",
+      "logical_source_path": "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py",
+      "post_move_identity": "Git records a 100% rename with original blob fd9dbe4b7afbeec94dd543754396d444b3c45880; SHA-256 and 42204-byte length are unchanged. data/frozen_runtime.json remains 8e340b7d947d0a89b52d448fba9c20c6899eaf2d568e7a04dfc87426d1c90c0b; public frozen manifest remains eff317f689fe096f6b3df35e050f557b51cd7e51cdb192bb95775eef8ef529ec.",
+      "post_move_test_result": "121 population/historical/adversarial tests passed in 38.49 seconds, exit 0, after the byte-preserving source-asset move.",
+      "pre_move_test_result": "121 population/historical/adversarial tests passed, exit 0; includes tamper, ambiguity, missing-asset and original-path materialization checks.",
+      "production_admission": "Unchanged and strict: current-root admission does not resolve .source aliases. Only the explicit original-source test fixture verifies the exact registered source asset and then materializes original Git bytes at the original .py path.",
+      "sha256": "68c31da88770e4718bc5668791edd38de6a054fa821aaa074a2ef48d6c676d8a",
+      "size_bytes": 42204,
+      "storage_path": "data/native_law_v2/granados/development/phase_c_01/release_phase_c.py.source"
+    },
+    "local_download": {
+      "ignored": true,
+      "path": "jws.html",
+      "role": "Reviewed JWS Online model-database index HTML with no source/model evidence role; authoritative model and source assets are retained separately.",
+      "sha256": "95827d2849c6aea0c2ed1881218c38b336ca8809686836636ab694a3e0f324f1",
+      "size_bytes": 60203,
+      "tracked": false
+    },
+    "packaging": {
+      "fresh_sdist_command": "/private/tmp/ystwin-quality-venv-20260908/bin/python -B -m pytest --noconftest -p no:cacheprovider tests/test_repository_inventory.py tests/test_archive_is_inert.py -q",
+      "fresh_sdist_result": "95 tests passed, exit 0; includes the clean sdist build, source-byte inclusion, generated dependency metadata and no-worktree-mutation checks",
+      "fresh_sdist_test": "tests/test_repository_inventory.py::test_clean_sdist_recreates_metadata_and_preserves_all_package_sources",
+      "passed": true,
+      "pip_returncode": 0,
+      "report": "/private/tmp/ystwin-quality-followup-20260908/installation/installation.json",
+      "scope": "Clean source copy omits all five tracked metadata files; wheel build and installed import pass. Original metadata SHA-256 values were independently rechecked before cleanup. Fresh isolated source-distribution building passed with every current ystwin Python source byte-preserved and core/extras requirements derived from pyproject; original tracked metadata remained unchanged.",
+      "tracked_metadata_unchanged": true
+    },
+    "post_cleanup_validation": {
+      "environment": {"PYTHONDONTWRITEBYTECODE": "1", "PYTHONPATH": "repository root/src"},
+      "global_ruff": {
+        "command": "/private/tmp/ystwin-quality-venv-20260908/bin/python -B -m ruff check --no-cache .",
+        "result": "Only two unowned in-progress E402 findings at scripts/audit_claims.py:28 and :30; parent must resolve",
+        "returncode": 1
+      },
+      "inventory_and_archive": {
+        "command": "/private/tmp/ystwin-quality-venv-20260908/bin/python -B -m pytest --noconftest -p no:cacheprovider tests/test_repository_inventory.py tests/test_archive_is_inert.py -q",
+        "result": "112 passed in 12.47 seconds",
+        "returncode": 0,
+        "scope": "Includes original inventory tests plus exact approval/receipt/relocation tamper regressions, replacement contract checks and a fresh clean sdist build."
+      },
+      "owned_ruff": {
+        "command": "/private/tmp/ystwin-quality-venv-20260908/bin/python -B -m ruff check --no-cache scripts/repository_inventory.py tests/test_repository_inventory.py tests/test_population_historical_sources.py",
+        "result": "All checks passed",
+        "returncode": 0
+      },
+      "population": {
+        "command": "/private/tmp/ystwin-quality-venv-20260908/bin/python -B -m pytest --noconftest -p no:cacheprovider tests/test_population_historical_sources.py tests/test_native_population_development.py tests/test_native_population_adversarial.py tests/test_native_population_scoring.py tests/test_native_population_scoring_adversarial.py -q",
+        "result": "121 passed in 38.49 seconds",
+        "returncode": 0
+      },
+      "remaining_approved_cleanup": "None. The parent completed the ninth exact action after adopted full-task refusal/provenance/current-claim verification; its execution receipt is recorded separately. Earlier test results above describe the eight-action checkpoint, not a new full-suite pass. Inventory must reverify all nine receipts; the broader full suite and W01-W16 acceptance remain in progress.",
+      "source_assets": {
+        "command": "/private/tmp/ystwin-quality-venv-20260908/bin/python -B scripts/fetch_native_reference_models.py --verify-only",
+        "result": "All 23 existing pinned source assets verified; no fetching, restamping or biological validation",
+        "returncode": 0
+      }
+    },
+    "scratch": {
+      "git_commit": "385b6b8dcf0f4f1a499df3a75de509237c27188f",
+      "git_subject": "Fix a 15.5x carrier bug in the GEM precursor yield, found by scoring it against measurement",
+      "path": "S.csv",
+      "role": "One-off precursor-yield comparison, not a published measurement or runtime input. Carrier-conservation regression and the failed applicability evidence remain retained.",
+      "rows": 23,
+      "sha256": "b52e7e2388a9d371b4cd40db5bcbddae7de2f6373a79a4d4844b5aea43d4a73d",
+      "size_bytes": 2544
+    }
+  },
+  "schema_version": 1
+}

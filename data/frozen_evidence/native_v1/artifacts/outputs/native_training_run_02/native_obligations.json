@@ -1,0 +1,172 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/native_training_run_02/native_obligations.json",
+    "sha256": "9e5748a0d91b8ab3ae4a5f83405b15601fa08cfbed0c778446a664e260f9b7d0"
+  },
+  "payload": {
+    "0": {
+      "balance_metadata": {
+        "absolute_conversion_equation": "q_mmol_gDW_h = rate_mol_Lreference_s * calibrated_Lreference_gDW * 1000 * 3600",
+        "absolute_flux_identified": false,
+        "balance_equation": "retention = synthesis - outward_transport + inward_transport; vVglyci dilution cancels the volume chain-rule term",
+        "biological_validation": false,
+        "carbon_commitment_equation": "3*synthesis/(6*glucose_uptake) = (v6+v6b)/(2*v1); instantaneous total new synthesis, not retained or secreted flux",
+        "carbon_origin_identified": false,
+        "carbon_scope": "an operational synthesis/current-glucose ratio, not atom tracing; source transient precursor and storage pools exist. No external glycerol credit or inventory release is transferred to the steady-state GEM. Ratios outside [0,1] and nonpositive glucose are refused.",
+        "constant_sbml_compartments": {
+          "extra": {
+            "size": 0.5,
+            "units": "volume"
+          },
+          "intra": {
+            "size": 0.00025,
+            "units": "volume"
+          }
+        },
+        "declared_sbml_volume_unit": [
+          {
+            "exponent": 1.0,
+            "kind": "litre",
+            "multiplier": 1.0,
+            "offset": 0.0,
+            "scale": -3
+          }
+        ],
+        "derivative_method": "source rhs chain rule at each supplied state, reevaluating source laws with effective protocol and parameters; no finite differences",
+        "extracellular_equation": "rhs_glycerol_e = (v13a - v13b + v13aBatch - v13bBatch)/extra; -rhs_glucose_e = (v1 + v1Batch)/extra",
+        "extracellular_rate_unit": "mol/L_external/s (source metabolite convention)",
+        "fate_specific_gem_flux_identified": false,
+        "growth_convention": "OD and cellnum are imposed experimental fits, not GEM growth; explicit batch corrections are external only; no added mu dilution",
+        "hog_protocol": {
+          "nacl_molar": 0.0,
+          "shock_time_s": 3600.0
+        },
+        "medium_dependence": "the native coefficient can depend on medium, time, protocol and parameters; transfer beyond the glucose-only training scope requires separate native evidence",
+        "native_training_scope": "glucose_only",
+        "parameter_overrides": {
+          "kv13a_1": 8.838593297224957e-06,
+          "kv16f_1": 0.13474313411576794,
+          "kv6_1": 0.015362106053609673,
+          "kv6b_4": 5.9634541011759384e-05
+        },
+        "physical_volume": "cellvol is a dynamic physical-volume species, not the constant SBML intra compartment; cellvol_init is the observation reference volume",
+        "reaction_basis": "multiply each native reaction extent rate by cellvol/(cellvol_init*intra) for the same reference basis, including v1; do not divide synthesis by extracellular batch depletion",
+        "reaction_roles": {
+          "active_inward_transport": "v13b",
+          "explicit_glycerol_volume_dilution": "vVglyci",
+          "extracellular_batch_corrections": [
+            "v13aBatch",
+            "v13bBatch",
+            "v1Batch"
+          ],
+          "glucose_uptake": "v1",
+          "new_glycerol_synthesis": [
+            "v6",
+            "v6b"
+          ],
+          "physical_volume": "vVos",
+          "signed_passive_outward_transport": "v13a"
+        },
+        "reference_equation": "d(glycerol_i*cellvol/cellvol_init)/dt = (cellvol*rhs_glycerol_i + glycerol_i*rhs_cellvol)/cellvol_init",
+        "reference_rate_unit": "mol/L_reference/s (source metabolite convention)",
+        "required_absolute_calibration": "independently measured source-reference accessible volume in L_reference/gDW at the modeled state, dry-mass basis, provenance and uncertainty; no default is supplied by native physiology/stress_pools",
+        "source_medium": "W303 YPD; source extracellular glycerol is allowed and its uptake is not new synthesis",
+        "source_model_id": "PetelenzKuehn_osmoadaptation_WT",
+        "source_model_sha256": "7da99398c53185503022a4dc2ec54b7666280f4d461cf96a7ccc762d56963c19",
+        "source_trehalose_remobilization_present": true,
+        "transport_convention": "gross directed contributions of modeled reaction paths; signed passive and active rates are preserved. v13a is itself a net diffusive law, so unidirectional molecular turnover is not identified. Sign splitting conserves even tiny regulator roundoff; no source state clipping.",
+        "unit_caveat": "SBML declares millilitres and defaults substance to mole, but source HPLC glycerol is mol/L; no global 1000-fold rescaling of mixed native variables is justified. Protein native values are not established molarity."
+      },
+      "maximum": 0.01056670518643152,
+      "mean": 0.006146623486178127,
+      "minimum": 0.00323584696954878,
+      "nacl_molar": 0.0,
+      "scope": "Temporal minimum and maximum of the fitted source carbon-commitment fraction within the native observation window; this span is not a statistical confidence interval",
+      "source": "native HOG reaction-balance fit; concentration scale is not a gDW flux calibration",
+      "source_medium": "native W303 YPD; transfer to a glucose-only host scenario is an explicit assumption"
+    },
+    "0.40000000000000002": {
+      "balance_metadata": {
+        "absolute_conversion_equation": "q_mmol_gDW_h = rate_mol_Lreference_s * calibrated_Lreference_gDW * 1000 * 3600",
+        "absolute_flux_identified": false,
+        "balance_equation": "retention = synthesis - outward_transport + inward_transport; vVglyci dilution cancels the volume chain-rule term",
+        "biological_validation": false,
+        "carbon_commitment_equation": "3*synthesis/(6*glucose_uptake) = (v6+v6b)/(2*v1); instantaneous total new synthesis, not retained or secreted flux",
+        "carbon_origin_identified": false,
+        "carbon_scope": "an operational synthesis/current-glucose ratio, not atom tracing; source transient precursor and storage pools exist. No external glycerol credit or inventory release is transferred to the steady-state GEM. Ratios outside [0,1] and nonpositive glucose are refused.",
+        "constant_sbml_compartments": {
+          "extra": {
+            "size": 0.5,
+            "units": "volume"
+          },
+          "intra": {
+            "size": 0.00025,
+            "units": "volume"
+          }
+        },
+        "declared_sbml_volume_unit": [
+          {
+            "exponent": 1.0,
+            "kind": "litre",
+            "multiplier": 1.0,
+            "offset": 0.0,
+            "scale": -3
+          }
+        ],
+        "derivative_method": "source rhs chain rule at each supplied state, reevaluating source laws with effective protocol and parameters; no finite differences",
+        "extracellular_equation": "rhs_glycerol_e = (v13a - v13b + v13aBatch - v13bBatch)/extra; -rhs_glucose_e = (v1 + v1Batch)/extra",
+        "extracellular_rate_unit": "mol/L_external/s (source metabolite convention)",
+        "fate_specific_gem_flux_identified": false,
+        "growth_convention": "OD and cellnum are imposed experimental fits, not GEM growth; explicit batch corrections are external only; no added mu dilution",
+        "hog_protocol": {
+          "nacl_molar": 0.4,
+          "shock_time_s": 3600.0
+        },
+        "medium_dependence": "the native coefficient can depend on medium, time, protocol and parameters; transfer beyond the glucose-only training scope requires separate native evidence",
+        "native_training_scope": "glucose_only",
+        "parameter_overrides": {
+          "kv13a_1": 8.838593297224957e-06,
+          "kv16f_1": 0.13474313411576794,
+          "kv6_1": 0.015362106053609673,
+          "kv6b_4": 5.9634541011759384e-05
+        },
+        "physical_volume": "cellvol is a dynamic physical-volume species, not the constant SBML intra compartment; cellvol_init is the observation reference volume",
+        "reaction_basis": "multiply each native reaction extent rate by cellvol/(cellvol_init*intra) for the same reference basis, including v1; do not divide synthesis by extracellular batch depletion",
+        "reaction_roles": {
+          "active_inward_transport": "v13b",
+          "explicit_glycerol_volume_dilution": "vVglyci",
+          "extracellular_batch_corrections": [
+            "v13aBatch",
+            "v13bBatch",
+            "v1Batch"
+          ],
+          "glucose_uptake": "v1",
+          "new_glycerol_synthesis": [
+            "v6",
+            "v6b"
+          ],
+          "physical_volume": "vVos",
+          "signed_passive_outward_transport": "v13a"
+        },
+        "reference_equation": "d(glycerol_i*cellvol/cellvol_init)/dt = (cellvol*rhs_glycerol_i + glycerol_i*rhs_cellvol)/cellvol_init",
+        "reference_rate_unit": "mol/L_reference/s (source metabolite convention)",
+        "required_absolute_calibration": "independently measured source-reference accessible volume in L_reference/gDW at the modeled state, dry-mass basis, provenance and uncertainty; no default is supplied by native physiology/stress_pools",
+        "source_medium": "W303 YPD; source extracellular glycerol is allowed and its uptake is not new synthesis",
+        "source_model_id": "PetelenzKuehn_osmoadaptation_WT",
+        "source_model_sha256": "7da99398c53185503022a4dc2ec54b7666280f4d461cf96a7ccc762d56963c19",
+        "source_trehalose_remobilization_present": true,
+        "transport_convention": "gross directed contributions of modeled reaction paths; signed passive and active rates are preserved. v13a is itself a net diffusive law, so unidirectional molecular turnover is not identified. Sign splitting conserves even tiny regulator roundoff; no source state clipping.",
+        "unit_caveat": "SBML declares millilitres and defaults substance to mole, but source HPLC glycerol is mol/L; no global 1000-fold rescaling of mixed native variables is justified. Protein native values are not established molarity."
+      },
+      "maximum": 0.13750326906638977,
+      "mean": 0.08410896344218285,
+      "minimum": 0.01056670518643152,
+      "nacl_molar": 0.4,
+      "scope": "Temporal minimum and maximum of the fitted source carbon-commitment fraction within the native observation window; this span is not a statistical confidence interval",
+      "source": "native HOG reaction-balance fit; concentration scale is not a gDW flux calibration",
+      "source_medium": "native W303 YPD; transfer to a glucose-only host scenario is an explicit assumption"
+    }
+  },
+  "schema_version": 1
+}

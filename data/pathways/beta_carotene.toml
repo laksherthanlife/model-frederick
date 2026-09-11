@@ -1,0 +1,143 @@
+# Beta-carotene from GGPP via the Xanthophyllomyces dendrorhous crt genes, in
+# S. cerevisiae. The proof-of-concept product: nothing in src/ names it.
+#
+# Chemistry from Verwaal et al. 2007, Appl Environ Microbiol 73:4342-50 (PMID 17496128),
+# which built this pathway in S. cerevisiae and is where the bifunctional crtYB and the
+# phytoene accumulation both come from. Strains and steady states from Elizondo et al.
+# 2025, ACS Synth Biol (PMID 40891387, doi 10.1021/acssynbio.5c00256).
+#
+# WHAT IS NOT DECLARED HERE: any fitted constant. Vmax and Km for the cyclase live in
+# data/carotenoid/ beside the states they were fitted to. A spec is chemistry.
+
+[pathway]
+product = "beta_carotene"
+organism = "Saccharomyces cerevisiae"
+
+# CrtE is the first committed heterologous step, nominated by an exploratory fixed-gene
+# comparison on the Elizondo states, not a validated claim about where flux control sits.
+# Training-only LOSO baselines give CrtE +0.745, CrtYB +0.708 and CrtI +0.359;
+# ERG9 scores +0.003 and the other native genes range from -0.003 to -0.268.
+# The named empirical law is neither causal cassette dosage nor independent selection.
+# See tests/test_pathway_flux.py and the nested product-validation comparison.
+entry_enzyme = "CrtE"
+
+# GGPP in the cytosol, Yeast9 v9.0.2. The pathway is pulled off here, and the audit layer
+# uses it to ask whether the host can supply what the flux law asked for.
+precursor_metabolite = "s_0189"
+# Two GGPP per phytoene: crtYB's synthase domain condenses two C20 units into one C40.
+precursor_stoichiometry = 2.0
+
+source = "PMID 17496128 (Verwaal 2007) for the chemistry; PMID 40891387 (Elizondo 2025) for the strains"
+notes = """
+CrtE names the shipped fixed-gene empirical rate-law comparison on the Elizondo states.
+Against training-only geometric-mean baselines its LOSO skill is approximately +0.745;
+ERG9 is weakly positive at +0.003, so the panel does not show every native gene failing.
+The entry gene was selected using the same three strains. This is not independent
+validation of that selection or a causal cassette-dosage law; nested product validation
+selects both the entry gene and model family within each outer training fold.
+
+CrtYB is bifunctional: its phytoene synthase and lycopene cyclase domains share a protein.
+The lumped empirical comparison uses measured relative CrtE mRNA and a cyclase capacity
+fitted across the calibration strains. It does not measure domain-specific protein
+abundance or establish how capacity changes with gene copy number. A shared fitted
+capacity is a conditional approximation, not a universal genotype-independent ceiling.
+Resolving these alternatives needs additional protein and intermediate-pool measurements.
+
+PHYTOENE PASSTHROUGH IS A LUMPED APPROXIMATION, NOT EVIDENCE OF AN ABSENT POOL.
+Chen et al. 2016, Microb Cell Fact 15:113 (PMID 27329233, PMC4915043,
+doi 10.1186/s12934-016-0509-4) report phytoene and neurosporene accumulation and limiting
+CrtI conversion in another engineered S. cerevisiae strain. This contradicts a universal
+no-intermediate-pool interpretation, but does not measure those pools in the Elizondo
+calibration strains. Changing this node to `saturating` requires CrtI kinetics and pool
+measurements that this dataset does not supply; no replacement constants are invented.
+
+The flux-law target is the measured sum of lycopene and beta-carotene production rates,
+downstream of CrtI, not a measurement of every carotenoid intermediate or total GGPP
+consumption. Intermediate fractions from a different strain cannot quantify the missing
+flux here. `measurable = false` records the absent Elizondo phytoene measurement. Product
+validation scores the observed channels and does not independently validate this lumping.
+"""
+
+# The chain, in order. GGPP -> phytoene -> lycopene -> beta-carotene.
+
+#
+# THE `metabolite` / `reaction` / `stoichiometry` TRIPLES BELOW ARE THE CHEMISTRY THE
+# THERMODYNAMIC GATE READS, and the ids are `fba/carotenoid.py`'s, because these three
+# species do not exist in Yeast9 until `add_beta_carotene_pathway` installs them. Two
+# consequences worth stating before anyone reads a verdict off this pathway:
+#
+# 1. The stoichiometries are declared as well as the reaction ids so the gate runs with no
+#    SBML parse. Where a model IS given, `thermo_gate._check_pair_agrees` refuses the pair
+#    if these ever stop matching what `carotenoid.py` builds -- so this is a cross-check on
+#    that module rather than a second copy of it.
+# 2. EVERY ONE OF THESE STEPS COMES BACK `cannot_say`, AND THE REASON IS NOT THE ONE THIS
+#    COMMENT USED TO GIVE. It said the vendored tables "carry no formation energy for a C40
+#    carotenoid". They carry all three: ModelSEED cpd03205 phytoene, cpd03217 lycopene and
+#    cpd01420 beta-carotene are in data/thermo/compounds.tsv and in the pytfa database
+#    beside it. What was missing was a NAME -- fba/carotenoid.py invents the ids
+#    `phytoene_c`, `lycopene_c` and `betacarotene_c`, and an id invented in this repository
+#    is in no published alias table. That is closed:
+#    data/thermo/heterologous_metabolites.tsv declares the three ModelSEED and KEGG ids
+#    with their provenance, and the energies now resolve.
+#
+#    They still must not be used, and that is the second, separate fact. Both available
+#    estimators are extrapolations -- a C40 polyene with eleven conjugated double bonds is
+#    outside the group decomposition either was fitted on -- and across these three steps
+#    ModelSEED group contribution and eQuilibrator component contribution differ by 91, 275
+#    and 252 kJ/mol while eQuilibrator quotes 4.9, 12.8 and 15.5. Supplying either turns a
+#    step of a pathway Elizondo 2025 MEASURED running into `cannot_run`, and a gate that
+#    refutes a working strain is worse than one that abstains. So
+#    data/thermo/refuted_energies.tsv refuses all three with a citation and the gate reports
+#    `cannot_say` with reason `refuted_uncertainty`, carrying dGr'0 so a reader can see the
+#    size of what was withheld. That is a DIFFERENT report from the `no_energy` these steps
+#    used to give, and the difference is the point: `no_energy` is closed by an identifier,
+#    and this is closed only by a measured formation energy for a carotenoid. Compare `phb`,
+#    whose thiolase step the tables cover and do not refuse.
+#    docs/research/CAROTENOID_ENERGIES.md is the record.
+#
+[[node]]
+name = "phytoene"
+enzyme = "CrtI"
+rate_law = "passthrough"      # see notes: an assumption, and a visible one
+fate = "diluted"
+molar_mass_g_per_mol = 544.94
+measurable = false            # no phytoene number exists for the Elizondo strains
+# crtYB, phytoene synthase domain: 2 GGPP (s_0189) -> phytoene + 2 PPi (s_0633).
+metabolite = "phytoene_c"
+reaction = "CRTYB_PSY"
+stoichiometry = { s_0189 = -2.0, phytoene_c = 1.0, s_0633 = 2.0 }
+
+[[node]]
+name = "lycopene"
+enzyme = "CrtYB"              # the cyclase domain
+rate_law = "saturating"
+fate = "diluted"
+molar_mass_g_per_mol = 536.87
+measurable = true
+# crtI, four desaturations. Electrons to O2 (s_1275), hydrogen peroxide out (s_0837).
+#
+# THIS DECLARED FAD UNTIL 2026-08-30 and that form is thermodynamically impossible: scored by
+# component contribution the reaction as written came to +166.2 +- 12.8 kJ/mol, uphill by
+# thirteen standard errors on a step Verwaal 2007 (PMID 17496128) measured running to
+# completion. CrtI holds ONE flavin as a prosthetic group and reoxidises it; four free FADH2
+# as products makes the cell pay for four flavin reductions it never performs. Written as the
+# flavin oxidase it is, the same chemistry is -292.7 +- 17.4. See src/ystwin/fba/carotenoid.py
+# for the acceptor decision and docs/FINDINGS.md for how it was found.
+#
+# This is the one node in this chain that holds a SOLVED pool, so it is the one whose
+# concentration in Q comes from the model rather than from an assumed background.
+metabolite = "lycopene_c"
+reaction = "CRTI"
+stoichiometry = { phytoene_c = -1.0, s_1275 = -4.0, lycopene_c = 1.0, s_0837 = 4.0 }
+
+[[node]]
+name = "beta_carotene"
+enzyme = ""                   # terminal: nothing consumes it
+rate_law = "passthrough"
+fate = "diluted"
+molar_mass_g_per_mol = 536.87
+measurable = true
+# crtYB, lycopene cyclase domain: bicyclisation, no net atom change.
+metabolite = "betacarotene_c"
+reaction = "CRTYB_LCY"
+stoichiometry = { lycopene_c = -1.0, betacarotene_c = 1.0 }

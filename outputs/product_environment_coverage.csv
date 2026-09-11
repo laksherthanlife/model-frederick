@@ -1,0 +1,5 @@
+product,entry_enzyme,nodes,flux_calibration,answerable
+beta_carotene,CrtE,3,BETA_CAROTENE_FLUX,True
+gadusol,EEVS,2,,False
+glycogen,GSY2,1,,False
+phb,PhaA,3,,False

@@ -1,0 +1,25 @@
+module,factors,regulon_genes,genes_in_model,reactions,enzyme_draws,note
+ESR,MSN2/MSN4,88,20,82,0,
+UPR,HAC1,7,0,0,0,"7-gene regulon, none of them in this model"
+oxidative,YAP1/SKN7,130,29,119,0,
+heat,HSF1,33,2,9,0,
+osmotic,SKO1/HOT1,19,6,46,0,
+proteasome,RPN4,68,4,10,0,
+iron,AFT1/AFT2,77,15,68,0,
+cell_wall,RLM1,32,1,2,0,
+dna_damage,RFX1,8,4,20,0,
+calcium,CRZ1,0,0,0,0,factor has no target genes at the MacIsaac evidence level
+carbon,ADR1/CAT8,17,4,28,0,
+nitrogen,GLN3/GAT1,55,24,106,0,
+hypoxia,ROX1/UPC2/HAP1,108,47,193,0,
+copper,CUP2/MAC1,17,2,7,0,
+zinc,ZAP1,6,0,0,0,"6-gene regulon, none of them in this model"
+sulfur,MET4/MET31/MET32,31,14,33,0,
+xenobiotic,PDR1/PDR3,6,0,0,0,"6-gene regulon, none of them in this model"
+retrograde,RTG1/RTG3,31,17,76,0,
+alkaline_ph,RIM101,2,1,3,0,
+redox,,0,0,0,0,metabolite pool: no transcription factor
+peroxide,,0,0,0,0,metabolite pool: no transcription factor
+atp,,0,0,0,0,metabolite pool: no transcription factor
+ph,,0,0,0,0,metabolite pool: no transcription factor
+nadh,,0,0,0,0,metabolite pool: no transcription factor

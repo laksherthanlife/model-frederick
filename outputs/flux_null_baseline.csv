@@ -1,0 +1,6 @@
+parameters,null_skill_p95,analysis_kind,validation,baseline,n_states,shuffles,seed,n_failed,score_status
+1,6.661338147750939e-16,random_design_demonstration_not_inference,leave_one_state_out_descriptive,fold_training_mean_log_flux,11,2000,0,0,ok
+2,0.049284436633277154,random_design_demonstration_not_inference,leave_one_state_out_descriptive,fold_training_mean_log_flux,11,2000,0,0,ok
+3,0.0486900209132867,random_design_demonstration_not_inference,leave_one_state_out_descriptive,fold_training_mean_log_flux,11,2000,0,0,ok
+4,0.03967377580335315,random_design_demonstration_not_inference,leave_one_state_out_descriptive,fold_training_mean_log_flux,11,2000,0,0,ok
+5,0.02007808891367291,random_design_demonstration_not_inference,leave_one_state_out_descriptive,fold_training_mean_log_flux,11,2000,0,0,ok

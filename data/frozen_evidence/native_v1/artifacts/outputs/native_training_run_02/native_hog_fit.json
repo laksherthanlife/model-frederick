@@ -1,0 +1,226 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/native_training_run_02/native_hog_fit.json",
+    "sha256": "59b8d21c772adcd90a9f0d1ea34aa7c6fa2acbd0727e35f42ce1610df028cf4b"
+  },
+  "payload": {
+    "diagnostics": {
+      "absolute_parameter_override_count": 4,
+      "active_bounds": [
+        0,
+        0,
+        0
+      ],
+      "active_uptake_estimated": false,
+      "active_uptake_policy": "fixed prior by default; a local sensitivity probe alone does not establish independent native-data support",
+      "baseline_observation_gains": {
+        "Gpd1_measured": 7.671955646385163e-07,
+        "Hog1PP_measured": 1.080933484453168e-06
+      },
+      "baseline_training_nrmse": 0.14758470695937895,
+      "bound_proximity_fraction": {
+        "activation_balance": 0.4542567393553844,
+        "glycerol_diffusion": 0.39427139543486506,
+        "glycerol_synthesis": 0.4206453823893037
+      },
+      "concentration_observation_gains_fitted": false,
+      "distinct_observation_coordinates": 82,
+      "effective_parameter_count": 5,
+      "failed_simulations": 0,
+      "fixed_deactivation_parameter": 0.588072,
+      "fixed_observation_gains": {
+        "glycerol_e": 1.0,
+        "glycerol_measured": 1.0
+      },
+      "fixed_parameter_sensitivities": {
+        "kv13b_1": {
+          "available": true,
+          "column_norm": 0.05922591008988616,
+          "estimated": false,
+          "log_difference_step": 0.001,
+          "orthogonal_column_norm": 0.024361384932071257,
+          "orthogonal_fraction": 0.41132985369238556
+        }
+      },
+      "gain_source": "one positive least-squares gain per literature-scaled Western observable, profiled on training only",
+      "identifiability_scope": "local sensitivity conditional on remaining source priors, with Western gains reprofiled; not global identifiability or confidence intervals",
+      "initial_state_policy": "unchanged source initial state at model time zero for each protocol",
+      "kinetic_parameter_count": 3,
+      "local_sensitivity_columns": {
+        "activation_balance": {
+          "column_norm": 0.19487952611759138,
+          "orthogonal_column_norm": 0.08214792962488188,
+          "orthogonal_fraction": 0.421531862589369
+        },
+        "glycerol_diffusion": {
+          "column_norm": 0.19667919245075208,
+          "orthogonal_column_norm": 0.08208387671996775,
+          "orthogonal_fraction": 0.41734906319854514
+        },
+        "glycerol_synthesis": {
+          "column_norm": 0.18254796247017127,
+          "orthogonal_column_norm": 0.1702290242040352,
+          "orthogonal_fraction": 0.9325167035586661
+        }
+      },
+      "local_sensitivity_condition_number": 4.734727374433726,
+      "local_sensitivity_numerical_rank": 3,
+      "local_sensitivity_rank": 3,
+      "local_sensitivity_rank_absolute_tolerance": 1e-06,
+      "local_sensitivity_rank_relative_tolerance": 0.001,
+      "local_sensitivity_singular_values": [
+        0.28240961633484096,
+        0.1633144336639251,
+        0.05964643663746683
+      ],
+      "local_sensitivity_steps": {
+        "activation_balance": 0.001,
+        "glycerol_diffusion": 0.001,
+        "glycerol_synthesis": 0.001
+      },
+      "log_parameter_difference_step": 0.001,
+      "max_nfev": 30,
+      "mechanistic_structure_learned": false,
+      "native_model_units_relabelled": false,
+      "near_bound_threshold_fraction": 0.05,
+      "normalization_scales": {
+        "Gpd1_measured": 2.083473364232813e-07,
+        "Hog1PP_measured": 2.19214229016315e-07,
+        "glycerol_e": 0.002932140924902292,
+        "glycerol_measured": 0.3994247743008571
+      },
+      "objective_evaluations": 25,
+      "observable_weights": {
+        "Gpd1_measured": 0.25,
+        "Hog1PP_measured": 0.25,
+        "glycerol_e": 0.25,
+        "glycerol_measured": 0.25
+      },
+      "observation_gains": {
+        "Gpd1_measured": 8.232832103664889e-07,
+        "Hog1PP_measured": 1.1240773059161078e-06
+      },
+      "observation_transforms": "source measurement variables used directly; no additional volume correction or dilution",
+      "optimization_converged": true,
+      "optimization_message": "`ftol` termination condition is satisfied.",
+      "optimization_nfev": 6,
+      "parameter_groups": {
+        "activation_balance": [
+          "kv16f_1"
+        ],
+        "glycerol_diffusion": [
+          "kv13a_1"
+        ],
+        "glycerol_synthesis": [
+          "kv6_1",
+          "kv6b_4"
+        ]
+      },
+      "parameter_multipliers": {
+        "activation_balance": 0.8630851927117176,
+        "glycerol_diffusion": 1.405407433820845,
+        "glycerol_synthesis": 1.2910200730813561
+      },
+      "parameters_fitted_to_measurements": true,
+      "per_observable_errors": {
+        "Gpd1_measured": {
+          "baseline_nrmse": 0.08834273588558268,
+          "baseline_rmse": 1.8405973714106582e-08,
+          "nrmse": 0.0790175656849018,
+          "reported_sd_rows": 13,
+          "rmse": 1.6463099341100964e-08,
+          "rows": 13,
+          "training_scale": 2.083473364232813e-07,
+          "unit": "mol/L",
+          "weight": 0.25
+        },
+        "Hog1PP_measured": {
+          "baseline_nrmse": 0.08068883780465161,
+          "baseline_rmse": 1.7688141369569195e-08,
+          "nrmse": 0.08031529334248869,
+          "reported_sd_rows": 13,
+          "rmse": 1.7606255108292836e-08,
+          "rows": 13,
+          "training_scale": 2.19214229016315e-07,
+          "unit": "mol/L",
+          "weight": 0.25
+        },
+        "glycerol_e": {
+          "baseline_nrmse": 0.100622885741834,
+          "baseline_rmse": 0.00029504048126539884,
+          "nrmse": 0.07257258143884326,
+          "reported_sd_rows": 0,
+          "rmse": 0.0002127930360626368,
+          "rows": 28,
+          "training_scale": 0.002932140924902292,
+          "unit": "mol/L",
+          "weight": 0.25
+        },
+        "glycerol_measured": {
+          "baseline_nrmse": 0.25036950742475345,
+          "baseline_rmse": 0.10000378399494891,
+          "nrmse": 0.17489339999170364,
+          "reported_sd_rows": 0,
+          "rmse": 0.06985675681839575,
+          "rows": 28,
+          "training_scale": 0.3994247743008571,
+          "unit": "mol/L",
+          "weight": 0.25
+        }
+      },
+      "profiled_gain_count": 2,
+      "protocols": [
+        {
+          "nacl_molar": 0.4,
+          "shock_time_s": 3600.0,
+          "training_rows": 54
+        },
+        {
+          "nacl_molar": 0.0,
+          "shock_time_s": 3600.0,
+          "training_rows": 28
+        }
+      ],
+      "published_parameters": {
+        "kv13a_1": 6.28899e-06,
+        "kv16f_1": 0.156118,
+        "kv6_1": 0.0118992,
+        "kv6b_4": 4.61918e-05
+      },
+      "remaining_parameters": "unchanged source priors; no independent Gpd1/Gpd2 contribution estimate from a shared synthesis multiplier",
+      "scale_source": "per-observable RMS of supplied training values; weights normalized across observables, not rows",
+      "sd_treatment": "reported SD retained for diagnostics, not inverse-variance weighted",
+      "sd_weighting_reason": "comparable SD and independent replicate counts are not available for all native assays",
+      "search_fold_bounds": [
+        0.2,
+        5.0
+      ],
+      "search_start_count": 1,
+      "simulation_evaluations": 50,
+      "simulation_failures": [],
+      "source": "explicitly supplied s002 wild-type native measured training observations only",
+      "training_experiments": [
+        "s002:Hog1PP_ALL:202",
+        "s002:Gpd1_ALL:202",
+        "s002:HPLC:No Stress2",
+        "s002:HPLC:Wild Type4"
+      ],
+      "training_nrmse": 0.11016896451452807,
+      "training_rows": 82,
+      "warnings": [],
+      "weak_parameter_groups": []
+    },
+    "observation_gains": {
+      "Gpd1_measured": 8.232832103664889e-07,
+      "Hog1PP_measured": 1.1240773059161078e-06
+    },
+    "parameters": {
+      "kv13a_1": 8.838593297224957e-06,
+      "kv16f_1": 0.13474313411576794,
+      "kv6_1": 0.015362106053609673,
+      "kv6b_4": 5.9634541011759384e-05
+    }
+  },
+  "schema_version": 1
+}

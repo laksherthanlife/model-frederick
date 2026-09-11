@@ -1,0 +1,58 @@
+{
+  "document_type": "custodian_handoff_to_resumed_executor_source_verifier_and_tester",
+  "current_phase": "training_and_conditioning_export_complete",
+  "release_manifest": {
+    "path": "data/native_law_v2/granados/development/release_manifest.json",
+    "sha256": "3b8c67c79191bf4dec0a1e7e0514b1a145359c30061868bbfdd136f0ee1cd3dd",
+    "bytes": 6904
+  },
+  "learner_allowlist": [
+    {
+      "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/training_projection.json",
+      "sha256": "fc8000c7720e554756c90e0da79f2d0ae4a7928d5923f0efa1a2ed5823d37c9e",
+      "bytes": 7093970,
+      "role": "training_projection"
+    },
+    {
+      "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_inputs.json",
+      "sha256": "41ee2a8ce6b09cb664859873fd59fd005e31e6eaa054c3703098c91e3f790613",
+      "bytes": 4764543,
+      "role": "development_inputs"
+    }
+  ],
+  "frozen_executor_artifacts": [
+    {
+      "path": "data/native_law_v2/granados/development/phase_b/frozen_executor/native_population_development.py",
+      "sha256": "7755844db3d777fdec1c9f7fb8b4fc4168597e735182353b1c6efc5a13f3c787",
+      "bytes": 71949,
+      "role": "execution_code"
+    },
+    {
+      "path": "data/native_law_v2/granados/development/phase_b/executor_environment.json",
+      "sha256": "a650be44dced11e101115663d665a6d39254f8fd1adccd8c63b0a0752a4e4ff4",
+      "bytes": 2290,
+      "role": "execution_code"
+    }
+  ],
+  "request_and_approval": {
+    "request": {
+      "path": "data/native_law_v2/granados/development/phase_b/release_request.json",
+      "sha256": "b812da162bd1962484c505bdb32d9c0d4b191e51051f1e2d64a42eab5b6ca349",
+      "bytes": 1682
+    },
+    "decision": {
+      "path": "data/native_law_v2/granados/development/phase_b/custody_decision.json",
+      "sha256": "87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533",
+      "bytes": 3861,
+      "role": "operational_approval"
+    }
+  },
+  "next_actions": [
+    "Independently replay approved projections against the pinned source and exact protocol locators without propagating mixed raw data to the learner.",
+    "Use the frozen implementation/settings and only the two allowlisted phase-b data files for training and conditioning.",
+    "Freeze every canonical family/attempt and all 288 development predictions, retaining failures, and provide the digest-bound DevelopmentPredictionFreeze to custody.",
+    "Do not access or export development responses until the later independent custody check; do not issue a biological ready grade."
+  ],
+  "development_responses_released": false,
+  "strong_claim_authorized": false
+}

@@ -1,0 +1,30 @@
+{
+  "quantity": "balanced_growth_intracellular_content",
+  "unit": "mg/gDW",
+  "observations": [
+    {
+      "experiment_id": "elizondo2025_2D01",
+      "value": 0.5025304583095278
+    },
+    {
+      "experiment_id": "elizondo2025_2D025",
+      "value": 0.17780352115903977
+    },
+    {
+      "experiment_id": "elizondo2025_3D01",
+      "value": 2.520539465465436
+    },
+    {
+      "experiment_id": "elizondo2025_3D025",
+      "value": 0.2670220585098846
+    },
+    {
+      "experiment_id": "elizondo2025_4D01",
+      "value": 4.042046707602303
+    },
+    {
+      "experiment_id": "elizondo2025_4D025",
+      "value": 0.8289784796095312
+    }
+  ]
+}

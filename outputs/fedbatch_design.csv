@@ -1,0 +1,5 @@
+state,target_mu_per_h,inoculum_g_per_l,assumed_yield_g_per_g,mu_max_per_h,max_uptake_g_per_gdcw_h,feasible,refusal,opening_uptake_g_per_gdcw_h,initial_feed_ml_per_h,capacity_margin,generation_budget,settling_generations_at_2x_yield_error,usable_generations,final_biomass_g_per_l,lowest_safe_assumed_yield_g_per_g
+lower,0.101,0.5,0.098,0.254,2.59,True,,1.031,1.031,0.602,6.63,4.64,1.99,24.5,0.039
+lower,0.101,0.05,0.098,0.254,2.59,True,,1.031,0.103,0.602,9.94,4.64,5.29,24.5,0.039
+upper,0.254,0.5,0.098,0.254,2.59,False,the feed opens at q_S(0) = mu_set/Y = 2,2.592,,,,,,,
+upper,0.254,0.05,0.098,0.254,2.59,False,the feed opens at q_S(0) = mu_set/Y = 2,2.592,,,,,,,

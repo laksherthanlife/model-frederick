@@ -1,0 +1,32 @@
+{
+  "document_type": "development_custody_decision_not_external_attestation",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "request_sha256": "b812da162bd1962484c505bdb32d9c0d4b191e51051f1e2d64a42eab5b6ca349",
+  "decision": "approve_development_exports",
+  "custodian_identity": "Granados observation/data custodian subagent in this Devin session, distinct from the model fitting/selection agent; no external attestation claimed.",
+  "operational_event_reference": "data/native_law_v2/granados/development/phase_b/approval_event.json#phase-b-approved",
+  "reviewed_source_asset_id": "1b38366b-7473-4ddf-9cf9-26e625533686",
+  "reviewed_source_sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+  "permitted_group_ids": [
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep1",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"
+  ],
+  "conditions": [
+    "Current release is only train rep1/2/3 prefix+response, and development rep4/5 prefix plus response-frame times. Every original row and null is retained with its exact source locator.",
+    "Projection files must be new regular nonsymlink files in the protocol's exact development_exports/granados-sfp1-published-cohort-development-01 root; custody metadata is separately stored in development/. No protocol or scientific criterion is changed by this writer-root correction.",
+    "Use the real byte-frozen executor implementation and runtime/PRNG/optimizer settings recorded in the request. No model was fitted or scored by the custodian.",
+    "Development response intensities/means remain withheld until all six canonical families, all fitting attempts and all 288 development frame predictions have been frozen, their digests received and independently checked. This command cannot release those responses.",
+    "Only exact phase-b projection paths enter the learner data allowlist. Mixed raw files, rep6, every other group/field/window, and known aliases remain excluded.",
+    "Failure or incompleteness is retained without source/group/cohort/window replacement. No biological ready grade, final validation, prospective-forecast certification or strong-claim authorization follows."
+  ],
+  "limitations": [
+    "This is a retrospective conditional mapping on the published, selected/processed cohort. The exact original export/filter/inpainting history is unresolved and may have used future observations. Neither the availability of earlier-frame features nor the original cohort is certified causally prefix-only. This limitation is not repaired by prohibiting new leakage in our own preprocessing.",
+    "All released groups have the same documented downshift. This experiment cannot identify a glucose dose-response or distinguish its biological effect from elapsed stimulus-relative time and unknown acquisition/batch history. Do not infer missing absolute clocks.",
+    "Normalized rep2 and other incompletely mapped cross-file entries are nonexported, not certified independent of these development groups. Retain unresolved alias/preparation/batch relations. If a later crosswalk identifies an alias of a released experiment, mark its biological component exposed to development rather than relabelling it unseen.",
+    "No external registry/HMAC infrastructure is provisioned by this document. Preserve the existing strong verifier and all its controls. A separate accountable custodian may approve this limited, non-authorizing development release using source replay, exact allowlists and retained operational records. Do not fabricate production keys/signatures or claim encryption, OS isolation, immutable external chronology or adversarial security."
+  ],
+  "strong_claim_authorized": false
+}

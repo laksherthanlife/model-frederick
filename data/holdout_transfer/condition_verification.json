@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "verification_type": "clean_condition_only_primary_source_verification",
+  "overall_status": "not_fully_verified",
+  "verified_at_utc": "2026-09-07T06:18:51Z",
+  "condition_packet": {
+    "path": "data/holdout_transfer/condition_records.json",
+    "source_id": "holdout-transfer:elizondo2025:six-chemostats:condition-records:v1",
+    "sha256_before": "198c1cbc7dd6e89bacc6ed4763f891bf9bbcb7f0592582da0c533e56fae3cd82",
+    "sha256_after_source_verification": "198c1cbc7dd6e89bacc6ed4763f891bf9bbcb7f0592582da0c533e56fae3cd82",
+    "integrity_status": "pass",
+    "integrity_method": "shasum -a 256 on the permitted condition packet before and after primary-source inspection",
+    "record_count": 6,
+    "packet_modified_by_this_verifier": false
+  },
+  "scope_and_noninterference": {
+    "prior_subagent_context_used": false,
+    "only_local_input_read": "data/holdout_transfer/condition_records.json",
+    "only_file_created": "data/holdout_transfer/condition_verification.json",
+    "artifact_existence_checked_before_creation": "absent",
+    "existing_files_edited": [],
+    "predictor_executed": false,
+    "training_executed": false,
+    "outcome_values_inspected_or_recorded": false,
+    "scoring_performed": false,
+    "prohibited_notes_indexes_calibrations_and_prediction_results_opened": false,
+    "packet_links_to_source_index_followed": false,
+    "github_access_method": "gh api only; repository/ref/path metadata and the permitted workbook blob",
+    "http_timeout_seconds": 30,
+    "remote_projection": "Article XML bytes were parsed in memory; only permitted Methods text or genotype Table 1 was displayed. Workbook bytes were parsed in memory; only Statistics!A:C cells were materialized for inspection. No article graphics, Results, abstract, other workbook sheets, or other workbook cell values were displayed.",
+    "software_scope": "No model code was read or executed. Gene-copy verification concerns the packet metadata, not downstream software behavior."
+  },
+  "primary_sources": {
+    "E2025_METHODS": {
+      "publication_id": "PMC12455641",
+      "doi": "10.1021/acssynbio.5c00256",
+      "xml_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12455641/fullTextXML",
+      "allowed_xml_scope": "/article/body/sec[@id='sec2'] (Materials and Methods)",
+      "input_coordinates": {
+        "strain_mapping_background_and_donor": "sec2.1.1/p[1]",
+        "full_enumerated_cultivation_recipe_and_dilution_design": "sec2.1.1/p[2]",
+        "sampling_protocol": "sec2.1.2/p[1]",
+        "intracellular_readout_description": "sec2.1.4/p[1]",
+        "specific_growth_equals_dilution_statement": "sec2.1.4/p[2]"
+      },
+      "pathway_evidence_limit": "The inspected input excerpts establish a beta-carotene pathway and intracellular lycopene sampling/accumulation. The sec2.2.1 paragraph projection and a Methods-only biochemical-definition sentence projection did not yield an explicit lycopene-to-beta-carotene intermediate statement. No pathway graphic or additional article section was opened to fill this gap."
+    },
+    "L2020_TABLE1": {
+      "publication_id": "PMC7556307",
+      "doi": "10.3389/fbioe.2020.578793",
+      "xml_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7556307/fullTextXML",
+      "allowed_xml_scope": "//table-wrap[@id='T1']",
+      "table_label": "TABLE 1",
+      "table_caption": "List of strains constructed in this study.",
+      "relevant_columns": ["Strain", "Parental strain", "Genotype", "Integration site (Chr-Site)"],
+      "row_coordinates": {
+        "CEN.PK2-1c": "Table 1(A), CEN.PK2-1c row; (//table-wrap[@id='T1']//tr)[4]",
+        "beta-Car2.1": "Table 1(A), beta-Car2.1 row; (//table-wrap[@id='T1']//tr)[7]",
+        "beta-Car3": "Table 1(A), beta-Car3 row; (//table-wrap[@id='T1']//tr)[13]",
+        "beta-Car4.b": "Table 1(A), beta-Car4.b row; (//table-wrap[@id='T1']//tr)[15]"
+      },
+      "notation": "ASCII beta represents the source Greek beta. Gene/promoter/terminator text is flattened from the source cell markup; TCYC is the construction table's literal terminator notation. No D-to-Delta normalization is accepted as a verbatim transcription."
+    },
+    "AUTHOR_DILUTION_INPUTS": {
+      "repository": "SysBioengLab/BcarGRASP",
+      "revision": "ec6f1290711fba8091e92c77da4a5684ff8cad4d",
+      "path": "data_pre-processing/fluxes/output/DilutionRatesStatistics.xlsx",
+      "source_url": "https://github.com/SysBioengLab/BcarGRASP/blob/ec6f1290711fba8091e92c77da4a5684ff8cad4d/data_pre-processing/fluxes/output/DilutionRatesStatistics.xlsx",
+      "blob_api_url": "https://api.github.com/repos/SysBioengLab/BcarGRASP/git/blobs/24af5854d1adb90c3f2edf4ec521af07aea5d0f0",
+      "git_blob_sha1": "24af5854d1adb90c3f2edf4ec521af07aea5d0f0",
+      "download_sha256": "7a68aebe25cada6319299c648ecb4e1914d8584bb3b9d08bd84bcf715f3f73b7",
+      "worksheet": "Statistics",
+      "worksheet_xml_part": "xl/worksheets/sheet2.xml",
+      "inspected_cells": "Statistics!A1:C7, with column selection restricted to A:C",
+      "header_cells": {"A1": "strainConditions", "B1": "Mean [1/h]", "C1": "SE [1/h]"},
+      "value_interpretation": "Column B is the author-released mean dilution-rate input. Column C is its standard error, not a replacement for the mean or a target-model input. No other sheet or cell values were inspected."
+    }
+  },
+  "input_checks": [
+    {
+      "item": "six_condition_roster_retained",
+      "status": "pass",
+      "packet_jsonpaths": ["$.experiments[*].experiment_id", "$.experiments[*].condition.experiment_id"],
+      "packet_lines": "9-178",
+      "source_coordinates": ["AUTHOR_DILUTION_INPUTS: Statistics!A2:A7", "E2025_METHODS: sec2.1.1/p[1-2]"],
+      "finding": "All six author condition codes are present exactly once with the elizondo2025_ prefix, and outer/inner experiment IDs agree. No author condition row is omitted or added. The source design has three named strains at two dilution regimes. This roster check does not independently establish the separate b-car* dataset-alias field."
+    },
+    {
+      "item": "recorded_growth_rate_values_and_units",
+      "status": "pass",
+      "packet_jsonpaths": ["$.experiments[*].condition.growth_rate_per_h"],
+      "packet_lines": [14, 41, 68, 96, 124, 153],
+      "source_coordinates": ["AUTHOR_DILUTION_INPUTS: Statistics!A1:C7", "E2025_METHODS: sec2.1.1/p[2] and sec2.1.4/p[2]"],
+      "finding": "Every recorded numeric value exactly matches its author's column-B mean in inverse hours, rather than a rounded nominal setpoint. Methods specifies nominal dilution regimes of 0.1 and 0.25 h^-1 and states that specific growth corresponds to dilution in a chemostat. This verifies the dilution-as-growth input convention under the stated steady-state regime, not an independent biomass-growth measurement."
+    },
+    {
+      "item": "glucose_carbon_feed",
+      "status": "pass",
+      "packet_jsonpaths": ["$.experiments[*].condition.carbon_input"],
+      "source_coordinates": ["E2025_METHODS: sec2.1.1/p[2]"],
+      "finding": "The enumerated medium explicitly uses glucose at 12 g/L as the carbon source in carbon-limited aerobic continuous cultures. It is supplemented YNB, not an assertion that glucose is the only chemically carbon-containing ingredient."
+    },
+    {
+      "item": "balance_and_steady_state_sampling_protocol",
+      "status": "pass",
+      "packet_jsonpaths": ["$.experiments[*].condition.readout_basis"],
+      "source_coordinates": ["E2025_METHODS: sec2.1.1/p[2]", "E2025_METHODS: sec2.1.2/p[1]", "E2025_METHODS: sec2.1.4/p[1-2]"],
+      "finding": "Continuous chemostat cultivation, sampling after five residence times, and technical-triplicate intracellular sampling support the packet's balanced-growth intracellular readout basis as a protocol classification. The Methods describes intracellular accumulation and a steady-state interpretation. Actual physiological stationarity was not independently tested from outcome/time-series data."
+    },
+    {
+      "item": "no_extra_nacl_intervention",
+      "status": "pass",
+      "packet_jsonpaths": ["$.experiments[*].added_nacl_molar"],
+      "packet_lines": [19, 46, 73, 101, 129, 158],
+      "source_coordinates": ["E2025_METHODS: sec2.1.1/p[2], entire enumerated cultivation recipe"],
+      "finding": "The recipe lists 1x YNB without amino acids, carbohydrate or ammonium sulfate; histidine, leucine, tryptophan, methionine and uracil supplements; glucose; ammonium sulfate; and NaOH for pH control. It lists no extra NaCl intervention. Therefore 0.0 M is supported as the dose of an additional NaCl intervention, not as measured total NaCl, basal sodium, salinity or osmolality. Basal medium constituents and sodium introduced by NaOH must not be treated as zero."
+    },
+    {
+      "item": "organism_and_strain_background",
+      "status": "pass",
+      "packet_jsonpaths": ["$.experiments[*].strain_and_construct.organism", "$.experiments[*].strain_and_construct.background"],
+      "source_coordinates": ["E2025_METHODS: sec2.1.1/p[1]", "L2020_TABLE1: CEN.PK2-1c and inherited parental rows"],
+      "finding": "The cultures use S. cerevisiae strains derived from CEN.PK2-1c. Hyphen/en-dash typography in the strain identifier does not change the reported background identity. The verbatim genotype field is checked separately."
+    },
+    {
+      "item": "paper_label_to_construction_strain_mapping",
+      "status": "pass",
+      "packet_jsonpaths": ["$.experiments[*].strain_and_construct.paper_strain_label", "$.experiments[*].strain_and_construct.construction_reference_strain"],
+      "source_coordinates": ["E2025_METHODS: sec2.1.1/p[1]", "L2020_TABLE1: beta-Car2.1, beta-Car3 and beta-Car4.b rows"],
+      "finding": "Methods explicitly renames beta-car2.1, beta-car3 and beta-car4.b as beta-car2, beta-car3 and beta-car4, respectively. In particular beta-car4 refers to beta-Car4.b, not beta-Car4.a. The construction table's capitalized Car and ASCII beta are notation normalizations, not copy-number evidence."
+    },
+    {
+      "item": "heterologous_gene_donor_and_gene_identities",
+      "status": "pass",
+      "packet_jsonpaths": ["$.experiments[*].strain_and_construct.heterologous_gene_donor_as_reported", "$.experiments[*].strain_and_construct.integrated_gene_copies"],
+      "source_coordinates": ["E2025_METHODS: sec2.1.1/p[1]", "L2020_TABLE1: relevant Genotype cells"],
+      "finding": "Methods explicitly identifies CrtE, CrtYB and CrtI as heterologous genes from Phaffia rhodozyma. These genes are present in the inherited construction-table genotypes. No donor synonym or extra construct is substituted."
+    },
+    {
+      "item": "inherited_transcription_units_and_copy_counts",
+      "status": "pass",
+      "packet_jsonpaths": ["$.experiments[*].strain_and_construct.transcription_units_by_locus", "$.experiments[*].strain_and_construct.integrated_gene_copies"],
+      "packet_lines": ["29-32", "56-59", "83-87", "111-115", "139-144", "168-173"],
+      "source_coordinates": ["L2020_TABLE1: Parental strain, Genotype and Integration site cells for beta-Car2.1, beta-Car3 and beta-Car4.b"],
+      "finding": "Explicit parental-cell traversal and counting the named genes in each inherited integration reproduce all packet units and copies. In CrtE/CrtYB/CrtI order the totals are 1/1/1, 2/2/2 and 3/3/2. No count is inferred from the strain's numeric label. These are construction-copy counts, not measured expression, enzyme abundance or fitted flux capacity."
+    },
+    {
+      "item": "beta_carotene_pathway_and_intracellular_readout_context",
+      "status": "pass",
+      "packet_jsonpaths": ["$.experiments[*].strain_and_construct.product_context", "$.experiments[*].condition.readout_basis"],
+      "source_coordinates": ["E2025_METHODS: sec2.1.1/p[1]", "E2025_METHODS: sec2.1.2/p[1]", "E2025_METHODS: sec2.1.4/p[1]", "L2020_TABLE1: part A construction rows"],
+      "finding": "The sources support beta-carotene-pathway strains and intracellular sampling/accumulation of lycopene alongside beta-carotene. This check is confined to pathway/readout metadata and does not establish the separate intermediate-role claim or inspect any measurement values."
+    },
+    {
+      "item": "background_genotype_as_reported_verbatim",
+      "status": "fail",
+      "packet_jsonpaths": ["$.experiments[*].strain_and_construct.background_genotype_as_reported", "$.experiments[*].strain_and_construct.construct_evidence (claim that Delta replaces a source Greek character)"],
+      "packet_lines": [24, 51, 78, 106, 134, 163],
+      "source_coordinates": ["L2020_TABLE1: CEN.PK2-1c row, Genotype column; (//table-wrap[@id='T1']//tr)[4]/td[3]"],
+      "packet_value": "MATa ura3-52 trp1-289 leu2-3,112 his3Delta",
+      "primary_source_literal": "Mata ura3-52 trp1-289 leu2-3, 112 his3D",
+      "finding": "The inspected primary XML cell contains literal D, not a Greek delta. Even allowing case/spacing typography, the packet's as_reported string and its Greek-Delta explanation are not literal transcriptions of this source. This is a transcription failure only; it does not establish a biological genotype difference. The biological equivalence of D and Delta was not guessed, and the packet was not edited."
+    },
+    {
+      "item": "separate_dataset_strain_alias_field",
+      "status": "unverified",
+      "packet_jsonpaths": ["$.experiments[*].strain_and_construct.dataset_strain_field"],
+      "packet_lines": [25, 52, 79, 107, 135, 164],
+      "source_coordinates": ["AUTHOR_DILUTION_INPUTS: Statistics!A1:A7", "E2025_METHODS: sec2.1.1/p[1]"],
+      "packet_values": ["b-car2", "b-car3", "b-car4"],
+      "finding": "The permitted author column is strainConditions, with combined codes 2D01 through 4D025; it is not a separate strain column and does not expose literal b-car* aliases. The paper gives beta-car* labels. The code set is consistent with the paper's design, but a separate author alias or independently tabulated code-to-strain key cannot be certified from the allowed projection. No disallowed dataset column was opened to infer it."
+    },
+    {
+      "item": "lycopene_intermediate_in_beta_carotene_pathway",
+      "status": "unverified",
+      "packet_jsonpaths": ["$.experiments[*].strain_and_construct.product_context (intermediate rather than lycopene-only terminal producer assertion)"],
+      "packet_lines": [34, 61, 89, 117, 146, 175],
+      "source_coordinates": ["E2025_METHODS: sec2.1.1/p[1] and sec2.1.4/p[1]", "E2025_METHODS: sec2.2.1 and Methods-only biochemical-definition sentence projection"],
+      "finding": "The permitted excerpts establish pathway membership and intracellular lycopene readout, but no inspected explicit substrate-to-product statement establishes the intermediate role. Gene names alone are not treated as primary-source proof of reaction order. This claim is not contradicted; it remains unverified within this restricted evidence scope. No Results, other article sections, pathway graphics or additional publications were accessed."
+    },
+    {
+      "item": "native_transfer_assumption_disclosure",
+      "status": "pass",
+      "packet_jsonpaths": ["$.experiments[*].condition.native_context_assumption"],
+      "packet_lines": [17, 44, 71, 99, 127, 156],
+      "source_coordinates": ["Condition packet: the six named fields", "E2025_METHODS: sec2.1.1/p[1-2] for target strain and medium only"],
+      "finding": "Every record explicitly describes transfer from frozen native DS28911/W303 glucose/O2 exchange curves and native glycerol commitments to a CEN.PK2-1c-derived strain in supplemented YNB as an unvalidated cross-strain/medium extrapolation. This passes disclosure only. Neither the native priors nor biological equivalence were validated by this verification."
+    }
+  ],
+  "per_condition_input_matches": [
+    {"experiment_id": "elizondo2025_2D01", "packet_pointer": "/experiments/0", "packet_lines": "11-35", "author_cells": "Statistics!A2:C2", "author_condition_code": "2D01", "packet_growth_rate_per_h": 0.10098798657810984, "author_mean_per_h": 0.10098798657810984, "id_status": "pass", "growth_rate_status": "pass", "declared_paper_strain": "beta-car2", "declared_construction": "beta-Car2.1"},
+    {"experiment_id": "elizondo2025_2D025", "packet_pointer": "/experiments/1", "packet_lines": "38-62", "author_cells": "Statistics!A3:C3", "author_condition_code": "2D025", "packet_growth_rate_per_h": 0.2543201820522904, "author_mean_per_h": 0.2543201820522904, "id_status": "pass", "growth_rate_status": "pass", "declared_paper_strain": "beta-car2", "declared_construction": "beta-Car2.1"},
+    {"experiment_id": "elizondo2025_3D01", "packet_pointer": "/experiments/2", "packet_lines": "65-90", "author_cells": "Statistics!A4:C4", "author_condition_code": "3D01", "packet_growth_rate_per_h": 0.10098798657810984, "author_mean_per_h": 0.10098798657810984, "id_status": "pass", "growth_rate_status": "pass", "declared_paper_strain": "beta-car3", "declared_construction": "beta-Car3"},
+    {"experiment_id": "elizondo2025_3D025", "packet_pointer": "/experiments/3", "packet_lines": "93-118", "author_cells": "Statistics!A5:C5", "author_condition_code": "3D025", "packet_growth_rate_per_h": 0.2543201820522904, "author_mean_per_h": 0.2543201820522904, "id_status": "pass", "growth_rate_status": "pass", "declared_paper_strain": "beta-car3", "declared_construction": "beta-Car3"},
+    {"experiment_id": "elizondo2025_4D01", "packet_pointer": "/experiments/4", "packet_lines": "121-147", "author_cells": "Statistics!A6:C6", "author_condition_code": "4D01", "packet_growth_rate_per_h": 0.10098798657810984, "author_mean_per_h": 0.10098798657810984, "id_status": "pass", "growth_rate_status": "pass", "declared_paper_strain": "beta-car4", "declared_construction": "beta-Car4.b"},
+    {"experiment_id": "elizondo2025_4D025", "packet_pointer": "/experiments/5", "packet_lines": "150-176", "author_cells": "Statistics!A7:C7", "author_condition_code": "4D025", "packet_growth_rate_per_h": 0.2543201820522904, "author_mean_per_h": 0.2543201820522904, "id_status": "pass", "growth_rate_status": "pass", "declared_paper_strain": "beta-car4", "declared_construction": "beta-Car4.b"}
+  ],
+  "construction_derivations": [
+    {
+      "paper_strain": "beta-car2",
+      "construction_reference_strain": "beta-Car2.1",
+      "packet_record_indices": [0, 1],
+      "explicit_parent_chain": ["CEN.PK2-1c", "beta-Car2.1"],
+      "source_table_tr_ordinals": [4, 7],
+      "inherited_transcription_units_by_locus": {"XI-5": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC", "PTDH3-CrtI-TCYC"]},
+      "inherited_gene_copies": {"CrtE": 1, "CrtYB": 1, "CrtI": 1},
+      "status": "pass"
+    },
+    {
+      "paper_strain": "beta-car3",
+      "construction_reference_strain": "beta-Car3",
+      "packet_record_indices": [2, 3],
+      "explicit_parent_chain": ["CEN.PK2-1c", "beta-Car2.1", "beta-Car3"],
+      "source_table_tr_ordinals": [4, 7, 13],
+      "inherited_transcription_units_by_locus": {"XI-5": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC", "PTDH3-CrtI-TCYC"], "XI-3": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC", "PTDH3-CrtI-TCYC"]},
+      "inherited_gene_copies": {"CrtE": 2, "CrtYB": 2, "CrtI": 2},
+      "status": "pass"
+    },
+    {
+      "paper_strain": "beta-car4",
+      "construction_reference_strain": "beta-Car4.b",
+      "packet_record_indices": [4, 5],
+      "explicit_parent_chain": ["CEN.PK2-1c", "beta-Car2.1", "beta-Car3", "beta-Car4.b"],
+      "source_table_tr_ordinals": [4, 7, 13, 15],
+      "inherited_transcription_units_by_locus": {"XI-5": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC", "PTDH3-CrtI-TCYC"], "XI-3": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC", "PTDH3-CrtI-TCYC"], "X-2": ["PTEF1-CrtE-TADH1", "PPGK1-CrtYB-TCYC"]},
+      "inherited_gene_copies": {"CrtE": 3, "CrtYB": 3, "CrtI": 2},
+      "status": "pass"
+    }
+  ],
+  "intentionally_unvalidated_assumptions": {
+    "native_DS28911_W303_to_CEN_PK2_1c_YNB_equivalence": {
+      "status": "unverified",
+      "finding": "Explicit assumption only. No native model data or legacy calibrations were opened, and target-study outcome or exchange-rate values were not used to adjust the priors. No equivalence is certified."
+    },
+    "actual_physiological_steady_state": {
+      "status": "unverified",
+      "finding": "The documented sampling protocol was verified; actual stationarity or balance from measured trajectories was not assessed."
+    },
+    "total_basal_sodium_nacl_or_osmolality": {
+      "status": "unverified",
+      "finding": "Only the absence of a separately enumerated NaCl intervention is supported. The basal formulation and pH-control sodium contribution are not a zero-salinity claim."
+    }
+  },
+  "frozen_checkpoint_guard": {
+    "path_from_request": "outputs/native_training_run_02/checkpoint.json",
+    "caller_supplied_expected_digest": "384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94",
+    "digest_verification_status": "unverified",
+    "reason": "The local-read allowlist contains only condition_records.json. The checkpoint was not opened or rehashed; the supplied digest is recorded without claiming an independent check.",
+    "checkpoint_or_training_model_files_changed_by_this_verifier": false
+  },
+  "historical_exposure_boundary": {
+    "prior_curator_exposure": "Reported by the requester; no prior curator context or disallowed source note was opened.",
+    "fresh_verifier_outcome_exposure": false,
+    "inputs_unchanged_during_this_verification": "pass: the condition packet SHA256 is unchanged, and this verifier made no condition edits, reordering or exclusions.",
+    "independent_input_check": "All six author input rows were retained and every recorded growth-rate mean was matched directly to the permitted primary cells. Other fields have explicit pass, fail or unverified findings above, not outcome-based adjustments.",
+    "retrospective_blindness_or_historical_curation_independence": "unverified: source agreement and an unchanged packet do not retroactively make the earlier curator blind, prove the motives of past selections, or prove that historical edits were uninfluenced by outcomes. No such claim is made."
+  },
+  "parent_follow_up": [
+    "Do not treat this as an all-inputs-pass certificate: the as_reported genotype spelling has a literal primary-source mismatch, and the alias and lycopene-intermediate claims remain unverified.",
+    "Any proposed genotype transcription or normalization change requires a separate scoped action. This verifier intentionally left all six condition records unchanged.",
+    "If the separate b-car* aliases or explicit lycopene intermediate role must be certified, first authorize an exact primary input-only projection that establishes those fields; do not open outcomes to fill the gap.",
+    "If an independent checkpoint digest check is required, perform it under separately authorized local-read scope; retain the native cross-strain/medium transfer as an unvalidated assumption."
+  ]
+}

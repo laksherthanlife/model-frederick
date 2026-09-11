@@ -1,0 +1,154 @@
+{
+  "document_type": "approved_development_phase_c_response_release_v1",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "protocol_sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+  "phase": "development_response_export",
+  "release_request": {
+    "path": "data/native_law_v2/granados/development/phase_c_01/release_request.json",
+    "sha256": "fe3b56ac5999b0382a8457f398a1f0d270016ff2bd15c2378d4d91bb719ed78a",
+    "bytes": 2348,
+    "role": "operational_event_log"
+  },
+  "custody_decision": {
+    "path": "data/native_law_v2/granados/development/phase_c_01/custody_decision.json",
+    "sha256": "ccdf78fa1d986758a9f760747d755b02fd2d52c11098e14c3043ee7d8a47806e",
+    "bytes": 4148,
+    "role": "operational_approval"
+  },
+  "freeze_verification": {
+    "path": "data/native_law_v2/granados/development/phase_c_01/freeze_verification.json",
+    "sha256": "ad3768db1a5eab8b61ffbc631cefdc0be9676f26d49d24dd01adcee226ebd897",
+    "bytes": 2689,
+    "role": "source_binding_audit"
+  },
+  "prediction_freeze": {
+    "path": "outputs/native_population_development/native_training_01/development_prediction_freeze.json",
+    "sha256": "e03f6b9407b29e7e76da7a0be566ce9036c5cf27ac65bfaa9a4d3d7e009b5753",
+    "bytes": 124917,
+    "role": "development_predictions"
+  },
+  "attempt_log": {
+    "path": "outputs/native_population_development/native_training_01/attempt_log.json",
+    "sha256": "4740203cf2ecd2ffe1626c5a288ac6b5949f086d189e302f4be8cc3f8c51e4f3",
+    "bytes": 20091,
+    "role": "attempt_log"
+  },
+  "conditioning_checkpoint": {
+    "path": "outputs/native_population_development/native_training_01/conditioning_checkpoint.json",
+    "sha256": "2814d3827aa8b6d3f5cd4974c92a30809c30ae4ae330d98a5262a7f650908ca3",
+    "bytes": 70295,
+    "role": "model_checkpoint"
+  },
+  "training_run_summary": {
+    "path": "outputs/native_population_development/native_training_01/training_run_summary.json",
+    "sha256": "fe80ac3406d3058c7489a98d5f3ec6aa3d980d76388c280da5b9d21dc2b489cd",
+    "bytes": 12863,
+    "role": "operational_event_log"
+  },
+  "phase_b_manifest": {
+    "path": "data/native_law_v2/granados/development/release_manifest.json",
+    "sha256": "3b8c67c79191bf4dec0a1e7e0514b1a145359c30061868bbfdd136f0ee1cd3dd",
+    "bytes": 6904,
+    "role": "operational_event_log"
+  },
+  "original_training_data_approval": {
+    "path": "data/native_law_v2/granados/development/phase_b/custody_decision.json",
+    "sha256": "87536dc42cccde2733daf4cb52f54024661a7d58386acd180623adf266126533",
+    "bytes": 3861,
+    "role": "operational_approval"
+  },
+  "executor_refresh_admission": {
+    "path": "data/native_law_v2/granados/development/executor_refresh_01/executor_refresh_admission.json",
+    "sha256": "b967279da5186529d784e66b99a066e785f487558d0858a50cf91b950d979763",
+    "bytes": 2456,
+    "role": "operational_event_log"
+  },
+  "executor_refresh_approval": {
+    "path": "data/native_law_v2/granados/development/executor_refresh_01/custody_decision.json",
+    "sha256": "04ac928add5528beabd2a9f77a2055643dc120d3b76bff7315ffdc3f062f786e",
+    "bytes": 4271,
+    "role": "operational_approval"
+  },
+  "configuration": {
+    "bytes": 3729,
+    "path": "outputs/native_population_development/executor_refresh_01/execution_configuration.json",
+    "role": "execution_code",
+    "sha256": "7e1aa35c8f6c248fc921f2348d362b8fc76e23bd8cfff070b19d21b2d9195cdb"
+  },
+  "frozen_executor_artifacts": [
+    {
+      "bytes": 92464,
+      "path": "outputs/native_population_development/executor_refresh_01/code/native_population_development.py",
+      "role": "execution_code",
+      "sha256": "654dd5729d204c5963f5e51576a4830b61f736296c877ffc419efa77d009e2a0"
+    },
+    {
+      "bytes": 4212,
+      "path": "outputs/native_population_development/executor_refresh_01/code/run_native_population_development.py",
+      "role": "execution_code",
+      "sha256": "f96a36702867262718997acaae7131d4b616725a563e27f795dc65ee8bd6f03c"
+    },
+    {
+      "bytes": 31449,
+      "path": "outputs/native_population_development/executor_refresh_01/code/test_native_population_development.py",
+      "role": "execution_code",
+      "sha256": "6f8d067c99f501a2311143ace0d316233df85703e6943bdc19a17559dc7e66bc"
+    }
+  ],
+  "response_projection": {
+    "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_responses.json",
+    "sha256": "9090f1e8ced8094f4ed445f5285bf5f85a7c457b07c34c28e9fa0cb0e0ea6178",
+    "bytes": 3520217,
+    "role": "development_responses"
+  },
+  "response_data_allowlist": [
+    {
+      "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_responses.json",
+      "sha256": "9090f1e8ced8094f4ed445f5285bf5f85a7c457b07c34c28e9fa0cb0e0ea6178",
+      "bytes": 3520217,
+      "role": "development_responses"
+    }
+  ],
+  "previously_released_development_inputs": {
+    "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_inputs.json",
+    "sha256": "41ee2a8ce6b09cb664859873fd59fd005e31e6eaa054c3703098c91e3f790613",
+    "bytes": 4764543,
+    "role": "development_inputs"
+  },
+  "source_binding_audit": {
+    "path": "data/native_law_v2/granados/development/phase_c_01/source_binding_audit.json",
+    "sha256": "349f20acb2bc9762129686b59df090f67b6a1872e766b03c67eefded6b27a728",
+    "bytes": 1843,
+    "role": "source_binding_audit"
+  },
+  "source_replay_verification": {
+    "path": "data/native_law_v2/granados/development/phase_c_01/source_replay_verification.json",
+    "sha256": "359f9834bd22905ccc27d7662f86d7a3b196abba6da6567656bdc9b991aef319",
+    "bytes": 5105,
+    "role": "source_binding_audit"
+  },
+  "coverage_audit": {
+    "path": "data/native_law_v2/granados/development/phase_c_01/coverage_audit.json",
+    "sha256": "270c845038ef39ae3261a38593083540f1b25fa85ad0612fa93ed5fd2d874f13",
+    "bytes": 23467,
+    "role": "source_binding_audit"
+  },
+  "operational_event_reference": "data/native_law_v2/granados/development/phase_c_01/release_event.json#granados-phase-c-01",
+  "development_responses_released": true,
+  "previous_data_regenerated": false,
+  "frozen_cohorts_or_coordinates_changed": false,
+  "all_registered_observation_means_and_coordinates_available": true,
+  "current_module_sha256": "654dd5729d204c5963f5e51576a4830b61f736296c877ffc419efa77d009e2a0",
+  "legacy_execute_scoring_approval_equality_compatible": false,
+  "scoring_integration_requirement": "Use an explicitly reviewed phase-C lineage adapter binding original data approval 87536..., executor approval 04ac..., and this NEW response-release decision. Current execute_scoring lines 1086 and 1096 assume one identical approval SHA and cannot directly consume a new decision. Do not rewrite the freeze/projections or manually skip checks; do not refit or change the scientific recipe. Custody has not scored these responses.",
+  "selected_development_model": null,
+  "development_scores_computed": false,
+  "strong_claim_authorized": false,
+  "final_test_defined": false,
+  "limitations": [
+    "This is a retrospective conditional mapping on the published, selected/processed cohort. The exact original export/filter/inpainting history is unresolved and may have used future observations. Neither the availability of earlier-frame features nor the original cohort is certified causally prefix-only. This limitation is not repaired by prohibiting new leakage in our own preprocessing.",
+    "All released groups have the same documented downshift. This experiment cannot identify a glucose dose-response or distinguish its biological effect from elapsed stimulus-relative time and unknown acquisition/batch history. Do not infer missing absolute clocks.",
+    "Normalized rep2 and other incompletely mapped cross-file entries are nonexported, not certified independent of these development groups. Retain unresolved alias/preparation/batch relations. If a later crosswalk identifies an alias of a released experiment, mark its biological component exposed to development rather than relabelling it unseen.",
+    "No external registry/HMAC infrastructure is provisioned by this document. Preserve the existing strong verifier and all its controls. A separate accountable custodian may approve this limited, non-authorizing development release using source replay, exact allowlists and retained operational records. Do not fabricate production keys/signatures or claim encryption, OS isolation, immutable external chronology or adversarial security."
+  ]
+}

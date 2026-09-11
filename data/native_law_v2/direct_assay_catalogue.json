@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "catalogue_id": "independent-primary-direct-assay-leads-01",
+  "research_date_utc": "2026-09-07",
+  "status": "metadata_only_provisional_leads_no_candidate_registered_or_fit_authorized",
+  "scope": "Independent primary alternatives to model-derived intracellular flux labels. Only new direct-assay catalogue and metadata/provenance files are owned by this review.",
+  "protocol_read": "data/native_law_v2/protocol.json",
+  "protocol_id_at_review": "native-law-v2-preregistered-01",
+  "protocol_review_read": "data/native_law_v2/protocol_review.json",
+  "protocol_modified": false,
+  "registered_candidate_ids_added": [],
+  "fits_run": 0,
+  "raw_assay_response_values_released": 0,
+  "raw_response_supplement_bodies_retrieved": 0,
+  "important_boundary": "A catalogue entry is not formal registration, a source-data receipt, an independence attestation, or an eligible replacement for an existing candidate. The protocol owner and independent registry must fix the new target, estimand, dependency inventory, split and controls before raw response access. No local timestamp/hash proves prior registration.",
+  "source_access_boundary": {
+    "opened": [
+      "Publication bibliographic metadata, methods, figure design captions, source-data availability statements and attachment links",
+      "Selected publication table headers, enzyme identifiers and parameter-row counts, without their numerical response/parameter cells",
+      "van Eunen 2012 Text S1, an input-recipe-only methods supplement",
+      "Author-repository file trees and README metadata through gh"
+    ],
+    "not_opened": [
+      "Raw assay response files or source-data worksheet cells",
+      "Instrument absorbance/radioactivity arrays",
+      "Published numerical kinetic parameter cells",
+      "Source fitted models, prediction arrays, notebook outputs or scoring results"
+    ],
+    "qualification": "Complete publication XML/HTML/PDF containers were fetched into memory to extract metadata; these containers can include published result summaries. Numerical response output was suppressed. This is not cryptographic isolation, and public narrative exposure must be retained in any subsequent lineage audit. No raw assay supplement was fetched to manufacture a checksum before registration."
+  },
+  "shortlist_order_basis": "Potential for source-bound direct measurements and identifiable input variation, not fitted performance or a desired regulator/sign. These are three research options with explicit blockers, not three ready datasets.",
+  "shortlist": [
+    {
+      "lead_id": "smallbone2013_purified_glycolytic_assays",
+      "primary_doi": "10.1016/j.febslet.2013.06.043",
+      "metadata_path": "data/native_law_v2/direct_assay/smallbone2013_metadata.json",
+      "direct_measurement_verified": true,
+      "most_useful_scope_if_raw_data_recovered": "Initial-rate response of identified, yeast-expressed, purified glycolytic isoenzymes to experimentally varied substrates, conditional on preparation and buffer.",
+      "public_raw_observation_file_verified": false,
+      "functional_form_learning_ready": false,
+      "blocking_summary": [
+        "Publication Table 2 contains fitted kinetic parameters, not raw rates; its 49 rows and 21 isoenzyme labels are not assay or biological replicate counts.",
+        "Historical MeMo-RK raw-data service redirects to an unrelated domain; its HTTPS certificate also fails hostname validation. Do not trust the redirect or disable TLS checks.",
+        "Raw progress curves/initial-rate records, exact enzyme amounts, pH, preparation IDs, randomization/order, uncertainty and independent validation partitions remain unverified.",
+        "The source fits Michaelis-Menten and a Tpi1 substrate-inhibition form. Reproducing those parameter values does not discover a functional form."
+      ]
+    },
+    {
+      "lead_id": "vaneunen2012_native_extract_and_transport_capacity",
+      "primary_doi": "10.1371/journal.pcbi.1002483",
+      "metadata_path": "data/native_law_v2/direct_assay/vaneunen2012_metadata.json",
+      "direct_measurement_verified": true,
+      "most_useful_scope_if_raw_data_recovered": "Native extract GAPDH substrate response or collective whole-cell zero-trans glucose uptake; activity/capacity only, not individual-isoenzyme or intrinsic kcat.",
+      "public_raw_observation_file_verified": false,
+      "functional_form_learning_ready": false,
+      "blocking_summary": [
+        "Public Table S4 is a parameter/capacity summary, not a raw titration table. Its provider MD5 was obtained by HEAD without retrieving its body.",
+        "Four culture conditions are two growth histories crossed with starvation, not four proven independent biological replicates; starved cells descend from the corresponding chemostat cultures.",
+        "Raw titrations, extract composition, active enzyme, full unit/calibration lineage, biological IDs, assay order and orthogonal rate validation remain unavailable in the inspected metadata.",
+        "The source uses a supplied uptake law and converts rates to intracellular units using an assumed cytosolic volume. Published model predictions are excluded."
+      ]
+    },
+    {
+      "lead_id": "cereghetti2021_cdc19_activity_contrast",
+      "primary_doi": "10.1038/s41556-021-00760-4",
+      "metadata_path": "data/native_law_v2/direct_assay/cereghetti2021_metadata.json",
+      "direct_measurement_verified": true,
+      "most_useful_scope_if_source_data_verified": "Measured purified wild-type Cdc19 activity contrast between soluble and heat-treated preparations; potential limited assay support, not substrate/regulator rate-law discovery.",
+      "public_source_data_attachment_verified_in_article": true,
+      "source_data_worksheet_schema_verified": false,
+      "functional_form_learning_ready": false,
+      "blocking_summary": [
+        "Figure 2A reports three independent experiments and two states at fixed PEP/ADP; it does not establish a substrate-by-regulator titration matrix.",
+        "Authors explicitly state experiments were not randomized. Preparation/culture identities behind the three experiments are unspecified.",
+        "Methods say 60 minutes of heat treatment; Figure 2A says 30 minutes. A linked author correction exists but its content was blocked by a publisher client challenge.",
+        "Wild-type yeast sequence was Strep-tagged and expressed in E. coli, not isolated from native yeast. Actual assay temperature, active enzyme fraction and detector calibration are unresolved.",
+        "Linked source-data XLSX cells remain unopened; repeat-level slope data are promised, but raw progress-curve availability is not established."
+      ]
+    }
+  ],
+  "replication_hierarchy_required_before_split": [
+    {
+      "level": "biological_source",
+      "meaning": "Independently grown native yeast culture, or expression-host culture for recombinant material; record species, strain, genotype, history and source identity. A recombinant preparation is not a native-yeast biological replicate."
+    },
+    {
+      "level": "enzyme_preparation",
+      "meaning": "Extraction/purification batch and aliquots linked to their source culture, composition, protein assay and active-fraction evidence. Multiple wells do not create additional preparations."
+    },
+    {
+      "level": "assay_experimental_unit",
+      "meaning": "Separately allocated reaction/well/cuvette with independently set inputs. Distinct randomized assays can be distinct conditional experimental units within one preparation, if randomization and shared nuisance dependencies are documented; they are not additional biological N. None of these sources establishes such a randomized inventory here."
+    },
+    {
+      "level": "technical_measurement",
+      "meaning": "Repeated readings, time points, injection replicates and source-file copies retain their parent reaction identity. Time points must not be split as independent experiments."
+    },
+    {
+      "level": "support_channel",
+      "meaning": "An orthogonal detector/channel can support the same held-out sample, but does not increase biological N. Its calibration and correlated errors require a predeclared model; protocol-owner review, not this catalogue, decides permissible paired support."
+    }
+  ],
+  "dependency_policy": "Shared publication, strain or batch is not by itself proof of duplicate observation. Conversely, different files, concentrations or wells do not establish independent biological groups. Record actual duplicate identity separately from preparation, culture, day, plate, calibration and upstream-access dependencies. Do not alter the current protocol's splitting unit while doing this inventory.",
+  "possible_reserved_labels_not_currently_reserved": [
+    "Source culture/preparation/day identifiers and all their attached raw responses, for a claim about new biological preparations",
+    "Complete separately randomized assays within a preparation only under a newly registered conditional-assay claim with cluster-aware validation and documented allocation; do not label these biological replicates",
+    "Unexposed orthogonal rate measurements and source-backed blanks/shams, with paired identities retained",
+    "No final label set can currently be instantiated: source identifiers, counts, ancestry and registration authority are unresolved"
+  ],
+  "universal_blockers": [
+    "None of these lead IDs is in the inspected protocol's registered candidate list.",
+    "No authenticated acquisition/split/lineage receipts or externally anchored new registration have been supplied.",
+    "No lead establishes the inspected protocol's required disjoint train/development/final/support/sham group inventory.",
+    "No source-data selection, normalization or functional-form choice was made using raw responses or our fit performance.",
+    "Published conclusions can motivate scoped replication, not an assertion that the cited regulator/sign was discovered blind."
+  ],
+  "stopped_or_deferred_leads_path": "data/native_law_v2/direct_assay/provenance/source_audit.json",
+  "next_actions_for_parent": [
+    "Ask the Smallbone/Swainston authors or institutional archive for metadata-only inventory of NOVOstar exports/initial-rate files, preparation and assay IDs, conditions, blank/calibration files and source-linked checksums; do not follow the unrelated MeMo-RK redirect.",
+    "Ask van Eunen/Bakker for raw GAPDH titrations and tracer uptake records plus culture-parent and assay identifiers, units and orthogonal support; clarify whether pre/post-starvation measurements reuse the same samples as earlier papers.",
+    "If a narrow Cdc19 activity-contrast/support claim is worthwhile, first resolve preparation provenance, treatment duration, correction content and the missing randomization/calibration information. Do not relabel aggregation/ATP measurements as catalytic rates.",
+    "Have the protocol owner decide a scientifically scoped new candidate and register it through the required authority before a custodian opens any response-bearing assay file. If the unresolved design/access/group requirements cannot be met, record ineligibility rather than fit."
+  ]
+}

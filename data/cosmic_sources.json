@@ -1,0 +1,797 @@
+{
+  "schema_version": 1,
+  "purpose": "Source audit including user-supplied version-of-record text and normalized CHO supplements, with separate historical acquisition evidence; not a complete recovered COSMIC execution package or a yeast training dataset",
+  "evidence_revision": 3,
+  "repository_references_audited": [
+    "docs/research/HYBRID_METHODS.md:3-17",
+    "docs/research/HYBRID_METHODS.md:292",
+    "src/ystwin/bridge/regulation.py",
+    "scripts/run_regulation.py",
+    "src/ystwin/fba/physiology.py:94-123",
+    "data/gem/MANIFEST.md"
+  ],
+  "paper": {
+    "title": "COSMIC-dFBA: A novel multi-scale hybrid framework for bioprocess modeling",
+    "doi": "10.1016/j.ymben.2024.02.012",
+    "pmid": "38387677",
+    "journal": "Metabolic Engineering 82:183-192 (2024)",
+    "pmcid": null,
+    "preprint": {
+      "doi": "10.1101/2023.09.13.557646",
+      "europepmc_id": "PPR726164",
+      "version": "1",
+      "date": "2023-09-17",
+      "license_code_verbatim": "cc_no",
+      "identity_evidence": ["crossref", "europepmc_journal", "europepmc_preprint", "biorxiv_details"],
+      "version_boundary": "The bioRxiv API identifies a version-1 preprint, not the 2024 version of record. OpenAlex's acceptedVersion label is not used to override that primary version identity."
+    },
+    "open_access_audit": {
+      "checked_on_utc": "2026-09-08",
+      "evidence_response_ids": ["pubmed", "pmc_idconv", "pubmed_pmc", "pubmed_linkout", "europepmc_journal", "europepmc_preprint", "elsevier_metadata", "openalex_journal", "openalex_preprint"],
+      "pubmed_article_id_types": ["pubmed", "doi", "pii"],
+      "europepmc_journal_flags": {"isOpenAccess": "N", "inEPMC": "N", "inPMC": "N", "hasPDF": "N", "hasSuppl": "N", "hasData": "N"},
+      "europepmc_preprint_flags": {"isOpenAccess": "N", "inEPMC": "N", "inPMC": "N", "hasPDF": "N", "hasSuppl": "N", "hasData": "N"},
+      "pmc_idconv_record_status": "error",
+      "pmc_idconv_record_message": "Identifier not found in PMC",
+      "pmc_identity_link_name": "pubmed_pmc",
+      "pmc_identity_link_count": 0,
+      "elink_relation_boundary": "An exploratory ELink query without linkname returned pubmed_pmc_refs (citing articles), not pubmed_pmc. Those PMC IDs are not this paper and were not used as full-text identities.",
+      "pmc_fullTextXML_request": "Not made: no PMCID or Europe PMC hosted full-text record was returned. No PMC identifier or fullTextXML URL was guessed.",
+      "external_free_preprint_pdf": "https://www.biorxiv.org/content/biorxiv/early/2023/09/17/2023.09.13.557646.full.pdf",
+      "scope_boundary": "Europe PMC's N flags describe its record/holdings, not the nonexistence of all publisher supplements. Both Europe PMC and OpenAlex declare an external bioRxiv PDF; that actual URL was requested and returned HTTP 403. No external repository full-text location beyond bioRxiv was found in the queried location metadata."
+    },
+    "host_compatibility": {
+      "source_context": "A 13-day CHO perfusion bioprocess, with cell-density, cell-size, recombinant-product titer and spent-medium measurements; version of record section 4.1, printed page 190.",
+      "source_organism": "Chinese hamster",
+      "source_cell_type": "ovary (CHO)",
+      "source_cell_line": null,
+      "source_cell_line_description": "Stable, clonally derived CHO cell line expressing a non-glycosylated recombinant protein; a specific clone or cell-line identifier is not disclosed in the supplied text.",
+      "source_host_verified": true,
+      "cho_mammalian_identity": "Established by the supplied version-of-record Methods section 4.1, not inferred from the antibody product or reference-list titles.",
+      "matched_yeast_host": false,
+      "independent_measured_yeast_state_labels": false,
+      "transfer_boundary": "The supplied CHO measurements and inferred states are source-host evidence, not learned yeast labels or yeast-specific parameters. The actual iCHO1766 plus secretory-pathway model file, normalization scales and source runtime configuration remain required for an exact source-model replay."
+    },
+    "metadata_verification": [
+      {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:38387677%20AND%20SRC:MED&format=json&resultType=core",
+        "retrieval": "HTTP 200; title, DOI, authors, journal and abstract read",
+        "verified_scope": "Abstract supports weighted growth/antibody-producing states, machine learning, extracellular metabolite data, and reported prediction improvements. It does not specify the task-order training algorithm."
+      },
+      {
+        "url": "https://api.crossref.org/works/10.1016/j.ymben.2024.02.012",
+        "retrieval": "HTTP 200; title, publisher links and has-preprint relation read",
+        "preprint_doi": "10.1101/2023.09.13.557646",
+        "publisher_pii": "S1096717624000284"
+      }
+    ],
+    "full_text_attempts_scope": "Historical HEAD-only checks from the earlier audit, preserved rather than re-dated. The GET response bytes/statuses from the 2026-09-08 follow-up are in acquisition_audit; notably the default Elsevier XML GET now succeeds with metadata only, while view=FULL returns 401.",
+    "full_text_attempts": [
+      {
+        "url": "https://www.sciencedirect.com/science/article/pii/S1096717624000284",
+        "method": "HEAD with redirects",
+        "status": 403,
+        "result": "publisher page inaccessible"
+      },
+      {
+        "url": "https://api.elsevier.com/content/article/PII:S1096717624000284?httpAccept=text/xml",
+        "method": "HEAD with redirects; URL supplied by Crossref",
+        "status": 429,
+        "result": "publisher full text inaccessible"
+      },
+      {
+        "url": "https://www.biorxiv.org/content/10.1101/2023.09.13.557646v1.full",
+        "method": "HEAD with redirects",
+        "status": 403,
+        "result": "preprint HTML inaccessible"
+      },
+      {
+        "url": "https://www.biorxiv.org/content/biorxiv/early/2023/09/17/2023.09.13.557646.full.pdf",
+        "method": "HEAD with redirects; URL supplied by Europe PMC",
+        "status": 403,
+        "result": "preprint PDF inaccessible"
+      }
+    ],
+    "section_4_3": "Verified in the supplied version of record, printed page 190, and supplementary methods Table 4: constrain nutrient uptake, maximize each remaining task, rank by inferred experimental flux divided by its constrained maximum, and install the selected task's inferred experimental flux as a lower bound before the next iteration. This verifies the described procedure, not a reproduction of the paper's fitted task tables on the missing exact CHO model."
+  },
+  "public_implementation": {
+    "repository": "https://github.com/LewisLabUCSD/COSMIC-dFBA",
+    "discovery": "GitHub repository search returned the LewisLabUCSD repository described as Public code for COSMIC dFBA",
+    "commit": "3d60d3a2ae67943d770d7f8fbbb8bcc16f391a86",
+    "tree_url": "https://api.github.com/repos/LewisLabUCSD/COSMIC-dFBA/git/trees/3d60d3a2ae67943d770d7f8fbbb8bcc16f391a86?recursive=1",
+    "tree_files": ["COSMIC_dFBA.m", "LICENSE"],
+    "file_url": "https://raw.githubusercontent.com/LewisLabUCSD/COSMIC-dFBA/3d60d3a2ae67943d770d7f8fbbb8bcc16f391a86/COSMIC_dFBA.m",
+    "file_bytes": 5864,
+    "sha256": "b82441d85b96c044e82a94f3bc27ab9e1c339ba9e5db0183133a8e7d21dd9b10",
+    "local_path": "data/cosmic_reference/COSMIC_dFBA.m.base64",
+    "storage_encoding": "base64",
+    "readable_copy_path": "data/cosmic_reference/COSMIC_dFBA.m.txt",
+    "git_blob_sha1": "fd4975cab4d59ffec33fee3c5df1c37e2cc3e5cc",
+    "license": {
+      "spdx_id": "CC0-1.0",
+      "local_path": "data/cosmic_reference/LICENSE.CC0.txt",
+      "file_bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "git_blob_sha1": "0e259d42c996742e9e3cba14c677129b2c1b6311",
+      "scope": "The public repository's code, not the journal article, preprint, unretrieved supplements or any yeast data."
+    },
+    "storage": "Original bytes (including CRLF and trailing blank lines) are preserved losslessly in .m.base64. The text-writing tool normalizes CRLF, so .m.txt is explicitly only an LF-readable copy; tests compare it to the decoded original with CRLF-to-LF as the sole transformation. Original SHA-256/Git blob identity were not changed to excuse normalization. Neither representation is importable Python or executed here.",
+    "repository_completeness_check": "Both public branches (main and Documentation) point to the same pinned commit. The recursive tree is not truncated and contains only COSMIC_dFBA.m and LICENSE. Releases, tags and all issues are empty in the retained public API responses.",
+    "association_limit": "Both user-supplied GitHub ZIPs reproduce the exact pinned kernel and license. The supplied article states that source code is provided in a supplementary ZIP, but these two archives contain only the execution kernel and license, not a complete model, training routine or fitted dFBA_data structure.",
+    "observations": [
+      {
+        "lines": "24-37, 46-53",
+        "verified": "Loads state-specific Vm_growth/Vm_prod, Km, ordered tasks, task coefficients and Phase_classification from the caller's dFBA_data; solves both states and blends v=(1-f)*vg+f*vp."
+      },
+      {
+        "lines": "113-143",
+        "verified": "simulate_model sets uptake lower bounds, optimizes each supplied priority and sets only its lower bound to objs(i)*sol.obj; an upper-bound version is commented out. It finishes by minimizing the last objective, extracts selected component fluxes and scales v(3:end) by 0.35.",
+        "transfer_boundary": "The state-data tables and the meaning of the 0.35 unit conversion are not present. No 0.35 conversion is copied into yeast code."
+      },
+      {
+        "lines": "145-164",
+        "verified": "phase_progress selects environmental components and uses externally supplied Beta, Bias, scaling and log_coeff in a logistic calculation. No training routine is in this file."
+      },
+      {
+        "lines": "167-176",
+        "verified": "evaluate_fluxes uses negative Michaelis-Menten uptake, -Vm*c/(Km+c). Our positive physical uptake magnitudes are mapped through the actual model stoichiometry instead of assuming this reaction-flux sign."
+      },
+      {
+        "lines": "180-196",
+        "verified": "eval_reactor applies growth and component-rate balances with a hard-coded D=1. These reactor constants are not treated as measured yeast parameters."
+      }
+    ]
+  },
+  "supplementary_and_training_data": {
+    "status": "Version-of-record paper, supplementary methods and ST1-ST5 recovered from explicitly user-supplied local files; the complete parameterized source execution package remains unavailable.",
+    "what_was_checked": "The historical public-service responses remain recorded unchanged in acquisition_audit. The later local acquisition verifies all seven supplied files, duplicate DOCX/XLSX aliases, both archive member sets, PDF attachment absence, DOCX text/tables, workbook sheets/headers/units and the absence of embedded model/training objects. See local_acquisition and paper_and_supplement_audit.",
+    "declared_supplement_links_recovered": [],
+    "acquired_training_tables": [
+      {"asset": "supplementary_tables", "sheet": "ST2", "role": "Normalized process measurements plus nonlinear-regression-derived phase fractions; not raw physical concentrations or independently measured cell-state labels."},
+      {"asset": "supplementary_tables", "sheet": "ST3", "role": "Computed state-specific uptake, secretion, cell-density and cell-size rates with explicit source units."},
+      {"asset": "supplementary_tables", "sheet": "ST4", "role": "Model-derived state-specific task priorities and efficiencies; not independently measured flux allocation."}
+    ],
+    "acquired_supplementary_sheets": ["ST1", "ST2", "ST3", "ST4", "ST5"],
+    "acquired_model_files": [],
+    "normalized_process_measurements_available": true,
+    "inferred_phase_labels_available": true,
+    "state_specific_task_tables_available": true,
+    "original_training_inputs_available": false,
+    "conclusion_scope": "The source host, methods and named supplementary tables are now verified. ST2 is normalized, ST3/ST4 are inferred outputs, and ST5 is a simulated flux trajectory rather than a stoichiometric model. These files enable source-table inspection and carefully labelled reanalysis, not an exact reproduction of the published fitted model or independent yeast validation.",
+    "missing": [
+      "Exact iCHO1766 plus secretory-pathway/BM_acc model, state-specific modifications, complete component/reaction mapping and product composition, with file identity and checksum; ST5 is not a GEM.",
+      "Unnormalized measurements, normalization constants, observation variances, absolute initial/feed concentrations, and oxygen/temperature values and schedules. ST1 contains coded levels and ST2 omits oxygen and temperature.",
+      "Complete fitted Vm_growth, Vm_prod and Km values, units and kinetic component mapping. ST3 supplies state-rate outputs but not a complete kinetic-parameter configuration.",
+      "Fitted LDA/logistic Beta, Bias, scaling and log_coeff, exact preprocessing artifacts and the original fitting/model-construction scripts and solver settings.",
+      "Complete dFBA_data, fix_comp and fix_flx inputs, and reconciliation of the source kernel with the paper's integration and component-retention descriptions.",
+      "Original fitting/partition provenance and any independent held-out assessment; no training-fold-only normalization or feature-selection history is established by the supplied tables.",
+      "Cell dry-mass and density-unit provenance for the kernel's 0.35 conversion; D=1 is now documented as daily perfusion, but the mass conversion is not."
+    ],
+    "action": "Use the normalized CHO tables only with their source units, inferred-label roles and exact identities. Keep the supplied originals outside Git; code CC0 does not authorize article or supplement redistribution. Obtain the remaining model/configuration/scale inputs before an exact source reproduction, and retain separate requirements for independently measured yeast labels."
+  },
+  "source_method_audit": {
+    "source_path": "data/cosmic_reference/COSMIC_dFBA.m.txt",
+    "verbatim_source_path": "data/cosmic_reference/COSMIC_dFBA.m.base64",
+    "line_coordinates": "Decoded upstream source lines, identical to the checked LF-readable copy; not base64 transport line numbers.",
+    "scope": "Retained revision-2 kernel/abstract-only audit, before local paper acquisition. Its null feature identities and unavailable training fields describe that kernel-only evidence scope. The later paper/supplement findings are separate in paper_and_supplement_audit; neither audit executes MATLAB or establishes biological validation.",
+    "state_variables": {
+      "verified": "The reactor state is the caller's initial_concentrations vector indexed by components/component_names; outputs retain component profiles, time, selected component fluxes for growth/production and phase_transition. The code displays time in days. Actual component identities and concentration/density units require the missing dFBA_data.",
+      "evidence": [
+        {"lines": [12, 16], "literal": "c0 = dFBA_data.initial_concentrations(:);"},
+        {"lines": [91, 92], "literal": " days of "},
+        {"lines": [103, 109], "literal": "dFBA_results.phase_transition = phase_transition(1:ctr);"}
+      ]
+    },
+    "classifier_features": {
+      "verified": "phase_classifier.components selects concentrations cx from the current reactor vector. Beta is multiplied elementwise by scaling; w=cx'*L+Bias, then w=w*log_coeff(2)+log_coeff(1), then f=exp(w)/(1+exp(w)). Feature identities, fitted values, centering, projection provenance and label generation are not supplied; this is not evidence of OD-only features or of a particular training/PCA algorithm.",
+      "feature_names": null,
+      "fitted_coefficients_available": false,
+      "evidence": [
+        {"lines": [149, 152], "literal": "cx(i) = c(ismember(comp_names,phase_classifier.components(i)));"},
+        {"lines": [153, 161], "literal": "L = L.*scale;"},
+        {"lines": [153, 161], "literal": "w = cx'*L + K;"},
+        {"lines": [153, 161], "literal": "w = w*E(2) + E(1);"},
+        {"lines": [153, 161], "literal": "f = exp(w)/(1+exp(w));"}
+      ]
+    },
+    "mixture_weighting": {
+      "verified": "Both states are solved and selected component rates are blended as (1-f)*vg+f*vp before reactor balances. The source comment defines the endpoints of f as all cells in growth versus production. It does not establish dry-mass equivalence, individual-state cell masses or unit compatibility for another host. v(3:end) is multiplied by 0.35 in each state solve; its physical derivation is absent.",
+      "state_count": 2,
+      "cell_to_biomass_conversion_verified": false,
+      "evidence": [
+        {"lines": [46, 54], "literal": "v = (1-f)*vg + f*vp;"},
+        {"lines": [137, 141], "literal": "v(3:end) = v(3:end)*0.35;"},
+        {"lines": [147, 148], "literal": "% f is a quantity between 0 and 1 with 0 indicating all cells in growth"}
+      ]
+    },
+    "uptake_kinetics": {
+      "verified": "Each supplied kinetic component has separate growth and production Vm arrays and a shared Km array in this kernel. evaluate_fluxes computes -Vm*c/(Km+c) and clips to nonpositive flux. This is many component/state parameters with unknown dimension, not a claim of two fitted parameters for the whole model.",
+      "kinetic_component_count": null,
+      "parameter_fields": ["kinetic.Vm_growth", "kinetic.Vm_prod", "kinetic.Km"],
+      "evidence": [
+        {"lines": [24, 26], "literal": "kinetic_growth = [dFBA_data.kinetic.Vm_growth(:),dFBA_data.kinetic.Km(:)]';"},
+        {"lines": [24, 26], "literal": "kinetic_prod = [dFBA_data.kinetic.Vm_prod(:),dFBA_data.kinetic.Km(:)]';"},
+        {"lines": [167, 176], "literal": "v(i) = -kinetic(1,i)*c(i)/(kinetic(2,i)+c(i));"},
+        {"lines": [167, 176], "literal": "v(i) = min(v(i),0);"}
+      ]
+    },
+    "objective_allocation": {
+      "verified": "Supplied growth/production priorities and c coefficients are filtered to nonnegative c values. Each successive objective solve installs a fractional-optimum lower bound; the matching upper-bound line is commented. The final solve minimizes the last objective, not an explicitly implemented pFBA norm. No priority-learning or efficiency-estimation routine is included.",
+      "evidence": [
+        {"lines": [27, 36], "literal": "p_growth = dFBA_data.Objectives.priority_growth;"},
+        {"lines": [27, 36], "literal": "f_prod = dFBA_data.Objectives.c_prod;"},
+        {"lines": [127, 134], "literal": "m1.lb(ismember(m1.rxns,priority(i))) = objs(i)*sol.obj;"},
+        {"lines": [127, 134], "literal": "%m1.ub(ismember(m1.rxns,priority(i))) = 1.01*m1.lb(ismember(m1.rxns,priority(i)));"},
+        {"lines": [127, 134], "literal": "sol = optimizeCbModel(m1,'min');"}
+      ]
+    },
+    "reactor_balance": {
+      "verified": "eval_reactor clamps concentrations nonnegative and hard-codes D=1. The first two components obey dc(i)=v(i)*c(i); later components use v(i)*c(1)+D*(c_in(i)-et(i)*c(i)). Missing component maps prevent assigning biological names or translating units, and these constants are not yeast measurements.",
+      "evidence": [
+        {"lines": [180, 196], "literal": "D = 1;"},
+        {"lines": [180, 196], "literal": "dc(i) = v(i)*c(i);"},
+        {"lines": [180, 196], "literal": "dc(i) = v(i)*c(1)+ D*(c_in(i)-(et(i)*c(i)));"}
+      ]
+    },
+    "train_fold_parameter_estimation": {
+      "original_train_fold_estimation_verified": false,
+      "training_routine_available": false,
+      "number_of_fitted_parameters": null,
+      "od_only_identifiability_established": false,
+      "verified": "The sole source file consumes fitted/selected values in dFBA_data; its five functions perform execution, state solves, classification, uptake evaluation and reactor balances. No raw observations, learning routine, fold assignments or leakage checks are present. Two states and two logistic coefficients do not mean the complete framework has two free parameters. The abstract's spent-medium parameterization claim does not establish parameter identifiability from OD alone.",
+      "unverified_parameter_families": ["kinetic.Vm_growth", "kinetic.Vm_prod", "kinetic.Km", "Objectives.priority_growth", "Objectives.priority_prod", "Objectives.c_growth", "Objectives.c_prod", "Phase_classification.components", "Phase_classification.Beta", "Phase_classification.Bias", "Phase_classification.scaling", "Phase_classification.log_coeff"],
+      "required_partition_boundary": "Before claiming a learned-source reproduction, obtain training-fold provenance for every fitted kinetic/objective/classifier parameter and transformation, and keep independent held-out cultures out of fitting. The local train-only implementation is not evidence that the unavailable original training procedure used the same protocol.",
+      "evidence": [
+        {"lines": [1, 1], "literal": "function [dFBA_results] = COSMIC_dFBA(model,time_range,dFBA_data,fix_flx,fix_comp,notes)"},
+        {"lines": [37, 37], "literal": "classification_data = dFBA_data.Phase_classification;"}
+      ]
+    }
+  },
+  "acquisition_audit": {
+    "date_utc": "2026-09-08",
+    "protocol": "Public read-only GET requests; curl for public metadata/source hosts and gh api --method GET for the known public GitHub repository. No private repository, API key acquisition, login, proxy, challenge solving or access-control workaround. Declared links and typed DOI/PMID relations were followed, not guessed supplement filenames.",
+    "hash_scope": "SHA-256 and bytes refer to the unmodified HTTP response body, not headers or pretty-printed JSON. Responses without storage_encoding are verbatim UTF-8 bytes. The two CRLF-bearing responses use lossless base64 because the text-writing tool normalizes line endings: their stored_bytes/stored_sha256 describe the encoding, and readable_copy is explicitly an LF-only viewing derivative with a separate hash. The decoded response must retain the original download hash. Live metadata has snapshot identity, not an immutable biological-data version. GitHub source/license also have the pinned commit and Git blob SHA-1.",
+    "retained_directory": "data/cosmic_reference",
+    "scientific_outputs_regenerated": false,
+    "scientific_outputs_restamped": false,
+    "full_text_acquired": false,
+    "training_data_acquired": false,
+    "licenses": {
+      "implementation_cc0": {
+        "spdx_id": "CC0-1.0",
+        "evidence": "data/cosmic_reference/LICENSE.CC0.txt",
+        "scope": "Pinned LewisLabUCSD repository content only."
+      },
+      "journal_metadata": {
+        "spdx_id": null,
+        "evidence": "PubMed CopyrightInformation; Crossref assertion/copyright and license entries; Elsevier coredata/openaccess=0",
+        "scope": "Bibliographic response retained, not article/supplement redistribution permission. Copyright 2024 International Metabolic Engineering Society, published by Elsevier, all rights reserved. Crossref lists TDM terms, not an open full-text license."
+      },
+      "preprint_metadata": {
+        "spdx_id": null,
+        "license_code_verbatim": "cc_no",
+        "evidence": "data/cosmic_reference/biorxiv_2023.09.13.557646.json: collection[0].license",
+        "scope": "No CC redistribution grant inferred for the preprint/supplements; only public metadata was retained."
+      },
+      "service_metadata": {
+        "spdx_id": null,
+        "evidence": "Public API response metadata; no work-level license grant supplied by these availability responses",
+        "scope": "Availability/discovery snapshots only. Neither an HTTP 200 nor a location listing licenses the underlying scientific work or any missing data."
+      }
+    },
+    "retained_responses": [
+      {
+        "id": "pubmed",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=38387677&retmode=xml",
+        "method": "GET", "client": "curl", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:18:07.934971Z",
+        "content_type": "text/xml; charset=UTF-8",
+        "bytes": 7554, "sha256": "f0a5bc92364d765e518d255f5bcaea6f946e04a9eceed00501d8ea8daa119a93",
+        "path": "data/cosmic_reference/pubmed_38387677.xml",
+        "format": "xml", "role": "bibliographic_metadata", "license_ref": "journal_metadata",
+        "source_version": "PMID Version=1; DateRevised=2024-03-19; PubMed 2025 DTD",
+        "discovery": "Exact requested PMID, checked against ArticleId[@IdType='doi'] and ArticleTitle, not a title search or cited reference."
+      },
+      {
+        "id": "europepmc_journal",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:38387677%20AND%20SRC:MED&format=json&resultType=core",
+        "method": "GET", "client": "curl", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:18:08.791537Z",
+        "content_type": "application/json;charset=UTF-8",
+        "bytes": 6872, "sha256": "d1c763892553c1ea5c29d205c2e4294f6e1343f3fd329500548fa7bd6bc18f37",
+        "path": "data/cosmic_reference/europepmc_38387677.json",
+        "format": "json", "role": "bibliographic_metadata", "license_ref": "journal_metadata",
+        "source_version": "Europe PMC 6.9; MED/38387677; dateOfRevision=2024-03-19",
+        "discovery": "Exact EXT_ID and SRC structured search; hitCount=1. Declares PPR726164 and the external free preprint PDF, but no PMCID or hosted supplement."
+      },
+      {
+        "id": "pmc_idconv",
+        "url": "https://pmc.ncbi.nlm.nih.gov/tools/idconv/api/v1/articles/?ids=38387677&idtype=pmid&format=json",
+        "method": "GET", "client": "curl", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:19:37.852155Z",
+        "content_type": "application/json",
+        "bytes": 386, "sha256": "aad4c722ff58119719c3558e928fd4ccfd4087fca1c31bb2772da5f3bb856009",
+        "path": "data/cosmic_reference/pmc_idconv_38387677.json",
+        "format": "json", "role": "availability_metadata", "license_ref": "service_metadata",
+        "source_version": "API v1; response-date=2026-09-07 23:19:37 (service's timezone)",
+        "discovery": "The legacy www.ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0 endpoint returned HTTP 301 to this URL. HTTP 200 is transport success; records[0].status=error and errmsg=Identifier not found in PMC."
+      },
+      {
+        "id": "pubmed_pmc",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&db=pmc&id=38387677&linkname=pubmed_pmc&retmode=xml",
+        "method": "GET", "client": "curl", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:19:37.934527Z",
+        "content_type": "text/xml; charset=UTF-8",
+        "bytes": 306, "sha256": "33f35fcf6a78bbbb4382aae98e478eac5a6e6bf1473ae757b38a8b8e4cd0a250",
+        "path": "data/cosmic_reference/pubmed_pmc_38387677.xml",
+        "format": "xml", "role": "availability_metadata", "license_ref": "service_metadata",
+        "source_version": "eLinkResult 20101123 DTD; snapshot of identity link",
+        "discovery": "Explicit pubmed_pmc identity relation; no LinkSetDb returned. pubmed_pmc_refs must not be substituted."
+      },
+      {
+        "id": "pubmed_linkout",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&id=38387677&cmd=llinks&retmode=xml",
+        "method": "GET", "client": "curl", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:20:50.217664Z",
+        "content_type": "text/xml; charset=UTF-8",
+        "bytes": 716, "sha256": "cb5f7bf6a914f3a92ae6585f5ce3fdac9f1c12c60dfb5a65d075ea99d778d245",
+        "path": "data/cosmic_reference/pubmed_linkout_38387677.xml",
+        "format": "xml", "role": "availability_metadata", "license_ref": "service_metadata",
+        "source_version": "eLinkResult 20101123 DTD; snapshot of LinkOut",
+        "discovery": "The sole Full Text Sources provider is Elsevier Science, with attribute subscription/membership/fee required; no alternate public repository supplied."
+      },
+      {
+        "id": "crossref",
+        "url": "https://api.crossref.org/works/10.1016/j.ymben.2024.02.012",
+        "method": "GET", "client": "curl", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:19:40.706294Z",
+        "content_type": "application/json",
+        "bytes": 19626, "sha256": "bbe94cbc91f8aad59fb62002e8795682b81f5e494fb6a91d8e6cfa93081ba25c",
+        "path": "data/cosmic_reference/crossref_10.1016_j.ymben.2024.02.012.json",
+        "format": "json", "role": "bibliographic_metadata", "license_ref": "journal_metadata",
+        "source_version": "message-version=1.0.0; deposited=2024-09-28T14:45:59Z; indexed=2026-08-30T12:58:40Z",
+        "discovery": "Exact DOI lookup; message.DOI identifies this work, relation.has-preprint identifies the preprint, link supplies Elsevier representations, resource.primary supplies Linking Hub. References are other works, not this paper's table identities."
+      },
+      {
+        "id": "europepmc_preprint",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:PPR726164%20AND%20SRC:PPR&format=json&resultType=core",
+        "method": "GET", "client": "curl", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:19:37.404985Z",
+        "content_type": "application/json;charset=UTF-8",
+        "bytes": 4281, "sha256": "192073d54c314edb209268c90746c67fe909c8bde8d04107873b9b5bd12e5aa4",
+        "path": "data/cosmic_reference/europepmc_PPR726164.json",
+        "format": "json", "role": "bibliographic_metadata", "license_ref": "preprint_metadata",
+        "source_version": "Europe PMC 6.9; PPR/PPR726164; firstPublicationDate=2023-09-17",
+        "discovery": "Follows europepmc_journal.commentCorrectionList Preprint in; reciprocal Preprint of relation identifies MED/38387677. No PMCID or hosted supplementary files."
+      },
+      {
+        "id": "biorxiv_details",
+        "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2023.09.13.557646",
+        "method": "GET", "client": "curl", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:18:09.822685Z",
+        "content_type": "application/json",
+        "bytes": 2246, "sha256": "f8cfa6703ec3cf0ba04ca198b4b8d7aaa640f361b7f3914623d090aeebaae16e",
+        "path": "data/cosmic_reference/biorxiv_2023.09.13.557646.json.base64",
+        "storage_encoding": "base64",
+        "stored_bytes": 3036, "stored_sha256": "78892cbe3a057f4474ef67eebba07311e0783519ac4f13138e4909651a0b32af",
+        "encoding_verified_at_utc": "2026-09-08T03:28:35.951730Z",
+        "readable_copy": {
+          "path": "data/cosmic_reference/biorxiv_2023.09.13.557646.json",
+          "transformation": "CRLF_to_LF_only",
+          "bytes": 2242, "sha256": "9346740d13947a95a8e9c70af8636ba3fe46fe9b3ebb007ed413f2ecae2f61f9"
+        },
+        "format": "json", "role": "bibliographic_metadata", "license_ref": "preprint_metadata",
+        "source_version": "bioRxiv version 1, dated 2023-09-17; type=new results; published=10.1016/j.ymben.2024.02.012",
+        "discovery": "Follows the DOI in Crossref's has-preprint relation. jatsxml is the actual declared source XML URL requested below; no supplement links in the response."
+      },
+      {
+        "id": "elsevier_metadata",
+        "url": "https://api.elsevier.com/content/article/PII:S1096717624000284?httpAccept=text/xml",
+        "method": "GET", "client": "curl", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:17:11.482070Z",
+        "content_type": "text/xml;charset=UTF-8",
+        "bytes": 1818, "sha256": "f3cea7f3586cac8396653137d0afb26f30360337aa2cd771890030aa05595140",
+        "path": "data/cosmic_reference/elsevier_S1096717624000284.xml",
+        "format": "xml", "role": "publisher_coredata_only", "license_ref": "journal_metadata",
+        "source_version": "PII S1096717624000284; DOI 10.1016/j.ymben.2024.02.012; coverDate 2024-03-31",
+        "discovery": "Exact Crossref link[0]. The root name full-text-retrieval-response is misleading for content availability: its only child is coredata, with openaccess=0, openaccessArticle=false, no originalText/body and no attachment/supplement links."
+      },
+      {
+        "id": "openalex_journal",
+        "url": "https://api.openalex.org/works/https://doi.org/10.1016/j.ymben.2024.02.012?select=id,doi,title,open_access,locations",
+        "method": "GET", "client": "curl", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:20:50.612108Z",
+        "content_type": "application/json",
+        "bytes": 1687, "sha256": "55165a3007ee2f1e0d4cfc2daffee230801e0a98200abeef9ff8aa9688b35c11",
+        "path": "data/cosmic_reference/openalex_journal_locations.json",
+        "format": "json", "role": "discovery_metadata", "license_ref": "service_metadata",
+        "source_version": "OpenAlex W4391986066 location snapshot",
+        "discovery": "Secondary discovery index, not primary scientific evidence. Exact DOI lookup; closed journal record with only DOI/PubMed locations and no PDF."
+      },
+      {
+        "id": "openalex_preprint",
+        "url": "https://api.openalex.org/works/https://doi.org/10.1101/2023.09.13.557646?select=id,doi,title,open_access,locations",
+        "method": "GET", "client": "curl", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:20:50.598678Z",
+        "content_type": "application/json",
+        "bytes": 1154, "sha256": "150bbe542a806197aaf55963f32eccad48b754f363bd0bdb6e52e2f5fe312262",
+        "path": "data/cosmic_reference/openalex_preprint_locations.json",
+        "format": "json", "role": "discovery_metadata", "license_ref": "service_metadata",
+        "source_version": "OpenAlex W4386811750 location snapshot",
+        "discovery": "Secondary discovery index; exact preprint DOI lookup. Its sole PDF location is the same declared bioRxiv PDF, not a newly located institutional full text."
+      },
+      {
+        "id": "datacite_related",
+        "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier%3A%2210.1016%2Fj.ymben.2024.02.012%22%20OR%20relatedIdentifiers.relatedIdentifier%3A%2210.1101%2F2023.09.13.557646%22&page%5Bsize%5D=25",
+        "method": "GET", "client": "curl", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:19:38.418334Z",
+        "content_type": "application/json; charset=utf-8",
+        "bytes": 287, "sha256": "3ecf148f0a9275b7f60bfe6f9cbe27e235b51fc3bad379bd9637b76fedb4d839",
+        "path": "data/cosmic_reference/datacite_related_identifiers.json",
+        "format": "json", "role": "discovery_metadata", "license_ref": "service_metadata",
+        "source_version": "DataCite relatedIdentifiers snapshot for both exact DOIs",
+        "discovery": "Structured related-identifier search returned data=[], meta.total=0. This bounds discovery in that index, not all possible repositories or unpublished author data."
+      },
+      {
+        "id": "github_tree",
+        "url": "https://api.github.com/repos/LewisLabUCSD/COSMIC-dFBA/git/trees/3d60d3a2ae67943d770d7f8fbbb8bcc16f391a86?recursive=1",
+        "method": "GET", "client": "gh api", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:19:39.622853Z",
+        "content_type": "application/json; charset=utf-8",
+        "bytes": 642, "sha256": "4f2cdbb0aca28b87784f665a20952851e87d0d58204bd0433033c3e11462b0e3",
+        "path": "data/cosmic_reference/github_tree_3d60d3a2.json",
+        "format": "json", "role": "repository_metadata", "license_ref": "service_metadata",
+        "source_version": "3d60d3a2ae67943d770d7f8fbbb8bcc16f391a86",
+        "discovery": "Previously verified public author-lab repository/commit; recursive tree truncated=false, exactly two blobs."
+      },
+      {
+        "id": "github_branches",
+        "url": "https://api.github.com/repos/LewisLabUCSD/COSMIC-dFBA/branches",
+        "method": "GET", "client": "gh api", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:19:39.572588Z",
+        "content_type": "application/json; charset=utf-8",
+        "bytes": 420, "sha256": "fc38d8d89e2dcba3c4213758e898399caebae9a17eaaeb1cb64ad5958ccd1b33",
+        "path": "data/cosmic_reference/github_branches.json",
+        "format": "json", "role": "repository_metadata", "license_ref": "service_metadata",
+        "source_version": "Branch-list snapshot; Documentation and main both point to 3d60d3a2ae67943d770d7f8fbbb8bcc16f391a86",
+        "discovery": "Public branches of the same repository; no additional documentation/data branch content beyond the pinned tree."
+      },
+      {
+        "id": "github_releases",
+        "url": "https://api.github.com/repos/LewisLabUCSD/COSMIC-dFBA/releases",
+        "method": "GET", "client": "gh api", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:19:39.617064Z",
+        "content_type": "application/json; charset=utf-8",
+        "bytes": 2, "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "path": "data/cosmic_reference/github_releases.json",
+        "format": "json", "role": "repository_metadata", "license_ref": "service_metadata",
+        "source_version": "Public release-list snapshot",
+        "discovery": "No releases or release assets (empty array), not a downloaded data archive."
+      },
+      {
+        "id": "github_tags",
+        "url": "https://api.github.com/repos/LewisLabUCSD/COSMIC-dFBA/tags",
+        "method": "GET", "client": "gh api", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:19:39.549140Z",
+        "content_type": "application/json; charset=utf-8",
+        "bytes": 2, "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "path": "data/cosmic_reference/github_tags.json",
+        "format": "json", "role": "repository_metadata", "license_ref": "service_metadata",
+        "source_version": "Public tag-list snapshot",
+        "discovery": "No public tags (empty array)."
+      },
+      {
+        "id": "github_issues",
+        "url": "https://api.github.com/repos/LewisLabUCSD/COSMIC-dFBA/issues?state=all&per_page=100",
+        "method": "GET", "client": "gh api", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:19:39.548529Z",
+        "content_type": "application/json; charset=utf-8",
+        "bytes": 2, "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "path": "data/cosmic_reference/github_issues.json",
+        "format": "json", "role": "repository_metadata", "license_ref": "service_metadata",
+        "source_version": "Public all-state issue-list snapshot",
+        "discovery": "No issue/pull-request records or author-linked data in this endpoint (empty array)."
+      },
+      {
+        "id": "github_kernel",
+        "url": "https://api.github.com/repos/LewisLabUCSD/COSMIC-dFBA/contents/COSMIC_dFBA.m?ref=3d60d3a2ae67943d770d7f8fbbb8bcc16f391a86",
+        "method": "GET", "client": "gh api", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:17:14.050552Z",
+        "content_type": "application/vnd.github.raw+json; charset=utf-8",
+        "bytes": 5864, "sha256": "b82441d85b96c044e82a94f3bc27ab9e1c339ba9e5db0183133a8e7d21dd9b10",
+        "path": "data/cosmic_reference/COSMIC_dFBA.m.base64",
+        "storage_encoding": "base64",
+        "stored_bytes": 7923, "stored_sha256": "455c771b88c1b624b078b6422838c0a429df8b1cf472ac0e79fdb8300aae19be",
+        "encoding_verified_at_utc": "2026-09-08T03:28:34.922921Z",
+        "readable_copy": {
+          "path": "data/cosmic_reference/COSMIC_dFBA.m.txt",
+          "transformation": "CRLF_to_LF_only",
+          "bytes": 5659, "sha256": "a00b6527893c472ae3128d1742d913d8ae24a48c079a978f0bb80af89df4ac55"
+        },
+        "format": "matlab_text", "role": "execution_kernel", "license_ref": "implementation_cc0",
+        "source_version": "Commit 3d60d3a2ae67943d770d7f8fbbb8bcc16f391a86; Git blob fd4975cab4d59ffec33fee3c5df1c37e2cc3e5cc",
+        "discovery": "github_tree path COSMIC_dFBA.m; gh raw media type requested. Both response length/SHA-256 and Git blob identity match the prior audit. Original CRLF retained."
+      },
+      {
+        "id": "github_license",
+        "url": "https://api.github.com/repos/LewisLabUCSD/COSMIC-dFBA/contents/LICENSE?ref=3d60d3a2ae67943d770d7f8fbbb8bcc16f391a86",
+        "method": "GET", "client": "gh api", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:19:39.006848Z",
+        "content_type": "application/vnd.github.raw+json; charset=utf-8",
+        "bytes": 7048, "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+        "path": "data/cosmic_reference/LICENSE.CC0.txt",
+        "format": "text", "role": "license_text", "license_ref": "implementation_cc0",
+        "source_version": "Commit 3d60d3a2ae67943d770d7f8fbbb8bcc16f391a86; Git blob 0e259d42c996742e9e3cba14c677129b2c1b6311",
+        "discovery": "github_tree path LICENSE; raw license text is CC0 1.0 Universal."
+      }
+    ],
+    "noncontent_responses": [
+      {
+        "id": "publisher_linkinghub",
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S1096717624000284",
+        "method": "GET", "client": "curl", "http_status": 200,
+        "retrieved_at_utc": "2026-09-08T03:16:57.746826Z",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 2688, "sha256": "60b566242c87607bed9a17780e0946967154d00577dea603fbc4cdb75f5e099b",
+        "path": null, "classification": "html_redirect_not_article",
+        "discovery": "crossref.message.resource.primary.URL; the HTML meta refresh points to ScienceDirect for the same PII, tested below.",
+        "result": "HTML redirect/locator page, not full text, a table or an archive. No article content retained from this response."
+      },
+      {
+        "id": "publisher_sciencedirect",
+        "url": "https://www.sciencedirect.com/science/article/pii/S1096717624000284",
+        "method": "GET", "client": "curl", "http_status": 403,
+        "retrieved_at_utc": "2026-09-08T03:17:12.584930Z",
+        "content_type": "text/html; charset=UTF-8",
+        "bytes": 832804, "sha256": "7bf32c3c625440301ca8ca43ffa07b0d07c5283f698d485598b22351a590c291",
+        "path": null, "classification": "http_error_html",
+        "discovery": "elsevier_metadata.coredata/link[@rel='scidir']; also the Linking Hub target",
+        "result": "HTTP 403 HTML refused as source content. No challenge solving or cookie/login workaround attempted."
+      },
+      {
+        "id": "publisher_plain",
+        "url": "https://api.elsevier.com/content/article/PII:S1096717624000284?httpAccept=text/plain",
+        "method": "GET", "client": "curl", "http_status": 400,
+        "retrieved_at_utc": "2026-09-08T03:20:49.771534Z",
+        "content_type": "text/xml;charset=UTF-8",
+        "bytes": 159, "sha256": "20332b7f504e84c1bbbc7570f8728d79b2c2db445b3365e667a37eac42f06bdc",
+        "path": null, "classification": "service_error",
+        "body_verbatim": "<service-error><status><statusCode>INVALID_INPUT</statusCode><statusText>View parameter specified in request is not valid</statusText></status></service-error>",
+        "discovery": "crossref.message.link[1].URL",
+        "result": "The declared plain-text representation returned an XML INVALID_INPUT error, not article text."
+      },
+      {
+        "id": "publisher_full_view",
+        "url": "https://api.elsevier.com/content/article/PII:S1096717624000284?httpAccept=text/xml&view=FULL",
+        "method": "GET", "client": "curl", "http_status": 401,
+        "retrieved_at_utc": "2026-09-08T03:20:49.669218Z",
+        "content_type": "text/xml;charset=UTF-8",
+        "bytes": 133, "sha256": "a199c5505f5d84ca6206475b3a116d509aa4528f154f0d3cdbc57669ec400bb5",
+        "path": null, "classification": "service_error",
+        "body_verbatim": "<service-error><status><statusCode>AUTHENTICATION_ERROR</statusCode><statusText>Invalid API Key</statusText></status></service-error>",
+        "discovery": "Normal FULL view parameter on the declared Elsevier XML API, requested once without an API key after the default response supplied only coredata.",
+        "result": "Authentication required. Stopped at the explicit denial; no API key or private access was used."
+      },
+      {
+        "id": "biorxiv_jats",
+        "url": "https://www.biorxiv.org/content/early/2023/09/17/2023.09.13.557646.source.xml",
+        "method": "GET", "client": "curl", "http_status": 403,
+        "retrieved_at_utc": "2026-09-08T03:20:49.364915Z",
+        "content_type": "text/html; charset=UTF-8",
+        "bytes": 5586, "sha256": "b5d70b22999232df68dbe5507bf247ea503cfc838dd5e76baeead64d34250334",
+        "path": null, "classification": "http_error_html",
+        "discovery": "Exact biorxiv_details.collection[0].jatsxml URL, not a constructed supplement URL",
+        "result": "HTTP 403 challenge HTML, not JATS XML. Rejected; no challenge bypass attempted and no supplementary links could be read."
+      },
+      {
+        "id": "biorxiv_pdf",
+        "url": "https://www.biorxiv.org/content/biorxiv/early/2023/09/17/2023.09.13.557646.full.pdf",
+        "method": "GET", "client": "curl", "http_status": 403,
+        "retrieved_at_utc": "2026-09-08T03:16:56.924342Z",
+        "content_type": "text/html; charset=UTF-8",
+        "bytes": 5604, "sha256": "8173b7f34940337cb5074aab0d2061a47fe1369a300aedd2b239a46784b71e47",
+        "path": null, "classification": "http_error_html",
+        "discovery": "Exact europepmc_journal/europepmc_preprint fullTextUrlList PDF, also openalex_preprint PDF location",
+        "result": "HTTP 403 challenge HTML, not a PDF. Rejected instead of being saved under a scientific file extension."
+      }
+    ],
+    "format_validation": {
+      "python_version": "3.14.2",
+      "pinned_environment": "ystwin-quality-venv-20260908",
+      "available_packages": {"pandas": "2.3.3", "openpyxl": "3.1.2", "python-libsbml": "5.21.1", "pytest": "9.0.2", "ruff": "0.15.22"},
+      "retained_formats": ["json", "xml", "matlab_text", "text"],
+      "table_or_sbml_validation": "Not applicable: no original CSV, spreadsheet, archive or SBML model was recovered. Availability of pandas/openpyxl/libSBML is not evidence that a table/model was downloaded or biologically validated.",
+      "contract": "Offline tests check pinned response bytes/hashes, structured record identity, XML/JSON content, the nontruncated Git tree and exact kernel excerpts. Unreviewed table/archive formats and HTML are not accepted as assets. Tests do not execute the MATLAB file, fit biology, fetch the network or rewrite hashes/outputs."
+    }
+  },
+  "local_acquisition": {
+    "date_utc": "2026-09-08",
+    "source": "explicit_user_supplied_files",
+    "verification_scope": "Prior local byte/content inspection of the explicitly supplied originals. Public CI checks this recorded evidence and the separately retained kernel; it does not claim to reopen the external PDF, DOCX or XLSX.",
+    "full_text_acquired": true,
+    "supplementary_methods_acquired": true,
+    "normalized_process_data_acquired": true,
+    "complete_execution_package_available": false,
+    "originals_copied_to_repository": false,
+    "automatic_redistribution_authorized": false,
+    "assets": {
+      "paper": {
+        "filename": "1-s2.0-S1096717624000284-main.pdf",
+        "aliases": [],
+        "bytes": 5670274,
+        "sha256": "4808da8e085626be136cf86954b62892a39b4798a25a0c7adfe413c92887198b",
+        "format": "pdf",
+        "pages": 10,
+        "role": "version_of_record",
+        "identity": "PDF title and subject match COSMIC-dFBA, Metabolic Engineering 82:183-192 and DOI 10.1016/j.ymben.2024.02.012; printed article and Methods read.",
+        "rights": "Printed page 183: copyright 2024 International Metabolic Engineering Society; published by Elsevier Inc.; all rights reserved.",
+        "embedded_files": 0
+      },
+      "supplementary_methods": {
+        "filename": "1-s2.0-S1096717624000284-mmc1.docx",
+        "aliases": ["COSMIC-dFBA_supplementary_code.docx"],
+        "aliases_verified_byte_identical": true,
+        "bytes": 1019024,
+        "sha256": "4ba691b66644f85261ae24748861b172cce7114a20a795a914304bf5fa8720f9",
+        "format": "docx",
+        "role": "supplementary_methods_and_figures",
+        "identity": "Document title and authors match the article. Contains flux/phase estimation, task-mining pseudocode, exploratory PCA and figures, not an executable training implementation.",
+        "embedded_objects": 0,
+        "external_relationships": 0,
+        "redistribution_license_verified": false
+      },
+      "supplementary_tables": {
+        "filename": "1-s2.0-S1096717624000284-mmc2.xlsx",
+        "aliases": ["COSMIC-dFBA_supplementary_data.xlsx"],
+        "aliases_verified_byte_identical": true,
+        "bytes": 4156209,
+        "sha256": "a68dc8bf86b87e6b9d4f732cd3413948bdb567bf3f85fdabe937a202bb7a7daa",
+        "format": "xlsx",
+        "role": "normalized_measurements_and_inferred_source_outputs",
+        "sheets": ["Index", "ST1", "ST2", "ST3", "ST4", "ST5"],
+        "hidden_sheets": [],
+        "embedded_objects": 0,
+        "redistribution_license_verified": false
+      },
+      "github_commit_archive": {
+        "filename": "COSMIC-dFBA-github.zip",
+        "aliases": [],
+        "bytes": 5187,
+        "sha256": "6a5323c477ad52e08a760dc82df50b408a9b683a6ec82e723fe668145a595465",
+        "format": "zip",
+        "role": "alternate_transport_of_verified_public_kernel",
+        "members": ["LewisLabUCSD-COSMIC-dFBA-3d60d3a/COSMIC_dFBA.m", "LewisLabUCSD-COSMIC-dFBA-3d60d3a/LICENSE"],
+        "kernel_sha256": "b82441d85b96c044e82a94f3bc27ab9e1c339ba9e5db0183133a8e7d21dd9b10",
+        "license_sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+        "training_routine_in_archive": false
+      },
+      "github_branch_archive": {
+        "filename": "COSMIC-dFBA-main.zip",
+        "aliases": [],
+        "bytes": 5091,
+        "sha256": "7c420cfc29422c90e526d8737136d6599c94e6846d761929b972df419ff4aa4d",
+        "format": "zip",
+        "role": "alternate_transport_of_verified_public_kernel",
+        "members": ["COSMIC-dFBA-main/COSMIC_dFBA.m", "COSMIC-dFBA-main/LICENSE"],
+        "kernel_sha256": "b82441d85b96c044e82a94f3bc27ab9e1c339ba9e5db0183133a8e7d21dd9b10",
+        "license_sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+        "training_routine_in_archive": false
+      }
+    },
+    "alias_boundary": "Renamed duplicate supplements and two ZIP wrappers do not add datasets, independent replicates, models or training code. Both ZIP member contents match the previously verified public commit.",
+    "package_inspection": "No PDF attachments, DOCX embedded objects or external relationships, XLSX hidden sheets, embedded objects or VBA project. Workbook custom XML contains Office/SharePoint schemas, not a metabolic model; its sole comment concerns vessel-name leading zeroes, which are retained."
+  },
+  "paper_and_supplement_audit": {
+    "scope": "Primary-method verification and source-table inspection, not independent reproduction of published fitted parameters or biological validation.",
+    "coordinates": "PDF page numbers are 1-based within the supplied 10-page file; printed journal pages are also supplied. DOCX paragraphs count all direct body paragraphs, including blanks; table/row/cell indices are 1-based.",
+    "phase_labels": {
+      "method": "two_state_variance_weighted_nonlinear_regression",
+      "independently_measured": false,
+      "source_cells": "supplementary_tables:ST2!C3:C132",
+      "description": "State-specific rates and interval-specific phase fractions are jointly inferred from whole concentration trajectories. Figure 4's measured-fraction wording does not override the explicit nonlinear-regression derivation.",
+      "constraints": ["0 <= p_m <= 1", "p_m >= p_(m-1)", "p_1 = 0", "p_M = 1", "given initial concentrations", "nonnegative concentrations", "real-valued state fluxes"],
+      "optimizer": "MATLAB Optimization Toolbox fmincon",
+      "evidence": ["paper:PDF page 8, printed page 190, section 4.2", "supplementary_methods:P13-P20, Tables 1-3"]
+    },
+    "uptake_fitting": {
+      "description": "After fitting phase fractions and constant state fluxes, fix fractions and nonnegative fluxes, replace negative uptake fluxes with Michaelis-Menten-type kinetics, and refit vMAX and KM. The kernel consumes separate state Vm arrays and a shared Km array; complete fitted numeric configuration is not supplied.",
+      "evidence": ["supplementary_methods:P20", "public kernel lines 24-26 and 167-176"]
+    },
+    "classifier": {
+      "projection": "linear_discriminant_analysis",
+      "features": ["glucose", "asparagine", "glutamine", "oxygen_partial_pressure", "temperature"],
+      "workbook_metabolite_columns": ["Glucose", "L-Asparagine", "Glutamine"],
+      "missing_workbook_features": ["oxygen_partial_pressure", "temperature"],
+      "growth_selection": "f < 0.2",
+      "production_selection": "f > 0.8",
+      "mixed_selection": "0.2 <= f <= 0.8",
+      "feature_selection": "Depleting metabolites whose concentration differs between inferred states; Results describes at least 50 percent depletion. Oxygen and temperature are additional inputs.",
+      "training": "Fit LDA on growth/production samples only, project all three classes, then fit a logistic curve to the inferred phase fractions.",
+      "transition": "p(w) = 1 / (1 + exp(a*w - b))",
+      "evidence": ["paper:PDF pages 4-5, printed pages 186-187, section 2.3", "paper:PDF pages 8-9, printed pages 190-191, section 4.4"]
+    },
+    "exploratory_pca": {
+      "role": "computed_flux_visualization",
+      "description": "PCA is applied to computed state-specific fluxes standardized using across-condition means and standard deviations. It is not the predictive classifier's projection or evidence of training-fold-only preprocessing.",
+      "evidence": ["supplementary_methods:P27-P36, Table 5 and Figure S1"]
+    },
+    "task_mining": {
+      "description": "Constrain inferred nutrient uptake, maximize each remaining task, select the highest inferred-task-flux/maximum ratio, store its priority and efficiency, and impose the selected inferred task flux as a lower bound. Recompute remaining maxima; do not equality-pin or globally re-sort the resulting conditional efficiencies.",
+      "source_table": "supplementary_tables:ST4!A1:AO13",
+      "evidence": ["paper:PDF page 8, printed page 190, section 4.3", "supplementary_methods:P22, Table 4 rows 1-8"]
+    },
+    "reactor": {
+      "working_volume_l": 1.5,
+      "nominal_duration_days": 13,
+      "perfusion_per_day": 1,
+      "temperature_decrease_day": 8,
+      "absolute_temperature_values_available": false,
+      "retention": "Supplementary Methods specifies zero removal for cell density/size throughout and antibody before day 8; otherwise removal fraction one.",
+      "evidence": ["paper:PDF page 8, printed page 190, section 4.1", "supplementary_methods:P17 and Table 2"]
+    },
+    "source_units_and_normalization": {
+      "ST1": "Coded DOE levels -1, 0, +1, not physical oxygen, amino-acid or glucose concentrations.",
+      "ST2": "Time in days; phase fraction and all 25 process quantities are dimensionless. Measured process quantities are normalized; phase fraction is inferred.",
+      "ST3": "Cell-density/size rates in 1/day; metabolite rates literally mmol/10^6 cells-day; titer rate mg/10^6 cells-day.",
+      "ST4": "Priority ranks and source reaction identifiers. Efficiency has no explicit unit cell; its dimensionless interpretation follows the paper's ratio of matching flux quantities, not an invented workbook unit.",
+      "ST5": "Computed intracellular fluxes in mmol/gDW-d at 166 source times for 4320 reaction rows; no vessel identifier or stoichiometric matrix is supplied in this sheet.",
+      "normalization_constants_available": false,
+      "observed_property": "Each measured ST2 series has maximum one within each vessel. The original normalization constants/formula are not documented by this observed property.",
+      "boundary": "Do not substitute normalized/coded inputs for physical concentrations or transfer per-cell rates to per-gDW yeast rates without a verified conversion."
+    },
+    "training_partition": {
+      "documented_heldout_culture_split": false,
+      "original_training_fold_provenance_verified": false,
+      "description": "The supplied paper, methods and workbook do not specify independent train/validation/test culture assignments. Algorithm test cases in section 2.4 are comparator models, not held-out datasets. Ten vessels cover eight factor combinations; 130 time points are not 130 independent cultures."
+    },
+    "source_reported_performance": {
+      "scope": "Published agreement with process trajectories and reconstructed phase fractions; not independently reverified held-out performance.",
+      "phase_fraction_within_0_1": {"reported_count": 94, "reported_total": 130},
+      "phase_fraction_within_0_2": {"reported_count": 118, "reported_total": 130},
+      "reported_specificity": 0.78,
+      "reported_sensitivity": 0.681,
+      "reported_f1": 0.731,
+      "reported_mcc": 0.454,
+      "evidence": ["paper:PDF page 5, printed page 187, section 2.3"]
+    },
+    "numeric_admission": {
+      "negative_phase_fraction_cells": ["ST2!C83", "ST2!C85"],
+      "negative_normalized_measurement_cells": ["ST2!M32", "ST2!L93", "ST2!M110", "ST2!L132"],
+      "efficiencies_above_one_count": 16,
+      "zero_task_efficiencies": 4,
+      "populated_objective_slots": 168,
+      "missing_paired_objective_slots": 32,
+      "maximum_efficiency": 1.00000000015951,
+      "maximum_efficiency_cell": "ST4!G7",
+      "raw_values_rewritten_or_clipped": false,
+      "boundary": "The original tables contain small floating-point bound excursions. Any future model adapter must declare and test a numerical admission policy; raw values and source cell identities must remain intact."
+    },
+    "reproduction": {
+      "exact_source_model_available": false,
+      "fitted_classifier_coefficients_available": false,
+      "fitted_uptake_kinetics_available": false,
+      "cell_mass_conversion_verified": false,
+      "complete_dfba_data_available": false,
+      "source_discrepancies": [
+        "Paper section 4.5 names Bulirsch-Stoer integration; the supplied kernel compares an Euler step with two half-Euler steps and accepts the latter, without the stated extrapolation scheme.",
+        "Supplementary Methods specifies an antibody retention change on day 8; the supplied eval_reactor has no time argument and does not visibly implement that switch."
+      ],
+      "boundary": "Exact source execution needs the remaining model/configuration/scale data and reconciliation of these source descriptions. No original-paper reproduction, OD-only identification or yeast biological validation is claimed."
+    }
+  },
+  "local_implementation_boundary": {
+    "measured_task_route": "The ranking and lower-bound precedent is now verified against paper section 4.3 and the supplied supplementary algorithm. The local measured-over-maximum route remains a yeast consistency adaptation, not reproduction of the original CHO task table. Glucose, oxygen, biomass, ethanol and CO2 use the single declared van Hoek condition; no failed biomass task is removed.",
+    "state_route": "Explicit state uptake kinetics, optional enzyme capacities and optional explicitly sourced protein budgets; training-only standardized optional PCA and regularized multinomial soft-label fitting; full-flux dry-mass-consistent blending. This is an independently implemented configurable route, not copied fitted COSMIC biology.",
+    "deliberate_differences": [
+      "Model stoichiometry determines exchange sign, split routes and nonunit coefficient conversion.",
+      "Every model reaction is retained in the blended vector rather than only selected extracellular components.",
+      "Cell fractions require explicit state dry mass, whereas the public kernel's conversion constant is not transferred.",
+      "Final FBA or pFBA flux selection is declared; the public kernel's final last-objective minimization is not represented as identical.",
+      "The optional PCA plus multinomial soft-label fit is not the paper's extreme-state LDA followed by logistic fitting. Environmental state distributions are trained only on explicitly partitioned rows and groups; no automatic protein-pool fitting or second post-mixture stress penalty exists.",
+      "Mechanistic, fixed-objective and fixed-transition comparisons use the same small solve interface."
+    ],
+    "biological_validation": false,
+    "demo_data_kind": "synthetic",
+    "independent_measured_yeast_state_labels": "not provided by the audited COSMIC sources"
+  }
+}

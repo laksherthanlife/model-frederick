@@ -1,0 +1,15 @@
+held_out,module,score,n_states,n_train,n_test,selection,baseline,score_method,peers,peers_measured,truth_sd,truth_span
+DTT,UPR,0.5949247680072933,2,58,10,nested leave-stressor-out on outer training only,outer training module mean,1 - SSE / training-mean SSE; negative scores retained,0,2,0.4950515173107407,1.6666666666666665
+DTT,ESR,0.7261390453783749,2,58,10,nested leave-stressor-out on outer training only,outer training module mean,1 - SSE / training-mean SSE; negative scores retained,5,4,0.2692266418216777,0.7908284210526316
+DTT,proteasome,-2.826366019413423,2,58,10,nested leave-stressor-out on outer training only,outer training module mean,1 - SSE / training-mean SSE; negative scores retained,0,1,0.1304640392258839,0.50125
+H2O2,oxidative,0.02793881685634425,1,61,7,nested leave-stressor-out on outer training only,outer training module mean,1 - SSE / training-mean SSE; negative scores retained,1,0,0.10202888664611362,0.3135144949649069
+H2O2,ESR,0.38909095333793275,1,61,7,nested leave-stressor-out on outer training only,outer training module mean,1 - SSE / training-mean SSE; negative scores retained,5,3,0.2539382707304515,0.8100740639269404
+glucose_starvation,ESR,0.6756736016515433,6,51,17,nested leave-stressor-out on outer training only,outer training module mean,1 - SSE / training-mean SSE; negative scores retained,5,3,0.6212594747128972,2.606574144144144
+glucose_starvation,carbon,0.20984209926491537,6,51,17,nested leave-stressor-out on outer training only,outer training module mean,1 - SSE / training-mean SSE; negative scores retained,1,1,0.47587722054534887,2.1227142857142858
+heat,heat,0.5833437421957599,2,51,17,nested leave-stressor-out on outer training only,outer training module mean,1 - SSE / training-mean SSE; negative scores retained,0,3,1.5980058016039504,4.5016686507936505
+heat,ESR,0.9290860314681613,2,51,17,nested leave-stressor-out on outer training only,outer training module mean,1 - SSE / training-mean SSE; negative scores retained,5,3,0.907062625374,2.7044315492957747
+menadione,oxidative,0.7542612121900785,1,59,9,nested leave-stressor-out on outer training only,outer training module mean,1 - SSE / training-mean SSE; negative scores retained,1,1,0.08446100594838678,0.2873817377312953
+menadione,ESR,0.6904231548576564,1,59,9,nested leave-stressor-out on outer training only,outer training module mean,1 - SSE / training-mean SSE; negative scores retained,5,3,0.18214823232548533,0.6151141304347826
+rapamycin,nitrogen,-0.02056906702541572,1,60,8,nested leave-stressor-out on outer training only,outer training module mean,1 - SSE / training-mean SSE; negative scores retained,0,0,0.09332794144196596,0.29949999999999993
+rapamycin,ESR,0.7397693592352064,1,60,8,nested leave-stressor-out on outer training only,outer training module mean,1 - SSE / training-mean SSE; negative scores retained,5,4,0.28342750353873786,0.8228026315789474
+rapamycin,carbon,-0.07119241143132649,1,60,8,nested leave-stressor-out on outer training only,outer training module mean,1 - SSE / training-mean SSE; negative scores retained,1,1,0.10544419874182824,0.32440659340659334

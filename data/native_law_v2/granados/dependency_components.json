@@ -1,0 +1,1182 @@
+{
+  "schema_version": 1,
+  "meaning": "Connected components of documented aliases and exact raw-array equality only; an upper bound on distinct experiments, NOT a claim of independent biological groups.",
+  "unresolved_dependencies": "Primary Methods permit five factor strains in one shared-input microfluidic assay. No day, culture, movie, chamber or absolute acquisition-clock identifiers are exported. Reprocessed/cropped reuse and shared batches remain unresolved.",
+  "source_group_count": 179,
+  "known_alias_component_count": 142,
+  "components": [
+    {
+      "canonical_component_id": "granados2018:e1aa758ca0b51b94f02595cd0f19a1dcc21a9bc08fc3bbfee5d2b5e1b9f2846e",
+      "group_ids": [
+        "0dcc11fc-dcd1-4983-930e-26265b48a0e9:/dot6"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:464af6a5319b567cfa83dcba011d9cefda5011143f1bca0308507d3b7da4ff40",
+      "group_ids": [
+        "0dcc11fc-dcd1-4983-930e-26265b48a0e9:/maf1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:2bf1e3f6800fe33f83d5729654bedfbd117884c3b718fe0027f3819ad906aa11",
+      "group_ids": [
+        "0dcc11fc-dcd1-4983-930e-26265b48a0e9:/mig1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:43ec5cf2421724ed98f8961c42547372a6690c94b1bad1a17c7858137ee7f28b",
+      "group_ids": [
+        "0dcc11fc-dcd1-4983-930e-26265b48a0e9:/sfp1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:b623b4ddfc019a3817411e2f7404e6820036b4a009a3a64b8c0c38d50b842003",
+      "group_ids": [
+        "0dcc11fc-dcd1-4983-930e-26265b48a0e9:/tod6"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:61a7d6c4a83944208f14fcc7f1980a50667e4072b9cf72eaf70dad57e1f8e2df",
+      "group_ids": [
+        "1b38366b-7473-4ddf-9cf9-26e625533686:/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:2493c32046e92ab84149552ce5c8eb69f7fe59357002c4fd0883dee6832d72ff",
+      "group_ids": [
+        "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:65b19872bba7c16c42f84850d66a5db8719a503218d0e5210500099ecc199957",
+      "group_ids": [
+        "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:787a7c2809422c1b4a4d43dc8cac2404687c8322a142073b35356ba8967d73f9",
+      "group_ids": [
+        "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:1866a1303e0f525d73e77973c9c635dd853fb3dce212a70256dcc86ae35922da",
+      "group_ids": [
+        "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:e58fd439b27429b80d8b2dbb9a4b7c1fd5c8b66bcde31746a3d05cbab66dccb8",
+      "group_ids": [
+        "1b38366b-7473-4ddf-9cf9-26e625533686:/rep6",
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/sfp1/gluc",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/gluc/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:83db455b504043fc9e17f3722ec1e05dd40e889e6ff4378a74a908b377eeeaa8",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/dot6/gluc",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/dot6/gluc/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:d55271f90963b683c84c7f39acc12fffdc3d69a02b4ff4466ff208999c76854b",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/dot6/nacl",
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/dot6/nacl_0_4M",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/dot6/nacl/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:f4ea21e318d2c8e6803cc01e4ffe1fe3e39dfacce6fcb2a429c005a66c69828a",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/dot6/oxid",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/dot6/oxid/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:0366c82cccd7b9f3853522d3ac3470ee2e22bdc76cda00bc795c429c754f6181",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/hog1/gluc",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/hog1/gluc/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:6ec966f5193492760f22561fc73e13461cd3228c9d49a066f33a5630a965cffd",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/hog1/nacl",
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/hog1/nacl_0_4M",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/hog1/nacl/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:adbf6f4aa1759f557f2a4eb25be8a14d9e16363bd6859585c163ccc488ac8ac6",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/hog1/oxid",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/hog1/oxid/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:732b7e8ed469f7b04db7baeac95fce56f451465bcd4cdce089ac082012bf9765",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/maf1/gluc",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/maf1/gluc/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:293aede9e1309ca17c2c1da13ae5ebc200d37e05f04d1b0474cacc7c2f75fc90",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/maf1/nacl",
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/maf1/nacl_0_4M",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/maf1/nacl/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:31e8f7c3c993eee36526f96ac3e4b28927f1725f38fe4419956ac9a7a9cc3f32",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/maf1/oxid",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/maf1/oxid/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:ab072e925a8b62b0cefa0799e02d18f7e156950b7bc36c7b2768976eaf0daa22",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/mig1/gluc",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig1/gluc/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:5dc4b9957967bdc90b4898fdeb9c3cecea16e2a764b88f3cc87754441b4cc302",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/mig1/nacl",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig1/nacl/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:9ace5f4449fcfaa83abaf33fd1ce8baa56ca42086114875d47c660c835be373c",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/mig1/oxid",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig1/oxid/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:0c77328880235cf44c94d4b332e14371d710aab62bdda955b88830d1258d19fb",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/mig2/gluc",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig2/gluc/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:4f3754eb04996072d9d5703c76aaafaf4066f33b1c0852e9e9b29bfbf2ac26c3",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/mig2/nacl",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig2/nacl/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:ad4733907e7c64df9788452c6dc2721e3c66f77ee68efabc61143366e9baae62",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/mig2/oxid",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig2/oxid/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:32d9aefb2bfab3d9b5dcd2bac32d178683f65a1ee7ef710ff685170640cb2f5f",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/msn2/gluc",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn2/gluc/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:b818af3f7d7b1decdc5f187c06dd916fcd672fa16e7f16a583a3a923c638a091",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/msn2/nacl",
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/msn2/nacl_0_4M",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn2/nacl/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:71a83556988df27904169320ae580457b564ecda95baae5c04c8db5e73399b67",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/msn2/oxid",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn2/oxid/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:698398021bb1803dacfa19651cd926bbde2e361e6d04a478210c4bd98d0c59c3",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/msn4/gluc",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn4/gluc/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:027b9a80f6aa28ab7edaebc273697fe80c82ba9eb96f9954d1c36ae4b845d732",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/msn4/nacl",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn4/nacl/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:1728182d4cb3f1f811006abad43206f338d4745e12604d3ecc9f8c30d6a9878e",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/msn4/oxid",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn4/oxid/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:c322a2ab81b775f24672e24def1f53eacea2f3f739dd7c7f96af7c73c12c0ea9",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/sfp1/nacl",
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/sfp1/nacl_0_4M",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/nacl/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:f080b2961598c96aaa208128d35bfabe856f00037447134f650662995d7e8843",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/sfp1/oxid",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/oxid/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:044f1104a955b40c77a9c3c14a4569b421b135ef58c9924cc61290745f9fb602",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/tod6/gluc",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/tod6/gluc/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:3361028b25bf467f1eee7457c236a440befa7f78b9e5f737ff2f369fed1f1ef1",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/tod6/nacl",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/tod6/nacl/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:5bd7e410f5ba93b48e5e7ec0e96431e79b9f057ee10b07d08cac9db779c532aa",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/tod6/oxid",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/tod6/oxid/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:0b0a0212e22cd314fd6743acbb556151dd9b31276dee2e57809801d3dd0916dc",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/yap1/gluc",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/yap1/gluc/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:f01c833ecd35d32c3cb48e83c814eb6a083ca371de7aad1640d70d1306eafca3",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/yap1/nacl",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/yap1/nacl/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:a1de14e46c0e6632ed6ad0cc8a58af48435899a830fa11be1644c77d8d2518bc",
+      "group_ids": [
+        "32cf23e6-ff7c-4b41-8304-f60afca3f4a6:/yap1/oxid",
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/yap1/oxid_0_50mM",
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/yap1/oxid/rep1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:1e63671325f38b5af836aba473ed1b72c28a26c75c1a6ade902738865bc110af",
+      "group_ids": [
+        "5546d389-8424-40f3-8620-6be68ca9b16d:/dot6_msn2/gluc"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:627008779d70588cdd72ef714f71f587276cef81a71fca4834de3fe29c4653b0",
+      "group_ids": [
+        "5546d389-8424-40f3-8620-6be68ca9b16d:/dot6_msn2/nacl"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:c17bb1f4dc7c70eecbfeb03317f4143f98f5251b10325bf9680b11a24fd47ca3",
+      "group_ids": [
+        "5546d389-8424-40f3-8620-6be68ca9b16d:/hog1_msn2/gluc"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:ecac71e8d4fb0b6d6617856eddadd97d08c09ab2de5324d10fc5b676e50e6b95",
+      "group_ids": [
+        "5546d389-8424-40f3-8620-6be68ca9b16d:/hog1_msn2/nacl"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:da6ecf03602c7c2dda6594df97457173e1bb0fe9b69f140e55cbb2a28c787454",
+      "group_ids": [
+        "5546d389-8424-40f3-8620-6be68ca9b16d:/mig1_msn2/gluc"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:72bcbd391d05e17b9ad97c2c79cbfbe82078abc48b3753dfbf6fa24064fe7a63",
+      "group_ids": [
+        "5546d389-8424-40f3-8620-6be68ca9b16d:/mig1_msn2/nacl"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:d8713df367beb663859e837bf3089d1ac351187331a488c741896fb77e24b9cb",
+      "group_ids": [
+        "5546d389-8424-40f3-8620-6be68ca9b16d:/yap1_msn2/gluc"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:6bc14c15d3eca99c958e438ca6082647df061fa78187f35759aee7e67cd0ff4e",
+      "group_ids": [
+        "5546d389-8424-40f3-8620-6be68ca9b16d:/yap1_msn2/nacl"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:338ff9e2ff73a1e348e0b1382543853991ddcecd8eeef84709b86d61c31643f3",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/dot6/gluc_0_1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:9503dc6f05b4e26e913064c5db0e19d7dc9d1051c9e24c73b41cb5d0af9271a7",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/dot6/gluc_0_2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:947748d11a3f54933f132c2eaee5f13c36b9d43b24c74b92752ae621308933a0",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/dot6/gluc_0_4"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:282729127dfd745701896c63b56d31d8c74769a0e1d5d0c51cd8d17fc50cac0a",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/dot6/gluc_0_8"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:265b6db054a8c1d379458a4790209da70a464d741fe02f5adf366770ef43ab93",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/maf1/gluc_0_1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:a15a0ab4a025ea8ddbd882caa042bf7e04f8e5b57ac35830b38253daaf6f3eeb",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/maf1/gluc_0_2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:5c8da7fec9aa68c21df38d8583416a4f0c3bcda8e7568dae09eeed37f6b00ff0",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/maf1/gluc_0_4"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:84b0e52247c61948b06825e9f94abd9960b5d72cdd1437150a4febc3180bbe62",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/maf1/gluc_0_8"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:4703c648857147f46696c61eb3b584d4442e91909aa25a6c5af8221cf4d221df",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/mig1/gluc_0_1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:c5bdbb9cfb183c88762dbfb4f21c826e08f783781e9e5289c13d8b45033129d5",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/mig1/gluc_0_2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:40bf1d40950786991f73cb87e2c7c8379b3a6cb8e13900f3ca773cbb11d00833",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/mig1/gluc_0_4"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:c56702280173df5fe1a9cad7cb2fdb04d56b3a1807dd2ef40441272d0ed07031",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/mig1/gluc_0_8"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:4d9d17980abf22b4b6b2e62fd4616f6db2a04caa6769e67652fa4365ba58e0e2",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/msn2/gluc_0_1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:1cca2ec9044069b0ec24a34562f5526d144ae21d60ca61d8dfe47d3fa6c1d035",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/msn2/gluc_0_2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:d43bed5035f8cb5df260b960d674dd417584ebbae8f8d58b9ce5bdd5327fc18b",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/msn2/gluc_0_4"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:bb6d09fa51069dc736b40855bb2ee66d81f0851e81848cbe4e44ba1a6eddd099",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/msn2/gluc_0_8"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:d973164b57a4d72147a71404187ea1d8a4196ca310dc905576f525b4dfbc0045",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/sfp1/gluc_0_1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:83a1b834786df4dc93eef5360c223fc10baabf7e67319145c9558b0023beaede",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/sfp1/gluc_0_2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:f4839d99696397682046f33e05f602c57d3eb593b28be7c6339c23a962552470",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/sfp1/gluc_0_4"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:f0a10d822acdf9a146b6fb0a36fdb81067b8dd3c82e8a31fe4cdacdb898369fb",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/gluc/sfp1/gluc_0_8"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:0b575492eb81df008f422462850eba611aed10a267c54e88a357ebcb84dbf2d6",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/dot6/nacl_0_1M"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:deab262a31006ac2711e24c234f033f701e0fed0e34415c9f2df058868bd47d6",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/dot6/nacl_0_2M"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:665cf034a795cb1ae1b15c6f2c4ec06c1829f9412a8d75b6eaa7eeefefa5c12f",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/dot6/nacl_0_3M"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:bdc5394c79ed6057570e8443706891aeb78c92b1cd215f788627b9715fd4d3a5",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/hog1/nacl_0_1M"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:40d604fab162fe23cafb836ce808544fd33248bd6ecba90ab8aa27e1039981c5",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/hog1/nacl_0_2M"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:7f7abfc02c8ddf3d1698dfffd4a3e51d726f79a3a4ae2e88c9d5184bc28ffeef",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/hog1/nacl_0_3M"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:14720758ae7a6396977c193a8ad4ecdd4cbebc801442a4ee10063bd5a2d485c9",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/maf1/nacl_0_1M"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:dc5a7de9171e90e5d48ea435888c9950f122975cec61661c3d4279af16eeef82",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/maf1/nacl_0_2M"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:0c643aab7706559275b0ebbd2ccc1ecedd8a479e235b2d20df3274b685e85197",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/maf1/nacl_0_3M"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:cc60c7d91b5c70b870450487b522d4cb7a34db1a03d0cff427292b3b26a938a3",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/msn2/nacl_0_1M"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:d548be61c82f6cd1d977977c07f39bb4a790e7f2ab0607597e23e3cde9f14d8c",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/msn2/nacl_0_2M"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:79e2397d2e2feb4b32e20badc8a4f44a3b1fd616ffc36874673d83f1dd2cd1b5",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/msn2/nacl_0_3M"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:4f0adfe1a673bbd141795e7cc5833b4e773c77058ced964d3b73ba4ad92b4b09",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/sfp1/nacl_0_1M"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:66e6eea005a43b0b4ec610c955651448a5a0f9b121d52382e4c3511ffc40e532",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/sfp1/nacl_0_2M"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:bfe6693c0e4d59764e0b18b50918b54f24f94d0a4d36eeb11fc2198f172ad5c2",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/nacl/sfp1/nacl_0_3M"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:c62b600201fb1353d4853c5ac562383321d2188c0f43625a722ace62fca8513a",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/dot6/oxid_0_22mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:d215f594a290064e7f0d1bed5248fa10fb2a172a41c73f649cfab282353d8102",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/dot6/oxid_0_28mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:d824720dc11d03e0eefe684fb9ffeec4b72d9e0c95ed543c527ebb8cd8e358c4",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/dot6/oxid_0_36mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:b751b90b716b0be3cd5d50f0c834923531ebef5b8eeb365d0923ce19e6de0f02",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/dot6/oxid_0_50mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:eab5423f9cde38966c2b8199e07046e84d76566381035173c978ab62902a08d4",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/maf1/oxid_0_22mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:1b6e10ed846a0782ca4d964b5984b210485fc6b9aa0ed5eb91c4a7f2dbe27e3e",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/maf1/oxid_0_28mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:0167e668f206ca89b584193b59b672611bbd1d6bcd43218fdd96f2a0365fbe3c",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/maf1/oxid_0_36mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:c52530201d1da7fb2d42f84f4e4d3ee9fbe1efa89091b9636d1261989d70847c",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/maf1/oxid_0_50mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:0558a219b559681afc5d10df21e9fab8d51567b7d8457bf256d7021375f466d2",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/msn2/oxid_0_22mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:598cf368f5cbc375a7fbb1043289a297afaf7329d698c254d82b6881606f1d33",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/msn2/oxid_0_28mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:5202748dc579862416a2f88f7a6913ba5cd73ec606f301233034a14e5db621d9",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/msn2/oxid_0_36mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:5e0f763f132d765cda3bb3c1e92c113e38306bd48ff3ae0c502ea9f9203d2370",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/msn2/oxid_0_50mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:7c061021d5a5ded636d2834a0dfa5bd8d882fd9e07180306f430bbb7d296bd78",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/sfp1/oxid_0_22mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:bcdc597a4bdb6ce90894fb7fdbf0a2987ec0a2231cf9b42ee55edec16977c770",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/sfp1/oxid_0_28mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:b966d221684c598a855c2f1e6c69f8478c5f318460657e5c3f141cb94b563f73",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/sfp1/oxid_0_36mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:9c168fa5d6e518a28dbb8cb2f33ee0e421e462b640aef7ead95a325b80cc5b4d",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/sfp1/oxid_0_50mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:3e86a5a8edba14f5e5e459ec64bb36e30dffccad928b3d2e60ccaefea2f30b0a",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/yap1/oxid_0_22mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:46ae09951d84e6bbc015be8a80214276db0b6152ca257a4067ef27fef66d810c",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/yap1/oxid_0_28mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:d72fd0075e0be53821f13c20e5f275b7e0fc67ea01d6328e0f97a41dfe3b58ed",
+      "group_ids": [
+        "5b7ea616-fdd5-4978-951e-8cfc3f722eb1:/oxid/yap1/oxid_0_36mM"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:ed3c40fae5b457f8ac657f98f93405adb58b2a58d757d1d10b1b42a24c766455",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/dot6/gluc/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:1c36d36619ce5572022d7448f2b6a95a979c032c7ae2e8ff8a3a53c522b432b0",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/dot6/nacl/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:95a68aa1a60944822adf870fe92006d890615e55d8fc96d7abd5aa1d365b56cf",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/dot6/oxid/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:2b91fef97dcede981cd7cc758c728a8ff08f78aa6d91fb11e20a2a97637e2143",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/hog1/gluc/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:318e3c1148df23b5814d33324666b8d026ee6745eeacaf7d8f156053200c332f",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/hog1/nacl/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:909a1986e6f7b4ea1d471ef4e261496deaf79d2385c0a0bc129da05e1d02c052",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/hog1/oxid/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:c8ea94c7f7ad54a3e29b8a129e6a7e0db83c5647e0d792919da52c31d7c19bc7",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/maf1/gluc/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:0d84f60d51a96f2e98c45dd6305da4d8eb6afcf1f3edd9086d67ff6d3eab1650",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/maf1/nacl/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:03b28ed5dc19eddeb902165eb0b7f0551b92766dd4f9007bedbad92ead382d78",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/maf1/oxid/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:12cd5e550b234500ae3f9a6664a8ef480c2d7948c162cf3f82bdf120063050e3",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig1/gluc/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:8bc2e86d9c37aaba65edee2cba4544a5c5e10192497d80f872f57a5012830050",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig1/nacl/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:66e93e3a57057ae844d2a7f2464d42fde48829016f172062980ad1209234c988",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig1/oxid/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:c8ffe658256c95949a21eaf2b7848364c31337167121478930adbcebc4290b98",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig2/gluc/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:91ae7403e0a380d95b02d3d7f95358d3abc790c34cef5b5c67876fae04a45666",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig2/nacl/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:c858ad743e114302fbaa44af0e194e9a78807e1ded184cdaf50d6fcf5a9c91f8",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/mig2/oxid/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:63eae199e2901bedb0a6074f9c26328b8292ac7e7c7c35f8c5d39fe327a7db94",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn2/gluc/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:e70d3d0d57908b13262e27b47e92de6338ac855c93bc584e221945a0dcf0ccfc",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn2/nacl/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:221f1addbdfc9bcfa3c5d344610f342bd9779e05bf8e1a40ad99e390f480b0f9",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn2/oxid/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:db4fa57855427b952a76c3279920c70649cb96eecab22a576adb897b5234eff6",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn4/gluc/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:48b3feef5dc7435097abe6f16ff7cad40c98dd623708e00071c801d881889029",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn4/nacl/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:95ac7a3dcfac17e1ee2e188011701d3efdc568bdd3fe3115bb7e9dea3a237e79",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/msn4/oxid/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:1675b038d6a39620e061debfa353c1b34c8ea85c82181d14a3250fdc09db95a8",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/gluc/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:5ebcd7eeaa353ca665f353e137d518d647347bd2496eba4c11b957dae9dff680",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/nacl/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:24236266d562f9674b141e22112083c81369cb7636018e63a264f7429b1481cb",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/sfp1/oxid/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:9d1dcb665b94f0d602e8d8c8a30457035db95a0b6b096495fe1a611737d5ec2c",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/tod6/gluc/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:83fc1119b11a60cac5b5f85964cf9e122850d0d2015c41cefaa4ff0b64dcf920",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/tod6/nacl/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:0502db0ae06b33d9a8aa53e24715abdd287a0425ac68675d1a7387e263ee0dc7",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/tod6/oxid/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:3de26fcf78d9db8b05ea23bcdec402217a65301c29c6e51983627b0b41efa706",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/yap1/gluc/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:4e7a8dc049a77b33ad85cc74003a7f7e718d9ee3bd5ca62f9236be7f805e3d5f",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/yap1/nacl/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:44745bc0c16251dc672c6c42a61455a006bd72214d59e8438bb75a9ac4ca7f5c",
+      "group_ids": [
+        "721ef5f2-b858-4257-8cc8-5eea9a8599bb:/yap1/oxid/rep2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:3b17a7f39b28e8457a35eab14db3e264e56fc04449be47fb95fe8ad2f2a3d590",
+      "group_ids": [
+        "f0ff4386-a4a5-40a4-b501-42b3e222e698:/dot6"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:eb2331f2d6462ff2e72a5b82861de3d6a316e92b051d62a6f0d535b4b45fdb27",
+      "group_ids": [
+        "f0ff4386-a4a5-40a4-b501-42b3e222e698:/hog1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:fbaace45eb9b13bb1ac667543e73c5dc3679872efbef1beccd212d3e3e7106e0",
+      "group_ids": [
+        "f0ff4386-a4a5-40a4-b501-42b3e222e698:/maf1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:7a96680736767b54632ccd27a6c0599a6d886874091813dea64ef6cb5e3f0dce",
+      "group_ids": [
+        "f0ff4386-a4a5-40a4-b501-42b3e222e698:/mig1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:18ed9b9f9dc02189f5bd1551b5175dfd48d0c150b75ebe0c48683d49eaaec897",
+      "group_ids": [
+        "f0ff4386-a4a5-40a4-b501-42b3e222e698:/mig2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:dfcf72c17e94fa9e62c09388a1006924fd76f6844246a9b19f3e2a02635706db",
+      "group_ids": [
+        "f0ff4386-a4a5-40a4-b501-42b3e222e698:/msn2"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:1614795d88f5947b1bad8816dda62e28796ff7f111f94b66f0eef9df51862cdd",
+      "group_ids": [
+        "f0ff4386-a4a5-40a4-b501-42b3e222e698:/msn4"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:08106bf33abdb8d0a65cb13c7a41c9307d6d0a0abacad3d34896b21132b2b18b",
+      "group_ids": [
+        "f0ff4386-a4a5-40a4-b501-42b3e222e698:/sfp1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:df78edcfe333d2ed9bc8921d07622569c8a1285d8afa8162b0290ee7d0e94320",
+      "group_ids": [
+        "f0ff4386-a4a5-40a4-b501-42b3e222e698:/tod6"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    },
+    {
+      "canonical_component_id": "granados2018:9b3305a98ffdeb2e2ec7ad2d19488d758981f2608955700c78d4d579617732c8",
+      "group_ids": [
+        "f0ff4386-a4a5-40a4-b501-42b3e222e698:/yap1"
+      ],
+      "disposition": "reserved_unallocated",
+      "independence_verified": false
+    }
+  ]
+}

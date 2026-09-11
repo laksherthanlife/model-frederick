@@ -1,0 +1,113 @@
+{
+  "states": [
+    "off",
+    "on"
+  ],
+  "features": [
+    {
+      "name": "oxygen",
+      "unit": "mmol/L",
+      "role": "environment"
+    },
+    {
+      "name": "growth",
+      "unit": "1/h",
+      "role": "growth"
+    },
+    {
+      "name": "elapsed",
+      "unit": "h",
+      "role": "time"
+    }
+  ],
+  "basis": "cell",
+  "center": [
+    5.0,
+    2.0,
+    12.0
+  ],
+  "scale": [
+    3.5355339059327378,
+    1.0,
+    1.0
+  ],
+  "projection": [
+    [
+      1.0
+    ],
+    [
+      0.0
+    ],
+    [
+      0.0
+    ]
+  ],
+  "coefficients": [
+    [
+      -6.518865344450394e-16,
+      0.0
+    ],
+    [
+      -2.2790174460602763,
+      0.0
+    ]
+  ],
+  "training_minimum": [
+    1.0,
+    2.0,
+    12.0
+  ],
+  "training_maximum": [
+    9.0,
+    2.0,
+    12.0
+  ],
+  "training_ids": [
+    "train-0",
+    "train-1",
+    "train-2",
+    "train-3"
+  ],
+  "training_groups": [
+    "culture-train-0",
+    "culture-train-1",
+    "culture-train-2",
+    "culture-train-3"
+  ],
+  "training_sources": [
+    {
+      "kind": "synthetic",
+      "reference": "run_state_allocation analytic toy",
+      "method": "constructed labels/capacities; no measured biology"
+    },
+    {
+      "kind": "synthetic",
+      "reference": "run_state_allocation analytic toy",
+      "method": "constructed labels/capacities; no measured biology"
+    },
+    {
+      "kind": "synthetic",
+      "reference": "run_state_allocation analytic toy",
+      "method": "constructed labels/capacities; no measured biology"
+    },
+    {
+      "kind": "synthetic",
+      "reference": "run_state_allocation analytic toy",
+      "method": "constructed labels/capacities; no measured biology"
+    }
+  ],
+  "training_digest": "2db9ab8ecc21fe32addda43dece1512457348d3954b5e42ec81f3da1badfa3c1",
+  "organism": "synthetic organism",
+  "strain": "toy strain",
+  "ridge": 0.01,
+  "projection_dimension": 1,
+  "training_loss": 0.29122251982586006,
+  "optimizer_iterations": 7,
+  "method": "training-only standardized optional PCA plus regularized multinomial soft-label log loss",
+  "parameter_selection": "projection dimension and ridge explicitly supplied; no held-out optimization",
+  "biological_validation": false,
+  "label_source_kinds": [
+    "synthetic"
+  ],
+  "claim": "statistical fit to declared labels, not learned cellular causes or objectives"
+}

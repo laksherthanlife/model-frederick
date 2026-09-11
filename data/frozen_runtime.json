@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "kind": "historical_portable_replay_runtime",
+  "code_ref": "84561f51502b5b4bf66c052dc88c853038917934",
+  "manifest": {
+    "path": "data/frozen_evidence/native_v1/manifest.json",
+    "sha256": "eff317f689fe096f6b3df35e050f557b51cd7e51cdb192bb95775eef8ef529ec"
+  },
+  "checkpoint": {
+    "path": "outputs/native_training_run_02/checkpoint.json",
+    "sha256": "384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94",
+    "model_sha256": "97924083113565e1a7db10b07bb735c2819d4fddc69b6a43279d5377195aed79"
+  },
+  "environment": {
+    "python": "3.14.2",
+    "packages": {
+      "cobra": "0.32.1",
+      "numpy": "2.4.1",
+      "pandas": "2.3.3",
+      "python-libsbml": "5.21.1",
+      "scipy": "1.17.0",
+      "xlrd": "2.0.2"
+    }
+  },
+  "replay_entrypoint": "scripts/replay_portable_evidence.py",
+  "replay_support": [
+    {
+      "path": "scripts/replay_portable_evidence.py",
+      "sha256": "53d4b811fac1e1bea1ac7592fe37ef4d78c5662a3c4bdc7be60ba7b965a600e8",
+      "size_bytes": 1597
+    },
+    {
+      "path": "src/ystwin/analysis/portable_evidence.py",
+      "sha256": "e09607689d2b7e560adbe4cfcbce1a8a7026efca547c955b798b1331cecdf69b",
+      "size_bytes": 38316
+    },
+    {
+      "path": "src/ystwin/analysis/portable_replay.py",
+      "sha256": "621d3d6571cdb25df854933315bdbd85d8d2501bfbe74d0e149f9772ebec674d",
+      "size_bytes": 45745
+    }
+  ],
+  "audit_support": [
+    {
+      "path": "data/gem/MANIFEST.md",
+      "sha256": "e00617bc099b4e8e17f5e9f2af989a0fd42e07026bee41fd6d92f522588afad9",
+      "size_bytes": 7230,
+      "role": "audit_provenance"
+    },
+    {
+      "path": "data/validation_candidates/granados2018.json",
+      "sha256": "ab4f7ec815d324f55275028628f0be14f41e5d2ca9590bcc7f75e9ff2fbb4d9a",
+      "size_bytes": 7556,
+      "role": "audit_provenance"
+    },
+    {
+      "path": "outputs/biology_learning_audit_01/diagnostic_plan.json",
+      "sha256": "54d1910984a05cf0e377421788bb0ff2773df923ff5c046865e5b5c46d1e08bf",
+      "size_bytes": 2189,
+      "role": "recorded_diagnostics"
+    },
+    {
+      "path": "outputs/biology_learning_audit_01/native_diagnostics.json",
+      "sha256": "b88d338879fc617b1ebfd82fe88ee9fe6fd0fd9cb927f9db973939b134f19ec8",
+      "size_bytes": 453666,
+      "role": "recorded_diagnostics"
+    },
+    {
+      "path": "outputs/biology_observability_gauge.json",
+      "sha256": "6476da449ba5137342745038f44b68f88ab08725a90cee291c04344660e639fd",
+      "size_bytes": 2577,
+      "role": "audit_provenance"
+    },
+    {
+      "path": "scripts/audit_biology_learning.py",
+      "sha256": "f0f088a68bd7dca0a2749ca8da25eff061434b0c6d02c17b5f666d50b69d7dbb",
+      "size_bytes": 1709,
+      "role": "audited_code"
+    },
+    {
+      "path": "src/ystwin/analysis/biology_learning_audit.py",
+      "sha256": "aefb6953fa2cd9ac50d541b6ed57e5ff6795062ae3da309e1d38fc3b0895e2e5",
+      "size_bytes": 69553,
+      "role": "audit_code"
+    },
+    {
+      "path": "src/ystwin/analysis/in_silico.py",
+      "sha256": "b940a551ef1512efd0fde2032a1003c83707dd4d2c288f48cd978ca684d87289",
+      "size_bytes": 37434,
+      "role": "audited_code"
+    },
+    {
+      "path": "src/ystwin/generator/in_silico.py",
+      "sha256": "d42763cc6ff40774eaaef2f3b830c2df96c3fe2855479a20d17ff2e85bb5b4e1",
+      "size_bytes": 24161,
+      "role": "audited_code"
+    },
+    {
+      "path": "src/ystwin/in_silico.py",
+      "sha256": "d09a43877a2062f4e7154d97c44fa59165ae5134a77822635e9ba1351559fa52",
+      "size_bytes": 11024,
+      "role": "audited_code"
+    },
+    {
+      "path": "tests/test_native_observability.py",
+      "sha256": "7e5e266ad85b1f94da7a9cf8746ee65831768164ac64a20b4a51b9b2d4fb765a",
+      "size_bytes": 3925,
+      "role": "audited_code"
+    }
+  ],
+  "audit_scope": "Historical source-bound public-content audit with optional reuse of recorded diagnostic bytes; original diagnostic code, fitting and private population custody are not reexecuted, and no biological validation grade is upgraded",
+  "scope": "Historical reproduction of public normalized evidence using verified original source and recorded runtime versions; no retraining, restamping, private-original reconstruction or new biological validation"
+}

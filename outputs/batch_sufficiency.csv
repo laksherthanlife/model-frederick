@@ -1,0 +1,5 @@
+growth_rate_per_h,steady_state_mmol_per_gdcw,doubling_time_h,generations_to_10pct,hours_to_10pct,generations_to_5pct,hours_to_5pct,generations_to_1pct,hours_to_1pct
+0.101,0.002160266,6.863,3.74,25.7,4.79,32.9,7.22,49.5
+0.15,0.002061091,4.621,3.86,17.9,4.93,22.8,7.38,34.1
+0.18,0.001994874,3.851,3.92,15.1,4.99,19.2,7.45,28.7
+0.2543,0.001818994,2.726,4.0,10.9,5.06,13.8,7.5,20.4

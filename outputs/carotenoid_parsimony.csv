@@ -1,0 +1,7 @@
+quantity,value,note
+nested F statistic,0.5666,capacity per strain x mu against vmax ~ mu
+nested F p,0.6383,"F(2, 2)"
+rss restricted,0.067167,"vmax ~ mu, 2 params"
+rss full,0.042874,"capacity per strain x mu, 4 params"
+capacity spread across strains,1.1494,max/min of the three fitted per-strain capacities
+pearson log mrna vs log capacity,0.0593,"measured CrtYB transcript against fitted capacity, n = 3"

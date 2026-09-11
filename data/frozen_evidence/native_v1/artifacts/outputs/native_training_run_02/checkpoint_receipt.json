@@ -1,0 +1,13 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/native_training_run_02/checkpoint_receipt.json",
+    "sha256": "26acdc29bacca86a34e900fe9997631e6f76927819f4695418b119290bf7aa4b"
+  },
+  "payload": {
+    "path": "outputs/native_training_run_02/checkpoint.json",
+    "retention_rule": "retain this expected digest separately before introducing any downstream task",
+    "sha256": "384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94"
+  },
+  "schema_version": 1
+}

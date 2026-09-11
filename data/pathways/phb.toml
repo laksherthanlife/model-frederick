@@ -1,0 +1,186 @@
+# Poly-3-hydroxybutyrate (PHB) from cytosolic acetyl-CoA via the Ralstonia eutropha H16
+# phaA/phaB/phaC genes, in S. cerevisiae.
+#
+# Chemistry, strains and states from Kocharin K, Chen Y, Siewers V, Nielsen J. 2012,
+# "Engineering of acetyl-CoA metabolism for the improved production of polyhydroxybutyrate
+# in Saccharomyces cerevisiae", AMB Express 2:52 -- PMID 23009357, PMC3519744,
+# doi 10.1186/2191-0855-2-52. Read as the Europe PMC full-text JATS XML; every number
+# quoted in data/phb/SOURCE_kocharin2012_genotype.md came out of that fetch.
+#
+# WHAT IS NOT DECLARED HERE: any fitted constant. There are none to declare, and that is
+# the point -- this paper measures no expression and no kinetics, so `calibrations.py`
+# gains nothing from it and deliberately gets no PHB entry. A spec is chemistry.
+
+[pathway]
+product = "phb"
+organism = "Saccharomyces cerevisiae"
+
+# phaA is the first committed heterologous step and this is a CHEMISTRY nomination, not a
+# data one. Contrast beta_carotene, where CrtE was chosen because leave-one-strain-out
+# scored it above every alternative. Nothing of that kind is possible here: see the
+# `notes` below -- this paper reports no expression measurement of any gene, and all four
+# of its strains carry the same phaA on the same PGK1 promoter on the same plasmid.
+entry_enzyme = "PhaA"
+
+# Cytosolic acetyl-CoA, yeast-GEM v9.0.2. Verified against the vendored SBML in
+# data/gem/yeast-GEM.xml.gz, not remembered:
+#   <species metaid="s_0373" id="s_0373" name="acetyl-CoA" compartment="c"
+#            fbc:charge="-4" fbc:chemicalFormula="C23H34N7O17P3S">
+# and <compartment id="c" name="cytoplasm">. The cytosolic compartment is the right one:
+# "only the cytoplasmic thiolase participates in PHB biosynthesis" (Introduction).
+precursor_metabolite = "s_0373"
+# Two acetyl-CoA per acetoacetyl-CoA. Verbatim: "The first enzyme of the pathway is
+# acetyl-CoA C-acetyltransferase [EC 2.3.1.9], encoded by phaA, which catalyzes the
+# condensation of two acetyl-CoA molecules to form acetoacetyl-CoA".
+precursor_stoichiometry = 2.0
+
+# THE NET REACTION OF THE WHOLE PHA PATHWAY, per mole of 3-hydroxybutyrate repeat unit, in
+# yeast-GEM v9.0.2 cytosolic ids. Added 2026-09-04 so that `pathway/gem_environment.py`'s
+# `Formulation(precursor_sink_only=False)` has something to compute; until then that flag was
+# declared, labelled and compared on, and never read, so a result labelled "full pathway" was
+# bit-identical to the bare sink.
+#
+# Summed from the three declared steps, each of which is quoted in the [[node]] entries below:
+#   PhaA   2 acetyl-CoA -> acetoacetyl-CoA + CoA
+#   PhaB   acetoacetyl-CoA + NADPH + H+ -> (R)-3-hydroxybutyryl-CoA + NADP+
+#   PhaC   (R)-3-hydroxybutyryl-CoA -> [3HB] + CoA
+#   ----------------------------------------------------------------------------------
+#   net    2 acetyl-CoA + NADPH + H+ -> [3HB] + 2 CoA + NADP+
+#
+# The NADPH is what the bare sink omits and is the whole reason the two formulations differ:
+# "NADPH-dependent acetoacetyl-CoA reductase [EC 1.1.1.36]" (PMID 23009357). Ethanol is the
+# more reduced substrate, so carrying the cost should favour ethanol further -- a direction
+# the module states and a magnitude it must MEASURE rather than assert.
+#
+# Ids verified against the vendored data/gem/yeast-GEM.xml.gz, not remembered: s_0373
+# acetyl-CoA [cytoplasm], s_0529 coenzyme A [cytoplasm], s_1212 NADPH [cytoplasm], s_1207
+# NADP(+) [cytoplasm], s_0794 H+ [cytoplasm]. NADP(+) also exists as s_1210 in the
+# MITOCHONDRION and that is the wrong one; the Introduction is explicit that "only the
+# cytoplasmic thiolase participates in PHB biosynthesis".
+#
+# The product itself is NOT listed. This is the drain the LP maximises, in units of product,
+# so the product's own coefficient is the objective and not a balance term -- exactly as the
+# bare sink omits it. s_0373's -2.0 must equal -precursor_stoichiometry; the spec checks.
+full_pathway_stoichiometry = { s_0373 = -2.0, s_0529 = 2.0, s_1212 = -1.0, s_1207 = 1.0, s_0794 = -1.0 }
+
+source = "PMID 23009357 (Kocharin 2012, AMB Express 2:52, doi 10.1186/2191-0855-2-52) for both the chemistry and the strains"
+notes = """
+THE GENOTYPE AXIS IN THIS PAPER IS A PRECURSOR AXIS, NOT AN ENTRY-ENZYME AXIS, AND THAT IS
+THE MOST IMPORTANT THING ABOUT IT. All four strains -- SCKK005, SCKK006, SCKK009, SCKK010 --
+carry the SAME PHB plasmid pKK01, so relative PhaA expression is 1.0 across the whole panel
+by construction ("Strain SCKK005 was constructed by transforming plasmids pKK01 and pIYC04
+into strain CEN.PK113-11C. Plasmids pKK01 and pIYC08 were co-transformed into strain
+CEN.PK113-11C for the construction of SCKK006."). What differs is the acetyl-CoA supply:
+pIYC08 carries ADH2, ALD6, acsL641P and ERG10; pIYC04 is the empty control. The paper then
+reports PHB specific productivity "16.5 times higher" in SCKK006 than in SCKK005.
+
+Constant entry-enzyme dosage with a 16.5-fold change in product is exactly the case
+`pathway/flux.py` cannot describe: its law is flux = alpha * expression, and here
+expression does not move. So this spec CANNOT be used to fit or to score that law, and no
+PHB entry belongs in `calibrations.py`. Read the other way it is evidence, and it is worth
+stating plainly: for this pathway the flux is set by precursor supply, and entry-enzyme
+dosage is not sufficient. The beta-carotene result does not transfer here unexamined.
+
+BOTH COA-THIOESTER NODES ARE DECLARED passthrough AND THAT IS AN ASSUMPTION, NOT A
+MEASUREMENT -- the same class of assumption as phytoene in beta_carotene.toml, declared
+here so it is greppable rather than implicit. Neither acetoacetyl-CoA nor
+(R)-3-hydroxybutyryl-CoA is quantified anywhere in Kocharin 2012; the paper's only
+intracellular measurement is PHB itself. Acetoacetyl-CoA in particular is a REAL native
+pool in this host -- yeast-GEM v9.0.2 carries it as s_0367 in the cytoplasm, formula
+C25H36N7O18P3S -- so declaring that it holds no pool is a claim about magnitude that
+nothing here checks. `measurable = false` on both records that no number exists.
+
+THE PRODUCT IS A POLYMER AND HAS NO MOLECULAR MASS. Content is therefore expressed per
+3-HYDROXYBUTYRATE REPEAT UNIT, 86.09 g/mol; the polymer itself is (C4H6O2)n (KEGG C06143).
+The paper's own productivity figure is given as "99.3 +/- 4 umole (g DW-1 h-1)" without
+saying a mole of what, and monomer is the reading assumed here. Anyone converting between
+mmol/gDCW and mg/gDCW through this spec is converting on repeat units.
+
+BATCH, NOT CHEMOSTAT. Every state in Kocharin 2012 is a shake flask or a batch bioreactor,
+so d[X]/dt = 0 does not hold: mu changes across the glucose and ethanol phases and PHB is a
+storage polymer that accumulates non-stationarily. The steady-state identity content =
+v_in/mu applies at best during balanced exponential growth on glucose, and data/phb/SOURCE.md
+records which numbers survive that restriction and which do not.
+
+PHB IS REMOVED BY SOMETHING THIS BALANCE DOES NOT HAVE. "the PHB titer in SCKK006 tended to
+decrease after 50 h", even though the Introduction offers "the lack of enzymes for PHB
+depolymerization" as a reason to use yeast. The chain here has exactly two outlets, the
+next step and growth dilution, and a falling titre in a non-growing culture is neither.
+
+NOT SECRETED, and checked rather than assumed. PHB is assayed from the biomass -- "10-20 mg
+of dried cells were weighed and boiled in 1 mL of concentrated sulfuric acid for 60 min" --
+and the string "secret" does not occur anywhere in the full text. So `fate = "diluted"` is
+correct and this spec is inside the scope `PathwaySpec` enforces.
+
+ONE SPEC, TWO DATASETS. `data/phb/` holds states from two different Kocharin papers, written
+by two different contributors: `kocharin2012_*.tsv` is the GENOTYPE axis (this file's source,
+PMID 23009357, four strains, batch) and `kocharin2013_chemostat_states.tsv` is the ENVIRONMENT
+axis (PMID 23514405, eleven chemostat steady states, one genotype). They agree on the mole
+basis without having coordinated on it: that table's `phb_mg_per_gdw / phb_mmol_per_gdcw` is
+86.09 on every row, which is the repeat-unit mass declared below. Checked rather than assumed
+-- feeding its eleven (q, mu) pairs through `solve_pathway` with this spec returns its eleven
+contents to within 4e-6 relative, and `carbon_closes` to 1e-18. See data/phb/SOURCE.md for
+which provenance document covers which files.
+
+ONE MEASURABLE NODE, SO `calibratable` IS FALSE, and that is the right answer rather than a
+defect to work around. With only the product measured, an entry flux and a branch capacity
+trade off along a ridge; the spec says so before anyone fits it anyway.
+"""
+
+# The chain, in order. acetyl-CoA (precursor, not a node) -> acetoacetyl-CoA ->
+# (R)-3-hydroxybutyryl-CoA -> PHB. One mole of acetoacetyl-CoA yields one repeat unit.
+
+[[node]]
+name = "acetoacetyl_coa"
+enzyme = "PhaB"               # "NADPH-dependent acetoacetyl-CoA reductase [EC 1.1.1.36]"
+rate_law = "passthrough"      # see notes: an assumption, and a visible one
+fate = "diluted"
+# THE ONLY STEP IN EITHER SHIPPED SPEC WHOSE ENERGY THE VENDORED TABLES ACTUALLY COVER,
+# which is why the thermodynamic gate has a real verdict to give on this pathway and a
+# coverage gap to report on the other one.
+#
+# s_0367 is cytosolic acetoacetyl-CoA in yeast-GEM v9.0.2 (C25H36N7O18P3S, the -4 anion of
+# the 851.6 g/mol neutral acid recorded above). r_0103 is the CYTOSOLIC thiolase, the
+# chemical analogue of PhaA -- the Introduction of PMID 23009357 is explicit that "only the
+# cytoplasmic thiolase participates in PHB biosynthesis".
+#
+# The stoichiometry is declared as well as the reaction id, deliberately: it lets the gate
+# run with no SBML parse, and where a model IS supplied the gate refuses the pair if the
+# two ever stop describing the same reaction. Written in the direction that MAKES
+# acetoacetyl-CoA, which is the direction yeast-GEM writes r_0103 in and the direction the
+# +15.6 kJ/mol that carries the thiolase lead belongs to. Reversed, it is -15.6 and the
+# lead evaporates -- see thermo_gate._check_direction.
+#   2 acetyl-CoA (s_0373) -> acetoacetyl-CoA (s_0367) + CoA (s_0529)
+metabolite = "s_0367"
+reaction = "r_0103"
+stoichiometry = { s_0373 = -2.0, s_0367 = 1.0, s_0529 = 1.0 }
+# PubChem CID 92153, acetoacetyl-CoA, C25H40N7O18P3S, MolecularWeight 851.6. Fetched from
+# the PUG REST property endpoint. The neutral acid; yeast-GEM's s_0367 is the -4 anion
+# (C25H36N7O18P3S), four protons lighter, which is the cross-check that these are the same
+# species written two ways.
+molar_mass_g_per_mol = 851.6
+measurable = false            # no CoA-thioester number exists in Kocharin 2012
+
+[[node]]
+name = "r3_hydroxybutyryl_coa"
+enzyme = "PhaC"               # "PHA synthase [EC 2.3.1.-] encoded by phaC"
+rate_law = "passthrough"      # see notes: an assumption, and a visible one
+fate = "diluted"
+# PubChem CID 11966146, (R)-3-hydroxybutanoyl-CoA, C25H42N7O18P3S, MolecularWeight 853.6.
+molar_mass_g_per_mol = 853.6
+measurable = false            # no CoA-thioester number exists in Kocharin 2012
+
+[[node]]
+name = "phb"
+enzyme = ""                   # terminal: nothing in this host consumes it (but see notes)
+rate_law = "passthrough"
+fate = "diluted"
+# ONE 3-HYDROXYBUTYRATE REPEAT UNIT, not the polymer, which has no molar mass.
+#   KEGG C06143 "Poly-beta-hydroxybutyrate", FORMULA (C4H6O2)n  -> repeat unit C4H6O2.
+#   PubChem returns MolecularWeight 86.09 for that formula, twice over and independently:
+#   CID 7302 gamma-butyrolactone and CID 4093 methacrylic acid, both C4H6O2. So 86.09 is
+#   read off a source, not computed.
+#   Cross-check by the other route: PubChem CID 441, 3-hydroxybutanoic acid, C4H8O3,
+#   104.10, minus PubChem CID 962, water, 18.015, for the ester bond -> 86.085. Agrees.
+molar_mass_g_per_mol = 86.09
+measurable = true

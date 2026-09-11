@@ -1,0 +1,202 @@
+{
+  "schema_version": "native-biochemical-source-metadata/1.0",
+  "source_id": "hackett2016",
+  "metadata_only": true,
+  "quantitative_target_observations_present": false,
+  "source_selection": "User-nominated primary lead; file and context inspection only, without fitting, scoring, outcome-based filtering or scientific target replacement.",
+  "paper": {
+    "doi": "10.1126/science.aaf2786",
+    "pmid": "27789812",
+    "pmcid": "PMC5414049",
+    "primary_methods_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5414049/",
+    "method_locators": {
+      "culture_matching": "#S10",
+      "boundary_vs_internal_flux": "#S11",
+      "internal_flux_optimization": "#S22",
+      "protein_reference_preparation": "#S24",
+      "peptide_measurement": "#S26",
+      "protein_aggregation_imputation": "#S27",
+      "absolute_metabolite_calibration": "#S29",
+      "metabolite_technical_variance": "#S30"
+    }
+  },
+  "author_repository": {
+    "repository": "shackett/simmer",
+    "url": "https://github.com/shackett/simmer",
+    "commit": "7138a45fb9653ce50d8556676a9fd1cc00bf0395",
+    "commit_date": "2016-09-16T15:38:04Z",
+    "commit_tree_sha": "63ef3937256d030123bcb2aac6c08d73c7a372bb",
+    "default_branch_at_inspection": "master",
+    "primary_authorship_evidence": "DESCRIPTION identifies Sean Hackett as author/creator; README explicitly states this repository contains the scripts and data reproducing Hackett 2016.",
+    "README_sha256": "286a3f3d3adddd2e2e8f619388f3c89e1181e02bdeee379f7c598f4f7d67578c",
+    "DESCRIPTION_sha256": "be7bd3fecfc9cc116d266dcd4f7b2d8c456734c131792f8d2c90ccc4cd42e62b",
+    "license": {
+      "github_license_field": null,
+      "DESCRIPTION_license_verbatim": "What license is it under?",
+      "status": "No reusable-data/software license verified; public retrieval does not establish a redistribution license. No full raw source was persisted or handed to a learner."
+    },
+    "retrieval": "gh api with a 28-second subprocess timeout per request; exact commit, Git blob digest, SHA256 and byte count verified before schema parsing; no package installation and no author analysis code executed.",
+    "schema_inspector": "scripts/export_native_biochemical_data.py --inspect-hackett"
+  },
+  "files": [
+    {
+      "file_id": "hackett2016_protein_abundance",
+      "path_in_repository": "inst/extdata/flux_input_data/proteinAbundance.tsv",
+      "source_url": "https://github.com/shackett/simmer/blob/7138a45fb9653ce50d8556676a9fd1cc00bf0395/inst/extdata/flux_input_data/proteinAbundance.tsv",
+      "format": "UTF-8 tab-separated text",
+      "bytes": 553249,
+      "git_blob_sha": "b951dc2ec4bcf86534c58f6efdc331676b78c406",
+      "sha256": "5227daf2a6358f188ec58b2dbfebadeac27c76d7eef03a0a82e0ad86ac9e3a9d",
+      "source_digest_verified": true,
+      "schema": {
+        "data_rows": 1187,
+        "columns": 26,
+        "header": ["Gene", "c0.05", "c0.11", "c0.16", "c0.22", "c0.30", "L0.05", "L0.11", "L0.16", "L0.22", "L0.30", "n0.05", "n0.11", "n0.16", "n0.22", "n0.30", "p0.05", "p0.11", "p0.16", "p0.22", "p0.30", "u0.05", "u0.11", "u0.16", "u0.22", "u0.30"],
+        "row_width_verification": "Every data row has exactly 26 fields.",
+        "identifier_column": "Gene",
+        "technical_replicate_columns": [],
+        "source_cell_locator": "Commit + file SHA256 + one-based TSV line + exact column header + Gene value. Header occupies line 1. No gene/value rows were exported."
+      },
+      "measurement_semantics": {
+        "class": "Processed relative protein abundance, not absolute active enzyme concentration",
+        "instrument_lineage": "LC-MS peptide isotopologue deconvolution against 15N-labeled reference; technical-replicate aggregation; inverse-variance peptide aggregation to protein; missing proteins can be KNN-imputed.",
+        "reference": "Equal total protein mass mixed with a pooled 15N-labeled reference from two phosphate-limited cultures at nominal dilution 0.05 per hour.",
+        "paper_peptide_unit": "log2(light/heavy integrated ion current)",
+        "TSV_exact_transform": "Not explicitly encoded in the TSV header. Do not assume the TSV is either log2 or exponentiated abundance without an exact export-lineage record.",
+        "imputation_flag_in_schema": false,
+        "imputation_caveat": "The paper reports KNN imputation but this TSV has no observed/imputed mask. It cannot silently be treated as an all-measured table or used with cross-fold KNN imputation.",
+        "active_fraction_known": false,
+        "intrinsic_kcat_from_this_file": false
+      },
+      "learner_allowed": false,
+      "reason": "Mixed conditions; no approved split or direct reaction-rate label; transform/imputation lineage unresolved."
+    },
+    {
+      "file_id": "hackett2016_boundary_inputs",
+      "path_in_repository": "inst/extdata/flux_input_data/boundaryFluxes.Rdata",
+      "source_url": "https://github.com/shackett/simmer/blob/7138a45fb9653ce50d8556676a9fd1cc00bf0395/inst/extdata/flux_input_data/boundaryFluxes.Rdata",
+      "format": "gzip-compressed RDX2 XDR R serialization version 2",
+      "bytes": 70639,
+      "uncompressed_bytes": 125761,
+      "git_blob_sha": "08be5778cc7dd77242bae0535bb436eb199e2522",
+      "sha256": "15e9bd86d5667671f58e911fa77374bf33085b05052f10113cc7c685af8338d1",
+      "source_digest_verified": true,
+      "serialization_fully_consumed": true,
+      "parser_policy": "Passive typed-object parser; numeric vector contents withheld; only authoritative dimension attributes, schema names/classes and predeclared specimen/batch strings exposed. Unsupported structure or trailing bytes refuses parsing.",
+      "schema": {
+        "top_level_objects": ["comp_by_cond", "chemostatInfo", "mediaSummary"],
+        "chemostatInfo": {
+          "r_class": "data.frame",
+          "rows": 25,
+          "columns": 15,
+          "fields": {
+            "ChemostatID": "character",
+            "ChemostatCond": "character",
+            "Sheet": "character",
+            "Limitation": "character",
+            "DRgoal": "double",
+            "composition_data": "character",
+            "NMR_name": "character",
+            "NMR_date": "character",
+            "include_this": "logical",
+            "actualDR": "double",
+            "VolFrac_mean": "double",
+            "VolFrac_SE": "double",
+            "medcellVol": "double",
+            "DWperML": "double",
+            "DWperCell": "double"
+          }
+        },
+        "mediaSummary": {
+          "r_class": ["data.table", "data.frame"],
+          "rows": 225,
+          "columns": 8,
+          "fields": {"condition": "character", "specie": "character", "change": "double", "sd": "double", "lb": "double", "ub": "double", "type": "character", "density": "double"},
+          "technical_sample_id_column": null,
+          "interpretation": "Aggregated boundary concentration changes/uncertainties/bounds, not raw NMR spectra and not yet the rate after multiplication by dilution rate.",
+          "molecular_units": "No unit attribute verified in the serialized schema. Require the primary calibration/export lineage to resolve molarity scale before any mmol/gDW/h adapter."
+        },
+        "comp_by_cond": {
+          "r_class": "list",
+          "fields": {
+            "grams_per_cell": {"type": "double_matrix", "dim": [58, 25]},
+            "moles_per_cell": {"type": "double_matrix", "dim": [61, 25]},
+            "CV_table": {"type": "data.table/data.frame", "columns": 30},
+            "intacellularMolarity": {"type": "double_matrix", "dim": [61, 25], "note": "Misspelling retained exactly from source."},
+            "anabolicFlux": {"type": "double_matrix", "dim": [61, 25]},
+            "cultureMolarity": {"type": "double_matrix", "dim": [61, 25]},
+            "compositionFile": {"type": "data.frame", "rows": 61, "fields": ["MetName", "StoiCoef", "AltName", "Class", "Abbreviated", "Polymerization_Cost", "MW", "weightPerUn", "index", "varCategory", "FluxType"]},
+            "biomassExtensionE": {"type": "data.frame", "rows": 61, "fields": ["name", "ADP [cytoplasm]", "AMP [cytoplasm]", "ATP [cytoplasm]", "GDP [cytoplasm]", "GTP [cytoplasm]", "H+ [cytoplasm]", "H2O [cytoplasm]", "phosphate [cytoplasm]"]}
+          },
+          "lineage_caveat": "Biomass composition, molecular conversions and stoichiometric/energetic biomass demands are mixed in this object. Names such as anabolicFlux and compartment annotations do not certify a measured reaction flux or a compartment-specific metabolite measurement."
+        },
+        "source_cell_locator": "Commit + file SHA256 + R object path + one-based row/column + exact condition/species field. Matrix row/column names and derivation inputs must be verified for any later projection."
+      },
+      "learner_allowed": false,
+      "reason": "Mixed conditions, experimental summaries and model-related biomass inputs. No full RData handoff; no direct intracellular rate label."
+    }
+  ],
+  "condition_identity_inventory": {
+    "source_object": "boundaryFluxes.Rdata::chemostatInfo",
+    "fields_shown_are_metadata_not_measurements": true,
+    "common_for_source_rows_1_to_24": {"Sheet": "releventDR.csv", "NMR_date": "2013_04_27", "composition_data": "same string as ChemostatID", "NMR_name": "same string as ChemostatCond"},
+    "row_fields": ["source_row_1based", "ChemostatID", "ChemostatCond", "Limitation"],
+    "rows": [
+      [1, "p0.05", "P0.05", "P"],
+      [2, "p0.11", "P0.11", "P"],
+      [3, "p0.16", "P0.16", "P"],
+      [4, "p0.22", "P0.22", "P"],
+      [5, "p0.30", "P0.30", "P"],
+      [6, "c0.05", "C0.05", "C"],
+      [7, "c0.11", "C0.11", "C"],
+      [8, "c0.16", "C0.16", "C"],
+      [9, "c0.22", "C0.22", "C"],
+      [10, "c0.30", "C0.30", "C"],
+      [11, "n0.05", "N0.05", "N"],
+      [12, "n0.11", "N0.11", "N"],
+      [13, "n0.16", "N0.16", "N"],
+      [14, "n0.22", "N0.22", "N"],
+      [15, "n0.30", "N0.30", "N"],
+      [16, "L0.05", "L0.05", "L"],
+      [17, "L0.11", "L0.11", "L"],
+      [18, "L0.16", "L0.16", "L"],
+      [19, "L0.22", "L0.22", "L"],
+      [20, "L0.30", "L0.30", "L"],
+      [21, "u0.05", "U0.05", "U"],
+      [22, "u0.11", "U0.11", "U"],
+      [23, "u0.16", "U0.16", "U"],
+      [24, "u0.22", "U0.22", "U"],
+      [25, "u0.30_10.28", "U0.30", "U"]
+    ],
+    "source_row_25_metadata": {"Sheet": "followup_chemostats.txt", "NMR_date": "2013_12", "composition_data": "u0.30", "NMR_name": "U0.30"},
+    "limitation_meanings": {"C": "glucose carbon limitation", "N": "ammonium nitrogen limitation", "P": "phosphate phosphorus limitation", "L": "leucine limitation in leucine auxotroph", "U": "uracil limitation in uracil auxotroph"},
+    "join_warning": "Preserve case and the follow-up identifier; a nominal condition match is not proof of the same biological sample. In particular, do not replace u0.30_10.28 with a protein/Boer sample merely by stripping its suffix.",
+    "batch_dependency_warning": "The source records one shared NMR_date for 24 rows and a follow-up date for row 25. Apply the verifier's day/batch dependency rule before counting independent groups. Shared protein-reference cultures and metabolomics reference samples must also enter the ancestry graph.",
+    "split_assignment": {"train": [], "development": [], "reserved_final": [], "reserved_support": []}
+  },
+  "verified_derivation_code": {
+    "path_in_repository": "R/QP_FBA_functions.R",
+    "commit": "7138a45fb9653ce50d8556676a9fd1cc00bf0395",
+    "sha256": "731bdcc39b482092de999b29e3ba94f0ba89e196a96a11dba22935481756f924",
+    "facts": [
+      {"lines": "106-107", "fact": "Loads the protein TSV and uses Gene as the row identifier."},
+      {"lines": "270-277", "fact": "Loads medium formulation and the boundary RData; the latter supplies actual culture dilution metadata."},
+      {"lines": "286-294", "fact": "Selects mediaSummary by ChemostatCond; adds missing nutrient bounds; multiplies concentration change, sd and bounds by actualDR to construct exchange-rate inputs."},
+      {"lines": "296-299", "fact": "Removes measured phosphate change/uncertainty from the optimization input. A model-ready input is not identical to the measured boundary table."},
+      {"lines": "301-321", "fact": "Adds an approximated oxygen uptake based on other boundary variables and respiratory-quotient assumptions. This oxygen constraint is not an independently measured exchange flux."},
+      {"lines": "330-343", "fact": "Converts cultureMolarity to biomass demands and adds stoichiometric energetic costs. These are explicitly derived biomass/model inputs, not measured enzyme initial rates."}
+    ],
+    "analysis_code_executed": false
+  },
+  "eligibility_under_current_protocol": {
+    "protocol_id": "native-law-v2-preregistered-01",
+    "candidate_id": "hackett2016_cdc19_flux_response",
+    "decision": "ineligible_for_measurement_export_or_fitting",
+    "decision_basis": "Metadata and primary methods only, not response values or model performance.",
+    "fatal_label_mismatch": "The stated pyruvate-kinase intracellular flux is an optimized YEASTNET-7/FVA quantity. It is prohibited by claim_domain.json's only-teacher/FBA-label criterion and by the custodian instruction.",
+    "additional_unresolved_gates": ["Metabolomics originates in prior Boer cultures, not the proteomics/fluxomics biological culture", "No raw independent activity-label table, preparation identities or six independent matched support groups verified", "Cross-culture, follow-up and batch/reference dependencies not resolved", "Protein imputation mask and TSV transform unresolved", "Exact molecular exchange units and source-to-canonical conversion not verified", "Externally anchored registration and approved whole-experiment export declaration absent"],
+    "authorized_exports": [],
+    "not_a_scored_failure": true,
+    "new_target_policy": "Boundary exchange or a purified/extract activity target requires a different explicit protocol and metadata-only eligibility assessment before any values are exported. No silent substitution."
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring/scoring_summary.json",
+    "sha256": "3b2093a057f5a6819c93138fc22c7b973a4235410f99b916e74acfaa434dd7ca"
+  },
+  "payload": {
+    "H_train": 1.9510223214601747,
+    "S_train": 0.21037428181983453,
+    "adapter_code": [
+      {
+        "bytes": 33054,
+        "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring/adapter_code/native_population_scoring.py",
+        "role": "execution_code",
+        "sha256": "3540a9451c8bc96b3a322934364bb8dd82669734e9b54b8b9becd2e842aa0f80"
+      },
+      {
+        "bytes": 2293,
+        "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring/adapter_code/score_native_population_development.py",
+        "role": "execution_code",
+        "sha256": "6e4999cbf7c7153a91609a07f6da00d6757d92a1300ca7e505d1da3d018869c2"
+      },
+      {
+        "bytes": 8389,
+        "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring/adapter_code/test_native_population_scoring.py",
+        "role": "execution_code",
+        "sha256": "f31f7605a2e2e650264b9ad6fad44003c7613b9fe6f91f13a4dd35d79bd3e65b"
+      }
+    ],
+    "adapter_version": "native_population_phase_c_scoring_v1",
+    "aggregation_audit": {
+      "bytes": 47455,
+      "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring/response_aggregation_audit.json",
+      "role": "development_report",
+      "sha256": "41bc5797cc1dbe69796bed6e1aa27be88f9b776f15d83d9c1219e91e897fafb0"
+    },
+    "evaluated_frame_rows": 288,
+    "final_test_defined": false,
+    "limitations": [
+      "scientific_scope=retrospective_source_cohort_development",
+      "The original strong candidates remain ineligible; this protocol never authorizes biological readiness and defines no final test.",
+      "All groups have one reported Sfp1/context/glucose schedule. No dose response, causal glucose effect, universal mechanism or intrinsic kinetic parameter is identified.",
+      "The historical published cohort and processing may depend on future observations; this is not a certified prospective forecast from untouched acquisitions.",
+      "Targets are means of individual raw max5/median ratios among the fixed prefix cohort observed at each frame, not individual trajectories, ratios of mean intensities or phosphorylation fractions.",
+      "Finite-cell sampling, within-movie dependence, measurement/calibration error, day/strain effects, attrition and inherited processing-selection bias are distinct; unmeasured components remain unresolved.",
+      "Cell sample SD is descriptive, not a biological confidence interval or SD/sqrt(cell count) uncertainty estimate.",
+      "Local digests and accountable operational custody are not external registration, encryption, adversarial isolation or a scientific authorization.",
+      "This scorer/admission adapter was created after prediction sealing and response availability as an operational integration fix; it is not a preregistered new biological analysis."
+    ],
+    "models": {
+      "first_order_response": {
+        "complete": true,
+        "groups": {
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4": {
+            "complete": true,
+            "mae": 0.08959735949544877,
+            "mean_mse": 0.01314971192020615,
+            "rmse": 0.11467219331732585
+          },
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5": {
+            "complete": true,
+            "mae": 0.07867816054300843,
+            "mean_mse": 0.007937198203268868,
+            "rmse": 0.08909095466582939
+          }
+        },
+        "mae": 0.0841377600192286,
+        "mean_mse": 0.01054345506173751,
+        "rmse": 0.10268132771705628,
+        "scaled_mae": 0.399943183603044,
+        "scaled_rmse": 0.48808878551510887
+      },
+      "prefix_affine_time": {
+        "complete": true,
+        "groups": {
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4": {
+            "complete": true,
+            "mae": 0.11978770535609627,
+            "mean_mse": 0.018372289869146363,
+            "rmse": 0.13554442028038766
+          },
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5": {
+            "complete": true,
+            "mae": 0.07790442210839423,
+            "mean_mse": 0.00930421798906156,
+            "rmse": 0.09645837438533557
+          }
+        },
+        "mae": 0.09884606373224525,
+        "mean_mse": 0.013838253929103962,
+        "rmse": 0.11763610810080365,
+        "scaled_mae": 0.4698581161023164,
+        "scaled_rmse": 0.5591753282920188
+      },
+      "prefix_offset": {
+        "complete": true,
+        "groups": {
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4": {
+            "complete": true,
+            "mae": 0.1096976120641922,
+            "mean_mse": 0.017458252122337797,
+            "rmse": 0.13212967918805296
+          },
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5": {
+            "complete": true,
+            "mae": 0.086132020426557,
+            "mean_mse": 0.009476006879657,
+            "rmse": 0.09734478352565688
+          }
+        },
+        "mae": 0.0979148162453746,
+        "mean_mse": 0.013467129500997398,
+        "rmse": 0.11604796207171153,
+        "scaled_mae": 0.4654314938041204,
+        "scaled_rmse": 0.551626182952798
+      },
+      "prefix_persistence": {
+        "complete": true,
+        "groups": {
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4": {
+            "complete": true,
+            "mae": 0.26788353540817145,
+            "mean_mse": 0.0843371232609998,
+            "rmse": 0.29040854543384187
+          },
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5": {
+            "complete": true,
+            "mae": 0.15956611413367014,
+            "mean_mse": 0.033459642913473545,
+            "rmse": 0.18291977179483235
+          }
+        },
+        "mae": 0.2137248247709208,
+        "mean_mse": 0.058898383087236675,
+        "rmse": 0.2426898907808825,
+        "scaled_mae": 1.0159265805786835,
+        "scaled_rmse": 1.153610073824153
+      },
+      "training_constant": {
+        "complete": true,
+        "groups": {
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4": {
+            "complete": true,
+            "mae": 0.1019351684630534,
+            "mean_mse": 0.016099069493462192,
+            "rmse": 0.1268821086420863
+          },
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5": {
+            "complete": true,
+            "mae": 0.08748806963347626,
+            "mean_mse": 0.01198306341456927,
+            "rmse": 0.10946717962279502
+          }
+        },
+        "mae": 0.09471161904826483,
+        "mean_mse": 0.014041066454015731,
+        "rmse": 0.1184950060298565,
+        "scaled_mae": 0.4502053113572898,
+        "scaled_rmse": 0.5632580418329659
+      },
+      "transient_response": {
+        "complete": true,
+        "groups": {
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4": {
+            "complete": true,
+            "mae": 0.08565737569596388,
+            "mean_mse": 0.008929884888012727,
+            "rmse": 0.09449806817079769
+          },
+          "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5": {
+            "complete": true,
+            "mae": 0.05138145221466084,
+            "mean_mse": 0.004617592400514519,
+            "rmse": 0.06795286896455895
+          }
+        },
+        "mae": 0.06851941395531236,
+        "mean_mse": 0.006773738644263623,
+        "rmse": 0.08230272561867938,
+        "scaled_mae": 0.32570242599327176,
+        "scaled_rmse": 0.39122047099447166
+      }
+    },
+    "nonnegative_output_map_bindings": {
+      "first_order_response": {
+        "development": 0,
+        "training": 0
+      },
+      "prefix_affine_time": {
+        "development": 0,
+        "training": 0
+      },
+      "prefix_offset": {
+        "development": 0,
+        "training": 0
+      },
+      "prefix_persistence": {
+        "development": 0,
+        "training": 0
+      },
+      "training_constant": {
+        "development": 0,
+        "training": 0
+      },
+      "transient_response": {
+        "development": 0,
+        "training": 0
+      }
+    },
+    "parameter_bound_warnings": {
+      "transient_response": {
+        "A": "lower"
+      }
+    },
+    "phase_c_manifest": {
+      "bytes": 8574,
+      "path": "data/native_law_v2/granados/development/phase_c_01/release_manifest.json",
+      "role": "operational_event_log",
+      "sha256": "0e2d18b1d239f33fd21165219c512b52546635b733ec47d67c85f726a919ec82"
+    },
+    "prediction_count": 288,
+    "prediction_freeze": {
+      "bytes": 124917,
+      "path": "outputs/native_population_development/native_training_01/development_prediction_freeze.json",
+      "role": "development_predictions",
+      "sha256": "e03f6b9407b29e7e76da7a0be566ce9036c5cf27ac65bfaa9a4d3d7e009b5753"
+    },
+    "report": {
+      "bytes": 128937,
+      "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring/development_report.json",
+      "role": "development_report",
+      "sha256": "a98fd9b755c0e8a21c43c05a07b96f76b7c780e25c3686901fedbb6924db72ef"
+    },
+    "response_projection": {
+      "bytes": 3520217,
+      "path": "data/native_law_v2/granados/development_exports/granados-sfp1-published-cohort-development-01/development_responses.json",
+      "role": "development_responses",
+      "sha256": "9090f1e8ced8094f4ed445f5285bf5f85a7c457b07c34c28e9fa0cb0e0ea6178"
+    },
+    "scientific_scope": "retrospective_source_cohort_development",
+    "scoring_access_intent": {
+      "bytes": 17729,
+      "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring/scoring_access_intent.json",
+      "role": "operational_event_log",
+      "sha256": "61118d9ddc8ee81b61f9eb12f3400e3e0bc78ed838a36399448a6880324bd152"
+    },
+    "selected_development_model": "transient_response",
+    "status": "complete_development_diagnostics",
+    "strong_claim_authorized": false,
+    "warnings": {
+      "bytes": 768,
+      "path": "outputs/native_population_development/native_training_01_phase_c_01_scoring/retained_training_domain_warnings.json",
+      "role": "development_report",
+      "sha256": "b375f6f07b51f48917d95407fc4d97c879960d4072f7872c3c4b3b3084eb46d0"
+    }
+  },
+  "schema_version": 1
+}

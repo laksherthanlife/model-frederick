@@ -1,0 +1,6 @@
+law,free_parameters,loo_median_fold_error,loo_worst_fold_error,loco_median_fold_error,loco_worst_fold_error,b_z,b_mu_z,sign_flip_growth_rate_per_h,n_states,n_carbon_sources,permutation_p,permutation_floor
+content constant,1,1.6452,2.5281,1.768,2.5667,,,,11,3,1.0,0.1667
+mu only,2,1.5052,4.0985,1.7237,4.4928,,,,11,3,1.0,0.1667
+z only,2,1.3438,2.5825,1.3439,2.3235,0.7212,,,11,3,0.1667,0.1667
+mu + z,3,1.4407,3.3005,1.4748,5.4435,0.6462,,,11,3,0.6667,0.1667
+mu + z + mu*z,4,1.3201,2.5481,1.4564,5.6051,-2.2021,-1.2502,0.1718,11,3,0.5,0.1667

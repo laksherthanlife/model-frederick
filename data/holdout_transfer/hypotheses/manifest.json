@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "manifest_kind": "pre_registered_redox_hypothesis_set",
+  "source": {
+    "authority": "User-authorized UNVERIFIED redox hypotheses; identity and precursor references do not establish fungal redox coupling",
+    "source_id": "holdout-transfer:user-authorized-redox-hypotheses:manifest:v1",
+    "reference": "Explicit user instruction to preserve the strict blocker and register NAD reduction, oxygen-to-peroxide, and net oxygen-to-water alternatives without outcome-based selection",
+    "scope": "evaluation_task"
+  },
+  "assumption_status": "unverified_user_authorized_hypotheses",
+  "user_authorized_hypothesis": true,
+  "biological_validation": false,
+  "strict_verified_chemistry": {
+    "path": "data/holdout_transfer/chemistry_evidence.json",
+    "sha256_before": "bb9ff21723f73bd94d6ec8e602d8ba8ef0c396a2627b35886e796461ac88a518",
+    "required_status": "blocked_no_installable_task",
+    "modified": false,
+    "replaced_or_unblocked_by_this_manifest": false,
+    "integrity_check": "passed_unchanged_and_still_blocked"
+  },
+  "frozen_inputs": {
+    "training_freeze_identity_as_supplied": "SHA384175e19b2451f542ab08e347ee9d9021e22772fbc205e0c404bbc28416ec94",
+    "freeze_identity_handling": "Recorded verbatim, without inferring a hash algorithm or opening, recalculating, or modifying a checkpoint.",
+    "native_host_path": "data/gem/ecYeastGEM_batch.xml.gz",
+    "native_host_sha256": "63d0f76e88586fcee25e9e67f9dae558e7b308172c837d44a0d055510b287ef3",
+    "interface_path": "src/ystwin/fba/chemical_task.py",
+    "interface_sha256": "0a3c792022f4d95fa4622adbb396c3975238c7ea93595b0c20f40a543197649c"
+  },
+  "registration": {
+    "status": "registered_before_predictions",
+    "declared_variant_count": 3,
+    "declared_variants_in_order": ["nad", "oxygen_peroxide", "oxygen_water"],
+    "comparison_set_frozen": true,
+    "all_three_registered_before_predictions": true,
+    "predictions_performed_by_this_curation": false,
+    "target_outcome_values_read": false,
+    "target_test_scores_read": false,
+    "outcome_based_variant_selection": false,
+    "preferred_variant": null,
+    "selection_policy": "Neither lower predictions nor better test scores will choose the true chemistry. These alternatives remain unverified unless independent biochemical evidence resolves their mechanisms.",
+    "blocked_variant_policy": "Retain all three registrations. If a variant cannot balance or install without an unknown added reaction, mark it BLOCKED here rather than guess, silently drop it, or emit a partial invalid task.",
+    "installation_policy": "Install each alternative separately on a fresh copy of the same native host. Do not combine their alternative redox reactions into one model."
+  },
+  "task_schema_policy": {
+    "top_level_keys": ["schema_version", "source", "task"],
+    "source_keys": ["authority", "source_id", "reference", "scope"],
+    "assumption_metadata_binding": "Machine-readable assumption_status and user_authorized_hypothesis are recorded here and for each uniquely identified variant. Each task retains the frozen schema and states UNVERIFIED user authorization in source.authority, source.reference, and the redox ReactionDefinition.source."
+  },
+  "shared_modeling_scope": {
+    "prediction_scope": "relaxed_intermediate_accumulation_capacity_upper_bound_hypothesis",
+    "terminal_producer_reconstruction": false,
+    "actual_content_prediction": false,
+    "construct": "Phaffia rhodozyma (Xanthophyllomyces dendrorhous) CrtE/CrtYB/CrtI expressed in S. cerevisiae; independently documented in the unchanged strict evidence file.",
+    "heterologous_CrtE_included": true,
+    "CrtYB_phytoene_synthase_activity_included": true,
+    "CrtYB_downstream_cyclase_consumption_included": false,
+    "common_downstream_relaxation": "CrtYB is bifunctional and its lycopene-cyclase branch remains unparameterized. Downstream consumption is omitted identically from all three alternatives. This is an explicit relaxation for intermediate capacity, not evidence that these strains are terminal lycopene producers.",
+    "cyclase_flux_floor_supplied": false,
+    "cyclase_partition_constant_supplied": false,
+    "enzyme_definitions": [],
+    "protein_pool_metabolite_id": null,
+    "heterologous_kcat_or_abundance_supplied": false,
+    "gene_copy_to_activity_scaling_supplied": false,
+    "native_BTS1_note": "Native r_0373No1 already makes cytosolic GGPP. A separate heterologous CrtE is justified by the constructs; without heterologous enzyme constraints it relaxes the native BTS1 enzyme limitation. No kinetic parameter is inferred from gene copies.",
+    "localization_assumption": "Cytosolic aggregation of the heterologous pathway and access to the specified cytosolic cofactors are common modeling assumptions, not experimentally established localization or electron-transfer coupling.",
+    "thermodynamic_assumption": "All task reactions are forward-only under the frozen interface. No Gibbs energies, substrate activities, redox ratios, or in vivo directionality were established.",
+    "cost_policy": "Native upstream carbon, ATP and reducing-equivalent stoichiometry is retained. Redox costs are explicit in each alternative. No free carbon, naked flux floor, cofactor source exchange, quinone transport, or newly invented detoxification shortcut is added.",
+    "boundary_policy": "The interface adds its standard output demand. It is not a transport/secretion mechanism or an observation of intracellular content.",
+    "common_new_ids": ["task_intermediate_c", "task_output_c", "task_extension", "task_condensation", "task_desaturation"]
+  },
+  "native_participants": [
+    {"id": "s_0190[c]", "identity": "(2E,6E)-farnesyl diphosphate", "annotation": {"metanetx.chemical": "MNXM34"}, "formula": "C15H25O7P2", "compartment": "c", "sbml_charge": null, "cobra_charge": 0, "independent_formal_charge": -3, "chebi": "CHEBI:175763"},
+    {"id": "s_0943[c]", "identity": "isopentenyl diphosphate", "annotation": {"metanetx.chemical": "MNXM83"}, "formula": "C5H9O7P2", "compartment": "c", "sbml_charge": null, "cobra_charge": 0, "independent_formal_charge": -3, "chebi": "CHEBI:128769"},
+    {"id": "s_0189[c]", "identity": "geranylgeranyl diphosphate pool", "annotation": {"metanetx.chemical": "MNXM139"}, "formula": "C20H33O7P2", "compartment": "c", "sbml_charge": null, "cobra_charge": 0, "independent_formal_charge": -3, "chebi": "CHEBI:57533"},
+    {"id": "s_0633[c]", "identity": "diphosphate(3-)", "annotation": {"metanetx.chemical": "MNXM11"}, "formula": "HO7P2", "compartment": "c", "sbml_charge": null, "cobra_charge": 0, "independent_formal_charge": -3, "chebi": "CHEBI:33019"},
+    {"id": "s_1198[c]", "identity": "oxidized NAD, conventional NAD(+) label but global charge -1 at this protonation state", "annotation": {"metanetx.chemical": "MNXM8"}, "formula": "C21H26N7O14P2", "compartment": "c", "sbml_charge": null, "cobra_charge": 0, "independent_formal_charge": -1, "chebi": "CHEBI:57540"},
+    {"id": "s_1203[c]", "identity": "NADH(2-)", "annotation": {"metanetx.chemical": "MNXM10"}, "formula": "C21H27N7O14P2", "compartment": "c", "sbml_charge": null, "cobra_charge": 0, "independent_formal_charge": -2, "chebi": "CHEBI:57945"},
+    {"id": "s_0794[c]", "identity": "proton", "annotation": {"metanetx.chemical": "MNXM1"}, "formula": "H", "compartment": "c", "sbml_charge": null, "cobra_charge": 0, "independent_formal_charge": 1, "chebi": "CHEBI:15378"},
+    {"id": "s_1275[c]", "identity": "dioxygen", "annotation": {"metanetx.chemical": "MNXM4"}, "formula": "O2", "compartment": "c", "sbml_charge": null, "cobra_charge": 0, "independent_formal_charge": 0, "chebi": "CHEBI:15379"},
+    {"id": "s_0837[c]", "identity": "hydrogen peroxide", "annotation": {"metanetx.chemical": "MNXM22"}, "formula": "H2O2", "compartment": "c", "sbml_charge": null, "cobra_charge": 0, "independent_formal_charge": 0, "chebi": "CHEBI:16240"},
+    {"id": "s_0803[c]", "identity": "water", "annotation": {"metanetx.chemical": "MNXM2"}, "formula": "H2O", "compartment": "c", "sbml_charge": null, "cobra_charge": 0, "independent_formal_charge": 0, "chebi": "CHEBI:15377"}
+  ],
+  "new_metabolite_identities": [
+    {"id": "task_intermediate_c", "identity": "15-cis-phytoene", "formula": "C40H64", "charge": 0, "compartment": "c", "chebi": "CHEBI:27787"},
+    {"id": "task_output_c", "identity": "all-trans-lycopene", "formula": "C40H56", "charge": 0, "compartment": "c", "chebi": "CHEBI:15948"}
+  ],
+  "common_precursor_reactions": [
+    {
+      "id": "task_extension",
+      "stoichiometry": [["s_0190[c]", -1], ["s_0943[c]", -1], ["s_0189[c]", 1], ["s_0633[c]", 1]],
+      "reaction_class_evidence": "IUBMB EC 2.5.1.29; native BTS1/Q12051 reaction; independently verified heterologous CrtE constructs in unchanged strict evidence.",
+      "atom_totals_each_side": {"C": 20, "H": 34, "O": 14, "P": 4},
+      "independent_formal_charge_each_side": -6
+    },
+    {
+      "id": "task_condensation",
+      "stoichiometry": [["s_0189[c]", -2], ["task_intermediate_c", 1], ["s_0633[c]", 2]],
+      "reaction_class_evidence": "IUBMB EC 2.5.1.32; reviewed fungal CrtYB Q7Z859 / RHEA:34475 with experimental provenance PMID:10589832; construct identity in unchanged strict evidence.",
+      "atom_totals_each_side": {"C": 40, "H": 66, "O": 14, "P": 4},
+      "independent_formal_charge_each_side": -6,
+      "proton_note": "The actual host PPi formula is HO7P2, so the precursor reactions require no added proton."
+    }
+  ],
+  "charge_accounting": {
+    "native_charge_caveat": "The inspected native SBML species omit fbc:charge and COBRApy imports 0. A zero native charge residual is not chemical charge proof. No host charge was repaired or overwritten.",
+    "independent_check": "Formal charges associated with the actual formulas were checked separately using ChEBI and MetaNetX, plus the unchanged strict precursor evidence. These charges are documentary checks, not changes to the frozen host.",
+    "identity_selection": "Participants were selected by native structured MetaNetX annotations together with formula and compartment, not by names alone. Oxidized NAD was distinguished from NADP; dioxygen was distinguished from superoxide despite their identical O2 formulas.",
+    "GGPP_stereochemistry_caveat": "The native GGPP pool's historical MNXM139 annotation is stereochemically generic under its current MetaNetX mapping. Native BTS1/Q12051 catalytic evidence supports the all-trans precursor interpretation; no native annotation was changed."
+  },
+  "variants": [
+    {
+      "id": "nad",
+      "path": "data/holdout_transfer/hypotheses/chemistry_nad.json",
+      "source_id": "holdout-transfer:user-authorized-redox-hypothesis:nad:v1",
+      "assumption_status": "unverified_user_authorized_hypothesis",
+      "user_authorized_hypothesis": true,
+      "status": "INSTALLABLE_UNVERIFIED_HYPOTHESIS",
+      "file_sha256": "bb76b6815c6a3a9dfb4313ed90a19ad0d815c9d4d87445d4f8fcf2fab5d11a5b",
+      "task_sha256": "e43620e8e353a66bed8adac01ffea7dd393317e8c8f8aa605b0b38ef3b6edd71",
+      "installation_check": "passed_without_optimization",
+      "blocked_issue": null,
+      "redox_equation": "C40H64 + 4 NAD(1-) -> C40H56 + 4 NADH(2-) + 4 H+",
+      "redox_stoichiometry": [["task_intermediate_c", -1], ["s_1198[c]", -4], ["task_output_c", 1], ["s_1203[c]", 4], ["s_0794[c]", 4]],
+      "hypothesis_lead": "Unreviewed fungal CrtI NAD(+) annotation, ECO:0000256 / ARBA00001911, documented in the strict evidence; this is a weak automated lead, not measured enzymology or a verified catalytic equation.",
+      "unverified_assumptions": ["Transfer of eight electrons via four cytosolic NAD reductions", "Actual fungal enzyme coupling and catalytic cofactors", "Thermodynamic feasibility and directionality under in vivo redox ratios"],
+      "proton_accounting": "Native NAD is C21H26N7O14P2 and NADH is C21H27N7O14P2. Four NAD reductions receive four of the eight removed hydrogen atoms; four H+ account for the remainder.",
+      "redox_atom_totals_each_side": {"C": 124, "H": 168, "N": 28, "O": 56, "P": 8},
+      "independent_formal_charge_each_side": -4,
+      "independent_formal_charge_imbalance": 0,
+      "biological_validation": false
+    },
+    {
+      "id": "oxygen_peroxide",
+      "path": "data/holdout_transfer/hypotheses/chemistry_oxygen_peroxide.json",
+      "source_id": "holdout-transfer:user-authorized-redox-hypothesis:oxygen-peroxide:v1",
+      "assumption_status": "unverified_user_authorized_hypothesis",
+      "user_authorized_hypothesis": true,
+      "status": "INSTALLABLE_UNVERIFIED_HYPOTHESIS",
+      "file_sha256": "690da85593b4aa00ddf9572650c6a26e7ce396a8c3abeaffce5cb6aee0cc4d9b",
+      "task_sha256": "0e7d6119bea5dea506942ce002512a6f1eb0f4d1e0de487edcaa01826c2a5571",
+      "installation_check": "passed_without_optimization",
+      "blocked_issue": null,
+      "redox_equation": "C40H64 + 4 O2 -> C40H56 + 4 H2O2",
+      "redox_stoichiometry": [["task_intermediate_c", -1], ["s_1275[c]", -4], ["task_output_c", 1], ["s_0837[c]", 4]],
+      "hypothesis_lead": "Explicitly user-authorized hypothetical oxygen/peroxide closure. It is not an established fungal CrtI acceptor/product pair; the bacterial oxygen study does not establish this fungal reaction.",
+      "unverified_assumptions": ["Direct use of cytosolic oxygen by the fungal pathway", "Hydrogen peroxide as the released reduction product", "Actual catalytic coupling and thermodynamic feasibility"],
+      "detoxification_policy": "Use existing native oxygen and hydrogen-peroxide pools only. No new detoxification reaction, peroxide drain, or associated reductant shortcut is added.",
+      "redox_atom_totals_each_side": {"C": 40, "H": 64, "O": 8},
+      "independent_formal_charge_each_side": 0,
+      "independent_formal_charge_imbalance": 0,
+      "biological_validation": false
+    },
+    {
+      "id": "oxygen_water",
+      "path": "data/holdout_transfer/hypotheses/chemistry_oxygen_water.json",
+      "source_id": "holdout-transfer:user-authorized-redox-hypothesis:oxygen-water:v1",
+      "assumption_status": "unverified_user_authorized_hypothesis",
+      "user_authorized_hypothesis": true,
+      "status": "INSTALLABLE_UNVERIFIED_HYPOTHESIS",
+      "file_sha256": "184d91f35bf2fc86fe5f54d7979179e00adad3b514325aee900863b291f14034",
+      "task_sha256": "28474a99b49977bd0eb78e3bcbd30ebf572f8aaf4dddac14e9348120efd737d3",
+      "installation_check": "passed_without_optimization",
+      "blocked_issue": null,
+      "redox_equation": "C40H64 + 2 O2 -> C40H56 + 4 H2O",
+      "redox_stoichiometry": [["task_intermediate_c", -1], ["s_1275[c]", -2], ["task_output_c", 1], ["s_0803[c]", 4]],
+      "hypothesis_lead": "Explicitly user-authorized OVERALL redox/composite hypothesis. This is not an observed single-enzyme fungal mechanism and does not assert direct four-electron oxygen reduction by CrtI.",
+      "unverified_assumptions": ["An unspecified overall coupling can realize the stated net reaction", "No additional net ATP or reductant cost beyond the declared equation", "Actual catalyst composition, intermediate processing, localization and thermodynamic feasibility"],
+      "composite_policy": "Only the declared net redox reaction is represented. No claimed mechanistic decomposition or new detoxification shortcut is supplied. Its potentially different bound cannot validate the assumed mechanism.",
+      "redox_atom_totals_each_side": {"C": 40, "H": 64, "O": 4},
+      "independent_formal_charge_each_side": 0,
+      "independent_formal_charge_imbalance": 0,
+      "biological_validation": false
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "unchanged_strict_evidence",
+      "path": "data/holdout_transfer/chemistry_evidence.json",
+      "sha256": "bb9ff21723f73bd94d6ec8e602d8ba8ef0c396a2627b35886e796461ac88a518",
+      "use": "Precursor identity/stoichiometry, construct identity, and documentation of the unresolved fungal redox mechanism. Its blocked conclusion remains unchanged."
+    },
+    {
+      "source_id": "precursor_reaction_authorities",
+      "urls": ["https://iubmb.qmul.ac.uk/enzyme/EC2/5/1/29.html", "https://iubmb.qmul.ac.uk/enzyme/EC2/5/1/32.html", "https://rest.uniprot.org/uniprotkb/Q12051.json", "https://rest.uniprot.org/uniprotkb/Q7Z859.json"],
+      "use": "Previously inspected authoritative precursor reactions recorded in the strict evidence, including fungal CrtYB synthase and cyclase activities. No fungal redox mechanism is inferred from them."
+    },
+    {
+      "source_id": "native_nicotinamide_identity",
+      "urls": ["https://www.metanetx.org/chem_info/MNXM8", "https://www.metanetx.org/chem_info/MNXM10"],
+      "accessed_parts": "Molecular-entity JSON-LD formula, InChI, and cross-references only; verified against native cytosolic species."
+    },
+    {
+      "source_id": "independent_cofactor_formal_charges",
+      "urls": ["https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A57540", "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A57945", "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A15378", "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A15379", "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A16240", "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A15377"],
+      "accessed_parts": "Structured compound identifiers, formulas, and formal charges only; these establish chemical bookkeeping, not enzyme coupling."
+    },
+    {
+      "source_id": "automated_fungal_nad_hypothesis_lead",
+      "url": "https://rest.uniprot.org/uniprotkb/O13506.json",
+      "use": "Previously inspected unreviewed annotation archived in strict evidence: ECO:0000256 / ARBA00001911. A hypothesis lead only; not experimental support for the task reaction."
+    }
+  ],
+  "validation": {
+    "status": "passed_structural_checks_only",
+    "preflight_native_formula_balance": "passed_for_all_three_redox_candidates_without_unknown_added_reactions",
+    "preflight_independent_formal_charge_balance": "passed_for_all_three_redox_candidates",
+    "method": "ChemicalTask.from_dict and install_chemical_task on a copy of the native host, plus native-formula and independent formal-charge accounting; no optimization.",
+    "installation_checks": {
+      "variants_checked": ["nad", "oxygen_peroxide", "oxygen_water"],
+      "fresh_native_host_copy_per_variant": true,
+      "frozen_task_schema_accepted": true,
+      "unique_source_ids": true,
+      "common_metabolites_and_precursor_definitions_identical": true,
+      "native_participant_annotations_formulas_and_compartments_match": true,
+      "new_metabolites_per_variant": 2,
+      "new_internal_reactions_per_variant": 3,
+      "standard_output_demands_per_variant": 1,
+      "all_nine_internal_reactions_zero_native_mass_charge_residual": true,
+      "all_nine_internal_reactions_zero_independent_formal_charge_residual": true,
+      "all_three_redox_atom_totals_match_registration": true,
+      "all_new_internal_reactions_forward_nonnegative": true,
+      "all_heterologous_enzymes_kcat_and_abundance_unsupplied": true,
+      "original_in_memory_host_counts_unchanged_and_task_reactions_absent": true,
+      "balance_scope": "The three supplied internal reactions in each alternative; the interface's intentional output demand is an open boundary, not a balanced internal reaction."
+    },
+    "strict_evidence_sha256_after": "bb9ff21723f73bd94d6ec8e602d8ba8ef0c396a2627b35886e796461ac88a518",
+    "native_host_sha256_after": "63d0f76e88586fcee25e9e67f9dae558e7b308172c837d44a0d055510b287ef3",
+    "interface_sha256_after": "0a3c792022f4d95fa4622adbb396c3975238c7ea93595b0c20f40a543197649c",
+    "optimization_performed": false,
+    "phenotypes_predicted": false,
+    "target_rates_content_calibrations_or_scores_read": false,
+    "checkpoint_opened_or_modified": false,
+    "model_files_written": false,
+    "code_or_configuration_files_written": false,
+    "packages_installed": false,
+    "http_timeout_seconds": 25,
+    "biological_validation": false,
+    "limits": "Successful installation checks only the supplied task structure and atom/charge bookkeeping. It does not validate fungal enzymology, thermodynamics, the native model globally, downstream partitioning, realized allocation, or measured product content."
+  }
+}

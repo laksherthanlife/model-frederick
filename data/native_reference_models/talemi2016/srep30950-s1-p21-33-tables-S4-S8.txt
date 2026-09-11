@@ -1,0 +1,668 @@
+    Rastgou et al.                           Systems Biology Analysis of the Yeast Osmo-Stat
+
+
+
+1   Table S4: Ordinary differential equation system of the master model.
+2   The equation with the dagger sign (†) is only present in the models with sensitized
+3   negative feedback.
+     ODEs
+     𝒅𝑽𝒐𝒔
+          = −𝑳𝒑 ∙ 𝑨𝒓𝒆𝒂 ∙ 𝑻𝒖𝒓𝒈𝒐𝒓 + 𝒇𝒄𝟐𝒑 ∙ 𝑹 ∙ 𝑻 ∙ 𝑶𝒔𝒎𝒐𝒆𝒙 − 𝑶𝒔𝒎𝒐𝒊𝒏
+      𝒅𝒕
+     𝒅 𝑯𝒐𝒈𝟏𝑺𝒊𝒈𝒏𝒂𝒍 ∙ 𝑽𝒎𝒆𝒎𝒃𝒓𝒂𝒏𝒆
+                              = 𝑽𝒎𝒆𝒎𝒃𝒓𝒂𝒏𝒆 ∙ 𝒗𝟎 − 𝒗𝟏 − 𝒗𝟐
+               𝒅𝒕
+     𝒅 𝑯𝒐𝒈𝟏 ∙ 𝑽𝒐𝒔
+                  = + 𝑽𝒐𝒔 ∙ − 𝒗𝟑!𝒂 , 𝒗𝟑!𝒃 + 𝒗𝟒
+         𝒅𝒕
+     𝒅 𝑯𝒐𝒈𝟏𝑷𝑷 ∙ 𝑽𝒐𝒔
+                    = + 𝑽𝒐𝒔 ∙              𝒗𝟑!𝒂 , 𝒗𝟑!𝒃 −𝒗𝟒
+          𝒅𝒕
+     𝒅 𝑭𝒑𝒔𝟏
+                    = 𝑽𝒎𝒆𝒎𝒃𝒓𝒂𝒏𝒆 ∙ −𝒗𝟓 + 𝒗𝟔 + 𝒗𝟔𝒃
+        𝒅𝒕
+     𝒅 𝑭𝒑𝒔𝟏𝑷
+                        = 𝑽𝒎𝒆𝒎𝒃𝒓𝒂𝒏𝒆 ∙ 𝒗𝟓 − 𝒗𝟔 − 𝒗𝟔𝒃
+        𝒅𝒕
+     𝒅 𝑮𝒍𝒚𝒊𝒏 ∙ 𝑽𝒐𝒔
+                   = + 𝑽𝒐𝒔 ∙ 𝒗𝟕 − 𝒗𝟖
+          𝒅𝒕
+     𝒅 𝑮𝒍𝒚𝒆𝒙 ∙ 𝑽𝒎𝒆𝒅𝒊𝒖𝒎
+                       = 𝒗𝟖
+            𝒅𝒕
+     𝒅 𝑺𝒍𝒕𝟐𝑺𝒊𝒈𝒏𝒂𝒍 ∙ 𝑽𝒎𝒆𝒎𝒃𝒓𝒂𝒏𝒆
+                              = 𝑽𝒎𝒆𝒎𝒃𝒓𝒂𝒏𝒆 ∙ 𝒗𝟗 − 𝒗𝟏𝟎 − 𝒗𝟏𝟏!𝒂 , 𝒗𝟏𝟏!𝒃
+               𝒅𝒕
+     𝒅 𝑺𝒍𝒕𝟐 ∙ 𝑽𝒐𝒔
+                  = + 𝑽𝒐𝒔 ∙ − 𝒗𝟏𝟐!𝒂 , 𝒗𝟏𝟐!𝒃 + 𝒗𝟏𝟑
+          𝒅𝒕
+     𝒅 𝑺𝒍𝒕𝟐𝑷𝑷 ∙ 𝑽𝒐𝒔
+                    = + 𝑽𝒐𝒔 ∙            𝒗𝟏𝟐!𝒂 , 𝒗𝟏𝟐!𝒃 − 𝒗𝟏𝟑
+           𝒅𝒕
+         𝒅 𝑺𝒆𝒏𝒔𝒊𝒕𝒊𝒛𝒆𝒓 ∙𝑽𝒎𝒆𝒎𝒃𝒓𝒂𝒏𝒆
+     †             𝒅𝒕
+                                   = 𝑽𝒎𝒆𝒎𝒃𝒓𝒂𝒏𝒆 ∙ 𝒗𝟏𝟒 + 𝒗𝟏𝟔 − 𝒗𝟏𝟓
+
+4
+5
+
+
+
+
+                                                  19
+    Rastgou et al.                      Systems Biology Analysis of the Yeast Osmo-Stat
+
+
+
+1   Table S5: Rate equations of the master model including different model alternatives.
+2   Concentrations are denoted by [] and initial concentration by []0. The auxiliary
+3   variables and parameters are described in Table S7. Bold parameters are free
+4   parameters that are estimated from data and their value is reported in Table S8.
+5   Reactions with dagger (†) sign are only present in the models with sensitized negative
+6   feedback.
+            Rate                        Rate law                        Description
+     V0                                   𝒌𝟎                              Hog1Signal
+                                                                          production
+
+     V1                           𝒌𝟏 ∙ 𝐻𝑜𝑔1𝑆𝑒𝑛𝑠𝑜𝑟                         Hog1Signal
+                                                                          degradation
+
+     V2                       𝒗𝒎𝒂𝒙𝟐 ∙ 𝑉!" ∙ 𝐻𝑜𝑔1𝑆𝑒𝑛𝑠𝑜𝑟                Osmolytically active
+                                                                       volume mediated
+                                𝒌𝒎𝟐 + 𝐻𝑜𝑔1𝑆𝑒𝑛𝑠𝑟𝑜
+                                                                          Hog1Signal
+                                                                          degradation
+
+     V3-a                  𝒗𝒎𝒂𝒙𝟑 ∙ 𝐻𝑜𝑔1𝑆𝑒𝑛𝑠𝑜𝑟 ∙ 𝐻𝑜𝑔1                 Hog1 phosphorylation
+
+     V3-b                  𝒗𝒎𝒂𝒙𝟑 ∙ 𝐻𝑜𝑔1𝑆𝑒𝑛𝑠𝑜𝑟 ∙ 𝐻𝑜𝑔1                 Slt2PP mediated Hog1
+                                                                      activation inhibition
+                                1 + 𝒌𝒊𝟑 ∙ 𝑆𝑙𝑡2𝑃𝑃 𝒏𝟑
+     V4                             𝑘! ∙ 𝐻𝑜𝑔1𝑃𝑃                           Hog1PP
+                                                                      dephosphorylation
+
+     V5                      𝑘! ∙ 𝐻𝑜𝑔1𝑃𝑃 ∙ 𝐹𝑝𝑠1                   Hog1PP mediated Fps1
+                                                                        closure
+
+     V6                         𝒌𝟔 ∙ 𝑆𝑙𝑡2𝑃𝑃 ∙ 𝐹𝑝𝑠1𝑃                    Slt2PP mediated
+                                                                            Fps1P
+                                                                      dephosphorylation
+
+     V6b                            𝒌𝟔𝒃 ∙ 𝐹𝑝𝑠1𝑃                            Fps1P
+                                                                      dephosphorylation
+
+     V7                           𝒗𝒎𝒂𝒙𝟕 ∙ 𝐻𝑜𝑔1𝑃𝑃                       Hog1PP mediated
+                                                                      Glycerol production
+                                  𝒌𝒎𝟕 + 𝐻𝑜𝑔1𝑃𝑃
+     V8                 𝐹𝑝𝑠1𝑂𝑝𝑒𝑛 ∙ 𝒌𝟖 ∙ 𝐴 ∙ 𝐺𝑙𝑦!" − 𝐺𝑙𝑦!"               Fps1 facilitated
+                                                                       glycerol diffusion
+
+     V9                                 𝒌𝟗 ∙ 𝑉!"                      Osmolytically active
+                                                                       volume mediated
+                                                                     Slt2Signal production
+
+     V10                          𝒌𝟏𝟎 ∙ 𝑆𝑙𝑡2𝑆𝑖𝑔𝑛𝑎𝑙                   Slt2Signal degradation
+
+     V11-a                      𝒗𝒎𝒂𝒙𝟏𝟏 ∙ 𝑆𝑙𝑡2𝑆𝑖𝑔𝑛𝑎𝑙                  Slt2Signal degradation
+
+                                𝒌𝒎𝟏𝟏 + 𝑆𝑙𝑡2𝑆𝑖𝑔𝑛𝑎𝑙                     (In models without
+
+
+                                               20
+    Rastgou et al.                Systems Biology Analysis of the Yeast Osmo-Stat
+
+
+                                                               sensitized feedback)
+
+     † V11-b         𝒗𝒎𝒂𝒙𝟏𝟏 ∙ 𝑆𝑒𝑛𝑠𝑖𝑡𝑖𝑧𝑒𝑟 ∙ 𝑆𝑙𝑡2𝑆𝑖𝑔𝑛𝑎𝑙           Sensitizer mediated
+                                                              Slt2Signal degradation
+                            𝒌𝒎𝟏𝟏 + 𝑆𝑙𝑡2𝑆𝑖𝑔𝑛𝑎𝑙
+     V12-a               𝒌𝟏𝟐 ∙ 𝑆𝑙𝑡2𝑆𝑖𝑔𝑛𝑎𝑙 ∙ 𝑆𝑙𝑡2              Slt2 Phosphorylation
+
+
+
+     V12-b              𝒗𝒎𝒂𝒙𝟏𝟐 ∙ 𝑆𝑙𝑡2𝑆𝑖𝑔𝑛𝑎𝑙 ∙ 𝑆𝑙𝑡2            Hog1PP mediated Slt2
+                                                               activation inhibition
+                          1 + 𝒌𝒊𝟏𝟐 ∙ 𝐻𝑜𝑔1𝑃𝑃 𝒏𝟏𝟐
+     V13                       𝑘!" ∙ 𝑆𝑙𝑡2𝑃𝑃                         Slt2PP
+                                                               dephosphorylation
+
+     † V14                    𝒌𝟏𝟒 ∙ 𝑆𝑙𝑡2𝑃𝑃                      Slt2PP mediated
+                                                              Sensitizer production
+
+     † V15                   𝑘!" ∙ 𝑆𝑒𝑛𝑠𝑖𝑡𝑖𝑧𝑒𝑟                 Sensitizer degradation
+
+
+
+     † V16                          𝒌𝟏𝟔                          Auto inhibitory
+                                                               regulated Sensitizer
+                                  !"#$%&%'"( 𝒏𝟏𝟔
+                             1+     𝒌𝒊𝟏𝟔
+                                                                   production
+
+1
+
+2
+
+
+
+
+                                          21
+    Rastgou et al.                        Systems Biology Analysis of the Yeast Osmo-Stat
+
+
+
+1   Table S6: State variables and their initial conditions.
+2   Model’s state variables and their initial concentrations are listed below. []0 indicates
+3   initial concentrations. Volumes are in femtolitre (fL), concentrations are in (µmoL/fL).
+4   Bold parameters are free parameters that are estimated from data and their value is
+5   reported in Table S6. State variables with dagger (†) sign are only present in the
+6   models with sensitized negative feedback.
+       State variable
+       (Compartme-                  Initial Concentration                    Remark
+            nt)
+
+                                                                         Osmolytically
+                                                                         active     volume,
+                                                                         derived from a
+       Vos                                 𝑉! ∙ 𝑜𝑠𝑓!                     total cell volume
+                                                                         of 50 fL and a
+                                                                         solid base volume
+                                                                                7
+                                                                         of 41% .
+
+                                                                          Aquaglyeroporin
+                                                                         Fps1 is located in
+                                                                         cell membrane.
+                                                                         This is the open
+                                         907 ∙ 𝑓!!!"
+       Fps1                                                              form of Fps1
+                                              2                          protein. The total
+                                                                         amount of Fps1 is
+                                                                         supposed
+                                                                         constant.
+
+                                                                         Activated    Hog1
+                                                                         phosphorylates
+                                         907 ∙ 𝑓!!!"
+       Fps1P                                                             Rgc2       protein
+                                              2                          which leads in
+                                                                                      8
+                                                                         Fps1 closure .
+
+                                                                         Hog1 is the Map
+                             6788 ∙ 𝑓!!!" ∙ 1 − 𝐻𝑜𝑔1𝑃𝑃 ! ∙               kinase of High
+       Hog1                                                              Osmolarity
+                             𝑚𝑎𝑥𝐻𝑜𝑔1𝑛𝑢𝑐𝑓!
+                                                                         Glycerol pathway.
+
+                                                                         Double
+                                                                         phosphorylated,
+                                                                         i.e. active, Hog1
+                                 6788 ∙ 𝑓!!!" ∙ 𝐻𝑜𝑔1𝑃𝑃 ! ∙               MAP kinase. It
+       Hog1PP                                                            was derived from
+                                 𝑚𝑎𝑥𝐻𝑜𝑔1𝑛𝑢𝑐𝑓!
+                                                                         data that 6.1 % of
+                                                                         the       maximal
+                                                                         phosphorylation is
+                                                                         the steady state
+
+
+                                               22
+Rastgou et al.             Systems Biology Analysis of the Yeast Osmo-Stat
+
+
+                                                         activation. fn is
+                                                         the fraction in the
+                                                         nucleus          at
+                                                         maximal
+                                                         phohsporylation.
+
+                 3230 ∙ 𝑓!!!" ∙ 1 − 𝑆𝑙𝑡2𝑃𝑃 ! ∙           Slt2 is the MAP
+  Slt2           𝑚𝑎𝑥𝐻𝑜𝑔1𝑛𝑢𝑐𝑓!                            Kinase of cell Wall
+                                                         Integrity pathway.
+
+                                                         Double
+                                                         phosphorylated,
+                                                         i.e.
+
+                                                         active, Slt2 MAP
+                                                         kinase. It was
+                                                         derived from data
+                   3230 ∙ 𝑓!!!" ∙ 𝑆𝑙𝑡2𝑃𝑃 ! ∙             that 24.6 % of the
+  Slt2PP                                                 maximal
+                   𝑚𝑎𝑥𝐻𝑜𝑔1𝑛𝑢𝑐𝑓!
+                                                         phosphorylation is
+                                                         the steady state
+                                                         activation. fn is
+                                                         the fraction in the
+                                                         nucleus          at
+                                                         maximal
+                                                         phohsporylation.
+
+                                                         Intracellular
+                                                         glycerol,
+
+                                                         approximated by
+                                                         assuming a
+
+                                                         measured value of
+                                                         0.1 mM/OD in 1
+                                                                    9
+     𝑮𝒍𝒚𝒊𝒏 𝟎                180000                       ml sample    and
+                                                         assuming
+
+                                                         18·106 cells per
+                                                         ml sample culture
+                                                         and an average
+                                                         osmotic        cell
+                                                         volume of 29.5 fL,
+                                                         i.e.1/18/29.5·108.
+
+                                                         Extracellular
+                                                         glycerol, assumed
+                            𝐺𝑙𝑦!" !                      to be 1000 times
+  Glyex
+                            1000                         lower than Glyin.
+                                                         As a consequence,
+                                                         the       external
+
+                                23
+    Rastgou et al.                              Systems Biology Analysis of the Yeast Osmo-Stat
+
+
+                                                                                             glycerol       acts
+                                                                                             basically as a sink
+                                                                                             for the internal
+                                                                                             glycerol.
+
+                                                                                             A      hypothetical
+                                                                                             entity       which
+                                                                                             modulates
+                                                                                             Slt2Signal
+      †                                                                                      degradation rate.
+                                                3.42838
+      Sensitizer                                                                             The          initial
+                                                                                             concentration of
+                                                                                             sensitizer        is
+                                                                                             estimated by the
+                                                                                             model.
+                                    𝒌𝟎 − 𝑉𝑜𝑠0 ∙ 𝒌𝟐 − 𝒌𝟏 ∙ 𝒌𝒎𝟐
+                                                                         +                   A      hypothetical
+                                                 2 ∙ 𝑘1
+                                                                                             entity       which
+      HogSignal                                                 2
+                            𝒌𝟎 − 𝑉𝑜𝑠0 ∙ 𝒌𝟐 − 𝒌𝟏 ∙ 𝒌𝒎𝟐               + 4 ∙ 𝒌𝟎 ∙ 𝒌𝟏 ∙ 𝒌𝒎𝟐      triggers     Hog1
+                                                                                             activation.
+                                                  2 ∙ 𝑘1
+
+                               𝒌𝟗 ∙ 𝑉!!! − 𝒌𝟏𝟏 ∙ 𝑆𝑒𝑛𝑠𝑖𝑡𝑖𝑧𝑒𝑟 ! − 𝒌𝟏𝟎 ∙ 𝒌𝒎𝟏𝟏                    A      hypothetical
+                                                                           +
+                                                   2 ∙ 𝑘!                                     entity       which
+      † Slt2Signal                                              !
+                     𝒌𝟏𝟏 ∙ 𝑆𝑒𝑛𝑠𝑖𝑡𝑖𝑧𝑒𝑟 ! − 𝒌𝟏𝟎 ∙ 𝒌𝒎𝟏𝟏 − 𝒌𝟗 ∙ 𝑉!!! + 4 ∙ 𝒌𝟏𝟎 ∙ 𝑉!!! ∙ 𝒌𝟗 ∙ 𝒌𝒎𝟏𝟏 triggers       Slt2
+                                                   2 ∙ 𝑘!                                     activation.
+                                    𝒌𝟗 ∙ 𝑉𝑜𝑠 − 𝒌𝟏𝟏 − 𝒌𝟏𝟎 ∙ 𝒌𝒎𝟏𝟏
+                                            0
+                                                                         +                   A      hypothetical
+                                                 2 ∙ 𝑘1
+                                                                                             entity       which
+      Slt2Signal                                           2
+                         𝒌𝟏𝟏 − 𝒌𝟏𝟎 ∙ 𝒌𝒎𝟏𝟏 − 𝒌𝟗 ∙ 𝑉𝑜𝑠           + 4 ∙ 𝒌𝟏𝟎 ∙ 𝑉𝑜𝑠 ∙ 𝒌𝟗 ∙ 𝒌𝒎𝟏𝟏   triggers       Slt2
+                                                       0                      0
+                                                                                             activation.
+                                                  2 ∙ 𝑘1
+
+1
+2
+
+
+
+
+                                                     24
+    Rastgou et al.                        Systems Biology Analysis of the Yeast Osmo-Stat
+
+
+
+1   Table S7: Auxiliary variables, physical quantities and their Definition/value.
+2   Concentrations are denoted by [] and []0 denotes the initial concentration. Volumes
+3   are in femtolitre (fL), concentrations are in (µmol/fL).
+4
+     Variable/Param-                Definition/Value                             Remark
+           eter
+
+                                                                         Solid or minimal volume
+           𝑽𝒃                            𝑉! ∙ 𝑓!"#                       of the cell.
+
+            𝑽                            𝑉!" + 𝑉!                        Total cell volume.
+
+                                                                         Initial osmotically active
+          𝑽𝒐𝒔 𝟎                       𝑉! (1 − 𝑓!"# )
+                                                                         volume.
+                                                  !!                     Non-turgid volume.
+          𝑽𝑷!𝟎                                𝑉! 𝑒 !
+            𝑨                         (36𝜋)!/! 𝑉 !/!                     Total cell surface area.
+
+                                                                         Factor     converting
+                                                                         number of molecules in
+         𝒇𝑵𝟐𝝁𝑴                      10!" 𝑚𝑜𝑙 !! 𝑉!" !!
+                                                    !                    μM concentrations per
+                                                                         cell.
+
+                                                   𝑃!                    Initial total   cellular
+           𝒄𝒊𝟎                         𝑐!! +                             osmolyte concentration.
+                                                𝑓!!! 𝑅𝑇
+                                                                         Initial  non-permeable
+           𝒄𝒊𝒏
+            𝟎                          𝑐!! − [𝐺𝑙𝑦!" ]                    cellular       osmolyte
+                                                                         concentration.
+
+                                        0 𝑡 < 𝑡!""                       Osmotic sorbitol shock.
+                                    !!"" !!                              Starts at time 𝑡! and has
+           𝒄𝒆𝒏           𝑠1 ∙ 1 − 𝑒 !!            𝑡!"" < 𝑡 < 𝑡!"" + 𝑡!   a certain mixing time 𝑡! .
+                                                 !!"" !!! !!
+
+                                 𝑠1 − 𝑠2 ∙ 𝑒           !!      𝑒𝑙𝑠𝑒
+                                                                         Initial osmolarity of the
+        𝒄𝒆𝟎 [µΜ]                          260000                         medium .
+                                                                                   7
+
+
+
+         𝒕𝒐𝒇𝒇 [s]                                                        Time [s] before       first
+                                               120                       osmotic stress.
+
+                                                                         Time [s] between two
+          𝒕𝒔 [s]                               840                       consecutive   osmotic
+                                                                         stresses.
+
+          𝒕𝒎 [s]                                                         Mixing time [s] of
+                                               10
+                                                                         sorbitol in the medium.
+
+                                                                         Sorbitol concentration,
+         S1[µΜ]                           800000
+                                                                         in cell culture medium,
+
+                                                    25
+Rastgou et al.                   Systems Biology Analysis of the Yeast Osmo-Stat
+
+
+                                                            for first osmotic stress.
+
+                                                            Sorbitol concentration,
+                                                            in cell culture medium,
+     S2[µΜ]                    270000
+                                                            for     second  osmotic
+                                                            stress.
+
+                                                            Intracellular
+     𝑶𝒔𝒎𝒊𝒏                      𝑐!!" 𝑉!" !
+                        𝐺𝑙𝑦!" +                             osmolytically        active
+                                   𝑉!"                      concentration.
+
+                                                            Extracellular
+     𝑶𝒔𝒎𝒆𝒙       𝑐!! + 𝑐!! +     𝐺𝑙𝑦!" − 𝐺𝑙𝑦!" !            osmolytically        active
+                                                            concentration.
+
+                            𝑉                               Turgor pressure [MPa].
+    𝑻𝒖𝒓𝒈𝒐𝒓         𝜀 ∙ 𝑙𝑛          𝑓𝑜𝑟 𝑉 > 𝑉!!!
+                            𝑉!
+                    0                        𝑒𝑙𝑠𝑒
+  R [J/mol/K]                    8.314                      Gas constant.
+
+                                                            Temperature in kelvin
+      T [K]                      303.15                                      o
+                                                            corresponds to 30 C.
+
+      Mol                   6.022· 10!"                     Mole number.
+
+                                                            Factor        converting
+                                     -9
+      𝒇𝒄𝟐𝒑                        10                        concentrations in M to
+                                                            pressures in MPa.
+
+
+
+                                                            Hydraulic     conductivity
+       𝑳𝒑
+                                 0.013                      (estimate     from data
+  [µm/Mpa/s]                                                      10
+                                                            from ).
+                                                                                     7
+    𝑷𝟎 [MPa]                      0.61                      Initial turgor pressure .
+                                                                                 7
+        ε                         14.3                      Membrane rigidity .
+
+                                                            Minimal cell volume (as
+       fmin                       0.41                                        7
+                                                            fraction of total) .
+
+                                                            Fraction of activated
+                                                            Hog1 molecule in the
+       𝒇𝒏                         0.8
+                                                            nucleus upon maximal
+                                                            activation.
+
+     𝑽𝟎 [fL]                       50                       Initial total cell volume.
+
+  𝑽𝒎𝒆𝒅𝒊𝒖𝒎 [fL]                 1000*𝑉!                      External volume.
+
+                                                            6788 ∙ 𝑓!!!" : molecule
+  𝑯𝒐𝒈𝟏𝒕 [µΜ]                     0.3821                     numbers             from
+                                                            http://yeastgfp.yeastgen
+
+
+                                        26
+    Rastgou et al.   Systems Biology Analysis of the Yeast Osmo-Stat
+
+
+                                                ome.org/
+
+                                                907𝑓!!!" :     molecule
+                                                numbers             from
+      𝑭𝒑𝒔𝟏𝒕 [µΜ]     0.051
+                                                http://yeastgfp.yeastgen
+                                                ome.org/
+
+1
+
+
+
+
+                          27
+    Rastgou et al.                             Systems Biology Analysis of the Yeast Osmo-Stat
+
+
+
+1   Table S8: Reaction rate constants and model parameters.
+2   []0 indicates initial concentration (μmol/L). The volume is in femtolitre (fL), and the
+3   concentration is μmol/L, mass is in grams and time in seconds. Variables with dagger
+4   sign (†) are only present in the models with sensitized negative feedback.
+5
+     Parameter                          Value                            Description         Method
+
+                                                                       Hog1Signal
+     k0                                 59.901                         production rate       Estimated
+                                                                       constant.
+
+                                                                       Hog1Signal
+     k1                                25.4711                         degradation rate      Estimated
+                                                                       constant.
+
+                                                                       Volume mediated
+     vmax2                             2.15338                         Hog1Signal            Estimated
+                                                                       degradation vmax.
+
+                                                                       Volume mediated
+                                                                       Hog1Signal
+     km2                            0.000939165                                              Estimated
+                                                                       degradation
+                                                                       Michaelis constant.
+
+                                                                       Hog1
+     k3                               0.231769                         phosphorylation       Estimated
+                                                                       rate constant.
+
+                                                                       Hog1PP
+                                                                       dephosphorylation
+                         𝑘! ∙ 𝐻𝑜𝑔1𝑆𝑖𝑔𝑛𝑎𝑙 ! ∙ 𝐻𝑜𝑔1 !                    rate constant,
+     k4                                                         !!                           Calculated
+                      𝐻𝑜𝑔1𝑃𝑃 ! ∙ 1 + 𝐾!! ∙ 𝑆𝑙𝑡2𝑃𝑃 !                    calculated using
+                                                                       steady state
+                                                                       assumption.
+
+                                                                       Hog1PP mediated
+     k5                                0.12348                         Fps1 closure rate     Estimated
+                                                                       constant.
+
+                                                                       Slt2PP mediated
+     k6                              1.1077e-06                        Fps1
+                                                                                             Calculated
+                                                                       depohsphorylation
+                                                                       (opening).
+
+                                                                       Slt2PP independent
+                     !! ∙ !"#!!! ! ∙ !"#! ! !!! ∙ !"#!!! ! ∙ !"#!! !
+     k6b                                                               (Basal) Fps1          Estimated
+                                        !"#!! !
+                                                                       dephosphorylation.
+
+                                                                       Hog1PP mediated
+     vmax7                             849.986                         glycerol production   Estimated
+                                                                       vmax.
+
+                                                     28
+Rastgou et al.                                Systems Biology Analysis of the Yeast Osmo-Stat
+
+
+
+                                                         Hog1PP mediated
+                        𝑣!"#! ∙ 𝐻𝑜𝑔1𝑃𝑃 ! ∙ 𝑉!"!          glycerol production
+ km7             𝐹𝑝𝑠1!"#$ ! ∙ 𝑘! ∙ 𝐴 ∙ 𝐺𝑙𝑦!" ! − 𝐺𝑙𝑦!" ! Michaelis constant,                Calculated
+                                                         calculated using
+                 − 𝐻𝑜𝑔1𝑃𝑃 !                              steady state
+                                                         assumption.
+
+                                                                      Fps1 facilitated
+ k8                             0.000776772                           glycerol diffusion    Estimated
+                                                                      constant.
+
+                                                                      Volume mediated
+ k9                               0.0772144                           Slt2Signal
+                                                                                            Estimated
+                                                                      production rate
+                                                                      constant.
+
+                                                                      Slt2Signal
+ k10                            0.000131323                           degradation rate      Estimated
+                                                                      constant.
+
+                                                                      Sensitizer/Slt2PP
+ vmax11                            0.713377                           mediated Slt2Signal   Estimated
+                                                                      degradation vmax.
+
+                                                                      Sensitizer/Slt2PP
+ km11                             0.0180575                           mediated Slt2Signal   Estimated
+                                                                      degradation km.
+
+                                                                      Slt2Signal mediated
+                                                                      Slt2
+ k12                             0.00929813                                                 Estimated
+                                                                      phosphorylation
+                                                                      rate constant.
+
+                                                                      Slt2PP
+                                                                      dephosphorylation
+                     𝑣!"#!" ∙ 𝑆𝑙𝑡2𝑆𝑖𝑔𝑛𝑎𝑙 ! ∙ 𝑆𝑙𝑡2 !                   rate constant,
+ k13                                                            !!"                         Calculated
+                  𝑆𝑙𝑡2𝑃𝑃 ! ∙ 1 + 𝐾!!" ∙ 𝐻𝑜𝑔1𝑃𝑃 !                      calculated using
+                                                                      steady state
+                                                                      assumption.
+
+                                                                      Slt2PP mediated
+                                                                      sensitizer
+ † k14                             0.113591                                                 Estimated
+                                                                      production rate
+                                                                      constant.
+
+                                                                      Sensitizer
+                                               !!"#!"                 degradation rate
+                       !!" ∙ !"#!!! ! !                   !!"
+ † k15                                       !"#$%&%'"( !             constant,
+                                          !!
+                                                !!!"                                        Calculated
+                                                                      calculated using
+                                  !"#$%&%'"( !
+                                                                      steady state
+                                                                      assumption.
+
+
+
+                                                     29
+    Rastgou et al.         Systems Biology Analysis of the Yeast Osmo-Stat
+
+
+
+                                               Sensitizer Auto
+     † vmax16          1                       inhibitory feedback      set
+                                               vmax.
+
+                                               Sensitizer Auto
+     † Ki16          3.08897                   inhibitory feedback   Estimated
+                                               constant.
+
+                                               Sensitizer Auto
+     † n16           999.898                   inhibitory feedback   Estimated
+                                               power.
+
+1
+
+2
+
+
+
+
+                                30
+     Rastgou et al.                          Systems Biology Analysis of the Yeast Osmo-Stat
+
+
+
+ 1   Supplementary References:
+
+ 2   1      Hoops, S. et al. COPASI--a COmplex PAthway SImulator. Bioinformatics 22, 3067-
+ 3          3074, doi:10.1093/bioinformatics/btl485 (2006).
+ 4   2      Schaber, J. et al. Automated ensemble modeling with modelMaGe: analyzing feedback
+ 5          mechanisms in the Sho1 branch of the HOG pathway. PLoS One 6, e14791,
+ 6          doi:10.1371/journal.pone.0014791 (2011).
+ 7   3      Burnham, K. P. & Anderson, D. R. Model Selection and Multi-Model Inference: A
+ 8          Practical Information-Theoretic Approach. (Springer, 2010).
+ 9   4      Raue, A. et al. Structural and practical identifiability analysis of partially observed
+10          dynamical models by exploiting the profile likelihood. Bioinformatics 25, 1923-1929,
+11          doi:10.1093/bioinformatics/btp358 (2009).
+12   5      Schaber, J. Easy parameter identifiability analysis with COPASI. Biosystems,
+13          doi:10.1016/j.biosystems.2012.09.003 (2012).
+14   6      Garcia-Rodriguez, L. J., Valle, R., Duran, A. & Roncero, C. Cell integrity signaling
+15          activation in response to hyperosmotic shock in yeast. FEBS Lett 579, 6186-6190,
+16          doi:10.1016/j.febslet.2005.10.001 (2005).
+17   7      Schaber, J. et al. Biophysical properties of Saccharomyces cerevisiae and their
+18          relationship with HOG pathway activation. Eur Biophys J 39, 1547-1556,
+19          doi:10.1007/s00249-010-0612-0 (2010).
+20   8      Lee, J. et al. MAPK Hog1 closes the S. cerevisiae glycerol channel Fps1 by
+21          phosphorylating and displacing its positive regulators. Genes Dev 27, 2590-2601,
+22          doi:10.1101/gad.229310.113 (2013).
+23   9      Klipp, E., Nordlander, B., Kruger, R., Gennemark, P. & Hohmann, S. Integrative model
+24          of the response of yeast to osmotic shock. Nat Biotechnol 23, 975-982,
+25          doi:10.1038/nbt1114 (2005).
+26   10     Eriksson, E. et al. A microfluidic device for reversible environmental changes around
+27          single cells using optical tweezers for cell selection and positioning. Lab Chip 10, 617-
+28          625, doi:10.1039/b913587a (2010).
+29
+30
+31
+
+
+
+
+                                                  31
+

@@ -1,0 +1,190 @@
+{
+  "kind": "portable_evidence_artifact",
+  "origin": {
+    "path": "outputs/ecmodel_prior_port_01/ecmodel_isoprenoid_prior.json",
+    "sha256": "522612c5806ee439c181dcf379e99df874905ebdd1a87550b8638aae49fb671e"
+  },
+  "payload": {
+    "boundary_basis": "GECKO2: prot_* reactant coefficients interpreted as hours (1/kcat_h); enzyme mmol/gDCW; reaction flux mmol/gDCW/h; declared convention, not inferred from unannotated protein species or flux bounds; no medium or flux bounds applied",
+    "calibration_performed": false,
+    "inventory": {
+      "association_basis": "reaction_GPR_membership_not_gene_to_protein_assignment",
+      "branch_groups": {
+        "MVA": [
+          "ERG10",
+          "ERG13",
+          "HMG1",
+          "HMG2",
+          "ERG12",
+          "ERG8",
+          "MVD1",
+          "IDI1"
+        ],
+        "prenyl_transferase": [
+          "ERG20",
+          "BTS1"
+        ],
+        "sterol": [
+          "ERG9",
+          "ERG1",
+          "ERG7",
+          "ERG11",
+          "ERG24",
+          "ERG25",
+          "ERG26",
+          "ERG27",
+          "ERG6",
+          "ERG2",
+          "ERG3",
+          "ERG5",
+          "ERG4"
+        ]
+      },
+      "coverage_fraction": 0.9055894786284641,
+      "declared_genes": [
+        "ERG10",
+        "ERG13",
+        "HMG1",
+        "HMG2",
+        "ERG12",
+        "ERG8",
+        "MVD1",
+        "IDI1",
+        "ERG20",
+        "BTS1",
+        "ERG9",
+        "ERG1",
+        "ERG7",
+        "ERG11",
+        "ERG24",
+        "ERG25",
+        "ERG26",
+        "ERG27",
+        "ERG6",
+        "ERG2",
+        "ERG3",
+        "ERG5",
+        "ERG4"
+      ],
+      "direction_rule": "exclude arm_* and draw_prot_*; report _REV arms but exclude from forward span and default sweep",
+      "forward_row_count": 36,
+      "forward_span": {
+        "maximum": {
+          "association_basis": "reaction_GPR_membership_not_gene_to_protein_assignment",
+          "boundary_basis": "GECKO2: prot_* reactant coefficients interpreted as hours (1/kcat_h); enzyme mmol/gDCW; reaction flux mmol/gDCW/h; declared convention, not inferred from unannotated protein species or flux bounds; no medium or flux bounds applied",
+          "branch": "MVA",
+          "declared_gpr_genes": "IDI1",
+          "gpr_genes": "IDI1",
+          "included_in_forward_span": true,
+          "interpretation": "model_encoded_prior_not_measurement",
+          "is_reverse_arm": false,
+          "kcat_per_s": 29900.085873046624,
+          "protein_coefficient_h": 9.2902e-09,
+          "protein_species_id": "prot_P15496__91__c__93__",
+          "reaction_id": "r_0667No1",
+          "source_model_sha256": "63d0f76e88586fcee25e9e67f9dae558e7b308172c837d44a0d055510b287ef3",
+          "source_sbml_sha256": "3a9d97a68e2408ea243114794c027b11d70f253ecf6a758f4bcd5f2de50170b8"
+        },
+        "minimum": {
+          "association_basis": "reaction_GPR_membership_not_gene_to_protein_assignment",
+          "boundary_basis": "GECKO2: prot_* reactant coefficients interpreted as hours (1/kcat_h); enzyme mmol/gDCW; reaction flux mmol/gDCW/h; declared convention, not inferred from unannotated protein species or flux bounds; no medium or flux bounds applied",
+          "branch": "sterol",
+          "declared_gpr_genes": "ERG6",
+          "gpr_genes": "ERG6",
+          "included_in_forward_span": true,
+          "interpretation": "model_encoded_prior_not_measurement",
+          "is_reverse_arm": false,
+          "kcat_per_s": 0.010999793203887765,
+          "protein_coefficient_h": 0.025253,
+          "protein_species_id": "prot_P25087__91__c__93__",
+          "reaction_id": "r_0986No1",
+          "source_model_sha256": "63d0f76e88586fcee25e9e67f9dae558e7b308172c837d44a0d055510b287ef3",
+          "source_sbml_sha256": "3a9d97a68e2408ea243114794c027b11d70f253ecf6a758f4bcd5f2de50170b8"
+        }
+      },
+      "genes_without_forward_turnovers": [],
+      "interpretation": "model_encoded_prior_not_measurement",
+      "protein_rule": "all prot_* reactant coefficients except prot_pool*; no first-protein shortcut",
+      "reactions_with_gpr": 4258,
+      "reactions_with_kcat": 3856,
+      "row_count": 39
+    },
+    "outputs": {
+      "ecmodel_isoprenoid_kcats.csv": {
+        "sha256": "6cff27ba91f1e9a4489bb587ffaa4a438eeb39710f91c765e5633d0b47118928"
+      },
+      "enzyme_capacity_sweep.csv": {
+        "sha256": "ae8bb9d4caeea64fee769c33a146a83beef6fcaeef4e1cfc73199338c98b524c"
+      }
+    },
+    "schema_version": 1,
+    "solver_used": false,
+    "source_code": [
+      {
+        "path": "scripts/ecmodel_isoprenoid_prior.py",
+        "sha256": "cccc841a581d8b1d33be9a80f872b4c860f708f6959a71ccaf1764fa06abe8ed"
+      },
+      {
+        "path": "src/ystwin/pathway/proteome.py",
+        "sha256": "055e16ff4dc3f317e04b354b5737c0a3a5944ab4450864b35a689da710c12b05"
+      },
+      {
+        "path": "src/ystwin/pathway/enzyme_capacity.py",
+        "sha256": "7f53ae0f4467cb3ab170cdaddf62a4e36ec9162d08df042032bb466706b22a8f"
+      }
+    ],
+    "source_model": {
+      "declared_flux_unit_definition": "mmol_per_gDW_per_hr",
+      "model_id": "M_ecYeastGEM_batch_v8__46__3__46__4",
+      "path": "data/gem/ecYeastGEM_batch.xml.gz",
+      "sbml_sha256": "3a9d97a68e2408ea243114794c027b11d70f253ecf6a758f4bcd5f2de50170b8",
+      "sbml_sha256_basis": "uncompressed_SBML_bytes",
+      "sha256": "63d0f76e88586fcee25e9e67f9dae558e7b308172c837d44a0d055510b287ef3",
+      "sha256_basis": "exact_input_file_bytes"
+    },
+    "sweep": {
+      "capacity_reference": null,
+      "content_reference": null,
+      "enzyme": "crtYB",
+      "enzyme_molar_mass_g_per_mol": 74736.0,
+      "growth_rate_per_h": 0.101,
+      "input_basis": "declared_sensitivity_scenario_not_strain_measurements",
+      "interpretation": "conditional_sensitivity_not_product_prediction",
+      "kcat_basis": "forward_model_encoded_turnovers_as_sensitivity_priors",
+      "kcats_per_s": [
+        0.010999793203887765,
+        0.014999610010139735,
+        0.06475006475006474,
+        0.07599939200486397,
+        0.41500250661513993,
+        0.6906630641681238,
+        0.7299952112314143,
+        1.0999793203887767,
+        1.6500016500016499,
+        3.3000033000032998,
+        3.4000144160611243,
+        4.076335081265816,
+        4.900029596178761,
+        21.89985633694243,
+        46.24981523198815,
+        46.27632035134464,
+        900.0057600368643,
+        923.831906936869,
+        11919.746729221497,
+        16700.40147765152,
+        29900.085873046624
+      ],
+      "mass_fractions_of_protein": [
+        0.0005,
+        0.001,
+        0.005,
+        0.01,
+        0.05
+      ],
+      "reference_basis": "user_declared_comparison_only_not_calibration",
+      "row_count": 105,
+      "total_protein_g_per_gdcw": 0.49974
+    }
+  },
+  "schema_version": 1
+}

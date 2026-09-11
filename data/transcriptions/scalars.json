@@ -1,0 +1,566 @@
+{
+  "schema_version": 1,
+  "artifact_id": "transcribed-scalars-v1",
+  "generated_on": "2026-09-09",
+  "scope": "Literature-traced scalar quantities read out of published primary sources by an agent in this repository. Every value here was read from a source the agent actually opened: the source text or supplementary table is quoted or the exact cell is named. Nothing here is a bench measurement made in this work package, and nothing here is a checksummed upstream file living in the repository.",
+  "availability_vocabulary": {
+    "literature_traced": "The agent opened the primary source, located the value, and recorded the exact locator (table, cell, or quoted sentence). The source file is NOT vendored in this repository. This is strictly weaker than local_verified and must never be recorded as local_verified.",
+    "derived_composite": "Not measured by any single source. Computed here from two or more literature_traced inputs that come from different strains, media, growth modes or laboratories. The splice is named in every such entry.",
+    "unresolved": "Searched for and not found, or found only behind a paywall with no accessible mirror. The search that was run is recorded so it is not repeated blindly."
+  },
+  "merge_notes": [
+    "If this run introduces a differently-named availability level for our own artifacts, rename literature_traced to it rather than adding a second vocabulary.",
+    "No file under data/parameter_evidence.json was edited by this agent. The corrections in repository_corrections_recommended are reports, not changes.",
+    "The two supplementary spreadsheets under sources.kumar_bruheim2021.remote_artifacts were downloaded and read but deliberately NOT vendored, because vendoring is outside this agent's file ownership. Their sha256 digests are recorded so a later agent can pin them and promote the entry to a verified level."
+  ],
+  "sources": {
+    "kumar_bruheim2021": {
+      "title": "Large dependency of intracellular NAD and CoA pools on cultivation conditions in Saccharomyces cerevisiae",
+      "authors": "Kumar K, Bruheim P",
+      "journal": "BMC Research Notes 14:361 (2021)",
+      "identity": {
+        "doi": "10.1186/s13104-021-05783-6",
+        "pmid": "34556160",
+        "pmcid": "PMC8461857"
+      },
+      "domain": "native",
+      "use": "reference",
+      "verification": {
+        "level": "literature_traced",
+        "locator": "Additional file 1 (13104_2021_5783_MOESM1_ESM.xlsx), sheet 'NADs+CoAs_n=2', row 'G lim' / growth rate 0.05, column group 'Acetyl CoA'. The article text names this file as 'Additional file 1: Table S1'.",
+        "finding": "Acetyl-CoA at G lim, D = 0.05 h^-1 is 19.9044 nmol/gDW, the mean of two replicas at 18.683272 and 21.125529 nmol/gDW, relative standard deviation 8.676157 percent. This is the origin of the repository's 0.0199 umol/gDW."
+      },
+      "remote_artifacts": [
+        {
+          "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1186%2Fs13104-021-05783-6/MediaObjects/13104_2021_5783_MOESM1_ESM.xlsx",
+          "bytes": 29185,
+          "sha256": "80bbb46c5547322e38615559e8d768429232b34e8b97e63a97cde905f55b814f",
+          "contents": "Per-replica absolute pools, nmoles per gram biomass, for NAD, NADH, NADP, NADPH, FAD, CoA, acetyl-CoA and succinyl-CoA across 21 cultivations.",
+          "vendored": false
+        },
+        {
+          "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1186%2Fs13104-021-05783-6/MediaObjects/13104_2021_5783_MOESM2_ESM.xlsx",
+          "bytes": 28765,
+          "sha256": "02081a27aed4316f03ac52f1365165b91baca138c9b2c66b6ee54dce8470d9fd",
+          "contents": "Sheets 'All' and 'Modes': condition-averaged pools joined to glucose, growth rate, ethanol, O2 and CO2 rates, plus per-mode slope and r-square against growth rate.",
+          "vendored": false
+        }
+      ],
+      "culture": {
+        "strain": "CEN.PK 113-7D",
+        "medium": "Verduyn medium",
+        "pH": 5.0,
+        "temperature_C": 30,
+        "aeration": "minimum dissolved oxygen level of 40 percent, so aerobic",
+        "mode": "carbon-limited chemostat, low-glucose feed 1.0 g/L (rows 'Glim'); a separate high-glucose 10.0 g/L series is labelled 'GlimHi'",
+        "dilution_rates_h": [
+          0.05,
+          0.12,
+          0.18,
+          0.24,
+          0.31
+        ],
+        "replicates": 2,
+        "compartment": "whole cell; not compartment-resolved"
+      },
+      "quench_and_extraction": {
+        "quoted": "the standard sampling protocols with fast filtration, freeze-thaw extraction, and concentration by freeze-drying can't be applied, but pelleting using centrifugation and snap freezing had to be used",
+        "coa_extraction": "acetonitrile:methanol:water (70:10:20, v/v/v) containing 50 mM ammonium acetate pH 5.0",
+        "platform": "two HILIC-MS/MS methods with 13C internal standard dilution"
+      },
+      "author_reported_limitations": [
+        "the small sample size (two replicas) is the main limitation of the study since it was based on leftover samples from a large study with 22 different cultivation conditions",
+        "This preliminary investigation reveals no correlation between growth rate and pool sizes"
+      ]
+    },
+    "kozak2016": {
+      "title": "Replacement of the initial steps of ethanol metabolism in Saccharomyces cerevisiae by ATP-independent acetylating acetaldehyde dehydrogenase",
+      "authors": "Kozak BU, van Rossum HM, Niemeijer MS, van Dijk M, Benjamin K, Wu L, Daran J-MG, Pronk JT, van Maris AJA",
+      "journal": "FEMS Yeast Research 16(2):fow006 (2016)",
+      "identity": {
+        "doi": "10.1093/femsyr/fow006",
+        "pmid": "26818854",
+        "pmcid": "PMC5815134"
+      },
+      "pmid_note": "Europe PMC returns 26818854 for this DOI. One secondary rendering returned 26819129; 26818854 is the value carried by the Europe PMC record that also carries the DOI and PMCID, and is the one recorded here.",
+      "domain": "native",
+      "use": "reference",
+      "verification": {
+        "level": "literature_traced",
+        "locator": "Results, 'Physiology of evolved Ald- A-ALD-dependent strains in ethanol-limited chemostat cultures', quoted below; the same value is carried in Table 8 (Steady-state intracellular metabolite concentrations, umol g dry weight^-1) and Table S4.",
+        "finding": "Quoted verbatim: 'intracellular acetyl-CoA concentrations in the evolved strain (0.83 +/- 0.17 umol g dry weight-1) and reference strain (0.85 +/- 0.27 umol g dry weight-1) were not significantly different'. The 0.85 is the reference strain CEN.PK113-7D. This is the origin of the repository's 0.85 umol/gDW."
+      },
+      "culture": {
+        "strain": "CEN.PK113-7D (reference, Acs+ Ald+)",
+        "medium": "synthetic medium (Verduyn et al. 1992), ingoing ethanol 6 g/L",
+        "pH": 5.0,
+        "temperature_C": 30,
+        "aeration": "aerobic 2-L bioreactor, 1 L working volume, sparged",
+        "mode": "ethanol-limited chemostat; steady-state samples taken between 12 and 15 volume changes",
+        "dilution_rate_h": 0.048,
+        "dilution_rate_note": "Table 7 reports 0.048 +/- 0.001 h^-1 against a nominal setpoint of 0.05 h^-1",
+        "replicates": 3,
+        "compartment": "whole cell; Table 8 is titled 'intracellular', and the paper reports no compartment-resolved acetyl-CoA"
+      },
+      "quench_and_extraction": {
+        "quoted": "Chemostat cultures were sampled for determination of intracellular metabolite concentrations according to the cold methanol quenching method using specially designed rapid sampling setup (Lange et al. 2001). Approximately 1.2 mL of broth was sampled into 5 mL of 80% aqueous methanol (v/v) solution pre-cooled to -40C. Subsequently, samples were washed with cold methanol followed by extraction of intracellular metabolites with boiling ethanol as described by Canelas et al. (2008).",
+        "platform": "ion-pair reverse-phase LC-MS/MS (Van Dam et al. 2002) for CoA and acetyl-CoA, with uniformly 13C-labelled cell extracts as internal standards (Wu et al. 2005)"
+      }
+    },
+    "sillje1999": {
+      "title": "Function of trehalose and glycogen in cell cycle progression and cell viability in Saccharomyces cerevisiae",
+      "authors": "Sillje HHW, Paalman JWG, ter Schure EG, Olsthoorn SQB, Verkleij AJ, Boonstra J, Verrips CT",
+      "journal": "Journal of Bacteriology 181(2):396-400 (1999)",
+      "identity": {
+        "doi": "10.1128/jb.181.2.396-400.1999",
+        "pmid": "9882651",
+        "pmcid": "PMC93391"
+      },
+      "domain": "native",
+      "use": "reference",
+      "verification": {
+        "level": "literature_traced",
+        "locator": "Materials and Methods, continuous culture paragraph; Results sentence on dry weight per cell.",
+        "finding": "Quoted verbatim: 'Cells were grown at five different dilution rates (0.033, 0.050, 0.10, 0.15, and 0.20; average mass doubling times of 30, 20, 10, 7.5, and 5 h, respectively)' and 'the increase in dry weight in the wild-type strain ranging from 10.6 to 17.4 pg/cell with decreasing growth rates, whereas the level remained almost constant in the mutant strain'. No mean cell volume is reported."
+      },
+      "culture": {
+        "strain": "CEN.PK113-7D wild type (a storage-carbohydrate-deficient mutant, SCU10, is the comparator)",
+        "medium": "minimal medium as described by Parrou et al.; galactose 10 g/L in the feed",
+        "carbon_limitation": "galactose-limited, NOT glucose-limited",
+        "temperature_C": 30,
+        "vessel": "Bioflo III fermentor, 2-litre working volume",
+        "mode": "continuous culture (chemostat)",
+        "dilution_rates_h": [
+          0.033,
+          0.05,
+          0.1,
+          0.15,
+          0.2
+        ]
+      }
+    },
+    "uchida2011": {
+      "title": "Quantitative analysis of yeast internal architecture using soft X-ray tomography",
+      "authors": "Uchida M, Sun Y, McDermott G, Knoechel C, Le Gros MA, Parkinson D, Drubin DG, Larabell CA",
+      "journal": "Yeast 28(3):227-236 (2011)",
+      "identity": {
+        "doi": "10.1002/yea.1834",
+        "pmid": "21360734",
+        "pmcid": "PMC3404734"
+      },
+      "domain": "native",
+      "use": "reference",
+      "verification": {
+        "level": "literature_traced",
+        "locator": "Results, per-cell volumes by cell-cycle stage and the organelle-fraction sentence.",
+        "finding": "Quoted verbatim: 'the nucleus occupied 6-11% of cell volume; the nucleolus occupied 20% of nucleus; vacuole(s) occupied 3-14% of cell; and mitochondria and lipid bodies occupied 1-2% of cell', with 'cytosol, other non-segmented organelles, large macromolecular complexes, such as the ribosomes, and the cytoskeleton occupy the remaining 70% of cell volume'."
+      },
+      "culture": {
+        "strains": [
+          "DDY904 (haploid)",
+          "DDY1102 (diploid)"
+        ],
+        "medium": "YPD",
+        "temperature_C": 25,
+        "mode": "batch, early log phase, unsynchronized",
+        "cells_measured": {
+          "haploid": 74,
+          "diploid": 80
+        }
+      },
+      "reported_cell_volumes_um3": {
+        "haploid": {
+          "G1": [
+            10,
+            50
+          ],
+          "S": [
+            20,
+            60
+          ],
+          "G2": [
+            40,
+            80
+          ],
+          "M": [
+            60,
+            100
+          ]
+        },
+        "diploid": {
+          "G1": [
+            20,
+            60
+          ],
+          "S": [
+            30,
+            80
+          ],
+          "G2": [
+            50,
+            140
+          ],
+          "M": [
+            70,
+            140
+          ]
+        },
+        "note": "Ranges by cell-cycle stage. No population mean and no standard deviation are given, and no chemostat or growth-rate series exists in this source."
+      }
+    }
+  },
+  "scalars": [
+    {
+      "id": "native.acetyl_coa.whole_cell.glucose_limited_D005",
+      "quantity": "whole-cell acetyl-CoA content, aerobic glucose-limited chemostat",
+      "source_id": "kumar_bruheim2021",
+      "availability": "literature_traced",
+      "value": 0.0199044,
+      "units": "umol/gDW",
+      "value_as_published": 19.9044,
+      "units_as_published": "nmol/gDW",
+      "units_status": "explicit_in_source",
+      "status": "measured",
+      "scale": "biological",
+      "context": "CEN.PK113-7D, Verduyn medium, aerobic, D = 0.05 h^-1, low-glucose (1.0 g/L) feed",
+      "compartment": "whole_cell",
+      "uncertainty": {
+        "kind": "relative_standard_deviation",
+        "value": 8.676157,
+        "units": "percent",
+        "n": 2,
+        "replicate_values_nmol_per_gdw": [
+          18.683272,
+          21.125529
+        ],
+        "explanation": "The two replicas and their relative standard deviation are given in Additional file 1. The source names n = 2 as the study's main limitation; this interval is a technical spread over two cultures, not a between-laboratory interval."
+      },
+      "identifiability": "unresolved",
+      "unresolved_directions": [
+        "quench artefact: pelleting by centrifugation then snap freezing was used because fast filtration could not be, and acetyl-CoA turnover is fast relative to a centrifugation",
+        "no compartment resolution, so the cytosolic share of this pool is unknown"
+      ],
+      "interpretation": "A whole-cell content per gram dry weight. It is NOT a cytosolic concentration and becomes one only after division by a cytosolic volume per gram dry weight, which no source measures.",
+      "missing": "matched cytosolic fraction; a filtration- or leakage-free-quench replicate"
+    },
+    {
+      "id": "native.acetyl_coa.whole_cell.ethanol_limited_D005",
+      "quantity": "whole-cell acetyl-CoA content, aerobic ethanol-limited chemostat",
+      "source_id": "kozak2016",
+      "availability": "literature_traced",
+      "value": 0.85,
+      "units": "umol/gDW",
+      "units_status": "explicit_in_source",
+      "status": "measured",
+      "scale": "biological",
+      "context": "CEN.PK113-7D, synthetic Verduyn medium with 6 g/L ethanol, aerobic, D = 0.048 +/- 0.001 h^-1, pH 5",
+      "compartment": "whole_cell",
+      "uncertainty": {
+        "kind": "standard_deviation",
+        "value": 0.27,
+        "units": "umol/gDW",
+        "n": 3,
+        "explanation": "Table 8 states averages and standard deviations were obtained from three replicate cultures for each strain. The independently evolved strain IMS456 gave 0.83 +/- 0.17 in the same table, which is an internal consistency check, not an independent laboratory."
+      },
+      "identifiability": "unresolved",
+      "unresolved_directions": [
+        "no compartment resolution, so the cytosolic share of this pool is unknown"
+      ],
+      "interpretation": "A whole-cell content per gram dry weight, measured with leakage-free cold-methanol rapid quenching and 13C internal-standard dilution. It is NOT a cytosolic concentration.",
+      "missing": "matched cytosolic fraction; a glucose-limited arm from the same laboratory and analytical batch"
+    },
+    {
+      "id": "native.cell_mass.dry_weight_per_cell",
+      "quantity": "cell dry weight per cell, growth-rate dependent",
+      "source_id": "sillje1999",
+      "availability": "literature_traced",
+      "value_range": [
+        10.6,
+        17.4
+      ],
+      "units": "pg/cell",
+      "units_status": "explicit_in_source",
+      "status": "measured",
+      "scale": "biological",
+      "context": "CEN.PK113-7D wild type, galactose-limited chemostat, 30 C, D from 0.20 down to 0.033 h^-1",
+      "growth_rate_dependence": {
+        "direction": "dry weight per cell RISES as growth rate FALLS",
+        "endpoints": [
+          {
+            "dilution_rate_h": 0.2,
+            "dry_weight_pg_per_cell": 10.6
+          },
+          {
+            "dilution_rate_h": 0.033,
+            "dry_weight_pg_per_cell": 17.4
+          }
+        ],
+        "fold": 1.64,
+        "mechanism_stated_by_source": "the source attributes the rise to accumulation of trehalose and glycogen at low growth rate, which is why the comparator mutant stays flat"
+      },
+      "uncertainty": {
+        "kind": "not_reported",
+        "units": "pg/cell",
+        "explanation": "The source states the endpoints of a range across dilution rates in running text. No per-point standard deviation, replicate count or error bar is quoted for the dry weight per cell figures in the text this agent could read."
+      },
+      "identifiability": "partially_identified",
+      "unresolved_directions": [
+        "galactose-limited, not glucose-limited; the repository's acetyl-CoA and thermodynamic work is glucose- and ethanol-limited",
+        "the rise at low growth rate is largely storage carbohydrate, so the SOLVENT volume per gram dry weight falls faster than the cell volume per gram dry weight does. Both acetyl-CoA numbers sit at D = 0.05, at the storage-heavy end of this range"
+      ],
+      "interpretation": "The only value found that is measured in the repository's own strain, in a chemostat, across a growth-rate series. It answers the 'dry weight per cell' half of the cell_mass gap.",
+      "missing": "a glucose-limited series; per-point uncertainty; matched cell volume"
+    },
+    {
+      "id": "native.cell_mass.cytosol_volume_fraction",
+      "quantity": "fraction of cell volume not assigned to nucleus, vacuole, mitochondria or lipid bodies",
+      "source_id": "uchida2011",
+      "availability": "literature_traced",
+      "value": 0.7,
+      "units": "dimensionless",
+      "units_status": "explicit_in_source",
+      "status": "measured",
+      "scale": "biological",
+      "context": "DDY904 haploid and DDY1102 diploid, YPD, 25 C, early log, unsynchronized; 74 and 80 cells",
+      "uncertainty": {
+        "kind": "not_reported",
+        "units": "dimensionless",
+        "explanation": "The source gives the segmented organelle fractions as ranges (nucleus 6-11 percent, vacuole 3-14 percent, mitochondria and lipid bodies 1-2 percent) and states the remainder as a single 'remaining 70%'. No interval is attached to the 70 percent."
+      },
+      "identifiability": "upper_bound_only",
+      "upper_bound_reason": "The 70 percent is a RESIDUAL, not a segmentation of cytosol. The source states it also contains other non-segmented organelles, large macromolecular complexes such as ribosomes, and the cytoskeleton. The aqueous solvent volume that a molar concentration needs is strictly smaller than this.",
+      "unresolved_directions": [
+        "batch YPD at 25 C, not a chemostat, and not CEN.PK; vacuole fraction in particular is strongly condition-dependent and its reported 3-14 percent already spans a factor of 4.7"
+      ],
+      "interpretation": "The upper bound on the cytosolic fraction of cell volume. Use it as a ceiling, never as a point estimate.",
+      "missing": "a chemostat, growth-rate-resolved segmentation; separation of aqueous solvent volume from macromolecule-occupied volume"
+    },
+    {
+      "id": "native.cell_mass.cytosolic_volume_per_gdw",
+      "quantity": "cytosolic volume per gram dry weight",
+      "source_id": null,
+      "availability": "derived_composite",
+      "value": null,
+      "value_envelope": [
+        0.402,
+        6.604
+      ],
+      "units": "mL/gDW",
+      "units_status": "derived",
+      "status": "derived",
+      "scale": "biological",
+      "formula": "cytosolic_volume_per_gDW = cell_volume_per_cell * cytosol_volume_fraction / dry_weight_per_cell",
+      "inputs": [
+        "native.cell_mass.dry_weight_per_cell (10.6 to 17.4 pg/cell, sillje1999)",
+        "uchida2011 haploid cell volume 10 to 100 um^3 across the cell cycle",
+        "native.cell_mass.cytosol_volume_fraction (<= 0.70, uchida2011)"
+      ],
+      "envelope_derivation": [
+        "low corner: 10 um^3 * 0.70 / 17.4 pg = 0.402 mL/gDW",
+        "high corner: 100 um^3 * 0.70 / 10.6 pg = 6.604 mL/gDW",
+        "illustrative middle, NOT a measurement: 42 um^3 * 0.70 / 12.0 pg = 2.45 mL/gDW"
+      ],
+      "uncertainty": {
+        "kind": "not_reported",
+        "units": "mL/gDW",
+        "explanation": "No source reports this quantity, so there is no reported uncertainty to record. The envelope above is a corner-to-corner bound on a product of three inputs from two laboratories, two strains, two temperatures and two growth modes. It is not a confidence interval and must not be reported as one."
+      },
+      "identifiability": "unidentified",
+      "unresolved_directions": [
+        "the corners pair the smallest G1 cell volume with the heaviest slow-growth dry weight and the reverse; neither corner is a steady state a culture actually occupies",
+        "the dry weights are galactose-limited chemostat, the volumes are YPD batch, and neither strain is the other's",
+        "the 0.70 fraction is a ceiling on compartment volume, and the aqueous solvent volume is smaller still"
+      ],
+      "interpretation": "The repository's CYTOSOLIC_VOLUMES_ML_PER_GDCW = (1.0, 2.0, 2.7) lies INSIDE the envelope the literature supports, so the convention is not contradicted. But the literature does not narrow the envelope to it, and the 1.0 floor is not a conservative bound: see findings.cell_mass.volume_floor_is_load_bearing.",
+      "missing": "one matched-condition experiment: cell number, cell volume distribution and biomass dry weight from the same chemostat samples, plus a cytosolic solvent fraction"
+    }
+  ],
+  "findings": {
+    "acetyl_coa_provenance": {
+      "verdict": "RESOLVED. Both numbers are traceable and both were read at source. The 42.7-fold gap is NOT a compartment difference and NOT a unit difference: both values are whole-cell contents in umol/gDW, in the same strain, in the same medium family, at the same nominal dilution rate, both aerobic chemostats. The gap is a carbon-source contrast CONFOUNDED with a laboratory, quench, extraction and analytical-platform change, and the two numbers must not be differenced.",
+      "the_two_numbers": {
+        "0.0199_umol_per_gdw": "Kumar K & Bruheim P, BMC Res Notes 14:361 (2021), doi 10.1186/s13104-021-05783-6, PMID 34556160. Additional file 1, sheet 'NADs+CoAs_n=2', row G lim / 0.05. Published as 19.9044 nmol/gDW, mean of 18.683272 and 21.125529, relative SD 8.68 percent, n = 2.",
+        "0.85_umol_per_gdw": "Kozak BU, van Rossum HM et al., FEMS Yeast Res 16(2):fow006 (2016), doi 10.1093/femsyr/fow006, PMID 26818854. Table 8 / Results text. 0.85 +/- 0.27 umol/gDW, n = 3."
+      },
+      "what_the_repository_got_right": [
+        "The comment in scripts/thiolase_threshold.py that both come from the same strain (CEN.PK113-7D), the same medium (Verduyn) and the same dilution rate (0.05 /h) is CORRECT. All three checked out against both sources.",
+        "The locator 'supplementary Table S1' for the glucose number is CORRECT: the article itself names the file 'Additional file 1: Table S1'.",
+        "The standing caveat that two laboratories with two quench protocols was never a number to build on is CORRECT, and is now demonstrated rather than asserted."
+      ],
+      "what_the_repository_got_wrong": [
+        {
+          "defect": "wrong first author",
+          "where": "scripts/thiolase_threshold.py:77, docs/MEASUREMENTS_NEEDED.md:116-117, 940, 1442",
+          "recorded_as": "Kolbeinsen & Bruheim 2021",
+          "correct": "Kumar K & Bruheim P 2021",
+          "note": "The string 'Kolbeinsen' appears nowhere in the paper, in its author list, or in any Bruheim-lab yeast publication found by search. This is why the number read as untraceable: the value and the locator were right and the name was not."
+        },
+        {
+          "defect": "whole-cell pools labelled cytosolic",
+          "where": "scripts/thiolase_threshold.py:75 ('Measured cytosolic acetyl-CoA'), src/ystwin/pathway/thermo_gate.py:16-17 ('Measured cytosolic acetyl-CoA is about 10 uM on glucose and 425 uM on ethanol'), and the same phrasing in the module docstring at scripts/thiolase_threshold.py:19",
+          "correct": "Both sources report INTRACELLULAR, i.e. whole-cell, content per gram dry weight. Neither is compartment-resolved. Kozak's Table 8 is titled 'Steady-state intracellular metabolite concentrations'; Kumar & Bruheim measure whole-cell pellets.",
+          "consequence": "Dividing a whole-cell pool by a CYTOSOLIC volume OVERSTATES the cytosolic concentration, because part of the pool sits in mitochondria and peroxisomes. The current practice therefore errs toward declaring the thiolase step feasible, which is the conservative direction for a refutation but the wrong direction for any future claim that the step runs."
+        }
+      ],
+      "why_the_two_numbers_cannot_be_differenced": {
+        "protocol_difference": {
+          "kozak2016": "leakage-free rapid quenching: 1.2 mL broth into 5 mL 80 percent aqueous methanol pre-cooled to -40 C via a dedicated rapid-sampling setup (Lange 2001), cold-methanol wash, boiling-ethanol extraction (Canelas 2008), ion-pair reverse-phase LC-MS/MS with U-13C internal standards.",
+          "kumar_bruheim2021": "pelleting by centrifugation followed by snap freezing, chosen because fast filtration and freeze-thaw could not be applied to these unstable analytes; cold organic extraction; HILIC-MS/MS with 13C internal standards.",
+          "significance": "These differ in the step that matters most for a fast-turnover thioester. A centrifugation is orders of magnitude slower than a -40 C methanol quench."
+        },
+        "cross_laboratory_anchors_are_inconsistent": {
+          "method": "Compare metabolites the two papers both report, whole-cell umol/gDW, CEN.PK113-7D, D approx 0.05. Kozak Table 8 lists only fold-change >= 2 metabolites, so the overlap is small.",
+          "comparisons": [
+            {
+              "metabolite": "NADH",
+              "kozak_ethanol_limited": 0.3,
+              "kumar_bruheim_glucose_limited": 0.2199,
+              "ratio": 1.36,
+              "units": "umol/gDW"
+            },
+            {
+              "metabolite": "NADPH",
+              "kozak_ethanol_limited": 0.1,
+              "kumar_bruheim_glucose_limited": 0.00317,
+              "ratio": 31.6,
+              "units": "umol/gDW"
+            },
+            {
+              "metabolite": "fructose-1,6-bisphosphate",
+              "kozak_ethanol_limited": 0.08,
+              "kumar_bruheim_glucose_limited": 0.00233,
+              "ratio": 34.3,
+              "units": "umol/gDW"
+            },
+            {
+              "metabolite": "acetyl-CoA",
+              "kozak_ethanol_limited": 0.85,
+              "kumar_bruheim_glucose_limited": 0.0199,
+              "ratio": 42.7,
+              "units": "umol/gDW"
+            }
+          ],
+          "reading": "There is no single scale factor that reconciles the two datasets. NADH agrees within 1.4-fold while NADPH, F1,6BP and acetyl-CoA all sit 32 to 43-fold apart in the SAME direction. A uniform laboratory offset would move NADH too; a genuine carbon-source effect would not move F1,6BP the wrong way, since fructose-1,6-bisphosphate is expected HIGHER on glucose than on ethanol and here the glucose figure is 34-fold LOWER. So the 42.7 is neither cleanly a protocol offset nor cleanly biology, and it cannot be attributed to carbon source."
+        },
+        "the_gap_exceeds_the_whole_bruheim_dataset": {
+          "acetyl_coa_range_across_all_21_cultivations_nmol_per_gdw": [
+            0.049,
+            64.83
+          ],
+          "kozak_value_nmol_per_gdw": 850,
+          "ratio_to_bruheim_maximum": 13.1,
+          "reading": "Kozak's single ethanol number is 13-fold above the HIGHEST acetyl-CoA Kumar & Bruheim measured anywhere, across four carbon sources, batch and chemostat, and four nutrient limitations. Within the Bruheim glucose-limited series the pool moves only 9.7 to 37.1 nmol/gDW across D = 0.05 to 0.31, and the authors state there is no correlation between growth rate and pool sizes."
+        }
+      },
+      "answer_to_the_question_asked": "The two numbers do not come from different compartments, and they do not come from different units. They come from different laboratories using different quench protocols, on different carbon sources, and the cross-laboratory anchors show the discrepancy is not a uniform scale factor either. The gap is therefore unresolved as biology and resolved as provenance: it is a splice, and the repository was right to refuse to build on it."
+    },
+    "cell_mass": {
+      "verdict": "PARTIALLY RESOLVED. Dry weight per cell is found, measured, in the repository's own strain, in a chemostat, with growth-rate dependence. Cytosolic volume per gram dry weight is NOT found as a measured quantity in any primary source, and remains a composition of three literature inputs from two laboratories.",
+      "dry_weight_per_cell": "10.6 to 17.4 pg/cell over D = 0.20 down to 0.033 h^-1, CEN.PK113-7D, galactose-limited chemostat. Sillje et al. 1999, J Bacteriol 181:396-400, PMID 9882651. See scalars[native.cell_mass.dry_weight_per_cell]. This closes the 'dry weight per cell' half of the native_data cell_mass gap, though on galactose rather than glucose limitation.",
+      "cytosolic_volume_per_gdw": "Not measured by any source found. The repository's own description in src/ystwin/pathway/thermo_gate.py of CYTOSOLIC_VOLUMES_ML_PER_GDCW as 'A CONVENTION, not a measurement' is CORRECT and is now backed by a recorded search rather than by absence of effort. The literature-supported envelope is 0.40 to 6.6 mL/gDW; the convention (1.0, 2.0, 2.7) lies inside it.",
+      "volume_floor_is_load_bearing": {
+        "claim": "The repository's 1.0 mL/gDW floor is not a conservative bound. It is 1.66-fold above the point at which the thiolase refutation changes sign under the estimator the repository prefers.",
+        "arithmetic": "eQuilibrator's threshold for r_0103 at [CoA] = 100 uM and [acetoacetyl-CoA] = 1 uM is 1414 uM. The ethanol-limited 0.85 umol/gDW reaches 1414 uM at a cytosolic volume of 0.601 mL/gDW. Below that volume the ethanol state is ABOVE threshold and the ordering the repository refuted returns.",
+        "table_umol_per_gdw_to_uM": {
+          "ethanol_0.85": {
+            "0.402": 2114.4,
+            "0.601": 1414.3,
+            "1.0": 850.0,
+            "2.0": 425.0,
+            "2.7": 314.8,
+            "6.6": 128.8
+          },
+          "glucose_0.0199044": {
+            "0.402": 49.5,
+            "0.601": 33.1,
+            "1.0": 19.9,
+            "2.0": 10.0,
+            "2.7": 7.4,
+            "6.6": 3.0
+          }
+        },
+        "under_modelseed_corrected": "At the corrected ModelSEED energy the threshold is 19042 uM and the ethanol state would need a cytosolic volume of 0.045 mL/gDW to reach it, which is outside any envelope. Under that estimator the refutation is volume-independent.",
+        "recommendation": "Record 0.601 mL/gDW as the eQuilibrator-side crossing volume rather than resting the refutation on the 1.0 floor, and let gate_across_volumes and volume_dependent_steps sweep down to at least 0.40 mL/gDW so the corner is visible rather than excluded by the range.",
+        "caveat": "Both feeds are whole-cell pools being divided by a cytosolic volume, which overstates the cytosolic concentration. Correcting that labelling moves both states DOWN and away from the threshold, so it strengthens the refutation rather than weakening it."
+      }
+    }
+  },
+  "unresolved": [
+    {
+      "id": "native.cell_mass.cytosolic_volume_per_gdw.direct_measurement",
+      "reason": "not_found",
+      "detail": "No primary source was found that MEASURES cytosolic volume per gram dry weight, or intracellular water volume per gram dry weight, in Saccharomyces cerevisiae. The values in circulation are model conventions carried between modelling papers. Recorded as a searched negative, not as an absence of effort.",
+      "searched_on": "2026-09-09",
+      "search_record": {
+        "registries": [
+          "Europe PMC REST search API, full-text and title/abstract, core result type",
+          "General web search"
+        ],
+        "queries": [
+          "(\"cytosolic volume\" OR \"cytoplasmic volume\") AND \"dry weight\" AND cerevisiae",
+          "\"intracellular volume\" AND cerevisiae AND \"dry weight\" AND (determination OR measured)",
+          "\"intracellular water\" AND cerevisiae AND \"dry weight\"",
+          "cerevisiae AND \"cytosolic volume\" AND (measurement OR measured OR determined)",
+          "cerevisiae AND \"cell volume\" AND \"dry weight\" AND (chemostat OR \"dilution rate\") AND \"growth rate\"",
+          "\"dry weight per cell\" AND cerevisiae",
+          "cerevisiae AND \"soft X-ray tomography\" AND organelle AND volume",
+          "Saccharomyces cerevisiae intracellular water volume per gram dry weight silicone oil centrifugation"
+        ],
+        "checked_and_rejected": [
+          "Elsemman et al. 2022, Nat Commun, PMC8831649: a whole-cell model that constrains compartments by protein mass and membrane area in g protein and um^2/cell, not by mL/gDW. Carries no cytosolic volume per gram dry weight.",
+          "BioNumbers BNID 105094 'volume of cell occupied by water', 68 percent: traces to Kamihira, Taniguchi & Kobayashi 1987, a supercritical-CO2 sterilization paper on baker's yeast. A bulk water content of a commercial pressed yeast, not a growth-resolved cytosolic volume. Rejected as a source.",
+          "Boender et al. 2009, AEM 75:5607, PMID 19592533: retentostat quantitative physiology in CEN.PK113-7D. Reports biomass dry weight concentration and viability but no dry weight per cell. Rejected for this quantity."
+        ]
+      }
+    },
+    {
+      "id": "native.cell_mass.dry_weight_per_cell.single_cell_primary",
+      "reason": "paywalled_no_mirror",
+      "detail": "Mitchison JM (1958), 'The growth of single cells. II. Saccharomyces cerevisiae', Exp Cell Res 15:214-221, doi 10.1016/0014-4827(58)90077-6, PMID 13574174, is the primary single-cell dry-mass source that the modern single-cell literature defers to. It is behind an Elsevier paywall with no open mirror found, so its numbers are not recorded here.",
+      "related": "Feijo Delgado F et al. 2013, PLoS One 8:e67590, PMID 23844039, measures single-cell dry mass by H2O/D2O buoyant-mass exchange and states in its own discussion that 'Budding yeast dry mass content per cell is not widely reported and growth conditions vary can vary widely', deferring to Mitchison. Its yeast dry masses appear only in Figure 3c as distributions and are not extractable as numbers from the text. Its quoted 725 fg and 179 fg medians are E. coli, not yeast; do not transcribe them as yeast values.",
+      "impact": "None on the deliverable. Sillje 1999 supplies a chemostat, growth-rate-resolved dry weight per cell in the repository's own strain, which is a better match than a batch single-cell figure would be."
+    },
+    {
+      "id": "native.acetyl_coa.cytosolic_fraction",
+      "reason": "not_found",
+      "detail": "Neither acetyl-CoA source is compartment-resolved, and no compartment-resolved cytosolic acetyl-CoA measurement in a CEN.PK113-7D chemostat was found. The repository therefore has no measured cytosolic acetyl-CoA at all, only two whole-cell pools. Any statement of the form 'cytosolic acetyl-CoA is X uM' in this repository is a whole-cell pool divided by an unmeasured volume."
+    }
+  ],
+  "repository_corrections_recommended": [
+    {
+      "file": "scripts/thiolase_threshold.py",
+      "line": 77,
+      "current": "\"glucose-limited\": (0.0199, \"Kolbeinsen & Bruheim 2021, supplementary Table S1\"),",
+      "recommended": "Replace the author string with 'Kumar & Bruheim 2021, BMC Res Notes 14:361, doi 10.1186/s13104-021-05783-6, Additional file 1 Table S1'. The value and the locator are correct; only the name is wrong.",
+      "owner": "not this agent"
+    },
+    {
+      "file": "scripts/thiolase_threshold.py",
+      "line": 78,
+      "current": "\"ethanol-limited\": (0.85, \"Kozak & van Rossum 2016\"),",
+      "recommended": "Add the identifiers: 'Kozak, van Rossum et al. 2016, FEMS Yeast Res 16(2):fow006, doi 10.1093/femsyr/fow006, Table 8, 0.85 +/- 0.27, n = 3'.",
+      "owner": "not this agent"
+    },
+    {
+      "file": "scripts/thiolase_threshold.py",
+      "line": 74,
+      "current": "# Measured cytosolic acetyl-CoA, umol/gDW, same strain (CEN.PK113-7D), same medium",
+      "recommended": "'Measured WHOLE-CELL acetyl-CoA'. The strain, medium and dilution-rate claims on line 75 are correct and should be kept. The module docstring repeats the same mislabelling at lines 17-18 ('measured cytosolic acetyl-CoA of about 10 uM on glucose and 425 uM on ethanol') and needs the same correction.",
+      "owner": "not this agent"
+    },
+    {
+      "file": "src/ystwin/pathway/thermo_gate.py",
+      "line": 17,
+      "current": "Measured cytosolic acetyl-CoA is about 10 uM on glucose and 425 uM on ethanol, and BOTH are below it.",
+      "recommended": "Say whole-cell content divided by an assumed cytosolic volume, and name the volume the two uM figures assume: both are the published pools at 2.0 mL/gDW (0.85/2.0 = 425 uM, 0.0199044/2.0 = 9.95 uM), which tests/test_thiolase_threshold.py:52 already states explicitly. As written the sentence states a measured cytosolic concentration that no source reports.",
+      "owner": "not this agent"
+    },
+    {
+      "file": "data/parameter_evidence.json",
+      "locator": "native_data[kind=cell_mass]",
+      "current": "availability 'missing', gap 'No matched cell count, dry mass and OD calibration.'",
+      "recommended": "Promote to a literature-traced entry for dry weight per cell citing Sillje 1999, and keep the gap text for the OD calibration and the cytosolic volume, which remain genuinely missing.",
+      "owner": "not this agent"
+    }
+  ]
+}

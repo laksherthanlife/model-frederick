@@ -1,0 +1,43 @@
+{
+  "document_type": "development_release_request",
+  "protocol_id": "granados-sfp1-published-cohort-development-01",
+  "protocol_sha256": "0f53f40699ebd0db6df62f00e0a0e6bfc5b56b374ec84a6e36846a8488e6dad6",
+  "source_asset_id": "1b38366b-7473-4ddf-9cf9-26e625533686",
+  "source_sha256": "1ec5a48955492aade95386d48f15109397a19acb60ef820d3c692ca59d9efc87",
+  "train_ids": [
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep1",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep2",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep3"
+  ],
+  "development_ids": [
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep4",
+    "1b38366b-7473-4ddf-9cf9-26e625533686:/rep5"
+  ],
+  "exporter_code": [
+    {
+      "path": "scripts/export_granados_training.py",
+      "sha256": "6447608e622c6bdd47e16f4f930f91f9297077aaccfbc5a0745b359b1bbd7159",
+      "bytes": 104189,
+      "role": "execution_code"
+    }
+  ],
+  "executor_code": [
+    {
+      "path": "data/native_law_v2/granados/development/phase_b/frozen_executor/native_population_development.py",
+      "sha256": "7755844db3d777fdec1c9f7fb8b4fc4168597e735182353b1c6efc5a13f3c787",
+      "bytes": 71949,
+      "role": "execution_code"
+    },
+    {
+      "path": "data/native_law_v2/granados/development/phase_b/executor_environment.json",
+      "sha256": "a650be44dced11e101115663d665a6d39254f8fd1adccd8c63b0a0752a4e4ff4",
+      "bytes": 2290,
+      "role": "execution_code"
+    }
+  ],
+  "requested_phases": [
+    "training_and_conditioning_export",
+    "development_response_export"
+  ],
+  "requester": "Parent Devin task/user instruction to the Granados custodian; encoded here against the actual resumed executor, not a fictitious external requester."
+}

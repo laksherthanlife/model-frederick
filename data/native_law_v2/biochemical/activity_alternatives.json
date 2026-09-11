@@ -1,0 +1,142 @@
+{
+  "schema_version": "native-biochemical-activity-candidates/1.0",
+  "metadata_only": true,
+  "quantitative_target_observations_present": false,
+  "selection_rule": "Bounded independent primary-source checks chosen for actual native yeast enzyme-assay methods, not agreement with a model. These are not silent replacements for the registered Hackett flux candidate.",
+  "learner_measurement_allowlist": [],
+  "raw_inputs_persisted": false,
+  "sources": [
+    {
+      "source_id": "smallbone2013",
+      "title": "A model of yeast glycolysis based on a consistent kinetic characterisation of all its enzymes",
+      "doi": "10.1016/j.febslet.2013.06.043",
+      "pmid": "23831062",
+      "pmcid": "PMC3764422",
+      "primary_article": {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3764422/fullTextXML",
+        "http_status": 200,
+        "bytes": 186478,
+        "sha256": "03224a1e5e75f5d6cec2648bdc3227cdbb208d700a210ed0e53338c84cc639a6",
+        "license": "CC BY 3.0",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/",
+        "methods_locators": {"enzyme_preparation": "#s0015", "initial_rate_assays": "#s0020", "culture_context": "#s0025", "informatics": "#s0045"}
+      },
+      "verified_accessible_files": [
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3764422/supplementaryFiles",
+          "http_status": 200,
+          "format": "ZIP",
+          "observed_bytes": 163571,
+          "observed_sha256": "0aa2432af78130b31f01cdcd9760c33f96a4ebf18127097a38f6558abba70ce2",
+          "non_image_member_inventory": ["mmc1.pdf"],
+          "member": "mmc1.pdf",
+          "member_bytes": 91279,
+          "member_sha256": "ce6b9202a29d8897158ee47e1aafd2a2f69b68925c464821a6316c072b9bfde5",
+          "member_pages": 3,
+          "measurement_values_exported": false,
+          "schema_limit": "A PDF supplement was verified, but no row/cell-addressable raw initial-rate or absorbance-timecourse table was established. The associated BioModels model is not a measurement source."
+        }
+      ],
+      "assay_metadata": {
+        "species": "Saccharomyces cerevisiae",
+        "preparation": "Yeast-expressed tagged enzymes from MORF/GST/TAP collections; purified enzyme amount/concentration assessed with BCA and preparation quality assessed with electrophoresis/Bioanalyzer.",
+        "biological_amount_vs_activity": "Measured preparation protein amount is not a measured active fraction. Tag placement, complexes and purification state must be matched explicitly.",
+        "culture_for_omics": "Y23925, a heterozygous deletion derivative of diploid BY4743; turbidostat-like continuous cultures without nutrient limitation at maximal growth. This is not the Hackett FY chemostat context.",
+        "instrument": "BMG Labtech NOVOstar, 384-well spectrophotometric assays",
+        "assay_temperature_C": 30,
+        "reaction_volume_uL": 60,
+        "readout": "NADH/NADPH formation or consumption at 340 nm; coupled where necessary; initial rates at varying substrate concentrations",
+        "raw_readout_unit": "Absorbance; exact deposited raw-readout columns/time units not recovered",
+        "rate_conversion": "Paper specifies an NAD(P)H extinction coefficient and coupling/background controls. Plate path length, enzyme preparation amount and raw timecourse/initial-rate source cells would need binding before a quantitative adapter.",
+        "replicates": "Methods say at least duplicate determinations at each substrate concentration. These are not documented independent biological preparations.",
+        "assay_pH": null,
+        "active_fraction_measured": false,
+        "raw_study_replicate_ids": null
+      },
+      "potential_claim_scope": "A newly preregistered assay-specific rate law conditional on substrate and measured total preparation amount could be considered if original initial-rate records and independent preparation IDs are recovered. No intrinsic active-enzyme kcat claim from fitted turnover parameters or unspecified active fractions.",
+      "prohibited_inputs": ["published fitted Km/kcat/Ki", "BioModels simulated fluxes", "model-adjusted concentrations", "best-fit curves treated as measurements"],
+      "current_decision": "not_eligible_for_current_protocol",
+      "blockers": ["No verified raw assay record table or source-cell mapping", "Assay versus in-vivo strain/medium/tag context differs from Hackett", "Independent biological support-group inventory not established", "Exact frozen YeastGEM/GECKO/BRENDA/DLKcat ancestor overlap unresolved"],
+      "paper_hypothesis_policy": "No reported regulatory conclusion or direction from this paper is used for feature selection. Any later paper-informed target choice must be labeled replication."
+    },
+    {
+      "source_id": "vaneunen2012",
+      "title": "Testing biochemistry revisited: how in vivo metabolism can be understood from in vitro enzyme kinetics",
+      "doi": "10.1371/journal.pcbi.1002483",
+      "pmid": "22570597",
+      "pmcid": "PMC3343101",
+      "primary_article": {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3343101/fullTextXML",
+        "http_status": 200,
+        "bytes": 145742,
+        "sha256": "ed6223ce32e00d20b55bbc62b240ec21841d5ee71fd43f38a95b867a3fab7dd5",
+        "license": "Creative Commons Attribution; the exact license version was not verified",
+        "methods_locators": {"culture": "#s4a", "transport_assay": "#s4b", "extract_activity": "#s4c"}
+      },
+      "public_archive": {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3343101/supplementaryFiles",
+        "http_status": 200,
+        "format": "ZIP",
+        "observed_bytes": 1460155,
+        "observed_sha256": "946e03d4ac94b8b96abec5411a476e4794a9a8344af8b48c616de62af44f67a3",
+        "learner_allowed": false,
+        "reason": "Mixed experimental summaries, kinetic parameter tables and simulated/model-derived results; no full archive handoff."
+      },
+      "verified_candidate_files": [
+        {
+          "member": "pcbi.1002483.s004.pdf",
+          "label": "Table S4",
+          "source_caption": "Kinetic parameters measured under in vivo-like conditions and implemented in the glycolytic model under the four conditions studied (new measurements).",
+          "bytes": 24849,
+          "sha256": "bfe61b52a24f461acb67dd7589767e13a31a92128075bc273a2f97028df1ceea",
+          "pages": 1,
+          "measurement_status": "Mixed kinetic-parameter/assay-summary candidate; the caption alone does not make fitted parameters raw initial-rate observations.",
+          "raw_replicate_schema_verified": false
+        },
+        {
+          "member": "pcbi.1002483.s005.pdf",
+          "label": "Table S5",
+          "source_caption": "Vmax values measured under Vmax optimized assay conditions.",
+          "bytes": 64976,
+          "sha256": "fc5753fe93ed8c9b57259ee195c2a6ced099fcb6bb86677db2558151a94b7076",
+          "pages": 1,
+          "measurement_status": "Potential saturating extract-activity summary, not intrinsic kcat. No rates were exported and raw per-preparation records were not established.",
+          "raw_replicate_schema_verified": false
+        },
+        {
+          "member": "pcbi.1002483.s017.pdf",
+          "label": "Text S1",
+          "source_caption": "Concentrations of substrates and coupling enzymes in the in vivo-like assays for each individual enzyme.",
+          "bytes": 53834,
+          "sha256": "b4ffb47a34b8375fec380b28842cea428ced68c7cc4f03d3a41d93b7668d0cb4",
+          "pages": 1,
+          "measurement_status": "Assay-protocol metadata candidate; not response labels."
+        }
+      ],
+      "assay_metadata": {
+        "organism": "Saccharomyces cerevisiae",
+        "strain": "CEN.PK113-7D; MATa MAL2-8c SUC2; haploid prototroph",
+        "culture": "Aerobic glucose-limited chemostats in defined mineral medium; dilution settings 0.1 and 0.35 per hour; paired nonstarved and nitrogen-starvation contexts described by the source.",
+        "not_matched_to_hackett": "Different strain background and growth/starvation protocol; not interchangeable independent support for the registered FY-culture flux response.",
+        "extract_preparation": "Fresh cell-free extracts prepared with FastPrep; not purified single-enzyme material",
+        "activity_assay_temperature_C": 30,
+        "readout": "NAD(P)H-linked Vmax assays with standardized in-vivo-like assay medium",
+        "activity_amount_denominator": "Exact table-reported activity denominator and uncertainty/replicate mapping remain unverified; never substitute absolute enzyme amount for crude-extract protein.",
+        "transport_measurement": "Separate 14C-glucose zero-trans influx measured in a five-second uptake assay at 30 C; source subsequently fits Michaelis-Menten equations. Fitted transport parameters are not raw uptake observations.",
+        "biological_replicate_ids": null,
+        "active_enzyme_fraction": null,
+        "intrinsic_kcat_authorized": false
+      },
+      "explicitly_excluded_source_classes": ["Supplemental fixed/initial model parameters", "Supplemental predictions compared with experiments unless an independently verified strict measurement projection is available", "Response/control coefficients", "ODE/rate-equation outputs", "Fitted transporter kinetics"],
+      "potential_claim_scope": "At most a new, explicitly scoped extract-level activity or measured transport response study after raw records, units and whole-biological-experiment identities are recovered; not an intrinsic Cdc19 kcat or an already matched Hackett validation.",
+      "current_decision": "not_eligible_for_current_protocol",
+      "blockers": ["No raw replicate-level initial-rate/timecourse table established", "Mixed extract does not identify single-enzyme amount or active fraction", "Source conditions differ from registered candidate", "Six independent matched support groups not established", "Fitted-model/source-history overlap remains to be audited"]
+    }
+  ],
+  "custody_decision": {
+    "training_or_development_measurements_exported": false,
+    "reserved_activity_labels_exported": false,
+    "fitting_or_scoring_performed": false,
+    "next_authorized_step": "Parent/verifier may pursue original raw assay/preparation records or a new scientifically appropriate protocol. Freeze any new experiment inventory and feature-selection declaration before quantitative export; do not relax the current protocol post hoc."
+  }
+}
